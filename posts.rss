@@ -7,6 +7,15 @@
       <item>
         <title>Radix Talk is shutting down</title>
         <dc:creator><![CDATA[@Stuart Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[ <p>I’ve created a static html snapshot of the Radix Talk forum at <a href="https://archive.radixtalk.com">https://archive.radixtalk.com</a></p>
+<p>Please let me know if you find anything broken or missing before 23 May 2022. I’ll take a final archive snapshot on this date and then point <a href="https://radixtalk.com">https://radixtalk.com</a> to the static content.</p> ]]></description>
+        <link>https://radixtalk.com/t/radix-talk-is-shutting-down/472#post_2</link>
+        <pubDate>Mon, 16 May 2022 09:31:52 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-870</guid>
+      </item>
+      <item>
+        <title>Radix Talk is shutting down</title>
+        <dc:creator><![CDATA[@Stuart Stuart | RadixPool]]></dc:creator>
         <description><![CDATA[ <p>Radix Talk will be shutting down on 23 May 2022.</p>
 <p>The forum is currently in Read-Only mode so that the existing content can be archived. I’m hoping to make the content available as static html so that we don’t lose all the valuable contributions made by the community.</p>
 <p>I’d like to personally thank <a class="mention" href="https://radixtalk.com/u/mattia">@Mattia</a>, <a class="mention" href="https://radixtalk.com/u/faraz">@Faraz</a> and <a class="mention" href="https://radixtalk.com/u/avaunt">@Avaunt</a> for being moderators on Radix Talk and for all the contributions they have made. Also thank you to everyone who signed up and participated in the forum.</p>
@@ -464,23 +473,6 @@ I have tested  a transfer to find a desktop wallet</p> ]]></description>
         <link>https://radixtalk.com/t/why-can-i-only-see-my-first-10-delegators/439#post_4</link>
         <pubDate>Mon, 11 Apr 2022 12:07:20 +0000</pubDate>
         <guid isPermaLink="false">radixtalk.com-post-821</guid>
-      </item>
-      <item>
-        <title>Why can I only see my first 10 delegators?</title>
-        <dc:creator><![CDATA[@newworld newworld]]></dc:creator>
-        <description><![CDATA[ <p>Oh okay thanks for the hint! Can you tell me exactly where i have to put the new “cursor” in this exmaple? <img src="https://cdn.radixtalk.com/images/emoji/twitter/sweat_smile.png?v=12" title=":sweat_smile:" class="emoji" alt=":sweat_smile:" loading="lazy" width="20" height="20"></p>
-<p>curl -s POST -k ‘<a href="https://mainnet-gateway.radixdlt.com/validator/stakes" rel="noopener nofollow ugc">https://mainnet-gateway.radixdlt.com/validator/stakes</a>’ -H ‘Content-Type: application/json’ \ -d ’<br>
-{<br>
-“network_identifier”: {<br>
-“network”: “mainnet”<br>
-},<br>
-“validator_identifier”: {<br>
-“address”: “&lt;VALIDATOR_ID&gt;”<br>
-}<br>
-}’ | jq</p> ]]></description>
-        <link>https://radixtalk.com/t/why-can-i-only-see-my-first-10-delegators/439#post_3</link>
-        <pubDate>Mon, 11 Apr 2022 11:52:44 +0000</pubDate>
-        <guid isPermaLink="false">radixtalk.com-post-820</guid>
       </item>
   </channel>
 </rss>
