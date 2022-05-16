@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Community Seed Nodes for Radix Validators</title>
+    <link>https://radixtalk.com/t/community-seed-nodes-for-radix-validators/199</link>
+    <description>If the [official Radix seed nodes](https://radixtalk.com/t/what-are-the-official-radix-seed-node-addresses/195) are not available then it is possible to seed from any other Radix node on the network.
+
+The following is a list of community seed node addresses:
+
+# Europe:
+```text
+radix://rn1q0lm9z8r6v2vwdwej6p2xr6unf3l6y4nlfrypyaauyfuqq8c4a976t54rtx@198.244.164.94
+radix://rn1qdnsa7cn3q9yzw0dtu27f3yz0y4wn9nej8eupre666c6srldhgjqcd08jd2@138.201.251.203
+```</description>
+    <language>en-GB</language>
+    <lastBuildDate>Sun, 02 Jan 2022 17:11:47 +0000</lastBuildDate>
+    <category>Validators</category>
+    <atom:link href="https://radixtalk.com/t/community-seed-nodes-for-radix-validators/199.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Community Seed Nodes for Radix Validators</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>If the <a href="https://radixtalk.com/t/what-are-the-official-radix-seed-node-addresses/195">official Radix seed nodes</a> are not available then it is possible to seed from any other Radix node on the network.</p>
+<p>The following is a list of community seed node addresses:</p>
+<h1>
+<a name="europe-1" class="anchor" href="https://radixtalk.com#europe-1"></a>Europe:</h1>
+<pre><code class="lang-nohighlight">radix://rn1q0lm9z8r6v2vwdwej6p2xr6unf3l6y4nlfrypyaauyfuqq8c4a976t54rtx@198.244.164.94
+radix://rn1qdnsa7cn3q9yzw0dtu27f3yz0y4wn9nej8eupre666c6srldhgjqcd08jd2@138.201.251.203
+</code></pre>
+          <p><a href="https://radixtalk.com/t/community-seed-nodes-for-radix-validators/199/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/community-seed-nodes-for-radix-validators/199/1</link>
+        <pubDate>Sun, 02 Jan 2022 17:11:47 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-199-1</guid>
+        <source url="https://radixtalk.com/t/community-seed-nodes-for-radix-validators/199.rss">Community Seed Nodes for Radix Validators</source>
+      </item>
+  </channel>
+</rss>

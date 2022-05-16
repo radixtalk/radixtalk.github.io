@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <title>Radix database snapshots now available at RadixPool - Validators - RadixTalk</title>
+    <meta name="description" content="I’m happy to announce that RadixPool is now creating daily snapshots of the Radix database to support the Radix Node Runners community: 
+
+
+
+Features:
+
+Updated daily
+Geo-replicated by a content delivery network (CDN) to F&amp;hellip;">
+    <meta name="generator" content="Discourse 2.9.0.beta4 - https://github.com/discourse/discourse version 8ce29a4a2264ea472a8151bfe2e591ab1101cfeb">
+<link rel="icon" type="image/png" href="https://cdn.radixtalk.com/uploads/default/optimized/1X/023c6f3e74bac599c495c37eecd72f939f3fab87_2_32x32.png">
+<link rel="apple-touch-icon" type="image/png" href="https://cdn.radixtalk.com/uploads/default/optimized/1X/ad9adb26331754b0012edbc9b4796de8dc449fa8_2_180x180.png">
+<meta name="theme-color" content="#ffffff">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<link rel="canonical" href="220.html" />
+<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebSite","url":"https://radixtalk.com","potentialAction":{"@type":"SearchAction","target":"https://radixtalk.com/search?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<link rel="search" type="application/opensearchdescription+xml" href="../../opensearch.xml" title="RadixTalk Search">
+
+    <link href="https://cdn.radixtalk.com/stylesheets/color_definitions_light_4_1_41174e1f8711476b3393f07571899954e9737309.css?__ws=radixtalk.com" media="all" rel="stylesheet" class="light-scheme"/>
+
+  <link href="https://cdn.radixtalk.com/stylesheets/desktop_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="desktop"  />
+
+
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-akismet_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-akismet"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-automation_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-automation"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-cakeday_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-cakeday"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-canned-replies_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-canned-replies"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-checklist_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-checklist"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-data-explorer_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-data-explorer"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-details_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-details"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-docs_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-docs"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-follow_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-follow"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-fontawesome-pro_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-fontawesome-pro"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-footnote_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-footnote"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-local-dates_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-local-dates"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-presence_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-presence"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-rss-polling_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-rss-polling"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-saved-searches_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-saved-searches"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-solved_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-solved"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-tooltips_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-tooltips"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-user-notes_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-user-notes"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-voting_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-voting"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-whos-online_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-whos-online"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/lazy-yt_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="lazy-yt"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/poll_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="poll"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-voting_desktop_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-voting_desktop"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/poll_desktop_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="poll_desktop"  />
+
+  <link href="https://cdn.radixtalk.com/stylesheets/desktop_theme_1_263bf35b28bc3c889d3c5ea8d6e1c519621916e1.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="desktop_theme" data-theme-id="1" data-theme-name="default"/>
+
+    <script defer="" data-domain="radixtalk.com" src="https://plausible.io/js/plausible.hash.js"></script>
+
+    
+        <link rel="alternate nofollow" type="application/rss+xml" title="RSS feed of &#39;Radix database snapshots now available at RadixPool&#39;" href="220.rss" />
+    <meta property="og:site_name" content="RadixTalk" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:image" content="https://cdn.radixtalk.com/uploads/default/original/1X/9e3624f2a5d4052091ba93563043c233df535486.png" />
+<meta property="og:image" content="https://cdn.radixtalk.com/uploads/default/original/1X/9e3624f2a5d4052091ba93563043c233df535486.png" />
+<meta property="og:url" content="https://radixtalk.com/t/radix-database-snapshots-now-available-at-radixpool/220" />
+<meta name="twitter:url" content="https://radixtalk.com/t/radix-database-snapshots-now-available-at-radixpool/220" />
+<meta property="og:title" content="Radix database snapshots now available at RadixPool" />
+<meta name="twitter:title" content="Radix database snapshots now available at RadixPool" />
+<meta property="og:description" content="I’m happy to announce that RadixPool is now creating daily snapshots of the Radix database to support the Radix Node Runners community:     Features:  Updated daily Geo-replicated by a content delivery network (CDN) to Falkenstein (Germany), New York, Los Angeles, Singapore and Sydney Compressed using xz[1] due to its very good compression size and fast decompression time Empty Address Book in Database   Fair Use: There is a generous monthly bandwidth limit to manage costs. If this limit has bee..." />
+<meta name="twitter:description" content="I’m happy to announce that RadixPool is now creating daily snapshots of the Radix database to support the Radix Node Runners community:     Features:  Updated daily Geo-replicated by a content delivery network (CDN) to Falkenstein (Germany), New York, Los Angeles, Singapore and Sydney Compressed using xz[1] due to its very good compression size and fast decompression time Empty Address Book in Database   Fair Use: There is a generous monthly bandwidth limit to manage costs. If this limit has bee..." />
+<meta name="twitter:label1" value="Reading time" />
+<meta name="twitter:data1" value="1 mins 🕑" />
+<meta name="twitter:label2" value="Likes" />
+<meta name="twitter:data2" value="8 ❤" />
+<meta property="article:published_time" content="2022-01-08T10:26:52+00:00" />
+<meta property="og:ignore_canonical" content="true" />
+
+
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"QAPage","name":"Radix database snapshots now available at RadixPool","mainEntity":{"@type":"Question","name":"Radix database snapshots now available at RadixPool","text":"I’m happy to announce that RadixPool is now creating daily snapshots of the Radix database to support the Radix Node Runners community:\n\n<a href="https://radixtalk.com/t/radix-database-snapshots-now-available-at-radixpool/\&quot;https://snapshots.radixpool.com\&quot;" target=\"_blank\" rel=\"noopener\">RadixPool · Snapshots<\/a>\n\nRadix Database snapshots by RadixPool\n\n<a name=\"features-1\" class=\"anchor\" href="https://radixtalk.com/t/radix-database-snapshots-now-available-at-radixpool/\&quot;#features-1\""><\/a>Features:\n\nUpdated daily\n\nGeo-replicated by a content deliver&hellip;","upvoteCount":4,"answerCount":0,"dateCreated":"2022-01-08T10:26:52.346Z","author":{"@type":"Person","name":"Stuart | RadixPool"}}}</script>
+  </head>
+  <body class="crawler">
+    
+    <header>
+  <a href="https://radixtalk.com/">
+    <h1>RadixTalk</h1>
+  </a>
+</header>
+
+    <div id="main-outlet" class="wrap" role="main">
+        <div id="topic-title">
+    <h1>
+      <a href="220.html">Radix database snapshots now available at RadixPool</a>
+    </h1>
+
+      <div class="topic-category" itemscope itemtype="http://schema.org/BreadcrumbList">
+          <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+            <a href="https://radixtalk.com/c/validators/16" class="badge-wrapper bullet" itemprop="item">
+              <span class='badge-category-bg' style='background-color: #0088CC'></span>
+              <span class='badge-category clear-badge'>
+                <span class='category-name' itemprop='name'>Validators</span>
+              </span>
+            </a>
+            <meta itemprop="position" content="1" />
+          </span>
+      </div>
+
+      <div class="topic-category">
+        <div class='discourse-tags list-tags'>
+            <a href='../../tag/snapshot.html' class='discourse-tag' rel="tag">snapshot</a>
+        </div>
+      </div>
+  </div>
+
+  
+
+
+      <div id='post_1' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+        <div class='crawler-post-meta'>
+          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop='name' content='RadixTalk'>
+              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+                <meta itemprop='url' content='https://cdn.radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+              </div>
+          </div>
+          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a itemprop="url" href='../../u/Stuart.html'><span itemprop='name'>Stuart</span></a>
+            (Stuart | RadixPool)
+          </span>
+
+          <link itemprop="mainEntityOfPage" href="220.html">
+
+
+          <span class="crawler-post-infos">
+              <time itemprop='datePublished' datetime='2022-01-08T10:26:52Z' class='post-time'>
+                8 January 2022 10:26
+              </time>
+              <meta itemprop='dateModified' content='2022-01-09T19:28:38Z'>
+          <span itemprop='position'>#1</span>
+          </span>
+        </div>
+        <div class='post' itemprop='articleBody'>
+          <p>I’m happy to announce that RadixPool is now creating daily snapshots of the Radix database to support the Radix Node Runners community:</p>
+<aside class="onebox allowlistedgeneric" data-onebox-src="https://snapshots.radixpool.com">
+  <header class="source">
+
+      <a href="https://snapshots.radixpool.com" target="_blank" rel="noopener">snapshots.radixpool.com</a>
+  </header>
+
+  <article class="onebox-body">
+    
+
+<h3><a href="https://snapshots.radixpool.com" target="_blank" rel="noopener">RadixPool · Snapshots</a></h3>
+
+  <p>Radix Database snapshots by RadixPool</p>
+
+
+  </article>
+
+  <div class="onebox-metadata">
+    
+    
+  </div>
+
+  <div style="clear: both"></div>
+</aside>
+
+<h3>
+<a name="features-1" class="anchor" href="220.html#features-1"></a>Features:</h3>
+<ul>
+<li>Updated daily</li>
+<li>Geo-replicated by a content delivery network (CDN) to Falkenstein (Germany), New York, Los Angeles, Singapore and Sydney</li>
+<li>Compressed using <strong>xz</strong><sup class="footnote-ref"><a href="220.html#footnote-310-1" id="footnote-ref-310-1">[1]</a></sup> due to its very good compression size and fast decompression time</li>
+<li>Empty Address Book in Database</li>
+</ul>
+<h3>
+<a name="fair-use-2" class="anchor" href="220.html#fair-use-2"></a>Fair Use:</h3>
+<p>There is a generous monthly bandwidth limit to manage costs. If this limit has been reached and you urgently need to download a snapshot then please send a private message to <a class="mention" href="https://radixtalk.com/u/stuart">@Stuart</a></p>
+<p>PS: I’ll add some instructions on how to decompress the snapshot file and some css to make the page not look like something from 1998…</p>
+<hr class="footnotes-sep">
+
+<ol class="footnotes-list">
+<li id="footnote-310-1" class="footnote-item">
+<p><a href="../comparison-of-compression-tools-for-taking-snapshots-of-radix-database/217.html" class="inline-onebox">Comparison of compression tools for taking snapshots of Radix database</a> <a href="220.html#footnote-ref-310-1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+        </div>
+
+        <meta itemprop='headline' content='Radix database snapshots now available at RadixPool'>
+          <meta itemprop='keywords' content='snapshot'>
+
+        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+           <meta itemprop="userInteractionCount" content="4" />
+           <span class='post-likes'>4 Likes</span>
+         </div>
+
+         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
+            <meta itemprop="userInteractionCount" content="0" />
+          </div>
+
+      </div>
+      <div id='post_2' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+        <div class='crawler-post-meta'>
+          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop='name' content='RadixTalk'>
+              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+                <meta itemprop='url' content='https://cdn.radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+              </div>
+          </div>
+          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a itemprop="url" href='../../u/Yo1234.html'><span itemprop='name'>Yo1234</span></a>
+            
+          </span>
+
+          <link itemprop="mainEntityOfPage" href="220.html">
+
+
+          <span class="crawler-post-infos">
+              <time itemprop='datePublished' datetime='2022-01-09T23:14:58Z' class='post-time'>
+                9 January 2022 23:14
+              </time>
+              <meta itemprop='dateModified' content='2022-01-09T23:14:58Z'>
+          <span itemprop='position'>#2</span>
+          </span>
+        </div>
+        <div class='post' itemprop='articleBody'>
+          <p>Out of interest: what would a node runner do with this, exactly?</p>
+        </div>
+
+        <meta itemprop='headline' content='Radix database snapshots now available at RadixPool'>
+
+        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+           <meta itemprop="userInteractionCount" content="0" />
+           <span class='post-likes'></span>
+         </div>
+
+         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
+            <meta itemprop="userInteractionCount" content="2" />
+          </div>
+
+      </div>
+      <div id='post_3' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+        <div class='crawler-post-meta'>
+          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop='name' content='RadixTalk'>
+              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+                <meta itemprop='url' content='https://cdn.radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+              </div>
+          </div>
+          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a itemprop="url" href='../../u/Faraz.html'><span itemprop='name'>Faraz</span></a>
+            (Faraz | Radstakes.com)
+          </span>
+
+          <link itemprop="mainEntityOfPage" href="220.html">
+
+
+          <span class="crawler-post-infos">
+              <time itemprop='datePublished' datetime='2022-01-10T08:16:22Z' class='post-time'>
+                10 January 2022 08:16
+              </time>
+              <meta itemprop='dateModified' content='2022-01-10T08:16:22Z'>
+          <span itemprop='position'>#3</span>
+          </span>
+        </div>
+        <div class='post' itemprop='articleBody'>
+          <p>Hi Yo,</p>
+<p>In the event a validator’s own backup database is corrupted or they find themselves needing to sync from scratch, it is possible to restore the database from a snapshot to minimise the time needed to sync with the ledger.  Otherwise it takes 18+ hours to sync.</p>
+        </div>
+
+        <meta itemprop='headline' content='Radix database snapshots now available at RadixPool'>
+
+        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+           <meta itemprop="userInteractionCount" content="1" />
+           <span class='post-likes'>1 Like</span>
+         </div>
+
+         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
+            <meta itemprop="userInteractionCount" content="0" />
+          </div>
+
+      </div>
+      <div id='post_4' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+        <div class='crawler-post-meta'>
+          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop='name' content='RadixTalk'>
+              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+                <meta itemprop='url' content='https://cdn.radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+              </div>
+          </div>
+          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a itemprop="url" href='../../u/Stuart.html'><span itemprop='name'>Stuart</span></a>
+            (Stuart | RadixPool)
+          </span>
+
+          <link itemprop="mainEntityOfPage" href="220.html">
+
+
+          <span class="crawler-post-infos">
+              <time itemprop='datePublished' datetime='2022-01-10T08:29:41Z' class='post-time'>
+                10 January 2022 08:29
+              </time>
+              <meta itemprop='dateModified' content='2022-01-10T08:29:41Z'>
+          <span itemprop='position'>#4</span>
+          </span>
+        </div>
+        <div class='post' itemprop='articleBody'>
+          <p>When a new Radix node starts up for the first time, it needs to create a full copy of the ledger. The ledger contains an ordered record of every single transaction that has occurred since the genesis of the Radix public network. The ledger gets larger over time as more transactions are added.</p>
+<p>There are various factors that affect how long it takes to build the ledger and supporting database files such as network bandwidth, the memory and CPU power of the Radix node, the type of file storage and so on. People have reported anywhere from 8 hours up to 24 hours for the ledger to become fully synchronised (up to date with the rest of the Radix public network). While a node is synchronising it cannot complete proposals (participate in consensus and validate transactions) and receive staking rewards.</p>
+<p>The snapshot archive is a copy of all the files that make up a synchronised ledger at the time the snapshot was taken. A node runner can download a “ready made” copy of the ledger files and then when the Radix node starts it only has to fetch the transactions that have occurred since the snapshot.</p>
+<p>So, rather than having to wait 8 to 24 hours to sync, a node runner can download a snapshot (30 mintutes to 2 hours to download) and then catch up (~ minutes).</p>
+<p>As Faraz explained, the snapshots are most useful when an existing Top 100 validator’s database become corrupted/lost and they need to recover as quickly as possible.</p>
+<p>Hope that all made sense.</p>
+        </div>
+
+        <meta itemprop='headline' content='Radix database snapshots now available at RadixPool'>
+
+        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+           <meta itemprop="userInteractionCount" content="2" />
+           <span class='post-likes'>2 Likes</span>
+         </div>
+
+         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
+            <meta itemprop="userInteractionCount" content="0" />
+          </div>
+
+      </div>
+      <div id='post_5' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+        <div class='crawler-post-meta'>
+          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop='name' content='RadixTalk'>
+              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+                <meta itemprop='url' content='https://cdn.radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+              </div>
+          </div>
+          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a itemprop="url" href='../../u/Avaunt.html'><span itemprop='name'>Avaunt</span></a>
+            (Avaunt)
+          </span>
+
+          <link itemprop="mainEntityOfPage" href="220.html">
+
+
+          <span class="crawler-post-infos">
+              <time itemprop='datePublished' datetime='2022-01-10T10:26:27Z' class='post-time'>
+                10 January 2022 10:26
+              </time>
+              <meta itemprop='dateModified' content='2022-01-10T10:26:27Z'>
+          <span itemprop='position'>#5</span>
+          </span>
+        </div>
+        <div class='post' itemprop='articleBody'>
+          <p>Thanks for creating and sharing this Stuart. Can I check if the je.properties file has the recommended settings. Could you paste a copy of the file contents if you have it to hand? (saves downloading the whole backup to check)<br>
+thanks Andrew</p>
+        </div>
+
+        <meta itemprop='headline' content='Radix database snapshots now available at RadixPool'>
+
+        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+           <meta itemprop="userInteractionCount" content="0" />
+           <span class='post-likes'></span>
+         </div>
+
+         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
+            <meta itemprop="userInteractionCount" content="1" />
+          </div>
+
+      </div>
+      <div id='post_6' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+        <div class='crawler-post-meta'>
+          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop='name' content='RadixTalk'>
+              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+                <meta itemprop='url' content='https://cdn.radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+              </div>
+          </div>
+          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a itemprop="url" href='../../u/Stuart.html'><span itemprop='name'>Stuart</span></a>
+            (Stuart | RadixPool)
+          </span>
+
+          <link itemprop="mainEntityOfPage" href="220.html">
+
+
+          <span class="crawler-post-infos">
+              <time itemprop='datePublished' datetime='2022-01-10T10:37:20Z' class='post-time'>
+                10 January 2022 10:37
+              </time>
+              <meta itemprop='dateModified' content='2022-01-10T10:37:20Z'>
+          <span itemprop='position'>#6</span>
+          </span>
+        </div>
+        <div class='post' itemprop='articleBody'>
+          <p>Sure, the <code>je.properties</code> file has the following content in the snapshot archive:</p>
+<pre><code class="lang-nohighlight"># Set the log file size to 1Gb each (Default: 100Mb)
+je.log.fileMax=1073741824
+
+# Run the checkpointer every 512Mb of data (Default: 20Mb)
+je.checkpointer.bytesInterval=536870912
+
+# Don't collect stats in je.stats.csv
+je.stats.collect=false
+
+# Only log warnings in je.info.*
+com.sleepycat.je.util.FileHandler.level=WARNING
+</code></pre>
+<p>The snapshot is a copy taken from one of my production standby nodes so it’s grabbed my settings. I haven’t checked but it should still work if you change the settings to use your preferred values.</p>
+        </div>
+
+        <meta itemprop='headline' content='Radix database snapshots now available at RadixPool'>
+
+        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+           <meta itemprop="userInteractionCount" content="1" />
+           <span class='post-likes'>1 Like</span>
+         </div>
+
+         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
+            <meta itemprop="userInteractionCount" content="0" />
+          </div>
+
+      </div>
+
+
+
+
+
+
+    </div>
+    <footer class="container wrap">
+  <nav class='crawler-nav'>
+    <ul>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='https://radixtalk.com/' itemprop="url">Home </a>
+        </span>
+      </li>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='https://radixtalk.com/categories' itemprop="url">Categories </a>
+        </span>
+      </li>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='https://radixtalk.com/guidelines' itemprop="url">FAQ/Guidelines </a>
+        </span>
+      </li>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='https://radixtalk.com/tos' itemprop="url">Terms of Service </a>
+        </span>
+      </li>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='https://radixtalk.com/privacy' itemprop="url">Privacy Policy </a>
+        </span>
+      </li>
+    </ul>
+  </nav>
+  <p class='powered-by-link'>Powered by <a href="https://www.discourse.org">Discourse</a>, best viewed with JavaScript enabled</p>
+</footer>
+
+    
+    
+  </body>
+  
+</html>

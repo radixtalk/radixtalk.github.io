@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Why is the Radix wallet slow to respond?</title>
+    <link>https://radixtalk.com/t/why-is-the-radix-wallet-slow-to-respond/142</link>
+    <description>The Radix desktop wallet needs to communicate with an Archive Node to retrieve data from the Radix ledger such as your XRD balance, or to make transactions.  The Radix desktop wallet normally defaults to the official Radix archive node address and at times of peak demand, this can result in slow performance or in rare cases, inability to access the wallet.
+
+Many members of the community run archive nodes in addition to those of the Radix team, and these alternative archive nodes can be selected within the wallet settings (see image below for some example community archive nodes).  This often resolves any issues with poor wallet performance.
+![Change Archive End Point|690x388, 100%](upload://nESGPgInCioJToh5liOmGShShod.png)</description>
+    <language>en-GB</language>
+    <lastBuildDate>Wed, 29 Dec 2021 11:45:41 +0000</lastBuildDate>
+    <category>Questions / Help</category>
+    <atom:link href="https://radixtalk.com/t/why-is-the-radix-wallet-slow-to-respond/142.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Why is the Radix wallet slow to respond?</title>
+        <dc:creator><![CDATA[Mattia | MattiaNode]]></dc:creator>
+        <description><![CDATA[
+            <p>Radix DLT also has its own <a href="https://status.radixdlt.com/">Status page</a> to check if it’s a local or widespread issue.</p>
+<p>Here are some archive nodes, ready to copy and paste:</p>
+<pre><code>https://api.radix.community/
+https://archive.stakesafe.net/
+https://node.radixscan.io/
+https://radixdlt.pegacorn.co/
+https://node.caviarnine.com/
+</code></pre>
+<p><strong>If you can’t even open your wallet to change archive node, try using a VPN!</strong> <img src="https://radixtalk.com/images/emoji/twitter/wink.png?v=10" title=":wink:" class="emoji" alt=":wink:"></p>
+          <p><a href="https://radixtalk.com/t/why-is-the-radix-wallet-slow-to-respond/142/2">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/why-is-the-radix-wallet-slow-to-respond/142/2</link>
+        <pubDate>Wed, 29 Dec 2021 11:45:41 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-142-2</guid>
+        <source url="https://radixtalk.com/t/why-is-the-radix-wallet-slow-to-respond/142.rss">Why is the Radix wallet slow to respond?</source>
+      </item>
+      <item>
+        <title>Why is the Radix wallet slow to respond?</title>
+        <dc:creator><![CDATA[Faraz | Radstakes.com]]></dc:creator>
+        <description><![CDATA[
+            <p>The Radix desktop wallet needs to communicate with an Archive Node to retrieve data from the Radix ledger such as your XRD balance, or to make transactions.  The Radix desktop wallet normally defaults to the official Radix archive node address and at times of peak demand, this can result in slow performance or in rare cases, inability to access the wallet.</p>
+<p>Many members of the community run archive nodes in addition to those of the Radix team, and these alternative archive nodes can be selected within the wallet settings (see image below for some example community archive nodes).  This often resolves any issues with poor wallet performance.<br>
+</p><div class="lightbox-wrapper"><a class="lightbox" href="https://radixtalk.com/uploads/default/original/1X/a5d10f421d9a80e6501dba1ea34e37485f965941.png" data-download-href="https://radixtalk.com/uploads/default/a5d10f421d9a80e6501dba1ea34e37485f965941" title="Change Archive End Point"><img src="https://radixtalk.com/uploads/default/optimized/1X/a5d10f421d9a80e6501dba1ea34e37485f965941_2_690x388.png" alt="Change Archive End Point" data-base62-sha1="nESGPgInCioJToh5liOmGShShod" width="690" height="388" srcset="https://radixtalk.com/uploads/default/optimized/1X/a5d10f421d9a80e6501dba1ea34e37485f965941_2_690x388.png, https://radixtalk.com/uploads/default/original/1X/a5d10f421d9a80e6501dba1ea34e37485f965941.png 1.5x, https://radixtalk.com/uploads/default/original/1X/a5d10f421d9a80e6501dba1ea34e37485f965941.png 2x" data-small-upload="https://radixtalk.com/uploads/default/optimized/1X/a5d10f421d9a80e6501dba1ea34e37485f965941_2_10x10.png"></a></div><p></p>
+          <p><a href="https://radixtalk.com/t/why-is-the-radix-wallet-slow-to-respond/142/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/why-is-the-radix-wallet-slow-to-respond/142/1</link>
+        <pubDate>Tue, 28 Dec 2021 22:01:01 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-142-1</guid>
+        <source url="https://radixtalk.com/t/why-is-the-radix-wallet-slow-to-respond/142.rss">Why is the Radix wallet slow to respond?</source>
+      </item>
+  </channel>
+</rss>

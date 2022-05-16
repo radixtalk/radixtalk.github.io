@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>What impact do Validator fees have on my staking rewards?</title>
+    <link>https://radixtalk.com/t/what-impact-do-validator-fees-have-on-my-staking-rewards/168</link>
+    <description>Validators specify a fee for providing their services to delegators.  Fees vary from 0% to 5%+ and will affect the rewards received.  Here&#39;s a couple of examples to explain the impact of validator fees on staking rewards:
+
+Let&#39;s assume you are staking on 3 validators, we&#39;ll call them Validator A, B and C (not very creative I know!)
+
+Let&#39;s also assume that the APY for staking is 10% and you are staking 10,000XRD with each validator.
+
+Validator A has specified a fee of 0%
+Validator B has specified a fee of 1%
+Validator C has specified a fee of 3%
+
+With Validator A, you can expect to receive 1000XRD in year 1 (1000 - 0% = 10% APY)
+With Validator B, you can expect to receive 990XRD in year 1 (1000 - 1% = 9.9% APY)
+With Validator C, you can expect to receive 970XRD in year 1 (1000 - 3% = 9.7% APY)
+
+As you can see, the fees are calculated based on the rewards received and not the APY.  The impact of fees on staking rewards are therefore quite insignificant compared to uptime for example, which will have a much greater effect on rewards received.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Wed, 29 Dec 2021 20:08:21 +0000</lastBuildDate>
+    <category>Staking</category>
+    <atom:link href="https://radixtalk.com/t/what-impact-do-validator-fees-have-on-my-staking-rewards/168.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>What impact do Validator fees have on my staking rewards?</title>
+        <dc:creator><![CDATA[Faraz | Radstakes.com]]></dc:creator>
+        <description><![CDATA[
+            <p>Validators specify a fee for providing their services to delegators.  Fees vary from 0% to 5%+ and will affect the rewards received.  Here’s a couple of examples to explain the impact of validator fees on staking rewards:</p>
+<p>Let’s assume you are staking on 3 validators, we’ll call them Validator A, B and C (not very creative I know!)</p>
+<p>Let’s also assume that the APY for staking is 10% and you are staking 10,000XRD with each validator.</p>
+<p>Validator A has specified a fee of 0%<br>
+Validator B has specified a fee of 1%<br>
+Validator C has specified a fee of 3%</p>
+<p>With Validator A, you can expect to receive 1000XRD in year 1 (1000 - 0% = 10% APY)<br>
+With Validator B, you can expect to receive 990XRD in year 1 (1000 - 1% = 9.9% APY)<br>
+With Validator C, you can expect to receive 970XRD in year 1 (1000 - 3% = 9.7% APY)</p>
+<p>As you can see, the fees are calculated based on the rewards received and not the APY.  The impact of fees on staking rewards are therefore quite insignificant compared to uptime for example, which will have a much greater effect on rewards received.</p>
+          <p><a href="https://radixtalk.com/t/what-impact-do-validator-fees-have-on-my-staking-rewards/168/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/what-impact-do-validator-fees-have-on-my-staking-rewards/168/1</link>
+        <pubDate>Wed, 29 Dec 2021 19:07:10 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-168-1</guid>
+        <source url="https://radixtalk.com/t/what-impact-do-validator-fees-have-on-my-staking-rewards/168.rss">What impact do Validator fees have on my staking rewards?</source>
+      </item>
+  </channel>
+</rss>

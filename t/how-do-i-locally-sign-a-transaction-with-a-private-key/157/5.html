@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <title>How do I locally sign a transaction with a private key? - #5 by Faraz - Developers - RadixTalk</title>
+    <meta name="description" content="When you are making a transaction using the Node API, you will need to sign the transaction locally using your private key: 
+
+Next, you need to sign the hashOfBlobToSign using the private key of your account (ie. the “fr&amp;hellip;">
+    <meta name="generator" content="Discourse 2.9.0.beta4 - https://github.com/discourse/discourse version 8ce29a4a2264ea472a8151bfe2e591ab1101cfeb">
+<link rel="icon" type="image/png" href="https://cdn.radixtalk.com/uploads/default/optimized/1X/023c6f3e74bac599c495c37eecd72f939f3fab87_2_32x32.png">
+<link rel="apple-touch-icon" type="image/png" href="https://cdn.radixtalk.com/uploads/default/optimized/1X/ad9adb26331754b0012edbc9b4796de8dc449fa8_2_180x180.png">
+<meta name="theme-color" content="#ffffff">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<link rel="canonical" href="../157.html" />
+<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebSite","url":"https://radixtalk.com","potentialAction":{"@type":"SearchAction","target":"https://radixtalk.com/search?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<link rel="search" type="application/opensearchdescription+xml" href="../../../opensearch.xml" title="RadixTalk Search">
+
+    <link href="https://cdn.radixtalk.com/stylesheets/color_definitions_light_4_1_41174e1f8711476b3393f07571899954e9737309.css?__ws=radixtalk.com" media="all" rel="stylesheet" class="light-scheme"/>
+
+  <link href="https://cdn.radixtalk.com/stylesheets/desktop_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="desktop"  />
+
+
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-akismet_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-akismet"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-automation_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-automation"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-cakeday_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-cakeday"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-canned-replies_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-canned-replies"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-checklist_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-checklist"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-data-explorer_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-data-explorer"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-details_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-details"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-docs_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-docs"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-follow_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-follow"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-fontawesome-pro_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-fontawesome-pro"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-footnote_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-footnote"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-local-dates_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-local-dates"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-presence_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-presence"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-rss-polling_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-rss-polling"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-saved-searches_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-saved-searches"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-solved_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-solved"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-tooltips_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-tooltips"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-user-notes_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-user-notes"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-voting_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-voting"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-whos-online_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-whos-online"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/lazy-yt_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="lazy-yt"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/poll_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="poll"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-voting_desktop_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-voting_desktop"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/poll_desktop_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="poll_desktop"  />
+
+  <link href="https://cdn.radixtalk.com/stylesheets/desktop_theme_1_263bf35b28bc3c889d3c5ea8d6e1c519621916e1.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="desktop_theme" data-theme-id="1" data-theme-name="default"/>
+
+    <script defer="" data-domain="radixtalk.com" src="https://plausible.io/js/plausible.hash.js"></script>
+
+    
+        <link rel="alternate nofollow" type="application/rss+xml" title="RSS feed of &#39;How do I locally sign a transaction with a private key?&#39;" href="../157.rss" />
+    <meta property="og:site_name" content="RadixTalk" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:image" content="https://cdn.radixtalk.com/uploads/default/original/1X/9e3624f2a5d4052091ba93563043c233df535486.png" />
+<meta property="og:image" content="https://cdn.radixtalk.com/uploads/default/original/1X/9e3624f2a5d4052091ba93563043c233df535486.png" />
+<meta property="og:url" content="https://radixtalk.com/t/how-do-i-locally-sign-a-transaction-with-a-private-key/157/5" />
+<meta name="twitter:url" content="https://radixtalk.com/t/how-do-i-locally-sign-a-transaction-with-a-private-key/157/5" />
+<meta property="og:title" content="How do I locally sign a transaction with a private key?" />
+<meta name="twitter:title" content="How do I locally sign a transaction with a private key?" />
+<meta property="og:description" content="Hi Peachy, I had the exact same problem and couldn’t figure it out so just created a development wallet using Stuart’s script here: Development Wallet Creation  This will allow you to create the necessary hex encoded keys to play around with txs using the API.  I believe 0xOmar in Discord has also created a python library that can extract the private key from the desktop wallet seed, so you could look into that if you want to use the desktop wallet created address." />
+<meta name="twitter:description" content="Hi Peachy, I had the exact same problem and couldn’t figure it out so just created a development wallet using Stuart’s script here: Development Wallet Creation  This will allow you to create the necessary hex encoded keys to play around with txs using the API.  I believe 0xOmar in Discord has also created a python library that can extract the private key from the desktop wallet seed, so you could look into that if you want to use the desktop wallet created address." />
+<meta property="article:published_time" content="2022-04-06T17:09:21+00:00" />
+<meta property="og:ignore_canonical" content="true" />
+
+
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"QAPage","name":"How do I locally sign a transaction with a private key?","mainEntity":{"@type":"Question","name":"How do I locally sign a transaction with a private key?","text":"When you are <a href="https://radixtalk.com/t/how-do-i-locally-sign-a-transaction-with-a-private-key/157/\&quot;https://docs.radixdlt.com/main/node-api/making-transactions.html\&quot;">making a transaction using the Node API<\/a>, you will need to sign the transaction locally using your private key:\n\nNext, you need to sign the hashOfBlobToSign using the private key of your account (ie. the “from” account). The details of doing so are outside the scope of this doc, but Rad&hellip;","upvoteCount":2,"answerCount":0,"dateCreated":"2021-12-29T13:50:54.010Z","author":{"@type":"Person","name":"Stuart | RadixPool"}}}</script>
+  </head>
+  <body class="crawler">
+    
+    <header>
+  <a href="https://radixtalk.com/">
+    <h1>RadixTalk</h1>
+  </a>
+</header>
+
+    <div id="main-outlet" class="wrap" role="main">
+        <div id="topic-title">
+    <h1>
+      <a href="../157.html">How do I locally sign a transaction with a private key?</a>
+    </h1>
+
+      <div class="topic-category" itemscope itemtype="http://schema.org/BreadcrumbList">
+          <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+            <a href="https://radixtalk.com/c/developers/24" class="badge-wrapper bullet" itemprop="item">
+              <span class='badge-category-bg' style='background-color: #F1592A'></span>
+              <span class='badge-category clear-badge'>
+                <span class='category-name' itemprop='name'>Developers</span>
+              </span>
+            </a>
+            <meta itemprop="position" content="1" />
+          </span>
+      </div>
+
+      <div class="topic-category">
+        <div class='discourse-tags list-tags'>
+            <a href='../../../tag/python.html' class='discourse-tag' rel="tag">python</a>, 
+            <a href='../../../tag/howto.html' class='discourse-tag' rel="tag">howto</a>, 
+            <a href='../../../tag/api.html' class='discourse-tag' rel="tag">api</a>
+        </div>
+      </div>
+  </div>
+
+  
+
+
+      <div id='post_1' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+        <div class='crawler-post-meta'>
+          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop='name' content='RadixTalk'>
+              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+                <meta itemprop='url' content='https://cdn.radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+              </div>
+          </div>
+          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a itemprop="url" href='../../../u/Stuart.html'><span itemprop='name'>Stuart</span></a>
+            (Stuart | RadixPool)
+          </span>
+
+          <link itemprop="mainEntityOfPage" href="../157.html">
+
+
+          <span class="crawler-post-infos">
+              <time itemprop='datePublished' datetime='2021-12-29T13:50:54Z' class='post-time'>
+                29 December 2021 13:50
+              </time>
+              <meta itemprop='dateModified' content='2021-12-29T13:50:54Z'>
+          <span itemprop='position'>#1</span>
+          </span>
+        </div>
+        <div class='post' itemprop='articleBody'>
+          <p>When you are <a href="https://docs.radixdlt.com/main/node-api/making-transactions.html">making a transaction using the Node API</a>, you will need to sign the transaction locally using your private key:</p>
+<blockquote>
+<p>Next, you need to sign the hashOfBlobToSign using the private key of your account (ie. the “from” account). The details of doing so are outside the scope of this doc, but Radix follows a similar signature method as that of Bitcoin, using ECDSA signatures using EC curve “secp256k1”.</p>
+<p>The result should be a DER encoded signature in hex that you will use in the following step.</p>
+</blockquote>
+<p>The following python script will perform the signing operation and produce the correct hex formatted DER encoded signature that you can use to complete the transaction process:</p>
+<pre><code class="lang-auto">import ecdsa
+import hashlib
+from ecdsa.curves import SECP256k1
+from ecdsa.util import sigencode_der
+
+private_key_hex = "YOUR_PRIVATE_KEY_AS_A_HEX_STRING"
+hash_to_sign = "HASH_OF_BLOB_TO_SIGN"
+
+# Create Private Key object from Private Key Hex String
+signing_key = ecdsa.SigningKey.from_string(bytearray.fromhex(private_key_hex), curve=SECP256k1, hashfunc=hashlib.sha256)
+
+# Use the Private Key to Sign the Transaction Hash
+signed_hash = signing_key.sign_digest(bytearray.fromhex(hash_to_sign), sigencode=sigencode_der)
+
+print("Signed Hash (DER Format): ", signed_hash.hex())
+</code></pre>
+<p>Note: You will need to change the <code>YOUR_PRIVATE_KEY_AS_A_HEX_STRING</code> and <code>HASH_OF_BLOB_TO_SIGN</code> variables</p>
+        </div>
+
+        <meta itemprop='headline' content='How do I locally sign a transaction with a private key?'>
+          <meta itemprop='keywords' content='python, howto, api'>
+
+        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+           <meta itemprop="userInteractionCount" content="2" />
+           <span class='post-likes'>2 Likes</span>
+         </div>
+
+         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
+            <meta itemprop="userInteractionCount" content="0" />
+          </div>
+
+            <div class='crawler-linkback-list' itemscope itemtype='http://schema.org/ItemList'>
+                  <div itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+                    <a href="../../stake-unstake-via-api/445/2.html" itemscope itemtype='http://schema.org/DiscussionForumPosting' itemprop='item'>
+                      <meta itemprop='url' content='https://radixtalk.com/t/stake-unstake-via-api/445/2'>
+                      <span itemprop='name'>Stake / Unstake via API</span>
+                    </a>
+                    <meta itemprop='position' content='2'>
+                  </div>
+            </div>
+      </div>
+      <div id='post_2' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+        <div class='crawler-post-meta'>
+          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop='name' content='RadixTalk'>
+              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+                <meta itemprop='url' content='https://cdn.radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+              </div>
+          </div>
+          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a itemprop="url" href='../../../u/newworld.html'><span itemprop='name'>newworld</span></a>
+            (newworld)
+          </span>
+
+          <link itemprop="mainEntityOfPage" href="../157.html">
+
+
+          <span class="crawler-post-infos">
+              <time itemprop='datePublished' datetime='2022-03-19T13:01:51Z' class='post-time'>
+                19 March 2022 13:01
+              </time>
+              <meta itemprop='dateModified' content='2022-03-19T13:01:51Z'>
+          <span itemprop='position'>#2</span>
+          </span>
+        </div>
+        <div class='post' itemprop='articleBody'>
+          <p>hey, really really stupid question maybe, but: how do I get my private key hex? I only have my node-config file with password protection how can i read the private key from that?.. I’m sorry if that question is stupid but i am a beginner. brgds and thx</p>
+        </div>
+
+        <meta itemprop='headline' content='How do I locally sign a transaction with a private key?'>
+
+        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+           <meta itemprop="userInteractionCount" content="0" />
+           <span class='post-likes'></span>
+         </div>
+
+         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
+            <meta itemprop="userInteractionCount" content="1" />
+          </div>
+
+      </div>
+      <div id='post_3' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+        <div class='crawler-post-meta'>
+          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop='name' content='RadixTalk'>
+              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+                <meta itemprop='url' content='https://cdn.radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+              </div>
+          </div>
+          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a itemprop="url" href='../../../u/Faraz.html'><span itemprop='name'>Faraz</span></a>
+            (Faraz | Radstakes.com)
+          </span>
+
+          <link itemprop="mainEntityOfPage" href="../157.html">
+
+
+          <span class="crawler-post-infos">
+              <time itemprop='datePublished' datetime='2022-03-19T13:46:18Z' class='post-time'>
+                19 March 2022 13:46
+              </time>
+              <meta itemprop='dateModified' content='2022-03-19T13:46:18Z'>
+          <span itemprop='position'>#3</span>
+          </span>
+        </div>
+        <div class='post' itemprop='articleBody'>
+          <p>Hi, if you have your node’s keystore.ks file then you can extract the private key using part of <a class="mention" href="https://radixtalk.com/u/stuart">@Stuart</a>’s unregister script and hex encode it as follows:</p>
+<pre><code class="lang-auto">import bech32
+import ecdsa
+import hashlib
+from cryptography.hazmat.primitives.serialization import pkcs12
+from cryptography.hazmat.primitives.serialization import Encoding, PrivateFormat, NoEncryption
+from cryptography.hazmat.backends import default_backend
+from ecdsa.curves import SECP256k1
+from ecdsa.util import sigencode_der
+import requests
+import json
+
+password = b"&lt;KEYSTORE PASSWORD&gt;"
+
+# Read the Radix Keystore File (which is in PKCS12 format)
+with open("node-keystore.ks", "rb") as f:
+private_key, certificate, additional_certificates = pkcs12.load_key_and_certificates(f.read(), password, default_backend())
+
+# Extract the unencrypted Private Key bytes
+private_key_bytes = private_key.private_bytes(Encoding.DER, PrivateFormat.PKCS8, NoEncryption())
+
+# Convert into Elliptic Curve Digital Signature Algorithm (ecdsa) private key object
+private_key = ecdsa.SigningKey.from_der(private_key_bytes, hashfunc=hashlib.sha256)
+private_key_string = private_key.to_string()
+print("Private Key (Hex): ", private_key_string.hex())
+</code></pre>
+        </div>
+
+        <meta itemprop='headline' content='How do I locally sign a transaction with a private key?'>
+
+        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+           <meta itemprop="userInteractionCount" content="2" />
+           <span class='post-likes'>2 Likes</span>
+         </div>
+
+         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
+            <meta itemprop="userInteractionCount" content="1" />
+          </div>
+
+      </div>
+      <div id='post_4' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+        <div class='crawler-post-meta'>
+          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop='name' content='RadixTalk'>
+              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+                <meta itemprop='url' content='https://cdn.radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+              </div>
+          </div>
+          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a itemprop="url" href='../../../u/Peachy.html'><span itemprop='name'>Peachy</span></a>
+            (Shawn)
+          </span>
+
+          <link itemprop="mainEntityOfPage" href="../157.html">
+
+
+          <span class="crawler-post-infos">
+              <time itemprop='datePublished' datetime='2022-04-06T13:11:55Z' class='post-time'>
+                6 April 2022 13:11
+              </time>
+              <meta itemprop='dateModified' content='2022-04-06T13:11:55Z'>
+          <span itemprop='position'>#4</span>
+          </span>
+        </div>
+        <div class='post' itemprop='articleBody'>
+          <p>REALLY dumb question:<br>
+How do I get the private key from a Desktop Wallet-created address?</p>
+<p>I’m trying to test out doing txns via APIs and that step has me stumped.</p>
+<p>Per this: (Step 2)<br>
+<a href="https://docs.radixdlt.com/main/apis/making-transactions.html" class="onebox" target="_blank" rel="noopener nofollow ugc">https://docs.radixdlt.com/main/apis/making-transactions.html</a></p>
+<p><em>Next, you need to sign the payload_to_sign using the private key of your account (ie. the “from” account). The details of doing so are outside the scope of this doc, but Radix follows a similar signature method as that of Bitcoin, using ECDSA signatures using EC curve “secp256k1”.</em><br>
+<em>The result should be a DER encoded signature in hex that you will use in the following step.</em></p>
+<p>I (obviously) know the 24 words, but how does that translate into the longstring needed?</p>
+<p>No idea how to get that value.</p>
+        </div>
+
+        <meta itemprop='headline' content='How do I locally sign a transaction with a private key?'>
+
+        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+           <meta itemprop="userInteractionCount" content="0" />
+           <span class='post-likes'></span>
+         </div>
+
+         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
+            <meta itemprop="userInteractionCount" content="2" />
+          </div>
+
+      </div>
+      <div id='post_5' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+        <div class='crawler-post-meta'>
+          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop='name' content='RadixTalk'>
+              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+                <meta itemprop='url' content='https://cdn.radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+              </div>
+          </div>
+          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a itemprop="url" href='../../../u/Faraz.html'><span itemprop='name'>Faraz</span></a>
+            (Faraz | Radstakes.com)
+          </span>
+
+          <link itemprop="mainEntityOfPage" href="../157.html">
+
+
+          <span class="crawler-post-infos">
+              <time itemprop='datePublished' datetime='2022-04-06T17:09:21Z' class='post-time'>
+                6 April 2022 17:09
+              </time>
+              <meta itemprop='dateModified' content='2022-04-06T17:09:21Z'>
+          <span itemprop='position'>#5</span>
+          </span>
+        </div>
+        <div class='post' itemprop='articleBody'>
+          <p>Hi Peachy, I had the exact same problem and couldn’t figure it out so just created a development wallet using Stuart’s script here: <a href="../../how-to-create-a-radix-wallet-for-development-purposes/61.html">Development Wallet Creation</a></p>
+<p>This will allow you to create the necessary hex encoded keys to play around with txs using the API.</p>
+<p>I believe 0xOmar in Discord has also created a python library that can extract the private key from the desktop wallet seed, so you could look into that if you want to use the desktop wallet created address.</p>
+        </div>
+
+        <meta itemprop='headline' content='How do I locally sign a transaction with a private key?'>
+
+        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+           <meta itemprop="userInteractionCount" content="0" />
+           <span class='post-likes'></span>
+         </div>
+
+         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
+            <meta itemprop="userInteractionCount" content="1" />
+          </div>
+
+      </div>
+      <div id='post_6' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+        <div class='crawler-post-meta'>
+          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop='name' content='RadixTalk'>
+              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+                <meta itemprop='url' content='https://cdn.radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+              </div>
+          </div>
+          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a itemprop="url" href='../../../u/jonericcook.html'><span itemprop='name'>jonericcook</span></a>
+            (Jon-Eric Cook)
+          </span>
+
+          <link itemprop="mainEntityOfPage" href="../157.html">
+
+
+          <span class="crawler-post-infos">
+              <time itemprop='datePublished' datetime='2022-04-06T18:30:01Z' class='post-time'>
+                6 April 2022 18:30
+              </time>
+              <meta itemprop='dateModified' content='2022-04-06T18:30:01Z'>
+          <span itemprop='position'>#6</span>
+          </span>
+        </div>
+        <div class='post' itemprop='articleBody'>
+          <p>Hi <a class="mention" href="../../../u/peachy.html">@Peachy</a> ! Are you comfortable with the programming languages python or elixir?</p>
+        </div>
+
+        <meta itemprop='headline' content='How do I locally sign a transaction with a private key?'>
+
+        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+           <meta itemprop="userInteractionCount" content="0" />
+           <span class='post-likes'></span>
+         </div>
+
+         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
+            <meta itemprop="userInteractionCount" content="1" />
+          </div>
+
+      </div>
+      <div id='post_8' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+        <div class='crawler-post-meta'>
+          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop='name' content='RadixTalk'>
+              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+                <meta itemprop='url' content='https://cdn.radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+              </div>
+          </div>
+          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a itemprop="url" href='../../../u/Peachy.html'><span itemprop='name'>Peachy</span></a>
+            (Shawn)
+          </span>
+
+          <link itemprop="mainEntityOfPage" href="../157.html">
+
+
+          <span class="crawler-post-infos">
+              <time itemprop='datePublished' datetime='2022-04-06T19:26:33Z' class='post-time'>
+                6 April 2022 19:26
+              </time>
+              <meta itemprop='dateModified' content='2022-04-06T19:26:33Z'>
+          <span itemprop='position'>#8</span>
+          </span>
+        </div>
+        <div class='post' itemprop='articleBody'>
+          <p>Yeah, I read over that, but his steps are a 1-way process:<br>
+Generate hex(private) → generate hex(public) → generate account (RDX…etc)</p>
+<p>Wanting to go backwards is what I’m after.</p>
+        </div>
+
+        <meta itemprop='headline' content='How do I locally sign a transaction with a private key?'>
+
+        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+           <meta itemprop="userInteractionCount" content="0" />
+           <span class='post-likes'></span>
+         </div>
+
+         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
+            <meta itemprop="userInteractionCount" content="0" />
+          </div>
+
+      </div>
+      <div id='post_9' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+        <div class='crawler-post-meta'>
+          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop='name' content='RadixTalk'>
+              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+                <meta itemprop='url' content='https://cdn.radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+              </div>
+          </div>
+          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a itemprop="url" href='../../../u/Peachy.html'><span itemprop='name'>Peachy</span></a>
+            (Shawn)
+          </span>
+
+          <link itemprop="mainEntityOfPage" href="../157.html">
+
+
+          <span class="crawler-post-infos">
+              <time itemprop='datePublished' datetime='2022-04-06T19:27:03Z' class='post-time'>
+                6 April 2022 19:27
+              </time>
+              <meta itemprop='dateModified' content='2022-04-06T19:27:03Z'>
+          <span itemprop='position'>#9</span>
+          </span>
+        </div>
+        <div class='post' itemprop='articleBody'>
+          <p>More comfortable with Python, but it’s been a few years.<br>
+Anything you can provided would be welcomed.<br>
+Thanks!</p>
+        </div>
+
+        <meta itemprop='headline' content='How do I locally sign a transaction with a private key?'>
+
+        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+           <meta itemprop="userInteractionCount" content="0" />
+           <span class='post-likes'></span>
+         </div>
+
+         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
+            <meta itemprop="userInteractionCount" content="0" />
+          </div>
+
+      </div>
+      <div id='post_10' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+        <div class='crawler-post-meta'>
+          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop='name' content='RadixTalk'>
+              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+                <meta itemprop='url' content='https://cdn.radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+              </div>
+          </div>
+          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a itemprop="url" href='../../../u/abel.html'><span itemprop='name'>abel</span></a>
+            (abel)
+          </span>
+
+          <link itemprop="mainEntityOfPage" href="../157.html">
+
+
+          <span class="crawler-post-infos">
+              <time itemprop='datePublished' datetime='2022-04-08T02:13:57Z' class='post-time'>
+                8 April 2022 02:13
+              </time>
+              <meta itemprop='dateModified' content='2022-04-08T02:16:09Z'>
+          <span itemprop='position'>#10</span>
+          </span>
+        </div>
+        <div class='post' itemprop='articleBody'>
+          <p>I use  <code>construction/build</code> to build a tx, it returned  <code>{"unsigned_transaction":"070d8ba1cbec4f2779517da61fb","payload_to_sign":"05a987eec4fa0ea073f5dc68b2689fa19bd03bd35f055da9370a1d5457279342"} </code>,</p>
+<p>then I use construction/submit to send tx , <code>{   "network_identifier": {     "network": "mainnet"   },   "signed_transaction": "07030e70947..." }</code></p>
+<p>by locally signed tx, How to construct the content  signed_transaction of the field？</p>
+<p>How the content of the transaction and the signature of the transaction are structured into one field</p>
+<p><a class="mention" href="https://radixtalk.com/u/faraz">@Faraz</a></p>
+        </div>
+
+        <meta itemprop='headline' content='How do I locally sign a transaction with a private key?'>
+
+        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+           <meta itemprop="userInteractionCount" content="0" />
+           <span class='post-likes'></span>
+         </div>
+
+         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
+            <meta itemprop="userInteractionCount" content="1" />
+          </div>
+
+      </div>
+      <div id='post_11' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+        <div class='crawler-post-meta'>
+          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop='name' content='RadixTalk'>
+              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+                <meta itemprop='url' content='https://cdn.radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+              </div>
+          </div>
+          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a itemprop="url" href='../../../u/Faraz.html'><span itemprop='name'>Faraz</span></a>
+            (Faraz | Radstakes.com)
+          </span>
+
+          <link itemprop="mainEntityOfPage" href="../157.html">
+
+
+          <span class="crawler-post-infos">
+              <time itemprop='datePublished' datetime='2022-04-09T20:00:16Z' class='post-time'>
+                9 April 2022 20:00
+              </time>
+              <meta itemprop='dateModified' content='2022-04-09T20:00:16Z'>
+          <span itemprop='position'>#11</span>
+          </span>
+        </div>
+        <div class='post' itemprop='articleBody'>
+          <p>Once you have the unsigned_transaction blob, you need to finalise the transaction with this along with the signature.  The signature is a hash of your private key and the payload_to_sign from the construction step.  Here’s a python snippet for that part:</p>
+<pre><code class="lang-auto">import ecdsa
+import hashlib
+from ecdsa.curves import SECP256k1
+from ecdsa.util import sigencode_der
+
+private_key_hex = "&lt;enter private key here&gt;"
+hash_to_sign = "&lt;enter payload to sign here&gt;"
+
+# Create Private Key object from Private Key Hex String
+signing_key = ecdsa.SigningKey.from_string(bytearray.fromhex(private_key_hex), curve=SECP256k1, hashfunc=hashlib.sha256)
+# Use the Private Key to Sign the Transaction Hash
+signed_hash = signing_key.sign_digest(bytearray.fromhex(hash_to_sign), sigencode=sigencode_der)
+
+print("Signed Hash (DER Format): ", signed_hash.hex())
+</code></pre>
+        </div>
+
+        <meta itemprop='headline' content='How do I locally sign a transaction with a private key?'>
+
+        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+           <meta itemprop="userInteractionCount" content="0" />
+           <span class='post-likes'></span>
+         </div>
+
+         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
+            <meta itemprop="userInteractionCount" content="1" />
+          </div>
+
+      </div>
+      <div id='post_12' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+        <div class='crawler-post-meta'>
+          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop='name' content='RadixTalk'>
+              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+                <meta itemprop='url' content='https://cdn.radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+              </div>
+          </div>
+          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a itemprop="url" href='../../../u/Faraz.html'><span itemprop='name'>Faraz</span></a>
+            (Faraz | Radstakes.com)
+          </span>
+
+          <link itemprop="mainEntityOfPage" href="../157.html">
+
+
+          <span class="crawler-post-infos">
+              <time itemprop='datePublished' datetime='2022-04-09T20:02:12Z' class='post-time'>
+                9 April 2022 20:02
+              </time>
+              <meta itemprop='dateModified' content='2022-04-09T20:02:12Z'>
+          <span itemprop='position'>#12</span>
+          </span>
+        </div>
+        <div class='post' itemprop='articleBody'>
+          <p>Once you have the signature, the finalise tx is as follows:</p>
+<pre><code class="lang-auto">curl -s POST -k 'https://mainnet-gateway.radixdlt.com/transaction/finalize' -H 'Content-Type: application/json' \
+-d '{
+  "network_identifier": {
+    "network": "mainnet"
+  },
+  "unsigned_transaction": "&lt;unsigned tx blob&gt;",
+  "signature": {
+    "bytes": "&lt;signature from step above&gt;",
+    "public_key": {
+      "hex": "&lt;your public key&gt;"
+    }
+  },
+  "submit": true
+}'
+</code></pre>
+        </div>
+
+        <meta itemprop='headline' content='How do I locally sign a transaction with a private key?'>
+
+        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+           <meta itemprop="userInteractionCount" content="0" />
+           <span class='post-likes'></span>
+         </div>
+
+         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
+            <meta itemprop="userInteractionCount" content="0" />
+          </div>
+
+      </div>
+
+
+
+
+
+
+    </div>
+    <footer class="container wrap">
+  <nav class='crawler-nav'>
+    <ul>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='https://radixtalk.com/' itemprop="url">Home </a>
+        </span>
+      </li>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='https://radixtalk.com/categories' itemprop="url">Categories </a>
+        </span>
+      </li>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='https://radixtalk.com/guidelines' itemprop="url">FAQ/Guidelines </a>
+        </span>
+      </li>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='https://radixtalk.com/tos' itemprop="url">Terms of Service </a>
+        </span>
+      </li>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='https://radixtalk.com/privacy' itemprop="url">Privacy Policy </a>
+        </span>
+      </li>
+    </ul>
+  </nav>
+  <p class='powered-by-link'>Powered by <a href="https://www.discourse.org">Discourse</a>, best viewed with JavaScript enabled</p>
+</footer>
+
+    
+    
+  </body>
+  
+</html>

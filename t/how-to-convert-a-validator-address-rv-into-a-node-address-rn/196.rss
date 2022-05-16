@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>How to convert a Validator Address (rv...) into a Node Address (rn...)</title>
+    <link>https://radixtalk.com/t/how-to-convert-a-validator-address-rv-into-a-node-address-rn/196</link>
+    <description>Both the node address and the validator address are Bech32 encodings of the same compressed public key with different human-readable parts (hrp).
+
+```python
+import bech32
+
+validator_address = &quot;rv1q22ts4wderfhzham0vnzs93g68d5hal3g8yyvv06re8sn88er9ud7yrqayv&quot;
+print(&quot;Validator Address:&quot;, validator_address)
+
+# Extract Valdidator HRP (rv) and Public Key
+_hrp, public_key5 = bech32.bech32_decode(validator_address)
+
+# Re-encode Public Key with Node HRP (rn)
+node_address = bech32.bech32_encode(&quot;rn&quot;, public_key5)
+print(&quot;Node Adddress:&quot;, node_address)
+
+# Returns:
+# Validator Adddress: rv1q22ts4wderfhzham0vnzs93g68d5hal3g8yyvv06re8sn88er9ud7yrqayv
+# Node Address: rn1q22ts4wderfhzham0vnzs93g68d5hal3g8yyvv06re8sn88er9ud7us2dgj
+```
+
+## Run this code on Replit:
+https://replit.com/@radixtalk/Radix-Validator-to-Radix-Node</description>
+    <language>en-GB</language>
+    <lastBuildDate>Tue, 04 Jan 2022 08:44:27 +0000</lastBuildDate>
+    <category>Developers</category>
+    <atom:link href="https://radixtalk.com/t/how-to-convert-a-validator-address-rv-into-a-node-address-rn/196.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>How to convert a Validator Address (rv...) into a Node Address (rn...)</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>Both the node address and the validator address are Bech32 encodings of the same compressed public key with different human-readable parts (hrp).</p>
+<pre><code class="lang-python">import bech32
+
+validator_address = "rv1q22ts4wderfhzham0vnzs93g68d5hal3g8yyvv06re8sn88er9ud7yrqayv"
+print("Validator Address:", validator_address)
+
+# Extract Valdidator HRP (rv) and Public Key
+_hrp, public_key5 = bech32.bech32_decode(validator_address)
+
+# Re-encode Public Key with Node HRP (rn)
+node_address = bech32.bech32_encode("rn", public_key5)
+print("Node Adddress:", node_address)
+
+# Returns:
+# Validator Adddress: rv1q22ts4wderfhzham0vnzs93g68d5hal3g8yyvv06re8sn88er9ud7yrqayv
+# Node Address: rn1q22ts4wderfhzham0vnzs93g68d5hal3g8yyvv06re8sn88er9ud7us2dgj
+</code></pre>
+<h2>
+<a name="run-this-code-on-replit-1" class="anchor" href="https://radixtalk.com#run-this-code-on-replit-1"></a>Run this code on Replit:</h2>
+<p><iframe src="https://replit.com/@radixtalk/Radix-Validator-to-Radix-Node?lite=true" width="695" height="521" frameborder="0" seamless="seamless" sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox allow-presentation"></iframe></p>
+          <p><a href="https://radixtalk.com/t/how-to-convert-a-validator-address-rv-into-a-node-address-rn/196/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-to-convert-a-validator-address-rv-into-a-node-address-rn/196/1</link>
+        <pubDate>Sun, 02 Jan 2022 15:08:27 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-196-1</guid>
+        <source url="https://radixtalk.com/t/how-to-convert-a-validator-address-rv-into-a-node-address-rn/196.rss">How to convert a Validator Address (rv...) into a Node Address (rn...)</source>
+      </item>
+  </channel>
+</rss>

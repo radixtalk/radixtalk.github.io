@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Why does my plain text transaction message show as encrypted in the wallet and Radix Explorer?</title>
+    <link>https://radixtalk.com/t/why-does-my-plain-text-transaction-message-show-as-encrypted-in-the-wallet-and-radix-explorer/205</link>
+    <description>There is a bug in the [Radix javascript library](https://github.com/radixdlt/radixdlt-javascript) that causes a plain text (unencrypted) message that starts with the digit `1` to be incorrectly be identified as an encrypted message.
+
+For example, the message `1 ring to rule them all` would be incorrectly interpreted as being an encrypted message.
+
+This is a display bug only. The actual on-ledger data is correctly saved as plain text and will display correctly in the wallet and explorer when the Radix javascript library is fixed.
+
+### Workaround:
+Do not start messages with the digit `1` until the Radix javascript library is updated.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Tue, 04 Jan 2022 09:00:28 +0000</lastBuildDate>
+    <category>Questions / Help</category>
+    <atom:link href="https://radixtalk.com/t/why-does-my-plain-text-transaction-message-show-as-encrypted-in-the-wallet-and-radix-explorer/205.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Why does my plain text transaction message show as encrypted in the wallet and Radix Explorer?</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>There is a bug in the <a href="https://github.com/radixdlt/radixdlt-javascript">Radix javascript library</a> that causes a plain text (unencrypted) message that starts with the digit <code>1</code> to be incorrectly be identified as an encrypted message.</p>
+<p>For example, the message <code>1 ring to rule them all</code> would be incorrectly interpreted as being an encrypted message.</p>
+<p>This is a display bug only. The actual on-ledger data is correctly saved as plain text and will display correctly in the wallet and explorer when the Radix javascript library is fixed.</p>
+<h3>
+<a name="workaround-1" class="anchor" href="https://radixtalk.com#workaround-1"></a>Workaround:</h3>
+<p>Do not start messages with the digit <code>1</code> until the Radix javascript library is updated.</p>
+          <p><a href="https://radixtalk.com/t/why-does-my-plain-text-transaction-message-show-as-encrypted-in-the-wallet-and-radix-explorer/205/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/why-does-my-plain-text-transaction-message-show-as-encrypted-in-the-wallet-and-radix-explorer/205/1</link>
+        <pubDate>Tue, 04 Jan 2022 09:00:28 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-205-1</guid>
+        <source url="https://radixtalk.com/t/why-does-my-plain-text-transaction-message-show-as-encrypted-in-the-wallet-and-radix-explorer/205.rss">Why does my plain text transaction message show as encrypted in the wallet and Radix Explorer?</source>
+      </item>
+  </channel>
+</rss>

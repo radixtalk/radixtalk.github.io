@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <title>Comparison of compression tools for taking snapshots of Radix database - Validators - RadixTalk</title>
+    <meta name="description" content="RadixPool is planning to host snapshots of the Radix node database on a Content Delivery Network (CDN) to allow Radix validator nodes to quickly recover from a corrupted database. 
+We compared a number of compression too&amp;hellip;">
+    <meta name="generator" content="Discourse 2.9.0.beta4 - https://github.com/discourse/discourse version 8ce29a4a2264ea472a8151bfe2e591ab1101cfeb">
+<link rel="icon" type="image/png" href="https://cdn.radixtalk.com/uploads/default/optimized/1X/023c6f3e74bac599c495c37eecd72f939f3fab87_2_32x32.png">
+<link rel="apple-touch-icon" type="image/png" href="https://cdn.radixtalk.com/uploads/default/optimized/1X/ad9adb26331754b0012edbc9b4796de8dc449fa8_2_180x180.png">
+<meta name="theme-color" content="#ffffff">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<link rel="canonical" href="217.html" />
+<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebSite","url":"https://radixtalk.com","potentialAction":{"@type":"SearchAction","target":"https://radixtalk.com/search?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<link rel="search" type="application/opensearchdescription+xml" href="../../opensearch.xml" title="RadixTalk Search">
+
+    <link href="https://cdn.radixtalk.com/stylesheets/color_definitions_light_4_1_41174e1f8711476b3393f07571899954e9737309.css?__ws=radixtalk.com" media="all" rel="stylesheet" class="light-scheme"/>
+
+  <link href="https://cdn.radixtalk.com/stylesheets/desktop_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="desktop"  />
+
+
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-akismet_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-akismet"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-automation_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-automation"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-cakeday_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-cakeday"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-canned-replies_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-canned-replies"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-checklist_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-checklist"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-data-explorer_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-data-explorer"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-details_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-details"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-docs_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-docs"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-follow_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-follow"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-fontawesome-pro_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-fontawesome-pro"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-footnote_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-footnote"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-local-dates_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-local-dates"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-presence_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-presence"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-rss-polling_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-rss-polling"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-saved-searches_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-saved-searches"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-solved_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-solved"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-tooltips_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-tooltips"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-user-notes_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-user-notes"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-voting_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-voting"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-whos-online_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-whos-online"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/lazy-yt_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="lazy-yt"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/poll_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="poll"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-voting_desktop_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-voting_desktop"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/poll_desktop_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="poll_desktop"  />
+
+  <link href="https://cdn.radixtalk.com/stylesheets/desktop_theme_1_263bf35b28bc3c889d3c5ea8d6e1c519621916e1.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="desktop_theme" data-theme-id="1" data-theme-name="default"/>
+
+    <script defer="" data-domain="radixtalk.com" src="https://plausible.io/js/plausible.hash.js"></script>
+
+    
+        <link rel="alternate nofollow" type="application/rss+xml" title="RSS feed of &#39;Comparison of compression tools for taking snapshots of Radix database&#39;" href="217.rss" />
+    <meta property="og:site_name" content="RadixTalk" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:image" content="https://cdn.radixtalk.com/uploads/default/original/1X/9e3624f2a5d4052091ba93563043c233df535486.png" />
+<meta property="og:image" content="https://cdn.radixtalk.com/uploads/default/original/1X/9e3624f2a5d4052091ba93563043c233df535486.png" />
+<meta property="og:url" content="https://radixtalk.com/t/comparison-of-compression-tools-for-taking-snapshots-of-radix-database/217" />
+<meta name="twitter:url" content="https://radixtalk.com/t/comparison-of-compression-tools-for-taking-snapshots-of-radix-database/217" />
+<meta property="og:title" content="Comparison of compression tools for taking snapshots of Radix database" />
+<meta name="twitter:title" content="Comparison of compression tools for taking snapshots of Radix database" />
+<meta property="og:description" content="RadixPool is planning to host snapshots of the Radix node database on a Content Delivery Network (CDN) to allow Radix validator nodes to quickly recover from a corrupted database.  We compared a number of compression tools on a 43Gb copy of the Radix database and recorded the following results:      Algorithm Tool Options Compress Size (bytes) Decompress 10Mbits/s 50Mbit/s 100Mbit/s     - - - - 45,652,470,885 - 10h08m 2h01m 1h00m   gzip gzip  19m35s 25,009,428,317 3m50s 5h34m 1h07m 0h34m   gzip p..." />
+<meta name="twitter:description" content="RadixPool is planning to host snapshots of the Radix node database on a Content Delivery Network (CDN) to allow Radix validator nodes to quickly recover from a corrupted database.  We compared a number of compression tools on a 43Gb copy of the Radix database and recorded the following results:      Algorithm Tool Options Compress Size (bytes) Decompress 10Mbits/s 50Mbit/s 100Mbit/s     - - - - 45,652,470,885 - 10h08m 2h01m 1h00m   gzip gzip  19m35s 25,009,428,317 3m50s 5h34m 1h07m 0h34m   gzip p..." />
+<meta name="twitter:label1" value="Reading time" />
+<meta name="twitter:data1" value="1 mins 🕑" />
+<meta name="twitter:label2" value="Likes" />
+<meta name="twitter:data2" value="2 ❤" />
+<meta property="article:published_time" content="2022-01-07T09:41:28+00:00" />
+<meta property="og:ignore_canonical" content="true" />
+
+
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"QAPage","name":"Comparison of compression tools for taking snapshots of Radix database","mainEntity":{"@type":"Question","name":"Comparison of compression tools for taking snapshots of Radix database","text":"RadixPool is planning to host snapshots of the Radix node database on a Content Delivery Network (CDN) to allow Radix validator nodes to quickly recover from a corrupted database.\n\nWe compared a number of compression tools on a 43Gb copy of the Radix database and recorded the following results:\n\n&hellip;","upvoteCount":2,"answerCount":0,"dateCreated":"2022-01-07T09:41:28.055Z","author":{"@type":"Person","name":"Stuart | RadixPool"}}}</script>
+  </head>
+  <body class="crawler">
+    
+    <header>
+  <a href="https://radixtalk.com/">
+    <h1>RadixTalk</h1>
+  </a>
+</header>
+
+    <div id="main-outlet" class="wrap" role="main">
+        <div id="topic-title">
+    <h1>
+      <a href="217.html">Comparison of compression tools for taking snapshots of Radix database</a>
+    </h1>
+
+      <div class="topic-category" itemscope itemtype="http://schema.org/BreadcrumbList">
+          <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+            <a href="https://radixtalk.com/c/validators/16" class="badge-wrapper bullet" itemprop="item">
+              <span class='badge-category-bg' style='background-color: #0088CC'></span>
+              <span class='badge-category clear-badge'>
+                <span class='category-name' itemprop='name'>Validators</span>
+              </span>
+            </a>
+            <meta itemprop="position" content="1" />
+          </span>
+      </div>
+
+      <div class="topic-category">
+        <div class='discourse-tags list-tags'>
+            <a href='../../tag/database.html' class='discourse-tag' rel="tag">database</a>, 
+            <a href='../../tag/snapshot.html' class='discourse-tag' rel="tag">snapshot</a>
+        </div>
+      </div>
+  </div>
+
+  
+
+
+      <div id='post_1' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+        <div class='crawler-post-meta'>
+          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop='name' content='RadixTalk'>
+              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+                <meta itemprop='url' content='https://cdn.radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+              </div>
+          </div>
+          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a itemprop="url" href='../../u/Stuart.html'><span itemprop='name'>Stuart</span></a>
+            (Stuart | RadixPool)
+          </span>
+
+          <link itemprop="mainEntityOfPage" href="217.html">
+
+
+          <span class="crawler-post-infos">
+              <time itemprop='datePublished' datetime='2022-01-07T09:41:28Z' class='post-time'>
+                7 January 2022 09:41
+              </time>
+              <meta itemprop='dateModified' content='2022-01-07T19:50:26Z'>
+          <span itemprop='position'>#1</span>
+          </span>
+        </div>
+        <div class='post' itemprop='articleBody'>
+          <p>RadixPool is planning to host snapshots of the Radix node database on a Content Delivery Network (CDN) to allow Radix validator nodes to quickly recover from a corrupted database.</p>
+<p>We compared a number of compression tools on a 43Gb copy of the Radix database and recorded the following results:</p>
+<div class="md-table">
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Tool</th>
+<th>Options</th>
+<th>Compress</th>
+<th>Size (bytes)</th>
+<th>Decompress</th>
+<th>10Mbits/s</th>
+<th>50Mbit/s</th>
+<th>100Mbit/s</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>45,652,470,885</td>
+<td>-</td>
+<td>10h08m</td>
+<td>2h01m</td>
+<td>1h00m</td>
+</tr>
+<tr>
+<td>gzip</td>
+<td>gzip</td>
+<td></td>
+<td>19m35s</td>
+<td>25,009,428,317</td>
+<td>3m50s</td>
+<td>5h34m</td>
+<td>1h07m</td>
+<td>0h34m</td>
+</tr>
+<tr>
+<td>gzip</td>
+<td><a href="https://zlib.net/pigz/">pigz</a></td>
+<td></td>
+<td>2m32s</td>
+<td>24,962,921,223</td>
+<td>1m58s</td>
+<td>5h33m</td>
+<td>1h07m</td>
+<td>0h34m</td>
+</tr>
+<tr>
+<td>gzip</td>
+<td><a href="https://zlib.net/pigz/">pigz</a></td>
+<td><code>--best</code></td>
+<td>6m37s</td>
+<td>24,932,450,560</td>
+<td>2m10s</td>
+<td>5h32m</td>
+<td>1h07m</td>
+<td>0h34m</td>
+</tr>
+<tr>
+<td>xz</td>
+<td><a href="https://github.com/vasi/pixz">pixz</a></td>
+<td></td>
+<td>21m33s</td>
+<td>21,702,409,016</td>
+<td>1m38s</td>
+<td>4h49m</td>
+<td>0h57m</td>
+<td>0h28m</td>
+</tr>
+<tr>
+<td>xz</td>
+<td><a href="https://github.com/vasi/pixz">pixz</a></td>
+<td><code>-9 -p8</code></td>
+<td>42m58s</td>
+<td>21,412,039,372</td>
+<td>1m39s</td>
+<td>4h45m</td>
+<td>0h57m</td>
+<td>0h28m</td>
+</tr>
+<tr>
+<td>7z</td>
+<td><a href="https://www.7-zip.org/">7z</a></td>
+<td></td>
+<td>20m50s</td>
+<td>21,683,532,361</td>
+<td>16m15s</td>
+<td>4h49m</td>
+<td>0h57m</td>
+<td>0h28m</td>
+</tr>
+<tr>
+<td>7z</td>
+<td><a href="https://www.7-zip.org/">7z</a></td>
+<td><code>-m0=lzma2 -mx</code></td>
+<td>35m57s</td>
+<td>21,367,916,757</td>
+<td>16m01s</td>
+<td>4h44m</td>
+<td>0h56m</td>
+<td>0h28m</td>
+</tr>
+<tr>
+<td>zstd</td>
+<td><a href="https://facebook.github.io/zstd/">zstd</a></td>
+<td><code>--fast=1</code></td>
+<td>1m26s</td>
+<td>24,062,687,524</td>
+<td>1m13s</td>
+<td>5h20m</td>
+<td>1h04m</td>
+<td>0h32m</td>
+</tr>
+<tr>
+<td>zstd</td>
+<td><a href="https://facebook.github.io/zstd/">zstd</a></td>
+<td></td>
+<td>2m53s</td>
+<td>23,032,636,843</td>
+<td>1m23s</td>
+<td>5h07m</td>
+<td>1h01m</td>
+<td>0h30m</td>
+</tr>
+<tr>
+<td>zstd</td>
+<td><a href="https://facebook.github.io/zstd/">zstd</a></td>
+<td><code>--long</code></td>
+<td>4m53s</td>
+<td>22,743,480,552</td>
+<td>1m26s</td>
+<td>5h03m</td>
+<td>1h00m</td>
+<td>0h30m</td>
+</tr>
+<tr>
+<td>zstd</td>
+<td><a href="https://facebook.github.io/zstd/">zstd</a></td>
+<td><code>-19 -T8</code></td>
+<td>39m25s</td>
+<td>21,999,437,864</td>
+<td>1m32s</td>
+<td>4h53m</td>
+<td>0h58m</td>
+<td>0h29m</td>
+</tr>
+</tbody>
+</table>
+</div><h3>
+<a name="results-1" class="anchor" href="217.html#results-1"></a>Results</h3>
+<p>The xz algorithm was selected for Radix database compression for it’s high compression ratio and fast decompression speed. xz has binaries for Linux and Windows.</p>
+<h3>
+<a name="not-tested-2" class="anchor" href="217.html#not-tested-2"></a>Not Tested:</h3>
+<ul>
+<li><a href="https://www.nongnu.org/lzip/plzip.html">lzip</a></li>
+<li><a href="https://sourceware.org/bzip2/">bzip2</a></li>
+<li><a href="https://lz4.github.io/lz4/">lz4</a></li>
+</ul>
+<h2>
+<a name="further-reading-3" class="anchor" href="217.html#further-reading-3"></a>Further Reading:</h2>
+<ul>
+<li><a href="https://linuxreviews.org/Comparison_of_Compression_Algorithms" class="inline-onebox">Comparison of Compression Algorithms - LinuxReviews</a></li>
+<li><a href="https://www.omnicalculator.com/other/download-time" class="inline-onebox">Download Time Calculator</a></li>
+</ul>
+        </div>
+
+        <meta itemprop='headline' content='Comparison of compression tools for taking snapshots of Radix database'>
+          <meta itemprop='keywords' content='database, snapshot'>
+
+        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+           <meta itemprop="userInteractionCount" content="2" />
+           <span class='post-likes'>2 Likes</span>
+         </div>
+
+         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
+            <meta itemprop="userInteractionCount" content="0" />
+          </div>
+
+            <div class='crawler-linkback-list' itemscope itemtype='http://schema.org/ItemList'>
+                  <div itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+                    <a href="../radix-database-snapshots-now-available-at-radixpool/220.html" itemscope itemtype='http://schema.org/DiscussionForumPosting' itemprop='item'>
+                      <meta itemprop='url' content='https://radixtalk.com/t/radix-database-snapshots-now-available-at-radixpool/220'>
+                      <span itemprop='name'>Radix database snapshots now available at RadixPool</span>
+                    </a>
+                    <meta itemprop='position' content='10'>
+                  </div>
+            </div>
+      </div>
+
+
+
+
+
+
+    </div>
+    <footer class="container wrap">
+  <nav class='crawler-nav'>
+    <ul>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='https://radixtalk.com/' itemprop="url">Home </a>
+        </span>
+      </li>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='https://radixtalk.com/categories' itemprop="url">Categories </a>
+        </span>
+      </li>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='https://radixtalk.com/guidelines' itemprop="url">FAQ/Guidelines </a>
+        </span>
+      </li>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='https://radixtalk.com/tos' itemprop="url">Terms of Service </a>
+        </span>
+      </li>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='https://radixtalk.com/privacy' itemprop="url">Privacy Policy </a>
+        </span>
+      </li>
+    </ul>
+  </nav>
+  <p class='powered-by-link'>Powered by <a href="https://www.discourse.org">Discourse</a>, best viewed with JavaScript enabled</p>
+</footer>
+
+    
+    
+  </body>
+  
+</html>

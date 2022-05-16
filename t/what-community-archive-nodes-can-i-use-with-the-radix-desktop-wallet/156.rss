@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>What community archive nodes can I use with the Radix Desktop Wallet?</title>
+    <link>https://radixtalk.com/t/what-community-archive-nodes-can-i-use-with-the-radix-desktop-wallet/156</link>
+    <description>Some Validators run public, community archive nodes that may be useful when there is a lot of demand on the official Radix Archive Nodes:
+
+**Risk Warning - whilst the archive nodes listed below are run by known, long serving community members, please be advised that they are not official Radix nodes and so do require a certain amount of trust.  There is an element of risk in the unlikely event that a community archive node runner acted maliciously.**
+
+### Community Archive Nodes (MAINNET)
+
+* `https://api.radix.community`
+* `https://archive.stakesafe.net`
+* `https://node.radixscan.io`
+* `https://node.caviarnine.com`
+
+### Changing the Radix Wallet Archive Node:
+Open the Radix Wallet application, then:
+
+1. Select **Wallet Settings**
+2. Select the **Choose Node/Network** tab
+3. Type in one of the Community Archive node addresses from the list above
+4. Click the **+ add node** button
+
+![wallet_choose_node|690x407](upload://zNWZbbQwM2BMdnriD22pV6tW3le.jpeg)
+
+5. Click the **Connect to MAINNET** button to confirm Archive Node Change
+
+![wallet_confirm_node|690x408, 50%](upload://30fMZVZ33KiHFyQgtyOrXT18UdP.png)
+
+6. The wallet will restart and you will be prompted to enter your password again
+
+![Screenshot 2022-01-01 at 12.14.19|690x449, 50%](upload://tOmZBcyEiHJemH0fsYT1DOuD7w6.png)
+
+### About the Community Archive Nodes
+* [api.radix.community](https://radix.community)
+* [archive.stakesafe.net](https://archive.stakesafe.net)
+* [node.radixscan.io](https://www.radixscan.io/EmmogluStakeryArchiveNode.shtml)
+* [node.caviarnine.com](https://caviarnine.com/#nodes)</description>
+    <language>en-GB</language>
+    <lastBuildDate>Sun, 02 Jan 2022 20:45:19 +0000</lastBuildDate>
+    <category>Questions / Help</category>
+    <atom:link href="https://radixtalk.com/t/what-community-archive-nodes-can-i-use-with-the-radix-desktop-wallet/156.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>What community archive nodes can I use with the Radix Desktop Wallet?</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>Some Validators run public, community archive nodes that may be useful when there is a lot of demand on the official Radix Archive Nodes:</p>
+<p><strong>Risk Warning - whilst the archive nodes listed below are run by known, long serving community members, please be advised that they are not official Radix nodes and so do require a certain amount of trust.  There is an element of risk in the unlikely event that a community archive node runner acted maliciously.</strong></p>
+<h3>
+<a name="community-archive-nodes-mainnet-1" class="anchor" href="https://radixtalk.com#community-archive-nodes-mainnet-1"></a>Community Archive Nodes (MAINNET)</h3>
+<ul>
+<li><code>https://api.radix.community</code></li>
+<li><code>https://archive.stakesafe.net</code></li>
+<li><code>https://node.radixscan.io</code></li>
+<li><code>https://node.caviarnine.com</code></li>
+</ul>
+<h3>
+<a name="changing-the-radix-wallet-archive-node-2" class="anchor" href="https://radixtalk.com#changing-the-radix-wallet-archive-node-2"></a>Changing the Radix Wallet Archive Node:</h3>
+<p>Open the Radix Wallet application, then:</p>
+<ol>
+<li>Select <strong>Wallet Settings</strong>
+</li>
+<li>Select the <strong>Choose Node/Network</strong> tab</li>
+<li>Type in one of the Community Archive node addresses from the list above</li>
+<li>Click the <strong>+ add node</strong> button</li>
+</ol>
+<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://radixtalk.com/uploads/default/original/1X/faf198d4868a64bd116189d540dcc26ac3720b30.jpeg" data-download-href="https://radixtalk.com/uploads/default/faf198d4868a64bd116189d540dcc26ac3720b30" title="wallet_choose_node"><img src="https://radixtalk.com/uploads/default/optimized/1X/faf198d4868a64bd116189d540dcc26ac3720b30_2_690x407.jpeg" alt="wallet_choose_node" data-base62-sha1="zNWZbbQwM2BMdnriD22pV6tW3le" width="690" height="407" srcset="https://radixtalk.com/uploads/default/optimized/1X/faf198d4868a64bd116189d540dcc26ac3720b30_2_690x407.jpeg, https://radixtalk.com/uploads/default/optimized/1X/faf198d4868a64bd116189d540dcc26ac3720b30_2_1035x610.jpeg 1.5x, https://radixtalk.com/uploads/default/optimized/1X/faf198d4868a64bd116189d540dcc26ac3720b30_2_1380x814.jpeg 2x" data-small-upload="https://radixtalk.com/uploads/default/optimized/1X/faf198d4868a64bd116189d540dcc26ac3720b30_2_10x10.png"></a></div><p></p>
+<ol start="5">
+<li>Click the <strong>Connect to MAINNET</strong> button to confirm Archive Node Change</li>
+</ol>
+<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://radixtalk.com/uploads/default/original/1X/150de458b1182506a12ae71ca6a937309cfa0469.png" data-download-href="https://radixtalk.com/uploads/default/150de458b1182506a12ae71ca6a937309cfa0469" title="wallet_confirm_node"><img src="https://radixtalk.com/uploads/default/optimized/1X/150de458b1182506a12ae71ca6a937309cfa0469_2_345x204.png" alt="wallet_confirm_node" data-base62-sha1="30fMZVZ33KiHFyQgtyOrXT18UdP" width="345" height="204" srcset="https://radixtalk.com/uploads/default/optimized/1X/150de458b1182506a12ae71ca6a937309cfa0469_2_345x204.png, https://radixtalk.com/uploads/default/optimized/1X/150de458b1182506a12ae71ca6a937309cfa0469_2_517x306.png 1.5x, https://radixtalk.com/uploads/default/optimized/1X/150de458b1182506a12ae71ca6a937309cfa0469_2_690x408.png 2x" data-small-upload="https://radixtalk.com/uploads/default/optimized/1X/150de458b1182506a12ae71ca6a937309cfa0469_2_10x10.png"></a></div><p></p>
+<ol start="6">
+<li>The wallet will restart and you will be prompted to enter your password again</li>
+</ol>
+<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://radixtalk.com/uploads/default/original/1X/d0f0b11683c2ded504f3911ab642ad4ec769388a.png" data-download-href="https://radixtalk.com/uploads/default/d0f0b11683c2ded504f3911ab642ad4ec769388a" title="Screenshot 2022-01-01 at 12.14.19"><img src="https://radixtalk.com/uploads/default/optimized/1X/d0f0b11683c2ded504f3911ab642ad4ec769388a_2_345x224.png" alt="Screenshot 2022-01-01 at 12.14.19" data-base62-sha1="tOmZBcyEiHJemH0fsYT1DOuD7w6" width="345" height="224" srcset="https://radixtalk.com/uploads/default/optimized/1X/d0f0b11683c2ded504f3911ab642ad4ec769388a_2_345x224.png, https://radixtalk.com/uploads/default/optimized/1X/d0f0b11683c2ded504f3911ab642ad4ec769388a_2_517x336.png 1.5x, https://radixtalk.com/uploads/default/optimized/1X/d0f0b11683c2ded504f3911ab642ad4ec769388a_2_690x448.png 2x" data-small-upload="https://radixtalk.com/uploads/default/optimized/1X/d0f0b11683c2ded504f3911ab642ad4ec769388a_2_10x10.png"></a></div><p></p>
+<h3>
+<a name="about-the-community-archive-nodes-3" class="anchor" href="https://radixtalk.com#about-the-community-archive-nodes-3"></a>About the Community Archive Nodes</h3>
+<ul>
+<li><a href="https://radix.community">api.radix.community</a></li>
+<li><a href="https://archive.stakesafe.net">archive.stakesafe.net</a></li>
+<li><a href="https://www.radixscan.io/EmmogluStakeryArchiveNode.shtml">node.radixscan.io</a></li>
+<li><a href="https://caviarnine.com/#nodes">node.caviarnine.com</a></li>
+</ul>
+          <p><a href="https://radixtalk.com/t/what-community-archive-nodes-can-i-use-with-the-radix-desktop-wallet/156/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/what-community-archive-nodes-can-i-use-with-the-radix-desktop-wallet/156/1</link>
+        <pubDate>Wed, 29 Dec 2021 13:35:47 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-156-1</guid>
+        <source url="https://radixtalk.com/t/what-community-archive-nodes-can-i-use-with-the-radix-desktop-wallet/156.rss">What community archive nodes can I use with the Radix Desktop Wallet?</source>
+      </item>
+  </channel>
+</rss>

@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>How to unregister a Validator Node using the Keystore file</title>
+    <link>https://radixtalk.com/t/how-to-unregister-a-validator-node-using-the-keystore-file/64</link>
+    <description>The script below will unregister a validator node given its node-keystore.ks file and password. This is really only for emergency use where you&#39;re unable to unregister a node because it is still syncing.
+
+The script reads the node-keystore.ks file which is in a PKCS12 format, extracts its private key, generates the corresponding public key, validator address and validator wallet address. Then using this data it submits a build transaction request to https://mainnet.radixdlt.com/construction with an UnregisterValidator action.
+
+The response is read, the blobToSign is signed using the keystore private key, and a finalize transaction request is built and submitted to https://mainnet.radixdlt.com/construction again.
+
+*Ensure that your validator wallet address has at least 5.1 XRD to successfully unregister the node. You will require an additional 5.1 XRD to re-register the node again later
+
+```python
+import bech32
+import ecdsa
+import hashlib
+from cryptography.hazmat.primitives.serialization import pkcs12
+from cryptography.hazmat.primitives.serialization import Encoding, PrivateFormat, NoEncryption
+from cryptography.hazmat.backends import default_backend
+from ecdsa.curves import SECP256k1
+from ecdsa.util import sigencode_der
+from getpass import getpass
+
+import requests
+import json
+
+print (&quot;Enter your Keystore Password:&quot;)
+pw = getpass()
+
+password = pw.encode()
+
+# Read the Radix Keystore File (which is in PKCS12 format)
+with open(&quot;node-keystore.ks&quot;, &quot;rb&quot;) as f:
+  private_key, certificate, additional_certificates = pkcs12.load_key_and_certificates(f.read(), password, default_backend())
+
+# Extract the unencrypted Private Key bytes
+private_key_bytes = private_key.private_bytes(Encoding.DER, PrivateFormat.PKCS8, NoEncryption())
+
+# Convert into Elliptic Curve Digital Signature Algorithm (ecdsa) private key object
+private_key = ecdsa.SigningKey.from_der(private_key_bytes, hashfunc=hashlib.sha256)
+
+# Derive public key from private key
+verifying_key = private_key.get_verifying_key()
+
+# Convert public key into compressed format so that we can generate the Validator Address
+public_key_compressed_bytes = verifying_key.to_string(&quot;compressed&quot;)
+public_key_compressed_bytes_hex = public_key_compressed_bytes.hex()
+print(&quot;Validator Public Key (Compressed): &quot;, public_key_compressed_bytes_hex)
+
+# Generate Validator Address from the Compressed Public Key
+public_key_bytes5 = bech32.convertbits(public_key_compressed_bytes, 8, 5)
+validator_address = bech32.bech32_encode(&quot;rv&quot;, public_key_bytes5)
+print(&quot;Validator Address: &quot;, validator_address)
+
+# Convert Compressed Public Key into a Radix Engine Address
+readdr_bytes = b&quot;\x04&quot; + public_key_compressed_bytes
+
+# Convert Radix Engine Address into Validator Wallet Address
+readdr_bytes5 = bech32.convertbits(readdr_bytes, 8, 5)
+validator_wallet_address = bech32.bech32_encode(&quot;rdx&quot;, readdr_bytes5)
+print(&quot;Validator Wallet Address: &quot;, validator_wallet_address)
+
+# Construct RPC request
+data = f&quot;&quot;&quot;
+   {{
+  &quot;network_identifier&quot;: {{
+    &quot;network&quot;: &quot;mainnet&quot;
+  }},
+  &quot;actions&quot;: [
+    {{
+      &quot;type&quot;: &quot;UnregisterValidator&quot;,
+      &quot;validator&quot;: {{
+        &quot;address&quot;: &quot;{validator_address}&quot;
+      }}
+    }}
+  ],
+  &quot;fee_payer&quot;: {{
+    &quot;address&quot;: &quot;{validator_wallet_address}&quot;
+  }},
+  &quot;disable_token_mint_and_burn&quot;: true
+ }}
+&quot;&quot;&quot;
+
+print(&quot;Build Transaction Request JSON: &quot;, data)
+
+req = requests.Request(&#39;POST&#39;, &#39;https://mainnet-gateway.radixdlt.com/transaction/build&#39;, data=data)
+prepared = req.prepare()
+prepared.headers[&#39;Content-Type&#39;] = &#39;application/json&#39;
+s = requests.Session()
+
+# Send Request to Unregister Validator
+resp = s.send(prepared)
+
+# Get JSON Response
+resp_json = resp.json()
+print(&quot;Build Transaction Response JSON: \n&quot;, json.dumps(resp_json, indent=3))
+
+# Extract fields from JSON Response
+blob = resp_json[&#39;transaction_build&#39;][&#39;unsigned_transaction&#39;]
+blob_to_sign = resp_json[&#39;transaction_build&#39;][&#39;payload_to_sign&#39;]
+
+# Sign the blob_to_sign with the Keystore Private Key and convert to DER format
+signature_der = private_key.sign_digest(bytearray.fromhex(blob_to_sign), sigencode=sigencode_der).hex()
+
+# Finalize RPC Request
+data = f&quot;&quot;&quot;
+{{
+      &quot;network_identifier&quot;:{{
+        &quot;network&quot;: &quot;mainnet&quot;
+      }},
+      &quot;unsigned_transaction&quot;: &quot;{blob}&quot;,
+      &quot;signature&quot;: {{
+         &quot;bytes&quot;: &quot;{signature_der}&quot;,
+         &quot;public_key&quot;: {{
+           &quot;hex&quot;: &quot;{public_key_compressed_bytes_hex}&quot;
+    }}
+  }},
+  &quot;submit&quot;: true
+}}
+&quot;&quot;&quot;
+print(&quot;Finalize Transaction Request JSON: &quot;, data)
+
+req = requests.Request(&#39;POST&#39;, &#39;https://mainnet-gateway.radixdlt.com/transaction/finalize&#39;, data=data)
+prepared = req.prepare()
+prepared.headers[&#39;Content-Type&#39;] = &#39;application/json&#39;
+s = requests.Session()
+
+# Send Request to Unregister Validator
+resp = s.send(prepared)
+
+# Get JSON Response
+resp_json = resp.json()
+print(&quot;Finalize Transaction Response JSON: \n&quot;, json.dumps(resp_json, indent=3))
+```
+
+**Updates:**
+* 2022-02-25: Changed to use new Gateway API (Thanks @Faraz)
+
+This work by [RadixPool.com](https://radixpool.com) is licensed under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).</description>
+    <language>en-GB</language>
+    <lastBuildDate>Tue, 01 Feb 2022 10:02:05 +0000</lastBuildDate>
+    <category>Validators</category>
+    <atom:link href="https://radixtalk.com/t/how-to-unregister-a-validator-node-using-the-keystore-file/64.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>How to unregister a Validator Node using the Keystore file</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>The script will still work whilst <a href="http://mainnet.radixdlt.com">mainnet.radixdlt.com</a> is still supporting the old archive nodes.</p>
+<p>I’ll make sure I add a new version that supports the new api before the old archive nodes are retired.</p>
+          <p><a href="https://radixtalk.com/t/how-to-unregister-a-validator-node-using-the-keystore-file/64/3">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-to-unregister-a-validator-node-using-the-keystore-file/64/3</link>
+        <pubDate>Tue, 01 Feb 2022 10:02:05 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-64-3</guid>
+        <source url="https://radixtalk.com/t/how-to-unregister-a-validator-node-using-the-keystore-file/64.rss">How to unregister a Validator Node using the Keystore file</source>
+      </item>
+      <item>
+        <title>How to unregister a Validator Node using the Keystore file</title>
+        <dc:creator><![CDATA[Mattia | MattiaNode]]></dc:creator>
+        <description><![CDATA[
+            <p>Hi Stuart, thank you for the great script. Do you know if it’s still working, with the new API?</p>
+          <p><a href="https://radixtalk.com/t/how-to-unregister-a-validator-node-using-the-keystore-file/64/2">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-to-unregister-a-validator-node-using-the-keystore-file/64/2</link>
+        <pubDate>Tue, 01 Feb 2022 09:48:22 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-64-2</guid>
+        <source url="https://radixtalk.com/t/how-to-unregister-a-validator-node-using-the-keystore-file/64.rss">How to unregister a Validator Node using the Keystore file</source>
+      </item>
+      <item>
+        <title>How to unregister a Validator Node using the Keystore file</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>The script below will unregister a validator node given its node-keystore.ks file and password. This is really only for emergency use where you’re unable to unregister a node because it is still syncing.</p>
+<p>The script reads the node-keystore.ks file which is in a PKCS12 format, extracts its private key, generates the corresponding public key, validator address and validator wallet address. Then using this data it submits a build transaction request to <a href="https://mainnet.radixdlt.com/construction">https://mainnet.radixdlt.com/construction</a> with an UnregisterValidator action.</p>
+<p>The response is read, the blobToSign is signed using the keystore private key, and a finalize transaction request is built and submitted to <a href="https://mainnet.radixdlt.com/construction">https://mainnet.radixdlt.com/construction</a> again.</p>
+<p>*Ensure that your validator wallet address has at least 5.1 XRD to successfully unregister the node. You will require an additional 5.1 XRD to re-register the node again later</p>
+<pre><code class="lang-python">import bech32
+import ecdsa
+import hashlib
+from cryptography.hazmat.primitives.serialization import pkcs12
+from cryptography.hazmat.primitives.serialization import Encoding, PrivateFormat, NoEncryption
+from cryptography.hazmat.backends import default_backend
+from ecdsa.curves import SECP256k1
+from ecdsa.util import sigencode_der
+from getpass import getpass
+
+import requests
+import json
+
+print ("Enter your Keystore Password:")
+pw = getpass()
+
+password = pw.encode()
+
+# Read the Radix Keystore File (which is in PKCS12 format)
+with open("node-keystore.ks", "rb") as f:
+  private_key, certificate, additional_certificates = pkcs12.load_key_and_certificates(f.read(), password, default_backend())
+
+# Extract the unencrypted Private Key bytes
+private_key_bytes = private_key.private_bytes(Encoding.DER, PrivateFormat.PKCS8, NoEncryption())
+
+# Convert into Elliptic Curve Digital Signature Algorithm (ecdsa) private key object
+private_key = ecdsa.SigningKey.from_der(private_key_bytes, hashfunc=hashlib.sha256)
+
+# Derive public key from private key
+verifying_key = private_key.get_verifying_key()
+
+# Convert public key into compressed format so that we can generate the Validator Address
+public_key_compressed_bytes = verifying_key.to_string("compressed")
+public_key_compressed_bytes_hex = public_key_compressed_bytes.hex()
+print("Validator Public Key (Compressed): ", public_key_compressed_bytes_hex)
+
+# Generate Validator Address from the Compressed Public Key
+public_key_bytes5 = bech32.convertbits(public_key_compressed_bytes, 8, 5)
+validator_address = bech32.bech32_encode("rv", public_key_bytes5)
+print("Validator Address: ", validator_address)
+
+# Convert Compressed Public Key into a Radix Engine Address
+readdr_bytes = b"\x04" + public_key_compressed_bytes
+
+# Convert Radix Engine Address into Validator Wallet Address
+readdr_bytes5 = bech32.convertbits(readdr_bytes, 8, 5)
+validator_wallet_address = bech32.bech32_encode("rdx", readdr_bytes5)
+print("Validator Wallet Address: ", validator_wallet_address)
+
+# Construct RPC request
+data = f"""
+   {{
+  "network_identifier": {{
+    "network": "mainnet"
+  }},
+  "actions": [
+    {{
+      "type": "UnregisterValidator",
+      "validator": {{
+        "address": "{validator_address}"
+      }}
+    }}
+  ],
+  "fee_payer": {{
+    "address": "{validator_wallet_address}"
+  }},
+  "disable_token_mint_and_burn": true
+ }}
+"""
+
+print("Build Transaction Request JSON: ", data)
+
+req = requests.Request('POST', 'https://mainnet-gateway.radixdlt.com/transaction/build', data=data)
+prepared = req.prepare()
+prepared.headers['Content-Type'] = 'application/json'
+s = requests.Session()
+
+# Send Request to Unregister Validator
+resp = s.send(prepared)
+
+# Get JSON Response
+resp_json = resp.json()
+print("Build Transaction Response JSON: \n", json.dumps(resp_json, indent=3))
+
+# Extract fields from JSON Response
+blob = resp_json['transaction_build']['unsigned_transaction']
+blob_to_sign = resp_json['transaction_build']['payload_to_sign']
+
+# Sign the blob_to_sign with the Keystore Private Key and convert to DER format
+signature_der = private_key.sign_digest(bytearray.fromhex(blob_to_sign), sigencode=sigencode_der).hex()
+
+# Finalize RPC Request
+data = f"""
+{{
+      "network_identifier":{{
+        "network": "mainnet"
+      }},
+      "unsigned_transaction": "{blob}",
+      "signature": {{
+         "bytes": "{signature_der}",
+         "public_key": {{
+           "hex": "{public_key_compressed_bytes_hex}"
+    }}
+  }},
+  "submit": true
+}}
+"""
+print("Finalize Transaction Request JSON: ", data)
+
+req = requests.Request('POST', 'https://mainnet-gateway.radixdlt.com/transaction/finalize', data=data)
+prepared = req.prepare()
+prepared.headers['Content-Type'] = 'application/json'
+s = requests.Session()
+
+# Send Request to Unregister Validator
+resp = s.send(prepared)
+
+# Get JSON Response
+resp_json = resp.json()
+print("Finalize Transaction Response JSON: \n", json.dumps(resp_json, indent=3))
+</code></pre>
+<p><strong>Updates:</strong></p>
+<ul>
+<li>2022-02-25: Changed to use new Gateway API (Thanks <a class="mention" href="https://radixtalk.com/u/faraz">@Faraz</a>)</li>
+</ul>
+<p>This work by <a href="https://radixpool.com">RadixPool.com</a> is licensed under a <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
+          <p><a href="https://radixtalk.com/t/how-to-unregister-a-validator-node-using-the-keystore-file/64/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-to-unregister-a-validator-node-using-the-keystore-file/64/1</link>
+        <pubDate>Sat, 25 Dec 2021 14:07:26 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-64-1</guid>
+        <source url="https://radixtalk.com/t/how-to-unregister-a-validator-node-using-the-keystore-file/64.rss">How to unregister a Validator Node using the Keystore file</source>
+      </item>
+  </channel>
+</rss>

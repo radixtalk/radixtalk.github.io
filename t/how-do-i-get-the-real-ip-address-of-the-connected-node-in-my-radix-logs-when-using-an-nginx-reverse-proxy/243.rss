@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>How do I get the real IP address of the connected node in my Radix logs when using an nginx reverse proxy?</title>
+    <link>https://radixtalk.com/t/how-do-i-get-the-real-ip-address-of-the-connected-node-in-my-radix-logs-when-using-an-nginx-reverse-proxy/243</link>
+    <description>If you have an Nginx reverse proxy in front of your Radix node then the Radix log file will show connections from `127.0.0.1` instead of the real IP address of the node you are connected to.
+
+For example:
+
+```
+Auth handshake failed on {-&gt; ?@127.0.0.1:57872 | AUTH_HANDSHAKE}: Handshake decryption failed (Invalid MAC)
+```
+
+After enabling the Proxy Protocol you will see the real ip logged:
+
+```
+Auth handshake failed on {-&gt; ?@164.132.201.13:51752 | AUTH_HANDSHAKE}: Handshake decryption failed (Invalid MAC)
+```
+
+## 1. Enable the Proxy Protocol in your Radix configuration
+Add the following line to the `default.config` files:
+```
+network.p2p.use_proxy_protocol=true
+```
+
+## 2. Enable the Proxy Protocol in your Nginx configuration
+Edit the `nginx.conf` file (usually found in `/etc/nginx`) and change the server block near the top of the file from:
+```text
+  server {
+    listen 30000;
+    proxy_pass 127.0.0.1:30001;
+  }
+```
+
+to
+
+```text
+  server {
+    listen 30000 proxy_protocol;
+    proxy_protocol on;
+    proxy_pass 127.0.0.1:30001;
+  }
+```
+**Note:** You may have different ports numbers/ip address in your configuration. Don&#39;t change these details - just append the `proxy_protocol` directive to the `listen` line and add the new `proxy_protocol on;` line.
+
+After making these changes, ensure your nginx configuration file is valid by running:
+```
+sudo nginx -t
+
+# nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+# nginx: configuration file /etc/nginx/nginx.conf test is successful
+```
+
+## 3. Apply the Changes
+You need to apply the changes at about the same time otherwise Radix will throw lots of exceptions.
+```bash
+sudo systemctl reload nginx
+sudo systemctl restart radixdlt-node
+```</description>
+    <language>en-GB</language>
+    <lastBuildDate>Sat, 15 Jan 2022 11:17:46 +0000</lastBuildDate>
+    <category>Validators</category>
+    <atom:link href="https://radixtalk.com/t/how-do-i-get-the-real-ip-address-of-the-connected-node-in-my-radix-logs-when-using-an-nginx-reverse-proxy/243.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>How do I get the real IP address of the connected node in my Radix logs when using an nginx reverse proxy?</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>If you have an Nginx reverse proxy in front of your Radix node then the Radix log file will show connections from <code>127.0.0.1</code> instead of the real IP address of the node you are connected to.</p>
+<p>For example:</p>
+<pre><code class="lang-auto">Auth handshake failed on {-&gt; ?@127.0.0.1:57872 | AUTH_HANDSHAKE}: Handshake decryption failed (Invalid MAC)
+</code></pre>
+<p>After enabling the Proxy Protocol you will see the real ip logged:</p>
+<pre><code class="lang-auto">Auth handshake failed on {-&gt; ?@164.132.201.13:51752 | AUTH_HANDSHAKE}: Handshake decryption failed (Invalid MAC)
+</code></pre>
+<h2>
+<a name="h-1-enable-the-proxy-protocol-in-your-radix-configuration-1" class="anchor" href="https://radixtalk.com#h-1-enable-the-proxy-protocol-in-your-radix-configuration-1"></a>1. Enable the Proxy Protocol in your Radix configuration</h2>
+<p>Add the following line to the <code>default.config</code> files:</p>
+<pre><code class="lang-auto">network.p2p.use_proxy_protocol=true
+</code></pre>
+<h2>
+<a name="h-2-enable-the-proxy-protocol-in-your-nginx-configuration-2" class="anchor" href="https://radixtalk.com#h-2-enable-the-proxy-protocol-in-your-nginx-configuration-2"></a>2. Enable the Proxy Protocol in your Nginx configuration</h2>
+<p>Edit the <code>nginx.conf</code> file (usually found in <code>/etc/nginx</code>) and change the server block near the top of the file from:</p>
+<pre><code class="lang-nohighlight">  server {
+    listen 30000;
+    proxy_pass 127.0.0.1:30001;
+  }
+</code></pre>
+<p>to</p>
+<pre><code class="lang-nohighlight">  server {
+    listen 30000 proxy_protocol;
+    proxy_protocol on;
+    proxy_pass 127.0.0.1:30001;
+  }
+</code></pre>
+<p><strong>Note:</strong> You may have different ports numbers/ip address in your configuration. Don’t change these details - just append the <code>proxy_protocol</code> directive to the <code>listen</code> line and add the new <code>proxy_protocol on;</code> line.</p>
+<p>After making these changes, ensure your nginx configuration file is valid by running:</p>
+<pre><code class="lang-auto">sudo nginx -t
+
+# nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+# nginx: configuration file /etc/nginx/nginx.conf test is successful
+</code></pre>
+<h2>
+<a name="h-3-apply-the-changes-3" class="anchor" href="https://radixtalk.com#h-3-apply-the-changes-3"></a>3. Apply the Changes</h2>
+<p>You need to apply the changes at about the same time otherwise Radix will throw lots of exceptions.</p>
+<pre><code class="lang-bash">sudo systemctl reload nginx
+sudo systemctl restart radixdlt-node
+</code></pre>
+          <p><a href="https://radixtalk.com/t/how-do-i-get-the-real-ip-address-of-the-connected-node-in-my-radix-logs-when-using-an-nginx-reverse-proxy/243/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-do-i-get-the-real-ip-address-of-the-connected-node-in-my-radix-logs-when-using-an-nginx-reverse-proxy/243/1</link>
+        <pubDate>Sat, 15 Jan 2022 11:17:46 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-243-1</guid>
+        <source url="https://radixtalk.com/t/how-do-i-get-the-real-ip-address-of-the-connected-node-in-my-radix-logs-when-using-an-nginx-reverse-proxy/243.rss">How do I get the real IP address of the connected node in my Radix logs when using an nginx reverse proxy?</source>
+      </item>
+  </channel>
+</rss>

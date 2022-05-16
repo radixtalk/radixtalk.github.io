@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Why is the Radix token symbol XRD and not RDX?</title>
+    <link>https://radixtalk.com/t/why-is-the-radix-token-symbol-xrd-and-not-rdx/228</link>
+    <description>The X prefix for currency codes is used for &quot;supranational&quot; currencies - that is a currency that is not linked to a specific country. It is also used for things that are treated like currencies - like gold (XAU), silver (XAG). The use of XRD is actually a smart decision if (when) Radix becomes the currency of DeFi.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Tue, 11 Jan 2022 09:20:34 +0000</lastBuildDate>
+    <category>Questions / Help</category>
+    <atom:link href="https://radixtalk.com/t/why-is-the-radix-token-symbol-xrd-and-not-rdx/228.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Why is the Radix token symbol XRD and not RDX?</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>The X prefix for currency codes is used for “supranational” currencies - that is a currency that is not linked to a specific country. It is also used for things that are treated like currencies - like gold (XAU), silver (XAG). The use of XRD is actually a smart decision if (when) Radix becomes the currency of DeFi.</p>
+          <p><a href="https://radixtalk.com/t/why-is-the-radix-token-symbol-xrd-and-not-rdx/228/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/why-is-the-radix-token-symbol-xrd-and-not-rdx/228/1</link>
+        <pubDate>Tue, 11 Jan 2022 08:26:59 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-228-1</guid>
+        <source url="https://radixtalk.com/t/why-is-the-radix-token-symbol-xrd-and-not-rdx/228.rss">Why is the Radix token symbol XRD and not RDX?</source>
+      </item>
+  </channel>
+</rss>

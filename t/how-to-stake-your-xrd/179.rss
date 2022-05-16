@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>How to stake your XRD</title>
+    <link>https://radixtalk.com/t/how-to-stake-your-xrd/179</link>
+    <description># How to stake XRD
+
+Staking your XRD makes you earn rewards at the end of each epoch and helps secure the network, so let&#39;s stake!
+You can check the current *_APY %_* anytime on [Radix Dashboard](https://www.radixdashboard.com/) by Avaunt Staking, calculated as an estimate per epoch with a 3% fee.   
+
+
+1. Login into your wallet
+
+![image|690x374](upload://8jUPAxK3oDBpv7eqTJqMd6hXK86.png)
+
+
+2. Click on &quot;Stake &amp; Unstake&quot;
+
+![image|690x374](upload://i68RD68sGR5RwMWoy5wX4AGa0cE.jpeg)
+
+3. Enter the validator address and how much XRD you want to stake (**minimum 90 XRD**)
+
+![image|690x374](upload://qLb2TU5TayLxQgJbE32sYVPenko.jpeg)
+
+### You need at least 0.6 XRD to request an unstake, so don&#39;t stake 100% of your balance!
+    
+
+4. Click &quot;Stake&quot; and enter your PIN.
+
+&gt; Forgot your PIN? You can change it, using your password, by going to _Wallet Settings_ (lower left corner) and clicking on _Change PIN_.
+
+5. Done! You can now close your wallet.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Sun, 16 Jan 2022 11:25:30 +0000</lastBuildDate>
+    <category>Staking</category>
+    <atom:link href="https://radixtalk.com/t/how-to-stake-your-xrd/179.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>How to stake your XRD</title>
+        <dc:creator><![CDATA[Mattia | MattiaNode]]></dc:creator>
+        <description><![CDATA[
+            <h1>
+<a name="how-to-stake-xrd-1" class="anchor" href="https://radixtalk.com#how-to-stake-xrd-1"></a>How to stake XRD</h1>
+<p>Staking your XRD makes you earn rewards at the end of each epoch and helps secure the network, so let’s stake!<br>
+You can check the current <em><em>APY %</em></em> anytime on <a href="https://www.radixdashboard.com/">Radix Dashboard</a> by Avaunt Staking, calculated as an estimate per epoch with a 3% fee.</p>
+<ol>
+<li>Login into your wallet</li>
+</ol>
+<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.radixtalk.com/uploads/default/original/1X/3a51bed546e2a2c75272147c852768c259067b66.png" data-download-href="https://cdn.radixtalk.com/uploads/default/3a51bed546e2a2c75272147c852768c259067b66" title="image"><img src="https://cdn.radixtalk.com/uploads/default/optimized/1X/3a51bed546e2a2c75272147c852768c259067b66_2_690x374.png" alt="image" data-base62-sha1="8jUPAxK3oDBpv7eqTJqMd6hXK86" width="690" height="374" srcset="https://cdn.radixtalk.com/uploads/default/optimized/1X/3a51bed546e2a2c75272147c852768c259067b66_2_690x374.png, https://cdn.radixtalk.com/uploads/default/optimized/1X/3a51bed546e2a2c75272147c852768c259067b66_2_1035x561.png 1.5x, https://cdn.radixtalk.com/uploads/default/original/1X/3a51bed546e2a2c75272147c852768c259067b66.png 2x" data-small-upload="https://cdn.radixtalk.com/uploads/default/optimized/1X/3a51bed546e2a2c75272147c852768c259067b66_2_10x10.png"></a></div><p></p>
+<ol start="2">
+<li>Click on “Stake &amp; Unstake”</li>
+</ol>
+<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.radixtalk.com/uploads/default/original/1X/7ed8e61dce40454a939a798425db1a3949af1060.jpeg" data-download-href="https://cdn.radixtalk.com/uploads/default/7ed8e61dce40454a939a798425db1a3949af1060" title="image"><img src="https://cdn.radixtalk.com/uploads/default/optimized/1X/7ed8e61dce40454a939a798425db1a3949af1060_2_690x374.jpeg" alt="image" data-base62-sha1="i68RD68sGR5RwMWoy5wX4AGa0cE" width="690" height="374" srcset="https://cdn.radixtalk.com/uploads/default/optimized/1X/7ed8e61dce40454a939a798425db1a3949af1060_2_690x374.jpeg, https://cdn.radixtalk.com/uploads/default/optimized/1X/7ed8e61dce40454a939a798425db1a3949af1060_2_1035x561.jpeg 1.5x, https://cdn.radixtalk.com/uploads/default/original/1X/7ed8e61dce40454a939a798425db1a3949af1060.jpeg 2x" data-small-upload="https://cdn.radixtalk.com/uploads/default/optimized/1X/7ed8e61dce40454a939a798425db1a3949af1060_2_10x10.png"></a></div><p></p>
+<ol start="3">
+<li>Enter the validator address and how much XRD you want to stake (<strong>minimum 90 XRD</strong>)</li>
+</ol>
+<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.radixtalk.com/uploads/default/original/1X/bb8dc76401b5c12cdeb02e11731ca6cd3c49f4ec.jpeg" data-download-href="https://cdn.radixtalk.com/uploads/default/bb8dc76401b5c12cdeb02e11731ca6cd3c49f4ec" title="image"><img src="https://cdn.radixtalk.com/uploads/default/optimized/1X/bb8dc76401b5c12cdeb02e11731ca6cd3c49f4ec_2_690x374.jpeg" alt="image" data-base62-sha1="qLb2TU5TayLxQgJbE32sYVPenko" width="690" height="374" srcset="https://cdn.radixtalk.com/uploads/default/optimized/1X/bb8dc76401b5c12cdeb02e11731ca6cd3c49f4ec_2_690x374.jpeg, https://cdn.radixtalk.com/uploads/default/optimized/1X/bb8dc76401b5c12cdeb02e11731ca6cd3c49f4ec_2_1035x561.jpeg 1.5x, https://cdn.radixtalk.com/uploads/default/original/1X/bb8dc76401b5c12cdeb02e11731ca6cd3c49f4ec.jpeg 2x" data-small-upload="https://cdn.radixtalk.com/uploads/default/optimized/1X/bb8dc76401b5c12cdeb02e11731ca6cd3c49f4ec_2_10x10.png"></a></div><p></p>
+<h3>
+<a name="you-need-at-least-06-xrd-to-request-an-unstake-so-dont-stake-100-of-your-balance-2" class="anchor" href="https://radixtalk.com#you-need-at-least-06-xrd-to-request-an-unstake-so-dont-stake-100-of-your-balance-2"></a>You need at least 0.6 XRD to request an unstake, so don’t stake 100% of your balance!</h3>
+<ol start="4">
+<li>Click “Stake” and enter your PIN.</li>
+</ol>
+<blockquote>
+<p>Forgot your PIN? You can change it, using your password, by going to <em>Wallet Settings</em> (lower left corner) and clicking on <em>Change PIN</em>.</p>
+</blockquote>
+<ol start="5">
+<li>Done! You can now close your wallet.</li>
+</ol>
+          <p><a href="https://radixtalk.com/t/how-to-stake-your-xrd/179/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-to-stake-your-xrd/179/1</link>
+        <pubDate>Wed, 29 Dec 2021 20:20:22 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-179-1</guid>
+        <source url="https://radixtalk.com/t/how-to-stake-your-xrd/179.rss">How to stake your XRD</source>
+      </item>
+  </channel>
+</rss>

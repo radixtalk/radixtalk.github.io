@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Does Radix implement slashing?</title>
+    <link>https://radixtalk.com/t/does-radix-implement-slashing/175</link>
+    <description>Not currently - there is however currently a 500 epoch (~12 days) delay to unstake.  Should a validator act maliciously, this would limit the time available to profit from any double spend or similar attack, and also allow adequate time for confident slashing in future.
+
+The Radix team have clearly communicated their intention to introduce slashing after mainnet release, but we are yet to learn when this will be implemented and the precise details.  You can see Matt&#39;s (Radix CPO) response regarding slashing in the official Discord server here:
+
+[Slashing Discussion 1](https://discord.com/channels/417762285172555786/818997782966566943/856639266565259305)</description>
+    <language>en-GB</language>
+    <lastBuildDate>Wed, 29 Dec 2021 19:20:57 +0000</lastBuildDate>
+    <category>Staking</category>
+    <atom:link href="https://radixtalk.com/t/does-radix-implement-slashing/175.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Does Radix implement slashing?</title>
+        <dc:creator><![CDATA[Faraz | Radstakes.com]]></dc:creator>
+        <description><![CDATA[
+            <p>Not currently - there is however currently a 500 epoch (~12 days) delay to unstake.  Should a validator act maliciously, this would limit the time available to profit from any double spend or similar attack, and also allow adequate time for confident slashing in future.</p>
+<p>The Radix team have clearly communicated their intention to introduce slashing after mainnet release, but we are yet to learn when this will be implemented and the precise details.  You can see Matt’s (Radix CPO) response regarding slashing in the official Discord server here:</p>
+<p><a href="https://discord.com/channels/417762285172555786/818997782966566943/856639266565259305">Slashing Discussion 1</a></p>
+          <p><a href="https://radixtalk.com/t/does-radix-implement-slashing/175/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/does-radix-implement-slashing/175/1</link>
+        <pubDate>Wed, 29 Dec 2021 19:20:57 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-175-1</guid>
+        <source url="https://radixtalk.com/t/does-radix-implement-slashing/175.rss">Does Radix implement slashing?</source>
+      </item>
+  </channel>
+</rss>

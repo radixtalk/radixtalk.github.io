@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Would it be possible to add 2FA (Authenticator, Yubikey,...) to the Radix Wallet for logging-in and withdrawing?</title>
+    <link>https://radixtalk.com/t/would-it-be-possible-to-add-2fa-authenticator-yubikey-to-the-radix-wallet-for-logging-in-and-withdrawing/131</link>
+    <description>Waiting for the Ledger App to get validated, would it be possible to add 2FA (Authenticator, Yubikey,...) to the Radix Wallet for logging-in and withdrawing? Thank you</description>
+    <language>en-GB</language>
+    <lastBuildDate>Fri, 31 Dec 2021 09:42:12 +0000</lastBuildDate>
+    <category>Questions / Help</category>
+    <atom:link href="https://radixtalk.com/t/would-it-be-possible-to-add-2fa-authenticator-yubikey-to-the-radix-wallet-for-logging-in-and-withdrawing/131.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Would it be possible to add 2FA (Authenticator, Yubikey,...) to the Radix Wallet for logging-in and withdrawing?</title>
+        <dc:creator><![CDATA[Fab31t]]></dc:creator>
+        <description><![CDATA[
+            <p>Thank you. All clear <img src="https://radixtalk.com/images/emoji/twitter/+1.png?v=10" title=":+1:" class="emoji" alt=":+1:"></p>
+<p>PS: I would appreciate that LedgerHQ validate the Radix App ASAP</p>
+          <p><a href="https://radixtalk.com/t/would-it-be-possible-to-add-2fa-authenticator-yubikey-to-the-radix-wallet-for-logging-in-and-withdrawing/131/3">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/would-it-be-possible-to-add-2fa-authenticator-yubikey-to-the-radix-wallet-for-logging-in-and-withdrawing/131/3</link>
+        <pubDate>Fri, 31 Dec 2021 09:42:12 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-131-3</guid>
+        <source url="https://radixtalk.com/t/would-it-be-possible-to-add-2fa-authenticator-yubikey-to-the-radix-wallet-for-logging-in-and-withdrawing/131.rss">Would it be possible to add 2FA (Authenticator, Yubikey,...) to the Radix Wallet for logging-in and withdrawing?</source>
+      </item>
+      <item>
+        <title>Would it be possible to add 2FA (Authenticator, Yubikey,...) to the Radix Wallet for logging-in and withdrawing?</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>Two Factor authentication is most useful when you are interacting with a remote service - eg. Performing a login to a web server, approving a withdrawal from an exchange wallet. The idea is that even if someone knows your password (something you know), they still need an additional factor (something you have) in order to succeed.</p>
+<p>For the Radix Desktop wallet, if someone has physical access to your pc, they can take a copy of your wallet.json file that contains an encrypted version of the seed that is used to generate all the private/public keys for your wallet. The cipher text is a static value that is encrypted using AES-256-GCM. The security of that encrypted value is wholly dependent on the strength of your password/passphrase (and the cryptographic resistance of the AES cipher to attack). There is no dynamic element to the encryption of this value.</p>
+<p>In other words, a one time password (TOTP) or hardware device that generates a one time value is not applicable. The Radix Desktop Wallet does have a pin that you are required to enter to approve the transaction - but this is more of a “speedbump” to prevent your cat from accidentally emptying your wallet while walking across the keyboard while your desktop wallet is unlocked.</p>
+<p>The thing that makes hardware wallets secure is that:</p>
+<ol>
+<li>The device stores the private keys in a secure element in hardware on the device.</li>
+<li>The device executes all of the signing operations on the device itself so that the private key never has to leave the device.</li>
+</ol>
+<p>This is why you need to load an app onto the device to execute the signing algorithms and also why it goes through a comprehensive code review by LedgerHQ before it is “blessed” and made available on Ledger Live.</p>
+<p>TLDR; Choose a strong password/passphrase for your Radix Desktop Wallet. Ensure the physical security of your PC.</p>
+<p>PS: If you have a Ledger Nano S you can sideload the Ledger Radix App onto it now. Otherwise you’ll need to wait a bit longer for the Radix App to be approved so that it is available on Ledger Live.</p>
+<p>PPS: To answer your specific question - It is extremely unlikely there will by 2FA for the current Olympia Wallet. It is also doubtful that is will be implemented in the next wallet either - but…</p>
+          <p><a href="https://radixtalk.com/t/would-it-be-possible-to-add-2fa-authenticator-yubikey-to-the-radix-wallet-for-logging-in-and-withdrawing/131/2">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/would-it-be-possible-to-add-2fa-authenticator-yubikey-to-the-radix-wallet-for-logging-in-and-withdrawing/131/2</link>
+        <pubDate>Tue, 28 Dec 2021 00:11:50 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-131-2</guid>
+        <source url="https://radixtalk.com/t/would-it-be-possible-to-add-2fa-authenticator-yubikey-to-the-radix-wallet-for-logging-in-and-withdrawing/131.rss">Would it be possible to add 2FA (Authenticator, Yubikey,...) to the Radix Wallet for logging-in and withdrawing?</source>
+      </item>
+      <item>
+        <title>Would it be possible to add 2FA (Authenticator, Yubikey,...) to the Radix Wallet for logging-in and withdrawing?</title>
+        <dc:creator><![CDATA[Fab31t]]></dc:creator>
+        <description><![CDATA[
+            <p>Waiting for the Ledger App to get validated, would it be possible to add 2FA (Authenticator, Yubikey,…) to the Radix Wallet for logging-in and withdrawing? Thank you</p>
+          <p><a href="https://radixtalk.com/t/would-it-be-possible-to-add-2fa-authenticator-yubikey-to-the-radix-wallet-for-logging-in-and-withdrawing/131/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/would-it-be-possible-to-add-2fa-authenticator-yubikey-to-the-radix-wallet-for-logging-in-and-withdrawing/131/1</link>
+        <pubDate>Mon, 27 Dec 2021 23:18:42 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-131-1</guid>
+        <source url="https://radixtalk.com/t/would-it-be-possible-to-add-2fa-authenticator-yubikey-to-the-radix-wallet-for-logging-in-and-withdrawing/131.rss">Would it be possible to add 2FA (Authenticator, Yubikey,...) to the Radix Wallet for logging-in and withdrawing?</source>
+      </item>
+  </channel>
+</rss>

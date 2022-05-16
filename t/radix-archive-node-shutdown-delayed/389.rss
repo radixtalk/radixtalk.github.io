@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Radix Archive Node Shutdown Delayed</title>
+    <link>https://radixtalk.com/t/radix-archive-node-shutdown-delayed/389</link>
+    <description>Today (18th February) was the day originally planned for the Radix team&#39;s archive nodes to be deprecated and moved over to the new Gateway service.  However, in the interest of ensuring a means of unregistering a validator node (in the event a node falls out of sync), the Radix team have confirmed that the shutdown of their archive nodes will be delayed.
+
+An update to the Gateway service to enable unregistering of a validator will be made prior to any shutdown of the archive nodes.  In the meantime, if a node runner needs to unregister - this post by @Stuart still applies as long as the archive nodes are still available: [Unregistering a Validator](https://radixtalk.com/t/how-to-unregister-a-validator-node-using-the-keystore-file/64)</description>
+    <language>en-GB</language>
+    <lastBuildDate>Fri, 25 Feb 2022 09:51:23 +0000</lastBuildDate>
+    <category>Validators</category>
+    <atom:link href="https://radixtalk.com/t/radix-archive-node-shutdown-delayed/389.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Radix Archive Node Shutdown Delayed</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>I’ve updated the unregister script at <a href="https://github.com/radixpool/validator-tools" class="inline-onebox">GitHub - radixpool/validator-tools</a> to use the new Gateway API.</p>
+<p>Thanks to <a class="mention" href="https://radixtalk.com/u/faraz">@Faraz</a> for providing the updated JSON request templates.</p>
+          <p><a href="https://radixtalk.com/t/radix-archive-node-shutdown-delayed/389/5">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/radix-archive-node-shutdown-delayed/389/5</link>
+        <pubDate>Fri, 25 Feb 2022 09:51:23 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-389-5</guid>
+        <source url="https://radixtalk.com/t/radix-archive-node-shutdown-delayed/389.rss">Radix Archive Node Shutdown Delayed</source>
+      </item>
+      <item>
+        <title>Radix Archive Node Shutdown Delayed</title>
+        <dc:creator><![CDATA[CaviarNine]]></dc:creator>
+        <description><![CDATA[
+            <p>Good news about the Gateway API endpoint.</p>
+<p>For now, we are keeping <a href="https://node.caviarnine.com/" rel="noopener nofollow ugc">https://node.caviarnine.com/</a> available for people with legacy code.</p>
+          <p><a href="https://radixtalk.com/t/radix-archive-node-shutdown-delayed/389/4">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/radix-archive-node-shutdown-delayed/389/4</link>
+        <pubDate>Fri, 25 Feb 2022 08:07:56 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-389-4</guid>
+        <source url="https://radixtalk.com/t/radix-archive-node-shutdown-delayed/389.rss">Radix Archive Node Shutdown Delayed</source>
+      </item>
+      <item>
+        <title>Radix Archive Node Shutdown Delayed</title>
+        <dc:creator><![CDATA[Jazzer 9F]]></dc:creator>
+        <description><![CDATA[
+            <p>Nodes are switched off, and the unregister transaction building has been added to the Gateway API.</p>
+<p>Progress!</p>
+          <p><a href="https://radixtalk.com/t/radix-archive-node-shutdown-delayed/389/3">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/radix-archive-node-shutdown-delayed/389/3</link>
+        <pubDate>Thu, 24 Feb 2022 13:57:38 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-389-3</guid>
+        <source url="https://radixtalk.com/t/radix-archive-node-shutdown-delayed/389.rss">Radix Archive Node Shutdown Delayed</source>
+      </item>
+      <item>
+        <title>Radix Archive Node Shutdown Delayed</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>This is a sensible decision. I’ve seen the update to allow a node to be (un)registered on the gateway has been merged so should be available in next release.</p>
+<aside class="onebox githubpullrequest" data-onebox-src="https://github.com/radixdlt/radixdlt-network-gateway/pull/33">
+  <header class="source">
+
+      <a href="https://github.com/radixdlt/radixdlt-network-gateway/pull/33" target="_blank" rel="noopener">github.com/radixdlt/radixdlt-network-gateway</a>
+  </header>
+
+  <article class="onebox-body">
+    <div class="github-row">
+  <div class="github-icon-container" title="Pull Request">
+    <svg width="60" height="60" class="github-icon" viewBox="0 0 12 16" aria-hidden="true"><path d="M11 11.28V5c-.03-.78-.34-1.47-.94-2.06C9.46 2.35 8.78 2.03 8 2H7V0L4 3l3 3V4h1c.27.02.48.11.69.31.21.2.3.42.31.69v6.28A1.993 1.993 0 0 0 10 15a1.993 1.993 0 0 0 1-3.72zm-1 2.92c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zM4 3c0-1.11-.89-2-2-2a1.993 1.993 0 0 0-1 3.72v6.56A1.993 1.993 0 0 0 2 15a1.993 1.993 0 0 0 1-3.72V4.72c.59-.34 1-.98 1-1.72zm-.8 10c0 .66-.55 1.2-1.2 1.2-.65 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"></path></svg>
+  </div>
+
+  <div class="github-info-container">
+    <h4>
+      <a href="https://github.com/radixdlt/radixdlt-network-gateway/pull/33" target="_blank" rel="noopener">Allow validator (un)registration building</a>
+    </h4>
+
+    <div class="branches">
+      <code>radixdlt:main</code> ← <code>radixdlt:feature/ng-104-allow-validator-registration</code>
+    </div>
+
+    <div class="github-info">
+      <div class="date">
+        opened <span class="discourse-local-date" data-format="ll" data-date="2022-02-15" data-time="09:58:15" data-timezone="UTC">09:58AM - 15 Feb 22 UTC</span>
+      </div>
+
+      <div class="user">
+        <a href="https://github.com/dhedey" target="_blank" rel="noopener">
+          <img alt="dhedey" src="https://cdn.radixtalk.com/uploads/default/original/1X/3e3dcc0dce33f03c820306057ee04bf4bd65bdc3.png" class="onebox-avatar-inline" width="20" height="20">
+          dhedey
+        </a>
+      </div>
+
+      <div class="lines" title="4 commits changed 12 files with 112 additions and 41 deletions">
+        <a href="https://github.com/radixdlt/radixdlt-network-gateway/pull/33/files" target="_blank" rel="noopener">
+          <span class="added">+112</span>
+          <span class="removed">-41</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="github-row">
+    <p class="github-body-container">I've been unable to test the full signing/submission locally (as I don't have ke<span class="show-more-container"><a href="https://github.com/radixdlt/radixdlt-network-gateway/pull/33" target="_blank" rel="noopener" class="show-more">…</a></span><span class="excerpt hidden">ys to any validator I can use to sign...). - unless I set up a localnet - but will get Theo to help with testing on RCNet / using his test harness!</span></p>
+  </div>
+
+  </article>
+
+  <div class="onebox-metadata">
+    
+    
+  </div>
+
+  <div style="clear: both"></div>
+</aside>
+
+          <p><a href="https://radixtalk.com/t/radix-archive-node-shutdown-delayed/389/2">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/radix-archive-node-shutdown-delayed/389/2</link>
+        <pubDate>Fri, 18 Feb 2022 14:12:25 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-389-2</guid>
+        <source url="https://radixtalk.com/t/radix-archive-node-shutdown-delayed/389.rss">Radix Archive Node Shutdown Delayed</source>
+      </item>
+      <item>
+        <title>Radix Archive Node Shutdown Delayed</title>
+        <dc:creator><![CDATA[Faraz | Radstakes.com]]></dc:creator>
+        <description><![CDATA[
+            <p>Today (18th February) was the day originally planned for the Radix team’s archive nodes to be deprecated and moved over to the new Gateway service.  However, in the interest of ensuring a means of unregistering a validator node (in the event a node falls out of sync), the Radix team have confirmed that the shutdown of their archive nodes will be delayed.</p>
+<p>An update to the Gateway service to enable unregistering of a validator will be made prior to any shutdown of the archive nodes.  In the meantime, if a node runner needs to unregister - this post by <a class="mention" href="https://radixtalk.com/u/stuart">@Stuart</a> still applies as long as the archive nodes are still available: <a href="https://radixtalk.com/t/how-to-unregister-a-validator-node-using-the-keystore-file/64">Unregistering a Validator</a></p>
+          <p><a href="https://radixtalk.com/t/radix-archive-node-shutdown-delayed/389/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/radix-archive-node-shutdown-delayed/389/1</link>
+        <pubDate>Fri, 18 Feb 2022 14:08:33 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-389-1</guid>
+        <source url="https://radixtalk.com/t/radix-archive-node-shutdown-delayed/389.rss">Radix Archive Node Shutdown Delayed</source>
+      </item>
+  </channel>
+</rss>

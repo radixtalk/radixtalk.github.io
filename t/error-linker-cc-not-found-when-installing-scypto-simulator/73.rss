@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>“error: linker cc not found” when installing Scypto simulator</title>
+    <link>https://radixtalk.com/t/error-linker-cc-not-found-when-installing-scypto-simulator/73</link>
+    <description>## Problem
+```
+error: linker `cc` not found  |  = note: No such file or directory (os error 2)
+error: could not compile `libc` due to previous error
+```
+
+## Solution
+Ensure the `build-essential` package is installed. 
+
+On Ubuntu run:
+```
+sudo apt install build-essential
+```
+
+*From cbisaillon#6447 on [Discord](https://discord.com/channels/417762285172555786/765994894749597697/920041118861762590)*</description>
+    <language>en-GB</language>
+    <lastBuildDate>Mon, 27 Dec 2021 15:20:51 +0000</lastBuildDate>
+    <category>Scrypto</category>
+    <atom:link href="https://radixtalk.com/t/error-linker-cc-not-found-when-installing-scypto-simulator/73.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>“error: linker cc not found” when installing Scypto simulator</title>
+        <dc:creator><![CDATA[Clement]]></dc:creator>
+        <description><![CDATA[
+            <p>If you get similar compiler error on Windows, make sure you installed <strong>Desktop development with C++</strong> with <a href="https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=BuildTools&amp;rel=16" rel="noopener nofollow ugc">Build Tools for Visual Studio 2019</a></p>
+          <p><a href="https://radixtalk.com/t/error-linker-cc-not-found-when-installing-scypto-simulator/73/2">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/error-linker-cc-not-found-when-installing-scypto-simulator/73/2</link>
+        <pubDate>Mon, 27 Dec 2021 15:20:51 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-73-2</guid>
+        <source url="https://radixtalk.com/t/error-linker-cc-not-found-when-installing-scypto-simulator/73.rss">“error: linker cc not found” when installing Scypto simulator</source>
+      </item>
+      <item>
+        <title>“error: linker cc not found” when installing Scypto simulator</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <h2>
+<a name="problem-1" class="anchor" href="https://radixtalk.com#problem-1"></a>Problem</h2>
+<pre><code class="lang-auto">error: linker `cc` not found  |  = note: No such file or directory (os error 2)
+error: could not compile `libc` due to previous error
+</code></pre>
+<h2>
+<a name="solution-2" class="anchor" href="https://radixtalk.com#solution-2"></a>Solution</h2>
+<p>Ensure the <code>build-essential</code> package is installed.</p>
+<p>On Ubuntu run:</p>
+<pre><code class="lang-auto">sudo apt install build-essential
+</code></pre>
+<p><em>From cbisaillon#6447 on <a href="https://discord.com/channels/417762285172555786/765994894749597697/920041118861762590">Discord</a></em></p>
+          <p><a href="https://radixtalk.com/t/error-linker-cc-not-found-when-installing-scypto-simulator/73/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/error-linker-cc-not-found-when-installing-scypto-simulator/73/1</link>
+        <pubDate>Sat, 25 Dec 2021 23:49:49 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-73-1</guid>
+        <source url="https://radixtalk.com/t/error-linker-cc-not-found-when-installing-scypto-simulator/73.rss">“error: linker cc not found” when installing Scypto simulator</source>
+      </item>
+  </channel>
+</rss>

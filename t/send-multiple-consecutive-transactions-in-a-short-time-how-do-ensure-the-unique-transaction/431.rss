@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Send multiple consecutive transactions in a short time,how do ensure the unique transaction?</title>
+    <link>https://radixtalk.com/t/send-multiple-consecutive-transactions-in-a-short-time-how-do-ensure-the-unique-transaction/431</link>
+    <description>  have any nonce to do that?</description>
+    <language>en-GB</language>
+    <lastBuildDate>Thu, 07 Apr 2022 06:58:08 +0000</lastBuildDate>
+    <category>Developers</category>
+    <atom:link href="https://radixtalk.com/t/send-multiple-consecutive-transactions-in-a-short-time-how-do-ensure-the-unique-transaction/431.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Send multiple consecutive transactions in a short time,how do ensure the unique transaction?</title>
+        <dc:creator><![CDATA[Faraz | Radstakes.com]]></dc:creator>
+        <description><![CDATA[
+            <p>Several of the guys in the developer channel have had success with 3-5s delay before submitting the next tx.</p>
+          <p><a href="https://radixtalk.com/t/send-multiple-consecutive-transactions-in-a-short-time-how-do-ensure-the-unique-transaction/431/4">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/send-multiple-consecutive-transactions-in-a-short-time-how-do-ensure-the-unique-transaction/431/4</link>
+        <pubDate>Thu, 07 Apr 2022 06:58:08 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-431-4</guid>
+        <source url="https://radixtalk.com/t/send-multiple-consecutive-transactions-in-a-short-time-how-do-ensure-the-unique-transaction/431.rss">Send multiple consecutive transactions in a short time,how do ensure the unique transaction?</source>
+      </item>
+      <item>
+        <title>Send multiple consecutive transactions in a short time,how do ensure the unique transaction?</title>
+        <dc:creator><![CDATA[abel]]></dc:creator>
+        <description><![CDATA[
+            <p>what`s the interval time?  5 seconds is enough to ensure the last tx is final?</p>
+          <p><a href="https://radixtalk.com/t/send-multiple-consecutive-transactions-in-a-short-time-how-do-ensure-the-unique-transaction/431/3">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/send-multiple-consecutive-transactions-in-a-short-time-how-do-ensure-the-unique-transaction/431/3</link>
+        <pubDate>Thu, 07 Apr 2022 06:57:02 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-431-3</guid>
+        <source url="https://radixtalk.com/t/send-multiple-consecutive-transactions-in-a-short-time-how-do-ensure-the-unique-transaction/431.rss">Send multiple consecutive transactions in a short time,how do ensure the unique transaction?</source>
+      </item>
+      <item>
+        <title>Send multiple consecutive transactions in a short time,how do ensure the unique transaction?</title>
+        <dc:creator><![CDATA[Faraz | Radstakes.com]]></dc:creator>
+        <description><![CDATA[
+            <p>Currently if you attempt consecutive txs in a short time frame, the second will likely fail as it may attempt to use the same UTXO as the first.  Currently you need to wait a few seconds before attempting the next tx.  At Babylon release in 2023 this will be handled much better.</p>
+          <p><a href="https://radixtalk.com/t/send-multiple-consecutive-transactions-in-a-short-time-how-do-ensure-the-unique-transaction/431/2">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/send-multiple-consecutive-transactions-in-a-short-time-how-do-ensure-the-unique-transaction/431/2</link>
+        <pubDate>Thu, 07 Apr 2022 06:54:32 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-431-2</guid>
+        <source url="https://radixtalk.com/t/send-multiple-consecutive-transactions-in-a-short-time-how-do-ensure-the-unique-transaction/431.rss">Send multiple consecutive transactions in a short time,how do ensure the unique transaction?</source>
+      </item>
+      <item>
+        <title>Send multiple consecutive transactions in a short time,how do ensure the unique transaction?</title>
+        <dc:creator><![CDATA[abel]]></dc:creator>
+        <description><![CDATA[
+            <p>have any nonce to do that?</p>
+          <p><a href="https://radixtalk.com/t/send-multiple-consecutive-transactions-in-a-short-time-how-do-ensure-the-unique-transaction/431/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/send-multiple-consecutive-transactions-in-a-short-time-how-do-ensure-the-unique-transaction/431/1</link>
+        <pubDate>Thu, 07 Apr 2022 06:45:16 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-431-1</guid>
+        <source url="https://radixtalk.com/t/send-multiple-consecutive-transactions-in-a-short-time-how-do-ensure-the-unique-transaction/431.rss">Send multiple consecutive transactions in a short time,how do ensure the unique transaction?</source>
+      </item>
+  </channel>
+</rss>

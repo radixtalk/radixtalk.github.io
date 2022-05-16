@@ -1,0 +1,777 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:discourse="http://www.discourse.org/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Questions / Help - RadixTalk</title>
+    <link>https://radixtalk.com/c/questions/35</link>
+    <description>Topics in the &#39;Questions / Help&#39; category Radix Questions / Help</description>
+    <language>en-GB</language>
+      <lastBuildDate>Thu, 17 Mar 2022 22:59:34 +0000</lastBuildDate>
+      <atom:link href="https://radixtalk.com/c/questions/35.rss" rel="self" type="application/rss+xml" />
+        <item>
+          <title>Radix 3rd Party Data Breach</title>
+          <dc:creator><![CDATA[Faraz | Radstakes.com]]></dc:creator>
+          <category>Questions / Help</category>
+          <description><![CDATA[
+            <p>It was announced today that a third party service to RDX Works (Active Campaign), who provides email and marketing automation may have been breached resulting in the unauthorised exposure of data (names, emails) provided to RDX for signing up to the mailing list, token sale etc…</p>
+<p>Those affected will have received an email if their data may have been compromised.</p>
+            <p><small>2 posts - 2 participants</small></p>
+            <p><a href="https://radixtalk.com/t/radix-3rd-party-data-breach/416">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/radix-3rd-party-data-breach/416</link>
+          <pubDate>Thu, 17 Mar 2022 22:59:34 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-416</guid>
+          <source url="https://radixtalk.com/t/radix-3rd-party-data-breach/416.rss">Radix 3rd Party Data Breach</source>
+        </item>
+        <item>
+          <title>Why was the reason for radix to rewrite and migrate to monorepo?</title>
+          <dc:creator><![CDATA[nurazhar]]></dc:creator>
+          <category>Questions / Help</category>
+          <description><![CDATA[
+            <p>Just curious (delete if it’s spammy)</p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/why-was-the-reason-for-radix-to-rewrite-and-migrate-to-monorepo/383">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/why-was-the-reason-for-radix-to-rewrite-and-migrate-to-monorepo/383</link>
+          <pubDate>Thu, 17 Feb 2022 11:14:20 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-383</guid>
+          <source url="https://radixtalk.com/t/why-was-the-reason-for-radix-to-rewrite-and-migrate-to-monorepo/383.rss">Why was the reason for radix to rewrite and migrate to monorepo?</source>
+        </item>
+        <item>
+          <title>What is the equivalent of gas fees in radix and what are the mechanism to make it dynamic so the fee stays low without human interventions? (hypothetically since governance not implemented yet)</title>
+          <dc:creator><![CDATA[nurazhar]]></dc:creator>
+          <category>Questions / Help</category>
+          <description><![CDATA[
+            <p>regarding the low fees, is it by updating to the full node or perhaps competing node? I read somewhere a top 100 validator is building a C# based node implementation.</p>
+            <p><small>2 posts - 2 participants</small></p>
+            <p><a href="https://radixtalk.com/t/what-is-the-equivalent-of-gas-fees-in-radix-and-what-are-the-mechanism-to-make-it-dynamic-so-the-fee-stays-low-without-human-interventions-hypothetically-since-governance-not-implemented-yet/382">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/what-is-the-equivalent-of-gas-fees-in-radix-and-what-are-the-mechanism-to-make-it-dynamic-so-the-fee-stays-low-without-human-interventions-hypothetically-since-governance-not-implemented-yet/382</link>
+          <pubDate>Thu, 17 Feb 2022 11:10:54 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-382</guid>
+          <source url="https://radixtalk.com/t/what-is-the-equivalent-of-gas-fees-in-radix-and-what-are-the-mechanism-to-make-it-dynamic-so-the-fee-stays-low-without-human-interventions-hypothetically-since-governance-not-implemented-yet/382.rss">What is the equivalent of gas fees in radix and what are the mechanism to make it dynamic so the fee stays low without human interventions? (hypothetically since governance not implemented yet)</source>
+        </item>
+        <item>
+          <title>How many &quot;satoshi&quot; does XRD have?</title>
+          <dc:creator><![CDATA[nurazhar]]></dc:creator>
+          <category>Questions / Help</category>
+          <description><![CDATA[
+            <p>Satoshi or Wei</p>
+<p>in XRD is it Dan? <img src="https://cdn.radixtalk.com/images/emoji/twitter/smile.png?v=12" title=":smile:" class="emoji" alt=":smile:" loading="lazy" width="20" height="20"></p>
+            <p><small>2 posts - 2 participants</small></p>
+            <p><a href="https://radixtalk.com/t/how-many-satoshi-does-xrd-have/381">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/how-many-satoshi-does-xrd-have/381</link>
+          <pubDate>Thu, 17 Feb 2022 11:02:53 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-381</guid>
+          <source url="https://radixtalk.com/t/how-many-satoshi-does-xrd-have/381.rss">How many &quot;satoshi&quot; does XRD have?</source>
+        </item>
+        <item>
+          <title>Why doesn’t my password work with 1.3.0 of the Radix Wallet?</title>
+          <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+          <category>Questions / Help</category>
+          <description><![CDATA[
+            <p>There is a bug with version 1.3.0 of the Radix Desktop Wallet that returns invalid password after trying to login to your wallet after upgrading.</p>
+<h2>
+<a name="explanation-1" class="anchor" href="https://radixtalk.com#explanation-1"></a>Explanation</h2>
+<p>The problem occurs if you were using a Community Archive node before you upgraded.</p>
+<h2>
+<a name="solution-2" class="anchor" href="https://radixtalk.com#solution-2"></a>Solution</h2>
+<p>Update your wallet to version 1.3.1 which fixes this specific issue.</p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/why-doesn-t-my-password-work-with-1-3-0-of-the-radix-wallet/293">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/why-doesn-t-my-password-work-with-1-3-0-of-the-radix-wallet/293</link>
+          <pubDate>Thu, 27 Jan 2022 22:40:40 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-293</guid>
+          <source url="https://radixtalk.com/t/why-doesn-t-my-password-work-with-1-3-0-of-the-radix-wallet/293.rss">Why doesn’t my password work with 1.3.0 of the Radix Wallet?</source>
+        </item>
+        <item>
+          <title>Do all wallet addresses start with rdx1qsp? If so, why not just rdx?</title>
+          <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+          <category>Questions / Help</category>
+          <description><![CDATA[
+            <p>Radix wallet addresses are bech32 encoded. <code>rdx</code> is the <strong>Human Readable Part (hrp)</strong>, <code>1</code> is a separator between the hrp and the rest of the address, and the <code>qsp</code> is because every Radix wallet address is a 33 byte compressed public key starting with <code>0x02</code> or <code>0x03</code> that is prefixed with a <code>0x04</code> byte.</p>
+<p>Ref: <a href="https://t.me/radix_dlt/345164">Telegram</a></p>
+            <p><small>2 posts - 2 participants</small></p>
+            <p><a href="https://radixtalk.com/t/do-all-wallet-addresses-start-with-rdx1qsp-if-so-why-not-just-rdx/280">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/do-all-wallet-addresses-start-with-rdx1qsp-if-so-why-not-just-rdx/280</link>
+          <pubDate>Mon, 24 Jan 2022 12:33:00 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-280</guid>
+          <source url="https://radixtalk.com/t/do-all-wallet-addresses-start-with-rdx1qsp-if-so-why-not-just-rdx/280.rss">Do all wallet addresses start with rdx1qsp? If so, why not just rdx?</source>
+        </item>
+        <item>
+          <title>Frequently Asked Questions about the Radix Ledger app on Ledger Live</title>
+          <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+          <category>Questions / Help</category>
+          <description><![CDATA[
+            <p><strong>Can I install the Radix Ledger app on my Ledger Nano X?</strong><br>
+Yes!</p>
+<p><strong>What firmware version do I need on my Ledger Nano X to install the Radix Ledger app?</strong><br>
+Version <strong>2.0.0</strong><br>
+<em>If you have an earlier firmware version the Radix Ledger app will not appear in the list of available apps.</em><br>
+Ref: <a href="https://support.ledger.com/hc/en-us/articles/360013349800-Update-Ledger-Nano-X-firmware?docs=true">https://support.ledger.com/hc/en-us/articles/360013349800-Update-Ledger-Nano-X-firmware?docs=true</a></p>
+<p><strong>What firmware version do I need on my Ledger Nano S to install the Radix Ledger app?</strong><br>
+Version <strong>2.1.0</strong><br>
+<em>If you have an earlier firmware version the Radix Ledger app will not appear in the list of available apps.</em><br>
+Ref: <a href="https://support.ledger.com/hc/en-us/articles/360002731113-Update-Ledger-Nano-S-firmware?docs=true">https://support.ledger.com/hc/en-us/articles/360002731113-Update-Ledger-Nano-S-firmware?docs=true</a></p>
+<p><strong>Do I need to uninstall the sideloaded Radix app from my Ledger Nano S before I install it from Ledger Live?</strong><br>
+Yes. Instructions for uninstalling the sideloaded Radix app are here for <a href="https://docs.radixdlt.com/main/user-applications/ledger-app-sideload-macos.html#_uninstalling_the_radix_ledger_app">MacOS</a> and <a href="https://docs.radixdlt.com/main/user-applications/ledger-app-sideload-windows.html#_uninstalling_the_radix_ledger_app">Windows</a></p>
+<p><strong>Why can’t I see the Radix Ledger app in the list of available apps in Ledger Live?</strong><br>
+Ensure you have enabled “Developer Mode” in the Ledger Live application<br>
+<em>Settings &gt; Experimental Features &gt; Developer Mode</em><br>
+</p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.radixtalk.com/uploads/default/original/1X/304f7388e342c279f456ab4f9ef281bdec1678b7.png" data-download-href="https://cdn.radixtalk.com/uploads/default/304f7388e342c279f456ab4f9ef281bdec1678b7" title="Screenshot 2022-01-14 at 11.11.15"><img src="https://cdn.radixtalk.com/uploads/default/optimized/1X/304f7388e342c279f456ab4f9ef281bdec1678b7_2_517x306.png" alt="Screenshot 2022-01-14 at 11.11.15" data-base62-sha1="6Tn8OHFKvtcFOOJEHnxbbXK1Cuz" width="517" height="306" srcset="https://cdn.radixtalk.com/uploads/default/optimized/1X/304f7388e342c279f456ab4f9ef281bdec1678b7_2_517x306.png, https://cdn.radixtalk.com/uploads/default/optimized/1X/304f7388e342c279f456ab4f9ef281bdec1678b7_2_775x459.png 1.5x, https://cdn.radixtalk.com/uploads/default/optimized/1X/304f7388e342c279f456ab4f9ef281bdec1678b7_2_1034x612.png 2x" data-small-upload="https://cdn.radixtalk.com/uploads/default/optimized/1X/304f7388e342c279f456ab4f9ef281bdec1678b7_2_10x10.png"></a></div><p></p>
+<p><strong>Can I add my Radix wallet to the Ledger Live application as an account?</strong><br>
+No. Radix is currently not available to add as an account on Ledger Live.</p>
+<p><strong>Will I lose my hardware wallet address when I uninstall the sideloaded Radix app?</strong><br>
+Absolutely not.</p>
+<blockquote>
+<p>The address is derived from the hardware device itself and so after you upgrade to the new Radix app, it will use exactly the same Radix address as before.</p>
+</blockquote>
+<p><strong>Will I have to unstake and restake after updating my Nano S / Nano X to the new Radix Ledger app?</strong><br>
+Absolutely not. Your hardware wallet address remains exactly the same.</p>
+<p><strong>How do I use the Radix Ledger app with the Radix Desktop wallet?</strong><br>
+See <a href="https://learn.radixdlt.com/article/using-ledger-nano-s-or-x-with-the-radix-desktop-wallet">Radix Learn: Using Ledger Nano S or X with the Radix Desktop Wallet</a></p>
+<p><strong>Can I use my Ledger seed phrase on another device or wallet if Ledger ever ceased to exist?</strong><br>
+Yes. Ledger uses a standard called BIP-32 to derive a private keys from a seed phrase. You will be able to use your Ledger seed phrase with any other hardware or software wallet that implements the BIP-32 standard.</p>
+<p><strong>Can I use multiple wallet-adresses (“accounts”) when using the Nano just like I can in the normal Radix wallet?</strong><br>
+You can’t use multiple wallet addresses with the hardware wallet at the moment. However this is a limitation of the current Radix Desktop wallet software and not the Ledger device. So in theory, it should be possible in an updated version of the Radix Desktop wallet software.</p>
+<blockquote>
+<p>We want to add support for multiple derived addresses, but no ETA yet (Ref: <a href="https://discord.com/channels/417762285172555786/421646460258615317/931590045398364171">Matt</a>)</p>
+</blockquote>
+<p><strong>Is there an option to rename the hardware wallet in the Radix Desktop wallet?</strong><br>
+No, not at the moment. This feature will likely be added when the Radix Desktop wallet supports multiple hardware accounts.</p>
+<p><strong>My Ledger says “Pending Ledger review”. It is not useable yet?</strong><br>
+Yes it is usable. You need to click both buttons on the Ledger to confirm. The Radix Ledger app will be fully functional after that. The Radix app is current enabled under “Developer Mode” which is why the additional confirmation is displayed.</p>
+<p><strong>Can I move my staking from my Radix Desktop wallet to my Ledger Hardware wallet?</strong><br>
+You will need to unstake from your Radix Desktop wallet address, transfer your XRD to the hardware wallet address, and then restake from your hardware wallet address.</p>
+            <p><small>3 posts - 2 participants</small></p>
+            <p><a href="https://radixtalk.com/t/frequently-asked-questions-about-the-radix-ledger-app-on-ledger-live/235">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/frequently-asked-questions-about-the-radix-ledger-app-on-ledger-live/235</link>
+          <pubDate>Fri, 14 Jan 2022 11:03:48 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-235</guid>
+          <source url="https://radixtalk.com/t/frequently-asked-questions-about-the-radix-ledger-app-on-ledger-live/235.rss">Frequently Asked Questions about the Radix Ledger app on Ledger Live</source>
+        </item>
+        <item>
+          <title>Why doesn&#39;t the Radix Ledger app show the exact amount when I am unstaking?</title>
+          <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+          <category>Questions / Help</category>
+          <description><![CDATA[
+            <p>Russell from Radix provided a comprehensive explanation as follows:</p>
+<blockquote>
+<ul>
+<li>Stake on nodes is not stored as an amount of XRD, but a number of StakeUnits.</li>
+<li>The XRD amount corresponding to a 1 StakeUnit differs from node to node.  Presently, all nodes start their life at 1 XRD per 1 StakeUnit, but network emissions will adjust this number over time.</li>
+<li>When you announce an intent to stake 1000 XRD to BobNode, a calculation is made that says “Well, as of this epoch 1 StakeUnit on BobNode is 1.02 XRD.  You can only get a whole number of StakeUnits.  Closest I can come is for you to get 980 StakeUnits, which currently works out to 999.6 XRD, so that’s what we’ll do.”</li>
+<li>At epoch rollover, when emissions happen, if BobNode qualified for emissions, the network increases the value of a StakeUnit on BobNode.  To keep the math simple, let’s pretend that increased to 1.03.  Your “amount staked” shown for BobNode would now be 980 * 1.03 = 1009.4</li>
+</ul>
+<p>What you’re seeing on your Ledger when unstaking is actually the number of StakeUnits, not the amount of XRD.</p>
+</blockquote>
+<p>Ref: <a href="https://discord.com/channels/417762285172555786/870020556626477056/931330804049674280" class="inline-onebox">Discord</a></p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/why-doesnt-the-radix-ledger-app-show-the-exact-amount-when-i-am-unstaking/234">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/why-doesnt-the-radix-ledger-app-show-the-exact-amount-when-i-am-unstaking/234</link>
+          <pubDate>Fri, 14 Jan 2022 05:23:07 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-234</guid>
+          <source url="https://radixtalk.com/t/why-doesnt-the-radix-ledger-app-show-the-exact-amount-when-i-am-unstaking/234.rss">Why doesn&#39;t the Radix Ledger app show the exact amount when I am unstaking?</source>
+        </item>
+        <item>
+          <title>How do I uninstall the side loaded Radix Ledger app from my Nano S?</title>
+          <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+          <category>Questions / Help</category>
+          <description><![CDATA[
+            <p>The following documents on <a href="http://docs.radixdlt.com">docs.radixdlt.com</a> have instructions for uninstalling the side loaded Radix Ledger App from your Ledger Nano S device:</p>
+<p>MacOS: <a href="https://docs.radixdlt.com/main/user-applications/ledger-app-sideload-macos.html#_uninstalling_the_radix_ledger_app">Uninstalling the Radix Ledger App - MacOS</a><br>
+Windows: <a href="https://docs.radixdlt.com/main/user-applications/ledger-app-sideload-windows.html#_uninstalling_the_radix_ledger_app">Uninstalling the Radix Ledger App - Windows</a></p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/how-do-i-uninstall-the-side-loaded-radix-ledger-app-from-my-nano-s/233">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/how-do-i-uninstall-the-side-loaded-radix-ledger-app-from-my-nano-s/233</link>
+          <pubDate>Fri, 14 Jan 2022 05:18:06 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-233</guid>
+          <source url="https://radixtalk.com/t/how-do-i-uninstall-the-side-loaded-radix-ledger-app-from-my-nano-s/233.rss">How do I uninstall the side loaded Radix Ledger app from my Nano S?</source>
+        </item>
+        <item>
+          <title>Why does the Radix Ledger app show such large amounts when confirming a transaction?</title>
+          <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+          <category>Questions / Help</category>
+          <description><![CDATA[
+            <p>The current version of the Radix Ledger app shows amounts in attos - the fractional unit of XRD. 1 XRD = 1,000,000,000,000,000,000 attos (1x10^18).</p>
+<p>For example, 9164264250557521654536 displayed on the Ledger Radix app is 9164.264250557521654536 XRD</p>
+<p>The following updates have been made to the Ledger Radix app to fix this issue:</p>
+<ul>
+<li><a href="https://github.com/radixdlt/app-radix/pull/17" class="inline-onebox">Change units while displaying unstake by siy · Pull Request #17 · radixdlt/app-radix · GitHub</a></li>
+<li><a href="https://github.com/radixdlt/app-radix/pull/15" class="inline-onebox">Whole token units by siy · Pull Request #15 · radixdlt/app-radix · GitHub</a></li>
+</ul>
+<p>Currently no estimate on when the Ledger Radix app will be approved for Ledger Live or whether a new sideload version will be made available before then.</p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/why-does-the-radix-ledger-app-show-such-large-amounts-when-confirming-a-transaction/232">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/why-does-the-radix-ledger-app-show-such-large-amounts-when-confirming-a-transaction/232</link>
+          <pubDate>Thu, 13 Jan 2022 10:32:34 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-232</guid>
+          <source url="https://radixtalk.com/t/why-does-the-radix-ledger-app-show-such-large-amounts-when-confirming-a-transaction/232.rss">Why does the Radix Ledger app show such large amounts when confirming a transaction?</source>
+        </item>
+        <item>
+          <title>Why can&#39;t I decrypt the VERI token message in my Radix Wallet?</title>
+          <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+          <category>Questions / Help</category>
+          <description><![CDATA[
+            <p>Some people have reported problems decrypting the VERI token message that is used to verify your wallet address by <a href="https://www.instapass.io/">Instapass</a>.</p>
+<p>In the event this happens, please send an email to <a href="mailto:support@instapass.io">support@instapass.io</a> to request another VERI token to be sent.</p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/why-cant-i-decrypt-the-veri-token-message-in-my-radix-wallet/229">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/why-cant-i-decrypt-the-veri-token-message-in-my-radix-wallet/229</link>
+          <pubDate>Tue, 11 Jan 2022 09:38:59 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-229</guid>
+          <source url="https://radixtalk.com/t/why-cant-i-decrypt-the-veri-token-message-in-my-radix-wallet/229.rss">Why can&#39;t I decrypt the VERI token message in my Radix Wallet?</source>
+        </item>
+        <item>
+          <title>Why is the Radix token symbol XRD and not RDX?</title>
+          <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+          <category>Questions / Help</category>
+          <description><![CDATA[
+            <p>The X prefix for currency codes is used for “supranational” currencies - that is a currency that is not linked to a specific country. It is also used for things that are treated like currencies - like gold (XAU), silver (XAG). The use of XRD is actually a smart decision if (when) Radix becomes the currency of DeFi.</p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/why-is-the-radix-token-symbol-xrd-and-not-rdx/228">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/why-is-the-radix-token-symbol-xrd-and-not-rdx/228</link>
+          <pubDate>Tue, 11 Jan 2022 08:26:59 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-228</guid>
+          <source url="https://radixtalk.com/t/why-is-the-radix-token-symbol-xrd-and-not-rdx/228.rss">Why is the Radix token symbol XRD and not RDX?</source>
+        </item>
+        <item>
+          <title>How to install/update the Radix Desktop Wallet</title>
+          <dc:creator><![CDATA[Mattia | MattiaNode]]></dc:creator>
+          <category>Questions / Help</category>
+          <description><![CDATA[
+            <p>The Radix Desktop Wallet is currently the only official wallet and is needed to receive/send XRD and stake them. Here’s how to install it:</p>
+<blockquote>
+<p>You can follow the same steps to update your Radix Wallet to the latest version.</p>
+</blockquote>
+<h1>
+<a name="windows-1" class="anchor" href="https://radixtalk.com#windows-1"></a>Windows</h1>
+<ol>
+<li>
+<p>Go to <a href="https://wallet.radixdlt.com">https://wallet.radixdlt.com/</a></p>
+</li>
+<li>
+<p>Click on “<strong>Download for Windows</strong>”</p>
+<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.radixtalk.com/uploads/default/original/1X/867a32aed965b4bc368c4979b6b04dc3df202717.jpeg" data-download-href="https://cdn.radixtalk.com/uploads/default/867a32aed965b4bc368c4979b6b04dc3df202717" title="image"><img src="https://cdn.radixtalk.com/uploads/default/optimized/1X/867a32aed965b4bc368c4979b6b04dc3df202717_2_536x500.jpeg" alt="image" data-base62-sha1="jbDMUWcBkdjA6IDaQpYJrVGpDDh" width="536" height="500" srcset="https://cdn.radixtalk.com/uploads/default/optimized/1X/867a32aed965b4bc368c4979b6b04dc3df202717_2_536x500.jpeg, https://cdn.radixtalk.com/uploads/default/original/1X/867a32aed965b4bc368c4979b6b04dc3df202717.jpeg 1.5x, https://cdn.radixtalk.com/uploads/default/original/1X/867a32aed965b4bc368c4979b6b04dc3df202717.jpeg 2x" data-small-upload="https://cdn.radixtalk.com/uploads/default/optimized/1X/867a32aed965b4bc368c4979b6b04dc3df202717_2_10x10.png"></a></div><p></p>
+</li>
+<li>
+<p>Save the executable on your computer</p>
+<p><img src="https://cdn.radixtalk.com/uploads/default/original/1X/0bad05e162ef57bb95f48c82b271a91f52117307.png" alt="image" data-base62-sha1="1FhX2aZwbdGWNOh8NBQoqhFJftZ" width="434" height="197"></p>
+</li>
+<li>
+<p>Run the downloaded file (<code>Radix-Wallet-Setup-1.x.x.exe</code>, version will vary)</p>
+<p><img src="https://cdn.radixtalk.com/uploads/default/original/1X/462e1e36148b56af9d386def480d720ce2dac025.png" alt="image" data-base62-sha1="a0QehldmTO1EPwJU9DX6A3jvDYF" width="189" height="23"></p>
+</li>
+<li>
+<p>The installer will setup the Radix Wallet</p>
+<p><img src="https://cdn.radixtalk.com/uploads/default/original/1X/07ea13685d1c452312960835fef187b544e1716f.png" alt="image" data-base62-sha1="180Qxqw7KjKur23uNWWBQjQntyn" width="383" height="154"></p>
+</li>
+<li>
+<p>Once the install has been completed, the Radix Wallet will automatically open.</p>
+</li>
+</ol>
+<h1>
+<a name="macos-2" class="anchor" href="https://radixtalk.com#macos-2"></a>MacOS</h1>
+<ol>
+<li>
+<p>Go to <a href="https://wallet.radixdlt.com">https://wallet.radixdlt.com/</a></p>
+</li>
+<li>
+<p>Click on “Download for MacOS”</p>
+<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.radixtalk.com/uploads/default/original/1X/1ec95b15998284f74bef6da8c8fb9a95a031ee78.jpeg" data-download-href="https://cdn.radixtalk.com/uploads/default/1ec95b15998284f74bef6da8c8fb9a95a031ee78" title="image"><img src="https://cdn.radixtalk.com/uploads/default/optimized/1X/1ec95b15998284f74bef6da8c8fb9a95a031ee78_2_506x500.jpeg" alt="image" data-base62-sha1="4olJ4hOGv4NVDe2zSrpClrEqN4I" width="506" height="500" srcset="https://cdn.radixtalk.com/uploads/default/optimized/1X/1ec95b15998284f74bef6da8c8fb9a95a031ee78_2_506x500.jpeg, https://cdn.radixtalk.com/uploads/default/optimized/1X/1ec95b15998284f74bef6da8c8fb9a95a031ee78_2_759x750.jpeg 1.5x, https://cdn.radixtalk.com/uploads/default/original/1X/1ec95b15998284f74bef6da8c8fb9a95a031ee78.jpeg 2x" data-small-upload="https://cdn.radixtalk.com/uploads/default/optimized/1X/1ec95b15998284f74bef6da8c8fb9a95a031ee78_2_10x10.png"></a></div><p></p>
+</li>
+<li>
+<p>Once downloaded, go to your <em>downloads</em> folder and open the downloaded .dmg file.</p>
+<p><img src="https://cdn.radixtalk.com/uploads/default/original/1X/46ae77a109968399862b147e5e76af7f6c62f583.jpeg" alt="image" data-base62-sha1="a5hdtGtBQ722b0jFDhu5IinuBBV" width="533" height="227"></p>
+</li>
+<li>
+<p>The .dmg file will be mounted in your desktop and in your Finder sidebar, under your hard drive. Clicking either one of these opens the DMG file.</p>
+<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.radixtalk.com/uploads/default/original/1X/3e0d3c9e57261a4cc4b7cbf20effe76a45c5704c.jpeg" data-download-href="https://cdn.radixtalk.com/uploads/default/3e0d3c9e57261a4cc4b7cbf20effe76a45c5704c" title="image"><img src="https://cdn.radixtalk.com/uploads/default/optimized/1X/3e0d3c9e57261a4cc4b7cbf20effe76a45c5704c_2_517x362.jpeg" alt="image" data-base62-sha1="8QVXHeXB2QLpXMTvMlcEBnYifTK" width="517" height="362" srcset="https://cdn.radixtalk.com/uploads/default/optimized/1X/3e0d3c9e57261a4cc4b7cbf20effe76a45c5704c_2_517x362.jpeg, https://cdn.radixtalk.com/uploads/default/optimized/1X/3e0d3c9e57261a4cc4b7cbf20effe76a45c5704c_2_775x543.jpeg 1.5x, https://cdn.radixtalk.com/uploads/default/optimized/1X/3e0d3c9e57261a4cc4b7cbf20effe76a45c5704c_2_1034x724.jpeg 2x" data-small-upload="https://cdn.radixtalk.com/uploads/default/optimized/1X/3e0d3c9e57261a4cc4b7cbf20effe76a45c5704c_2_10x10.png"></a></div><p></p>
+</li>
+<li>
+<p>Drag and drop the “Radix Wallet” icon in your Applications folder to install it.</p>
+</li>
+<li>
+<p>You can now eject the .dmg (disk image) file.</p>
+</li>
+<li>
+<p>The Radix Wallet is now installed and can be opened from your Applications folder.</p>
+</li>
+</ol>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/how-to-install-update-the-radix-desktop-wallet/218">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/how-to-install-update-the-radix-desktop-wallet/218</link>
+          <pubDate>Fri, 07 Jan 2022 10:08:39 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-218</guid>
+          <source url="https://radixtalk.com/t/how-to-install-update-the-radix-desktop-wallet/218.rss">How to install/update the Radix Desktop Wallet</source>
+        </item>
+        <item>
+          <title>Why does my plain text transaction message show as encrypted in the wallet and Radix Explorer?</title>
+          <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+          <category>Questions / Help</category>
+          <description><![CDATA[
+            <p>There is a bug in the <a href="https://github.com/radixdlt/radixdlt-javascript">Radix javascript library</a> that causes a plain text (unencrypted) message that starts with the digit <code>1</code> to be incorrectly be identified as an encrypted message.</p>
+<p>For example, the message <code>1 ring to rule them all</code> would be incorrectly interpreted as being an encrypted message.</p>
+<p>This is a display bug only. The actual on-ledger data is correctly saved as plain text and will display correctly in the wallet and explorer when the Radix javascript library is fixed.</p>
+<h3>
+<a name="workaround-1" class="anchor" href="https://radixtalk.com#workaround-1"></a>Workaround:</h3>
+<p>Do not start messages with the digit <code>1</code> until the Radix javascript library is updated.</p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/why-does-my-plain-text-transaction-message-show-as-encrypted-in-the-wallet-and-radix-explorer/205">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/why-does-my-plain-text-transaction-message-show-as-encrypted-in-the-wallet-and-radix-explorer/205</link>
+          <pubDate>Tue, 04 Jan 2022 09:00:28 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-205</guid>
+          <source url="https://radixtalk.com/t/why-does-my-plain-text-transaction-message-show-as-encrypted-in-the-wallet-and-radix-explorer/205.rss">Why does my plain text transaction message show as encrypted in the wallet and Radix Explorer?</source>
+        </item>
+        <item>
+          <title>My Radix Wallet is not working</title>
+          <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+          <category>Questions / Help</category>
+          <description><![CDATA[
+            <h2>
+<a name="wallet-version-1" class="anchor" href="https://radixtalk.com#wallet-version-1"></a>Wallet Version</h2>
+<p>Ensure that you are using the latest version of the Radix Wallet available from:<br>
+<a href="https://wallet.radixdlt.com/" class="onebox" target="_blank" rel="noopener">https://wallet.radixdlt.com/</a></p>
+<p>Older versions of the wallet (v1.0.x) do not work with the current archive nodes.</p>
+<h2>
+<a name="issues-with-official-archive-nodes-2" class="anchor" href="https://radixtalk.com#issues-with-official-archive-nodes-2"></a>Issues with Official Archive Nodes</h2>
+<p>Your wallet may be having problems connecting to the official Radix Archive nodes. RadixDLT run several load balanced, regional archive nodes (Ireland, India, Australia and the United States).</p>
+<ol>
+<li>
+<p>If the problem is localised to a region, then using a VPN to connect to a different region may resolve the issue.</p>
+</li>
+<li>
+<p>You can connect  the wallet to a Community Archive node by following the instructions here:</p>
+</li>
+</ol>
+<aside class="quote quote-modified" data-post="1" data-topic="156">
+  <div class="title">
+    <div class="quote-controls"></div>
+    <img loading="lazy" alt="" width="20" height="20" src="https://radixtalk.com/letter_avatar_proxy/v4/letter/s/cab0a1/40.png" class="avatar">
+    <a href="https://radixtalk.com/t/what-community-archive-nodes-can-i-use-with-the-radix-desktop-wallet/156">What community archive nodes can I use with the Radix Desktop Wallet?</a> <a class="badge-wrapper  bullet" href="https://radixtalk.com/c/questions/35"><span class="badge-category-bg" style="background-color: #3AB54A;"></span><span style="" data-drop-close="true" class="badge-category clear-badge" title="Radix Questions / Help">Questions / Help</span></a>
+  </div>
+  <blockquote>
+    Some Validators run public, community archive nodes that may be useful when there is a lot of demand on the official Radix Archive Nodes: 
+
+<a name="community-archive-nodes-mainnet-1" class="anchor" href="https://radixtalk.com#community-archive-nodes-mainnet-1"></a>Community Archive Nodes (MAINNET)
+
+https://api.radix.community
+https://archive.stakesafe.net
+https://node.radixscan.io
+https://node.caviarnine.com
+
+
+<a name="changing-the-radix-wallet-archive-node-2" class="anchor" href="https://radixtalk.com#changing-the-radix-wallet-archive-node-2"></a>Changing the Radix Wallet Archive Node:
+Open the Radix Wallet application, then: 
+
+Select Wallet Settings
+
+Select the Choose Node/Network tab
+Type in one of the Community Archive node addresses from the list abo…
+  </blockquote>
+</aside>
+
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/my-radix-wallet-is-not-working/190">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/my-radix-wallet-is-not-working/190</link>
+          <pubDate>Sat, 01 Jan 2022 13:00:03 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-190</guid>
+          <source url="https://radixtalk.com/t/my-radix-wallet-is-not-working/190.rss">My Radix Wallet is not working</source>
+        </item>
+        <item>
+          <title>Would all accounts created in a Radix Wallet be restored when restoring a Radix Wallet?</title>
+          <dc:creator><![CDATA[Fab31t]]></dc:creator>
+          <category>Questions / Help</category>
+          <description><![CDATA[
+            <p>This is not the case for all wallets and it could be of interest to know if all accounts created in a Radix Wallet are restored in the Radix Wallet when restoring a Radix Wallet or if there is a procedure to follow to see them again? Thank you</p>
+            <p><small>4 posts - 4 participants</small></p>
+            <p><a href="https://radixtalk.com/t/would-all-accounts-created-in-a-radix-wallet-be-restored-when-restoring-a-radix-wallet/187">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/would-all-accounts-created-in-a-radix-wallet-be-restored-when-restoring-a-radix-wallet/187</link>
+          <pubDate>Fri, 31 Dec 2021 09:40:10 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-187</guid>
+          <source url="https://radixtalk.com/t/would-all-accounts-created-in-a-radix-wallet-be-restored-when-restoring-a-radix-wallet/187.rss">Would all accounts created in a Radix Wallet be restored when restoring a Radix Wallet?</source>
+        </item>
+        <item>
+          <title>Useful Radix related links (community tools and more)</title>
+          <dc:creator><![CDATA[Mattia | MattiaNode]]></dc:creator>
+          <category>Questions / Help</category>
+          <description><![CDATA[
+            <h1>
+<a name="useful-links-1" class="anchor" href="https://radixtalk.com#useful-links-1"></a>Useful links</h1>
+<h3>
+<a name="official-links-2" class="anchor" href="https://radixtalk.com#official-links-2"></a>Official links</h3>
+<ul>
+<li><a href="https://www.radixdlt.com/">Website</a></li>
+<li><a href="https://www.radixdlt.com/blog">Radix blog</a></li>
+<li><a href="https://wallet.radixdlt.com/">Wallet download</a></li>
+<li><a href="https://explorer.radixdlt.com/#/">Explorer</a></li>
+<li><a href="https://www.instapass.io/">Instapass (KYC)</a></li>
+<li><a href="https://www.instabridge.io/">Instabridge (eXRD → XRD)</a></li>
+</ul>
+<h3>
+<a name="telegram-groups-3" class="anchor" href="https://radixtalk.com#telegram-groups-3"></a>Telegram groups</h3>
+<ul>
+<li><a href="https://t.me/radix_dlt">Radix DLT Official</a></li>
+<li><a href="https://t.me/Radix_TRADER">Radix Trader (for price talk)</a></li>
+<li><a href="https://radixtalk.com/t/unofficial-community-managed-groups/81">Unofficial community managed groups</a></li>
+</ul>
+<h3>
+<a name="exrd-stats-4" class="anchor" href="https://radixtalk.com#exrd-stats-4"></a>eXRD stats</h3>
+<ul>
+<li><a href="https://coinmarketcap.com/currencies/radix/">Coinmarketcap</a></li>
+<li><a href="https://www.coingecko.com/en/coins/e-radix">CoinGecko</a></li>
+</ul>
+<h3>
+<a name="community-tools-5" class="anchor" href="https://radixtalk.com#community-tools-5"></a>Community tools</h3>
+<ul>
+<li>
+<strong><a href="https://florianpieperstaking.com/">Florian Pieper Staking</a></strong>
+<ul>
+<li>Staking rewards calculator</li>
+<li><a href="https://florianpieperstaking.com/validators">Validator list</a></li>
+</ul>
+</li>
+<li>
+<strong><a href="https://www.radixportfolio.info/">Radix Portfolio</a></strong>
+<ul>
+<li>Staking dashboard and more great tools for staking</li>
+</ul>
+</li>
+<li>
+<strong><a href="https://www.radixscan.io/">RadixScan</a></strong>
+<ul>
+<li><a href="https://www.radixscan.io/ValidatorTable.shtml">Validator list</a></li>
+<li><a href="https://www.radixscan.io/JSONExplorer.shtml">Network explorer</a></li>
+<li><a href="https://www.radixscan.io/NetworkUtilization.shtml">Network utilization</a></li>
+<li><a href="https://www.radixscan.io/TokenTable.shtml">Radix Tokens list</a></li>
+</ul>
+</li>
+<li>
+<strong><a href="https://www.radixdashboard.com/">Radix Dashboard</a></strong>
+<ul>
+<li>Staking APY %</li>
+<li>Epoch information</li>
+<li>Network &amp; XRD metrics</li>
+<li>Validator list</li>
+</ul>
+</li>
+<li>
+<strong><a href="https://caviarnine.com/stats">CaviarNine Stats</a></strong>
+<ul>
+<li>Amount of XRD staked</li>
+<li>Total number of XRD wallets</li>
+<li>Amount of XRD fee burned</li>
+<li>Number of actions (transfers, staking, etc…)</li>
+</ul>
+</li>
+<li>
+<strong><a href="https://www.radix.earth/">Radix Earth</a></strong>
+<ul>
+<li>Validator list with node geolocation (useful to promote geographical decentralization)</li>
+</ul>
+</li>
+</ul>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/useful-radix-related-links-community-tools-and-more/183">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/useful-radix-related-links-community-tools-and-more/183</link>
+          <pubDate>Thu, 30 Dec 2021 14:24:14 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-183</guid>
+          <source url="https://radixtalk.com/t/useful-radix-related-links-community-tools-and-more/183.rss">Useful Radix related links (community tools and more)</source>
+        </item>
+        <item>
+          <title>Where can I get the Radix logo and brand guidelines?</title>
+          <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+          <category>Questions / Help</category>
+          <description><![CDATA[
+            <p>The Radix logo in various formats and brand guidelines can be downloaded from below:</p>
+<p><a class="attachment" href="https://radixtalk.com/uploads/short-url/b1XNwZoTdEqPnG382BeYUtKReqZ.zip">Radix-Logo-Pack.zip</a> (23.9 KB)<br>
+<a class="attachment" href="https://radixtalk.com/uploads/short-url/xMLiIhEWPCLOHn4AfGWibRx8Q8K.pdf">Brand-Guidelines.pdf</a> (3.7 MB)<br>
+<a class="attachment" href="https://radixtalk.com/uploads/short-url/wBAVwfqXsFhvOidwxpyug3gWIok.zip">Radix_Logo.eps.zip</a> (367.2 KB)<br>
+<a class="attachment" href="https://radixtalk.com/uploads/short-url/6DxBD1oaRVKGmd1nXpLUsQ1UQKY.zip">Radix_Logo.ai.zip</a> (313.6 KB)</p>
+<p><em>From <strong>welcome</strong> channel in <a href="https://discord.com/channels/417762285172555786/767502895888334879/823227798356754442">RadixDLT Discord Forum</a></em></p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/where-can-i-get-the-radix-logo-and-brand-guidelines/182">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/where-can-i-get-the-radix-logo-and-brand-guidelines/182</link>
+          <pubDate>Thu, 30 Dec 2021 10:55:05 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-182</guid>
+          <source url="https://radixtalk.com/t/where-can-i-get-the-radix-logo-and-brand-guidelines/182.rss">Where can I get the Radix logo and brand guidelines?</source>
+        </item>
+        <item>
+          <title>Do I have to leave the desktop wallet running to stake Radix?</title>
+          <dc:creator><![CDATA[Mattia | MattiaNode]]></dc:creator>
+          <category>Questions / Help</category>
+          <description><![CDATA[
+            <p>No, there’s no need to leave your wallet open for staking to happen!<br>
+Radix uses a <strong>DPoS</strong> (<em><strong>D</strong>elegated <strong>P</strong>roof <strong>o</strong>f <strong>S</strong>take</em>) system to reach consensus, which is different compared to a <strong>PoW</strong> (<em><strong>P</strong>roof <strong>o</strong>f <strong>W</strong>ork</em>) system like Bitcoin.<br>
+Your stake is being handled by the validator node you delegated it to.</p>
+<p>You can obviously also turn off your computer.</p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/do-i-have-to-leave-the-desktop-wallet-running-to-stake-radix/181">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/do-i-have-to-leave-the-desktop-wallet-running-to-stake-radix/181</link>
+          <pubDate>Wed, 29 Dec 2021 20:40:02 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-181</guid>
+          <source url="https://radixtalk.com/t/do-i-have-to-leave-the-desktop-wallet-running-to-stake-radix/181.rss">Do I have to leave the desktop wallet running to stake Radix?</source>
+        </item>
+        <item>
+          <title>Is there a minimum staking period or minimum XRD required to stake?</title>
+          <dc:creator><![CDATA[Mattia | MattiaNode]]></dc:creator>
+          <category>Questions / Help</category>
+          <description><![CDATA[
+            <p>There is no minimum staking period, there is only a 2 weeks delay if you want to unstake your coins, for the network security. Read more about it <a href="https://radixtalk.com/t/why-does-it-take-so-long-to-unstake-from-a-validator/176">here.</a><br>
+There’s a minimum of 90 XRD for each staking request made from the wallet.</p>
+<p>Don’t forget to leave 0.6 XRD in your wallet to request an unstake.</p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/is-there-a-minimum-staking-period-or-minimum-xrd-required-to-stake/180">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/is-there-a-minimum-staking-period-or-minimum-xrd-required-to-stake/180</link>
+          <pubDate>Wed, 29 Dec 2021 20:34:52 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-180</guid>
+          <source url="https://radixtalk.com/t/is-there-a-minimum-staking-period-or-minimum-xrd-required-to-stake/180.rss">Is there a minimum staking period or minimum XRD required to stake?</source>
+        </item>
+        <item>
+          <title>How to backup your Radix Wallet</title>
+          <dc:creator><![CDATA[Mattia | MattiaNode]]></dc:creator>
+          <category>Questions / Help</category>
+          <description><![CDATA[
+            <p>Your 12 words recovery phrase is the best tool to recover your wallet, but for additional safety measures you may also want to backup your wallet file (for example before updating your wallet, or to move your wallet to another computer).</p>
+<p>Here’s how to:</p>
+<ol>
+<li>Open <em>Windows Explorer</em> (My Computer/My Documents)</li>
+</ol>
+<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://radixtalk.com/uploads/default/original/1X/d743f0fb3bc8f3c627422dfa2c1c05fb6768c41a.jpeg" data-download-href="https://radixtalk.com/uploads/default/d743f0fb3bc8f3c627422dfa2c1c05fb6768c41a" title="image"><img src="https://radixtalk.com/uploads/default/optimized/1X/d743f0fb3bc8f3c627422dfa2c1c05fb6768c41a_2_183x500.jpeg" alt="image" data-base62-sha1="uIkdCQgOh4a8qV5gJK9KvU2CgxI" width="183" height="500" srcset="https://radixtalk.com/uploads/default/optimized/1X/d743f0fb3bc8f3c627422dfa2c1c05fb6768c41a_2_183x500.jpeg, https://radixtalk.com/uploads/default/original/1X/d743f0fb3bc8f3c627422dfa2c1c05fb6768c41a.jpeg 1.5x, https://radixtalk.com/uploads/default/original/1X/d743f0fb3bc8f3c627422dfa2c1c05fb6768c41a.jpeg 2x" data-small-upload="https://radixtalk.com/uploads/default/optimized/1X/d743f0fb3bc8f3c627422dfa2c1c05fb6768c41a_2_10x10.png"></a></div><p></p>
+<ol start="2">
+<li>In the address bar, paste <code>%APPDATA%\radix-olympia-desktop-wallet</code> and press Enter</li>
+</ol>
+<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://radixtalk.com/uploads/default/original/1X/9f64fa817e5d53c7b13f737f0aebb33cad305f09.png" data-download-href="https://radixtalk.com/uploads/default/9f64fa817e5d53c7b13f737f0aebb33cad305f09" title="image"><img src="https://radixtalk.com/uploads/default/optimized/1X/9f64fa817e5d53c7b13f737f0aebb33cad305f09_2_690x412.png" alt="image" data-base62-sha1="mK4gkd30GLwHL6mcp5MH5TanJLH" width="690" height="412" srcset="https://radixtalk.com/uploads/default/optimized/1X/9f64fa817e5d53c7b13f737f0aebb33cad305f09_2_690x412.png, https://radixtalk.com/uploads/default/optimized/1X/9f64fa817e5d53c7b13f737f0aebb33cad305f09_2_1035x618.png 1.5x, https://radixtalk.com/uploads/default/original/1X/9f64fa817e5d53c7b13f737f0aebb33cad305f09.png 2x" data-small-upload="https://radixtalk.com/uploads/default/optimized/1X/9f64fa817e5d53c7b13f737f0aebb33cad305f09_2_10x10.png"></a></div><p></p>
+<ol start="3">
+<li>To backup your wallet, simply copy the file <code>wallet.json</code> and paste it somewhere safe.</li>
+</ol>
+<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://radixtalk.com/uploads/default/original/1X/90b0e9a7b8a10d3dc92b981ecc774bb94eaa8c7a.png" data-download-href="https://radixtalk.com/uploads/default/90b0e9a7b8a10d3dc92b981ecc774bb94eaa8c7a" title="image"><img src="https://radixtalk.com/uploads/default/optimized/1X/90b0e9a7b8a10d3dc92b981ecc774bb94eaa8c7a_2_690x414.png" alt="image" data-base62-sha1="kDZMWNrNT7ZfiE3Z8bXVYZtyISm" width="690" height="414" srcset="https://radixtalk.com/uploads/default/optimized/1X/90b0e9a7b8a10d3dc92b981ecc774bb94eaa8c7a_2_690x414.png, https://radixtalk.com/uploads/default/optimized/1X/90b0e9a7b8a10d3dc92b981ecc774bb94eaa8c7a_2_1035x621.png 1.5x, https://radixtalk.com/uploads/default/original/1X/90b0e9a7b8a10d3dc92b981ecc774bb94eaa8c7a.png 2x" data-small-upload="https://radixtalk.com/uploads/default/optimized/1X/90b0e9a7b8a10d3dc92b981ecc774bb94eaa8c7a_2_10x10.png"></a></div><p></p>
+<blockquote>
+<p>If you want to delete your wallet and start fresh, simply delete the file <code>wallet.json</code>.</p>
+</blockquote>
+<p>To restore your wallet on another computer, simply do the same steps but instead of copying the file, paste it in the <em>radix-olympia-desktop-wallet</em> directory.</p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/how-to-backup-your-radix-wallet/178">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/how-to-backup-your-radix-wallet/178</link>
+          <pubDate>Wed, 29 Dec 2021 20:13:52 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-178</guid>
+          <source url="https://radixtalk.com/t/how-to-backup-your-radix-wallet/178.rss">How to backup your Radix Wallet</source>
+        </item>
+        <item>
+          <title>What analytics / tracking does RadixTalk use?</title>
+          <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+          <category>Questions / Help</category>
+          <description><![CDATA[
+            <p>RadixTalk uses <a href="https://plausible.io/privacy-focused-web-analytics" class="inline-onebox">Plausible: Privacy focused Google Analytics alternative | Plausible Analytics</a> to track website usage. Plausible is open source, does not collect any personally identifiable information (PII), and does not use cookies (no cookie banners <img src="https://radixtalk.com/images/emoji/twitter/raised_hands.png?v=10" title=":raised_hands:" class="emoji" alt=":raised_hands:">). All collected data is aggregated only and completely anonymous.</p>
+<aside class="onebox allowlistedgeneric" data-onebox-src="https://plausible.io/">
+  <header class="source">
+      <img src="https://radixtalk.com/uploads/default/original/1X/51cc68de1df0887ace1aecb2201557a67301cea7.png" class="site-icon" width="36" height="36">
+
+      <a href="https://plausible.io/" target="_blank" rel="noopener">Plausible Analytics</a>
+  </header>
+
+  <article class="onebox-body">
+    <div class="aspect-image" style="--aspect-ratio:690/361;"><img src="https://radixtalk.com/uploads/default/optimized/1X/b47d69c096d67b8374e553653e00b410174d0654_2_690x361.jpeg" class="thumbnail" width="690" height="361" srcset="https://radixtalk.com/uploads/default/optimized/1X/b47d69c096d67b8374e553653e00b410174d0654_2_690x361.jpeg, https://radixtalk.com/uploads/default/optimized/1X/b47d69c096d67b8374e553653e00b410174d0654_2_1035x541.jpeg 1.5x, https://radixtalk.com/uploads/default/original/1X/b47d69c096d67b8374e553653e00b410174d0654.jpeg 2x" data-small-upload="https://radixtalk.com/uploads/default/optimized/1X/b47d69c096d67b8374e553653e00b410174d0654_2_10x10.png"></div>
+
+<h3><a href="https://plausible.io/" target="_blank" rel="noopener">Plausible Analytics</a></h3>
+
+  <p>Plausible is a lightweight and open-source Google Analytics alternative. Your website data is 100% yours and the privacy of your visitors is respected.</p>
+
+
+  </article>
+
+  <div class="onebox-metadata">
+    
+    
+  </div>
+
+  <div style="clear: both"></div>
+</aside>
+
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/what-analytics-tracking-does-radixtalk-use/162">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/what-analytics-tracking-does-radixtalk-use/162</link>
+          <pubDate>Wed, 29 Dec 2021 16:00:25 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-162</guid>
+          <source url="https://radixtalk.com/t/what-analytics-tracking-does-radixtalk-use/162.rss">What analytics / tracking does RadixTalk use?</source>
+        </item>
+        <item>
+          <title>Is there a mobile wallet for Radix?</title>
+          <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+          <category>Questions / Help</category>
+          <description><![CDATA[
+            <p>No, there is currently not an official mobile wallet for Radix.</p>
+<h2>
+<a name="further-explanation-1" class="anchor" href="https://radixtalk.com#further-explanation-1"></a>Further explanation</h2>
+<p>Matt explains why there will not be a RDX Works developed mobile wallet for Radix before the Babylon release in the video below:</p>
+<p><a href="https://www.youtube.com/embed/FdrPMseZ9iA?autoplay=1&amp;feature=oembed&amp;wmode=opaque&amp;start=1395">https://www.youtube.com/embed/FdrPMseZ9iA</a></p>
+
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/is-there-a-mobile-wallet-for-radix/161">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/is-there-a-mobile-wallet-for-radix/161</link>
+          <pubDate>Wed, 29 Dec 2021 14:55:53 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-161</guid>
+          <source url="https://radixtalk.com/t/is-there-a-mobile-wallet-for-radix/161.rss">Is there a mobile wallet for Radix?</source>
+        </item>
+        <item>
+          <title>What community archive nodes can I use with the Radix Desktop Wallet?</title>
+          <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+          <category>Questions / Help</category>
+          <description><![CDATA[
+            <p>Some Validators run public, community archive nodes that may be useful when there is a lot of demand on the official Radix Archive Nodes:</p>
+<p><strong>Risk Warning - whilst the archive nodes listed below are run by known, long serving community members, please be advised that they are not official Radix nodes and so do require a certain amount of trust.  There is an element of risk in the unlikely event that a community archive node runner acted maliciously.</strong></p>
+<h3>
+<a name="community-archive-nodes-mainnet-1" class="anchor" href="https://radixtalk.com#community-archive-nodes-mainnet-1"></a>Community Archive Nodes (MAINNET)</h3>
+<ul>
+<li><code>https://api.radix.community</code></li>
+<li><code>https://archive.stakesafe.net</code></li>
+<li><code>https://node.radixscan.io</code></li>
+<li><code>https://node.caviarnine.com</code></li>
+</ul>
+<h3>
+<a name="changing-the-radix-wallet-archive-node-2" class="anchor" href="https://radixtalk.com#changing-the-radix-wallet-archive-node-2"></a>Changing the Radix Wallet Archive Node:</h3>
+<p>Open the Radix Wallet application, then:</p>
+<ol>
+<li>Select <strong>Wallet Settings</strong>
+</li>
+<li>Select the <strong>Choose Node/Network</strong> tab</li>
+<li>Type in one of the Community Archive node addresses from the list above</li>
+<li>Click the <strong>+ add node</strong> button</li>
+</ol>
+<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://radixtalk.com/uploads/default/original/1X/faf198d4868a64bd116189d540dcc26ac3720b30.jpeg" data-download-href="https://radixtalk.com/uploads/default/faf198d4868a64bd116189d540dcc26ac3720b30" title="wallet_choose_node"><img src="https://radixtalk.com/uploads/default/optimized/1X/faf198d4868a64bd116189d540dcc26ac3720b30_2_690x407.jpeg" alt="wallet_choose_node" data-base62-sha1="zNWZbbQwM2BMdnriD22pV6tW3le" width="690" height="407" srcset="https://radixtalk.com/uploads/default/optimized/1X/faf198d4868a64bd116189d540dcc26ac3720b30_2_690x407.jpeg, https://radixtalk.com/uploads/default/optimized/1X/faf198d4868a64bd116189d540dcc26ac3720b30_2_1035x610.jpeg 1.5x, https://radixtalk.com/uploads/default/optimized/1X/faf198d4868a64bd116189d540dcc26ac3720b30_2_1380x814.jpeg 2x" data-small-upload="https://radixtalk.com/uploads/default/optimized/1X/faf198d4868a64bd116189d540dcc26ac3720b30_2_10x10.png"></a></div><p></p>
+<ol start="5">
+<li>Click the <strong>Connect to MAINNET</strong> button to confirm Archive Node Change</li>
+</ol>
+<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://radixtalk.com/uploads/default/original/1X/150de458b1182506a12ae71ca6a937309cfa0469.png" data-download-href="https://radixtalk.com/uploads/default/150de458b1182506a12ae71ca6a937309cfa0469" title="wallet_confirm_node"><img src="https://radixtalk.com/uploads/default/optimized/1X/150de458b1182506a12ae71ca6a937309cfa0469_2_345x204.png" alt="wallet_confirm_node" data-base62-sha1="30fMZVZ33KiHFyQgtyOrXT18UdP" width="345" height="204" srcset="https://radixtalk.com/uploads/default/optimized/1X/150de458b1182506a12ae71ca6a937309cfa0469_2_345x204.png, https://radixtalk.com/uploads/default/optimized/1X/150de458b1182506a12ae71ca6a937309cfa0469_2_517x306.png 1.5x, https://radixtalk.com/uploads/default/optimized/1X/150de458b1182506a12ae71ca6a937309cfa0469_2_690x408.png 2x" data-small-upload="https://radixtalk.com/uploads/default/optimized/1X/150de458b1182506a12ae71ca6a937309cfa0469_2_10x10.png"></a></div><p></p>
+<ol start="6">
+<li>The wallet will restart and you will be prompted to enter your password again</li>
+</ol>
+<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://radixtalk.com/uploads/default/original/1X/d0f0b11683c2ded504f3911ab642ad4ec769388a.png" data-download-href="https://radixtalk.com/uploads/default/d0f0b11683c2ded504f3911ab642ad4ec769388a" title="Screenshot 2022-01-01 at 12.14.19"><img src="https://radixtalk.com/uploads/default/optimized/1X/d0f0b11683c2ded504f3911ab642ad4ec769388a_2_345x224.png" alt="Screenshot 2022-01-01 at 12.14.19" data-base62-sha1="tOmZBcyEiHJemH0fsYT1DOuD7w6" width="345" height="224" srcset="https://radixtalk.com/uploads/default/optimized/1X/d0f0b11683c2ded504f3911ab642ad4ec769388a_2_345x224.png, https://radixtalk.com/uploads/default/optimized/1X/d0f0b11683c2ded504f3911ab642ad4ec769388a_2_517x336.png 1.5x, https://radixtalk.com/uploads/default/optimized/1X/d0f0b11683c2ded504f3911ab642ad4ec769388a_2_690x448.png 2x" data-small-upload="https://radixtalk.com/uploads/default/optimized/1X/d0f0b11683c2ded504f3911ab642ad4ec769388a_2_10x10.png"></a></div><p></p>
+<h3>
+<a name="about-the-community-archive-nodes-3" class="anchor" href="https://radixtalk.com#about-the-community-archive-nodes-3"></a>About the Community Archive Nodes</h3>
+<ul>
+<li><a href="https://radix.community">api.radix.community</a></li>
+<li><a href="https://archive.stakesafe.net">archive.stakesafe.net</a></li>
+<li><a href="https://www.radixscan.io/EmmogluStakeryArchiveNode.shtml">node.radixscan.io</a></li>
+<li><a href="https://caviarnine.com/#nodes">node.caviarnine.com</a></li>
+</ul>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/what-community-archive-nodes-can-i-use-with-the-radix-desktop-wallet/156">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/what-community-archive-nodes-can-i-use-with-the-radix-desktop-wallet/156</link>
+          <pubDate>Wed, 29 Dec 2021 13:35:47 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-156</guid>
+          <source url="https://radixtalk.com/t/what-community-archive-nodes-can-i-use-with-the-radix-desktop-wallet/156.rss">What community archive nodes can I use with the Radix Desktop Wallet?</source>
+        </item>
+        <item>
+          <title>Why is the Radix wallet slow to respond?</title>
+          <dc:creator><![CDATA[Faraz | Radstakes.com]]></dc:creator>
+          <category>Questions / Help</category>
+          <description><![CDATA[
+            <p>The Radix desktop wallet needs to communicate with an Archive Node to retrieve data from the Radix ledger such as your XRD balance, or to make transactions.  The Radix desktop wallet normally defaults to the official Radix archive node address and at times of peak demand, this can result in slow performance or in rare cases, inability to access the wallet.</p>
+<p>Many members of the community run archive nodes in addition to those of the Radix team, and these alternative archive nodes can be selected within the wallet settings (see image below for some example community archive nodes).  This often resolves any issues with poor wallet performance.<br>
+</p><div class="lightbox-wrapper"><a class="lightbox" href="https://radixtalk.com/uploads/default/original/1X/a5d10f421d9a80e6501dba1ea34e37485f965941.png" data-download-href="https://radixtalk.com/uploads/default/a5d10f421d9a80e6501dba1ea34e37485f965941" title="Change Archive End Point"><img src="https://radixtalk.com/uploads/default/optimized/1X/a5d10f421d9a80e6501dba1ea34e37485f965941_2_690x388.png" alt="Change Archive End Point" data-base62-sha1="nESGPgInCioJToh5liOmGShShod" width="690" height="388" srcset="https://radixtalk.com/uploads/default/optimized/1X/a5d10f421d9a80e6501dba1ea34e37485f965941_2_690x388.png, https://radixtalk.com/uploads/default/original/1X/a5d10f421d9a80e6501dba1ea34e37485f965941.png 1.5x, https://radixtalk.com/uploads/default/original/1X/a5d10f421d9a80e6501dba1ea34e37485f965941.png 2x" data-small-upload="https://radixtalk.com/uploads/default/optimized/1X/a5d10f421d9a80e6501dba1ea34e37485f965941_2_10x10.png"></a></div><p></p>
+            <p><small>2 posts - 2 participants</small></p>
+            <p><a href="https://radixtalk.com/t/why-is-the-radix-wallet-slow-to-respond/142">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/why-is-the-radix-wallet-slow-to-respond/142</link>
+          <pubDate>Tue, 28 Dec 2021 22:01:01 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-142</guid>
+          <source url="https://radixtalk.com/t/why-is-the-radix-wallet-slow-to-respond/142.rss">Why is the Radix wallet slow to respond?</source>
+        </item>
+  </channel>
+</rss>

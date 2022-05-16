@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:discourse="http://www.discourse.org/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Scrypto - RadixTalk</title>
+    <link>https://radixtalk.com/c/developers/scrypto/25</link>
+    <description>Topics in the &#39;Scrypto&#39; category Topics about Scrypto</description>
+    <language>en-GB</language>
+      <lastBuildDate>Tue, 25 Jan 2022 20:47:45 +0000</lastBuildDate>
+      <atom:link href="https://radixtalk.com/c/developers/scrypto/25.rss" rel="self" type="application/rss+xml" />
+        <item>
+          <title>How to get started in Scrypto</title>
+          <dc:creator><![CDATA[Clement]]></dc:creator>
+          <category>Scrypto</category>
+          <description><![CDATA[
+            <p>A lot of developers are asking about how to get started in Scrypto. On this post, I am giving guidelines to help you become the Scrypto expert you want to become.</p>
+<h2>
+<a name="should-i-know-rust-before-starting-1" class="anchor" href="https://radixtalk.com#should-i-know-rust-before-starting-1"></a>Should I know Rust before starting ?</h2>
+<p>This is a question we get a lot. Knowing the basics of Rust’s syntax will make it easier for you to understand and write Scrypto code, but you don’t need to be an expert in Rust. We suggest people new to Rust to read <a href="https://fasterthanli.me/articles/a-half-hour-to-learn-rust">A half-hour to learn Rust</a>. This quick tutorial will teach just about anyone with a little programming experience enough of the Rust basics to start building with Scrypto quickly.</p>
+<h2>
+<a name="from-zero-to-expert-2" class="anchor" href="https://radixtalk.com#from-zero-to-expert-2"></a>From zero to expert</h2>
+<ol>
+<li>Read the <a href="https://docs.radixdlt.com/main/scrypto/introduction.html">Scrypto documentation</a> and try the concepts you learn in the <a href="https://play.scrypto-lang.org/">Scrypto Playground</a>
+</li>
+<li>Install Rust and the Scrypto simulator by following <a href="https://docs.radixdlt.com/main/scrypto/getting-started/install-scrypto.html">these instructions</a>
+</li>
+<li>Look at Scrypto examples in the <a href="https://github.com/radixdlt/community-scrypto-examples">community-scrypto</a> GitHub repository</li>
+<li>Make your own example and create a pull request to that same repository. This will allow you to get feedback from RDX Works</li>
+<li>Participate in the discussions on the Scrypto <a href="https://discord.gg/tfw6vhY32n">Discord</a> and <a href="https://radixtalk.com">Telegram</a> channels</li>
+</ol>
+<p>After that, it’s only a matter of coding, coding, and more coding. After writing a couple of examples, you will become good enough in Scrypto to make your own project and help people in the community !</p>
+            <p><small>3 posts - 3 participants</small></p>
+            <p><a href="https://radixtalk.com/t/how-to-get-started-in-scrypto/283">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/how-to-get-started-in-scrypto/283</link>
+          <pubDate>Tue, 25 Jan 2022 20:47:45 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-283</guid>
+          <source url="https://radixtalk.com/t/how-to-get-started-in-scrypto/283.rss">How to get started in Scrypto</source>
+        </item>
+        <item>
+          <title>Where can I learn more about Scrypto?</title>
+          <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+          <category>Scrypto</category>
+          <description><![CDATA[
+            <h2>
+<a name="community-resources-1" class="anchor" href="https://radixtalk.com#community-resources-1"></a>Community Resources</h2>
+<ul>
+<li>
+<a href="https://discord.gg/Rvkv4xjrWF" class="inline-onebox">Rust &amp; Scrypto Forum</a> on Discord</li>
+<li><a href="https://www.scrypto-tutorial.com/getting-started/readme" class="inline-onebox">First Steps to DeFi: A Scrypto Tutorial - First Steps to DeFi: A Scrypto Tutorial</a></li>
+<li><a href="https://github.com/cbisaillon/Scrypto-Advent-Calendar" class="inline-onebox">GitHub - cbisaillon/Scrypto-Advent-Calendar: Scrypto Advent Calendar. Learn the new programming langage to build secure DeFi applications quickly.</a></li>
+</ul>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/where-can-i-learn-more-about-scrypto/121">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/where-can-i-learn-more-about-scrypto/121</link>
+          <pubDate>Mon, 27 Dec 2021 15:49:12 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-121</guid>
+          <source url="https://radixtalk.com/t/where-can-i-learn-more-about-scrypto/121.rss">Where can I learn more about Scrypto?</source>
+        </item>
+        <item>
+          <title>How to send Bucket or BucketRef through resim</title>
+          <dc:creator><![CDATA[Clement]]></dc:creator>
+          <category>Scrypto</category>
+          <description><![CDATA[
+            <p>You send Buckets (or BucketRefs) to method/functions with <code>resim</code> by using the following format: <code>[amount],[token_resource_def]</code>.</p>
+<p>For example, if your component have the following method:</p>
+<pre><code class="lang-auto">pub fn show_amount(&amp;self, tokens: BucketRef) {
+    info!("{}", list.amount());
+    list.drop();
+}
+</code></pre>
+<p>To create a BucketRef of 1000 XRD and send it to this method, you would use <code>resim</code> like this:</p>
+<pre><code class="lang-auto">resim call-method [component_address] show_amount 1000,030000000000000000000000000000000000000000000000000004 
+</code></pre>
+<p>When sending NFTs, you also have the possibility to specify which specific ids to send:</p>
+<pre><code class="lang-auto">"#1,#3,[nft_resource_def]" # Create a bucket containing NFT #1 and #3
+</code></pre>
+<p>Don’t forget to use the quotation marks or you will get an error !</p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/how-to-send-bucket-or-bucketref-through-resim/115">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/how-to-send-bucket-or-bucketref-through-resim/115</link>
+          <pubDate>Mon, 27 Dec 2021 15:16:42 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-115</guid>
+          <source url="https://radixtalk.com/t/how-to-send-bucket-or-bucketref-through-resim/115.rss">How to send Bucket or BucketRef through resim</source>
+        </item>
+        <item>
+          <title>“error: linker cc not found” when installing Scypto simulator</title>
+          <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+          <category>Scrypto</category>
+          <description><![CDATA[
+            <h2>
+<a name="problem-1" class="anchor" href="https://radixtalk.com#problem-1"></a>Problem</h2>
+<pre><code class="lang-auto">error: linker `cc` not found  |  = note: No such file or directory (os error 2)
+error: could not compile `libc` due to previous error
+</code></pre>
+<h2>
+<a name="solution-2" class="anchor" href="https://radixtalk.com#solution-2"></a>Solution</h2>
+<p>Ensure the <code>build-essential</code> package is installed.</p>
+<p>On Ubuntu run:</p>
+<pre><code class="lang-auto">sudo apt install build-essential
+</code></pre>
+<p><em>From cbisaillon#6447 on <a href="https://discord.com/channels/417762285172555786/765994894749597697/920041118861762590">Discord</a></em></p>
+            <p><small>2 posts - 2 participants</small></p>
+            <p><a href="https://radixtalk.com/t/error-linker-cc-not-found-when-installing-scypto-simulator/73">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/error-linker-cc-not-found-when-installing-scypto-simulator/73</link>
+          <pubDate>Sat, 25 Dec 2021 23:49:49 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-73</guid>
+          <source url="https://radixtalk.com/t/error-linker-cc-not-found-when-installing-scypto-simulator/73.rss">“error: linker cc not found” when installing Scypto simulator</source>
+        </item>
+        <item>
+          <title>What are some use cases for RECALLABLE tokens?</title>
+          <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+          <category>Scrypto</category>
+          <description><![CDATA[
+            <p>Some example use cases:</p>
+<ul>
+<li>Subscription system: where you pay a monthly fee to be subscribed to a service. The owner of the service must be able to withdraw your right to use it (if you don’t pay for example).</li>
+<li>Badges that indicate AML/KYC: The issuer must be able to take it back if the user no longer meet the requirements</li>
+<li>NFTs that indicate ownership of in-game assets: the game must be able to remove the NFT in you inventory if you lose that item</li>
+</ul>
+<p><em>From cbisaillon#6447 on <a href="https://discord.com/channels/417762285172555786/765994894749597697/921495334390227014">Discord</a></em></p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/what-are-some-use-cases-for-recallable-tokens/72">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/what-are-some-use-cases-for-recallable-tokens/72</link>
+          <pubDate>Sat, 25 Dec 2021 23:34:55 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-72</guid>
+          <source url="https://radixtalk.com/t/what-are-some-use-cases-for-recallable-tokens/72.rss">What are some use cases for RECALLABLE tokens?</source>
+        </item>
+        <item>
+          <title>How to update Scrypto simulator</title>
+          <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+          <category>Scrypto</category>
+          <description><![CDATA[
+            <ol>
+<li>Pull the latest changes from <a href="https://github.com/radixdlt/radixdlt-scrypto" class="inline-onebox">GitHub - radixdlt/radixdlt-scrypto: Asset-oriented Programming for DeFi.</a>
+</li>
+<li><code>rustup update stable</code></li>
+<li><code>cargo install --path ./simulator</code></li>
+<li><code>resim reset</code></li>
+</ol>
+<p><em>Solution by cbisaillon#6447 on <a href="https://discord.com/channels/417762285172555786/765994894749597697/921426527248334869">Discord</a></em></p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/how-to-update-scrypto-simulator/71">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/how-to-update-scrypto-simulator/71</link>
+          <pubDate>Sat, 25 Dec 2021 23:25:30 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-71</guid>
+          <source url="https://radixtalk.com/t/how-to-update-scrypto-simulator/71.rss">How to update Scrypto simulator</source>
+        </item>
+        <item>
+          <title>Resim error message after Scrypto simulator upgrade</title>
+          <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+          <category>Scrypto</category>
+          <description><![CDATA[
+            <p>After updating <code>scrypto</code> and <code>resim</code> CLI tools to the 0.2.0 version I’m getting an error when I try to create a new account using resim. Creating an account was not an issue when I was running version 0.1.0</p>
+<pre><code class="lang-auto">$ resim new-account
+Transaction Status: FAILURE
+Execution Time: 4 ms
+…
+</code></pre>
+<h2>
+<a name="solution-1" class="anchor" href="https://radixtalk.com#solution-1"></a>Solution</h2>
+<p>Every time you update scrypto there’s a good chance the ledger schema has changed – try doing <code>resim reset</code> first. This will clear the on disk ledger.</p>
+<p>You may also need to run <code>cargo install --path ./simulator</code> from your scrypto root directory again.</p>
+<p><em>Solution contributed by devmannic#4635 on <a href="https://discord.com/channels/417762285172555786/765994894749597697/924423701825466448">Discord</a></em></p>
+<h2>
+<a name="related-2" class="anchor" href="https://radixtalk.com#related-2"></a>Related</h2>
+<aside class="quote" data-post="1" data-topic="71">
+  <div class="title">
+    <div class="quote-controls"></div>
+    <img loading="lazy" alt="" width="20" height="20" src="https://radixtalk.com/letter_avatar_proxy/v4/letter/s/cab0a1/40.png" class="avatar">
+    <a href="https://radixtalk.com/t/how-to-update-scrypto-simulator/71">How to update Scrypto simulator</a> <a class="badge-wrapper  bullet" href="https://radixtalk.com/c/developers/scrypto/25"><span class="badge-category-parent-bg" style="background-color: #F7941D;"></span><span class="badge-category-bg" style="background-color: #F1592A;"></span><span style="" data-drop-close="true" class="badge-category clear-badge" title="Topics about Scrypto">Scrypto</span></a>
+  </div>
+  <blockquote>
+    How to update scrypto simulator 
+
+Pull the latest changes from <a href="https://github.com/radixdlt/radixdlt-scrypto" class="inline-onebox">GitHub - radixdlt/radixdlt-scrypto: Asset-oriented Programming for DeFi.</a>
+
+rustup update stable
+cargo install --path ./simulator
+resim reset
+
+Solution by cbisaillon#6447 on <a href="https://discord.com/channels/417762285172555786/765994894749597697/921426527248334869">Discord</a>
+  </blockquote>
+</aside>
+
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/resim-error-message-after-scrypto-simulator-upgrade/70">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/resim-error-message-after-scrypto-simulator-upgrade/70</link>
+          <pubDate>Sat, 25 Dec 2021 22:51:17 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-70</guid>
+          <source url="https://radixtalk.com/t/resim-error-message-after-scrypto-simulator-upgrade/70.rss">Resim error message after Scrypto simulator upgrade</source>
+        </item>
+        <item>
+          <title>About the Scrypto category</title>
+          <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+          <category>Scrypto</category>
+          <description><![CDATA[
+            <p>Topics about Scrypto</p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/about-the-scrypto-category/32">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/about-the-scrypto-category/32</link>
+          <pubDate>Fri, 24 Dec 2021 16:32:52 +0000</pubDate>
+          <discourse:topicPinned>Yes</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-32</guid>
+          <source url="https://radixtalk.com/t/about-the-scrypto-category/32.rss">About the Scrypto category</source>
+        </item>
+  </channel>
+</rss>

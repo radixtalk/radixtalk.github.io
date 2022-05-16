@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>How to calculate the Radix Resource Id (RRI) for a mutable token</title>
+    <link>https://radixtalk.com/t/how-to-calculate-the-radix-resource-id-rri-for-a-mutable-token/65</link>
+    <description>Replace the `public_key_hex` with the public key used to create the token, and the `symbol` with the token symbol.
+```
+import bech32
+import hashlib
+
+public_key_hex = &quot;02690937690ffb9d7ae8b67af05efc03a5a9f7e53933de80f92ce763a5554a1fa3&quot;
+symbol = b&quot;rct&quot;
+
+public_key = bytearray.fromhex(public_key_hex)
+
+m = hashlib.sha256()
+m.update(public_key + symbol)
+hash = m.digest()
+n = hashlib.sha256()
+n.update(hash)
+hash2 = n.digest()
+
+part = hash2[6:32]
+
+readdr_bytes = b&quot;\x03&quot; + part
+readdr_bytes5 = bech32.convertbits(readdr_bytes, 8 ,5)
+
+resource_address = bech32.bech32_encode(&quot;rct_rr&quot;, readdr_bytes5)
+print(&quot;Resource address: &quot;, resource_address)
+
+# rct_rr1q04fvesft0rsw9s66wrr0ccp30qwfysrdff67q2jxgvqxdcwfz
+```
+
+## Run this code on Replit:
+https://replit.com/@radixtalk/Public-Key-and-Symbol-to-RRI#main.py</description>
+    <language>en-GB</language>
+    <lastBuildDate>Tue, 04 Jan 2022 08:43:47 +0000</lastBuildDate>
+    <category>Developers</category>
+    <atom:link href="https://radixtalk.com/t/how-to-calculate-the-radix-resource-id-rri-for-a-mutable-token/65.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>How to calculate the Radix Resource Id (RRI) for a mutable token</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>Replace the <code>public_key_hex</code> with the public key used to create the token, and the <code>symbol</code> with the token symbol.</p>
+<pre><code class="lang-auto">import bech32
+import hashlib
+
+public_key_hex = "02690937690ffb9d7ae8b67af05efc03a5a9f7e53933de80f92ce763a5554a1fa3"
+symbol = b"rct"
+
+public_key = bytearray.fromhex(public_key_hex)
+
+m = hashlib.sha256()
+m.update(public_key + symbol)
+hash = m.digest()
+n = hashlib.sha256()
+n.update(hash)
+hash2 = n.digest()
+
+part = hash2[6:32]
+
+readdr_bytes = b"\x03" + part
+readdr_bytes5 = bech32.convertbits(readdr_bytes, 8 ,5)
+
+resource_address = bech32.bech32_encode("rct_rr", readdr_bytes5)
+print("Resource address: ", resource_address)
+
+# rct_rr1q04fvesft0rsw9s66wrr0ccp30qwfysrdff67q2jxgvqxdcwfz
+</code></pre>
+<h2>
+<a name="run-this-code-on-replit-1" class="anchor" href="https://radixtalk.com#run-this-code-on-replit-1"></a>Run this code on Replit:</h2>
+<p><iframe src="https://replit.com/@radixtalk/Public-Key-and-Symbol-to-RRI?lite=true" width="695" height="521" frameborder="0" seamless="seamless" sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox allow-presentation"></iframe></p>
+          <p><a href="https://radixtalk.com/t/how-to-calculate-the-radix-resource-id-rri-for-a-mutable-token/65/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-to-calculate-the-radix-resource-id-rri-for-a-mutable-token/65/1</link>
+        <pubDate>Sat, 25 Dec 2021 14:16:57 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-65-1</guid>
+        <source url="https://radixtalk.com/t/how-to-calculate-the-radix-resource-id-rri-for-a-mutable-token/65.rss">How to calculate the Radix Resource Id (RRI) for a mutable token</source>
+      </item>
+  </channel>
+</rss>

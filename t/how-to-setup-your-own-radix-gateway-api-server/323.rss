@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>How to setup your own Radix Gateway API server</title>
+    <link>https://radixtalk.com/t/how-to-setup-your-own-radix-gateway-api-server/323</link>
+    <description># Radix Gateway API setup
+
+The setup includes: Radix Full Node + Data Aggregator + Gateway API + Postres DB used by Aggregator + Read-only Replica used by the Gateway API itself, all running on the same dedicated server. 
+The result of this setup is Gateway API running on `http://&lt;server_ip&gt;:5308`, Core/System API - on `https://&lt;server_ip&gt;:443` (requires authentication with admin/superadmin passwords).
+
+Details in this gist:
+https://gist.github.com/Mleekko/8168601a61ff4f9cc932a5425c5ccd37</description>
+    <language>en-GB</language>
+    <lastBuildDate>Thu, 03 Feb 2022 02:47:55 +0000</lastBuildDate>
+    <category>Developers</category>
+    <atom:link href="https://radixtalk.com/t/how-to-setup-your-own-radix-gateway-api-server/323.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>How to setup your own Radix Gateway API server</title>
+        <dc:creator><![CDATA[Oleh Koval]]></dc:creator>
+        <description><![CDATA[
+            <h1>
+<a name="radix-gateway-api-setup-1" class="anchor" href="https://radixtalk.com#radix-gateway-api-setup-1"></a>Radix Gateway API setup</h1>
+<p>The setup includes: Radix Full Node + Data Aggregator + Gateway API + Postres DB used by Aggregator + Read-only Replica used by the Gateway API itself, all running on the same dedicated server.<br>
+The result of this setup is Gateway API running on <code>http://&lt;server_ip&gt;:5308</code>, Core/System API - on <code>https://&lt;server_ip&gt;:443</code> (requires authentication with admin/superadmin passwords).</p>
+<p>Details in this gist:</p><aside class="onebox githubgist" data-onebox-src="https://gist.github.com/Mleekko/8168601a61ff4f9cc932a5425c5ccd37">
+  <header class="source">
+
+      <a href="https://gist.github.com/Mleekko/8168601a61ff4f9cc932a5425c5ccd37" target="_blank" rel="noopener nofollow ugc">gist.github.com</a>
+  </header>
+
+  <article class="onebox-body">
+    <h4><a href="https://gist.github.com/Mleekko/8168601a61ff4f9cc932a5425c5ccd37" target="_blank" rel="noopener nofollow ugc">https://gist.github.com/Mleekko/8168601a61ff4f9cc932a5425c5ccd37</a></h4>
+
+  <h5>$README.md</h5>
+  <pre><code class="Markdown"># Radix Gateway API setup
+
+## Introduction
+The setup includes: Radix Full Node + Data Aggregator + Gateway API + Postres DB used by Aggregator + Read-only Replica used by the Gateway API itself, all running on the same dedicated server.
+I used `Intel Xeon W-2145, 8/16x 3.70GHz, 128Gb RAM, 4x 480 GB SSD` but half of RAM/CPU should be more than enough for a single consumer (to separate Porsgres from Node DB we still need at least 3 SSDs for the scenario with replica or 2 SSDs without it).
+
+The result of this setup is Gateway API running on `http://&lt;server_ip&gt;:5308`, Core/System API - on `https://&lt;server_ip&gt;:443` (requires authentication with admin/superadmin passwords).
+
+Closing all internal ports - TBD.
+</code></pre>
+    This file has been truncated. <a href="https://gist.github.com/Mleekko/8168601a61ff4f9cc932a5425c5ccd37" target="_blank" rel="noopener nofollow ugc">show original</a>
+  <h5>.env</h5>
+  <pre><code class="Shell"># Used by Docker Compose: https://docs.docker.com/compose/env-file/
+
+
+##############################################################################
+# FULL NODE CONFIGURATION                                                    #
+##############################################################################
+
+# This is the node to bootstrap the node address book from
+# For some mainnet choices, see https://docs.radixdlt.com/main/node/docker-install-node.html#create-environment-variables-for-docker-install
+# An example foundation stokenet node is: radix://tn1qw42uqkauehsmwk6msxve5zr9lapjd8r3np4z84nna8jlp03mfzwqd2tl8m@3.108.248.49</code></pre>
+    This file has been truncated. <a href="https://gist.github.com/Mleekko/8168601a61ff4f9cc932a5425c5ccd37" target="_blank" rel="noopener nofollow ugc">show original</a>
+  <h5>data-aggregator-fixed-configuration.json</h5>
+  <pre><code class="JSON">{
+    "Logging": {
+        "Console": {
+            "FormatterName": "simple",
+            "FormatterOptions": {
+                "IncludeScopes": true,
+                "ColorBehavior": "Enabled",
+                "TimestampFormat": "yyyy-MM-ddTHH\\:mm\\:ss.fff\\Z ",
+                "UseUtcTimestamp": true
+            }</code></pre>
+    This file has been truncated. <a href="https://gist.github.com/Mleekko/8168601a61ff4f9cc932a5425c5ccd37" target="_blank" rel="noopener nofollow ugc">show original</a>
+
+<p>
+    There are more than three files. <a href="https://gist.github.com/Mleekko/8168601a61ff4f9cc932a5425c5ccd37" target="_blank" rel="noopener nofollow ugc">show original</a>
+</p>
+
+  </article>
+
+  <div class="onebox-metadata">
+    
+    
+  </div>
+
+  <div style="clear: both"></div>
+</aside>
+
+          <p><a href="https://radixtalk.com/t/how-to-setup-your-own-radix-gateway-api-server/323/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-to-setup-your-own-radix-gateway-api-server/323/1</link>
+        <pubDate>Thu, 03 Feb 2022 02:47:55 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-323-1</guid>
+        <source url="https://radixtalk.com/t/how-to-setup-your-own-radix-gateway-api-server/323.rss">How to setup your own Radix Gateway API server</source>
+      </item>
+  </channel>
+</rss>

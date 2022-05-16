@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:discourse="http://www.discourse.org/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Site Feedback - RadixTalk</title>
+    <link>https://radixtalk.com/c/site-feedback/2</link>
+    <description>Topics in the &#39;Site Feedback&#39; category Discussion about this site, its organization, how it works, and how we can improve it.</description>
+    <language>en-GB</language>
+      <lastBuildDate>Fri, 13 May 2022 12:16:40 +0000</lastBuildDate>
+      <atom:link href="https://radixtalk.com/c/site-feedback/2.rss" rel="self" type="application/rss+xml" />
+        <item>
+          <title>Thanks Stuart!</title>
+          <dc:creator><![CDATA[Jazzer 9F]]></dc:creator>
+          <category>Site Feedback</category>
+          <description><![CDATA[
+            <p>I just learned Radixtalk is shutting down. Sorry to hear that, though I can understand it doesn’t make much sense for you to keep it alive.</p>
+<p>Just wanted to say thanks for all the effort you have been putting into getting momentum going and providing such resources for the community.</p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/thanks-stuart/471">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/thanks-stuart/471</link>
+          <pubDate>Fri, 13 May 2022 12:16:40 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-471</guid>
+          <source url="https://radixtalk.com/t/thanks-stuart/471.rss">Thanks Stuart!</source>
+        </item>
+        <item>
+          <title>Twitter Links to RadixTalk are not rendering the RadixTalk Logo</title>
+          <dc:creator><![CDATA[Katan &amp; Rory | Radix Logical Moon ]]></dc:creator>
+          <category>Site Feedback</category>
+          <description><![CDATA[
+            <p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.radixtalk.com/uploads/default/original/1X/342f7d4e5233fcf1867f25d8a0d1e2b43e207bac.png" data-download-href="https://cdn.radixtalk.com/uploads/default/342f7d4e5233fcf1867f25d8a0d1e2b43e207bac" title="image"><img src="https://cdn.radixtalk.com/uploads/default/optimized/1X/342f7d4e5233fcf1867f25d8a0d1e2b43e207bac_2_690x308.png" alt="image" data-base62-sha1="7rEzBdg3CKnKMmdXDgAsw9jqll2" width="690" height="308" srcset="https://cdn.radixtalk.com/uploads/default/optimized/1X/342f7d4e5233fcf1867f25d8a0d1e2b43e207bac_2_690x308.png, https://cdn.radixtalk.com/uploads/default/optimized/1X/342f7d4e5233fcf1867f25d8a0d1e2b43e207bac_2_1035x462.png 1.5x, https://cdn.radixtalk.com/uploads/default/original/1X/342f7d4e5233fcf1867f25d8a0d1e2b43e207bac.png 2x" data-small-upload="https://cdn.radixtalk.com/uploads/default/optimized/1X/342f7d4e5233fcf1867f25d8a0d1e2b43e207bac_2_10x10.png"></a></div><p></p>
+<p>Seems to be a shading thing.  When you hover over it. you can see the RadixTalk logo.</p>
+            <p><small>11 posts - 5 participants</small></p>
+            <p><a href="https://radixtalk.com/t/twitter-links-to-radixtalk-are-not-rendering-the-radixtalk-logo/324">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/twitter-links-to-radixtalk-are-not-rendering-the-radixtalk-logo/324</link>
+          <pubDate>Thu, 03 Feb 2022 04:15:11 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-324</guid>
+          <source url="https://radixtalk.com/t/twitter-links-to-radixtalk-are-not-rendering-the-radixtalk-logo/324.rss">Twitter Links to RadixTalk are not rendering the RadixTalk Logo</source>
+        </item>
+        <item>
+          <title>About the Site Feedback category</title>
+          <dc:creator><![CDATA[system]]></dc:creator>
+          <category>Site Feedback</category>
+          <description><![CDATA[
+            <p>Discussion about this site, its organization, how it works, and how we can improve it.</p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/about-the-site-feedback-category/1">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/about-the-site-feedback-category/1</link>
+          <pubDate>Thu, 23 Dec 2021 19:18:22 +0000</pubDate>
+          <discourse:topicPinned>Yes</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-1</guid>
+          <source url="https://radixtalk.com/t/about-the-site-feedback-category/1.rss">About the Site Feedback category</source>
+        </item>
+  </channel>
+</rss>

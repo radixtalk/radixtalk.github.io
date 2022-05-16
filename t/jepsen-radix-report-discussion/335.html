@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <title>Jepsen Radix Report discussion - Chat / Discussion - RadixTalk</title>
+    <meta name="description" content="The Jepsen analysis of Radix was published today at: 
+https://jepsen.io/analyses/radix-dlt-1.0-beta.35.1 
+Some parts of the report are uncomfortable to read. 
+What are your thoughts on the report and RDX Works response?">
+    <meta name="generator" content="Discourse 2.9.0.beta4 - https://github.com/discourse/discourse version 8ce29a4a2264ea472a8151bfe2e591ab1101cfeb">
+<link rel="icon" type="image/png" href="https://cdn.radixtalk.com/uploads/default/optimized/1X/023c6f3e74bac599c495c37eecd72f939f3fab87_2_32x32.png">
+<link rel="apple-touch-icon" type="image/png" href="https://cdn.radixtalk.com/uploads/default/optimized/1X/ad9adb26331754b0012edbc9b4796de8dc449fa8_2_180x180.png">
+<meta name="theme-color" content="#ffffff">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<link rel="canonical" href="335.html" />
+<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebSite","url":"https://radixtalk.com","potentialAction":{"@type":"SearchAction","target":"https://radixtalk.com/search?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<link rel="search" type="application/opensearchdescription+xml" href="../../opensearch.xml" title="RadixTalk Search">
+
+    <link href="https://cdn.radixtalk.com/stylesheets/color_definitions_light_4_1_41174e1f8711476b3393f07571899954e9737309.css?__ws=radixtalk.com" media="all" rel="stylesheet" class="light-scheme"/>
+
+  <link href="https://cdn.radixtalk.com/stylesheets/desktop_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="desktop"  />
+
+
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-akismet_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-akismet"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-automation_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-automation"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-cakeday_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-cakeday"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-canned-replies_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-canned-replies"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-checklist_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-checklist"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-data-explorer_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-data-explorer"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-details_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-details"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-docs_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-docs"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-follow_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-follow"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-fontawesome-pro_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-fontawesome-pro"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-footnote_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-footnote"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-local-dates_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-local-dates"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-presence_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-presence"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-rss-polling_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-rss-polling"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-saved-searches_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-saved-searches"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-solved_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-solved"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-tooltips_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-tooltips"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-user-notes_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-user-notes"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-voting_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-voting"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-whos-online_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-whos-online"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/lazy-yt_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="lazy-yt"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/poll_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="poll"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-voting_desktop_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-voting_desktop"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/poll_desktop_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="poll_desktop"  />
+
+  <link href="https://cdn.radixtalk.com/stylesheets/desktop_theme_1_263bf35b28bc3c889d3c5ea8d6e1c519621916e1.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="desktop_theme" data-theme-id="1" data-theme-name="default"/>
+
+    <script defer="" data-domain="radixtalk.com" src="https://plausible.io/js/plausible.hash.js"></script>
+
+    
+        <link rel="alternate nofollow" type="application/rss+xml" title="RSS feed of &#39;Jepsen Radix Report discussion&#39;" href="335.rss" />
+    <meta property="og:site_name" content="RadixTalk" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:image" content="https://cdn.radixtalk.com/uploads/default/original/1X/9e3624f2a5d4052091ba93563043c233df535486.png" />
+<meta property="og:image" content="https://cdn.radixtalk.com/uploads/default/original/1X/9e3624f2a5d4052091ba93563043c233df535486.png" />
+<meta property="og:url" content="https://radixtalk.com/t/jepsen-radix-report-discussion/335" />
+<meta name="twitter:url" content="https://radixtalk.com/t/jepsen-radix-report-discussion/335" />
+<meta property="og:title" content="Jepsen Radix Report discussion" />
+<meta name="twitter:title" content="Jepsen Radix Report discussion" />
+<meta property="og:description" content="The Jepsen analysis of Radix was published today at:  https://jepsen.io/analyses/radix-dlt-1.0-beta.35.1  Some parts of the report are uncomfortable to read.  What are your thoughts on the report and RDX Works response?" />
+<meta name="twitter:description" content="The Jepsen analysis of Radix was published today at:  https://jepsen.io/analyses/radix-dlt-1.0-beta.35.1  Some parts of the report are uncomfortable to read.  What are your thoughts on the report and RDX Works response?" />
+<meta name="twitter:label1" value="Reading time" />
+<meta name="twitter:data1" value="1 mins 🕑" />
+<meta name="twitter:label2" value="Likes" />
+<meta name="twitter:data2" value="9 ❤" />
+<meta property="article:published_time" content="2022-02-05T15:50:36+00:00" />
+<meta property="og:ignore_canonical" content="true" />
+
+
+    
+  </head>
+  <body class="crawler">
+    
+    <header>
+  <a href="https://radixtalk.com/">
+    <h1>RadixTalk</h1>
+  </a>
+</header>
+
+    <div id="main-outlet" class="wrap" role="main">
+        <div id="topic-title">
+    <h1>
+      <a href="335.html">Jepsen Radix Report discussion</a>
+    </h1>
+
+      <div class="topic-category" itemscope itemtype="http://schema.org/BreadcrumbList">
+          <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+            <a href="https://radixtalk.com/c/chat-discussion/42" class="badge-wrapper bullet" itemprop="item">
+              <span class='badge-category-bg' style='background-color: #BF1E2E'></span>
+              <span class='badge-category clear-badge'>
+                <span class='category-name' itemprop='name'>Chat / Discussion</span>
+              </span>
+            </a>
+            <meta itemprop="position" content="1" />
+          </span>
+      </div>
+
+      <div class="topic-category">
+        <div class='discourse-tags list-tags'>
+            <a href='../../tag/staking.html' class='discourse-tag' rel="tag">staking</a>, 
+            <a href='../../tag/validators.html' class='discourse-tag' rel="tag">validators</a>
+        </div>
+      </div>
+  </div>
+
+  
+
+
+      <div id='post_1' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+        <div class='crawler-post-meta'>
+          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop='name' content='RadixTalk'>
+              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+                <meta itemprop='url' content='https://cdn.radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+              </div>
+          </div>
+          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a itemprop="url" href='../../u/Stuart.html'><span itemprop='name'>Stuart</span></a>
+            (Stuart | RadixPool)
+          </span>
+
+          <link itemprop="mainEntityOfPage" href="335.html">
+
+
+          <span class="crawler-post-infos">
+              <time itemprop='datePublished' datetime='2022-02-05T15:50:36Z' class='post-time'>
+                5 February 2022 15:50
+              </time>
+              <meta itemprop='dateModified' content='2022-02-06T10:58:14Z'>
+          <span itemprop='position'>#1</span>
+          </span>
+        </div>
+        <div class='post' itemprop='articleBody'>
+          <p>The Jepsen analysis of Radix was published today at:<br>
+<a href="https://jepsen.io/analyses/radix-dlt-1.0-beta.35.1" class="onebox" target="_blank" rel="noopener">https://jepsen.io/analyses/radix-dlt-1.0-beta.35.1</a></p>
+<p>Some parts of the report are uncomfortable to read.</p>
+<p>What are your thoughts on the report and RDX Works response?</p>
+        </div>
+
+        <meta itemprop='headline' content='Jepsen Radix Report discussion'>
+          <meta itemprop='keywords' content='staking, validators'>
+
+        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+           <meta itemprop="userInteractionCount" content="1" />
+           <span class='post-likes'>1 Like</span>
+         </div>
+
+         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
+            <meta itemprop="userInteractionCount" content="0" />
+          </div>
+
+      </div>
+      <div id='post_2' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+        <div class='crawler-post-meta'>
+          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop='name' content='RadixTalk'>
+              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+                <meta itemprop='url' content='https://cdn.radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+              </div>
+          </div>
+          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a itemprop="url" href='../../u/Faraz.html'><span itemprop='name'>Faraz</span></a>
+            (Faraz | Radstakes.com)
+          </span>
+
+          <link itemprop="mainEntityOfPage" href="335.html">
+
+
+          <span class="crawler-post-infos">
+              <time itemprop='datePublished' datetime='2022-02-05T20:51:39Z' class='post-time'>
+                5 February 2022 20:51
+              </time>
+              <meta itemprop='dateModified' content='2022-02-05T20:51:39Z'>
+          <span itemprop='position'>#2</span>
+          </span>
+        </div>
+        <div class='post' itemprop='articleBody'>
+          <p>I’m glad they published it as they didn’t have to, it shows a great degree of transparency.  The wording of the report comes across very damning in parts, but the new Gateway service hopefully resolves most of the issues highlighted.  It would be great for this to be verified by Jepsen in future.</p>
+<p>I think Radix’s response was good at adding some context around the findings, but some more clarity would be useful, especially around for example the throughput tests which were found to be much less than the 50tps we’re expecting from Olympia.</p>
+<p>As for the issue highlighted in the case of a single validator going down, that was all too evident in the past week, so I hope the proposed solution that the team have alluded to will be coming sooner rather than later.</p>
+        </div>
+
+        <meta itemprop='headline' content='Jepsen Radix Report discussion'>
+
+        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+           <meta itemprop="userInteractionCount" content="0" />
+           <span class='post-likes'></span>
+         </div>
+
+         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
+            <meta itemprop="userInteractionCount" content="0" />
+          </div>
+
+      </div>
+      <div id='post_3' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+        <div class='crawler-post-meta'>
+          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop='name' content='RadixTalk'>
+              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+                <meta itemprop='url' content='https://cdn.radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+              </div>
+          </div>
+          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a itemprop="url" href='../../u/Jazzer_9F.html'><span itemprop='name'>Jazzer_9F</span></a>
+            (Jazzer 9F)
+          </span>
+
+          <link itemprop="mainEntityOfPage" href="335.html">
+
+
+          <span class="crawler-post-infos">
+              <time itemprop='datePublished' datetime='2022-02-05T22:03:24Z' class='post-time'>
+                5 February 2022 22:03
+              </time>
+              <meta itemprop='dateModified' content='2022-02-05T22:03:24Z'>
+          <span itemprop='position'>#3</span>
+          </span>
+        </div>
+        <div class='post' itemprop='articleBody'>
+          <p>It’s indeed a bit uncomfortable to read. Seems almost as if there was a bit of friction between the team and Jepsen. The report has some completely unnecessary sarcastic undertone to it. I haven’t read other reports by them, so don’t know if that’s normal.</p>
+<p>Anyway, are we really surprised on the findings? There nothing catastrophic in there, right?</p>
+        </div>
+
+        <meta itemprop='headline' content='Jepsen Radix Report discussion'>
+
+        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+           <meta itemprop="userInteractionCount" content="0" />
+           <span class='post-likes'></span>
+         </div>
+
+         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
+            <meta itemprop="userInteractionCount" content="0" />
+          </div>
+
+      </div>
+      <div id='post_4' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+        <div class='crawler-post-meta'>
+          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop='name' content='RadixTalk'>
+              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+                <meta itemprop='url' content='https://cdn.radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+              </div>
+          </div>
+          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a itemprop="url" href='../../u/Stuart.html'><span itemprop='name'>Stuart</span></a>
+            (Stuart | RadixPool)
+          </span>
+
+          <link itemprop="mainEntityOfPage" href="335.html">
+
+
+          <span class="crawler-post-infos">
+              <time itemprop='datePublished' datetime='2022-02-06T10:47:47Z' class='post-time'>
+                6 February 2022 10:47
+              </time>
+              <meta itemprop='dateModified' content='2022-02-06T10:47:47Z'>
+          <span itemprop='position'>#4</span>
+          </span>
+        </div>
+        <div class='post' itemprop='articleBody'>
+          <p>The technical outcome of the report was that the old Archive architecture was not fit for purpose. Radix responded by prioritising its replacement and most of the concerns have been addressed by the 1.1.0 release. It’s great to see that the team are re-using the test harness that Jepsen used and have recreated tests to address the concerns in the report.</p>
+<p>Unfortunately the report was overshadowed by tearing apart some of the marketing claims that are made by Radix. I don’t think the tone was necessarily sarcastic - just lots of exclamation marks expressing incredulity at claims made versus observed results. It’s natural to be defensive but it is really not a good look to be asking to remove unflattering sections of the report and I respect Jepsen hugely for not doing so. The statement that <em>“blockchain/DLT readers would normally understand present-tense English statements like these to be referring to potential future behavior, rather than the present”</em> deserves the mockery it received on <a href="https://news.ycombinator.com/item?id=30221187">Hacker News</a>.</p>
+<p>I think it took real courage by Radix to engage Jepsen to do a report. You don’t hire them for a soft, warm and fuzzy analysis for marketing purposes. Their analysis is the best in class and its findings are closely scrutinised. I genuinely believe that the Radix system will be all the better for having done so.</p>
+        </div>
+
+        <meta itemprop='headline' content='Jepsen Radix Report discussion'>
+
+        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+           <meta itemprop="userInteractionCount" content="3" />
+           <span class='post-likes'>3 Likes</span>
+         </div>
+
+         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
+            <meta itemprop="userInteractionCount" content="1" />
+          </div>
+
+      </div>
+      <div id='post_5' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+        <div class='crawler-post-meta'>
+          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop='name' content='RadixTalk'>
+              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+                <meta itemprop='url' content='https://cdn.radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+              </div>
+          </div>
+          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a itemprop="url" href='../../u/Avaunt.html'><span itemprop='name'>Avaunt</span></a>
+            (Avaunt)
+          </span>
+
+          <link itemprop="mainEntityOfPage" href="335.html">
+
+
+          <span class="crawler-post-infos">
+              <time itemprop='datePublished' datetime='2022-02-06T16:06:53Z' class='post-time'>
+                6 February 2022 16:06
+              </time>
+              <meta itemprop='dateModified' content='2022-02-06T16:06:53Z'>
+          <span itemprop='position'>#5</span>
+          </span>
+        </div>
+        <div class='post' itemprop='articleBody'>
+          <p>The request to remove content was specific to using the terms ‘Liveness Break’ and ‘Safety Break’ in the ‘Introductory Abstract’ section of the report until they had been presented later in the report with a comparison between the definition in a DLT world versus the academic definition. Not to remove any findings related to these points.</p>
+        </div>
+
+        <meta itemprop='headline' content='Jepsen Radix Report discussion'>
+
+        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+           <meta itemprop="userInteractionCount" content="1" />
+           <span class='post-likes'>1 Like</span>
+         </div>
+
+         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
+            <meta itemprop="userInteractionCount" content="0" />
+          </div>
+
+      </div>
+      <div id='post_6' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+        <div class='crawler-post-meta'>
+          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop='name' content='RadixTalk'>
+              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+                <meta itemprop='url' content='https://cdn.radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+              </div>
+          </div>
+          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a itemprop="url" href='../../u/Stuart.html'><span itemprop='name'>Stuart</span></a>
+            (Stuart | RadixPool)
+          </span>
+
+          <link itemprop="mainEntityOfPage" href="335.html">
+
+
+          <span class="crawler-post-infos">
+              <time itemprop='datePublished' datetime='2022-02-06T16:31:20Z' class='post-time'>
+                6 February 2022 16:31
+              </time>
+              <meta itemprop='dateModified' content='2022-02-06T16:31:20Z'>
+          <span itemprop='position'>#6</span>
+          </span>
+        </div>
+        <div class='post' itemprop='articleBody'>
+          <blockquote>
+<p>To Jepsen’s surprise, RDX Works asserted that phenomena such as aborted read, intermediate read, and lost writes do not constitute safety violations (in the DLT sense). RDX Works claims that to describe these errors as safety violations would not be understood by readers from a DLT background; this report is therefore “factually incorrect”. On these grounds, RDX Works requested that <strong>Jepsen delete any mention of our findings from the abstract of this report.</strong></p>
+</blockquote>
+<blockquote>
+<p>Jepsen respectfully declines to do so.</p>
+</blockquote>
+<p>Easy to miss the word “abstract” I suppose. Still not a good look though.</p>
+        </div>
+
+        <meta itemprop='headline' content='Jepsen Radix Report discussion'>
+
+        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+           <meta itemprop="userInteractionCount" content="0" />
+           <span class='post-likes'></span>
+         </div>
+
+         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
+            <meta itemprop="userInteractionCount" content="1" />
+          </div>
+
+      </div>
+      <div id='post_7' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+        <div class='crawler-post-meta'>
+          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop='name' content='RadixTalk'>
+              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+                <meta itemprop='url' content='https://cdn.radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+              </div>
+          </div>
+          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a itemprop="url" href='../../u/Avaunt.html'><span itemprop='name'>Avaunt</span></a>
+            (Avaunt)
+          </span>
+
+          <link itemprop="mainEntityOfPage" href="335.html">
+
+
+          <span class="crawler-post-infos">
+              <time itemprop='datePublished' datetime='2022-02-07T08:34:23Z' class='post-time'>
+                7 February 2022 08:34
+              </time>
+              <meta itemprop='dateModified' content='2022-02-07T08:54:44Z'>
+          <span itemprop='position'>#7</span>
+          </span>
+        </div>
+        <div class='post' itemprop='articleBody'>
+          <p>Not ideal, just badly worded I guess.</p>
+        </div>
+
+        <meta itemprop='headline' content='Jepsen Radix Report discussion'>
+
+        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+           <meta itemprop="userInteractionCount" content="0" />
+           <span class='post-likes'></span>
+         </div>
+
+         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
+            <meta itemprop="userInteractionCount" content="0" />
+          </div>
+
+      </div>
+      <div id='post_8' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+        <div class='crawler-post-meta'>
+          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop='name' content='RadixTalk'>
+              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+                <meta itemprop='url' content='https://cdn.radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+              </div>
+          </div>
+          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a itemprop="url" href='../../u/Yo1234.html'><span itemprop='name'>Yo1234</span></a>
+            
+          </span>
+
+          <link itemprop="mainEntityOfPage" href="335.html">
+
+
+          <span class="crawler-post-infos">
+              <time itemprop='datePublished' datetime='2022-02-08T09:37:13Z' class='post-time'>
+                8 February 2022 09:37
+              </time>
+              <meta itemprop='dateModified' content='2022-02-08T09:43:03Z'>
+          <span itemprop='position'>#8</span>
+          </span>
+        </div>
+        <div class='post' itemprop='articleBody'>
+          <p>The tricky thing about these reports is that you can spin them two ways: “Radix has fixed the issues, the most important stuff worked”, or “See? So many issues… Told you Radix sucks!”</p>
+<p>Something like the supposed double-spend issue doesn’t help. In the end, it was, again, an API issue (and no on-ledger double-spend) from what I’m reading, but it’s really easy to grab that info and create FUD, unfortunately.</p>
+<p>Either way, I’m glad they got someone who tried to break what they built. I like that <img src="https://cdn.radixtalk.com/images/emoji/twitter/slight_smile.png?v=12" title=":slight_smile:" class="emoji" alt=":slight_smile:"></p>
+<p>Someone also linked to these ‘tweets’ or whatever they are from Jepsen’s site:</p>
+<aside class="onebox allowlistedgeneric" data-onebox-src="https://mastodon.jepsen.io/@jepsen/107759347110188122">
+  <header class="source">
+      <img src="https://cdn.radixtalk.com/uploads/default/original/1X/312d6dcb3eef2fd117f692094c52f0171066bb40.png" class="site-icon" width="45" height="48">
+
+      <a href="https://mastodon.jepsen.io/@jepsen/107759347110188122" target="_blank" rel="noopener nofollow ugc" title="11:39PM - 07 February 2022">Jepsen – 7 Feb 22</a>
+  </header>
+
+  <article class="onebox-body">
+    <img src="https://cdn.radixtalk.com/uploads/default/original/1X/03eda39f3641901dec70748e7944504423ac2665.png" class="thumbnail onebox-avatar" width="400" height="400">
+
+<h3><a href="https://mastodon.jepsen.io/@jepsen/107759347110188122" target="_blank" rel="noopener nofollow ugc">Jepsen (@jepsen@jepsen.io)</a></h3>
+
+  <p>Ah--a small clarification here! We found two issues in the raw Radix DLT ledger API. #8 involved transactions appearing in the raw txn log, then being immediately replaced by different txns. #10 involved nodes confirming then forgetting txns when...</p>
+
+
+  </article>
+
+  <div class="onebox-metadata">
+    
+    
+  </div>
+
+  <div style="clear: both"></div>
+</aside>
+<aside class="onebox allowlistedgeneric" data-onebox-src="https://mastodon.jepsen.io/@jepsen/107757109186060716">
+  <header class="source">
+      <img src="https://cdn.radixtalk.com/uploads/default/original/1X/312d6dcb3eef2fd117f692094c52f0171066bb40.png" class="site-icon" width="45" height="48">
+
+      <a href="https://mastodon.jepsen.io/@jepsen/107757109186060716" target="_blank" rel="noopener nofollow ugc" title="02:09PM - 07 February 2022">Jepsen – 7 Feb 22</a>
+  </header>
+
+  <article class="onebox-body">
+    <img src="https://cdn.radixtalk.com/uploads/default/original/1X/03eda39f3641901dec70748e7944504423ac2665.png" class="thumbnail onebox-avatar" width="400" height="400">
+
+<h3><a href="https://mastodon.jepsen.io/@jepsen/107757109186060716" target="_blank" rel="noopener nofollow ugc">Jepsen (@jepsen@jepsen.io)</a></h3>
+
+  <p>For Radix DLT folks concerned about 16 vs. 50 transactions per second--I wouldn't worry about that at all. In benchmark terms those are basically the same number. As mentioned in the report, we're talking about different hardware, a different...</p>
+
+
+  </article>
+
+  <div class="onebox-metadata">
+    
+    
+  </div>
+
+  <div style="clear: both"></div>
+</aside>
+
+        </div>
+
+        <meta itemprop='headline' content='Jepsen Radix Report discussion'>
+
+        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+           <meta itemprop="userInteractionCount" content="4" />
+           <span class='post-likes'>4 Likes</span>
+         </div>
+
+         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
+            <meta itemprop="userInteractionCount" content="0" />
+          </div>
+
+      </div>
+
+
+
+
+
+
+    </div>
+    <footer class="container wrap">
+  <nav class='crawler-nav'>
+    <ul>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='https://radixtalk.com/' itemprop="url">Home </a>
+        </span>
+      </li>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='https://radixtalk.com/categories' itemprop="url">Categories </a>
+        </span>
+      </li>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='https://radixtalk.com/guidelines' itemprop="url">FAQ/Guidelines </a>
+        </span>
+      </li>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='https://radixtalk.com/tos' itemprop="url">Terms of Service </a>
+        </span>
+      </li>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='https://radixtalk.com/privacy' itemprop="url">Privacy Policy </a>
+        </span>
+      </li>
+    </ul>
+  </nav>
+  <p class='powered-by-link'>Powered by <a href="https://www.discourse.org">Discourse</a>, best viewed with JavaScript enabled</p>
+</footer>
+
+    
+    
+  </body>
+  
+</html>

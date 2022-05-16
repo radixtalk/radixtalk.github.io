@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>How to convert a Wallet Address into a Public Key</title>
+    <link>https://radixtalk.com/t/how-to-convert-a-wallet-address-into-a-public-key/188</link>
+    <description>```python
+import bech32
+
+wallet_address = &quot;rdx1q....&quot;
+
+_hrp, wallet_readdr_5bit = bech32.bech32_decode(wallet_address)
+wallet_readdr = bech32.convertbits(wallet_readdr_5bit, 5, 8, pad=False)
+
+# Remove the Radix Engine Address 04 prefix byte
+wallet_public_key = wallet_readdr[1:34]
+
+print(&quot;Wallet Public Key:&quot;, bytes(wallet_public_key).hex())
+```
+
+## Run this code on Replit:
+https://replit.com/@radixtalk/Wallet-Address-to-Public-Key#main.py
+
+Also see: https://radixtalk.com/t/how-to-convert-a-public-key-into-a-wallet-address/193</description>
+    <language>en-GB</language>
+    <lastBuildDate>Fri, 18 Feb 2022 16:27:39 +0000</lastBuildDate>
+    <category>Developers</category>
+    <atom:link href="https://radixtalk.com/t/how-to-convert-a-wallet-address-into-a-public-key/188.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>How to convert a Wallet Address into a Public Key</title>
+        <dc:creator><![CDATA[Jon-Eric Cook]]></dc:creator>
+        <description><![CDATA[
+            <p>here are the hrp’s of addresses <a href="https://github.com/radixdlt/radixdlt/blob/main/radixdlt-java-common/src/main/java/com/radixdlt/networks/Network.java#L73" class="inline-onebox" rel="noopener nofollow ugc">radixdlt/Network.java at main · radixdlt/radixdlt · GitHub</a></p>
+          <p><a href="https://radixtalk.com/t/how-to-convert-a-wallet-address-into-a-public-key/188/5">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-to-convert-a-wallet-address-into-a-public-key/188/5</link>
+        <pubDate>Fri, 18 Feb 2022 16:27:39 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-188-5</guid>
+        <source url="https://radixtalk.com/t/how-to-convert-a-wallet-address-into-a-public-key/188.rss">How to convert a Wallet Address into a Public Key</source>
+      </item>
+      <item>
+        <title>How to convert a Wallet Address into a Public Key</title>
+        <dc:creator><![CDATA[minhnn | EasyStake.net]]></dc:creator>
+        <description><![CDATA[
+            <p>Thanks for your reply, I also add the checking for _hrp (returned by method bech32_decode) to make sure it is “rdx”</p>
+          <p><a href="https://radixtalk.com/t/how-to-convert-a-wallet-address-into-a-public-key/188/4">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-to-convert-a-wallet-address-into-a-public-key/188/4</link>
+        <pubDate>Wed, 05 Jan 2022 04:43:29 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-188-4</guid>
+        <source url="https://radixtalk.com/t/how-to-convert-a-wallet-address-into-a-public-key/188.rss">How to convert a Wallet Address into a Public Key</source>
+      </item>
+      <item>
+        <title>How to convert a Wallet Address into a Public Key</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>The Bech32 algorithm has 6 character checksum that “gives a chance of less than 1 in a billion that an invalid address is deemed correct”.</p>
+<p>So given a Radix wallet address, you can validate it by using the Bech32 decode function and then:</p>
+<ol>
+<li>Checking the data part is 34 bytes long</li>
+<li>Checking that the first byte is <code>04</code> - which defines it as a Radix Engine Address</li>
+<li>Checking that the second byte is either <code>02</code> or <code>03</code> - to indicate that it is a compressed public key</li>
+</ol>
+<p>Further Reading:<br>
+<a href="https://medium.com/@meshcollider/some-of-the-math-behind-bech32-addresses-cf03c7496285">https://medium.com/@meshcollider/some-of-the-math-behind-bech32-addresses-cf03c7496285</a></p>
+          <p><a href="https://radixtalk.com/t/how-to-convert-a-wallet-address-into-a-public-key/188/3">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-to-convert-a-wallet-address-into-a-public-key/188/3</link>
+        <pubDate>Mon, 03 Jan 2022 10:31:15 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-188-3</guid>
+        <source url="https://radixtalk.com/t/how-to-convert-a-wallet-address-into-a-public-key/188.rss">How to convert a Wallet Address into a Public Key</source>
+      </item>
+      <item>
+        <title>How to convert a Wallet Address into a Public Key</title>
+        <dc:creator><![CDATA[minhnn | EasyStake.net]]></dc:creator>
+        <description><![CDATA[
+            <p>Is this also the correct way to validate an Radix address? Is there any other methods to check to make sure an Radix address is valid or not?</p>
+          <p><a href="https://radixtalk.com/t/how-to-convert-a-wallet-address-into-a-public-key/188/2">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-to-convert-a-wallet-address-into-a-public-key/188/2</link>
+        <pubDate>Mon, 03 Jan 2022 06:46:28 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-188-2</guid>
+        <source url="https://radixtalk.com/t/how-to-convert-a-wallet-address-into-a-public-key/188.rss">How to convert a Wallet Address into a Public Key</source>
+      </item>
+      <item>
+        <title>How to convert a Wallet Address into a Public Key</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <pre><code class="lang-python">import bech32
+
+wallet_address = "rdx1q...."
+
+_hrp, wallet_readdr_5bit = bech32.bech32_decode(wallet_address)
+wallet_readdr = bech32.convertbits(wallet_readdr_5bit, 5, 8, pad=False)
+
+# Remove the Radix Engine Address 04 prefix byte
+wallet_public_key = wallet_readdr[1:34]
+
+print("Wallet Public Key:", bytes(wallet_public_key).hex())
+</code></pre>
+<h2>
+<a name="run-this-code-on-replit-1" class="anchor" href="https://radixtalk.com#run-this-code-on-replit-1"></a>Run this code on Replit:</h2>
+<p><iframe src="https://replit.com/@radixtalk/Wallet-Address-to-Public-Key?lite=true" width="695" height="521" frameborder="0" seamless="seamless" sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox allow-presentation"></iframe></p>
+<p>Also see: <a href="https://radixtalk.com/t/how-to-convert-a-public-key-into-a-wallet-address/193" class="inline-onebox">How to convert a Public Key into a Wallet Address</a></p>
+          <p><a href="https://radixtalk.com/t/how-to-convert-a-wallet-address-into-a-public-key/188/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-to-convert-a-wallet-address-into-a-public-key/188/1</link>
+        <pubDate>Fri, 31 Dec 2021 17:33:12 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-188-1</guid>
+        <source url="https://radixtalk.com/t/how-to-convert-a-wallet-address-into-a-public-key/188.rss">How to convert a Wallet Address into a Public Key</source>
+      </item>
+  </channel>
+</rss>

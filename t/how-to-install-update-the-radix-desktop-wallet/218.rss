@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>How to install/update the Radix Desktop Wallet</title>
+    <link>https://radixtalk.com/t/how-to-install-update-the-radix-desktop-wallet/218</link>
+    <description>The Radix Desktop Wallet is currently the only official wallet and is needed to receive/send XRD and stake them. Here&#39;s how to install it:
+
+&gt; You can follow the same steps to update your Radix Wallet to the latest version.
+
+# Windows
+
+1. Go to [https://wallet.radixdlt.com/](https://wallet.radixdlt.com)
+
+2. Click on &quot;**Download for Windows**&quot;
+
+   ![image|536x500](upload://jbDMUWcBkdjA6IDaQpYJrVGpDDh.jpeg)
+
+3. Save the executable on your computer
+
+   ![image|434x197](upload://1FhX2aZwbdGWNOh8NBQoqhFJftZ.png)
+
+4. Run the downloaded file (`Radix-Wallet-Setup-1.x.x.exe`, version will vary)
+
+   ![image|189x23](upload://a0QehldmTO1EPwJU9DX6A3jvDYF.png)
+
+5. The installer will setup the Radix Wallet
+
+   ![image|383x154](upload://180Qxqw7KjKur23uNWWBQjQntyn.png)
+
+6. Once the install has been completed, the Radix Wallet will automatically open.
+
+# MacOS
+
+
+1. Go to [https://wallet.radixdlt.com/](https://wallet.radixdlt.com)
+
+2. Click on &quot;Download for MacOS&quot;
+
+   ![image|506x500](upload://4olJ4hOGv4NVDe2zSrpClrEqN4I.jpeg)
+
+3. Once downloaded, go to your *downloads* folder and open the downloaded .dmg file.
+
+   ![image|533x227](upload://a5hdtGtBQ722b0jFDhu5IinuBBV.jpeg)
+
+4. The .dmg file will be mounted in your desktop and in your Finder sidebar, under your hard drive. Clicking either one of these opens the DMG file.
+
+   ![image|690x483, 75%](upload://8QVXHeXB2QLpXMTvMlcEBnYifTK.jpeg)
+
+5. Drag and drop the &quot;Radix Wallet&quot; icon in your Applications folder to install it.
+
+6. You can now eject the .dmg (disk image) file.
+
+7. The Radix Wallet is now installed and can be opened from your Applications folder.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Tue, 18 Jan 2022 13:00:59 +0000</lastBuildDate>
+    <category>Questions / Help</category>
+    <atom:link href="https://radixtalk.com/t/how-to-install-update-the-radix-desktop-wallet/218.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>How to install/update the Radix Desktop Wallet</title>
+        <dc:creator><![CDATA[Mattia | MattiaNode]]></dc:creator>
+        <description><![CDATA[
+            <p>The Radix Desktop Wallet is currently the only official wallet and is needed to receive/send XRD and stake them. Here’s how to install it:</p>
+<blockquote>
+<p>You can follow the same steps to update your Radix Wallet to the latest version.</p>
+</blockquote>
+<h1>
+<a name="windows-1" class="anchor" href="https://radixtalk.com#windows-1"></a>Windows</h1>
+<ol>
+<li>
+<p>Go to <a href="https://wallet.radixdlt.com">https://wallet.radixdlt.com/</a></p>
+</li>
+<li>
+<p>Click on “<strong>Download for Windows</strong>”</p>
+<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.radixtalk.com/uploads/default/original/1X/867a32aed965b4bc368c4979b6b04dc3df202717.jpeg" data-download-href="https://cdn.radixtalk.com/uploads/default/867a32aed965b4bc368c4979b6b04dc3df202717" title="image"><img src="https://cdn.radixtalk.com/uploads/default/optimized/1X/867a32aed965b4bc368c4979b6b04dc3df202717_2_536x500.jpeg" alt="image" data-base62-sha1="jbDMUWcBkdjA6IDaQpYJrVGpDDh" width="536" height="500" srcset="https://cdn.radixtalk.com/uploads/default/optimized/1X/867a32aed965b4bc368c4979b6b04dc3df202717_2_536x500.jpeg, https://cdn.radixtalk.com/uploads/default/original/1X/867a32aed965b4bc368c4979b6b04dc3df202717.jpeg 1.5x, https://cdn.radixtalk.com/uploads/default/original/1X/867a32aed965b4bc368c4979b6b04dc3df202717.jpeg 2x" data-small-upload="https://cdn.radixtalk.com/uploads/default/optimized/1X/867a32aed965b4bc368c4979b6b04dc3df202717_2_10x10.png"></a></div><p></p>
+</li>
+<li>
+<p>Save the executable on your computer</p>
+<p><img src="https://cdn.radixtalk.com/uploads/default/original/1X/0bad05e162ef57bb95f48c82b271a91f52117307.png" alt="image" data-base62-sha1="1FhX2aZwbdGWNOh8NBQoqhFJftZ" width="434" height="197"></p>
+</li>
+<li>
+<p>Run the downloaded file (<code>Radix-Wallet-Setup-1.x.x.exe</code>, version will vary)</p>
+<p><img src="https://cdn.radixtalk.com/uploads/default/original/1X/462e1e36148b56af9d386def480d720ce2dac025.png" alt="image" data-base62-sha1="a0QehldmTO1EPwJU9DX6A3jvDYF" width="189" height="23"></p>
+</li>
+<li>
+<p>The installer will setup the Radix Wallet</p>
+<p><img src="https://cdn.radixtalk.com/uploads/default/original/1X/07ea13685d1c452312960835fef187b544e1716f.png" alt="image" data-base62-sha1="180Qxqw7KjKur23uNWWBQjQntyn" width="383" height="154"></p>
+</li>
+<li>
+<p>Once the install has been completed, the Radix Wallet will automatically open.</p>
+</li>
+</ol>
+<h1>
+<a name="macos-2" class="anchor" href="https://radixtalk.com#macos-2"></a>MacOS</h1>
+<ol>
+<li>
+<p>Go to <a href="https://wallet.radixdlt.com">https://wallet.radixdlt.com/</a></p>
+</li>
+<li>
+<p>Click on “Download for MacOS”</p>
+<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.radixtalk.com/uploads/default/original/1X/1ec95b15998284f74bef6da8c8fb9a95a031ee78.jpeg" data-download-href="https://cdn.radixtalk.com/uploads/default/1ec95b15998284f74bef6da8c8fb9a95a031ee78" title="image"><img src="https://cdn.radixtalk.com/uploads/default/optimized/1X/1ec95b15998284f74bef6da8c8fb9a95a031ee78_2_506x500.jpeg" alt="image" data-base62-sha1="4olJ4hOGv4NVDe2zSrpClrEqN4I" width="506" height="500" srcset="https://cdn.radixtalk.com/uploads/default/optimized/1X/1ec95b15998284f74bef6da8c8fb9a95a031ee78_2_506x500.jpeg, https://cdn.radixtalk.com/uploads/default/optimized/1X/1ec95b15998284f74bef6da8c8fb9a95a031ee78_2_759x750.jpeg 1.5x, https://cdn.radixtalk.com/uploads/default/original/1X/1ec95b15998284f74bef6da8c8fb9a95a031ee78.jpeg 2x" data-small-upload="https://cdn.radixtalk.com/uploads/default/optimized/1X/1ec95b15998284f74bef6da8c8fb9a95a031ee78_2_10x10.png"></a></div><p></p>
+</li>
+<li>
+<p>Once downloaded, go to your <em>downloads</em> folder and open the downloaded .dmg file.</p>
+<p><img src="https://cdn.radixtalk.com/uploads/default/original/1X/46ae77a109968399862b147e5e76af7f6c62f583.jpeg" alt="image" data-base62-sha1="a5hdtGtBQ722b0jFDhu5IinuBBV" width="533" height="227"></p>
+</li>
+<li>
+<p>The .dmg file will be mounted in your desktop and in your Finder sidebar, under your hard drive. Clicking either one of these opens the DMG file.</p>
+<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.radixtalk.com/uploads/default/original/1X/3e0d3c9e57261a4cc4b7cbf20effe76a45c5704c.jpeg" data-download-href="https://cdn.radixtalk.com/uploads/default/3e0d3c9e57261a4cc4b7cbf20effe76a45c5704c" title="image"><img src="https://cdn.radixtalk.com/uploads/default/optimized/1X/3e0d3c9e57261a4cc4b7cbf20effe76a45c5704c_2_517x362.jpeg" alt="image" data-base62-sha1="8QVXHeXB2QLpXMTvMlcEBnYifTK" width="517" height="362" srcset="https://cdn.radixtalk.com/uploads/default/optimized/1X/3e0d3c9e57261a4cc4b7cbf20effe76a45c5704c_2_517x362.jpeg, https://cdn.radixtalk.com/uploads/default/optimized/1X/3e0d3c9e57261a4cc4b7cbf20effe76a45c5704c_2_775x543.jpeg 1.5x, https://cdn.radixtalk.com/uploads/default/optimized/1X/3e0d3c9e57261a4cc4b7cbf20effe76a45c5704c_2_1034x724.jpeg 2x" data-small-upload="https://cdn.radixtalk.com/uploads/default/optimized/1X/3e0d3c9e57261a4cc4b7cbf20effe76a45c5704c_2_10x10.png"></a></div><p></p>
+</li>
+<li>
+<p>Drag and drop the “Radix Wallet” icon in your Applications folder to install it.</p>
+</li>
+<li>
+<p>You can now eject the .dmg (disk image) file.</p>
+</li>
+<li>
+<p>The Radix Wallet is now installed and can be opened from your Applications folder.</p>
+</li>
+</ol>
+          <p><a href="https://radixtalk.com/t/how-to-install-update-the-radix-desktop-wallet/218/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-to-install-update-the-radix-desktop-wallet/218/1</link>
+        <pubDate>Fri, 07 Jan 2022 10:08:39 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-218-1</guid>
+        <source url="https://radixtalk.com/t/how-to-install-update-the-radix-desktop-wallet/218.rss">How to install/update the Radix Desktop Wallet</source>
+      </item>
+  </channel>
+</rss>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Why does the Radix Ledger app show such large amounts when confirming a transaction?</title>
+    <link>https://radixtalk.com/t/why-does-the-radix-ledger-app-show-such-large-amounts-when-confirming-a-transaction/232</link>
+    <description>The current version of the Radix Ledger app shows amounts in attos - the fractional unit of XRD. 1 XRD = 1,000,000,000,000,000,000 attos (1x10^18).
+
+For example, 9164264250557521654536 displayed on the Ledger Radix app is 9164.264250557521654536 XRD
+
+The following updates have been made to the Ledger Radix app to fix this issue:
+
+* https://github.com/radixdlt/app-radix/pull/17
+* https://github.com/radixdlt/app-radix/pull/15
+
+Currently no estimate on when the Ledger Radix app will be approved for Ledger Live or whether a new sideload version will be made available before then.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Fri, 14 Jan 2022 05:18:40 +0000</lastBuildDate>
+    <category>Questions / Help</category>
+    <atom:link href="https://radixtalk.com/t/why-does-the-radix-ledger-app-show-such-large-amounts-when-confirming-a-transaction/232.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Why does the Radix Ledger app show such large amounts when confirming a transaction?</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>The current version of the Radix Ledger app shows amounts in attos - the fractional unit of XRD. 1 XRD = 1,000,000,000,000,000,000 attos (1x10^18).</p>
+<p>For example, 9164264250557521654536 displayed on the Ledger Radix app is 9164.264250557521654536 XRD</p>
+<p>The following updates have been made to the Ledger Radix app to fix this issue:</p>
+<ul>
+<li><a href="https://github.com/radixdlt/app-radix/pull/17" class="inline-onebox">Change units while displaying unstake by siy · Pull Request #17 · radixdlt/app-radix · GitHub</a></li>
+<li><a href="https://github.com/radixdlt/app-radix/pull/15" class="inline-onebox">Whole token units by siy · Pull Request #15 · radixdlt/app-radix · GitHub</a></li>
+</ul>
+<p>Currently no estimate on when the Ledger Radix app will be approved for Ledger Live or whether a new sideload version will be made available before then.</p>
+          <p><a href="https://radixtalk.com/t/why-does-the-radix-ledger-app-show-such-large-amounts-when-confirming-a-transaction/232/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/why-does-the-radix-ledger-app-show-such-large-amounts-when-confirming-a-transaction/232/1</link>
+        <pubDate>Thu, 13 Jan 2022 10:32:34 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-232-1</guid>
+        <source url="https://radixtalk.com/t/why-does-the-radix-ledger-app-show-such-large-amounts-when-confirming-a-transaction/232.rss">Why does the Radix Ledger app show such large amounts when confirming a transaction?</source>
+      </item>
+  </channel>
+</rss>

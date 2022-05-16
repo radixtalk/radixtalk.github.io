@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>How do confirm the transaction had a final in radix?</title>
+    <link>https://radixtalk.com/t/how-do-confirm-the-transaction-had-a-final-in-radix/433</link>
+    <description>we can query receipt of transaction in eth,
+how to do that in radix chain ,any core API can support?</description>
+    <language>en-GB</language>
+    <lastBuildDate>Thu, 07 Apr 2022 08:05:55 +0000</lastBuildDate>
+    <category>Developers</category>
+    <atom:link href="https://radixtalk.com/t/how-do-confirm-the-transaction-had-a-final-in-radix/433.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>How do confirm the transaction had a final in radix?</title>
+        <dc:creator><![CDATA[abel]]></dc:creator>
+        <description><![CDATA[
+            <p>Is there a specific limit to the number of transactions in a specific state version?</p>
+<p>I want to query all tx in a state version, the limit filed how to set?<br>
+<img src="https://cdn.radixtalk.com/uploads/default/original/1X/486a2db79eb048bc83b181eb5194ae7845c4a0e8.png" alt="image" data-base62-sha1="akBRATDpHOPAUhtoBp46LVT8N9C" width="674" height="336"></p>
+          <p><a href="https://radixtalk.com/t/how-do-confirm-the-transaction-had-a-final-in-radix/433/5">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-do-confirm-the-transaction-had-a-final-in-radix/433/5</link>
+        <pubDate>Thu, 07 Apr 2022 08:05:55 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-433-5</guid>
+        <source url="https://radixtalk.com/t/how-do-confirm-the-transaction-had-a-final-in-radix/433.rss">How do confirm the transaction had a final in radix?</source>
+      </item>
+      <item>
+        <title>How do confirm the transaction had a final in radix?</title>
+        <dc:creator><![CDATA[Faraz | Radstakes.com]]></dc:creator>
+        <description><![CDATA[
+            <p>You can get a stream of committed transactions from the core API, but doesn’t have the functionality to check a specific tx hash like the Gateway: <a href="https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/radixdlt/radixdlt/1.1.0/radixdlt-core/radixdlt/src/main/java/com/radixdlt/api/core/api.yaml#tag/mempool/paths/~1mempool~1transaction/post">Core API</a></p>
+          <p><a href="https://radixtalk.com/t/how-do-confirm-the-transaction-had-a-final-in-radix/433/4">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-do-confirm-the-transaction-had-a-final-in-radix/433/4</link>
+        <pubDate>Thu, 07 Apr 2022 06:57:36 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-433-4</guid>
+        <source url="https://radixtalk.com/t/how-do-confirm-the-transaction-had-a-final-in-radix/433.rss">How do confirm the transaction had a final in radix?</source>
+      </item>
+      <item>
+        <title>How do confirm the transaction had a final in radix?</title>
+        <dc:creator><![CDATA[abel]]></dc:creator>
+        <description><![CDATA[
+            <p>as the environment limit, we only use the core API, have anyway to ensure it?</p>
+          <p><a href="https://radixtalk.com/t/how-do-confirm-the-transaction-had-a-final-in-radix/433/3">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-do-confirm-the-transaction-had-a-final-in-radix/433/3</link>
+        <pubDate>Thu, 07 Apr 2022 06:53:58 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-433-3</guid>
+        <source url="https://radixtalk.com/t/how-do-confirm-the-transaction-had-a-final-in-radix/433.rss">How do confirm the transaction had a final in radix?</source>
+      </item>
+      <item>
+        <title>How do confirm the transaction had a final in radix?</title>
+        <dc:creator><![CDATA[Faraz | Radstakes.com]]></dc:creator>
+        <description><![CDATA[
+            <p>Hi abel,</p>
+<p>Yes you can use the transaction/status end point in the Gateway API.  Please see the documentation here: <a href="https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/radixdlt/radixdlt-network-gateway/1.1.1/gateway-api-spec.yaml#tag/Transaction/paths/~1transaction~1status/post">Transaction Status Gateway</a></p>
+          <p><a href="https://radixtalk.com/t/how-do-confirm-the-transaction-had-a-final-in-radix/433/2">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-do-confirm-the-transaction-had-a-final-in-radix/433/2</link>
+        <pubDate>Thu, 07 Apr 2022 06:50:44 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-433-2</guid>
+        <source url="https://radixtalk.com/t/how-do-confirm-the-transaction-had-a-final-in-radix/433.rss">How do confirm the transaction had a final in radix?</source>
+      </item>
+      <item>
+        <title>How do confirm the transaction had a final in radix?</title>
+        <dc:creator><![CDATA[abel]]></dc:creator>
+        <description><![CDATA[
+            <p>we can query receipt of transaction in eth,<br>
+how to do that in radix chain ,any core API can support?</p>
+          <p><a href="https://radixtalk.com/t/how-do-confirm-the-transaction-had-a-final-in-radix/433/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-do-confirm-the-transaction-had-a-final-in-radix/433/1</link>
+        <pubDate>Thu, 07 Apr 2022 06:47:16 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-433-1</guid>
+        <source url="https://radixtalk.com/t/how-do-confirm-the-transaction-had-a-final-in-radix/433.rss">How do confirm the transaction had a final in radix?</source>
+      </item>
+  </channel>
+</rss>

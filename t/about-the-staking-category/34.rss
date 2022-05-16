@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>About the Staking category</title>
+    <link>https://radixtalk.com/t/about-the-staking-category/34</link>
+    <description>Topics about delegating stake to Radix validators</description>
+    <language>en-GB</language>
+    <lastBuildDate>Fri, 24 Dec 2021 16:39:23 +0000</lastBuildDate>
+    <category>Staking</category>
+    <atom:link href="https://radixtalk.com/t/about-the-staking-category/34.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>About the Staking category</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>Topics about delegating stake to Radix validators</p>
+          <p><a href="https://radixtalk.com/t/about-the-staking-category/34/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/about-the-staking-category/34/1</link>
+        <pubDate>Fri, 24 Dec 2021 16:38:52 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-34-1</guid>
+        <source url="https://radixtalk.com/t/about-the-staking-category/34.rss">About the Staking category</source>
+      </item>
+  </channel>
+</rss>

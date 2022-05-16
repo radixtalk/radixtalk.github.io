@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Can I used the Ledger Nano X with the Radix Desktop Wallet?</title>
+    <link>https://radixtalk.com/t/can-i-used-the-ledger-nano-x-with-the-radix-desktop-wallet/114</link>
+    <description>At the moment you cannot use the Radix app on a Ledger Nano X because the Nano X does not allow unsigned/development versions of the app to be side loaded onto the device. The Nano S does allow this which is why only the Nano S is supported at the moment.
+
+Once the Radix app is &quot;blessed&quot; by Ledger it will be available to install on both the Ledger Nano X and Nano S.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Mon, 27 Dec 2021 14:59:44 +0000</lastBuildDate>
+    <category>Questions / Help</category>
+    <atom:link href="https://radixtalk.com/t/can-i-used-the-ledger-nano-x-with-the-radix-desktop-wallet/114.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Can I used the Ledger Nano X with the Radix Desktop Wallet?</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>At the moment you cannot use the Radix app on a Ledger Nano X because the Nano X does not allow unsigned/development versions of the app to be side loaded onto the device. The Nano S does allow this which is why only the Nano S is supported at the moment.</p>
+<p>Once the Radix app is “blessed” by Ledger it will be available to install on both the Ledger Nano X and Nano S.</p>
+          <p><a href="https://radixtalk.com/t/can-i-used-the-ledger-nano-x-with-the-radix-desktop-wallet/114/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/can-i-used-the-ledger-nano-x-with-the-radix-desktop-wallet/114/1</link>
+        <pubDate>Mon, 27 Dec 2021 14:59:44 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-114-1</guid>
+        <source url="https://radixtalk.com/t/can-i-used-the-ledger-nano-x-with-the-radix-desktop-wallet/114.rss">Can I used the Ledger Nano X with the Radix Desktop Wallet?</source>
+      </item>
+  </channel>
+</rss>

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <title>What is the maximum length of messages in a transaction? - Developers - RadixTalk</title>
+    <meta name="description" content="The maximum number of characters you can send in a transaction depends on the method used and whether the message is plaintext or encrypted: 
+
+
+
+
+Method
+Type
+Max Length
+
+
+
+
+Radix Wallet (v1.2)
+Plaintext
+125
+
+
+Radix Walle&amp;hellip;">
+    <meta name="generator" content="Discourse 2.9.0.beta4 - https://github.com/discourse/discourse version 8ce29a4a2264ea472a8151bfe2e591ab1101cfeb">
+<link rel="icon" type="image/png" href="https://cdn.radixtalk.com/uploads/default/optimized/1X/023c6f3e74bac599c495c37eecd72f939f3fab87_2_32x32.png">
+<link rel="apple-touch-icon" type="image/png" href="https://cdn.radixtalk.com/uploads/default/optimized/1X/ad9adb26331754b0012edbc9b4796de8dc449fa8_2_180x180.png">
+<meta name="theme-color" content="#ffffff">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<link rel="canonical" href="276.html" />
+<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebSite","url":"https://radixtalk.com","potentialAction":{"@type":"SearchAction","target":"https://radixtalk.com/search?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<link rel="search" type="application/opensearchdescription+xml" href="../../opensearch.xml" title="RadixTalk Search">
+
+    <link href="https://cdn.radixtalk.com/stylesheets/color_definitions_light_4_1_41174e1f8711476b3393f07571899954e9737309.css?__ws=radixtalk.com" media="all" rel="stylesheet" class="light-scheme"/>
+
+  <link href="https://cdn.radixtalk.com/stylesheets/desktop_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="desktop"  />
+
+
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-akismet_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-akismet"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-automation_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-automation"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-cakeday_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-cakeday"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-canned-replies_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-canned-replies"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-checklist_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-checklist"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-data-explorer_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-data-explorer"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-details_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-details"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-docs_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-docs"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-follow_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-follow"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-fontawesome-pro_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-fontawesome-pro"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-footnote_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-footnote"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-local-dates_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-local-dates"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-presence_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-presence"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-rss-polling_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-rss-polling"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-saved-searches_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-saved-searches"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-solved_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-solved"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-tooltips_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-tooltips"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-user-notes_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-user-notes"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-voting_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-voting"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-whos-online_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-whos-online"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/lazy-yt_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="lazy-yt"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/poll_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="poll"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-voting_desktop_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-voting_desktop"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/poll_desktop_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="poll_desktop"  />
+
+  <link href="https://cdn.radixtalk.com/stylesheets/desktop_theme_1_263bf35b28bc3c889d3c5ea8d6e1c519621916e1.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="desktop_theme" data-theme-id="1" data-theme-name="default"/>
+
+    <script defer="" data-domain="radixtalk.com" src="https://plausible.io/js/plausible.hash.js"></script>
+
+    
+        <link rel="alternate nofollow" type="application/rss+xml" title="RSS feed of &#39;What is the maximum length of messages in a transaction?&#39;" href="276.rss" />
+    <meta property="og:site_name" content="RadixTalk" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:image" content="https://cdn.radixtalk.com/uploads/default/original/1X/9e3624f2a5d4052091ba93563043c233df535486.png" />
+<meta property="og:image" content="https://cdn.radixtalk.com/uploads/default/original/1X/9e3624f2a5d4052091ba93563043c233df535486.png" />
+<meta property="og:url" content="https://radixtalk.com/t/what-is-the-maximum-length-of-messages-in-a-transaction/276" />
+<meta name="twitter:url" content="https://radixtalk.com/t/what-is-the-maximum-length-of-messages-in-a-transaction/276" />
+<meta property="og:title" content="What is the maximum length of messages in a transaction?" />
+<meta name="twitter:title" content="What is the maximum length of messages in a transaction?" />
+<meta property="og:description" content="The maximum number of characters you can send in a transaction depends on the method used and whether the message is plaintext or encrypted:      Method Type Max Length     Radix Wallet (v1.2) Plaintext 125   Radix Wallet (v1.2) Encrypted 64   Json-Rpc API Plaintext 125   Json-Rpc API Encrypted 64   Radix Wallet (v1.3) Plaintext 253   Radix Wallet (v1.3) Encrypted 192   Core API Plaintext 252*   Core API Encrypted 192     Explanation Messages that are readable by the Radix Wallet and Explorer ar..." />
+<meta name="twitter:description" content="The maximum number of characters you can send in a transaction depends on the method used and whether the message is plaintext or encrypted:      Method Type Max Length     Radix Wallet (v1.2) Plaintext 125   Radix Wallet (v1.2) Encrypted 64   Json-Rpc API Plaintext 125   Json-Rpc API Encrypted 64   Radix Wallet (v1.3) Plaintext 253   Radix Wallet (v1.3) Encrypted 192   Core API Plaintext 252*   Core API Encrypted 192     Explanation Messages that are readable by the Radix Wallet and Explorer ar..." />
+<meta name="twitter:label1" value="Reading time" />
+<meta name="twitter:data1" value="1 mins 🕑" />
+<meta name="twitter:label2" value="Likes" />
+<meta name="twitter:data2" value="7 ❤" />
+<meta property="article:published_time" content="2022-01-22T10:26:44+00:00" />
+<meta property="og:ignore_canonical" content="true" />
+
+
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"QAPage","name":"What is the maximum length of messages in a transaction?","mainEntity":{"@type":"Question","name":"What is the maximum length of messages in a transaction?","text":"The maximum number of characters you can send in a transaction depends on the method used and whether the message is plaintext or encrypted:\n\nMethod\n\nType\n\nMax Length\n\nRadix Wallet (v1.2)\n\nPlaintext\n\n125\n\nRadix Wallet (v1.2)\n\nEncrypted\n\n64\n\nJson-Rpc API\n\nPlaintext\n\n125\n\nJson-Rpc API\n\nEncrypted\n\n64\n\n&hellip;","upvoteCount":5,"answerCount":0,"dateCreated":"2022-01-22T10:26:44.439Z","author":{"@type":"Person","name":"Stuart | RadixPool"}}}</script>
+  </head>
+  <body class="crawler">
+    
+    <header>
+  <a href="https://radixtalk.com/">
+    <h1>RadixTalk</h1>
+  </a>
+</header>
+
+    <div id="main-outlet" class="wrap" role="main">
+        <div id="topic-title">
+    <h1>
+      <a href="276.html">What is the maximum length of messages in a transaction?</a>
+    </h1>
+
+      <div class="topic-category" itemscope itemtype="http://schema.org/BreadcrumbList">
+          <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+            <a href="https://radixtalk.com/c/developers/24" class="badge-wrapper bullet" itemprop="item">
+              <span class='badge-category-bg' style='background-color: #F1592A'></span>
+              <span class='badge-category clear-badge'>
+                <span class='category-name' itemprop='name'>Developers</span>
+              </span>
+            </a>
+            <meta itemprop="position" content="1" />
+          </span>
+      </div>
+
+      <div class="topic-category">
+        <div class='discourse-tags list-tags'>
+            <a href='../../tag/core-api.html' class='discourse-tag' rel="tag">core-api</a>, 
+            <a href='../../tag/faq.html' class='discourse-tag' rel="tag">faq</a>, 
+            <a href='../../tag/api.html' class='discourse-tag' rel="tag">api</a>
+        </div>
+      </div>
+  </div>
+
+  
+
+
+      <div id='post_1' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+        <div class='crawler-post-meta'>
+          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop='name' content='RadixTalk'>
+              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+                <meta itemprop='url' content='https://cdn.radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+              </div>
+          </div>
+          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a itemprop="url" href='../../u/Stuart.html'><span itemprop='name'>Stuart</span></a>
+            (Stuart | RadixPool)
+          </span>
+
+          <link itemprop="mainEntityOfPage" href="276.html">
+
+
+          <span class="crawler-post-infos">
+              <time itemprop='datePublished' datetime='2022-01-22T10:26:44Z' class='post-time'>
+                22 January 2022 10:26
+              </time>
+              <meta itemprop='dateModified' content='2022-01-29T10:03:22Z'>
+          <span itemprop='position'>#1</span>
+          </span>
+        </div>
+        <div class='post' itemprop='articleBody'>
+          <p>The maximum number of characters you can send in a transaction depends on the method used and whether the message is plaintext or encrypted:</p>
+<div class="md-table">
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Type</th>
+<th>Max Length</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Radix Wallet (v1.2)</td>
+<td>Plaintext</td>
+<td>125</td>
+</tr>
+<tr>
+<td>Radix Wallet (v1.2)</td>
+<td>Encrypted</td>
+<td>64</td>
+</tr>
+<tr>
+<td>Json-Rpc API</td>
+<td>Plaintext</td>
+<td>125</td>
+</tr>
+<tr>
+<td>Json-Rpc API</td>
+<td>Encrypted</td>
+<td>64</td>
+</tr>
+<tr>
+<td>Radix Wallet (v1.3)</td>
+<td>Plaintext</td>
+<td>253</td>
+</tr>
+<tr>
+<td>Radix Wallet (v1.3)</td>
+<td>Encrypted</td>
+<td>192</td>
+</tr>
+<tr>
+<td>Core API</td>
+<td>Plaintext</td>
+<td>252*</td>
+</tr>
+<tr>
+<td>Core API</td>
+<td>Encrypted</td>
+<td>192</td>
+</tr>
+</tbody>
+</table>
+</div><h2>
+<a name="explanation-1" class="anchor" href="276.html#explanation-1"></a>Explanation</h2>
+<p>Messages that are readable by the Radix Wallet and Explorer are first encoded using a simple scheme as follows:</p>
+<h3>
+<a name="plaintext-message-2" class="anchor" href="276.html#plaintext-message-2"></a>Plaintext Message</h3>
+<p>Message: <code>Hello</code></p>
+<div class="md-table">
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Bytes</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Message Type</td>
+<td>1</td>
+<td><code>00</code></td>
+</tr>
+<tr>
+<td>Encryption Scheme</td>
+<td>1</td>
+<td><code>00</code></td>
+</tr>
+<tr>
+<td>Plaintext</td>
+<td>5</td>
+<td>48656c6c6f</td>
+</tr>
+</tbody>
+</table>
+</div><p>The plaintext encoded message in bytes is therefore:<br>
+<code>000048656c6c6f</code></p>
+<h3>
+<a name="encrypted-message-3" class="anchor" href="276.html#encrypted-message-3"></a>Encrypted Message</h3>
+<p>Message: <code>Hello</code></p>
+<div class="md-table">
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Bytes</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Message Type</td>
+<td>1</td>
+<td><code>01</code></td>
+</tr>
+<tr>
+<td>Encryption Scheme</td>
+<td>1</td>
+<td><code>ff</code></td>
+</tr>
+<tr>
+<td>Ephemeral Public Key</td>
+<td>33</td>
+<td><code>03a0baf4510d589fa59c26f7f97d749f796424859b80716dc12a3b20a4e1ac9573</code></td>
+</tr>
+<tr>
+<td>Nonce</td>
+<td>12</td>
+<td><code>0fd55101a52baab614b2f3e3</code></td>
+</tr>
+<tr>
+<td>Auth Tag</td>
+<td>16</td>
+<td><code>8a2c1addb7d97abe5ecdcea02de4a670</code></td>
+</tr>
+<tr>
+<td>Cipher Text</td>
+<td>5</td>
+<td><code>a399e28dee</code></td>
+</tr>
+</tbody>
+</table>
+</div><p>The encrypted encoded message in bytes is therefore:<br>
+<code>01ff03a0baf4510d589fa59c26f7f97d749f796424859b80716dc12a3b20a4e1ac95730fd55101a52baab614b2f3e38a2c1addb7d97abe5ecdcea02de4a670a399e28dee</code></p>
+<h3>
+<a name="json-rpc-api-radix-wallet-v12-4" class="anchor" href="276.html#json-rpc-api-radix-wallet-v12-4"></a>Json-Rpc API / Radix Wallet (v1.2)</h3>
+<p>Convert the encoded message bytes into a string representation:</p>
+<p><code>0x00 0x00 0x48 0x65 0x6c 0x6c 0x6f</code> → <code>"000048656C6C6F"</code></p>
+<p>Unfortunately, when this message string is submitted with transaction, the encoded message string is encoded <em>again</em> by converting each character into its hex string equivalent:</p>
+<p><code>"000048656C6C6F"</code> → <code>"3030303034383635364336433646"</code> → <code>0x33 0x30 0x33 0x30 0x33 0x30 0x33 0x30 0x33 0x34 0x33 0x38 0x33 0x36 0x33 0x35 0x33 0x36 0x34 0x33 0x33 0x36 0x34 0x33 0x33 0x36 0x34 0x36</code></p>
+<p>So the message value that is actually stored in the message field on the ledger for this example grows from 7 bytes to 28 bytes.</p>
+<p>The transaction message field has a maximum length of 255 bytes. After the double hex encoding we only have 127 bytes available for the message data (255/2 = 127.5 → 127 bytes):</p>
+<ul>
+<li>For unencrypted messages we have a 2 byte header which leaves us with 125 bytes for the message content.</li>
+<li>For encrypted messages we have a 63 bytes header which leaves us with 64 bytes for the message content.</li>
+</ul>
+<h3>
+<a name="core-api-radix-wallet-v13-5" class="anchor" href="276.html#core-api-radix-wallet-v13-5"></a>Core API / Radix Wallet (v1.3)</h3>
+<p>Convert the encoded message bytes into a string representation:</p>
+<p><code>0x00 0x00 0x48 0x65 0x6c 0x6c 0x6f</code> → <code>"000048656C6C6F"</code></p>
+<p>When the message string is submitted with the transaction, the string encoded message is converted back into bytes:</p>
+<p><code>"000048656C6C6F"</code> → <code>0x00 0x00 0x48 0x65 0x6c 0x6c 0x6f</code></p>
+<p>The transaction field has a maximum length of 255 bytes:</p>
+<ul>
+<li>For unencrypted messages we have a 2 byte header which leaves us with 253 bytes for the message content [*Where did the missing byte for Core API call go?]</li>
+<li>For encrypted messages we have a 63 byte header which leaves us with 192 bytes for the message content.</li>
+</ul>
+        </div>
+
+        <meta itemprop='headline' content='What is the maximum length of messages in a transaction?'>
+          <meta itemprop='keywords' content='core-api, faq, api'>
+
+        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+           <meta itemprop="userInteractionCount" content="5" />
+           <span class='post-likes'>5 Likes</span>
+         </div>
+
+         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
+            <meta itemprop="userInteractionCount" content="0" />
+          </div>
+
+      </div>
+      <div id='post_2' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+        <div class='crawler-post-meta'>
+          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop='name' content='RadixTalk'>
+              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+                <meta itemprop='url' content='https://cdn.radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+              </div>
+          </div>
+          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a itemprop="url" href='../../u/Yo1234.html'><span itemprop='name'>Yo1234</span></a>
+            
+          </span>
+
+          <link itemprop="mainEntityOfPage" href="276.html">
+
+
+          <span class="crawler-post-infos">
+              <time itemprop='datePublished' datetime='2022-01-24T10:34:55Z' class='post-time'>
+                24 January 2022 10:34
+              </time>
+              <meta itemprop='dateModified' content='2022-01-24T10:34:55Z'>
+          <span itemprop='position'>#2</span>
+          </span>
+        </div>
+        <div class='post' itemprop='articleBody'>
+          <p>Just wanted to say that the work you are doing is priceless. Thank you <img src="https://cdn.radixtalk.com/images/emoji/twitter/slight_smile.png?v=12" title=":slight_smile:" class="emoji" alt=":slight_smile:"></p>
+        </div>
+
+        <meta itemprop='headline' content='What is the maximum length of messages in a transaction?'>
+
+        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+           <meta itemprop="userInteractionCount" content="2" />
+           <span class='post-likes'>2 Likes</span>
+         </div>
+
+         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
+            <meta itemprop="userInteractionCount" content="1" />
+          </div>
+
+      </div>
+      <div id='post_3' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+        <div class='crawler-post-meta'>
+          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop='name' content='RadixTalk'>
+              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+                <meta itemprop='url' content='https://cdn.radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+              </div>
+          </div>
+          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a itemprop="url" href='../../u/Mleekko.html'><span itemprop='name'>Mleekko</span></a>
+            (Oleh Koval)
+          </span>
+
+          <link itemprop="mainEntityOfPage" href="276.html">
+
+
+          <span class="crawler-post-infos">
+              <time itemprop='datePublished' datetime='2022-01-26T17:18:00Z' class='post-time'>
+                26 January 2022 17:18
+              </time>
+              <meta itemprop='dateModified' content='2022-01-26T17:18:00Z'>
+          <span itemprop='position'>#3</span>
+          </span>
+        </div>
+        <div class='post' itemprop='articleBody'>
+          <p>+1.<br>
+Helped me a lot.</p>
+        </div>
+
+        <meta itemprop='headline' content='What is the maximum length of messages in a transaction?'>
+
+        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+           <meta itemprop="userInteractionCount" content="0" />
+           <span class='post-likes'></span>
+         </div>
+
+         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
+            <meta itemprop="userInteractionCount" content="0" />
+          </div>
+
+      </div>
+
+
+
+
+
+
+    </div>
+    <footer class="container wrap">
+  <nav class='crawler-nav'>
+    <ul>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='https://radixtalk.com/' itemprop="url">Home </a>
+        </span>
+      </li>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='https://radixtalk.com/categories' itemprop="url">Categories </a>
+        </span>
+      </li>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='https://radixtalk.com/guidelines' itemprop="url">FAQ/Guidelines </a>
+        </span>
+      </li>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='https://radixtalk.com/tos' itemprop="url">Terms of Service </a>
+        </span>
+      </li>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='https://radixtalk.com/privacy' itemprop="url">Privacy Policy </a>
+        </span>
+      </li>
+    </ul>
+  </nav>
+  <p class='powered-by-link'>Powered by <a href="https://www.discourse.org">Discourse</a>, best viewed with JavaScript enabled</p>
+</footer>
+
+    
+    
+  </body>
+  
+</html>

@@ -1,0 +1,1096 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:discourse="http://www.discourse.org/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Validators - RadixTalk</title>
+    <link>https://radixtalk.com/c/validators/16</link>
+    <description>Topics in the &#39;Validators&#39; category Topics about setting up and operating a Radix Validator node</description>
+    <language>en-GB</language>
+      <lastBuildDate>Sat, 23 Apr 2022 15:53:31 +0000</lastBuildDate>
+      <atom:link href="https://radixtalk.com/c/validators/16.rss" rel="self" type="application/rss+xml" />
+        <item>
+          <title>How do I get Gateway API data into Grafana Cloud</title>
+          <dc:creator><![CDATA[Faraz | Radstakes.com]]></dc:creator>
+          <category>Validators</category>
+          <description><![CDATA[
+            <p>When it comes to adding metrics into Grafana, Radix have provided the metrics end point which provides a certain amount of data from the node in Prometheus format which can then be visualised by Grafana.</p>
+<p>However, there may be other metrics that node runners desire that are not currently present in the core API, but may be present in the Gateway.  This post explains how to import REST API data directly into Grafana.  For this example we will use Validator Total Stake (this is currently not available in the Core API, but can be requested through the Gateway).</p>
+<ol>
+<li>Find the Infinity data source by selecting configuration–&gt;data sources–&gt;add data source–&gt;find more data source plugins on grafana<br>
+<div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.radixtalk.com/uploads/default/original/1X/1ff62c47a0b7fe6bd97b47d32e8b40e8883cef90.png" data-download-href="https://cdn.radixtalk.com/uploads/default/1ff62c47a0b7fe6bd97b47d32e8b40e8883cef90" title="image"><img src="https://cdn.radixtalk.com/uploads/default/optimized/1X/1ff62c47a0b7fe6bd97b47d32e8b40e8883cef90_2_690x343.png" alt="image" data-base62-sha1="4yKdVSItCzgRMW7D9LlnyyS4JAA" width="690" height="343" srcset="https://cdn.radixtalk.com/uploads/default/optimized/1X/1ff62c47a0b7fe6bd97b47d32e8b40e8883cef90_2_690x343.png, https://cdn.radixtalk.com/uploads/default/optimized/1X/1ff62c47a0b7fe6bd97b47d32e8b40e8883cef90_2_1035x514.png 1.5x, https://cdn.radixtalk.com/uploads/default/original/1X/1ff62c47a0b7fe6bd97b47d32e8b40e8883cef90.png 2x" data-small-upload="https://cdn.radixtalk.com/uploads/default/optimized/1X/1ff62c47a0b7fe6bd97b47d32e8b40e8883cef90_2_10x10.png"></a></div>
+</li>
+<li>add the plugin to Grafana cloud (there are also instructions if you are using Grafana locally)<br>
+<div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.radixtalk.com/uploads/default/original/1X/b16a088075ec7cabca340002d6079ca8f6ce7a0d.png" data-download-href="https://cdn.radixtalk.com/uploads/default/b16a088075ec7cabca340002d6079ca8f6ce7a0d" title="image"><img src="https://cdn.radixtalk.com/uploads/default/optimized/1X/b16a088075ec7cabca340002d6079ca8f6ce7a0d_2_690x418.png" alt="image" data-base62-sha1="pjtGCgAOu3F30EKBd0gtstq4Icl" width="690" height="418" srcset="https://cdn.radixtalk.com/uploads/default/optimized/1X/b16a088075ec7cabca340002d6079ca8f6ce7a0d_2_690x418.png, https://cdn.radixtalk.com/uploads/default/original/1X/b16a088075ec7cabca340002d6079ca8f6ce7a0d.png 1.5x, https://cdn.radixtalk.com/uploads/default/original/1X/b16a088075ec7cabca340002d6079ca8f6ce7a0d.png 2x" data-small-upload="https://cdn.radixtalk.com/uploads/default/optimized/1X/b16a088075ec7cabca340002d6079ca8f6ce7a0d_2_10x10.png"></a></div>
+</li>
+<li>add the data source by selecting it from the list in Grafana cloud</li>
+<li>add a new panel using the “Stat” visualisation and the fields below:<br>
+<div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.radixtalk.com/uploads/default/original/1X/5d19420a030c9bf524535c9ac576e6a885d6b886.png" data-download-href="https://cdn.radixtalk.com/uploads/default/5d19420a030c9bf524535c9ac576e6a885d6b886" title="image"><img src="https://cdn.radixtalk.com/uploads/default/optimized/1X/5d19420a030c9bf524535c9ac576e6a885d6b886_2_690x372.png" alt="image" data-base62-sha1="dhAwdHl5hlu8FIyMyC4cVWB7sNw" width="690" height="372" srcset="https://cdn.radixtalk.com/uploads/default/optimized/1X/5d19420a030c9bf524535c9ac576e6a885d6b886_2_690x372.png, https://cdn.radixtalk.com/uploads/default/optimized/1X/5d19420a030c9bf524535c9ac576e6a885d6b886_2_1035x558.png 1.5x, https://cdn.radixtalk.com/uploads/default/original/1X/5d19420a030c9bf524535c9ac576e6a885d6b886.png 2x" data-small-upload="https://cdn.radixtalk.com/uploads/default/optimized/1X/5d19420a030c9bf524535c9ac576e6a885d6b886_2_10x10.png"></a></div>
+</li>
+<li>in the HTTP method, query param, headers option - enter POST as the method along with the following body:</li>
+</ol>
+<pre><code class="lang-auto">{
+  "network_identifier": {
+    "network": "mainnet"
+  },
+  "validator_identifier": {
+    "address": "rv1qdzgjh98d4mexymc492eq82zwmspmh9mlz4wqgswta4jcaw0nnwuj53mj5w"
+  },
+  "at_state_identifier": {
+    "epoch": "0"
+  }
+}
+</code></pre>
+<ol start="6">
+<li>Make sure the header “content-type = application/json” is also included in the header tab.</li>
+<li>Using the transform field, reduce the field to a more human number by dividing by 1E18 and select ‘replace all fields’<br>
+<div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.radixtalk.com/uploads/default/original/1X/8a9ca6b91a3729ee1b80b3215a351237d380add9.png" data-download-href="https://cdn.radixtalk.com/uploads/default/8a9ca6b91a3729ee1b80b3215a351237d380add9" title="image"><img src="https://cdn.radixtalk.com/uploads/default/optimized/1X/8a9ca6b91a3729ee1b80b3215a351237d380add9_2_690x321.png" alt="image" data-base62-sha1="jMdvUw5oNpVPKp6Ytpq7jWeJp8d" width="690" height="321" srcset="https://cdn.radixtalk.com/uploads/default/optimized/1X/8a9ca6b91a3729ee1b80b3215a351237d380add9_2_690x321.png, https://cdn.radixtalk.com/uploads/default/optimized/1X/8a9ca6b91a3729ee1b80b3215a351237d380add9_2_1035x481.png 1.5x, https://cdn.radixtalk.com/uploads/default/original/1X/8a9ca6b91a3729ee1b80b3215a351237d380add9.png 2x" data-small-upload="https://cdn.radixtalk.com/uploads/default/optimized/1X/8a9ca6b91a3729ee1b80b3215a351237d380add9_2_10x10.png"></a></div>
+</li>
+<li>In the panel options, select 0 for decimals</li>
+<li>You now have validator total stake displayed on your dashboard!</li>
+</ol>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/how-do-i-get-gateway-api-data-into-grafana-cloud/462">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/how-do-i-get-gateway-api-data-into-grafana-cloud/462</link>
+          <pubDate>Sat, 23 Apr 2022 15:53:31 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-462</guid>
+          <source url="https://radixtalk.com/t/how-do-i-get-gateway-api-data-into-grafana-cloud/462.rss">How do I get Gateway API data into Grafana Cloud</source>
+        </item>
+        <item>
+          <title>Node Releases &amp; Hard Forks</title>
+          <dc:creator><![CDATA[Faraz | Radstakes.com]]></dc:creator>
+          <category>Validators</category>
+          <description><![CDATA[
+            <p>Following the recent release of node software v1.1.1, the team have advised on a number of further releases which are planned over the next new months to implement coordinated forking.  This will initiate a fork to an updated protocol, only when a certain threshold of validators (or stake weight) have upgraded.  Validators who have not updated by a prescribed time, will be removed from the validator set until they do so.</p>
+<p>Furthermore, an update for Validator Liveness Assurance is planned in June which will temporarily remove validators from the set if they don’t meet the required liveness standards.  See details below (source: <a href="https://discord.com/channels/417762285172555786/883338066524274695/966728048047185950">Radix Discord</a>)</p>
+<p><img src="https://cdn.radixtalk.com/images/emoji/twitter/arrow_right.png?v=12" title=":arrow_right:" class="emoji" alt=":arrow_right:" loading="lazy" width="20" height="20"> Node version 1.1.1 released 22nd April 2022. It’s a recommended reliability upgrade, and should be an easy upgrade from 1.1.0 - more details here: <a href="https://github.com/radixdlt/radixdlt/releases/tag/1.1.1">https://github.com/radixdlt/radixdlt/releases/tag/1.1.1</a></p>
+<p><img src="https://cdn.radixtalk.com/images/emoji/twitter/arrow_right.png?v=12" title=":arrow_right:" class="emoji" alt=":arrow_right:" loading="lazy" width="20" height="20">  1.2.0 - Support for co-ordinated forking [Releases early May]</p>
+<p>This release will enable nodes to recognise fork votes. We’re hoping to have documentation, a new CLI version, and a release candidate available for testing some time next week. As part of preparing for this release, we will run through the process of a hard fork on Stokenet, and we’ll ask for node runners’ assistance with testing this. This will hopefully ready for stokenet testing in the middle of next week.</p>
+<p><img src="https://cdn.radixtalk.com/images/emoji/twitter/arrow_right.png?v=12" title=":arrow_right:" class="emoji" alt=":arrow_right:" loading="lazy" width="20" height="20"> 1.3.0 - The first candidate fork [Likely releases around mid-May, with fork hopefully enacting around the end of May]</p>
+<p>This will capture updates to the fee table. Node runners will need to install the new version of the software, and validators will be taken through the process to vote for the fork. There will be a grace period between the version being released and the fork being able to enact. When the fork is enacted, nodes running old versions of the software will be unable to continue syncing past the fork point.</p>
+<p><img src="https://cdn.radixtalk.com/images/emoji/twitter/arrow_right.png?v=12" title=":arrow_right:" class="emoji" alt=":arrow_right:" loading="lazy" width="20" height="20"> 1.4.0 -  Validator Liveness Assurance [Potentially releases early June, with fork enacting soon after a few weeks later]</p>
+<p>Our second candidate fork. This update will “jail” validators who don’t meet sufficient liveness guarantees, ensuring validators who crash or fail to meet reasonable liveness standards will be temporarily removed from the validator set, ensuring the network stays running smoothly. More details will follow in due course.</p>
+            <p><small>2 posts - 2 participants</small></p>
+            <p><a href="https://radixtalk.com/t/node-releases-hard-forks/461">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/node-releases-hard-forks/461</link>
+          <pubDate>Sat, 23 Apr 2022 09:32:45 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-461</guid>
+          <source url="https://radixtalk.com/t/node-releases-hard-forks/461.rss">Node Releases &amp; Hard Forks</source>
+        </item>
+        <item>
+          <title>RadixPlanet validator node</title>
+          <dc:creator><![CDATA[Ahmed Sedeek]]></dc:creator>
+          <category>Validators</category>
+          <description><![CDATA[
+            <p>Dear All,<br>
+The long awaited announcement is here:</p>
+<p>Announcing the <img src="https://cdn.radixtalk.com/images/emoji/twitter/ringer_planet.png?v=12" title=":ringer_planet:" class="emoji" alt=":ringer_planet:" loading="lazy" width="20" height="20">RadixPlanet Validator Node, now up and running with 0% fee promo for two months</p>
+<p>Our node offers the following features and benefits:</p>
+<p><img src="https://cdn.radixtalk.com/images/emoji/twitter/white_check_mark.png?v=12" title=":white_check_mark:" class="emoji" alt=":white_check_mark:" loading="lazy" width="20" height="20"> PLANET airdrop rewards to stakers until we achieve 2% of total network stake</p>
+<p><img src="https://cdn.radixtalk.com/images/emoji/twitter/white_check_mark.png?v=12" title=":white_check_mark:" class="emoji" alt=":white_check_mark:" loading="lazy" width="20" height="20"> Early staking IS beneficial, the earlier you stake the larger amount of PLANET rewards you get</p>
+<p><img src="https://cdn.radixtalk.com/images/emoji/twitter/white_check_mark.png?v=12" title=":white_check_mark:" class="emoji" alt=":white_check_mark:" loading="lazy" width="20" height="20"> Rewards are proportional to the staked amount, The larger amount you stake, the larger amount of PLANET rewards you get</p>
+<p><img src="https://cdn.radixtalk.com/images/emoji/twitter/white_check_mark.png?v=12" title=":white_check_mark:" class="emoji" alt=":white_check_mark:" loading="lazy" width="20" height="20"> Monthly rewards distribution of PLANET tokens to ALL stakers</p>
+<p><img src="https://cdn.radixtalk.com/images/emoji/twitter/white_check_mark.png?v=12" title=":white_check_mark:" class="emoji" alt=":white_check_mark:" loading="lazy" width="20" height="20"> Validator fee is set to rise from 0% to a reasonable 2.5% after two months to help support and develop the RadixPlanet exchange</p>
+<p><img src="https://cdn.radixtalk.com/images/emoji/twitter/white_check_mark.png?v=12" title=":white_check_mark:" class="emoji" alt=":white_check_mark:" loading="lazy" width="20" height="20"> The ONLY case the validator fee is expected to be raised above 2.5% is if the node exceeds 3% of total network stake, where an increase in fee will be used to deter further staking and improve decentralization.</p>
+<p>Validator address: rv1qfppqvvkcyl5dd2ee6wr4ljp7kxrwlej8q4td5cd4gpc6wqylqt22wljdq5</p>
+<p>For more information about PLANET token, please check the following link: <a href="https://www.radixplanet.com/PlanetToken" class="inline-onebox" rel="noopener nofollow ugc">Planet Token - RadixPlanet</a></p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/radixplanet-validator-node/458">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/radixplanet-validator-node/458</link>
+          <pubDate>Wed, 20 Apr 2022 17:38:08 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-458</guid>
+          <source url="https://radixtalk.com/t/radixplanet-validator-node/458.rss">RadixPlanet validator node</source>
+        </item>
+        <item>
+          <title>Why can I only see my first 10 delegators?</title>
+          <dc:creator><![CDATA[newworld]]></dc:creator>
+          <category>Validators</category>
+          <description><![CDATA[
+            <p>Hi there!<br>
+when I usee the API to see my delegators I only see 10 of them. How can i see all? It says there are 27 delegators:</p>
+<p>curl -s POST -k ‘<a href="https://mainnet-gateway.radixdlt.com/validator/stakes" rel="noopener nofollow ugc">https://mainnet-gateway.radixdlt.com/validator/stakes</a>’ -H ‘Content-Type: application/json’ -d ’<br>
+{<br>
+“network_identifier”: {<br>
+“network”: “mainnet”<br>
+},<br>
+“validator_identifier”: {<br>
+“address”: “&lt;MY_VALIDATOR_ID&gt;”<br>
+}<br>
+}’ | jq</p>
+            <p><small>5 posts - 2 participants</small></p>
+            <p><a href="https://radixtalk.com/t/why-can-i-only-see-my-first-10-delegators/439">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/why-can-i-only-see-my-first-10-delegators/439</link>
+          <pubDate>Mon, 11 Apr 2022 06:38:12 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-439</guid>
+          <source url="https://radixtalk.com/t/why-can-i-only-see-my-first-10-delegators/439.rss">Why can I only see my first 10 delegators?</source>
+        </item>
+        <item>
+          <title>How can I see my delegators addresses?</title>
+          <dc:creator><![CDATA[newworld]]></dc:creator>
+          <category>Validators</category>
+          <description><![CDATA[
+            <p>Well title says it all i guess - did’nt find anything in the radix docs. I want to see the addresses that are delegating to my node.</p>
+<p>BRGDS and thanks guys</p>
+            <p><small>5 posts - 2 participants</small></p>
+            <p><a href="https://radixtalk.com/t/how-can-i-see-my-delegators-addresses/423">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/how-can-i-see-my-delegators-addresses/423</link>
+          <pubDate>Sun, 27 Mar 2022 14:20:11 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-423</guid>
+          <source url="https://radixtalk.com/t/how-can-i-see-my-delegators-addresses/423.rss">How can I see my delegators addresses?</source>
+        </item>
+        <item>
+          <title>Validator Node Software Update Best Practices/Process?</title>
+          <dc:creator><![CDATA[Zero Point Three]]></dc:creator>
+          <category>Validators</category>
+          <description><![CDATA[
+            <p>Hello all…</p>
+<p>In preparation for the eventual upgrade of node software, I was wondering if you guys help could verify the high-level steps of an validator node software update process, or point out what may be unnecessary, missing, or just plain wrong.</p>
+<p>The way i see it, one can upgrade the software within the same server… or one can use a backup server to aid in the switch to the upgrade version.  What are the pros and cons to each option?  I am thinking that using a backup is superior because it allows roll-back to the primary if something goes wrong in the software upgrade process.</p>
+<p>Also, should the validators always be un-registered and re-registered within this software upgrade process? I am thinking if they are not, proposals will be missed if a validator is stopped/restarted while it is still registered, so un-register should always be done before stop/restart and re-register after the stop/restart, correct? (assuming all is working as expected)  This would introduce a small period of time when the validator is not generating rewards, but that should be a relatively short amount of time, correct?  Or is there a way to do this without any downtime at all? (without risk of missed proposals)</p>
+<h2>
+<a name="below-are-the-high-level-steps-ive-drafted-any-feedback-for-refinement-is-welcome-1" class="anchor" href="https://radixtalk.com#below-are-the-high-level-steps-ive-drafted-any-feedback-for-refinement-is-welcome-1"></a>Below are the high-level steps I’ve drafted. Any feedback for refinement is welcome <img src="https://cdn.radixtalk.com/images/emoji/twitter/slight_smile.png?v=12" title=":slight_smile:" class="emoji" alt=":slight_smile:" loading="lazy" width="20" height="20">
+</h2>
+<p><strong>Same/single server</strong></p>
+<ol>
+<li>Unregister node as validator</li>
+<li>Wait until the current epoch ends</li>
+<li>Stop the node</li>
+<li>Upgrade the node software</li>
+<li>Start the node</li>
+<li>Ensure node is up without error and is syncing correctly. Wait until sync’d.</li>
+<li>Register node as validator again</li>
+<li>Ensure validator is processing proposals without issues</li>
+</ol>
+<p><strong>Using backup server</strong></p>
+<ol start="0">
+<li>Step 0… pre-requisite step:   Ensure a backup server is already running as a non-validator node using a non-validator keystore (to ensure it is always in sync, and no lengthy catch-up sync times are ever needed)</li>
+<li>BACKUP SERVER: Stop the node</li>
+<li>BACKUP SERVER: Upgrade the node software</li>
+<li>BACKUP SERVER: Start the node</li>
+<li>BACKUP SERVER: Ensure node is up without error and is syncing correctly. Wait until sync’d.</li>
+<li>BACKUP SERVER: Move the validator keystore into the secrets directory in preparation for node restart as validator</li>
+<li>PRIMARY SERVER: Unregister node as validator</li>
+<li>PRIMARY SERVER: Wait until the current epoch ends</li>
+<li>PRIMARY SERVER: Stop the node</li>
+<li>BACKUP SERVER: Restart the backup node, which now has validator keystore and is as sync’d up as possible</li>
+<li>BACKUP SERVER: Ensure node is up without error, is syncing correctly. Wait until sync’d. BACKUP SERVER is now the new primary validator node server. Old primary server is now a backup.</li>
+<li>BACKUP SERVER (now new PRIMARY): Register node as validator again</li>
+<li>BACKUP SERVER (now new PRIMARY): Ensure validator is processing proposals without issues</li>
+<li>PRIMARY SERVER (now new BACKUP): Switch to non-validator keystore, upgrade software, start node, and ensure it is up and syncing without error. PRIMARY is now the new BACKUP that is syncing continuously in case a failover from PRIMARY is ever needed.</li>
+</ol>
+            <p><small>3 posts - 2 participants</small></p>
+            <p><a href="https://radixtalk.com/t/validator-node-software-update-best-practices-process/420">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/validator-node-software-update-best-practices-process/420</link>
+          <pubDate>Thu, 24 Mar 2022 15:57:14 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-420</guid>
+          <source url="https://radixtalk.com/t/validator-node-software-update-best-practices-process/420.rss">Validator Node Software Update Best Practices/Process?</source>
+        </item>
+        <item>
+          <title>Radstakes Stands with Ukraine</title>
+          <dc:creator><![CDATA[Faraz | Radstakes.com]]></dc:creator>
+          <category>Validators</category>
+          <description><![CDATA[
+            <p>With the conflict intensifying in Ukraine, Radstakes have decided to support our Ukrainian friends by donating all of our 2% fee to support the Ukrainian people for the next 30 days or until Russia withdraw.</p>
+<p>At the end of the 30 day period, we will tally up the fees collected, convert to BTC and send this to the Ukraine government’s official crypto donation wallet.</p>
+<p>There will be no impact to our stakers’ rewards, the only difference will be a temporary change of our node’s name on the network.  Thank you to all our stakers for their continued support.</p>
+<p>We invite and welcome any other Radix validators to join us in this initiative over the next 30 days.</p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/radstakes-stands-with-ukraine/413">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/radstakes-stands-with-ukraine/413</link>
+          <pubDate>Fri, 04 Mar 2022 14:32:27 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-413</guid>
+          <source url="https://radixtalk.com/t/radstakes-stands-with-ukraine/413.rss">Radstakes Stands with Ukraine</source>
+        </item>
+        <item>
+          <title>Post mortem analysis</title>
+          <dc:creator><![CDATA[Jazzer 9F]]></dc:creator>
+          <category>Validators</category>
+          <description><![CDATA[
+            <p>Hi guys, <a href="https://drive.google.com/file/d/1dkBxgSLjKDpyUJLo4Mo0PNXr2kQhJZQN/view?usp=sharing" rel="noopener nofollow ugc">here’s a post mortem analysis</a> of our node outage yesterday. Hope it helps others recover faster!</p>
+            <p><small>3 posts - 3 participants</small></p>
+            <p><a href="https://radixtalk.com/t/post-mortem-analysis/393">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/post-mortem-analysis/393</link>
+          <pubDate>Sun, 20 Feb 2022 20:08:09 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-393</guid>
+          <source url="https://radixtalk.com/t/post-mortem-analysis/393.rss">Post mortem analysis</source>
+        </item>
+        <item>
+          <title>Radix Archive Node Shutdown Delayed</title>
+          <dc:creator><![CDATA[Faraz | Radstakes.com]]></dc:creator>
+          <category>Validators</category>
+          <description><![CDATA[
+            <p>Today (18th February) was the day originally planned for the Radix team’s archive nodes to be deprecated and moved over to the new Gateway service.  However, in the interest of ensuring a means of unregistering a validator node (in the event a node falls out of sync), the Radix team have confirmed that the shutdown of their archive nodes will be delayed.</p>
+<p>An update to the Gateway service to enable unregistering of a validator will be made prior to any shutdown of the archive nodes.  In the meantime, if a node runner needs to unregister - this post by <a class="mention" href="https://radixtalk.com/u/stuart">@Stuart</a> still applies as long as the archive nodes are still available: <a href="https://radixtalk.com/t/how-to-unregister-a-validator-node-using-the-keystore-file/64">Unregistering a Validator</a></p>
+            <p><small>5 posts - 4 participants</small></p>
+            <p><a href="https://radixtalk.com/t/radix-archive-node-shutdown-delayed/389">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/radix-archive-node-shutdown-delayed/389</link>
+          <pubDate>Fri, 18 Feb 2022 14:08:33 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-389</guid>
+          <source url="https://radixtalk.com/t/radix-archive-node-shutdown-delayed/389.rss">Radix Archive Node Shutdown Delayed</source>
+        </item>
+        <item>
+          <title>Why does the Grafana dashboard not show my node as registered after upgrading to v1.1.0?</title>
+          <dc:creator><![CDATA[Faraz | Radstakes.com]]></dc:creator>
+          <category>Validators</category>
+          <description><![CDATA[
+            <p>The official Radix docs for installing the node software includes instructions for setting up Grafana locally to visualise the Prometheus metrics: <a href="https://docs.radixdlt.com/main/node-and-gateway/install-grafana-dashboard.html">Installing Grafana Dashboard</a></p>
+<p>The panel which shows “Registered Validator” reads a metric from the node info called <strong>validator_registered</strong>.  Unfortunately this metric no longer exists in v1.1.0 so if you are setting up a Grafana dashboard after upgrading to this node version, the panel will incorrectly state “No” even if your node is correctly registered.</p>
+<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.radixtalk.com/uploads/default/original/1X/5d70555a31037e923d999f756f6aed02acec1a31.png" data-download-href="https://cdn.radixtalk.com/uploads/default/5d70555a31037e923d999f756f6aed02acec1a31" title="unknown-1"><img src="https://cdn.radixtalk.com/uploads/default/optimized/1X/5d70555a31037e923d999f756f6aed02acec1a31_2_690x354.png" alt="unknown-1" data-base62-sha1="dkB4PHMGwSvaukhUEselrlsfft7" width="690" height="354" srcset="https://cdn.radixtalk.com/uploads/default/optimized/1X/5d70555a31037e923d999f756f6aed02acec1a31_2_690x354.png, https://cdn.radixtalk.com/uploads/default/original/1X/5d70555a31037e923d999f756f6aed02acec1a31.png 1.5x, https://cdn.radixtalk.com/uploads/default/original/1X/5d70555a31037e923d999f756f6aed02acec1a31.png 2x" data-small-upload="https://cdn.radixtalk.com/uploads/default/optimized/1X/5d70555a31037e923d999f756f6aed02acec1a31_2_10x10.png"></a></div><p></p>
+<p>The Radix team have acknowledged this and will be updating the Grafana dashboard in a future update.  In the meantime, you can edit the panel and change the metric to <strong>nodeinfo{is_in_validator_set=“true”}</strong></p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/why-does-the-grafana-dashboard-not-show-my-node-as-registered-after-upgrading-to-v1-1-0/370">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/why-does-the-grafana-dashboard-not-show-my-node-as-registered-after-upgrading-to-v1-1-0/370</link>
+          <pubDate>Tue, 15 Feb 2022 18:16:17 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-370</guid>
+          <source url="https://radixtalk.com/t/why-does-the-grafana-dashboard-not-show-my-node-as-registered-after-upgrading-to-v1-1-0/370.rss">Why does the Grafana dashboard not show my node as registered after upgrading to v1.1.0?</source>
+        </item>
+        <item>
+          <title>Validator Code of Conduct</title>
+          <dc:creator><![CDATA[Faraz | Radstakes.com]]></dc:creator>
+          <category>Validators</category>
+          <description><![CDATA[
+            <p>Recent events surrounding a certain validator (who shall not be named!) suffering a significant downtime of 48 hours have highlighted a need for community validators to agree on a certain minimum standard for the good of the network and to give peace of mind to the staking community.</p>
+<p>I would therefore like to present the <strong>Validator Code of Conduct</strong>.  This is a voluntary agreement entered into by validators who are committed to maintaining a minimum standard of safety and redundancy to the Radix mainnet.  By agreeing to these terms, the community have some assurances that a validator has the means and ability to rectify any issue swiftly, or unregister with minimal disruption to the network.</p>
+<p>Validators who agree to follow these principles will be awarded a Radix Talk badge to signify their commitment to running reliable, safe nodes.  Stakers can identify these badge holders at the following link:</p>
+<p><a href="https://radixtalk.com/badges/109/validator-code-of-conduct"><strong>Code of Conduct Badge Holders</strong></a></p>
+<blockquote>
+<p><em><strong>We will maintain a fully synchronised backup node in a separate location to our primary validator node.</strong></em></p>
+</blockquote>
+<blockquote>
+<p><em><strong>We will ensure our validator keystore file and keyfile password is securely backed up in a separate location to the server(s).</strong></em></p>
+</blockquote>
+<blockquote>
+<p><em><strong>We will endeavour to perform any mandatory updates to our nodes in a timely manner (ideally within 48 hours).</strong></em></p>
+</blockquote>
+<blockquote>
+<p><em><strong>We will ensure that we have a system for monitoring node performance and alerting of critical issues.</strong></em></p>
+</blockquote>
+<blockquote>
+<p><em><strong>We pledge to unregister our validator node in the event of a situation that cannot be resolved within 3 consecutive epochs.</strong></em></p>
+</blockquote>
+<blockquote>
+<p><em><strong>We will ensure a minimum balance of 12XRD is available on our node’s hot wallet to facilitate the transactions to unregister/register.</strong></em></p>
+</blockquote>
+<blockquote>
+<p><em><strong>We will ensure that multiple contact methods are available to the community.</strong></em></p>
+</blockquote>
+<blockquote>
+<p><em><strong>We will provide regular updates to our stakers and the wider community in the event of any downtime that exceeds 3 consecutive epochs.</strong></em></p>
+</blockquote>
+<blockquote>
+<p><em><strong>We will publish a report after resolving any incident(s) of downtime that exceeds 3 consecutive epochs and provide steps to mitigate future occurrences.</strong></em></p>
+</blockquote>
+<p>If you have any feedback or suggestions, please feel free to comment and I would welcome any validator who wishes to agree to follow these principles to respond below.</p>
+            <p><small>28 posts - 26 participants</small></p>
+            <p><a href="https://radixtalk.com/t/validator-code-of-conduct/320">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/validator-code-of-conduct/320</link>
+          <pubDate>Wed, 02 Feb 2022 15:38:33 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-320</guid>
+          <source url="https://radixtalk.com/t/validator-code-of-conduct/320.rss">Validator Code of Conduct</source>
+        </item>
+        <item>
+          <title>DRAFT: A Validators Guide to Disaster Recovery</title>
+          <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+          <category>Validators</category>
+          <description><![CDATA[
+            <h1>
+<a name="overview-1" class="anchor" href="https://radixtalk.com#overview-1"></a>Overview</h1>
+<p>A major incident is when your validator node becomes unavailable on the Radix Public Network and you are unable to fail over to a backup node in a timely manner.</p>
+<p>You should <strong>strongly</strong> consider unregistering your node as a validator if the outage occurs for longer than 2 or 3 epochs because your outage will affect the performance of the entire Radix Public Network - especially if your node has a large delegated stake.</p>
+<h1>
+<a name="h-1-preparation-2" class="anchor" href="https://radixtalk.com#h-1-preparation-2"></a>1 Preparation</h1>
+<p>An effective disaster recovery strategy requires some preparation in advance. A few steps now will save you a lot of pain later when you are under pressure dealing with a major incident.</p>
+<h3>
+<a name="h-11-keep-multiple-copies-of-your-node-keystore-file-3" class="anchor" href="https://radixtalk.com#h-11-keep-multiple-copies-of-your-node-keystore-file-3"></a>1.1 Keep multiple copies of your Node Keystore File</h3>
+<p>Take a copy of your validator’s <code>node-keystore.ks</code> and save at least 2 copies. One to your local computer, and another copy on a removable USB thumb drive. Even better, keep a 3rd copy on a USB thumb drive and keep it at another location. Dropbox/Google Drive are other other strategies for keeping multiple copies - but it might be worth encrypting the file using GPG or similar as an additional security measure.</p>
+<h3>
+<a name="h-12-keep-multiple-copies-of-your-keystore-file-password-4" class="anchor" href="https://radixtalk.com#h-12-keep-multiple-copies-of-your-keystore-file-password-4"></a>1.2 Keep multiple copies of your Keystore File Password</h3>
+<p>Keep a local copy of the node-keystore.ks password. The file is useless without the corresponding password. Save the password in your password manager or in an encrypted archive file with the keystore file.</p>
+<h3>
+<a name="h-13-install-python-3-5" class="anchor" href="https://radixtalk.com#h-13-install-python-3-5"></a>1.3 Install Python 3</h3>
+<p>Install Python 3 on your local computer if not already installed and ensure that it works.</p>
+<h3>
+<a name="h-14-save-a-copy-of-the-python-validator-unregister-script-6" class="anchor" href="https://radixtalk.com#h-14-save-a-copy-of-the-python-validator-unregister-script-6"></a>1.4 Save a copy of the Python Validator Unregister script</h3>
+<p>Save a copy of the Validator Unregister Python script that allows you to unregister you validator node when you don’t have access to the node or it isn’t fully synced.</p>
+<p><strong>Script available here:</strong></p><aside class="onebox allowlistedgeneric" data-onebox-src="https://github.com/radixpool/validator-tools">
+  <header class="source">
+      <img src="https://github.githubassets.com/favicons/favicon.svg" class="site-icon" width="32" height="32">
+
+      <a href="https://github.com/radixpool/validator-tools" target="_blank" rel="noopener">GitHub</a>
+  </header>
+
+  <article class="onebox-body">
+    <div class="aspect-image" style="--aspect-ratio:690/345;"><img src="https://cdn.radixtalk.com/uploads/default/optimized/1X/cd3724a8a5aa55dd09dad6936cada458acc5be6b_2_690x345.png" class="thumbnail" width="690" height="345" srcset="https://cdn.radixtalk.com/uploads/default/optimized/1X/cd3724a8a5aa55dd09dad6936cada458acc5be6b_2_690x345.png, https://cdn.radixtalk.com/uploads/default/optimized/1X/cd3724a8a5aa55dd09dad6936cada458acc5be6b_2_1035x517.png 1.5x, https://cdn.radixtalk.com/uploads/default/original/1X/cd3724a8a5aa55dd09dad6936cada458acc5be6b.png 2x" data-small-upload="https://cdn.radixtalk.com/uploads/default/optimized/1X/cd3724a8a5aa55dd09dad6936cada458acc5be6b_2_10x10.png"></div>
+
+<h3><a href="https://github.com/radixpool/validator-tools" target="_blank" rel="noopener">GitHub - radixpool/validator-tools</a></h3>
+
+  <p>Contribute to radixpool/validator-tools development by creating an account on GitHub.</p>
+
+
+  </article>
+
+  <div class="onebox-metadata">
+    
+    
+  </div>
+
+  <div style="clear: both"></div>
+</aside>
+
+<pre><code class="lang-nohighlight">Usage: unregister.py [OPTIONS]
+
+  Unregisters a Validator node using a Keystore file and password
+
+Options:
+  -f, --filename FILE             Keystore filename  [default: node-
+                                  keystore.ks]
+  -p, --password TEXT             Keystore password. Will be prompted if not
+                                  provided as an option.
+  -n, --network [mainnet|stokenet]
+                                  Radix Network  [default: mainnet]
+  -d, --dry-run                   Do not make any changes
+  -v, --verbose                   Show details of api calls and responses
+  --yes                           Confirm the action without prompting.
+  -h, --help                      Show this message and exit.
+</code></pre>
+<p><em>Note: Script is still under active development (will break up into functions, honest!) and currently uses the old Archive API calls. New Gateway API is missing the ability to unregister/register validator nodes. Issue raised with Dev team.</em></p>
+<h3>
+<a name="h-15-install-python-dependencies-7" class="anchor" href="https://radixtalk.com#h-15-install-python-dependencies-7"></a>1.5 Install Python Dependencies</h3>
+<p>Fetch the requirements.txt file and install the python dependencies using the following command:</p>
+<pre><code class="lang-bash">pip install -r requirements.txt
+</code></pre>
+<h3>
+<a name="h-16-test-the-validator-unregister-script-8" class="anchor" href="https://radixtalk.com#h-16-test-the-validator-unregister-script-8"></a>1.6 Test the Validator Unregister script</h3>
+<p>Do a “dry-run” of the validator unregister script to ensure that Python, script dependencies and the script itself are all working correctly. The <code>--dry-run</code> or <code>-d</code> option will perform all steps in the script except make any changes to the Radix ledger.</p>
+<p>For example: dry-run on Mainnet using node-keystore.ks file in current directory and showing all request and response JSON messages</p>
+<pre><code class="lang-bash">python unregister.py --dry-run --verbose
+</code></pre>
+<h3>
+<a name="h-17-keep-at-least-12-xrd-into-your-validator-node-wallet-9" class="anchor" href="https://radixtalk.com#h-17-keep-at-least-12-xrd-into-your-validator-node-wallet-9"></a>1.7 Keep at least 12 XRD into your Validator Node Wallet</h3>
+<p>Keep a balance of at least 12 XRD in your Validator Node wallet so that you can unregister the node (~5 XRD) and re-register it later (~5 XRD).</p>
+<h3>
+<a name="h-18-bookmark-service-providers-statusmaintenance-pages-10" class="anchor" href="https://radixtalk.com#h-18-bookmark-service-providers-statusmaintenance-pages-10"></a>1.8 Bookmark Service Providers Status/Maintenance Pages</h3>
+<p>Find and bookmark your service provider’s status page and maintenance page. Also bookmark any social media accounts run by your service provider as these will often be updated before any status page updates (Amazon is notorious for not updating their status pages in a timely manner to reflect major incidents).</p>
+<p>This will help you to quickly assess whether an incident is local to you or a more general issue.</p>
+<h1>
+<a name="h-2-when-disaster-strikes-11" class="anchor" href="https://radixtalk.com#h-2-when-disaster-strikes-11"></a>2 When Disaster Strikes</h1>
+<p>[TODO]</p>
+<h3>
+<a name="h-21-assess-incident-severity-12" class="anchor" href="https://radixtalk.com#h-21-assess-incident-severity-12"></a>2.1 Assess Incident Severity</h3>
+<p>Make a quick assessment of the severity of the incident by considering the following:</p>
+<ul>
+<li>How long has you validator node already been unavailable?</li>
+<li>Is the cause of the issue known?</li>
+<li>Does the incident just affect you or is it more general?</li>
+</ul>
+<p>Sources of this information may come from:</p>
+<ul>
+<li>Service providers Status Page</li>
+<li>Service providers Planned Maintenance Page</li>
+<li>Service providers social media account (or searching for “<em><strong>ProviderName</strong></em> down”)</li>
+</ul>
+<p>Your node will probably already fallen below the 98% uptime threshold to receive rewards for the current epoch - so give yourself a short, fixed period of time to assess the severity of the issue. Try to keep this assessment time limit within the current epoch if possible or for up to one full epoch at the very most.</p>
+<h3>
+<a name="h-22-notify-the-community-13" class="anchor" href="https://radixtalk.com#h-22-notify-the-community-13"></a>2.2 Notify the Community</h3>
+<p>As soon as you are able, notify the community on Discord and Telegram that you are aware of a problem and that you are taking action to resolve the issue.</p>
+<p>An example message could be:</p>
+<blockquote>
+<p><em><strong>ValidatorName</strong></em> is currently down. We are investigating the problem and will provide further updates of the actions we are taking to resolve the issue.</p>
+</blockquote>
+<p>This very simple, but important step notifies the community that you are aware of the issue and that you are taking measures to resolve it.</p>
+<h3>
+<a name="h-23-choose-a-recovery-strategy-14" class="anchor" href="https://radixtalk.com#h-23-choose-a-recovery-strategy-14"></a>2.3 Choose a Recovery Strategy</h3>
+<p>There are broadly 3 different recovery strategies:</p>
+<p><strong>2.3.1 Do Nothing</strong><br>
+In the case of a temporary, localised and known issue then the appropriate strategy may be to do nothing and wait. Examples may include planned maintenance/upgrades by the service provider, an application or operating system issue that can be resolved on the server.</p>
+<p>The expectation is that the issue will resolve itself (wait for router to reboot) or can be easily fixed through operator action (reboot, restart service, clear disk space, etc.)</p>
+<ul>
+<li>Set a fixed time limit on how long you are prepared to wait before taking further action - ideally before the end of the epoch.</li>
+<li>Continue to make preparations for further recovery strategies while you wait in case the issue does not resolve itself.</li>
+</ul>
+<p><strong>2.3.2 Fail over to Backup Node</strong><br>
+[DRAFT] Do this if you have a synced backup node in another location and can easily do so.</p>
+<p><strong>2.3.3 Unregister your Node</strong><br>
+[DRAFT] Do this if you are not able to fail over to a synced backup node. Takes the immediate pressure off, stops disruption of the Radix Public Network, stops your downtime continuously spiralling down. Apply one of the other Recovery Strategies.</p>
+<h3>
+<a name="h-24-update-the-community-15" class="anchor" href="https://radixtalk.com#h-24-update-the-community-15"></a>2.4 Update the Community</h3>
+<p>Provide an update to the community to let them know whether:</p>
+<p>a) The issue has been resolved</p>
+<p>or</p>
+<p>b) Recovery is in progress and, if possible, an estimated time to resolution (eg. Radix node database is syncing from scratch and will take about 12 hours to complete)</p>
+<h1>
+<a name="h-3-post-incident-analysis-16" class="anchor" href="https://radixtalk.com#h-3-post-incident-analysis-16"></a>3 Post Incident Analysis</h1>
+<p>A Post Incident Analysis (also known as a Post-Mortem) is a valuable exercise to learn from an incident and ideally share your findings with other Node Runners so that we may all benefit from findings.</p>
+<h3>
+<a name="h-31-internal-investigation-17" class="anchor" href="https://radixtalk.com#h-31-internal-investigation-17"></a>3.1 Internal Investigation</h3>
+<p>After the incident is resolved and is still fresh in your mind, take a moment to make notes about what happened and how you resolved it.</p>
+<p>Consider:</p>
+<ul>
+<li>What worked well? (eg. Monitoring system promptly generated alerts about the issue <img src="https://cdn.radixtalk.com/images/emoji/twitter/slight_smile.png?v=12" title=":slight_smile:" class="emoji" alt=":slight_smile:">)</li>
+<li>What didn’t work well? (eg. Phone was set to silent so missed the alerts <img src="https://cdn.radixtalk.com/images/emoji/twitter/upside_down_face.png?v=12" title=":upside_down_face:" class="emoji" alt=":upside_down_face:">)</li>
+<li>Is there anything I can do to prevent the issue from occurring again? (eg. Monitor additional metrics, create alerts for low disk space, automate some process, pay more attention to planned maintenance notifications)</li>
+<li>Are their opportunities to automate some of the recovery steps using tested scripts that reduce operator error when under stress?</li>
+<li>[TODO]</li>
+</ul>
+<h3>
+<a name="h-32-share-your-findings-18" class="anchor" href="https://radixtalk.com#h-32-share-your-findings-18"></a>3.2 Share your Findings</h3>
+<p>[DRAFT] The node runner community benefits hugely from sharing our expertise and experiences with others.</p>
+            <p><small>7 posts - 3 participants</small></p>
+            <p><a href="https://radixtalk.com/t/draft-a-validators-guide-to-disaster-recovery/315">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/draft-a-validators-guide-to-disaster-recovery/315</link>
+          <pubDate>Wed, 02 Feb 2022 09:31:57 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-315</guid>
+          <source url="https://radixtalk.com/t/draft-a-validators-guide-to-disaster-recovery/315.rss">DRAFT: A Validators Guide to Disaster Recovery</source>
+        </item>
+        <item>
+          <title>Why does it cost so much for a node runner to unstake from their validator&#39;s owner wallet?</title>
+          <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+          <category>Validators</category>
+          <description><![CDATA[
+            <p>When unstaking from the validator’s owner wallet, the transaction fees can be much higher (up to 45 XRD or more) compared to normal unstaking (0.7 XRD).</p>
+<h2>
+<a name="explanation-1" class="anchor" href="https://radixtalk.com#explanation-1"></a>Explanation</h2>
+<p>The owner wallet generates a large number of substates due to how validator fee distribution is currently done in Alexandria. The more substates involved, the larger the transaction blob, and the higher the fees.</p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/why-does-it-cost-so-much-for-a-node-runner-to-unstake-from-their-validators-owner-wallet/312">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/why-does-it-cost-so-much-for-a-node-runner-to-unstake-from-their-validators-owner-wallet/312</link>
+          <pubDate>Mon, 31 Jan 2022 15:38:49 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-312</guid>
+          <source url="https://radixtalk.com/t/why-does-it-cost-so-much-for-a-node-runner-to-unstake-from-their-validators-owner-wallet/312.rss">Why does it cost so much for a node runner to unstake from their validator&#39;s owner wallet?</source>
+        </item>
+        <item>
+          <title>Why does Grafana Cloud stop collecting metrics after I upgrade my node to 1.1.0?</title>
+          <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+          <category>Validators</category>
+          <description><![CDATA[
+            <p>The endpoint for the Prometheus / Grafana metrics has changed from <code>/metrics</code> to <code>/prometheus/metrics</code> from version 1.1.0 onwards.</p>
+<p>You will need to modify your <code>/etc/grafana-agent.yaml</code> file to include the <code>metrics_path: /prometheus/metrics</code> under the <code>job_name</code> row:</p>
+<p>Before:</p>
+<pre><code class="lang-auto">prometheus:
+  configs:
+  - name: integrations
+    scrape_configs:
+      - job_name: my_job_name
+        static_configs:
+...
+</code></pre>
+<p>After:</p>
+<pre><code class="lang-auto">prometheus:
+  configs:
+  - name: integrations
+    scrape_configs:
+      - job_name: my_job_name
+        metrics_path: /prometheus/metrics
+        static_configs:
+...
+</code></pre>
+            <p><small>2 posts - 2 participants</small></p>
+            <p><a href="https://radixtalk.com/t/why-does-grafana-cloud-stop-collecting-metrics-after-i-upgrade-my-node-to-1-1-0/287">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/why-does-grafana-cloud-stop-collecting-metrics-after-i-upgrade-my-node-to-1-1-0/287</link>
+          <pubDate>Wed, 26 Jan 2022 12:05:43 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-287</guid>
+          <source url="https://radixtalk.com/t/why-does-grafana-cloud-stop-collecting-metrics-after-i-upgrade-my-node-to-1-1-0/287.rss">Why does Grafana Cloud stop collecting metrics after I upgrade my node to 1.1.0?</source>
+        </item>
+        <item>
+          <title>How do I get the real IP address of the connected node in my Radix logs when using an nginx reverse proxy?</title>
+          <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+          <category>Validators</category>
+          <description><![CDATA[
+            <p>If you have an Nginx reverse proxy in front of your Radix node then the Radix log file will show connections from <code>127.0.0.1</code> instead of the real IP address of the node you are connected to.</p>
+<p>For example:</p>
+<pre><code class="lang-auto">Auth handshake failed on {-&gt; ?@127.0.0.1:57872 | AUTH_HANDSHAKE}: Handshake decryption failed (Invalid MAC)
+</code></pre>
+<p>After enabling the Proxy Protocol you will see the real ip logged:</p>
+<pre><code class="lang-auto">Auth handshake failed on {-&gt; ?@164.132.201.13:51752 | AUTH_HANDSHAKE}: Handshake decryption failed (Invalid MAC)
+</code></pre>
+<h2>
+<a name="h-1-enable-the-proxy-protocol-in-your-radix-configuration-1" class="anchor" href="https://radixtalk.com#h-1-enable-the-proxy-protocol-in-your-radix-configuration-1"></a>1. Enable the Proxy Protocol in your Radix configuration</h2>
+<p>Add the following line to the <code>default.config</code> files:</p>
+<pre><code class="lang-auto">network.p2p.use_proxy_protocol=true
+</code></pre>
+<h2>
+<a name="h-2-enable-the-proxy-protocol-in-your-nginx-configuration-2" class="anchor" href="https://radixtalk.com#h-2-enable-the-proxy-protocol-in-your-nginx-configuration-2"></a>2. Enable the Proxy Protocol in your Nginx configuration</h2>
+<p>Edit the <code>nginx.conf</code> file (usually found in <code>/etc/nginx</code>) and change the server block near the top of the file from:</p>
+<pre><code class="lang-nohighlight">  server {
+    listen 30000;
+    proxy_pass 127.0.0.1:30001;
+  }
+</code></pre>
+<p>to</p>
+<pre><code class="lang-nohighlight">  server {
+    listen 30000 proxy_protocol;
+    proxy_protocol on;
+    proxy_pass 127.0.0.1:30001;
+  }
+</code></pre>
+<p><strong>Note:</strong> You may have different ports numbers/ip address in your configuration. Don’t change these details - just append the <code>proxy_protocol</code> directive to the <code>listen</code> line and add the new <code>proxy_protocol on;</code> line.</p>
+<p>After making these changes, ensure your nginx configuration file is valid by running:</p>
+<pre><code class="lang-auto">sudo nginx -t
+
+# nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+# nginx: configuration file /etc/nginx/nginx.conf test is successful
+</code></pre>
+<h2>
+<a name="h-3-apply-the-changes-3" class="anchor" href="https://radixtalk.com#h-3-apply-the-changes-3"></a>3. Apply the Changes</h2>
+<p>You need to apply the changes at about the same time otherwise Radix will throw lots of exceptions.</p>
+<pre><code class="lang-bash">sudo systemctl reload nginx
+sudo systemctl restart radixdlt-node
+</code></pre>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/how-do-i-get-the-real-ip-address-of-the-connected-node-in-my-radix-logs-when-using-an-nginx-reverse-proxy/243">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/how-do-i-get-the-real-ip-address-of-the-connected-node-in-my-radix-logs-when-using-an-nginx-reverse-proxy/243</link>
+          <pubDate>Sat, 15 Jan 2022 11:17:46 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-243</guid>
+          <source url="https://radixtalk.com/t/how-do-i-get-the-real-ip-address-of-the-connected-node-in-my-radix-logs-when-using-an-nginx-reverse-proxy/243.rss">How do I get the real IP address of the connected node in my Radix logs when using an nginx reverse proxy?</source>
+        </item>
+        <item>
+          <title>Why do I get &quot;invalid PROXY&quot; exceptions in Radix node logs after I enable &quot;proxy_protocol on;&quot; in nginx?</title>
+          <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+          <category>Validators</category>
+          <description><![CDATA[
+            <p>Check that you have both the <code>proxy_protocol on;</code> <strong>and</strong> <code>listen &lt;port&gt; proxy_protocol;</code> configured in you server block in <code>nginx.conf</code></p>
+<p>For example:</p>
+<pre><code class="lang-auto">  server {
+    listen 30000 proxy_protocol;
+    proxy_protocol on;
+    proxy_pass 127.0.0.1:30001;
+  }
+</code></pre>
+<p>Both <code>proxy_protocol</code> directives are required to work correctly.</p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/why-do-i-get-invalid-proxy-exceptions-in-radix-node-logs-after-i-enable-proxy-protocol-on-in-nginx/242">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/why-do-i-get-invalid-proxy-exceptions-in-radix-node-logs-after-i-enable-proxy-protocol-on-in-nginx/242</link>
+          <pubDate>Sat, 15 Jan 2022 10:58:32 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-242</guid>
+          <source url="https://radixtalk.com/t/why-do-i-get-invalid-proxy-exceptions-in-radix-node-logs-after-i-enable-proxy-protocol-on-in-nginx/242.rss">Why do I get &quot;invalid PROXY&quot; exceptions in Radix node logs after I enable &quot;proxy_protocol on;&quot; in nginx?</source>
+        </item>
+        <item>
+          <title>How do I switch between Java 11 and Java 17 if I need to rollback my Radix Node from 1.1.0 to a previous version?</title>
+          <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+          <category>Validators</category>
+          <description><![CDATA[
+            <p>The 1.1.0 release of the Radix node software runs on Java 17. If you need to rollback your Radix Node to an earlier release that used Java 11, you can change the Java version as follows:</p>
+<pre><code class="lang-auto">sudo update-alternatives --config java
+
+# There are 2 choices for the alternative java (providing /usr/bin/java).
+#
+#  Selection    Path                                         Priority   Status
+# ------------------------------------------------------------
+# * 0            /usr/lib/jvm/java-17-openjdk-amd64/bin/java   1711      auto mode
+#   1            /usr/lib/jvm/java-11-openjdk-amd64/bin/java   1111      manual mode
+#   2            /usr/lib/jvm/java-17-openjdk-amd64/bin/java   1711      manual mode
+#
+# Press &lt;enter&gt; to keep the current choice[*], or type selection number:
+</code></pre>
+<p>To switch to Java 11 you would type <code>1</code> and then enter.<br>
+To revert back to Java 17, you would type <code>0</code> to auto select the highest version (Java 17).</p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/how-do-i-switch-between-java-11-and-java-17-if-i-need-to-rollback-my-radix-node-from-1-1-0-to-a-previous-version/240">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/how-do-i-switch-between-java-11-and-java-17-if-i-need-to-rollback-my-radix-node-from-1-1-0-to-a-previous-version/240</link>
+          <pubDate>Fri, 14 Jan 2022 14:38:26 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-240</guid>
+          <source url="https://radixtalk.com/t/how-do-i-switch-between-java-11-and-java-17-if-i-need-to-rollback-my-radix-node-from-1-1-0-to-a-previous-version/240.rss">How do I switch between Java 11 and Java 17 if I need to rollback my Radix Node from 1.1.0 to a previous version?</source>
+        </item>
+        <item>
+          <title>Why do I get &quot;Adjusted frame length exceeds 1048580&quot; error messages in my Radix node logs after I upgrade to 1.1.0?</title>
+          <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+          <category>Validators</category>
+          <description><![CDATA[
+            <p>It is likely that you have enabled the <code>proxy_protocol on;</code> setting in your <code>nginx.conf</code> file, but have not added the <code>network.p2p.use_proxy_protocol=true</code> setting to your Radix <code>default.config</code> file.</p>
+<h3>
+<a name="explanation-1" class="anchor" href="https://radixtalk.com#explanation-1"></a>Explanation</h3>
+<p>If you have an Nginx reverse proxy in front of your Radix node then the Radix log file will show connections from <code>127.0.0.1</code> instead of the real IP address of the node you are connected to.</p>
+<p>For example:</p>
+<pre><code class="lang-auto">Auth handshake failed on {-&gt; ?@127.0.0.1:57872 | AUTH_HANDSHAKE}: Handshake decryption failed (Invalid MAC)
+</code></pre>
+<p>Nginx can be configured to pass the real IP details to an application by adding the <code>proxy_protocol on;</code> setting to the <code>server</code> block in the <code>nginx.conf</code> file.</p>
+<p>The Radix node needs to be configured to expect this additional real IP address details otherwise it fails with an <strong><code>Adjusted frame length exceeds 1048580</code></strong> error and discards the message.</p>
+<p>Add the following line to your Radix <code>default.config</code> file to enable the real IP feature and then restart the Radix node.</p>
+<p>After the change has been applied you will now see the real ip logged:</p>
+<pre><code class="lang-auto">Auth handshake failed on {-&gt; ?@164.132.201.13:51752 | AUTH_HANDSHAKE}: Handshake decryption failed (Invalid MAC)
+</code></pre>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/why-do-i-get-adjusted-frame-length-exceeds-1048580-error-messages-in-my-radix-node-logs-after-i-upgrade-to-1-1-0/239">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/why-do-i-get-adjusted-frame-length-exceeds-1048580-error-messages-in-my-radix-node-logs-after-i-upgrade-to-1-1-0/239</link>
+          <pubDate>Fri, 14 Jan 2022 12:33:20 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-239</guid>
+          <source url="https://radixtalk.com/t/why-do-i-get-adjusted-frame-length-exceeds-1048580-error-messages-in-my-radix-node-logs-after-i-upgrade-to-1-1-0/239.rss">Why do I get &quot;Adjusted frame length exceeds 1048580&quot; error messages in my Radix node logs after I upgrade to 1.1.0?</source>
+        </item>
+        <item>
+          <title>Why am I getting a &quot;Store of atom failed&quot; or &quot;Unable to store atom&quot; errors after I upgrade my node to 1.1.0?</title>
+          <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+          <category>Validators</category>
+          <description><![CDATA[
+            <p>You have most likely set <code>api.transactions.enabled=true</code> in your node <code>default.config</code> file, but have not resynced your Radix database from the beginning.</p>
+<h3>
+<a name="explanation-1" class="anchor" href="https://radixtalk.com#explanation-1"></a>Explanation</h3>
+<p>The <code>api.transactions.enabled=true</code> setting adds new tables to the Radix database to support the new <code>/transactions</code> endpoint used by the Gateway API and Data Aggregator.</p>
+<p>If you try to enable this flag with an existing Radix database, it fails with the error messages above. This is because the new transaction tables need to be populated with transaction data from the start of the Radix ledger.</p>
+<p>To enable this feature, stop the Radix node, delete the contents of the Radix database directory, and start the Radix node again. The resync process may take up to 24 hours to complete.</p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/why-am-i-getting-a-store-of-atom-failed-or-unable-to-store-atom-errors-after-i-upgrade-my-node-to-1-1-0/238">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/why-am-i-getting-a-store-of-atom-failed-or-unable-to-store-atom-errors-after-i-upgrade-my-node-to-1-1-0/238</link>
+          <pubDate>Fri, 14 Jan 2022 12:13:23 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-238</guid>
+          <source url="https://radixtalk.com/t/why-am-i-getting-a-store-of-atom-failed-or-unable-to-store-atom-errors-after-i-upgrade-my-node-to-1-1-0/238.rss">Why am I getting a &quot;Store of atom failed&quot; or &quot;Unable to store atom&quot; errors after I upgrade my node to 1.1.0?</source>
+        </item>
+        <item>
+          <title>Why are my Prometheus/Grafana metrics not working after I upgrade my node to 1.1.0?</title>
+          <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+          <category>Validators</category>
+          <description><![CDATA[
+            <p>The Radix node metrics endpoint in version 1.1.0 has changed from <code>/metrics</code> to <code>/prometheus/metrics</code></p>
+<p><strong>Prometheus</strong><br>
+You will need to update your Prometheus <code>metrics_path</code> in your <code>/etc/prometheus/prometheus.yml</code> for the job that scrapes the Radix node metrics.</p>
+<p><strong>nginx</strong><br>
+If you are using an Nginx reverse proxy on your node, ensure that the location in <code>/etc/nginx/conf.d/metrics-conf.conf</code> has been changed from <code>/metrics</code> to <code>/prometheus/metrics</code></p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/why-are-my-prometheus-grafana-metrics-not-working-after-i-upgrade-my-node-to-1-1-0/237">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/why-are-my-prometheus-grafana-metrics-not-working-after-i-upgrade-my-node-to-1-1-0/237</link>
+          <pubDate>Fri, 14 Jan 2022 12:05:34 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-237</guid>
+          <source url="https://radixtalk.com/t/why-are-my-prometheus-grafana-metrics-not-working-after-i-upgrade-my-node-to-1-1-0/237.rss">Why are my Prometheus/Grafana metrics not working after I upgrade my node to 1.1.0?</source>
+        </item>
+        <item>
+          <title>Radix database snapshots now available at RadixPool</title>
+          <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+          <category>Validators</category>
+          <description><![CDATA[
+            <p>I’m happy to announce that RadixPool is now creating daily snapshots of the Radix database to support the Radix Node Runners community:</p>
+<aside class="onebox allowlistedgeneric" data-onebox-src="https://snapshots.radixpool.com">
+  <header class="source">
+
+      <a href="https://snapshots.radixpool.com" target="_blank" rel="noopener">snapshots.radixpool.com</a>
+  </header>
+
+  <article class="onebox-body">
+    
+
+<h3><a href="https://snapshots.radixpool.com" target="_blank" rel="noopener">RadixPool · Snapshots</a></h3>
+
+  <p>Radix Database snapshots by RadixPool</p>
+
+
+  </article>
+
+  <div class="onebox-metadata">
+    
+    
+  </div>
+
+  <div style="clear: both"></div>
+</aside>
+
+<h3>
+<a name="features-1" class="anchor" href="https://radixtalk.com#features-1"></a>Features:</h3>
+<ul>
+<li>Updated daily</li>
+<li>Geo-replicated by a content delivery network (CDN) to Falkenstein (Germany), New York, Los Angeles, Singapore and Sydney</li>
+<li>Compressed using <strong>xz</strong><sup class="footnote-ref"><a href="https://radixtalk.com#footnote-310-1" id="footnote-ref-310-1">[1]</a></sup> due to its very good compression size and fast decompression time</li>
+<li>Empty Address Book in Database</li>
+</ul>
+<h3>
+<a name="fair-use-2" class="anchor" href="https://radixtalk.com#fair-use-2"></a>Fair Use:</h3>
+<p>There is a generous monthly bandwidth limit to manage costs. If this limit has been reached and you urgently need to download a snapshot then please send a private message to <a class="mention" href="https://radixtalk.com/u/stuart">@Stuart</a></p>
+<p>PS: I’ll add some instructions on how to decompress the snapshot file and some css to make the page not look like something from 1998…</p>
+<hr class="footnotes-sep">
+
+<ol class="footnotes-list">
+<li id="footnote-310-1" class="footnote-item">
+<p><a href="https://radixtalk.com/t/comparison-of-compression-tools-for-taking-snapshots-of-radix-database/217" class="inline-onebox">Comparison of compression tools for taking snapshots of Radix database</a> <a href="https://radixtalk.com#footnote-ref-310-1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+            <p><small>6 posts - 4 participants</small></p>
+            <p><a href="https://radixtalk.com/t/radix-database-snapshots-now-available-at-radixpool/220">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/radix-database-snapshots-now-available-at-radixpool/220</link>
+          <pubDate>Sat, 08 Jan 2022 10:26:52 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-220</guid>
+          <source url="https://radixtalk.com/t/radix-database-snapshots-now-available-at-radixpool/220.rss">Radix database snapshots now available at RadixPool</source>
+        </item>
+        <item>
+          <title>Comparison of compression tools for taking snapshots of Radix database</title>
+          <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+          <category>Validators</category>
+          <description><![CDATA[
+            <p>RadixPool is planning to host snapshots of the Radix node database on a Content Delivery Network (CDN) to allow Radix validator nodes to quickly recover from a corrupted database.</p>
+<p>We compared a number of compression tools on a 43Gb copy of the Radix database and recorded the following results:</p>
+<div class="md-table">
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Tool</th>
+<th>Options</th>
+<th>Compress</th>
+<th>Size (bytes)</th>
+<th>Decompress</th>
+<th>10Mbits/s</th>
+<th>50Mbit/s</th>
+<th>100Mbit/s</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>45,652,470,885</td>
+<td>-</td>
+<td>10h08m</td>
+<td>2h01m</td>
+<td>1h00m</td>
+</tr>
+<tr>
+<td>gzip</td>
+<td>gzip</td>
+<td></td>
+<td>19m35s</td>
+<td>25,009,428,317</td>
+<td>3m50s</td>
+<td>5h34m</td>
+<td>1h07m</td>
+<td>0h34m</td>
+</tr>
+<tr>
+<td>gzip</td>
+<td><a href="https://zlib.net/pigz/">pigz</a></td>
+<td></td>
+<td>2m32s</td>
+<td>24,962,921,223</td>
+<td>1m58s</td>
+<td>5h33m</td>
+<td>1h07m</td>
+<td>0h34m</td>
+</tr>
+<tr>
+<td>gzip</td>
+<td><a href="https://zlib.net/pigz/">pigz</a></td>
+<td><code>--best</code></td>
+<td>6m37s</td>
+<td>24,932,450,560</td>
+<td>2m10s</td>
+<td>5h32m</td>
+<td>1h07m</td>
+<td>0h34m</td>
+</tr>
+<tr>
+<td>xz</td>
+<td><a href="https://github.com/vasi/pixz">pixz</a></td>
+<td></td>
+<td>21m33s</td>
+<td>21,702,409,016</td>
+<td>1m38s</td>
+<td>4h49m</td>
+<td>0h57m</td>
+<td>0h28m</td>
+</tr>
+<tr>
+<td>xz</td>
+<td><a href="https://github.com/vasi/pixz">pixz</a></td>
+<td><code>-9 -p8</code></td>
+<td>42m58s</td>
+<td>21,412,039,372</td>
+<td>1m39s</td>
+<td>4h45m</td>
+<td>0h57m</td>
+<td>0h28m</td>
+</tr>
+<tr>
+<td>7z</td>
+<td><a href="https://www.7-zip.org/">7z</a></td>
+<td></td>
+<td>20m50s</td>
+<td>21,683,532,361</td>
+<td>16m15s</td>
+<td>4h49m</td>
+<td>0h57m</td>
+<td>0h28m</td>
+</tr>
+<tr>
+<td>7z</td>
+<td><a href="https://www.7-zip.org/">7z</a></td>
+<td><code>-m0=lzma2 -mx</code></td>
+<td>35m57s</td>
+<td>21,367,916,757</td>
+<td>16m01s</td>
+<td>4h44m</td>
+<td>0h56m</td>
+<td>0h28m</td>
+</tr>
+<tr>
+<td>zstd</td>
+<td><a href="https://facebook.github.io/zstd/">zstd</a></td>
+<td><code>--fast=1</code></td>
+<td>1m26s</td>
+<td>24,062,687,524</td>
+<td>1m13s</td>
+<td>5h20m</td>
+<td>1h04m</td>
+<td>0h32m</td>
+</tr>
+<tr>
+<td>zstd</td>
+<td><a href="https://facebook.github.io/zstd/">zstd</a></td>
+<td></td>
+<td>2m53s</td>
+<td>23,032,636,843</td>
+<td>1m23s</td>
+<td>5h07m</td>
+<td>1h01m</td>
+<td>0h30m</td>
+</tr>
+<tr>
+<td>zstd</td>
+<td><a href="https://facebook.github.io/zstd/">zstd</a></td>
+<td><code>--long</code></td>
+<td>4m53s</td>
+<td>22,743,480,552</td>
+<td>1m26s</td>
+<td>5h03m</td>
+<td>1h00m</td>
+<td>0h30m</td>
+</tr>
+<tr>
+<td>zstd</td>
+<td><a href="https://facebook.github.io/zstd/">zstd</a></td>
+<td><code>-19 -T8</code></td>
+<td>39m25s</td>
+<td>21,999,437,864</td>
+<td>1m32s</td>
+<td>4h53m</td>
+<td>0h58m</td>
+<td>0h29m</td>
+</tr>
+</tbody>
+</table>
+</div><h3>
+<a name="results-1" class="anchor" href="https://radixtalk.com#results-1"></a>Results</h3>
+<p>The xz algorithm was selected for Radix database compression for it’s high compression ratio and fast decompression speed. xz has binaries for Linux and Windows.</p>
+<h3>
+<a name="not-tested-2" class="anchor" href="https://radixtalk.com#not-tested-2"></a>Not Tested:</h3>
+<ul>
+<li><a href="https://www.nongnu.org/lzip/plzip.html">lzip</a></li>
+<li><a href="https://sourceware.org/bzip2/">bzip2</a></li>
+<li><a href="https://lz4.github.io/lz4/">lz4</a></li>
+</ul>
+<h2>
+<a name="further-reading-3" class="anchor" href="https://radixtalk.com#further-reading-3"></a>Further Reading:</h2>
+<ul>
+<li><a href="https://linuxreviews.org/Comparison_of_Compression_Algorithms" class="inline-onebox">Comparison of Compression Algorithms - LinuxReviews</a></li>
+<li><a href="https://www.omnicalculator.com/other/download-time" class="inline-onebox">Download Time Calculator</a></li>
+</ul>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/comparison-of-compression-tools-for-taking-snapshots-of-radix-database/217">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/comparison-of-compression-tools-for-taking-snapshots-of-radix-database/217</link>
+          <pubDate>Fri, 07 Jan 2022 09:41:28 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-217</guid>
+          <source url="https://radixtalk.com/t/comparison-of-compression-tools-for-taking-snapshots-of-radix-database/217.rss">Comparison of compression tools for taking snapshots of Radix database</source>
+        </item>
+        <item>
+          <title>Validator resource usage (disk I/O, RAM, CPU..)</title>
+          <dc:creator><![CDATA[Mattia | MattiaNode]]></dc:creator>
+          <category>Validators</category>
+          <description><![CDATA[
+            <p>Hello! I created this thread to discuss the resource usage of the node runner software for Radix nodes.</p>
+<p>I’ve always encountered high disk I/O usage by the Checkpointer thread that I’ve managed to mitigate somehow by increasing -Xms and -Xmx arguments in the Enviroment file.<br>
+The higher the value, the lower the disk usage is. On a node with 64 GB of RAM, setting both arguments to 30G almost fixes the problem, bringing my average disk write to 4 MB/s.<br>
+On another node with less RAM I am unable to set -Xms and -Xmx to 30G and the average disk writes are much higher, reaching more than 10MB/s.</p>
+<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://radixtalk.com/uploads/default/original/1X/d4d42f7e637e8ff63baffca85c3dbaadf8873c14.png" data-download-href="https://radixtalk.com/uploads/default/d4d42f7e637e8ff63baffca85c3dbaadf8873c14" title="image"><img src="https://radixtalk.com/uploads/default/optimized/1X/d4d42f7e637e8ff63baffca85c3dbaadf8873c14_2_690x216.png" alt="image" data-base62-sha1="umLPp8wVRJUf2QVtYVymmWLvFGc" width="690" height="216" srcset="https://radixtalk.com/uploads/default/optimized/1X/d4d42f7e637e8ff63baffca85c3dbaadf8873c14_2_690x216.png, https://radixtalk.com/uploads/default/optimized/1X/d4d42f7e637e8ff63baffca85c3dbaadf8873c14_2_1035x324.png 1.5x, https://radixtalk.com/uploads/default/original/1X/d4d42f7e637e8ff63baffca85c3dbaadf8873c14.png 2x" data-small-upload="https://radixtalk.com/uploads/default/optimized/1X/d4d42f7e637e8ff63baffca85c3dbaadf8873c14_2_10x10.png"></a></div><p></p>
+<p>This is with -Xms and -Xmx to 20G. Lowering the value increases disk writes even more, with a default setting of 8G this is what I was getting:</p>
+<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://radixtalk.com/uploads/default/original/1X/d9ed4ef1a29553f1a06919122f4166ac00031b56.png" data-download-href="https://radixtalk.com/uploads/default/d9ed4ef1a29553f1a06919122f4166ac00031b56" title="image"><img src="https://radixtalk.com/uploads/default/original/1X/d9ed4ef1a29553f1a06919122f4166ac00031b56.png" alt="image" data-base62-sha1="v5S2BciOF4TfgHT4iI3y7TJTvbU" width="690" height="218" data-small-upload="https://radixtalk.com/uploads/default/optimized/1X/d9ed4ef1a29553f1a06919122f4166ac00031b56_2_10x10.png"></a></div><br>
+<div class="lightbox-wrapper"><a class="lightbox" href="https://radixtalk.com/uploads/default/original/1X/a29cdfd2770db68071ae8e94ebb24e6ab405d5c2.png" data-download-href="https://radixtalk.com/uploads/default/a29cdfd2770db68071ae8e94ebb24e6ab405d5c2" title="Few minutes of iotop -a"><img src="https://radixtalk.com/uploads/default/optimized/1X/a29cdfd2770db68071ae8e94ebb24e6ab405d5c2_2_690x86.png" alt="Few minutes of iotop -a" data-base62-sha1="ncxs0XfSAazk1kQeITCr9dYIeVY" width="690" height="86" srcset="https://radixtalk.com/uploads/default/optimized/1X/a29cdfd2770db68071ae8e94ebb24e6ab405d5c2_2_690x86.png, https://radixtalk.com/uploads/default/optimized/1X/a29cdfd2770db68071ae8e94ebb24e6ab405d5c2_2_1035x129.png 1.5x, https://radixtalk.com/uploads/default/optimized/1X/a29cdfd2770db68071ae8e94ebb24e6ab405d5c2_2_1380x172.png 2x" data-small-upload="https://radixtalk.com/uploads/default/optimized/1X/a29cdfd2770db68071ae8e94ebb24e6ab405d5c2_2_10x10.png"></a></div><p></p>
+<p>Those are all writes even though my hypervisor is reporting them as reads (old bug). Obviously this was destroying my SSDs pretty quickly.</p>
+<p>I’ve found some helpful information on Berkeley DBs and how its cache works (<a href="https://docs.huihoo.com/berkeley/je-1.5.1/docs/GettingStartedGuide/cachesize.html">start here</a>) and apparently 20% of the JVM memory is reserved for cache (<code>je.maxMemoryPercent</code> has a default value of 20%).<br>
+I tried calculating the optimal memory size using <a href="https://gist.github.com/gbehrmann/df1abbe45c03356eff2e">this guide</a> and got the following:</p>
+<p>I ran <code>java -cp je-18.3.12.jar com.sleepycat.je.util.DbPrintLog -S -h /data/</code> and then<code> java -cp je-18.3.12.jar com.sleepycat.je.util.DbCacheSize -records 85002586 -key 20 -data 63</code> using the data I got from the first command.</p>
+<pre><code class="lang-auto">=== Environment Cache Overhead ===
+
+3,158,773 minimum bytes
+
+To account for JE daemon operation, record locks, HA network connections, etc,
+a larger amount is needed in practice.
+
+=== Database Cache Size ===
+
+   Number of Bytes  Description
+   ---------------  -----------
+     4,169,465,456  Internal nodes only
+    13,529,308,256  Internal nodes and leaf nodes
+
+For further information see the DbCacheSize javadoc.
+</code></pre>
+<p>So, to cache all the internal nodes only I would need 4GB of memory, which considering the default je.maxMemoryPercent of 20%, amounts to 20~GB of -Xmx for the JVM.<br>
+As you can see comparing the two screenshots, increasing Java’s memory 20G helped reduce the writes, but they’re still very high compared to what Radix Team and others are seeing on their nodes.</p>
+<p>I also followed this <a href="https://docs.radixdlt.com/main/node/troubleshooting.html#excessive-disk-writes">tip</a> from Stuart and set <code>je.log.fileMax=1073741824</code> and <code>je.checkpointer.bytesInterval=250000000</code>.<br>
+I tried doubling the Checkpointer’s bytesInterval value and it increased the time between each write spike, but also increased the maximum disk write during those spikes.</p>
+<p>The issue goes away by making the node a fullnode instead of a validator node; writes pretty much disappear or drop to some KB/s. More info in this <a href="https://github.com/radixdlt/radixdlt/issues/513">GitHub issue.</a></p>
+<p>Please feel free to discuss other performance optimization or resource usage concerns you have in this thread.</p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/validator-resource-usage-disk-i-o-ram-cpu/200">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/validator-resource-usage-disk-i-o-ram-cpu/200</link>
+          <pubDate>Mon, 03 Jan 2022 11:05:31 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-200</guid>
+          <source url="https://radixtalk.com/t/validator-resource-usage-disk-i-o-ram-cpu/200.rss">Validator resource usage (disk I/O, RAM, CPU..)</source>
+        </item>
+        <item>
+          <title>Community Seed Nodes for Radix Validators</title>
+          <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+          <category>Validators</category>
+          <description><![CDATA[
+            <p>If the <a href="https://radixtalk.com/t/what-are-the-official-radix-seed-node-addresses/195">official Radix seed nodes</a> are not available then it is possible to seed from any other Radix node on the network.</p>
+<p>The following is a list of community seed node addresses:</p>
+<h1>
+<a name="europe-1" class="anchor" href="https://radixtalk.com#europe-1"></a>Europe:</h1>
+<pre><code class="lang-nohighlight">radix://rn1q0lm9z8r6v2vwdwej6p2xr6unf3l6y4nlfrypyaauyfuqq8c4a976t54rtx@198.244.164.94
+radix://rn1qdnsa7cn3q9yzw0dtu27f3yz0y4wn9nej8eupre666c6srldhgjqcd08jd2@138.201.251.203
+</code></pre>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/community-seed-nodes-for-radix-validators/199">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/community-seed-nodes-for-radix-validators/199</link>
+          <pubDate>Sun, 02 Jan 2022 17:11:47 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-199</guid>
+          <source url="https://radixtalk.com/t/community-seed-nodes-for-radix-validators/199.rss">Community Seed Nodes for Radix Validators</source>
+        </item>
+        <item>
+          <title>What are the official Radix seed node addresses?</title>
+          <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+          <category>Validators</category>
+          <description><![CDATA[
+            <p>The current official Radix seed node addresses are:</p>
+<h2>
+<a name="asia-pacific-south-east-australia-1" class="anchor" href="https://radixtalk.com#asia-pacific-south-east-australia-1"></a>Asia-Pacific (South-East <img src="https://radixtalk.com/images/emoji/twitter/australia.png?v=10" title=":australia:" class="emoji" alt=":australia:">)</h2>
+<pre><code class="lang-nohighlight">radix://rn1q2jt0jswv3lpct8tavr5tvlg2kv25f26x7w8kf6dz2hp4pu9cwq4we9tm5f@13.238.198.54
+radix://rn1qvmp586ylq9e26n98zwyu9s5hdkq8j63t8l028x8wj4vqzk32dwzw0vrg58@54.66.161.181
+radix://rn1q2fqfp9smlv3x5j4gca400j3mg9q63pgpu8hmd0xs0a3dgw5mv5s6jgznp3@3.106.155.92
+radix://rn1qvcrg55mcgx6qgs7hj5arpvakvyzpc9pnp5ywhgcs4mvmp7ee4846p5zsdg@54.79.170.237
+</code></pre>
+<h2>
+<a name="asia-pacific-south-india-2" class="anchor" href="https://radixtalk.com#asia-pacific-south-india-2"></a>Asia-Pacific (South <img src="https://radixtalk.com/images/emoji/twitter/india.png?v=10" title=":india:" class="emoji" alt=":india:">)</h2>
+<pre><code class="lang-nohighlight">radix://rn1qg54vufz29c5hcwqxuv4pr60f4fsq6ds0qpa7qnrchdwnapkw6qcxymhy7l@3.109.57.223
+radix://rn1qgf0tug4nmxfa7su8zsu8pejzq48eeglvxf8le09cuy0nsghzg44weacz2q@3.109.36.249
+radix://rn1qfcl8ml7vm2gnyvm6tslmemrjmds6apajrk3vvyl4the0wsm0mkvjrjgtl2@65.0.241.14
+radix://rn1qd4nnpfkafpljwt8xmvk5ksqy6cn7n3j6t2pcqrx4p2h6drt9qqksn8m94r@3.108.213.235
+</code></pre>
+<h2>
+<a name="eu-west-ireland-3" class="anchor" href="https://radixtalk.com#eu-west-ireland-3"></a>EU (West <img src="https://radixtalk.com/images/emoji/twitter/ireland.png?v=10" title=":ireland:" class="emoji" alt=":ireland:">)</h2>
+<pre><code class="lang-nohighlight">radix://rn1qthu8yn06k75dnwpkysyl8smtwn0v4xy29auzjlcrw7vgduxvnwnst6derj@99.80.126.26
+radix://rn1qtk3g0a2ra663wyua0l4720vfzdje9uqsdzgzjet5w9dhspkaywnjal6dv6@52.49.146.20
+radix://rn1qgvg5c20ude9cwxuxenrltemtw5zsg6n879kguwy0cx4mzq5plqg532l2xf@34.242.56.73
+radix://rn1q040l0vqzuglnj6t5ffue3nacnj30h0thyrses0f5cc0n2fvx4wtknv2t7y@54.74.152.104
+</code></pre>
+<h2>
+<a name="us-east-us-4" class="anchor" href="https://radixtalk.com#us-east-us-4"></a>US (East <img src="https://radixtalk.com/images/emoji/twitter/us.png?v=10" title=":us:" class="emoji" alt=":us:">)</h2>
+<pre><code class="lang-nohighlight">radix://rn1qvw5v4w8llexz99uc9gmeh47qp2h9ax2y3aewm5e6vj5sdx8uuph2vfuvg3@3.221.232.135
+radix://rn1qtq336a2nn2269fjes53pynwlytrv0katm6uzlfcyl6m7yscac5g7mh8prw@3.220.101.80
+radix://rn1qwa45jjf40vuf9xlq85xym86yegnm95h3g8d4lul5hskrws9gm6ykyx7hsf@3.214.160.245
+radix://rn1qvv0uljlqdsmed4kwjqr56sqkgcl8jer3z7w68ssfele3e4cz6uzugfjf0h@44.194.199.37
+</code></pre>
+<p>Source: <a href="https://docs.radixdlt.com/main/node/systemd-install-node.html#create-node-configuration-file-for-systemd-install" class="inline-onebox">Installing and Running a Node Using systemd :: Radix Documentation</a></p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/what-are-the-official-radix-seed-node-addresses/195">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/what-are-the-official-radix-seed-node-addresses/195</link>
+          <pubDate>Sun, 02 Jan 2022 14:23:23 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-195</guid>
+          <source url="https://radixtalk.com/t/what-are-the-official-radix-seed-node-addresses/195.rss">What are the official Radix seed node addresses?</source>
+        </item>
+  </channel>
+</rss>

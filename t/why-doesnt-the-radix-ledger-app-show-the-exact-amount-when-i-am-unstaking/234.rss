@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Why doesn&#39;t the Radix Ledger app show the exact amount when I am unstaking?</title>
+    <link>https://radixtalk.com/t/why-doesnt-the-radix-ledger-app-show-the-exact-amount-when-i-am-unstaking/234</link>
+    <description>Russell from Radix provided a comprehensive explanation as follows:
+
+&gt; * Stake on nodes is not stored as an amount of XRD, but a number of StakeUnits.
+&gt; * The XRD amount corresponding to a 1 StakeUnit differs from node to node.  Presently, all nodes start their life at 1 XRD per 1 StakeUnit, but network emissions will adjust this number over time.
+&gt; * When you announce an intent to stake 1000 XRD to BobNode, a calculation is made that says &quot;Well, as of this epoch 1 StakeUnit on BobNode is 1.02 XRD.  You can only get a whole number of StakeUnits.  Closest I can come is for you to get 980 StakeUnits, which currently works out to 999.6 XRD, so that&#39;s what we&#39;ll do.&quot;
+&gt; * At epoch rollover, when emissions happen, if BobNode qualified for emissions, the network increases the value of a StakeUnit on BobNode.  To keep the math simple, let&#39;s pretend that increased to 1.03.  Your &quot;amount staked&quot; shown for BobNode would now be 980 * 1.03 = 1009.4
+&gt; 
+&gt; What you&#39;re seeing on your Ledger when unstaking is actually the number of StakeUnits, not the amount of XRD.
+
+Ref: https://discord.com/channels/417762285172555786/870020556626477056/931330804049674280</description>
+    <language>en-GB</language>
+    <lastBuildDate>Tue, 01 Feb 2022 12:01:59 +0000</lastBuildDate>
+    <category>Questions / Help</category>
+    <atom:link href="https://radixtalk.com/t/why-doesnt-the-radix-ledger-app-show-the-exact-amount-when-i-am-unstaking/234.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Why doesn&#39;t the Radix Ledger app show the exact amount when I am unstaking?</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>Russell from Radix provided a comprehensive explanation as follows:</p>
+<blockquote>
+<ul>
+<li>Stake on nodes is not stored as an amount of XRD, but a number of StakeUnits.</li>
+<li>The XRD amount corresponding to a 1 StakeUnit differs from node to node.  Presently, all nodes start their life at 1 XRD per 1 StakeUnit, but network emissions will adjust this number over time.</li>
+<li>When you announce an intent to stake 1000 XRD to BobNode, a calculation is made that says “Well, as of this epoch 1 StakeUnit on BobNode is 1.02 XRD.  You can only get a whole number of StakeUnits.  Closest I can come is for you to get 980 StakeUnits, which currently works out to 999.6 XRD, so that’s what we’ll do.”</li>
+<li>At epoch rollover, when emissions happen, if BobNode qualified for emissions, the network increases the value of a StakeUnit on BobNode.  To keep the math simple, let’s pretend that increased to 1.03.  Your “amount staked” shown for BobNode would now be 980 * 1.03 = 1009.4</li>
+</ul>
+<p>What you’re seeing on your Ledger when unstaking is actually the number of StakeUnits, not the amount of XRD.</p>
+</blockquote>
+<p>Ref: <a href="https://discord.com/channels/417762285172555786/870020556626477056/931330804049674280" class="inline-onebox">Discord</a></p>
+          <p><a href="https://radixtalk.com/t/why-doesnt-the-radix-ledger-app-show-the-exact-amount-when-i-am-unstaking/234/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/why-doesnt-the-radix-ledger-app-show-the-exact-amount-when-i-am-unstaking/234/1</link>
+        <pubDate>Fri, 14 Jan 2022 05:23:07 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-234-1</guid>
+        <source url="https://radixtalk.com/t/why-doesnt-the-radix-ledger-app-show-the-exact-amount-when-i-am-unstaking/234.rss">Why doesn&#39;t the Radix Ledger app show the exact amount when I am unstaking?</source>
+      </item>
+  </channel>
+</rss>

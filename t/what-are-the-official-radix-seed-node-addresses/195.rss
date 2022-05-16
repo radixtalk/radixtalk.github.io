@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>What are the official Radix seed node addresses?</title>
+    <link>https://radixtalk.com/t/what-are-the-official-radix-seed-node-addresses/195</link>
+    <description>The current official Radix seed node addresses are:
+
+## Asia-Pacific (South-East :australia:)
+```text
+radix://rn1q2jt0jswv3lpct8tavr5tvlg2kv25f26x7w8kf6dz2hp4pu9cwq4we9tm5f@13.238.198.54
+radix://rn1qvmp586ylq9e26n98zwyu9s5hdkq8j63t8l028x8wj4vqzk32dwzw0vrg58@54.66.161.181
+radix://rn1q2fqfp9smlv3x5j4gca400j3mg9q63pgpu8hmd0xs0a3dgw5mv5s6jgznp3@3.106.155.92
+radix://rn1qvcrg55mcgx6qgs7hj5arpvakvyzpc9pnp5ywhgcs4mvmp7ee4846p5zsdg@54.79.170.237
+```
+
+## Asia-Pacific (South :india:)
+```text
+radix://rn1qg54vufz29c5hcwqxuv4pr60f4fsq6ds0qpa7qnrchdwnapkw6qcxymhy7l@3.109.57.223
+radix://rn1qgf0tug4nmxfa7su8zsu8pejzq48eeglvxf8le09cuy0nsghzg44weacz2q@3.109.36.249
+radix://rn1qfcl8ml7vm2gnyvm6tslmemrjmds6apajrk3vvyl4the0wsm0mkvjrjgtl2@65.0.241.14
+radix://rn1qd4nnpfkafpljwt8xmvk5ksqy6cn7n3j6t2pcqrx4p2h6drt9qqksn8m94r@3.108.213.235
+```
+
+## EU (West :ireland:)
+```text
+radix://rn1qthu8yn06k75dnwpkysyl8smtwn0v4xy29auzjlcrw7vgduxvnwnst6derj@99.80.126.26
+radix://rn1qtk3g0a2ra663wyua0l4720vfzdje9uqsdzgzjet5w9dhspkaywnjal6dv6@52.49.146.20
+radix://rn1qgvg5c20ude9cwxuxenrltemtw5zsg6n879kguwy0cx4mzq5plqg532l2xf@34.242.56.73
+radix://rn1q040l0vqzuglnj6t5ffue3nacnj30h0thyrses0f5cc0n2fvx4wtknv2t7y@54.74.152.104
+```
+
+## US (East :us:)
+```text
+radix://rn1qvw5v4w8llexz99uc9gmeh47qp2h9ax2y3aewm5e6vj5sdx8uuph2vfuvg3@3.221.232.135
+radix://rn1qtq336a2nn2269fjes53pynwlytrv0katm6uzlfcyl6m7yscac5g7mh8prw@3.220.101.80
+radix://rn1qwa45jjf40vuf9xlq85xym86yegnm95h3g8d4lul5hskrws9gm6ykyx7hsf@3.214.160.245
+radix://rn1qvv0uljlqdsmed4kwjqr56sqkgcl8jer3z7w68ssfele3e4cz6uzugfjf0h@44.194.199.37
+```
+
+Source: https://docs.radixdlt.com/main/node/systemd-install-node.html#create-node-configuration-file-for-systemd-install</description>
+    <language>en-GB</language>
+    <lastBuildDate>Sun, 02 Jan 2022 14:39:21 +0000</lastBuildDate>
+    <category>Validators</category>
+    <atom:link href="https://radixtalk.com/t/what-are-the-official-radix-seed-node-addresses/195.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>What are the official Radix seed node addresses?</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>The current official Radix seed node addresses are:</p>
+<h2>
+<a name="asia-pacific-south-east-australia-1" class="anchor" href="https://radixtalk.com#asia-pacific-south-east-australia-1"></a>Asia-Pacific (South-East <img src="https://radixtalk.com/images/emoji/twitter/australia.png?v=10" title=":australia:" class="emoji" alt=":australia:">)</h2>
+<pre><code class="lang-nohighlight">radix://rn1q2jt0jswv3lpct8tavr5tvlg2kv25f26x7w8kf6dz2hp4pu9cwq4we9tm5f@13.238.198.54
+radix://rn1qvmp586ylq9e26n98zwyu9s5hdkq8j63t8l028x8wj4vqzk32dwzw0vrg58@54.66.161.181
+radix://rn1q2fqfp9smlv3x5j4gca400j3mg9q63pgpu8hmd0xs0a3dgw5mv5s6jgznp3@3.106.155.92
+radix://rn1qvcrg55mcgx6qgs7hj5arpvakvyzpc9pnp5ywhgcs4mvmp7ee4846p5zsdg@54.79.170.237
+</code></pre>
+<h2>
+<a name="asia-pacific-south-india-2" class="anchor" href="https://radixtalk.com#asia-pacific-south-india-2"></a>Asia-Pacific (South <img src="https://radixtalk.com/images/emoji/twitter/india.png?v=10" title=":india:" class="emoji" alt=":india:">)</h2>
+<pre><code class="lang-nohighlight">radix://rn1qg54vufz29c5hcwqxuv4pr60f4fsq6ds0qpa7qnrchdwnapkw6qcxymhy7l@3.109.57.223
+radix://rn1qgf0tug4nmxfa7su8zsu8pejzq48eeglvxf8le09cuy0nsghzg44weacz2q@3.109.36.249
+radix://rn1qfcl8ml7vm2gnyvm6tslmemrjmds6apajrk3vvyl4the0wsm0mkvjrjgtl2@65.0.241.14
+radix://rn1qd4nnpfkafpljwt8xmvk5ksqy6cn7n3j6t2pcqrx4p2h6drt9qqksn8m94r@3.108.213.235
+</code></pre>
+<h2>
+<a name="eu-west-ireland-3" class="anchor" href="https://radixtalk.com#eu-west-ireland-3"></a>EU (West <img src="https://radixtalk.com/images/emoji/twitter/ireland.png?v=10" title=":ireland:" class="emoji" alt=":ireland:">)</h2>
+<pre><code class="lang-nohighlight">radix://rn1qthu8yn06k75dnwpkysyl8smtwn0v4xy29auzjlcrw7vgduxvnwnst6derj@99.80.126.26
+radix://rn1qtk3g0a2ra663wyua0l4720vfzdje9uqsdzgzjet5w9dhspkaywnjal6dv6@52.49.146.20
+radix://rn1qgvg5c20ude9cwxuxenrltemtw5zsg6n879kguwy0cx4mzq5plqg532l2xf@34.242.56.73
+radix://rn1q040l0vqzuglnj6t5ffue3nacnj30h0thyrses0f5cc0n2fvx4wtknv2t7y@54.74.152.104
+</code></pre>
+<h2>
+<a name="us-east-us-4" class="anchor" href="https://radixtalk.com#us-east-us-4"></a>US (East <img src="https://radixtalk.com/images/emoji/twitter/us.png?v=10" title=":us:" class="emoji" alt=":us:">)</h2>
+<pre><code class="lang-nohighlight">radix://rn1qvw5v4w8llexz99uc9gmeh47qp2h9ax2y3aewm5e6vj5sdx8uuph2vfuvg3@3.221.232.135
+radix://rn1qtq336a2nn2269fjes53pynwlytrv0katm6uzlfcyl6m7yscac5g7mh8prw@3.220.101.80
+radix://rn1qwa45jjf40vuf9xlq85xym86yegnm95h3g8d4lul5hskrws9gm6ykyx7hsf@3.214.160.245
+radix://rn1qvv0uljlqdsmed4kwjqr56sqkgcl8jer3z7w68ssfele3e4cz6uzugfjf0h@44.194.199.37
+</code></pre>
+<p>Source: <a href="https://docs.radixdlt.com/main/node/systemd-install-node.html#create-node-configuration-file-for-systemd-install" class="inline-onebox">Installing and Running a Node Using systemd :: Radix Documentation</a></p>
+          <p><a href="https://radixtalk.com/t/what-are-the-official-radix-seed-node-addresses/195/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/what-are-the-official-radix-seed-node-addresses/195/1</link>
+        <pubDate>Sun, 02 Jan 2022 14:23:23 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-195-1</guid>
+        <source url="https://radixtalk.com/t/what-are-the-official-radix-seed-node-addresses/195.rss">What are the official Radix seed node addresses?</source>
+      </item>
+  </channel>
+</rss>

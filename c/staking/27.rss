@@ -1,0 +1,833 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:discourse="http://www.discourse.org/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Staking - RadixTalk</title>
+    <link>https://radixtalk.com/c/staking/27</link>
+    <description>Topics in the &#39;Staking&#39; category Topics about delegating stake to Radix validators</description>
+    <language>en-GB</language>
+      <lastBuildDate>Thu, 28 Apr 2022 19:23:07 +0000</lastBuildDate>
+      <atom:link href="https://radixtalk.com/c/staking/27.rss" rel="self" type="application/rss+xml" />
+        <item>
+          <title>Staking Airdrop #2 of Delphibets</title>
+          <dc:creator><![CDATA[DELPHIBETS]]></dc:creator>
+          <category>Staking</category>
+          <description><![CDATA[
+            <p><img src="https://cdn.radixtalk.com/images/emoji/twitter/stop_sign.png?v=12" title=":stop_sign:" class="emoji" alt=":stop_sign:" loading="lazy" width="20" height="20"> <strong>STAKERS PAY ATTENTION!</strong><br>
+After exciting and successful (prediction) events, we want to focus on the stakers again:</p>
+<p><img src="https://cdn.radixtalk.com/images/emoji/twitter/fire.png?v=12" title=":fire:" class="emoji" alt=":fire:" loading="lazy" width="20" height="20"> <strong>500,000 $DPH will be distributed</strong> <img src="https://cdn.radixtalk.com/images/emoji/twitter/fire.png?v=12" title=":fire:" class="emoji" alt=":fire:" loading="lazy" width="20" height="20"></p>
+<p><img src="https://cdn.radixtalk.com/images/emoji/twitter/one.png?v=12" title=":one:" class="emoji" alt=":one:" loading="lazy" width="20" height="20"> Staking snapshot is taken on 15th of May 2022<br>
+<img src="https://cdn.radixtalk.com/images/emoji/twitter/two.png?v=12" title=":two:" class="emoji" alt=":two:" loading="lazy" width="20" height="20"> The more you stake, the bigger your airdrop<br>
+<img src="https://cdn.radixtalk.com/images/emoji/twitter/three.png?v=12" title=":three:" class="emoji" alt=":three:" loading="lazy" width="20" height="20"> STAKE ON THE DELPHINODE TO RECEIVE 50% AIRDROP BONUS <img src="https://cdn.radixtalk.com/images/emoji/twitter/heart_eyes.png?v=12" title=":heart_eyes:" class="emoji" alt=":heart_eyes:" loading="lazy" width="20" height="20"></p>
+<p>Stakers of the <a href="https://www.radixscan.io/validator/rv1qtj3zvu8ttar6mluw6qzlfu5mnjqpeswcjs07ayalyx4gje4wy4xwq85hhs" rel="noopener nofollow ugc">DELPHINODE</a> have advantages and will receive the <a href="https://t.me/delphibets/12347" rel="noopener nofollow ugc">highest bonus</a>. The airdrop will follow in the next few days after the snapshot is taken. Starting in May we will introduce a validator fee in line with other Radix nodes of 2.8%.</p>
+<p><img src="https://cdn.radixtalk.com/images/emoji/twitter/computer.png?v=12" title=":computer:" class="emoji" alt=":computer:" loading="lazy" width="20" height="20"> <strong>How to stake $XRD?</strong><br>
+For those who want to stake on the DELPHINODE for the first time, Pythia has recorded a video. It was her concern to explain you all in the most simple way, so you can get as many $DPH as possible <img src="https://cdn.radixtalk.com/images/emoji/twitter/heart.png?v=12" title=":heart:" class="emoji" alt=":heart:" loading="lazy" width="20" height="20"></p>
+<p><a href="https://www.youtube.com/embed/wX1qB2p1Dns?autoplay=1&amp;feature=oembed&amp;wmode=opaque">https://www.youtube.com/embed/wX1qB2p1Dns</a></p>
+
+<p><img src="https://cdn.radixtalk.com/images/emoji/twitter/star.png?v=12" title=":star:" class="emoji" alt=":star:" loading="lazy" width="20" height="20"> Stay tuned and visit our <a href="https://t.me/delphibets" rel="noopener nofollow ugc">Telegram channel</a> or follow us on <a href="https://twitter.com/delphibets" rel="noopener nofollow ugc">Twitter</a>.</p>
+<p><em>The validator stake of the DELPHINODE is currently 1.65%. Only 0.35% remain to secure the 50% bonus.</em></p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/staking-airdrop-2-of-delphibets/463">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/staking-airdrop-2-of-delphibets/463</link>
+          <pubDate>Thu, 28 Apr 2022 19:23:07 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-463</guid>
+          <source url="https://radixtalk.com/t/staking-airdrop-2-of-delphibets/463.rss">Staking Airdrop #2 of Delphibets</source>
+        </item>
+        <item>
+          <title>Radix Logical Moon (New Status Monitor)</title>
+          <dc:creator><![CDATA[Katan &amp; Rory | Radix Logical Moon ]]></dc:creator>
+          <category>Staking</category>
+          <description><![CDATA[
+            <p>In an effort to ensure Radix Logical Moon continue to offer our stakers the best service and remain transparent, we are pleased to announce a new update to our website for you to track the status of our validator node and useful metrics for the wider network (<a href="https://radixlogicalmoon.com/status/" class="inline-onebox" rel="noopener nofollow ugc">Status</a>).  This is the first of a few updates we will be making to our website. As always we welcome your feedback</p>
+<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.radixtalk.com/uploads/default/original/1X/b7b9e25ed090e68cc34bed8c8bb2a0eeb8dbfe5a.png" data-download-href="https://cdn.radixtalk.com/uploads/default/b7b9e25ed090e68cc34bed8c8bb2a0eeb8dbfe5a" title="Logical Moon Status Page"><img src="https://cdn.radixtalk.com/uploads/default/optimized/1X/b7b9e25ed090e68cc34bed8c8bb2a0eeb8dbfe5a_2_690x462.png" alt="Logical Moon Status Page" data-base62-sha1="qdjDcuf4j0Ckh6SvFAql0YvG9iW" width="690" height="462" srcset="https://cdn.radixtalk.com/uploads/default/optimized/1X/b7b9e25ed090e68cc34bed8c8bb2a0eeb8dbfe5a_2_690x462.png, https://cdn.radixtalk.com/uploads/default/optimized/1X/b7b9e25ed090e68cc34bed8c8bb2a0eeb8dbfe5a_2_1035x693.png 1.5x, https://cdn.radixtalk.com/uploads/default/optimized/1X/b7b9e25ed090e68cc34bed8c8bb2a0eeb8dbfe5a_2_1380x924.png 2x" data-small-upload="https://cdn.radixtalk.com/uploads/default/optimized/1X/b7b9e25ed090e68cc34bed8c8bb2a0eeb8dbfe5a_2_10x10.png"></a></div><p></p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/radix-logical-moon-new-status-monitor/414">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/radix-logical-moon-new-status-monitor/414</link>
+          <pubDate>Sun, 06 Mar 2022 23:24:25 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-414</guid>
+          <source url="https://radixtalk.com/t/radix-logical-moon-new-status-monitor/414.rss">Radix Logical Moon (New Status Monitor)</source>
+        </item>
+        <item>
+          <title>Staatenlos Node Joins Alliance to Improve Service To Radix Delegators</title>
+          <dc:creator><![CDATA[kesswi | radixdltstaking.com]]></dc:creator>
+          <category>Staking</category>
+          <description><![CDATA[
+            <p>Once again RadixDLT Staking and Radical Staking have great news for the Radix community:</p>
+<p>Staatenlos Node has joined our alliance to maximize 100% uptime and rewards for our delegators and now all three of us will support each other’s validator nodes in the very unlikely event of unprecedented situations where one of our nodes goes down and our respective teams are not able to bring it back up.</p>
+<p>This will provide yet another layer of security, reliability and resiliency on top of the existing measures that we already have in place for our productive nodes individually, such as multiple fully-synced server backups, multiple database backups, and team members that help provide 24x7x365 on-call support for node issues. With the added expertise and experience of the Staatenlos team-who are the co-founders of Ociswap, there are three Node Runner now supporting each other in case of an emergency.</p>
+<p>All delegators of RadixDLT Staking, RadicalStaking and Staatenlos Node can rest easy, knowing that their delegated XRD is in good hands.</p>
+<p>Find out more about Staatenlos Node, check out their <a href="https://staatenlos.ch/staatenlos/radix-staatenlos-node/">website</a> and <a href="https://t.me/radix_staatenlos">Telegram</a>, which supports both German and English speakers.</p>
+<p>As always, we recommend spreading your XRD stakes across multiple delegators, including validator nodes in the bottom 50% to promote the security and decentralisation of the Radix network.</p>
+<p><img src="https://cdn.radixtalk.com/images/emoji/twitter/white_check_mark.png?v=12" title=":white_check_mark:" class="emoji" alt=":white_check_mark:" loading="lazy" width="20" height="20"> Staatenlos Node Validator Address: rv1qtm32gr5dkhgmjjmhxn43yah6y59f5nx6qv3x44kg80mtaaffv39u9tylpu<br>
+<img src="https://cdn.radixtalk.com/images/emoji/twitter/globe_with_meridians.png?v=12" title=":globe_with_meridians:" class="emoji" alt=":globe_with_meridians:" loading="lazy" width="20" height="20"> <a href="https://staatenlos.ch/staatenlos/radix-staatenlos-node/">https://staatenlos.ch/staatenlos/radix-staatenlos-node/</a></p>
+<p><img src="https://cdn.radixtalk.com/images/emoji/twitter/white_check_mark.png?v=12" title=":white_check_mark:" class="emoji" alt=":white_check_mark:" loading="lazy" width="20" height="20"> RadixDLT Staking Validator Address: rv1qgw68kqkryhgxvcvp04wfss0k76svxkqv3zvf57rcvrkuzdluu9ay4snzxc<br>
+<img src="https://cdn.radixtalk.com/images/emoji/twitter/globe_with_meridians.png?v=12" title=":globe_with_meridians:" class="emoji" alt=":globe_with_meridians:" loading="lazy" width="20" height="20"> <a href="https://www.radixdltstaking.com/">https://www.radixdltstaking.com/</a></p>
+<p><img src="https://cdn.radixtalk.com/images/emoji/twitter/white_check_mark.png?v=12" title=":white_check_mark:" class="emoji" alt=":white_check_mark:" loading="lazy" width="20" height="20"> Radical Staking Validator Address: rv1qwqf39p307f58y06ejewfwzyuyqd68denpdk3vpp7rsvmqtsc0kdkhq64gc<br>
+<img src="https://cdn.radixtalk.com/images/emoji/twitter/globe_with_meridians.png?v=12" title=":globe_with_meridians:" class="emoji" alt=":globe_with_meridians:" loading="lazy" width="20" height="20"> <a href="https://www.radicalstaking.com/">https://www.radicalstaking.com/</a></p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/staatenlos-node-joins-alliance-to-improve-service-to-radix-delegators/403">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/staatenlos-node-joins-alliance-to-improve-service-to-radix-delegators/403</link>
+          <pubDate>Sat, 26 Feb 2022 22:36:50 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-403</guid>
+          <source url="https://radixtalk.com/t/staatenlos-node-joins-alliance-to-improve-service-to-radix-delegators/403.rss">Staatenlos Node Joins Alliance to Improve Service To Radix Delegators</source>
+        </item>
+        <item>
+          <title>Radical Staking Running a Giveaway from 02/21/2022 to 03/22/2022</title>
+          <dc:creator><![CDATA[Wilson]]></dc:creator>
+          <category>Staking</category>
+          <description><![CDATA[
+            <p>Radical Staking is running a giveaway for both new and existing delegators from 02/21 to 03/22 that includes $XRD, $OCI, $DGC, Radix Collection, Radical Penguins, and Abandoned Scorpions–including highly ranked rare scorps! <img src="https://cdn.radixtalk.com/images/emoji/twitter/fire.png?v=12" title=":fire:" class="emoji" alt=":fire:" loading="lazy" width="20" height="20"><img src="https://cdn.radixtalk.com/images/emoji/twitter/fire.png?v=12" title=":fire:" class="emoji" alt=":fire:" loading="lazy" width="20" height="20"><img src="https://cdn.radixtalk.com/images/emoji/twitter/fire.png?v=12" title=":fire:" class="emoji" alt=":fire:" loading="lazy" width="20" height="20"></p>
+<p>Any new delegation of at least 1,000 XRD (or increasing your delegation by at least 1,000 XRD, if you’re already a Radical Staking delegator) from 02/21 to 03/22 will enter your wallet address into a random draw for the following prizes:</p>
+<p><img src="https://cdn.radixtalk.com/images/emoji/twitter/1st_place_medal.png?v=12" title=":1st_place_medal:" class="emoji" alt=":1st_place_medal:" loading="lazy" width="20" height="20"> 1st place: 2,000 XRD + 1,000 OCI + 1,000,000 DGC (DogeCube) + Abandoned Scorpion <span class="hashtag">#3114</span> (518th out of 10,000 total rarity!) + 1 Radical Penguin</p>
+<p><img src="https://cdn.radixtalk.com/images/emoji/twitter/2nd_place_medal.png?v=12" title=":2nd_place_medal:" class="emoji" alt=":2nd_place_medal:" loading="lazy" width="20" height="20"> 2nd place: 1,000 XRD + 500 OCI + 500,000 DGC + Abandoned Scorpion <span class="hashtag">#6633</span> (562nd out of 10,000 total rarity!) + 1 Radical Penguin</p>
+<p><img src="https://cdn.radixtalk.com/images/emoji/twitter/3rd_place_medal.png?v=12" title=":3rd_place_medal:" class="emoji" alt=":3rd_place_medal:" loading="lazy" width="20" height="20"> 3rd place: 500 XRD + 250 OCI + 250,000 DGC + Abandoned Scorpion <span class="hashtag">#7156</span> (1,258th out of 10,000 total rarity!) + 1 Radical Penguin</p>
+<p>But wait, there’s more <img src="https://cdn.radixtalk.com/images/emoji/twitter/eyes.png?v=12" title=":eyes:" class="emoji" alt=":eyes:" loading="lazy" width="20" height="20"> If you follow <a class="mention" href="https://radixtalk.com/u/radicalstaking">@RadicalStaking</a> on Twitter, and like and retweet this tweet you will also be entered to win an additional prize of 2,000 XRD + 2,000 RADC (Radix Collection token): <a href="https://twitter.com/RadicalStaking/status/1495740601807122436" rel="noopener nofollow ugc">https://twitter.com/RadicalStaking/status/1495740601807122436</a>. This is a separate random draw on top of the three prizes described above, so you can win even more! <img src="https://cdn.radixtalk.com/images/emoji/twitter/exploding_head.png?v=12" title=":exploding_head:" class="emoji" alt=":exploding_head:" loading="lazy" width="20" height="20"></p>
+<p><img src="https://cdn.radixtalk.com/images/emoji/twitter/point_right.png?v=12" title=":point_right:" class="emoji" alt=":point_right:" loading="lazy" width="20" height="20"> HOW TO PARTICIPATE: Simply delegate 1,000 XRD or more to Radical Staking using our validator address, rv1qwqf39p307f58y06ejewfwzyuyqd68denpdk3vpp7rsvmqtsc0kdkhq64gc, or increase your current delegation by at least 1,000 XRD if you’re already a current delegator, from 02/21 to 03/22.</p>
+<p>The Radical Staking team is really excited to conduct our first giveaway for the Radix community and we hope everyone participates! We really appreciate all the support from the community since the Radix mainnet went live, and we wanted to take this opportunity to give back to the community and also support some of our favorite Radix projects <img src="https://cdn.radixtalk.com/images/emoji/twitter/heart_eyes_cat.png?v=12" title=":heart_eyes_cat:" class="emoji" alt=":heart_eyes_cat:" loading="lazy" width="20" height="20"> <img src="https://cdn.radixtalk.com/images/emoji/twitter/dog.png?v=12" title=":dog:" class="emoji" alt=":dog:" loading="lazy" width="20" height="20"> <img src="https://cdn.radixtalk.com/images/emoji/twitter/scorpion.png?v=12" title=":scorpion:" class="emoji" alt=":scorpion:" loading="lazy" width="20" height="20"> <img src="https://cdn.radixtalk.com/images/emoji/twitter/penguin.png?v=12" title=":penguin:" class="emoji" alt=":penguin:" loading="lazy" width="20" height="20"></p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/radical-staking-running-a-giveaway-from-02-21-2022-to-03-22-2022/396">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/radical-staking-running-a-giveaway-from-02-21-2022-to-03-22-2022/396</link>
+          <pubDate>Mon, 21 Feb 2022 13:39:31 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-396</guid>
+          <source url="https://radixtalk.com/t/radical-staking-running-a-giveaway-from-02-21-2022-to-03-22-2022/396.rss">Radical Staking Running a Giveaway from 02/21/2022 to 03/22/2022</source>
+        </item>
+        <item>
+          <title>Viskosity Staking shutting down</title>
+          <dc:creator><![CDATA[Faraz | Radstakes.com]]></dc:creator>
+          <category>Staking</category>
+          <description><![CDATA[
+            <p>Viskosity have announced today that they have taken the decision to unregister their node on 17th February 2022 and have requested all stakers to remove their stake.</p>
+<blockquote>
+<p>Dear Radix Community,<br>
+The time has come where our node on the network is no longer helping the RadixDLT achieve its goals. PLEASE REMOVE ALL STAKED ALLOCATIONS TO VISCOSITY NODE IMMEDIATELY. We will be unregistering tomorrow. The 10,000 XRD for compensation of our downtime will be distributed on 2/16/22 as well. After internal discussions we have decided this is the best course of action for the overall success of RadixDLT.</p>
+</blockquote>
+<p>Hopefully this is an opportunity for stakers to redistribute stake to nodes who have less than 2% stake and improve decentralisation.  Please remember to stake responsibly: <a href="https://radixtalk.com/t/how-do-i-choose-which-validators-to-delegate-stake-to/140">Choosing Validators</a></p>
+            <p><small>9 posts - 5 participants</small></p>
+            <p><a href="https://radixtalk.com/t/viskosity-staking-shutting-down/371">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/viskosity-staking-shutting-down/371</link>
+          <pubDate>Wed, 16 Feb 2022 09:17:17 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-371</guid>
+          <source url="https://radixtalk.com/t/viskosity-staking-shutting-down/371.rss">Viskosity Staking shutting down</source>
+        </item>
+        <item>
+          <title>Radical Staking and RadixDLT Staking are expanding their Partnership</title>
+          <dc:creator><![CDATA[kesswi | radixdltstaking.com]]></dc:creator>
+          <category>Staking</category>
+          <description><![CDATA[
+            <p>Radical Staking and RadixDLT Staking have great news for the Radix community:</p>
+<p>We’ve expanded our partnership to support each other’s validator nodes in the very unlikely event of unprecedented situations where one of our nodes goes down and our respective teams are not able to bring it back up.</p>
+<p>This will provide an additional layer of security and reliability on top of the existing measures that we already have in place for our productive nodes, such as multiple fully-synced backup servers, multiple database backups, and team members that help provide 24x7x365 on-call support for node issues. This additional layer of security and reliability will provide coverage against catastrophic events that are very unlikely but possible, such as environmental disasters that may cause extended power outages over large geographic areas, or global service outages from multiple cloud providers. We operate in different geographic areas already covering both the U.S. and Europe, and we use different infrastructure and cloud providers, which allows us to complement each other’s validator capabilities in a perfect way.</p>
+<p>Radical Staking and RadixDLT Staking have had a close working relationship since Olympia Mainnet went live, in which we collaborate to perform joint troubleshooting of validator node issues and develop best practices to reduce missed proposals and improve node stability. We then share our findings in the Node-Runners channel in Discord and other places such as our GitHub sites to contribute to the continuous improvement of overall network health.</p>
+<p>We have abided by the Validator Code of Conduct (<a href="https://radixtalk.com/badges/109/validator-code-of-conduct">https://radixtalk.com/badges/109/validator-code-of-conduct</a>) and we actively follow its recommendations.</p>
+<p>We are driven to operate our nodes with maximum uptime and hence, maximizing our delegator’s rewards, and also securing the Radix network as a whole.</p>
+<p>As you evaluate different validator nodes, please consider including our nodes in your delegations. As always, we recommend spreading your XRD stakes across multiple delegators, including validator nodes in the bottom 50% to promote the security and decentralisation of the Radix network.</p>
+<p><strong>RadixDLT Staking Validator Address:</strong><br>
+rv1qgw68kqkryhgxvcvp04wfss0k76svxkqv3zvf57rcvrkuzdluu9ay4snzxc<br>
+<a href="https://www.radixdltstaking.com/" class="onebox" target="_blank" rel="noopener">https://www.radixdltstaking.com/</a></p>
+<p><strong>Radical Staking Validator Address:</strong> rv1qwqf39p307f58y06ejewfwzyuyqd68denpdk3vpp7rsvmqtsc0kdkhq64gc</p><aside class="onebox allowlistedgeneric" data-onebox-src="https://radicalstaking.com/">
+  <header class="source">
+      <img src="https://cdn.radixtalk.com/uploads/default/original/1X/71a6a0e21fc6fc4295bb35fcb25fc29eda6eb0d6.png" class="site-icon" width="64" height="64">
+
+      <a href="https://radicalstaking.com/" target="_blank" rel="noopener">radicalstaking.com</a>
+  </header>
+
+  <article class="onebox-body">
+    
+
+<h3><a href="https://radicalstaking.com/" target="_blank" rel="noopener">Radical Staking - Radix Validator Node Operator</a></h3>
+
+  <p>Radical Staking is a Radix Validator Node Operator that provides a high performance validator node in a secure cloud environment with 24x7x365 monitoring. We run one of the top Radix validator nodes, so if you hold any XRD or eXRD don't waste any...</p>
+
+
+  </article>
+
+  <div class="onebox-metadata">
+    
+    
+  </div>
+
+  <div style="clear: both"></div>
+</aside>
+
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/radical-staking-and-radixdlt-staking-are-expanding-their-partnership/363">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/radical-staking-and-radixdlt-staking-are-expanding-their-partnership/363</link>
+          <pubDate>Fri, 11 Feb 2022 19:40:11 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-363</guid>
+          <source url="https://radixtalk.com/t/radical-staking-and-radixdlt-staking-are-expanding-their-partnership/363.rss">Radical Staking and RadixDLT Staking are expanding their Partnership</source>
+        </item>
+        <item>
+          <title>Allnodes increasing fees to 5%</title>
+          <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+          <category>Staking</category>
+          <description><![CDATA[
+            <p>Allnodes have announced that they will increase their staking fee from 0% to 5% after 1st March 2022</p>
+<p><a href="https://mobile.twitter.com/Allnodes/status/1491109983089729536" class="onebox" target="_blank" rel="noopener">https://mobile.twitter.com/Allnodes/status/1491109983089729536</a></p>
+            <p><small>7 posts - 6 participants</small></p>
+            <p><a href="https://radixtalk.com/t/allnodes-increasing-fees-to-5/357">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/allnodes-increasing-fees-to-5/357</link>
+          <pubDate>Wed, 09 Feb 2022 10:12:51 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-357</guid>
+          <source url="https://radixtalk.com/t/allnodes-increasing-fees-to-5/357.rss">Allnodes increasing fees to 5%</source>
+        </item>
+        <item>
+          <title>Introducing Stakenordic.com</title>
+          <dc:creator><![CDATA[Trond | StakeNordic.com]]></dc:creator>
+          <category>Validator Introductions</category>
+          <description><![CDATA[
+            <p><a href="http://Stakenordic.com" rel="noopener nofollow ugc">Stakenordic.com</a> - rv1qvq5dpfrte49l3hdzzarftmsqejqzf3d8dxnrx2tzdc0ljcrg88uvnlvpau<br>
+Fees: 0.99%</p>
+<p><strong>Website</strong></p>
+<ul>
+<li><a href="https://www.stakenordic.com" rel="noopener nofollow ugc">https://www.stakenordic.com</a></li>
+</ul>
+<p><strong>Contact Details</strong></p>
+<ul>
+<li>Telegram: <a href="https://t.me/StakeNordic" class="inline-onebox" rel="noopener nofollow ugc">Telegram: Contact @StakeNordic</a>
+</li>
+<li>Discord: Trond | <a href="http://Stakenordic.com" rel="noopener nofollow ugc">Stakenordic.com</a> @ <a href="https://discord.com/invite/RadixDLT" class="inline-onebox" rel="noopener nofollow ugc">Radix DLT</a>
+</li>
+<li>Twitter: <a href="https://www.twitter.com/stakenordic" rel="noopener nofollow ugc">https://www.twitter.com/stakenordic</a>
+</li>
+</ul>
+<p><strong>Languages</strong></p>
+<ul>
+<li>English</li>
+</ul>
+<p><strong>About Me/Us</strong><br>
+I’m Trond from Norway, a working family guy interested in tech in general. I’ve always had a broad interest in technology and have robust little network of servers running in the basement as an example of how nerdy i am. Just so you know how old i am, in my childhood i had fun with gaming and programming on the C64, Amiga, and on PC’s with BBS’s with modems before the internet/http came out. I think that says alot! <img src="https://cdn.radixtalk.com/images/emoji/twitter/smiley.png?v=12" title=":smiley:" class="emoji" alt=":smiley:"><br>
+Been following crypto for years, but with covid i had spare time so i got involved in crypto in 2020 with mining. This expanded and today i have several rigs and run some nodes as well as a hobby/investment.<br>
+I came across Radix late last year while looking for a superior technical blockchain which solves the trilemma and immediately saw it’s huge potential. I’m therefore commited to supporting the Radix<br>
+project and to see it grow into that potential with you all. I’m pressed for time between work and family, but asides from the nodes i’m also working on a simple NFT marketplace these days which i think is a fun project.<br>
+I also have a friend/colleague that helps out with monitoring and acting on alarms if i am unavailable as a last resort, but most of the node work is done by me. I’m considering getting some more help if it’s not enough.</p>
+<p><strong>Validator Infrastructure</strong></p>
+<p>The infrastructure is decentralised and avoiding big cloud providers i something that is a main criteria in our setup. This is in case AWS or others have a centralised problem and 30% of the blockchain suffers with it.<br>
+Therefore i run three nodes currently. One is located in Norway, Sandefjord at Terrahost. The other is located in Sweden with Inleed. The tertiary node is in my basement. Nodes are monitored with Grafana, Pagerduty and Uptimerobot.<br>
+Snapshots are taken as well in case of corruption and fast restore is needed/possible. Changes are tested on stokenet (hosted on contabo) before anything is done in production. Failover can be done with premade scripts globally reachable via our phones with termius/VPN.</p>
+<p><strong>Experience</strong><br>
+I work as a network/IT architect and i’ve been in the business for 25+ years working as a consultant, for different companies and ISPs. Has set up alot servers in different shapes and sizes, late years it’s more linux, containers and clouds.<br>
+At work we do some Terraform/Ansible for automation, i also do some setups in AWS cloud. I’m not a strong coder, have done some java/python before, but mainly focus on running the nodes smooth with tools that are generally available and try to keep things simple and tested so they function when they are needed.</p>
+<p><strong>Why should delegators stake to your validator?</strong><br>
+Well it’s simple really. I’m dedicated to securing yours and my stake, and everyone else really too. I even got my family invested in Radix because i believe in it, so we need to make it the best crypto out there! I’m also a responsible person so when i set out on doing something it’s all in and doing it properly or not at all.<br>
+I’m just about always online and reachable, and the phone is set to getting messages and alerts in different channels. So therefore i/we will react if something crucial happens fast.</p>
+<p>Other things about us is that Norway has green hydropower energy, because we have alot of mountains and waterfalls. We are also an ociswap validator partner, so you get 10% extra $OCI when you stake with us. We are also running $VKC giveaways to new stakers now and in the future. $VKC or vikingcoin as the name is, is a token created for usage in future ecosystem dapps. So now as a start it’s usable as payment on our sistersite <a href="http://www.vikingplanet.net" rel="noopener nofollow ugc">www.vikingplanet.net</a> (simple NFT marketplace).<br>
+We are also doing NFT giveaways now and in the future. Lastly we as a node are truly in the bottom of the 100, so we really need your stake to stay there or even climb a bit. Also staking with the bottom 50 helps desentralise the stake, so not the top nodes and downtime on them can affect the entire network.</p>
+<p>So hopefully you will consider a portion of your stake with us, we would really appreciate it!<br>
+If you have any questions or anything else you are wondering about that i failed to mention, feel free to contact me.</p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/introducing-stakenordic-com/355">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/introducing-stakenordic-com/355</link>
+          <pubDate>Tue, 08 Feb 2022 10:14:22 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-355</guid>
+          <source url="https://radixtalk.com/t/introducing-stakenordic-com/355.rss">Introducing Stakenordic.com</source>
+        </item>
+        <item>
+          <title>Introducing Avaunt Staking</title>
+          <dc:creator><![CDATA[Avaunt]]></dc:creator>
+          <category>Validator Introductions</category>
+          <description><![CDATA[
+            <p><img src="https://cdn.radixtalk.com/images/emoji/twitter/fast_forward.png?v=12" title=":fast_forward:" class="emoji" alt=":fast_forward:"> Avaunt Staking <img src="https://cdn.radixtalk.com/images/emoji/twitter/fast_forward.png?v=12" title=":fast_forward:" class="emoji" alt=":fast_forward:"> - rv1qdn4mwharah5c3w5sw4zfyagvkftrj47ruwatjfr6z2r7pmvk5uuu84j45v<br>
+Fees: 2%</p>
+<p><strong>Website</strong></p>
+<ul>
+<li><a href="https://avaunt-staking.com">https://avaunt-staking.com</a></li>
+<li><a href="https://radixdashboard.com">https://radixdashboard.com</a></li>
+</ul>
+<p><strong>Contact Details</strong></p>
+<ul>
+<li>Telegram: <a href="https://t.me/avaunt">@vaunt</a>
+</li>
+<li>Discord: AVaunt#5349</li>
+<li>Twitter: <a href="https://twitter.com/a_vaunt">Avaunt</a>
+</li>
+<li>Email: <a href="mailto:staking@avaunt.io">staking@avaunt.io</a>
+</li>
+</ul>
+<p><strong>Languages</strong></p>
+<ul>
+<li>English</li>
+</ul>
+<p><strong>About Me/Us</strong><br>
+I have been working in infrastructure technologies within the banking and finance industry for over 20 years now. At the start of the pandemic I was forced into bit of a career break which gave me the opportunity to spend more time researching into Proof of Stake projects and looking at where I could apply my skills whilst also being part of the evolution of the industry. At the tail end of 2020 I made the decision to start running nodes and setup Avaunt Staking Services where we run nodes on a number of POS and DPOS networks including Radix and Avalanche.<br>
+I also recently become an official Radvocate, providing support to the community across the many Radix related social channels.</p>
+<p><strong>Validator Infrastructure</strong><br>
+We currently run two nodes (primary &amp; backup) across two separate AWS London Availability Zones. We have decided on AWS as they provide a consistently high SLA and uptime and although they are more expensive than other Cloud providers we have never had an outage or downtime since we first started using them in 2016.</p>
+<p><strong>Experience</strong><br>
+Avaunt Staking has been running a Radix node since the start of Betanet and have been an active member across all the social channels, providing support to new node runners and delegators alike. We created the popular and free community dashboard <a href="https://radixdashboard.com">https://radixdashboard.com</a>. We have been running Validator nodes on other dPOS and standard POS networks for the past 18 months.</p>
+<p><strong>Why should delegators stake to your validator?</strong><br>
+I absolutely love Crypto and Technology innovation and when the opportunity arose to run a validator node on the future of de-fi I immediately jumped at the chance to support the network. I also love learning and have spent many hours reading blogs and watching videos on node running and the different architectures. The pace of innovation is just mind blowing and I absolutely love being a part of it.<br>
+I think all the Radix Validator community are an awesome bunch of people and they never cease to amaze me with the support they give to other validators and delegators for the greater good of the network. I think what sets Avaunt apart however is that we provide value added services like our community dashboard <a href="http://radixdashboard.com">radixdashboard.com</a> and initiating community events like the Know your Node Runner AMA sessions.</p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/introducing-avaunt-staking/298">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/introducing-avaunt-staking/298</link>
+          <pubDate>Fri, 28 Jan 2022 09:55:02 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-298</guid>
+          <source url="https://radixtalk.com/t/introducing-avaunt-staking/298.rss">Introducing Avaunt Staking</source>
+        </item>
+        <item>
+          <title>Introducing &quot;RadixDLT Staking 🇨🇭&quot;</title>
+          <dc:creator><![CDATA[kesswi | radixdltstaking.com]]></dc:creator>
+          <category>Validator Introductions</category>
+          <description><![CDATA[
+            <p>Validator Name - <code>RadixDLT Staking</code><br>
+Fees: <code>0.99%</code></p>
+<p><strong>Website</strong></p>
+<ul>
+<li><a href="https://www.radixdltstaking.com" rel="noopener nofollow ugc">https://www.radixdltstaking.com</a></li>
+</ul>
+<p><strong>Contact Details</strong><br>
+You can reach us via a variety of different communication channels:</p>
+<ul>
+<li>Telegram: <span class="mention">@Kesswitz</span>
+</li>
+<li>Discord: kesswi#1061</li>
+<li>Twitter: <span class="mention">@Kesswitz</span>
+</li>
+<li>Email: info [at] radixdltstaking .com</li>
+</ul>
+<p><strong>Languages</strong></p>
+<ul>
+<li>English</li>
+<li>Germain</li>
+<li>Turkish</li>
+</ul>
+<p><strong>About Me/Us</strong><br>
+We are a small team of IT Infrastructure &amp; Network Engineers and Crypto-Enthusiasts for many years. Our team is very experienced in operating mission critical IT systems and applications in an “Always-On” manner.</p>
+<p><strong>Validator Infrastructure</strong></p>
+<ul>
+<li>0.99% fixed Validator Fee to cover our cost of Infrastructure and Operations</li>
+<li>Local Datacenter Provider, no Hyper-Scaler Setup</li>
+<li>Multiple Security Layers implemented</li>
+<li>Backup Node and Processes in place to minimise potential downtime</li>
+<li>24/7 Monitoring and Alerting</li>
+<li>Large Owner Pledge to the Validator Node</li>
+<li>We are fully “KYC”-ed</li>
+<li>Located and operating in Switzerland  <img src="https://cdn.radixtalk.com/uploads/default/original/1X/bc9de2eebe1c7bcbabc169394f73e1d89ac410e0.png" alt="" data-base62-sha1="qUA293K4h5Ix0GKmoQpYC051Yha" width="17" height="17">
+</li>
+</ul>
+<p><strong>Experience</strong><br>
+Our team consists of professional Systems- and Network Engineers with a lot of experience managing and operating mission critical systems professionally. We work hard and relentlessly to optimize our Node’s uptime and hence our Delegator’s rewards.<br>
+We are a proud member of the Radix Validator family since the early Betanet days all the way through Mainnet launch.</p>
+<p><strong>Why should delegators stake to your validator?</strong></p>
+<ul>
+<li>We distribute XSEED-tokens to all our current and new delegators, which allows them to participate in our Staking Service economic success. So, just stake with us and receive XSEED tokens for free. Find more about the XSEED-token program <a href="https://www.radixdltstaking.com/xseed-token/" rel="noopener nofollow ugc">here</a>.</li>
+<li>To provide our Delegators with additional incentives and benefits, we are forging partnerships with different Radix projects and Node Runners. Our current partner ships can be found on our website.</li>
+<li>Sustainability and Green IT is very important to us. This was one of our main requirements when we evaluated suitable Datacenter providers in Switzerland. Luckily, we found Datacenters providers, who share our vision of a clean and sustainable IT Infrastructure.</li>
+</ul>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/introducing-radixdlt-staking/251">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/introducing-radixdlt-staking/251</link>
+          <pubDate>Mon, 17 Jan 2022 20:46:05 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-251</guid>
+          <source url="https://radixtalk.com/t/introducing-radixdlt-staking/251.rss">Introducing &quot;RadixDLT Staking 🇨🇭&quot;</source>
+        </item>
+        <item>
+          <title>Introducing RadixLogicalMoon</title>
+          <dc:creator><![CDATA[Katan &amp; Rory | Radix Logical Moon ]]></dc:creator>
+          <category>Validator Introductions</category>
+          <description><![CDATA[
+            <p>Validator Name - <code>rv1qtzlupqghjyvdsp3nn0cpkdvmtrfe7ac8czump5r6hgm0rnlhvznj88xw7a</code><br>
+Fees: <code>1.75%</code></p>
+<p><strong>Website</strong></p>
+<ul>
+<li><a href="https://radixlogicalmoon.com/" rel="noopener nofollow ugc">radixlogicalmoon.com</a></li>
+</ul>
+<p><strong>Contact Details</strong></p>
+<ul>
+<li>Telegram: <a href="https://t.me/RadixLogicalMoon_Katan" rel="noopener nofollow ugc">@RadixLogicalMoon_Katan</a>
+</li>
+<li>Discord: <code>@Katan-LogicalMoon | @Rory-LogicalMoon</code>
+</li>
+<li>Twitter: <code>@radixlogical</code>
+</li>
+</ul>
+<p><strong>Languages</strong></p>
+<ul>
+<li>English</li>
+<li>Japanese (Rory)</li>
+</ul>
+<p><strong>About Me/Us</strong><br>
+<em>The team at Logical Moon are composed of two friends who are based out of Brisbane, Australia. We have been involved in the cryptocurrency scene since 2016 and have followed the Radix Project since December 2017. We both have extensive experience in delivering/maintaining enterprise grade solutions across a variety of industries and have a genuine passion for technology</em></p>
+<p><strong>Validator Infrastructure</strong><br>
+<em>The validator node itself was brought to life in September 2021 and we were able to quickly establish ourselves into the top 100 having been involved in an early investment group for Radix. It currently runs on Azure in the Australia South East Region and we have a backup node constantly running in the Australia East region to ensure high availability. We provide 24/7 support and leverage Azure’s alerting capabilities to escalate any issues to our team. We constantly push to ensure the server is performant/secured and review/update our infrastructure regularly</em></p>
+<p><strong>Experience</strong><br>
+<em>Katan is a Solution Architect and Developer with 20 years of industry experience and his colleague Rory is adept in building cloud based applications and currently helps build and manage a number of applications for an international legal software application firm</em></p>
+<p><strong>Why should delegators stake to your validator?</strong><br>
+<em>We care about the network, the community and ultimately the Radix project as a whole. To achieve a truly decentralised network, it is important to ensure there are enough nodes globally available and with a spread of stake distributed adequately amongst them.  We’ve been initially focused on ensuring we have a stable setup, but as we seem to have found our sweet spot, you’ll see us more actively share content built to help support the radix network</em></p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/introducing-radixlogicalmoon/247">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/introducing-radixlogicalmoon/247</link>
+          <pubDate>Mon, 17 Jan 2022 11:26:04 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-247</guid>
+          <source url="https://radixtalk.com/t/introducing-radixlogicalmoon/247.rss">Introducing RadixLogicalMoon</source>
+        </item>
+        <item>
+          <title>How to stake your XRD</title>
+          <dc:creator><![CDATA[Mattia | MattiaNode]]></dc:creator>
+          <category>Staking</category>
+          <description><![CDATA[
+            <h1>
+<a name="how-to-stake-xrd-1" class="anchor" href="https://radixtalk.com#how-to-stake-xrd-1"></a>How to stake XRD</h1>
+<p>Staking your XRD makes you earn rewards at the end of each epoch and helps secure the network, so let’s stake!<br>
+You can check the current <em><em>APY %</em></em> anytime on <a href="https://www.radixdashboard.com/">Radix Dashboard</a> by Avaunt Staking, calculated as an estimate per epoch with a 3% fee.</p>
+<ol>
+<li>Login into your wallet</li>
+</ol>
+<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.radixtalk.com/uploads/default/original/1X/3a51bed546e2a2c75272147c852768c259067b66.png" data-download-href="https://cdn.radixtalk.com/uploads/default/3a51bed546e2a2c75272147c852768c259067b66" title="image"><img src="https://cdn.radixtalk.com/uploads/default/optimized/1X/3a51bed546e2a2c75272147c852768c259067b66_2_690x374.png" alt="image" data-base62-sha1="8jUPAxK3oDBpv7eqTJqMd6hXK86" width="690" height="374" srcset="https://cdn.radixtalk.com/uploads/default/optimized/1X/3a51bed546e2a2c75272147c852768c259067b66_2_690x374.png, https://cdn.radixtalk.com/uploads/default/optimized/1X/3a51bed546e2a2c75272147c852768c259067b66_2_1035x561.png 1.5x, https://cdn.radixtalk.com/uploads/default/original/1X/3a51bed546e2a2c75272147c852768c259067b66.png 2x" data-small-upload="https://cdn.radixtalk.com/uploads/default/optimized/1X/3a51bed546e2a2c75272147c852768c259067b66_2_10x10.png"></a></div><p></p>
+<ol start="2">
+<li>Click on “Stake &amp; Unstake”</li>
+</ol>
+<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.radixtalk.com/uploads/default/original/1X/7ed8e61dce40454a939a798425db1a3949af1060.jpeg" data-download-href="https://cdn.radixtalk.com/uploads/default/7ed8e61dce40454a939a798425db1a3949af1060" title="image"><img src="https://cdn.radixtalk.com/uploads/default/optimized/1X/7ed8e61dce40454a939a798425db1a3949af1060_2_690x374.jpeg" alt="image" data-base62-sha1="i68RD68sGR5RwMWoy5wX4AGa0cE" width="690" height="374" srcset="https://cdn.radixtalk.com/uploads/default/optimized/1X/7ed8e61dce40454a939a798425db1a3949af1060_2_690x374.jpeg, https://cdn.radixtalk.com/uploads/default/optimized/1X/7ed8e61dce40454a939a798425db1a3949af1060_2_1035x561.jpeg 1.5x, https://cdn.radixtalk.com/uploads/default/original/1X/7ed8e61dce40454a939a798425db1a3949af1060.jpeg 2x" data-small-upload="https://cdn.radixtalk.com/uploads/default/optimized/1X/7ed8e61dce40454a939a798425db1a3949af1060_2_10x10.png"></a></div><p></p>
+<ol start="3">
+<li>Enter the validator address and how much XRD you want to stake (<strong>minimum 90 XRD</strong>)</li>
+</ol>
+<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.radixtalk.com/uploads/default/original/1X/bb8dc76401b5c12cdeb02e11731ca6cd3c49f4ec.jpeg" data-download-href="https://cdn.radixtalk.com/uploads/default/bb8dc76401b5c12cdeb02e11731ca6cd3c49f4ec" title="image"><img src="https://cdn.radixtalk.com/uploads/default/optimized/1X/bb8dc76401b5c12cdeb02e11731ca6cd3c49f4ec_2_690x374.jpeg" alt="image" data-base62-sha1="qLb2TU5TayLxQgJbE32sYVPenko" width="690" height="374" srcset="https://cdn.radixtalk.com/uploads/default/optimized/1X/bb8dc76401b5c12cdeb02e11731ca6cd3c49f4ec_2_690x374.jpeg, https://cdn.radixtalk.com/uploads/default/optimized/1X/bb8dc76401b5c12cdeb02e11731ca6cd3c49f4ec_2_1035x561.jpeg 1.5x, https://cdn.radixtalk.com/uploads/default/original/1X/bb8dc76401b5c12cdeb02e11731ca6cd3c49f4ec.jpeg 2x" data-small-upload="https://cdn.radixtalk.com/uploads/default/optimized/1X/bb8dc76401b5c12cdeb02e11731ca6cd3c49f4ec_2_10x10.png"></a></div><p></p>
+<h3>
+<a name="you-need-at-least-06-xrd-to-request-an-unstake-so-dont-stake-100-of-your-balance-2" class="anchor" href="https://radixtalk.com#you-need-at-least-06-xrd-to-request-an-unstake-so-dont-stake-100-of-your-balance-2"></a>You need at least 0.6 XRD to request an unstake, so don’t stake 100% of your balance!</h3>
+<ol start="4">
+<li>Click “Stake” and enter your PIN.</li>
+</ol>
+<blockquote>
+<p>Forgot your PIN? You can change it, using your password, by going to <em>Wallet Settings</em> (lower left corner) and clicking on <em>Change PIN</em>.</p>
+</blockquote>
+<ol start="5">
+<li>Done! You can now close your wallet.</li>
+</ol>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/how-to-stake-your-xrd/179">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/how-to-stake-your-xrd/179</link>
+          <pubDate>Wed, 29 Dec 2021 20:20:22 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-179</guid>
+          <source url="https://radixtalk.com/t/how-to-stake-your-xrd/179.rss">How to stake your XRD</source>
+        </item>
+        <item>
+          <title>What is the Owner Stake in the Radix Explorer?</title>
+          <dc:creator><![CDATA[Faraz | Radstakes.com]]></dc:creator>
+          <category>Staking</category>
+          <description><![CDATA[
+            <p>You will notice in the Radix explorer validator list (and other community sites) that as well as the validator fee and uptime, the “Owner Stake” is also provided.</p>
+<p>The owner stake is the amount of XRD that the validator owner has delegated to their own node and is a measure of how much “skin in the game” they have.</p>
+<p>In the future when slashing is implemented (see here: <a href="https://radixtalk.com/t/does-radix-implement-slashing/175">Slashing</a>) the owner stake will help to signify how much personal stake the validator is risking and can be used as a way of determining whether or not they are likely to engage in any malicious behaviour.</p>
+<p>However, some validators elect not to use the owner wallet for their personal staking and choose to stake from an alternative wallet.  This could be for a number of honest reasons, such as wanting to separate their income between fees and staking and is not necessarily a cause for concern.  In this case, it is advisable to contact the validator to understand their reasoning.</p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/what-is-the-owner-stake-in-the-radix-explorer/177">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/what-is-the-owner-stake-in-the-radix-explorer/177</link>
+          <pubDate>Wed, 29 Dec 2021 19:23:28 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-177</guid>
+          <source url="https://radixtalk.com/t/what-is-the-owner-stake-in-the-radix-explorer/177.rss">What is the Owner Stake in the Radix Explorer?</source>
+        </item>
+        <item>
+          <title>Why does it take so long to unstake from a Validator?</title>
+          <dc:creator><![CDATA[Faraz | Radstakes.com]]></dc:creator>
+          <category>Staking</category>
+          <description><![CDATA[
+            <p>Whenever a delegator unstakes from a validator there is a 500 epoch (~12-14 days) delay before the staked tokens are available to be used.  This delay is designed to allow adequate time for any malicious behaviour by a validator to be detected and punished accordingly.</p>
+<p>In future, slashing will be implemented that will penalise validators (and their stakers to some extent) in the event of malicious behaviour (such as a double spend).  The details of how slashing will be implemented is not yet known.  See also this topic for further details on slashing:</p>
+<p><a href="https://radixtalk.com/t/does-radix-implement-slashing/175">Does Radix implement slashing?</a></p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/why-does-it-take-so-long-to-unstake-from-a-validator/176">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/why-does-it-take-so-long-to-unstake-from-a-validator/176</link>
+          <pubDate>Wed, 29 Dec 2021 19:21:13 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-176</guid>
+          <source url="https://radixtalk.com/t/why-does-it-take-so-long-to-unstake-from-a-validator/176.rss">Why does it take so long to unstake from a Validator?</source>
+        </item>
+        <item>
+          <title>Does Radix implement slashing?</title>
+          <dc:creator><![CDATA[Faraz | Radstakes.com]]></dc:creator>
+          <category>Staking</category>
+          <description><![CDATA[
+            <p>Not currently - there is however currently a 500 epoch (~12 days) delay to unstake.  Should a validator act maliciously, this would limit the time available to profit from any double spend or similar attack, and also allow adequate time for confident slashing in future.</p>
+<p>The Radix team have clearly communicated their intention to introduce slashing after mainnet release, but we are yet to learn when this will be implemented and the precise details.  You can see Matt’s (Radix CPO) response regarding slashing in the official Discord server here:</p>
+<p><a href="https://discord.com/channels/417762285172555786/818997782966566943/856639266565259305">Slashing Discussion 1</a></p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/does-radix-implement-slashing/175">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/does-radix-implement-slashing/175</link>
+          <pubDate>Wed, 29 Dec 2021 19:20:57 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-175</guid>
+          <source url="https://radixtalk.com/t/does-radix-implement-slashing/175.rss">Does Radix implement slashing?</source>
+        </item>
+        <item>
+          <title>Do I have to trust the Validator node I am staking to?</title>
+          <dc:creator><![CDATA[Faraz | Radstakes.com]]></dc:creator>
+          <category>Staking</category>
+          <description><![CDATA[
+            <p>There is a degree of trust required in your chosen validator(s).  As stakers, we are delegating our stake to these validators to act in the best interests of the network, in exchange for emission rewards.</p>
+<p>However currently (at the time of writing) slashing has not yet been implemented on Radix, which is the mechanism in which validators (and stakers to a degree) are penalised if a validator acts maliciously (such as attempting a double spend).  You can find out more about slashing here: <a href="https://radixtalk.com/t/does-radix-implement-slashing/175">Slashing</a></p>
+<p>Aside from malicious validator activity (which is really the worst case scenario and hopefully a very rare occurence!) there are other ways in which we may need to trust validators.</p>
+<p>For example, we need to trust our validators to operate in not only the network’s best interests, but also our own.  This means operating reliable nodes with consistently high uptime.</p>
+<p>Every validator will experience downtime at some point, due to unplanned maintenance, attacks etc… but the important thing to remember in these cases, is that your staked XRD never actually leave your wallet.  In the event that a validator did go offline (or even disappear altogether) there is no risk of funds being lost.  You would simply need to unstake, and after the <a href="https://radixtalk.com/t/how-long-does-it-take-to-unstake-xrd-from-a-validator/97">Unstaking Delay</a> would have full access to your XRD once again.</p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/do-i-have-to-trust-the-validator-node-i-am-staking-to/174">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/do-i-have-to-trust-the-validator-node-i-am-staking-to/174</link>
+          <pubDate>Wed, 29 Dec 2021 19:17:23 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-174</guid>
+          <source url="https://radixtalk.com/t/do-i-have-to-trust-the-validator-node-i-am-staking-to/174.rss">Do I have to trust the Validator node I am staking to?</source>
+        </item>
+        <item>
+          <title>What impact do Validator fees have on my staking rewards?</title>
+          <dc:creator><![CDATA[Faraz | Radstakes.com]]></dc:creator>
+          <category>Staking</category>
+          <description><![CDATA[
+            <p>Validators specify a fee for providing their services to delegators.  Fees vary from 0% to 5%+ and will affect the rewards received.  Here’s a couple of examples to explain the impact of validator fees on staking rewards:</p>
+<p>Let’s assume you are staking on 3 validators, we’ll call them Validator A, B and C (not very creative I know!)</p>
+<p>Let’s also assume that the APY for staking is 10% and you are staking 10,000XRD with each validator.</p>
+<p>Validator A has specified a fee of 0%<br>
+Validator B has specified a fee of 1%<br>
+Validator C has specified a fee of 3%</p>
+<p>With Validator A, you can expect to receive 1000XRD in year 1 (1000 - 0% = 10% APY)<br>
+With Validator B, you can expect to receive 990XRD in year 1 (1000 - 1% = 9.9% APY)<br>
+With Validator C, you can expect to receive 970XRD in year 1 (1000 - 3% = 9.7% APY)</p>
+<p>As you can see, the fees are calculated based on the rewards received and not the APY.  The impact of fees on staking rewards are therefore quite insignificant compared to uptime for example, which will have a much greater effect on rewards received.</p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/what-impact-do-validator-fees-have-on-my-staking-rewards/168">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/what-impact-do-validator-fees-have-on-my-staking-rewards/168</link>
+          <pubDate>Wed, 29 Dec 2021 19:07:10 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-168</guid>
+          <source url="https://radixtalk.com/t/what-impact-do-validator-fees-have-on-my-staking-rewards/168.rss">What impact do Validator fees have on my staking rewards?</source>
+        </item>
+        <item>
+          <title>What happens to my staking rewards when a validators falls out of the Top 100?</title>
+          <dc:creator><![CDATA[Mattia | MattiaNode]]></dc:creator>
+          <category>Staking</category>
+          <description><![CDATA[
+            <p>If a validator you’re delegated to drops out of the Top 100, it automatically gets removed from the <em>validator set.</em><br>
+This means that the validator node <strong>won’t be making proposals and thus won’t earn any staking rewards</strong>, until it reaches back into the Top 100.</p>
+<p>It is advised in those cases to either contact the node runner (to see if he/she has any plans to push the validator back into the top 100) or to request an unstake and join another validator in the top 100.<br>
+Keep in mind that unstaking <em>always</em> takes 500 epochs (read more about why <a href="https://radixtalk.com/t/why-does-it-take-so-long-to-unstake-from-a-validator/176">here.</a>)</p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/what-happens-to-my-staking-rewards-when-a-validators-falls-out-of-the-top-100/166">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/what-happens-to-my-staking-rewards-when-a-validators-falls-out-of-the-top-100/166</link>
+          <pubDate>Wed, 29 Dec 2021 19:05:05 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-166</guid>
+          <source url="https://radixtalk.com/t/what-happens-to-my-staking-rewards-when-a-validators-falls-out-of-the-top-100/166.rss">What happens to my staking rewards when a validators falls out of the Top 100?</source>
+        </item>
+        <item>
+          <title>Can Validators increase their fees?</title>
+          <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+          <category>Staking</category>
+          <description><![CDATA[
+            <p>Yes, Validators can increase and decrease their fees at any time, subject to the rules below:</p>
+<h3>
+<a name="fee-increases-1" class="anchor" href="https://radixtalk.com#fee-increases-1"></a>Fee Increases</h3>
+<ul>
+<li>A 500 epoch delay occurs before the fee increase is applied</li>
+<li>Fees may only increase by a maximum absolute increase of 10% at a time (e.g. from 0% to 10%, or 2% to 12%). If a validator wants to increase their fees by more than 10% then they will need to apply the changes over multiple 500 epoch delays.</li>
+<li>The new, higher fee, will be displayed immediately in the Radix Explorer so that existing and potential stakers can see what the new fee will be.</li>
+</ul>
+<h3>
+<a name="fee-decreases-2" class="anchor" href="https://radixtalk.com#fee-decreases-2"></a>Fee Decreases</h3>
+<ul>
+<li>A fee decrease will take effect at the start of the next epoch</li>
+<li>There is no limit to the decrease (e.g. from 20% to 0%)</li>
+</ul>
+<h2>
+<a name="further-reading-3" class="anchor" href="https://radixtalk.com#further-reading-3"></a>Further Reading</h2>
+<aside class="onebox allowlistedgeneric" data-onebox-src="https://learn.radixdlt.com/article/are-there-any-limits-on-validators-changing-their-validator-fee-percent">
+  <header class="source">
+      <img src="https://radixtalk.com/uploads/default/original/1X/fed6c22b3f2ffa507d36ebe7838db55b671cb0c4.png" class="site-icon" width="32" height="32">
+
+      <a href="https://learn.radixdlt.com/article/are-there-any-limits-on-validators-changing-their-validator-fee-percent" target="_blank" rel="noopener">learn.radixdlt.com</a>
+  </header>
+
+  <article class="onebox-body">
+    
+
+<h3><a href="https://learn.radixdlt.com/article/are-there-any-limits-on-validators-changing-their-validator-fee-percent" target="_blank" rel="noopener">FAQ: Staking &amp; Validating on Radix</a></h3>
+
+  <p>Are there any limits on validators changing their validator fee percent?</p>
+
+
+  </article>
+
+  <div class="onebox-metadata">
+    
+    
+  </div>
+
+  <div style="clear: both"></div>
+</aside>
+
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/can-validators-increase-their-fees/164">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/can-validators-increase-their-fees/164</link>
+          <pubDate>Wed, 29 Dec 2021 18:56:57 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-164</guid>
+          <source url="https://radixtalk.com/t/can-validators-increase-their-fees/164.rss">Can Validators increase their fees?</source>
+        </item>
+        <item>
+          <title>Introducing 🍕 MattiaNode</title>
+          <dc:creator><![CDATA[Mattia | MattiaNode]]></dc:creator>
+          <category>Validator Introductions</category>
+          <description><![CDATA[
+            <p>Validator Name - <code>🍕 MattiaNode (IT🇮🇹) </code><br>
+Validator ID - <code>rv1qvjz86qwa7l80y8vhfuhz6957ch6texdmpk98rg2gtakhr0avan4jplkxy7</code><br>
+Fees: <code>1.5%</code></p>
+<p><strong>Website</strong></p>
+<ul>
+<li><a href="http://stake.mattia.wiki/">stake.mattia.wiki</a></li>
+<li><a href="https://explorer.radixdlt.com/#/validators/rv1qvjz86qwa7l80y8vhfuhz6957ch6texdmpk98rg2gtakhr0avan4jplkxy7">Radix Explorer</a></li>
+</ul>
+<p><strong>Contact Details</strong></p>
+<ul>
+<li>Telegram: <a href="https://t.me/mattiaxrd"><img src="https://cdn.radixtalk.com/images/emoji/twitter/pizza.png?v=12" title=":pizza:" class="emoji" alt=":pizza:">MattiaNode (IT​:it:) | stake.mattia.wiki</a>
+</li>
+<li>Telegram (personal): <a href="https://t.me/mattiabe98">@mattiabe98</a>
+</li>
+<li>Discord: <code>Mattia#9426</code>
+</li>
+<li>Twitter: <a href="https://twitter.com/0xMattia">0xMattia</a>
+</li>
+</ul>
+<p><strong>Languages</strong></p>
+<ul>
+<li>English</li>
+<li>Italian</li>
+</ul>
+<p><strong>About Me/Us</strong><br>
+Hello! My name is <em>Mattia</em> and I’m a 23 years old Telecommunications Engineering <img src="https://cdn.radixtalk.com/images/emoji/twitter/satellite.png?v=12" title=":satellite:" class="emoji" alt=":satellite:"> student.<br>
+I’ve been following Radix since 2013 when it was still called eMunie. I decided to run my own validator to have an active part in the community and to promote decentralization.</p>
+<p>I also wrote my own mini “wiki” to help newcomers with easy to follow how-to guides for staking and much more. You can find me on Radix’s Discord or Telegram channel, I often post there!</p>
+<p><strong>Validator Infrastructure</strong><br>
+MattiaNode is running on a beefy self-hosted server in Italy, with an <strong>AMD Ryzen, 48GB of DDR4 3600MHz RAM, 1TB of NVMe SSD storage (WD SN750) and 1Gbit/s fiber connection</strong>, all backed up with an UPS that can keep everything running at least for an hour and a 4G LTE redundant internet connection.</p>
+<p>We also have a <strong>backup node</strong> running in Finland with the <strong>same CPU, 64GB of DDR4 RAM,  1TB of NVMe SSD storage and 1Gbit/s fiber connection</strong>, always synched and ready to failover.</p>
+<p>Everything is monitored with Grafana and multiple alerts are setup with UptimeRobot <img src="https://cdn.radixtalk.com/images/emoji/twitter/robot.png?v=12" title=":robot:" class="emoji" alt=":robot:">, PagerDuty and more.</p>
+<p><strong>Experience</strong><br>
+I’ve been running servers in my homelab for quite some years now; I started small, with just some SBC (single-board computer), and now I have multiple VMs and LXC containers running across all my servers.<br>
+My experience with crypto goes way back though: I got into crypto around 2012, when Bitcointalk was the core of all cryptocurrencies. I mined Bitcoins and Ethereum using my own gaming PC and had lots of fun learning all kinds of new things.<br>
+I’ve been following Radix’s development since 2013 and also participated in eMunie’s beta-testing.</p>
+<p><strong>Why should delegators stake to your validator?</strong><br>
+I’m pretty sure that I’m the only validator node running on a self hosted server, right here where I live!<br>
+By delegating your stake to my validator you’re promoting <em><strong>geographical decentralization</strong></em> and <em><strong>provider decentralization</strong></em>: there aren’t a lot of nodes running in Italy and none that are running on my ISP.<br>
+Most are hosted on Amazon’s AWS, Google Cloud, Azure or Hetzner, while my node is independent from all those companies.<br>
+If all those companies were to go down, most validators would be offline but mine would be still alive and kicking <img src="https://cdn.radixtalk.com/images/emoji/twitter/grinning_face_with_smiling_eyes.png?v=12" title=":grinning_face_with_smiling_eyes:" class="emoji" alt=":grinning_face_with_smiling_eyes:"></p>
+<p>I’m also very dedicated to running a node since it fits two of my hobbies: cryptocurrencies and managing servers <img src="https://cdn.radixtalk.com/images/emoji/twitter/grinning.png?v=12" title=":grinning:" class="emoji" alt=":grinning:"></p>
+<p>I successfully completed <strong>KYC with Radix Foundation</strong> and I am active in both Discord and Telegram groups, helping everyone that needs it and maybe even writing an article just to help them on my wiki.</p>
+<p>All my XRD are staked at my own node, so you can bet that I monitor it closely <img src="https://cdn.radixtalk.com/images/emoji/twitter/wink.png?v=12" title=":wink:" class="emoji" alt=":wink:"><br>
+Oh and I’m an <strong>OciSwap partner</strong>! You get 10% more OCI if you stake at my node. Meow <img src="https://cdn.radixtalk.com/images/emoji/twitter/heart_eyes_cat.png?v=12" title=":heart_eyes_cat:" class="emoji" alt=":heart_eyes_cat:"></p>
+<p>Don’t hesitate to contact me if you have any questions!</p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/introducing-mattianode/152">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/introducing-mattianode/152</link>
+          <pubDate>Wed, 29 Dec 2021 11:01:53 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-152</guid>
+          <source url="https://radixtalk.com/t/introducing-mattianode/152.rss">Introducing 🍕 MattiaNode</source>
+        </item>
+        <item>
+          <title>How do I choose which Validators to delegate stake to?</title>
+          <dc:creator><![CDATA[Faraz | Radstakes.com]]></dc:creator>
+          <category>Staking</category>
+          <description><![CDATA[
+            <p>There are a number of considerations to make when selecting validators.  Prior to Xi’an release in 2023 when Radix will be fully sharded, there are 100 validators who take part in consensus and earn emissions, so we must choose carefully between these validators to delegate our stake.  Here’s a guide for some of the considerations to make when selecting validators:</p>
+<p><strong>How many?</strong><br>
+It is advisable to delegate your stake to a number of different validators.  This reduces your risk of missed rewards in the event of a validator going offline or suffering some downtime.  A general rule of thumb is to select 5 validators.  There are however no limits, so you may choose to stake with more or less.</p>
+<p><strong>Decentralisation</strong><br>
+In the interest of ensuring that the network is truly decentralised, it is preferable for no single validator to have too much of the total stake.  In an ideal world, the top 100 validators would each have 1% of the total stake, so validators who are already above 2% total stake should be avoided.</p>
+<p><strong>Security</strong><br>
+Similarly to the decentralisation argument above, if one or only a small number of nodes have a considerable amount of stake, this can put the security of the network at risk - for example a malicious actor only would only have to attack a smaller subset of nodes to cause disruption.  As above, it is advisable to stake on nodes with less than 2% stake.</p>
+<p><strong>Fees</strong><br>
+Validator fees are automatically deducted by the protocol and range from 0% - 3% typically.  Many validators operate nodes with 0% fees, however it should be considered that in order to operate robust infrastructure with backup nodes, monitoring systems and DDoS protection requires a significant financial outlay and it therefore may be a false economy to stake only to 0% fee validators.  Many validators will also not be able to sustain 0% fees indefinitely so the best advice is to contact them to understand what their longer term fee strategy is. (remember it takes ~2 weeks to unstake, so any benefit of 0% fees now could soon be lost if a validator then increases fees to 5% and you need to unstake).  Fees also have much less impact on your staking rewards than uptime (see thread <a href="https://radixtalk.com/t/what-impact-do-validator-fees-have-on-my-staking-rewards/168">here</a>).  A general rule of thumb is fees up to around 3% are considered fair.</p>
+<p><strong>Uptime</strong><br>
+Each validator is required to take part in consensus rounds in order to earn emissions.  The number of consensus proposals made are counted along with any proposals that are missed to determine the validator’s uptime.  If a validator’s uptime drops to less than 98% in any single epoch, no emissions are earned for that epoch.  It is therefore recommended to keep an eye on the uptime metric which is recorded on the official <a href="https://explorer.radixdlt.com/#/validators">Radix Explorer</a>, or on community tools such as <a href="https://www.radixscan.io/ValidatorTable.shtml">Radixscan</a> and <a href="https://www.radixdashboard.com/">Radix Dashboard</a>.  This uptime metric is measured over the last 150 epochs (~4 days) and should be 99.9%+ to ensure consistent high performance.</p>
+<p><strong>Geography/Server Provider</strong><br>
+Validators are spread throughout the world, the locations of which can be found using <a href="https://www.radix.earth/">Radix.earth</a> for example. In the interests of decentralisation, it is advisable to choose validators from under-represented geographies.  Furthermore, many validators use cloud providers to host their servers.  It is therefore advisable to consider avoiding the big providers such as Google, AWS, Azure in favour of smaller data centres.  Otherwise an outage at any one data centre could be very detrimental to the performance and security of the network.</p>
+            <p><small>6 posts - 5 participants</small></p>
+            <p><a href="https://radixtalk.com/t/how-do-i-choose-which-validators-to-delegate-stake-to/140">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/how-do-i-choose-which-validators-to-delegate-stake-to/140</link>
+          <pubDate>Tue, 28 Dec 2021 21:28:01 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-140</guid>
+          <source url="https://radixtalk.com/t/how-do-i-choose-which-validators-to-delegate-stake-to/140.rss">How do I choose which Validators to delegate stake to?</source>
+        </item>
+        <item>
+          <title>Introducing Radstakes</title>
+          <dc:creator><![CDATA[Faraz | Radstakes.com]]></dc:creator>
+          <category>Validator Introductions</category>
+          <description><![CDATA[
+            <p>Radstakes - <code>rv1qdzgjh98d4mexymc492eq82zwmspmh9mlz4wqgswta4jcaw0nnwuj53mj5w</code><br>
+Fees: <code>2%</code></p>
+<p><strong>Website</strong></p>
+<ul>
+<li><a href="https://Radstakes.com">https://Radstakes.com</a></li>
+</ul>
+<p><strong>Contact Details</strong></p>
+<ul>
+<li>Telegram: <a href="https://t.me/RadstakesValidator">@Radstakes</a>
+</li>
+<li>Discord: Faraz | <a href="http://Radstakes.com#4550">Radstakes.com#4550</a>
+</li>
+<li>Twitter: <a href="https://twitter.com/Radstakes">@Radstakes</a>
+</li>
+<li>Email: <a href="mailto:Faraz@Radstakes.com">Faraz@Radstakes.com</a>
+</li>
+</ul>
+<p><strong>Languages</strong></p>
+<ul>
+<li>English</li>
+</ul>
+<p><strong>About Me/Us</strong><br>
+Hi, I’m Faraz - owner of the Radstakes validator on Radix.  We were originally selected by the Radix team to run a node during Betanet and Stokenet testing, and have since continued to operate a node in the top 100 since the inception of the Radix mainnet and hope to continue to do so for a very long time to come!</p>
+<p>In addition to operating a validator node, I also assist with the onboarding of newcomers to Radix by assisting other node runners and answering general queries in the official Radix social channels and now here in Radix Talk, so if you have any questions about Radix, please don’t hesitate to ask!</p>
+<p><strong>Validator Infrastructure</strong><br>
+Our primary validator node is hosted in Sweden, with a backup full node hosted in Germany in a separate data centre.  We pledge to only use dedicated hardware to ensure we never share our resources with others, with a minimum of 8 core CPU, 64GB of RAM and 2TB of NVMe SSD storage to future proof our operations and provide consistently high performance to our stakers.</p>
+<p><strong>Experience</strong><br>
+After first diving into the Crypto rabbit hole in 2014, we have mined both Bitcoin and Ethereum previously, using our own hardware and hosted infrastructure.  Since discovering Radix in 2017, we have been avid believers in the promise of this tech to disrupt the crypto industry and lead the DeFi revolution.</p>
+<p><strong>Why should delegators stake to your validator?</strong><br>
+We pride ourselves on transparency and trust, so always maintain an active presence in all social channels, and have completed KYC with the Radix foundation.  With our commitment on fixed fees, reliable infrastructure and honest communication, we aim to provide reassurance to the entire community that they can depend on us.</p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/introducing-radstakes/122">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/introducing-radstakes/122</link>
+          <pubDate>Mon, 27 Dec 2021 16:04:58 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-122</guid>
+          <source url="https://radixtalk.com/t/introducing-radstakes/122.rss">Introducing Radstakes</source>
+        </item>
+        <item>
+          <title>Introducing RadixPool</title>
+          <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+          <category>Validator Introductions</category>
+          <description><![CDATA[
+            <p>RadixPool - <code>rv1q04u5zwtgffsqkvr08xqm6vpm3gwxh4uqwtjpx5p47ew0m0v8m5zs3m3jed</code></p>
+<p>Fees: <code>3%</code></p>
+<p><strong>Website</strong></p>
+<ul>
+<li><a href="https://www.radixpool.com">https://www.radixpool.com</a></li>
+</ul>
+<p><strong>Contact Details</strong></p>
+<ul>
+<li>Telegram: <a href="https://t.me/stuart_radixpool">@Stuart_RadixPool</a>
+</li>
+<li>Discord: Stuart | RadixPool#0282</li>
+<li>Twitter: <a href="https://twitter.com/radixpool">@radixpool</a>
+</li>
+<li>Email: <a href="mailto:stuart@radixpool.com">stuart@radixpool.com</a>
+</li>
+</ul>
+<p><strong>Languages</strong></p>
+<ul>
+<li>English</li>
+<li>Korean</li>
+</ul>
+<p><strong>About Me/Us</strong><br>
+Hi, I’m Stuart from RadixPool. We run professionally managed Radix Validators under our own name and for other clients.</p>
+<p>Although RadixPool is a relative newcomer to the Radix Community, we were fortunate to be selected to take part in the Radix Betanet and subsequent Stokenet Test network. We have tried to make a small contribution back to the community by creating documentation, scripts, performance optimisations and providing support in the Discord channels.</p>
+<p><strong>Validator Infrastructure</strong><br>
+RadixPool is running 8 servers supporting the Radix Mainnet distributed over 3 countries - Germany, United Kingdom and The Netherlands. Each Radix Node is running on dedicated hardware with a minimum specification of 64Gb ECC Ram, 2 x 1Tb NVMe RAID1 storage, 8c/16t CPUs and 1Gbit/s bandwidth. Every Validator node has a backup server of the same specification in a different geographical location to the primary. Multiple service providers (currently Hetzner, OVH, and Scaleway) are used to reduce operation risk due to a provider outage.</p>
+<p><strong>Experience</strong><br>
+My most recent role was System Architect for a Fintech startup (Emerging Markets Bond Exchange) where I was responsible for designing and setting up the production infrastructure. I have also worked as a financial system integrator and worked on a trading floor for 6 years as a front office developer.</p>
+<p><strong>Why should delegators stake to your validator?</strong><br>
+RadixPool is committed to supporting the Radix Community by building tools, understanding the Radix internals and creating documentation to share our experience and findings. RadixPool sponsors the RadixTalk forum.</p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/introducing-radixpool/35">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/introducing-radixpool/35</link>
+          <pubDate>Fri, 24 Dec 2021 16:58:39 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-35</guid>
+          <source url="https://radixtalk.com/t/introducing-radixpool/35.rss">Introducing RadixPool</source>
+        </item>
+        <item>
+          <title>About the Staking category</title>
+          <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+          <category>Staking</category>
+          <description><![CDATA[
+            <p>Topics about delegating stake to Radix validators</p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/about-the-staking-category/34">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/about-the-staking-category/34</link>
+          <pubDate>Fri, 24 Dec 2021 16:38:52 +0000</pubDate>
+          <discourse:topicPinned>Yes</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-34</guid>
+          <source url="https://radixtalk.com/t/about-the-staking-category/34.rss">About the Staking category</source>
+        </item>
+  </channel>
+</rss>

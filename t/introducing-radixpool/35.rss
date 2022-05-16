@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Introducing RadixPool</title>
+    <link>https://radixtalk.com/t/introducing-radixpool/35</link>
+    <description>RadixPool - `rv1q04u5zwtgffsqkvr08xqm6vpm3gwxh4uqwtjpx5p47ew0m0v8m5zs3m3jed`
+
+Fees: `3%`
+
+**Website**
+
+* https://www.radixpool.com
+
+**Contact Details**
+
+* Telegram: [@Stuart_RadixPool](https://t.me/stuart_radixpool)
+* Discord: Stuart | RadixPool#0282
+* Twitter: [@radixpool](https://twitter.com/radixpool)
+* Email: stuart@radixpool.com
+
+**Languages**
+* English
+* Korean
+
+**About Me/Us**
+Hi, I&#39;m Stuart from RadixPool. We run professionally managed Radix Validators under our own name and for other clients.
+
+Although RadixPool is a relative newcomer to the Radix Community, we were fortunate to be selected to take part in the Radix Betanet and subsequent Stokenet Test network. We have tried to make a small contribution back to the community by creating documentation, scripts, performance optimisations and providing support in the Discord channels.
+
+**Validator Infrastructure**
+RadixPool is running 8 servers supporting the Radix Mainnet distributed over 3 countries - Germany, United Kingdom and The Netherlands. Each Radix Node is running on dedicated hardware with a minimum specification of 64Gb ECC Ram, 2 x 1Tb NVMe RAID1 storage, 8c/16t CPUs and 1Gbit/s bandwidth. Every Validator node has a backup server of the same specification in a different geographical location to the primary. Multiple service providers (currently Hetzner, OVH, and Scaleway) are used to reduce operation risk due to a provider outage. 
+
+**Experience**
+My most recent role was System Architect for a Fintech startup (Emerging Markets Bond Exchange) where I was responsible for designing and setting up the production infrastructure. I have also worked as a financial system integrator and worked on a trading floor for 6 years as a front office developer.
+
+**Why should delegators stake to your validator?**
+RadixPool is committed to supporting the Radix Community by building tools, understanding the Radix internals and creating documentation to share our experience and findings. RadixPool sponsors the RadixTalk forum.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Sun, 16 Jan 2022 20:35:47 +0000</lastBuildDate>
+    <category>Validator Introductions</category>
+    <atom:link href="https://radixtalk.com/t/introducing-radixpool/35.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Introducing RadixPool</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>RadixPool - <code>rv1q04u5zwtgffsqkvr08xqm6vpm3gwxh4uqwtjpx5p47ew0m0v8m5zs3m3jed</code></p>
+<p>Fees: <code>3%</code></p>
+<p><strong>Website</strong></p>
+<ul>
+<li><a href="https://www.radixpool.com">https://www.radixpool.com</a></li>
+</ul>
+<p><strong>Contact Details</strong></p>
+<ul>
+<li>Telegram: <a href="https://t.me/stuart_radixpool">@Stuart_RadixPool</a>
+</li>
+<li>Discord: Stuart | RadixPool#0282</li>
+<li>Twitter: <a href="https://twitter.com/radixpool">@radixpool</a>
+</li>
+<li>Email: <a href="mailto:stuart@radixpool.com">stuart@radixpool.com</a>
+</li>
+</ul>
+<p><strong>Languages</strong></p>
+<ul>
+<li>English</li>
+<li>Korean</li>
+</ul>
+<p><strong>About Me/Us</strong><br>
+Hi, I’m Stuart from RadixPool. We run professionally managed Radix Validators under our own name and for other clients.</p>
+<p>Although RadixPool is a relative newcomer to the Radix Community, we were fortunate to be selected to take part in the Radix Betanet and subsequent Stokenet Test network. We have tried to make a small contribution back to the community by creating documentation, scripts, performance optimisations and providing support in the Discord channels.</p>
+<p><strong>Validator Infrastructure</strong><br>
+RadixPool is running 8 servers supporting the Radix Mainnet distributed over 3 countries - Germany, United Kingdom and The Netherlands. Each Radix Node is running on dedicated hardware with a minimum specification of 64Gb ECC Ram, 2 x 1Tb NVMe RAID1 storage, 8c/16t CPUs and 1Gbit/s bandwidth. Every Validator node has a backup server of the same specification in a different geographical location to the primary. Multiple service providers (currently Hetzner, OVH, and Scaleway) are used to reduce operation risk due to a provider outage.</p>
+<p><strong>Experience</strong><br>
+My most recent role was System Architect for a Fintech startup (Emerging Markets Bond Exchange) where I was responsible for designing and setting up the production infrastructure. I have also worked as a financial system integrator and worked on a trading floor for 6 years as a front office developer.</p>
+<p><strong>Why should delegators stake to your validator?</strong><br>
+RadixPool is committed to supporting the Radix Community by building tools, understanding the Radix internals and creating documentation to share our experience and findings. RadixPool sponsors the RadixTalk forum.</p>
+          <p><a href="https://radixtalk.com/t/introducing-radixpool/35/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/introducing-radixpool/35/1</link>
+        <pubDate>Fri, 24 Dec 2021 16:58:40 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-35-1</guid>
+        <source url="https://radixtalk.com/t/introducing-radixpool/35.rss">Introducing RadixPool</source>
+      </item>
+  </channel>
+</rss>

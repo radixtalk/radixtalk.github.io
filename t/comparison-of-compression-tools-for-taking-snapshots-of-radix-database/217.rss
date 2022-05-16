@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Comparison of compression tools for taking snapshots of Radix database</title>
+    <link>https://radixtalk.com/t/comparison-of-compression-tools-for-taking-snapshots-of-radix-database/217</link>
+    <description>RadixPool is planning to host snapshots of the Radix node database on a Content Delivery Network (CDN) to allow Radix validator nodes to quickly recover from a corrupted database.
+
+We compared a number of compression tools on a 43Gb copy of the Radix database and recorded the following results:
+
+|Algorithm | Tool | Options |Compress | Size (bytes) | Decompress | 10Mbits/s | 50Mbit/s | 100Mbit/s|
+|-|-|-|-|-|-|-|-|-|
+|-|-|-|-|45,652,470,885|-|10h08m|2h01m|1h00m|
+|gzip|gzip||19m35s|25,009,428,317|3m50s|5h34m|1h07m|0h34m|
+|gzip|[pigz](https://zlib.net/pigz/)||2m32s|24,962,921,223|1m58s|5h33m|1h07m|0h34m|
+|gzip|[pigz](https://zlib.net/pigz/)|`--best`|6m37s|24,932,450,560|2m10s|5h32m|1h07m|0h34m|
+|xz|[pixz](https://github.com/vasi/pixz)||21m33s|21,702,409,016|1m38s|4h49m|0h57m|0h28m|
+|xz|[pixz](https://github.com/vasi/pixz)|`-9 -p8`|42m58s|21,412,039,372|1m39s|4h45m|0h57m|0h28m|
+|7z|[7z](https://www.7-zip.org/)||20m50s|21,683,532,361|16m15s|4h49m|0h57m|0h28m|
+|7z|[7z](https://www.7-zip.org/)|`-m0=lzma2 -mx`|35m57s|21,367,916,757|16m01s|4h44m|0h56m|0h28m|
+|zstd|[zstd](https://facebook.github.io/zstd/)|`--fast=1`|1m26s|24,062,687,524|1m13s|5h20m|1h04m|0h32m|
+|zstd|[zstd](https://facebook.github.io/zstd/)||2m53s|23,032,636,843|1m23s|5h07m|1h01m|0h30m|
+|zstd|[zstd](https://facebook.github.io/zstd/)|`--long`|4m53s|22,743,480,552|1m26s|5h03m|1h00m|0h30m|
+|zstd|[zstd](https://facebook.github.io/zstd/)|`-19 -T8`|39m25s|21,999,437,864|1m32s|4h53m|0h58m|0h29m|
+
+### Results
+
+The xz algorithm was selected for Radix database compression for it&#39;s high compression ratio and fast decompression speed. xz has binaries for Linux and Windows.
+
+### Not Tested:
+* [lzip](https://www.nongnu.org/lzip/plzip.html)
+* [bzip2](https://sourceware.org/bzip2/)
+* [lz4](https://lz4.github.io/lz4/)
+
+## Further Reading:
+
+* https://linuxreviews.org/Comparison_of_Compression_Algorithms
+* https://www.omnicalculator.com/other/download-time</description>
+    <language>en-GB</language>
+    <lastBuildDate>Fri, 07 Jan 2022 19:50:26 +0000</lastBuildDate>
+    <category>Validators</category>
+    <atom:link href="https://radixtalk.com/t/comparison-of-compression-tools-for-taking-snapshots-of-radix-database/217.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Comparison of compression tools for taking snapshots of Radix database</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>RadixPool is planning to host snapshots of the Radix node database on a Content Delivery Network (CDN) to allow Radix validator nodes to quickly recover from a corrupted database.</p>
+<p>We compared a number of compression tools on a 43Gb copy of the Radix database and recorded the following results:</p>
+<div class="md-table">
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Tool</th>
+<th>Options</th>
+<th>Compress</th>
+<th>Size (bytes)</th>
+<th>Decompress</th>
+<th>10Mbits/s</th>
+<th>50Mbit/s</th>
+<th>100Mbit/s</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>45,652,470,885</td>
+<td>-</td>
+<td>10h08m</td>
+<td>2h01m</td>
+<td>1h00m</td>
+</tr>
+<tr>
+<td>gzip</td>
+<td>gzip</td>
+<td></td>
+<td>19m35s</td>
+<td>25,009,428,317</td>
+<td>3m50s</td>
+<td>5h34m</td>
+<td>1h07m</td>
+<td>0h34m</td>
+</tr>
+<tr>
+<td>gzip</td>
+<td><a href="https://zlib.net/pigz/">pigz</a></td>
+<td></td>
+<td>2m32s</td>
+<td>24,962,921,223</td>
+<td>1m58s</td>
+<td>5h33m</td>
+<td>1h07m</td>
+<td>0h34m</td>
+</tr>
+<tr>
+<td>gzip</td>
+<td><a href="https://zlib.net/pigz/">pigz</a></td>
+<td><code>--best</code></td>
+<td>6m37s</td>
+<td>24,932,450,560</td>
+<td>2m10s</td>
+<td>5h32m</td>
+<td>1h07m</td>
+<td>0h34m</td>
+</tr>
+<tr>
+<td>xz</td>
+<td><a href="https://github.com/vasi/pixz">pixz</a></td>
+<td></td>
+<td>21m33s</td>
+<td>21,702,409,016</td>
+<td>1m38s</td>
+<td>4h49m</td>
+<td>0h57m</td>
+<td>0h28m</td>
+</tr>
+<tr>
+<td>xz</td>
+<td><a href="https://github.com/vasi/pixz">pixz</a></td>
+<td><code>-9 -p8</code></td>
+<td>42m58s</td>
+<td>21,412,039,372</td>
+<td>1m39s</td>
+<td>4h45m</td>
+<td>0h57m</td>
+<td>0h28m</td>
+</tr>
+<tr>
+<td>7z</td>
+<td><a href="https://www.7-zip.org/">7z</a></td>
+<td></td>
+<td>20m50s</td>
+<td>21,683,532,361</td>
+<td>16m15s</td>
+<td>4h49m</td>
+<td>0h57m</td>
+<td>0h28m</td>
+</tr>
+<tr>
+<td>7z</td>
+<td><a href="https://www.7-zip.org/">7z</a></td>
+<td><code>-m0=lzma2 -mx</code></td>
+<td>35m57s</td>
+<td>21,367,916,757</td>
+<td>16m01s</td>
+<td>4h44m</td>
+<td>0h56m</td>
+<td>0h28m</td>
+</tr>
+<tr>
+<td>zstd</td>
+<td><a href="https://facebook.github.io/zstd/">zstd</a></td>
+<td><code>--fast=1</code></td>
+<td>1m26s</td>
+<td>24,062,687,524</td>
+<td>1m13s</td>
+<td>5h20m</td>
+<td>1h04m</td>
+<td>0h32m</td>
+</tr>
+<tr>
+<td>zstd</td>
+<td><a href="https://facebook.github.io/zstd/">zstd</a></td>
+<td></td>
+<td>2m53s</td>
+<td>23,032,636,843</td>
+<td>1m23s</td>
+<td>5h07m</td>
+<td>1h01m</td>
+<td>0h30m</td>
+</tr>
+<tr>
+<td>zstd</td>
+<td><a href="https://facebook.github.io/zstd/">zstd</a></td>
+<td><code>--long</code></td>
+<td>4m53s</td>
+<td>22,743,480,552</td>
+<td>1m26s</td>
+<td>5h03m</td>
+<td>1h00m</td>
+<td>0h30m</td>
+</tr>
+<tr>
+<td>zstd</td>
+<td><a href="https://facebook.github.io/zstd/">zstd</a></td>
+<td><code>-19 -T8</code></td>
+<td>39m25s</td>
+<td>21,999,437,864</td>
+<td>1m32s</td>
+<td>4h53m</td>
+<td>0h58m</td>
+<td>0h29m</td>
+</tr>
+</tbody>
+</table>
+</div><h3>
+<a name="results-1" class="anchor" href="https://radixtalk.com#results-1"></a>Results</h3>
+<p>The xz algorithm was selected for Radix database compression for it’s high compression ratio and fast decompression speed. xz has binaries for Linux and Windows.</p>
+<h3>
+<a name="not-tested-2" class="anchor" href="https://radixtalk.com#not-tested-2"></a>Not Tested:</h3>
+<ul>
+<li><a href="https://www.nongnu.org/lzip/plzip.html">lzip</a></li>
+<li><a href="https://sourceware.org/bzip2/">bzip2</a></li>
+<li><a href="https://lz4.github.io/lz4/">lz4</a></li>
+</ul>
+<h2>
+<a name="further-reading-3" class="anchor" href="https://radixtalk.com#further-reading-3"></a>Further Reading:</h2>
+<ul>
+<li><a href="https://linuxreviews.org/Comparison_of_Compression_Algorithms" class="inline-onebox">Comparison of Compression Algorithms - LinuxReviews</a></li>
+<li><a href="https://www.omnicalculator.com/other/download-time" class="inline-onebox">Download Time Calculator</a></li>
+</ul>
+          <p><a href="https://radixtalk.com/t/comparison-of-compression-tools-for-taking-snapshots-of-radix-database/217/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/comparison-of-compression-tools-for-taking-snapshots-of-radix-database/217/1</link>
+        <pubDate>Fri, 07 Jan 2022 09:41:28 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-217-1</guid>
+        <source url="https://radixtalk.com/t/comparison-of-compression-tools-for-taking-snapshots-of-radix-database/217.rss">Comparison of compression tools for taking snapshots of Radix database</source>
+      </item>
+  </channel>
+</rss>

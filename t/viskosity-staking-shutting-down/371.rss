@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Viskosity Staking shutting down</title>
+    <link>https://radixtalk.com/t/viskosity-staking-shutting-down/371</link>
+    <description>Viskosity have announced today that they have taken the decision to unregister their node on 17th February 2022 and have requested all stakers to remove their stake.
+
+&gt; Dear Radix Community,
+&gt; The time has come where our node on the network is no longer helping the RadixDLT achieve its goals. PLEASE REMOVE ALL STAKED ALLOCATIONS TO VISCOSITY NODE IMMEDIATELY. We will be unregistering tomorrow. The 10,000 XRD for compensation of our downtime will be distributed on 2/16/22 as well. After internal discussions we have decided this is the best course of action for the overall success of RadixDLT.
+
+Hopefully this is an opportunity for stakers to redistribute stake to nodes who have less than 2% stake and improve decentralisation.  Please remember to stake responsibly: [Choosing Validators](https://radixtalk.com/t/how-do-i-choose-which-validators-to-delegate-stake-to/140)</description>
+    <language>en-GB</language>
+    <lastBuildDate>Tue, 22 Mar 2022 10:18:41 +0000</lastBuildDate>
+    <category>Staking</category>
+    <atom:link href="https://radixtalk.com/t/viskosity-staking-shutting-down/371.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Viskosity Staking shutting down</title>
+        <dc:creator><![CDATA[Faraz | Radstakes.com]]></dc:creator>
+        <description><![CDATA[
+            <p>Hi Siebe,</p>
+<p>There’s no need to worry, this is likely an issue with the wallet interface rather than the network.  Firstly check that you have the latest wallet version (v1.3.2), you can update if required at <a href="https://wallet.radixdlt.com">Wallet</a> and then try to unstake (ensuring you have 0.6XRD in your unstaked balance).</p>
+<p>I would also suggest that if you still get this error, try to unstake slightly less than the maximum</p>
+          <p><a href="https://radixtalk.com/t/viskosity-staking-shutting-down/371/9">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/viskosity-staking-shutting-down/371/9</link>
+        <pubDate>Tue, 22 Mar 2022 10:05:18 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-371-9</guid>
+        <source url="https://radixtalk.com/t/viskosity-staking-shutting-down/371.rss">Viskosity Staking shutting down</source>
+      </item>
+      <item>
+        <title>Viskosity Staking shutting down</title>
+        <dc:creator><![CDATA[Siebe]]></dc:creator>
+        <description><![CDATA[
+            <p>Hi, for me the same issue i didnt noticed that they quit.<br>
+Now i am trying to unstake but that is not possible.</p>
+<p>The message is: You must wait until the ext epoch beofre unstaking this quantity of XRD - 0 XRD are currently pending stake and cannot yet be unstaked.</p>
+<p>Do i have to worry?</p>
+          <p><a href="https://radixtalk.com/t/viskosity-staking-shutting-down/371/8">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/viskosity-staking-shutting-down/371/8</link>
+        <pubDate>Tue, 22 Mar 2022 09:48:04 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-371-8</guid>
+        <source url="https://radixtalk.com/t/viskosity-staking-shutting-down/371.rss">Viskosity Staking shutting down</source>
+      </item>
+      <item>
+        <title>Viskosity Staking shutting down</title>
+        <dc:creator><![CDATA[Faraz | Radstakes.com]]></dc:creator>
+        <description><![CDATA[
+            <p>Nope no need to worry, your stake can never disappear - you simply need to unstake and after ~2 weeks your funds will be back under your control and can be restaked elsewhere.</p>
+          <p><a href="https://radixtalk.com/t/viskosity-staking-shutting-down/371/7">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/viskosity-staking-shutting-down/371/7</link>
+        <pubDate>Sun, 20 Mar 2022 19:33:20 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-371-7</guid>
+        <source url="https://radixtalk.com/t/viskosity-staking-shutting-down/371.rss">Viskosity Staking shutting down</source>
+      </item>
+      <item>
+        <title>Viskosity Staking shutting down</title>
+        <dc:creator><![CDATA[CJ]]></dc:creator>
+        <description><![CDATA[
+            <p>I had some health issues and wasn’t paying attention for a few weeks. Does this mean my stake with Viskosity is now gone if I didn’t already move it?</p>
+          <p><a href="https://radixtalk.com/t/viskosity-staking-shutting-down/371/6">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/viskosity-staking-shutting-down/371/6</link>
+        <pubDate>Sun, 20 Mar 2022 19:13:03 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-371-6</guid>
+        <source url="https://radixtalk.com/t/viskosity-staking-shutting-down/371.rss">Viskosity Staking shutting down</source>
+      </item>
+      <item>
+        <title>Viskosity Staking shutting down</title>
+        <dc:creator><![CDATA[Jazzer 9F]]></dc:creator>
+        <description><![CDATA[
+            <p>Thanks to Viskosity for doing the right thing here.</p>
+          <p><a href="https://radixtalk.com/t/viskosity-staking-shutting-down/371/5">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/viskosity-staking-shutting-down/371/5</link>
+        <pubDate>Sat, 26 Feb 2022 10:30:30 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-371-5</guid>
+        <source url="https://radixtalk.com/t/viskosity-staking-shutting-down/371.rss">Viskosity Staking shutting down</source>
+      </item>
+      <item>
+        <title>Viskosity Staking shutting down</title>
+        <dc:creator><![CDATA[Faraz | Radstakes.com]]></dc:creator>
+        <description><![CDATA[
+            <p>Viskosity staking have now officially unregistered their node and left the validator set.  See below, their announcement from Telegram earlier today:</p>
+<blockquote>
+<p>Dear Radix Community,<br>
+To follow up on our previous announcement, we have decided that it is in the best interest of the success of RadixDLT to shutdown our node because it has caused issues on the network. We allocated over 10,000XRD and the distribution to our staking community to reimburse for the downtime last month, was finally completed yesterday. During the verification process we noticed there are a couple of wallets with stake remaining on our node. We would like to remind everyone to PLEASE REMOVE ALL STAKED XRD ON VISKOSITY STAKING. As of today, the node has officially been unregistered and taken offline. During this unfortunate time, we did learn something about the network’s protocol and how it can be affected by one malfunctioning node. We hope that the community has taken this into consideration and will consider spreading their stake among more variety of nodes. Thank you all for who previously staked to us, and we look forward to the future of RadixDLT.<br>
+Sincerely,<br>
+Viskosity Staking</p>
+</blockquote>
+          <p><a href="https://radixtalk.com/t/viskosity-staking-shutting-down/371/4">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/viskosity-staking-shutting-down/371/4</link>
+        <pubDate>Thu, 24 Feb 2022 21:37:05 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-371-4</guid>
+        <source url="https://radixtalk.com/t/viskosity-staking-shutting-down/371.rss">Viskosity Staking shutting down</source>
+      </item>
+      <item>
+        <title>Viskosity Staking shutting down</title>
+        <dc:creator><![CDATA[Jazzer 9F]]></dc:creator>
+        <description><![CDATA[
+            <p>From the dropped proposals it seems like they were having acute issues with node stability. Rapid unregister is definitely the right call imo so I applaud them for that.</p>
+<p>Sure, it’s not great for their delegates, especially the ones that aren’t active daily, but it is the best for the network stability and security which should always be the main priority for all validators and delegates.</p>
+          <p><a href="https://radixtalk.com/t/viskosity-staking-shutting-down/371/3">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/viskosity-staking-shutting-down/371/3</link>
+        <pubDate>Thu, 17 Feb 2022 16:34:26 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-371-3</guid>
+        <source url="https://radixtalk.com/t/viskosity-staking-shutting-down/371.rss">Viskosity Staking shutting down</source>
+      </item>
+      <item>
+        <title>Viskosity Staking shutting down</title>
+        <dc:creator><![CDATA[Mattia | MattiaNode]]></dc:creator>
+        <description><![CDATA[
+            <p>After all the patience Viskosity’s stakers had with its downtime, waiting multiple days before the node came back up, unregistering one day after the announcement is just sad.<br>
+Many people won’t see the announcement in time and will leave their XRD staked in a node that doesn’t exist anymore. I hope this pushes people to stake more responsibly and do their own research on their next validator.</p>
+          <p><a href="https://radixtalk.com/t/viskosity-staking-shutting-down/371/2">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/viskosity-staking-shutting-down/371/2</link>
+        <pubDate>Wed, 16 Feb 2022 13:14:43 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-371-2</guid>
+        <source url="https://radixtalk.com/t/viskosity-staking-shutting-down/371.rss">Viskosity Staking shutting down</source>
+      </item>
+      <item>
+        <title>Viskosity Staking shutting down</title>
+        <dc:creator><![CDATA[Faraz | Radstakes.com]]></dc:creator>
+        <description><![CDATA[
+            <p>Viskosity have announced today that they have taken the decision to unregister their node on 17th February 2022 and have requested all stakers to remove their stake.</p>
+<blockquote>
+<p>Dear Radix Community,<br>
+The time has come where our node on the network is no longer helping the RadixDLT achieve its goals. PLEASE REMOVE ALL STAKED ALLOCATIONS TO VISCOSITY NODE IMMEDIATELY. We will be unregistering tomorrow. The 10,000 XRD for compensation of our downtime will be distributed on 2/16/22 as well. After internal discussions we have decided this is the best course of action for the overall success of RadixDLT.</p>
+</blockquote>
+<p>Hopefully this is an opportunity for stakers to redistribute stake to nodes who have less than 2% stake and improve decentralisation.  Please remember to stake responsibly: <a href="https://radixtalk.com/t/how-do-i-choose-which-validators-to-delegate-stake-to/140">Choosing Validators</a></p>
+          <p><a href="https://radixtalk.com/t/viskosity-staking-shutting-down/371/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/viskosity-staking-shutting-down/371/1</link>
+        <pubDate>Wed, 16 Feb 2022 09:17:17 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-371-1</guid>
+        <source url="https://radixtalk.com/t/viskosity-staking-shutting-down/371.rss">Viskosity Staking shutting down</source>
+      </item>
+  </channel>
+</rss>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Introducing Avaunt Staking</title>
+    <link>https://radixtalk.com/t/introducing-avaunt-staking/298</link>
+    <description>:fast_forward: Avaunt Staking :fast_forward: - rv1qdn4mwharah5c3w5sw4zfyagvkftrj47ruwatjfr6z2r7pmvk5uuu84j45v
+Fees: 2%
+
+**Website**
+
+* https://avaunt-staking.com
+* https://radixdashboard.com
+
+**Contact Details**
+
+* Telegram: [@vaunt](https://t.me/avaunt)
+* Discord: AVaunt#5349
+* Twitter: [Avaunt](https://twitter.com/a_vaunt)
+* Email: staking@avaunt.io
+
+**Languages**
+* English
+
+**About Me/Us**
+I have been working in infrastructure technologies within the banking and finance industry for over 20 years now. At the start of the pandemic I was forced into bit of a career break which gave me the opportunity to spend more time researching into Proof of Stake projects and looking at where I could apply my skills whilst also being part of the evolution of the industry. At the tail end of 2020 I made the decision to start running nodes and setup Avaunt Staking Services where we run nodes on a number of POS and DPOS networks including Radix and Avalanche.
+I also recently become an official Radvocate, providing support to the community across the many Radix related social channels.
+
+**Validator Infrastructure**
+We currently run two nodes (primary &amp; backup) across two separate AWS London Availability Zones. We have decided on AWS as they provide a consistently high SLA and uptime and although they are more expensive than other Cloud providers we have never had an outage or downtime since we first started using them in 2016.
+
+**Experience**
+Avaunt Staking has been running a Radix node since the start of Betanet and have been an active member across all the social channels, providing support to new node runners and delegators alike. We created the popular and free community dashboard https://radixdashboard.com. We have been running Validator nodes on other dPOS and standard POS networks for the past 18 months.
+
+**Why should delegators stake to your validator?**
+I absolutely love Crypto and Technology innovation and when the opportunity arose to run a validator node on the future of de-fi I immediately jumped at the chance to support the network. I also love learning and have spent many hours reading blogs and watching videos on node running and the different architectures. The pace of innovation is just mind blowing and I absolutely love being a part of it.
+I think all the Radix Validator community are an awesome bunch of people and they never cease to amaze me with the support they give to other validators and delegators for the greater good of the network. I think what sets Avaunt apart however is that we provide value added services like our community dashboard radixdashboard.com and initiating community events like the Know your Node Runner AMA sessions.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Fri, 28 Jan 2022 09:55:02 +0000</lastBuildDate>
+    <category>Validator Introductions</category>
+    <atom:link href="https://radixtalk.com/t/introducing-avaunt-staking/298.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Introducing Avaunt Staking</title>
+        <dc:creator><![CDATA[Avaunt]]></dc:creator>
+        <description><![CDATA[
+            <p><img src="https://cdn.radixtalk.com/images/emoji/twitter/fast_forward.png?v=12" title=":fast_forward:" class="emoji" alt=":fast_forward:"> Avaunt Staking <img src="https://cdn.radixtalk.com/images/emoji/twitter/fast_forward.png?v=12" title=":fast_forward:" class="emoji" alt=":fast_forward:"> - rv1qdn4mwharah5c3w5sw4zfyagvkftrj47ruwatjfr6z2r7pmvk5uuu84j45v<br>
+Fees: 2%</p>
+<p><strong>Website</strong></p>
+<ul>
+<li><a href="https://avaunt-staking.com">https://avaunt-staking.com</a></li>
+<li><a href="https://radixdashboard.com">https://radixdashboard.com</a></li>
+</ul>
+<p><strong>Contact Details</strong></p>
+<ul>
+<li>Telegram: <a href="https://t.me/avaunt">@vaunt</a>
+</li>
+<li>Discord: AVaunt#5349</li>
+<li>Twitter: <a href="https://twitter.com/a_vaunt">Avaunt</a>
+</li>
+<li>Email: <a href="mailto:staking@avaunt.io">staking@avaunt.io</a>
+</li>
+</ul>
+<p><strong>Languages</strong></p>
+<ul>
+<li>English</li>
+</ul>
+<p><strong>About Me/Us</strong><br>
+I have been working in infrastructure technologies within the banking and finance industry for over 20 years now. At the start of the pandemic I was forced into bit of a career break which gave me the opportunity to spend more time researching into Proof of Stake projects and looking at where I could apply my skills whilst also being part of the evolution of the industry. At the tail end of 2020 I made the decision to start running nodes and setup Avaunt Staking Services where we run nodes on a number of POS and DPOS networks including Radix and Avalanche.<br>
+I also recently become an official Radvocate, providing support to the community across the many Radix related social channels.</p>
+<p><strong>Validator Infrastructure</strong><br>
+We currently run two nodes (primary &amp; backup) across two separate AWS London Availability Zones. We have decided on AWS as they provide a consistently high SLA and uptime and although they are more expensive than other Cloud providers we have never had an outage or downtime since we first started using them in 2016.</p>
+<p><strong>Experience</strong><br>
+Avaunt Staking has been running a Radix node since the start of Betanet and have been an active member across all the social channels, providing support to new node runners and delegators alike. We created the popular and free community dashboard <a href="https://radixdashboard.com">https://radixdashboard.com</a>. We have been running Validator nodes on other dPOS and standard POS networks for the past 18 months.</p>
+<p><strong>Why should delegators stake to your validator?</strong><br>
+I absolutely love Crypto and Technology innovation and when the opportunity arose to run a validator node on the future of de-fi I immediately jumped at the chance to support the network. I also love learning and have spent many hours reading blogs and watching videos on node running and the different architectures. The pace of innovation is just mind blowing and I absolutely love being a part of it.<br>
+I think all the Radix Validator community are an awesome bunch of people and they never cease to amaze me with the support they give to other validators and delegators for the greater good of the network. I think what sets Avaunt apart however is that we provide value added services like our community dashboard <a href="http://radixdashboard.com">radixdashboard.com</a> and initiating community events like the Know your Node Runner AMA sessions.</p>
+          <p><a href="https://radixtalk.com/t/introducing-avaunt-staking/298/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/introducing-avaunt-staking/298/1</link>
+        <pubDate>Fri, 28 Jan 2022 09:55:02 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-298-1</guid>
+        <source url="https://radixtalk.com/t/introducing-avaunt-staking/298.rss">Introducing Avaunt Staking</source>
+      </item>
+  </channel>
+</rss>

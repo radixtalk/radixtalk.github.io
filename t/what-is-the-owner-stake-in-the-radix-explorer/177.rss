@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>What is the Owner Stake in the Radix Explorer?</title>
+    <link>https://radixtalk.com/t/what-is-the-owner-stake-in-the-radix-explorer/177</link>
+    <description>You will notice in the Radix explorer validator list (and other community sites) that as well as the validator fee and uptime, the &quot;Owner Stake&quot; is also provided.
+
+The owner stake is the amount of XRD that the validator owner has delegated to their own node and is a measure of how much &quot;skin in the game&quot; they have.
+
+In the future when slashing is implemented (see here: [Slashing](https://radixtalk.com/t/does-radix-implement-slashing/175)) the owner stake will help to signify how much personal stake the validator is risking and can be used as a way of determining whether or not they are likely to engage in any malicious behaviour.
+
+However, some validators elect not to use the owner wallet for their personal staking and choose to stake from an alternative wallet.  This could be for a number of honest reasons, such as wanting to separate their income between fees and staking and is not necessarily a cause for concern.  In this case, it is advisable to contact the validator to understand their reasoning.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Wed, 29 Dec 2021 23:36:29 +0000</lastBuildDate>
+    <category>Staking</category>
+    <atom:link href="https://radixtalk.com/t/what-is-the-owner-stake-in-the-radix-explorer/177.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>What is the Owner Stake in the Radix Explorer?</title>
+        <dc:creator><![CDATA[Faraz | Radstakes.com]]></dc:creator>
+        <description><![CDATA[
+            <p>You will notice in the Radix explorer validator list (and other community sites) that as well as the validator fee and uptime, the “Owner Stake” is also provided.</p>
+<p>The owner stake is the amount of XRD that the validator owner has delegated to their own node and is a measure of how much “skin in the game” they have.</p>
+<p>In the future when slashing is implemented (see here: <a href="https://radixtalk.com/t/does-radix-implement-slashing/175">Slashing</a>) the owner stake will help to signify how much personal stake the validator is risking and can be used as a way of determining whether or not they are likely to engage in any malicious behaviour.</p>
+<p>However, some validators elect not to use the owner wallet for their personal staking and choose to stake from an alternative wallet.  This could be for a number of honest reasons, such as wanting to separate their income between fees and staking and is not necessarily a cause for concern.  In this case, it is advisable to contact the validator to understand their reasoning.</p>
+          <p><a href="https://radixtalk.com/t/what-is-the-owner-stake-in-the-radix-explorer/177/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/what-is-the-owner-stake-in-the-radix-explorer/177/1</link>
+        <pubDate>Wed, 29 Dec 2021 19:23:28 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-177-1</guid>
+        <source url="https://radixtalk.com/t/what-is-the-owner-stake-in-the-radix-explorer/177.rss">What is the Owner Stake in the Radix Explorer?</source>
+      </item>
+  </channel>
+</rss>

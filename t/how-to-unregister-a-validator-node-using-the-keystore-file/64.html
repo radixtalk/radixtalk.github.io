@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <title>How to unregister a Validator Node using the Keystore file - Validators - RadixTalk</title>
+    <meta name="description" content="The script below will unregister a validator node given its node-keystore.ks file and password. This is really only for emergency use where you’re unable to unregister a node because it is still syncing. 
+The script read&amp;hellip;">
+    <meta name="generator" content="Discourse 2.9.0.beta4 - https://github.com/discourse/discourse version 8ce29a4a2264ea472a8151bfe2e591ab1101cfeb">
+<link rel="icon" type="image/png" href="https://cdn.radixtalk.com/uploads/default/optimized/1X/023c6f3e74bac599c495c37eecd72f939f3fab87_2_32x32.png">
+<link rel="apple-touch-icon" type="image/png" href="https://cdn.radixtalk.com/uploads/default/optimized/1X/ad9adb26331754b0012edbc9b4796de8dc449fa8_2_180x180.png">
+<meta name="theme-color" content="#ffffff">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<link rel="canonical" href="64.html" />
+<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebSite","url":"https://radixtalk.com","potentialAction":{"@type":"SearchAction","target":"https://radixtalk.com/search?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<link rel="search" type="application/opensearchdescription+xml" href="../../opensearch.xml" title="RadixTalk Search">
+
+    <link href="https://cdn.radixtalk.com/stylesheets/color_definitions_light_4_1_41174e1f8711476b3393f07571899954e9737309.css?__ws=radixtalk.com" media="all" rel="stylesheet" class="light-scheme"/>
+
+  <link href="https://cdn.radixtalk.com/stylesheets/desktop_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="desktop"  />
+
+
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-akismet_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-akismet"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-automation_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-automation"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-cakeday_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-cakeday"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-canned-replies_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-canned-replies"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-checklist_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-checklist"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-data-explorer_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-data-explorer"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-details_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-details"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-docs_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-docs"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-follow_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-follow"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-fontawesome-pro_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-fontawesome-pro"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-footnote_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-footnote"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-local-dates_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-local-dates"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-presence_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-presence"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-rss-polling_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-rss-polling"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-saved-searches_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-saved-searches"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-solved_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-solved"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-tooltips_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-tooltips"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-user-notes_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-user-notes"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-voting_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-voting"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-whos-online_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-whos-online"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/lazy-yt_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="lazy-yt"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/poll_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="poll"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-voting_desktop_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-voting_desktop"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/poll_desktop_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="poll_desktop"  />
+
+  <link href="https://cdn.radixtalk.com/stylesheets/desktop_theme_1_263bf35b28bc3c889d3c5ea8d6e1c519621916e1.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="desktop_theme" data-theme-id="1" data-theme-name="default"/>
+
+    <script defer="" data-domain="radixtalk.com" src="https://plausible.io/js/plausible.hash.js"></script>
+
+    
+        <link rel="alternate nofollow" type="application/rss+xml" title="RSS feed of &#39;How to unregister a Validator Node using the Keystore file&#39;" href="64.rss" />
+    <meta property="og:site_name" content="RadixTalk" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:image" content="https://cdn.radixtalk.com/uploads/default/original/1X/9e3624f2a5d4052091ba93563043c233df535486.png" />
+<meta property="og:image" content="https://cdn.radixtalk.com/uploads/default/original/1X/9e3624f2a5d4052091ba93563043c233df535486.png" />
+<meta property="og:url" content="https://radixtalk.com/t/how-to-unregister-a-validator-node-using-the-keystore-file/64" />
+<meta name="twitter:url" content="https://radixtalk.com/t/how-to-unregister-a-validator-node-using-the-keystore-file/64" />
+<meta property="og:title" content="How to unregister a Validator Node using the Keystore file" />
+<meta name="twitter:title" content="How to unregister a Validator Node using the Keystore file" />
+<meta property="og:description" content="The script below will unregister a validator node given its node-keystore.ks file and password. This is really only for emergency use where you’re unable to unregister a node because it is still syncing.  The script reads the node-keystore.ks file which is in a PKCS12 format, extracts its private key, generates the corresponding public key, validator address and validator wallet address. Then using this data it submits a build transaction request to https://mainnet.radixdlt.com/construction with..." />
+<meta name="twitter:description" content="The script below will unregister a validator node given its node-keystore.ks file and password. This is really only for emergency use where you’re unable to unregister a node because it is still syncing.  The script reads the node-keystore.ks file which is in a PKCS12 format, extracts its private key, generates the corresponding public key, validator address and validator wallet address. Then using this data it submits a build transaction request to https://mainnet.radixdlt.com/construction with..." />
+<meta name="twitter:label1" value="Reading time" />
+<meta name="twitter:data1" value="1 mins 🕑" />
+<meta name="twitter:label2" value="Likes" />
+<meta name="twitter:data2" value="1 ❤" />
+<meta property="article:published_time" content="2021-12-25T14:07:26+00:00" />
+<meta property="og:ignore_canonical" content="true" />
+
+
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"QAPage","name":"How to unregister a Validator Node using the Keystore file","mainEntity":{"@type":"Question","name":"How to unregister a Validator Node using the Keystore file","text":"The script below will unregister a validator node given its node-keystore.ks file and password. This is really only for emergency use where you’re unable to unregister a node because it is still syncing.\n\nThe script reads the node-keystore.ks file which is in a PKCS12 format, extracts its private ke&hellip;","upvoteCount":0,"answerCount":0,"dateCreated":"2021-12-25T14:07:26.692Z","author":{"@type":"Person","name":"Stuart | RadixPool"}}}</script>
+  </head>
+  <body class="crawler">
+    
+    <header>
+  <a href="https://radixtalk.com/">
+    <h1>RadixTalk</h1>
+  </a>
+</header>
+
+    <div id="main-outlet" class="wrap" role="main">
+        <div id="topic-title">
+    <h1>
+      <a href="64.html">How to unregister a Validator Node using the Keystore file</a>
+    </h1>
+
+      <div class="topic-category" itemscope itemtype="http://schema.org/BreadcrumbList">
+          <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+            <a href="https://radixtalk.com/c/validators/16" class="badge-wrapper bullet" itemprop="item">
+              <span class='badge-category-bg' style='background-color: #0088CC'></span>
+              <span class='badge-category clear-badge'>
+                <span class='category-name' itemprop='name'>Validators</span>
+              </span>
+            </a>
+            <meta itemprop="position" content="1" />
+          </span>
+      </div>
+
+      <div class="topic-category">
+        <div class='discourse-tags list-tags'>
+            <a href='../../tag/python.html' class='discourse-tag' rel="tag">python</a>, 
+            <a href='../../tag/howto.html' class='discourse-tag' rel="tag">howto</a>
+        </div>
+      </div>
+  </div>
+
+  
+
+
+      <div id='post_1' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+        <div class='crawler-post-meta'>
+          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop='name' content='RadixTalk'>
+              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+                <meta itemprop='url' content='https://cdn.radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+              </div>
+          </div>
+          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a itemprop="url" href='../../u/Stuart.html'><span itemprop='name'>Stuart</span></a>
+            (Stuart | RadixPool)
+          </span>
+
+          <link itemprop="mainEntityOfPage" href="64.html">
+
+
+          <span class="crawler-post-infos">
+              <time itemprop='datePublished' datetime='2021-12-25T14:07:26Z' class='post-time'>
+                25 December 2021 14:07
+              </time>
+              <meta itemprop='dateModified' content='2022-02-25T10:01:13Z'>
+          <span itemprop='position'>#1</span>
+          </span>
+        </div>
+        <div class='post' itemprop='articleBody'>
+          <p>The script below will unregister a validator node given its node-keystore.ks file and password. This is really only for emergency use where you’re unable to unregister a node because it is still syncing.</p>
+<p>The script reads the node-keystore.ks file which is in a PKCS12 format, extracts its private key, generates the corresponding public key, validator address and validator wallet address. Then using this data it submits a build transaction request to <a href="https://mainnet.radixdlt.com/construction">https://mainnet.radixdlt.com/construction</a> with an UnregisterValidator action.</p>
+<p>The response is read, the blobToSign is signed using the keystore private key, and a finalize transaction request is built and submitted to <a href="https://mainnet.radixdlt.com/construction">https://mainnet.radixdlt.com/construction</a> again.</p>
+<p>*Ensure that your validator wallet address has at least 5.1 XRD to successfully unregister the node. You will require an additional 5.1 XRD to re-register the node again later</p>
+<pre><code class="lang-python">import bech32
+import ecdsa
+import hashlib
+from cryptography.hazmat.primitives.serialization import pkcs12
+from cryptography.hazmat.primitives.serialization import Encoding, PrivateFormat, NoEncryption
+from cryptography.hazmat.backends import default_backend
+from ecdsa.curves import SECP256k1
+from ecdsa.util import sigencode_der
+from getpass import getpass
+
+import requests
+import json
+
+print ("Enter your Keystore Password:")
+pw = getpass()
+
+password = pw.encode()
+
+# Read the Radix Keystore File (which is in PKCS12 format)
+with open("node-keystore.ks", "rb") as f:
+  private_key, certificate, additional_certificates = pkcs12.load_key_and_certificates(f.read(), password, default_backend())
+
+# Extract the unencrypted Private Key bytes
+private_key_bytes = private_key.private_bytes(Encoding.DER, PrivateFormat.PKCS8, NoEncryption())
+
+# Convert into Elliptic Curve Digital Signature Algorithm (ecdsa) private key object
+private_key = ecdsa.SigningKey.from_der(private_key_bytes, hashfunc=hashlib.sha256)
+
+# Derive public key from private key
+verifying_key = private_key.get_verifying_key()
+
+# Convert public key into compressed format so that we can generate the Validator Address
+public_key_compressed_bytes = verifying_key.to_string("compressed")
+public_key_compressed_bytes_hex = public_key_compressed_bytes.hex()
+print("Validator Public Key (Compressed): ", public_key_compressed_bytes_hex)
+
+# Generate Validator Address from the Compressed Public Key
+public_key_bytes5 = bech32.convertbits(public_key_compressed_bytes, 8, 5)
+validator_address = bech32.bech32_encode("rv", public_key_bytes5)
+print("Validator Address: ", validator_address)
+
+# Convert Compressed Public Key into a Radix Engine Address
+readdr_bytes = b"\x04" + public_key_compressed_bytes
+
+# Convert Radix Engine Address into Validator Wallet Address
+readdr_bytes5 = bech32.convertbits(readdr_bytes, 8, 5)
+validator_wallet_address = bech32.bech32_encode("rdx", readdr_bytes5)
+print("Validator Wallet Address: ", validator_wallet_address)
+
+# Construct RPC request
+data = f"""
+   {{
+  "network_identifier": {{
+    "network": "mainnet"
+  }},
+  "actions": [
+    {{
+      "type": "UnregisterValidator",
+      "validator": {{
+        "address": "{validator_address}"
+      }}
+    }}
+  ],
+  "fee_payer": {{
+    "address": "{validator_wallet_address}"
+  }},
+  "disable_token_mint_and_burn": true
+ }}
+"""
+
+print("Build Transaction Request JSON: ", data)
+
+req = requests.Request('POST', 'https://mainnet-gateway.radixdlt.com/transaction/build', data=data)
+prepared = req.prepare()
+prepared.headers['Content-Type'] = 'application/json'
+s = requests.Session()
+
+# Send Request to Unregister Validator
+resp = s.send(prepared)
+
+# Get JSON Response
+resp_json = resp.json()
+print("Build Transaction Response JSON: \n", json.dumps(resp_json, indent=3))
+
+# Extract fields from JSON Response
+blob = resp_json['transaction_build']['unsigned_transaction']
+blob_to_sign = resp_json['transaction_build']['payload_to_sign']
+
+# Sign the blob_to_sign with the Keystore Private Key and convert to DER format
+signature_der = private_key.sign_digest(bytearray.fromhex(blob_to_sign), sigencode=sigencode_der).hex()
+
+# Finalize RPC Request
+data = f"""
+{{
+      "network_identifier":{{
+        "network": "mainnet"
+      }},
+      "unsigned_transaction": "{blob}",
+      "signature": {{
+         "bytes": "{signature_der}",
+         "public_key": {{
+           "hex": "{public_key_compressed_bytes_hex}"
+    }}
+  }},
+  "submit": true
+}}
+"""
+print("Finalize Transaction Request JSON: ", data)
+
+req = requests.Request('POST', 'https://mainnet-gateway.radixdlt.com/transaction/finalize', data=data)
+prepared = req.prepare()
+prepared.headers['Content-Type'] = 'application/json'
+s = requests.Session()
+
+# Send Request to Unregister Validator
+resp = s.send(prepared)
+
+# Get JSON Response
+resp_json = resp.json()
+print("Finalize Transaction Response JSON: \n", json.dumps(resp_json, indent=3))
+</code></pre>
+<p><strong>Updates:</strong></p>
+<ul>
+<li>2022-02-25: Changed to use new Gateway API (Thanks <a class="mention" href="https://radixtalk.com/u/faraz">@Faraz</a>)</li>
+</ul>
+<p>This work by <a href="https://radixpool.com">RadixPool.com</a> is licensed under a <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
+        </div>
+
+        <meta itemprop='headline' content='How to unregister a Validator Node using the Keystore file'>
+          <meta itemprop='keywords' content='python, howto'>
+
+        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+           <meta itemprop="userInteractionCount" content="0" />
+           <span class='post-likes'></span>
+         </div>
+
+         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
+            <meta itemprop="userInteractionCount" content="0" />
+          </div>
+
+            <div class='crawler-linkback-list' itemscope itemtype='http://schema.org/ItemList'>
+                  <div itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+                    <a href="../radix-archive-node-shutdown-delayed/389.html" itemscope itemtype='http://schema.org/DiscussionForumPosting' itemprop='item'>
+                      <meta itemprop='url' content='https://radixtalk.com/t/radix-archive-node-shutdown-delayed/389'>
+                      <span itemprop='name'>Radix Archive Node Shutdown Delayed</span>
+                    </a>
+                    <meta itemprop='position' content='4'>
+                  </div>
+            </div>
+      </div>
+      <div id='post_2' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+        <div class='crawler-post-meta'>
+          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop='name' content='RadixTalk'>
+              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+                <meta itemprop='url' content='https://cdn.radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+              </div>
+          </div>
+          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a itemprop="url" href='../../u/Mattia.html'><span itemprop='name'>Mattia</span></a>
+            (Mattia | MattiaNode)
+          </span>
+
+          <link itemprop="mainEntityOfPage" href="64.html">
+
+
+          <span class="crawler-post-infos">
+              <time itemprop='datePublished' datetime='2022-02-01T09:48:22Z' class='post-time'>
+                1 February 2022 09:48
+              </time>
+              <meta itemprop='dateModified' content='2022-02-01T09:48:22Z'>
+          <span itemprop='position'>#2</span>
+          </span>
+        </div>
+        <div class='post' itemprop='articleBody'>
+          <p>Hi Stuart, thank you for the great script. Do you know if it’s still working, with the new API?</p>
+        </div>
+
+        <meta itemprop='headline' content='How to unregister a Validator Node using the Keystore file'>
+
+        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+           <meta itemprop="userInteractionCount" content="0" />
+           <span class='post-likes'></span>
+         </div>
+
+         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
+            <meta itemprop="userInteractionCount" content="1" />
+          </div>
+
+      </div>
+      <div id='post_3' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+        <div class='crawler-post-meta'>
+          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop='name' content='RadixTalk'>
+              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+                <meta itemprop='url' content='https://cdn.radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+              </div>
+          </div>
+          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a itemprop="url" href='../../u/Stuart.html'><span itemprop='name'>Stuart</span></a>
+            (Stuart | RadixPool)
+          </span>
+
+          <link itemprop="mainEntityOfPage" href="64.html">
+
+
+          <span class="crawler-post-infos">
+              <time itemprop='datePublished' datetime='2022-02-01T10:02:05Z' class='post-time'>
+                1 February 2022 10:02
+              </time>
+              <meta itemprop='dateModified' content='2022-02-01T10:02:05Z'>
+          <span itemprop='position'>#3</span>
+          </span>
+        </div>
+        <div class='post' itemprop='articleBody'>
+          <p>The script will still work whilst <a href="http://mainnet.radixdlt.com">mainnet.radixdlt.com</a> is still supporting the old archive nodes.</p>
+<p>I’ll make sure I add a new version that supports the new api before the old archive nodes are retired.</p>
+        </div>
+
+        <meta itemprop='headline' content='How to unregister a Validator Node using the Keystore file'>
+
+        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+           <meta itemprop="userInteractionCount" content="1" />
+           <span class='post-likes'>1 Like</span>
+         </div>
+
+         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
+            <meta itemprop="userInteractionCount" content="0" />
+          </div>
+
+      </div>
+
+
+
+
+
+
+    </div>
+    <footer class="container wrap">
+  <nav class='crawler-nav'>
+    <ul>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='https://radixtalk.com/' itemprop="url">Home </a>
+        </span>
+      </li>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='https://radixtalk.com/categories' itemprop="url">Categories </a>
+        </span>
+      </li>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='https://radixtalk.com/guidelines' itemprop="url">FAQ/Guidelines </a>
+        </span>
+      </li>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='https://radixtalk.com/tos' itemprop="url">Terms of Service </a>
+        </span>
+      </li>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='https://radixtalk.com/privacy' itemprop="url">Privacy Policy </a>
+        </span>
+      </li>
+    </ul>
+  </nav>
+  <p class='powered-by-link'>Powered by <a href="https://www.discourse.org">Discourse</a>, best viewed with JavaScript enabled</p>
+</footer>
+
+    
+    
+  </body>
+  
+</html>

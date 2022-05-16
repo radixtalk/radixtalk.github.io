@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>How to convert a Node Id (02... or 03...) from the Radix log file into a Validator Address (rv...)?</title>
+    <link>https://radixtalk.com/t/how-to-convert-a-node-id-02-or-03-from-the-radix-log-file-into-a-validator-address-rv/63</link>
+    <description>The Node Id reported in the Radix Node logs is a compressed public key - it starts with either 02 or 03 and is 33 bytes long. To convert it into a Validator Address then just bech32 encode it with a human readable part of `rv.`
+
+```python
+import bech32
+
+hrp = &quot;rv&quot;
+node_id = &quot;03d781270fcebe921a9517ead7f79ec4761a4dc80e2b8b705bc1f47938e1421305&quot;
+
+# Convert hex string into bytes
+public_key = bytearray.fromhex(node_id)
+
+# Convert from array of 8 bit unsigned integers to array of 5 bit unsigned integers
+public_key5 = bech32.convertbits(public_key, 8, 5)
+
+validator_address = bech32.bech32_encode(hrp, public_key5)
+print(&quot;Validator Adddress:&quot;, validator_address)
+
+# Validator Adddress: rv1q0tczfc0e6lfyx54zl4d0au7c3mp5nwgpc4ckuzmc868jw8pggfs2prskrz
+```
+
+*The python bech32 library we are using is a reference implementation for creating bitcoin segwit addresses so we have to do a bit of ceremony to convert the public key bytes from 8 bits to 5 bits and use a lower level encode function to work with Radix addresses.*
+
+## Run this code on Replit:
+https://replit.com/@radixtalk/Public-Key-to-Validator</description>
+    <language>en-GB</language>
+    <lastBuildDate>Tue, 04 Jan 2022 08:45:58 +0000</lastBuildDate>
+    <category>Developers</category>
+    <atom:link href="https://radixtalk.com/t/how-to-convert-a-node-id-02-or-03-from-the-radix-log-file-into-a-validator-address-rv/63.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>How to convert a Node Id (02... or 03...) from the Radix log file into a Validator Address (rv...)?</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>The Node Id reported in the Radix Node logs is a compressed public key - it starts with either 02 or 03 and is 33 bytes long. To convert it into a Validator Address then just bech32 encode it with a human readable part of <code>rv.</code></p>
+<pre><code class="lang-python">import bech32
+
+hrp = "rv"
+node_id = "03d781270fcebe921a9517ead7f79ec4761a4dc80e2b8b705bc1f47938e1421305"
+
+# Convert hex string into bytes
+public_key = bytearray.fromhex(node_id)
+
+# Convert from array of 8 bit unsigned integers to array of 5 bit unsigned integers
+public_key5 = bech32.convertbits(public_key, 8, 5)
+
+validator_address = bech32.bech32_encode(hrp, public_key5)
+print("Validator Adddress:", validator_address)
+
+# Validator Adddress: rv1q0tczfc0e6lfyx54zl4d0au7c3mp5nwgpc4ckuzmc868jw8pggfs2prskrz
+</code></pre>
+<p><em>The python bech32 library we are using is a reference implementation for creating bitcoin segwit addresses so we have to do a bit of ceremony to convert the public key bytes from 8 bits to 5 bits and use a lower level encode function to work with Radix addresses.</em></p>
+<h2>
+<a name="run-this-code-on-replit-1" class="anchor" href="https://radixtalk.com#run-this-code-on-replit-1"></a>Run this code on Replit:</h2>
+<p><iframe src="https://replit.com/@radixtalk/Public-Key-to-Validator?lite=true" width="695" height="521" frameborder="0" seamless="seamless" sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox allow-presentation"></iframe></p>
+          <p><a href="https://radixtalk.com/t/how-to-convert-a-node-id-02-or-03-from-the-radix-log-file-into-a-validator-address-rv/63/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-to-convert-a-node-id-02-or-03-from-the-radix-log-file-into-a-validator-address-rv/63/1</link>
+        <pubDate>Sat, 25 Dec 2021 14:04:41 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-63-1</guid>
+        <source url="https://radixtalk.com/t/how-to-convert-a-node-id-02-or-03-from-the-radix-log-file-into-a-validator-address-rv/63.rss">How to convert a Node Id (02... or 03...) from the Radix log file into a Validator Address (rv...)?</source>
+      </item>
+  </channel>
+</rss>

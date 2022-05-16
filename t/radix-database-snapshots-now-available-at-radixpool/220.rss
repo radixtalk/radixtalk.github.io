@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Radix database snapshots now available at RadixPool</title>
+    <link>https://radixtalk.com/t/radix-database-snapshots-now-available-at-radixpool/220</link>
+    <description>I&#39;m happy to announce that RadixPool is now creating daily snapshots of the Radix database to support the Radix Node Runners community:
+
+https://snapshots.radixpool.com
+
+### Features:
+* Updated daily
+* Geo-replicated by a content delivery network (CDN) to Falkenstein (Germany), New York, Los Angeles, Singapore and Sydney
+* Compressed using **xz**[^1] due to its very good compression size and fast decompression time
+* Empty Address Book in Database
+
+### Fair Use:
+There is a generous monthly bandwidth limit to manage costs. If this limit has been reached and you urgently need to download a snapshot then please send a private message to @Stuart 
+
+PS: I&#39;ll add some instructions on how to decompress the snapshot file and some css to make the page not look like something from 1998...
+
+[^1]: https://radixtalk.com/t/comparison-of-compression-tools-for-taking-snapshots-of-radix-database/217</description>
+    <language>en-GB</language>
+    <lastBuildDate>Mon, 10 Jan 2022 10:37:20 +0000</lastBuildDate>
+    <category>Validators</category>
+    <atom:link href="https://radixtalk.com/t/radix-database-snapshots-now-available-at-radixpool/220.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Radix database snapshots now available at RadixPool</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>Sure, the <code>je.properties</code> file has the following content in the snapshot archive:</p>
+<pre><code class="lang-nohighlight"># Set the log file size to 1Gb each (Default: 100Mb)
+je.log.fileMax=1073741824
+
+# Run the checkpointer every 512Mb of data (Default: 20Mb)
+je.checkpointer.bytesInterval=536870912
+
+# Don't collect stats in je.stats.csv
+je.stats.collect=false
+
+# Only log warnings in je.info.*
+com.sleepycat.je.util.FileHandler.level=WARNING
+</code></pre>
+<p>The snapshot is a copy taken from one of my production standby nodes so it’s grabbed my settings. I haven’t checked but it should still work if you change the settings to use your preferred values.</p>
+          <p><a href="https://radixtalk.com/t/radix-database-snapshots-now-available-at-radixpool/220/6">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/radix-database-snapshots-now-available-at-radixpool/220/6</link>
+        <pubDate>Mon, 10 Jan 2022 10:37:20 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-220-6</guid>
+        <source url="https://radixtalk.com/t/radix-database-snapshots-now-available-at-radixpool/220.rss">Radix database snapshots now available at RadixPool</source>
+      </item>
+      <item>
+        <title>Radix database snapshots now available at RadixPool</title>
+        <dc:creator><![CDATA[Avaunt]]></dc:creator>
+        <description><![CDATA[
+            <p>Thanks for creating and sharing this Stuart. Can I check if the je.properties file has the recommended settings. Could you paste a copy of the file contents if you have it to hand? (saves downloading the whole backup to check)<br>
+thanks Andrew</p>
+          <p><a href="https://radixtalk.com/t/radix-database-snapshots-now-available-at-radixpool/220/5">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/radix-database-snapshots-now-available-at-radixpool/220/5</link>
+        <pubDate>Mon, 10 Jan 2022 10:26:27 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-220-5</guid>
+        <source url="https://radixtalk.com/t/radix-database-snapshots-now-available-at-radixpool/220.rss">Radix database snapshots now available at RadixPool</source>
+      </item>
+      <item>
+        <title>Radix database snapshots now available at RadixPool</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>When a new Radix node starts up for the first time, it needs to create a full copy of the ledger. The ledger contains an ordered record of every single transaction that has occurred since the genesis of the Radix public network. The ledger gets larger over time as more transactions are added.</p>
+<p>There are various factors that affect how long it takes to build the ledger and supporting database files such as network bandwidth, the memory and CPU power of the Radix node, the type of file storage and so on. People have reported anywhere from 8 hours up to 24 hours for the ledger to become fully synchronised (up to date with the rest of the Radix public network). While a node is synchronising it cannot complete proposals (participate in consensus and validate transactions) and receive staking rewards.</p>
+<p>The snapshot archive is a copy of all the files that make up a synchronised ledger at the time the snapshot was taken. A node runner can download a “ready made” copy of the ledger files and then when the Radix node starts it only has to fetch the transactions that have occurred since the snapshot.</p>
+<p>So, rather than having to wait 8 to 24 hours to sync, a node runner can download a snapshot (30 mintutes to 2 hours to download) and then catch up (~ minutes).</p>
+<p>As Faraz explained, the snapshots are most useful when an existing Top 100 validator’s database become corrupted/lost and they need to recover as quickly as possible.</p>
+<p>Hope that all made sense.</p>
+          <p><a href="https://radixtalk.com/t/radix-database-snapshots-now-available-at-radixpool/220/4">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/radix-database-snapshots-now-available-at-radixpool/220/4</link>
+        <pubDate>Mon, 10 Jan 2022 08:29:41 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-220-4</guid>
+        <source url="https://radixtalk.com/t/radix-database-snapshots-now-available-at-radixpool/220.rss">Radix database snapshots now available at RadixPool</source>
+      </item>
+      <item>
+        <title>Radix database snapshots now available at RadixPool</title>
+        <dc:creator><![CDATA[Faraz | Radstakes.com]]></dc:creator>
+        <description><![CDATA[
+            <p>Hi Yo,</p>
+<p>In the event a validator’s own backup database is corrupted or they find themselves needing to sync from scratch, it is possible to restore the database from a snapshot to minimise the time needed to sync with the ledger.  Otherwise it takes 18+ hours to sync.</p>
+          <p><a href="https://radixtalk.com/t/radix-database-snapshots-now-available-at-radixpool/220/3">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/radix-database-snapshots-now-available-at-radixpool/220/3</link>
+        <pubDate>Mon, 10 Jan 2022 08:16:22 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-220-3</guid>
+        <source url="https://radixtalk.com/t/radix-database-snapshots-now-available-at-radixpool/220.rss">Radix database snapshots now available at RadixPool</source>
+      </item>
+      <item>
+        <title>Radix database snapshots now available at RadixPool</title>
+        <dc:creator><![CDATA[Yo1234]]></dc:creator>
+        <description><![CDATA[
+            <p>Out of interest: what would a node runner do with this, exactly?</p>
+          <p><a href="https://radixtalk.com/t/radix-database-snapshots-now-available-at-radixpool/220/2">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/radix-database-snapshots-now-available-at-radixpool/220/2</link>
+        <pubDate>Sun, 09 Jan 2022 23:14:58 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-220-2</guid>
+        <source url="https://radixtalk.com/t/radix-database-snapshots-now-available-at-radixpool/220.rss">Radix database snapshots now available at RadixPool</source>
+      </item>
+      <item>
+        <title>Radix database snapshots now available at RadixPool</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>I’m happy to announce that RadixPool is now creating daily snapshots of the Radix database to support the Radix Node Runners community:</p>
+<aside class="onebox allowlistedgeneric" data-onebox-src="https://snapshots.radixpool.com">
+  <header class="source">
+
+      <a href="https://snapshots.radixpool.com" target="_blank" rel="noopener">snapshots.radixpool.com</a>
+  </header>
+
+  <article class="onebox-body">
+    
+
+<h3><a href="https://snapshots.radixpool.com" target="_blank" rel="noopener">RadixPool · Snapshots</a></h3>
+
+  <p>Radix Database snapshots by RadixPool</p>
+
+
+  </article>
+
+  <div class="onebox-metadata">
+    
+    
+  </div>
+
+  <div style="clear: both"></div>
+</aside>
+
+<h3>
+<a name="features-1" class="anchor" href="https://radixtalk.com#features-1"></a>Features:</h3>
+<ul>
+<li>Updated daily</li>
+<li>Geo-replicated by a content delivery network (CDN) to Falkenstein (Germany), New York, Los Angeles, Singapore and Sydney</li>
+<li>Compressed using <strong>xz</strong><sup class="footnote-ref"><a href="https://radixtalk.com#footnote-310-1" id="footnote-ref-310-1">[1]</a></sup> due to its very good compression size and fast decompression time</li>
+<li>Empty Address Book in Database</li>
+</ul>
+<h3>
+<a name="fair-use-2" class="anchor" href="https://radixtalk.com#fair-use-2"></a>Fair Use:</h3>
+<p>There is a generous monthly bandwidth limit to manage costs. If this limit has been reached and you urgently need to download a snapshot then please send a private message to <a class="mention" href="https://radixtalk.com/u/stuart">@Stuart</a></p>
+<p>PS: I’ll add some instructions on how to decompress the snapshot file and some css to make the page not look like something from 1998…</p>
+<hr class="footnotes-sep">
+
+<ol class="footnotes-list">
+<li id="footnote-310-1" class="footnote-item">
+<p><a href="https://radixtalk.com/t/comparison-of-compression-tools-for-taking-snapshots-of-radix-database/217" class="inline-onebox">Comparison of compression tools for taking snapshots of Radix database</a> <a href="https://radixtalk.com#footnote-ref-310-1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+          <p><a href="https://radixtalk.com/t/radix-database-snapshots-now-available-at-radixpool/220/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/radix-database-snapshots-now-available-at-radixpool/220/1</link>
+        <pubDate>Sat, 08 Jan 2022 10:26:52 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-220-1</guid>
+        <source url="https://radixtalk.com/t/radix-database-snapshots-now-available-at-radixpool/220.rss">Radix database snapshots now available at RadixPool</source>
+      </item>
+  </channel>
+</rss>

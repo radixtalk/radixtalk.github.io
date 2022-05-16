@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>How to decrypt an encrypted transaction message created by the Radix Wallet</title>
+    <link>https://radixtalk.com/t/how-to-decrypt-an-encrypted-transaction-message-created-by-the-radix-wallet/189</link>
+    <description># How to decrypt an encrypted transaction message created by the Radix Wallet
+
+## 0. Introduction
+
+The encryption scheme used by the Radix Wallet is called `DH_ADD_EPH_AESGCM256_SCRYPT_000`
+
+Where:
+
+* DH -&gt; [(Elliptic Curve) Diffie-Hellman](https://cryptobook.nakov.com/asymmetric-key-ciphers/ecdh-key-exchange) (A key exchange protocol that allows untrusted parties to construct a shared secret)
+* ADD -&gt; Elliptic Curve Point Addition (The operation we use to create the shared secret)
+* EPH -&gt; Ephemeral Public Key (A temporary public key that is only used for the purpose of encrypting/decrypting the message)
+* AESGCM256 -&gt; The symmetrical encryption algorithm used to encrypt/decrypt the message (Advanced Encryption Standard, Galios Counter Mode, 256 bits)
+* SCRYPT -&gt; The Key Derivation Function (KDF) used (Scrypt)
+* 000 -&gt; The version of the scheme
+
+The encryption scheme allows both the sender and receiver to decrypt the message - but no one else.
+
+Alice sends the following encrypted message to Bob:
+
+`01ff02663a6aaf4d5ec607330b9b74a840bf5c13b0a7357202fa85be56b1326065561657d6ee46d4d84e94ec615b425a472dd8c813bad125335a097d29b64b72319357406b2b04491b4ca1a5a05fe8772b0c05f4633b399914348c5b03af58445d42c2f740f8407e572775a571805e582c6b96ffd4ccca764f2002510abddaab735ee4fb0b18c26d`
+
+Alice&#39;s Wallet Address: `rdx1qsp8n0nx0muaewav2ksx99wwsu9swq5mlndjmn3gm9vl9q2mzmup0xqm2ylge`
+
+Bob&#39;s Wallet Address: `rdx1qspvvprlj3q76ltdxpz5qm54cp7dshrh3e9cemeu5746czdet3cfaegp8alwf`
+
+For Bob to decrypt the message, he needs:
+
+* Alice&#39;s Public Key
+* Bob&#39;s Private Key
+
+## 1. Convert Alice&#39;s Wallet address into a her Public Key:
+
+```python
+import bech32
+
+alice_wallet_address = &quot;rdx1qsp8n0nx0muaewav2ksx99wwsu9swq5mlndjmn3gm9vl9q2mzmup0xqm2ylge&quot;
+
+_hrp, alice_readdr_5bit = bech32.bech32_decode(alice_wallet_address)
+alice_readdr_bytes = bech32.convertbits(alice_readdr_5bit, 5, 8, pad=False)
+
+## Remove the REAddr 04 prefix byte
+alice_public_key_bytes = bytes(alice_readdr_bytes)[1:34]
+
+alice_public_key_hex = bytes(alice_public_key_bytes).hex()
+print(&quot;Alice Public Key:&quot;, alice_public_key_hex)
+
+# Alice Public Key: 0279be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798
+```
+
+## 2. Use Elliptic Curve Diffie-Helmann to combine Alice&#39;s Public Key with Bob&#39;s Private Key:
+
+```python
+import hashlib
+from ecdsa.curves import SECP256k1
+from ecdsa.keys import SigningKey, VerifyingKey
+
+alice_public_key_hex = &quot;0279be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798&quot;
+alice_public_key = VerifyingKey.from_string(bytearray.fromhex(alice_public_key_hex), curve=SECP256k1, hashfunc=hashlib.sha256 )
+
+bob_private_key_hex = &quot;0000000000000000000000000000000000000000000000000000000000000002&quot;
+bob_private_key = SigningKey.from_string(bytearray.fromhex(bob_private_key_hex), curve=SECP256k1, hashfunc=hashlib.sha256)
+
+# Diffie-Hellman - we need to use lower level functions here so that we get back dh as a curve point
+dh = alice_public_key.pubkey.point * bob_private_key.privkey.secret_multiplier
+
+```
+
+*Note: Although it looks like a simple multiplication operation, the  \* operator has been overridden in the ECDSA library to perform Elliptic Curve Diffie-Hellman calculation*
+
+## 3. Slice the encrypted message into its component parts:
+
+```python
+encrypted_message = &quot;01ff02663a6aaf4d5ec607330b9b74a840bf5c13b0a7357202fa85be56b1326065561657d6ee46d4d84e94ec615b425a472dd8c813bad125335a097d29b64b72319357406b2b04491b4ca1a5a05fe8772b0c05f4633b399914348c5b03af58445d42c2f740f8407e572775a571805e582c6b96ffd4ccca764f2002510abddaab735ee4fb0b18c26d&quot;
+
+# Message Type: 01 (1 byte)
+message_type = encrypted_message[0:2]
+
+# Encryption Type: ff (1 byte)
+encryption_type = encrypted_message[2:4]
+
+# Ephemeral Public Key: 02663a6aaf4d5ec607330b9b74a840bf5c13b0a7357202fa85be56b13260655616 (33 bytes)
+ephemeral_public_key = encrypted_message[4:70]
+
+# Nonce: 57d6ee46d4d84e94ec615b42 (12 bytes)
+nonce = encrypted_message[70:94]
+
+# Auth Tag: 5a472dd8c813bad125335a097d29b64b (16 bytes)
+auth_tag = encrypted_message[94:126]
+
+# Ciphertext: 72319357406b2b04491b4ca1a5a05fe8772b0c05f4633b399914348c5b03af58445d42c2f740f8407e572775a571805e582c6b96ffd4ccca764f2002510abddaab735ee4fb0b18c26d
+ciphertext = encrypted_message[126:]
+
+```
+
+## 4. Convert the Ephemeral Public Key into a Curve Point
+
+```python
+# Convert Ephemeral Public key into a Curve Point
+ephemeral_curve = VerifyingKey.from_string(bytearray.fromhex(ephemeral_public_key), curve=ecdsa.SECP256k1, hashfunc=hashlib.sha256)
+ephemeral_point = ephemeral_curve.pubkey.point
+```
+
+## 5. Use Elliptic Curve Point Addition to combine the DH Point with the Ephemeral Point
+
+```python
+# Elliptic Curve Point Addition
+shared_secret_point = dh + ephemeral_point
+```
+
+*Note: Although it looks like a simple addition operation, the + operator has been overridden in the ECDSA library to perform Elliptic Curve Point Addition*
+
+## 6. Use the x co-ordinate of the Shared Secret Point as the Shared Secret
+
+```python
+shared_secret_integer = shared_secret_point.x()
+shared_secret_hex = hex(shared_secret_integer)[2:]
+
+print(&quot;Shared Secret:&quot;, shared_secret_hex)
+
+# Shared Secret: 64567aaa53dadd0d9dade89aca0beba4ea00ff987d986f5af421ff2bd636ca9d
+```
+
+## 7. Use the Scrypt Key Derivation Function (KDF) to convert the shared secret into the message decryption key:
+
+```python
+from Crypto.Protocol.KDF import scrypt
+
+# Create the Scrypt salt from the SHA256 of the nonce
+salt = hashlib.sha256(bytearray.fromhex(nonce)).digest()
+
+# Get the Decryption Key
+key = scrypt(bytearray.fromhex(shared_secret_hex), salt, 32, 8192, 8 ,1)
+
+print(&quot;Decryption Key:&quot;, key.hex())
+
+# Decryption Key: 7a294fd759ffdba936f46f5c773c7c8bd3e44064572b926e4e3e0b7291897a30
+```
+
+## 8. Decrypt the cipher text with the decryption key using AES-GCM:
+
+```python
+from Crypto.Cipher import AES
+
+decrypt = AES.new(key, AES.MODE_GCM, nonce=bytearray.fromhex(nonce))
+
+# Add the Ephemeral Public Key as Associated Data
+decrypt.update(bytearray.fromhex(ephemeral_public_key))
+
+msg = decrypt.decrypt_and_verify(bytearray.fromhex(ciphertext), bytearray.fromhex(auth_tag))
+
+print(&quot;Plaintext Message:&quot;, msg)
+
+# Plaintext Message: b&#39;Hey Bob, this is Alice, you and I can read this message, but no one else.&#39;
+```
+
+## 8. The Entire Script:
+
+```python
+import bech32
+import ecdsa
+import hashlib
+from ecdsa.curves import SECP256k1
+from ecdsa.keys import SigningKey, VerifyingKey
+from Crypto.Protocol.KDF import scrypt
+from Crypto.Cipher import AES
+
+
+encrypted_message = &quot;01ff02663a6aaf4d5ec607330b9b74a840bf5c13b0a7357202fa85be56b1326065561657d6ee46d4d84e94ec615b425a472dd8c813bad125335a097d29b64b72319357406b2b04491b4ca1a5a05fe8772b0c05f4633b399914348c5b03af58445d42c2f740f8407e572775a571805e582c6b96ffd4ccca764f2002510abddaab735ee4fb0b18c26d&quot;
+alice_wallet_address = &quot;rdx1qsp8n0nx0muaewav2ksx99wwsu9swq5mlndjmn3gm9vl9q2mzmup0xqm2ylge&quot;
+bob_private_key_hex = &quot;0000000000000000000000000000000000000000000000000000000000000002&quot;
+
+
+_hrp, alice_readdr_5bit = bech32.bech32_decode(alice_wallet_address)
+alice_readdr_bytes = bech32.convertbits(alice_readdr_5bit, 5, 8, pad=False)
+
+## Remove the REAddr 04 prefix byte
+alice_public_key_bytes = bytes(alice_readdr_bytes)[1:34]
+
+alice_public_key_hex = bytes(alice_public_key_bytes).hex()
+print(&quot;Alice Public Key:&quot;, alice_public_key_hex)
+
+alice_public_key = VerifyingKey.from_string(bytearray.fromhex(alice_public_key_hex), curve=SECP256k1, hashfunc=hashlib.sha256 )
+
+bob_private_key_hex = &quot;0000000000000000000000000000000000000000000000000000000000000002&quot;
+bob_private_key = SigningKey.from_string(bytearray.fromhex(bob_private_key_hex), curve=SECP256k1, hashfunc=hashlib.sha256)
+
+# Diffie-Hellman - we need to use lower level functions here so that we get back dh as a curve point
+dh = alice_public_key.pubkey.point * bob_private_key.privkey.secret_multiplier
+
+# Message Type: 01 (1 byte)
+message_type = encrypted_message[1:2]
+
+# Encryption Type: ff (1 byte)
+encryption_type = encrypted_message[2:4]
+
+# Ephemeral Public Key: 02663a6aaf4d5ec607330b9b74a840bf5c13b0a7357202fa85be56b13260655616 (33 bytes)
+ephemeral_public_key = encrypted_message[4:70]
+
+# Nonce: 57d6ee46d4d84e94ec615b42 (12 bytes)
+nonce = encrypted_message[70:94]
+
+# Auth Tag: 5a472dd8c813bad125335a097d29b64b (16 bytes)
+auth_tag = encrypted_message[94:126]
+
+# Ciphertext: 72319357406b2b04491b4ca1a5a05fe8772b0c05f4633b399914348c5b03af58445d42c2f740f8407e572775a571805e582c6b96ffd4ccca764f2002510abddaab735ee4fb0b18c26d
+ciphertext = encrypted_message[126:]
+
+# Convert Ephemeral Public key into a Curve Point
+ephemeral_curve = VerifyingKey.from_string(bytearray.fromhex(ephemeral_public_key), curve=ecdsa.SECP256k1, hashfunc=hashlib.sha256)
+ephemeral_point = ephemeral_curve.pubkey.point
+
+# Elliptic Curve Point Addition
+shared_secret_point = dh + ephemeral_point
+
+shared_secret_integer = shared_secret_point.x()
+shared_secret_hex = hex(shared_secret_integer)[2:]
+
+print(&quot;Shared Secret:&quot;, shared_secret_hex)
+
+# Create the Scrypt salt from the SHA256 of the nonce
+salt = hashlib.sha256(bytearray.fromhex(nonce)).digest()
+
+# Get the Decryption Key
+key = scrypt(bytearray.fromhex(shared_secret_hex), salt, 32, 8192, 8 ,1)
+
+print(&quot;Decryption Key:&quot;, key.hex())
+
+decrypt = AES.new(key, AES.MODE_GCM, nonce=bytearray.fromhex(nonce))
+
+# Add the Ephemeral Public Key as Associated Data
+decrypt.update(bytearray.fromhex(ephemeral_public_key))
+
+msg = decrypt.decrypt_and_verify(bytearray.fromhex(ciphertext), bytearray.fromhex(auth_tag))
+
+print(&quot;Plaintext Message:&quot;, msg)
+
+```
+
+## Run this code on Replit
+https://replit.com/@radixtalk/Decrypt-Transaction-Message#main.py
+
+Also see: https://radixtalk.com/t/how-to-encrypt-a-transaction-message-that-can-be-read-by-the-radix-wallet/202
+
+This work by [RadixPool.com](https://radixpool.com) is licensed under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).</description>
+    <language>en-GB</language>
+    <lastBuildDate>Mon, 03 Jan 2022 17:35:22 +0000</lastBuildDate>
+    <category>Developers</category>
+    <atom:link href="https://radixtalk.com/t/how-to-decrypt-an-encrypted-transaction-message-created-by-the-radix-wallet/189.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>How to decrypt an encrypted transaction message created by the Radix Wallet</title>
+        <dc:creator><![CDATA[minhnn | EasyStake.net]]></dc:creator>
+        <description><![CDATA[
+            <p>Thanks, I tested and including the associated data will make the verify successfully, and port your code to pointycastle library also work correctly.</p>
+          <p><a href="https://radixtalk.com/t/how-to-decrypt-an-encrypted-transaction-message-created-by-the-radix-wallet/189/6">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-to-decrypt-an-encrypted-transaction-message-created-by-the-radix-wallet/189/6</link>
+        <pubDate>Mon, 03 Jan 2022 17:35:22 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-189-6</guid>
+        <source url="https://radixtalk.com/t/how-to-decrypt-an-encrypted-transaction-message-created-by-the-radix-wallet/189.rss">How to decrypt an encrypted transaction message created by the Radix Wallet</source>
+      </item>
+      <item>
+        <title>How to decrypt an encrypted transaction message created by the Radix Wallet</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>The <code>decrypt_and_verify</code> function works correctly now. I had to add the following line to include the associated data before calling the <code>decrypt_and_verify</code> function:</p>
+<p><code>decrypt.update(bytearray.fromhex(ephemeral_public_key))</code></p>
+          <p><a href="https://radixtalk.com/t/how-to-decrypt-an-encrypted-transaction-message-created-by-the-radix-wallet/189/5">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-to-decrypt-an-encrypted-transaction-message-created-by-the-radix-wallet/189/5</link>
+        <pubDate>Mon, 03 Jan 2022 15:08:05 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-189-5</guid>
+        <source url="https://radixtalk.com/t/how-to-decrypt-an-encrypted-transaction-message-created-by-the-radix-wallet/189.rss">How to decrypt an encrypted transaction message created by the Radix Wallet</source>
+      </item>
+      <item>
+        <title>How to decrypt an encrypted transaction message created by the Radix Wallet</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <aside class="quote no-group" data-username="minhnn" data-post="3" data-topic="189">
+<div class="title">
+<div class="quote-controls"></div>
+<img alt="" width="20" height="20" src="https://radixtalk.com/letter_avatar_proxy/v4/letter/m/97f17d/40.png" class="avatar"> minhnn:</div>
+<blockquote>
+<p>I have a small suggestion that this should be changed to message_type = encrypted_message[0:2] to get the string value of “01”</p>
+</blockquote>
+</aside>
+<p>Doh! Thanks, I’ve edited the code to fix that.</p>
+<aside class="quote no-group" data-username="minhnn" data-post="3" data-topic="189">
+<div class="title">
+<div class="quote-controls"></div>
+<img alt="" width="20" height="20" src="https://radixtalk.com/letter_avatar_proxy/v4/letter/m/97f17d/40.png" class="avatar"> minhnn:</div>
+<blockquote>
+<p>Also could you be able to verify the auth_tag ?</p>
+</blockquote>
+</aside>
+<p>I originally used <code>decrypt.decrypt_and_verify(bytearray.fromhex(ciphertext), bytearray.fromhex(auth_tag))</code> but the MAC (Message Authentication Code) check always failed. I didn’t notice the message was decrypting “correctly” until I split the operation into separate <code>decrypt</code> and then <code>verify</code> steps. Of course the <code>verify</code> step using the auth_tag should be working to ensure that the decrypted message is verifiably correct.</p>
+<aside class="quote no-group" data-username="minhnn" data-post="3" data-topic="189">
+<div class="title">
+<div class="quote-controls"></div>
+<img alt="" width="20" height="20" src="https://radixtalk.com/letter_avatar_proxy/v4/letter/m/97f17d/40.png" class="avatar"> minhnn:</div>
+<blockquote>
+<p>If the auth_tag is “5a472dd8c813bad125335a097d29b64b” then it means Alice encrypted via AES with some value of associatedData</p>
+</blockquote>
+</aside>
+<p>Yes, I think you’re right. The problem is almost certainly related to associated data. Associated data is not encrypted as part of the ciphertext but is used when calculating the auth_tag.</p>
+<p>Once the auth_tag problem is fixed then I’ll be able to write up a guide to encrypting messages. Hopefully that will be very soon™…</p>
+          <p><a href="https://radixtalk.com/t/how-to-decrypt-an-encrypted-transaction-message-created-by-the-radix-wallet/189/4">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-to-decrypt-an-encrypted-transaction-message-created-by-the-radix-wallet/189/4</link>
+        <pubDate>Mon, 03 Jan 2022 10:15:44 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-189-4</guid>
+        <source url="https://radixtalk.com/t/how-to-decrypt-an-encrypted-transaction-message-created-by-the-radix-wallet/189.rss">How to decrypt an encrypted transaction message created by the Radix Wallet</source>
+      </item>
+      <item>
+        <title>How to decrypt an encrypted transaction message created by the Radix Wallet</title>
+        <dc:creator><![CDATA[minhnn | EasyStake.net]]></dc:creator>
+        <description><![CDATA[
+            <aside class="quote no-group" data-username="Stuart" data-post="1" data-topic="189">
+<div class="title">
+<div class="quote-controls"></div>
+<img alt="" width="20" height="20" src="https://radixtalk.com/letter_avatar_proxy/v4/letter/s/cab0a1/40.png" class="avatar"> Stuart:</div>
+<blockquote>
+<p><code>message_type = encrypted_message[1:2]</code></p>
+</blockquote>
+</aside>
+<p>I have a small suggestion that this should be changed to message_type = encrypted_message[0:2] to get the string value of “01”</p>
+<p>Also could you be able to verify the auth_tag ? I test with your hard coded data, then if we do AES encrypt with empty associatedData, then the auth_tag should be “101416c4f912797fe53f87c3f96f4374”</p>
+<p>If the auth_tag is “5a472dd8c813bad125335a097d29b64b” then it means Alice encrypted via AES with some value of associatedData (this is a parameter name of AEADParameters in the pointycastle library)</p>
+          <p><a href="https://radixtalk.com/t/how-to-decrypt-an-encrypted-transaction-message-created-by-the-radix-wallet/189/3">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-to-decrypt-an-encrypted-transaction-message-created-by-the-radix-wallet/189/3</link>
+        <pubDate>Mon, 03 Jan 2022 05:29:54 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-189-3</guid>
+        <source url="https://radixtalk.com/t/how-to-decrypt-an-encrypted-transaction-message-created-by-the-radix-wallet/189.rss">How to decrypt an encrypted transaction message created by the Radix Wallet</source>
+      </item>
+      <item>
+        <title>How to decrypt an encrypted transaction message created by the Radix Wallet</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>Similarly, Alice can decrypt her message that she sent to Bob with:</p>
+<ul>
+<li>Alice’s Private Key</li>
+<li>Bob’s Public Key</li>
+</ul>
+<p>DH = Alice Private Key * Bob Public Key = Alice Public Key * Bob Private Key</p>
+          <p><a href="https://radixtalk.com/t/how-to-decrypt-an-encrypted-transaction-message-created-by-the-radix-wallet/189/2">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-to-decrypt-an-encrypted-transaction-message-created-by-the-radix-wallet/189/2</link>
+        <pubDate>Sat, 01 Jan 2022 19:37:50 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-189-2</guid>
+        <source url="https://radixtalk.com/t/how-to-decrypt-an-encrypted-transaction-message-created-by-the-radix-wallet/189.rss">How to decrypt an encrypted transaction message created by the Radix Wallet</source>
+      </item>
+      <item>
+        <title>How to decrypt an encrypted transaction message created by the Radix Wallet</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <h1>
+<a name="how-to-decrypt-an-encrypted-transaction-message-created-by-the-radix-wallet-1" class="anchor" href="https://radixtalk.com#how-to-decrypt-an-encrypted-transaction-message-created-by-the-radix-wallet-1"></a>How to decrypt an encrypted transaction message created by the Radix Wallet</h1>
+<h2>
+<a name="h-0-introduction-2" class="anchor" href="https://radixtalk.com#h-0-introduction-2"></a>0. Introduction</h2>
+<p>The encryption scheme used by the Radix Wallet is called <code>DH_ADD_EPH_AESGCM256_SCRYPT_000</code></p>
+<p>Where:</p>
+<ul>
+<li>DH → <a href="https://cryptobook.nakov.com/asymmetric-key-ciphers/ecdh-key-exchange">(Elliptic Curve) Diffie-Hellman</a> (A key exchange protocol that allows untrusted parties to construct a shared secret)</li>
+<li>ADD → Elliptic Curve Point Addition (The operation we use to create the shared secret)</li>
+<li>EPH → Ephemeral Public Key (A temporary public key that is only used for the purpose of encrypting/decrypting the message)</li>
+<li>AESGCM256 → The symmetrical encryption algorithm used to encrypt/decrypt the message (Advanced Encryption Standard, Galios Counter Mode, 256 bits)</li>
+<li>SCRYPT → The Key Derivation Function (KDF) used (Scrypt)</li>
+<li>000 → The version of the scheme</li>
+</ul>
+<p>The encryption scheme allows both the sender and receiver to decrypt the message - but no one else.</p>
+<p>Alice sends the following encrypted message to Bob:</p>
+<p><code>01ff02663a6aaf4d5ec607330b9b74a840bf5c13b0a7357202fa85be56b1326065561657d6ee46d4d84e94ec615b425a472dd8c813bad125335a097d29b64b72319357406b2b04491b4ca1a5a05fe8772b0c05f4633b399914348c5b03af58445d42c2f740f8407e572775a571805e582c6b96ffd4ccca764f2002510abddaab735ee4fb0b18c26d</code></p>
+<p>Alice’s Wallet Address: <code>rdx1qsp8n0nx0muaewav2ksx99wwsu9swq5mlndjmn3gm9vl9q2mzmup0xqm2ylge</code></p>
+<p>Bob’s Wallet Address: <code>rdx1qspvvprlj3q76ltdxpz5qm54cp7dshrh3e9cemeu5746czdet3cfaegp8alwf</code></p>
+<p>For Bob to decrypt the message, he needs:</p>
+<ul>
+<li>Alice’s Public Key</li>
+<li>Bob’s Private Key</li>
+</ul>
+<h2>
+<a name="h-1-convert-alices-wallet-address-into-a-her-public-key-3" class="anchor" href="https://radixtalk.com#h-1-convert-alices-wallet-address-into-a-her-public-key-3"></a>1. Convert Alice’s Wallet address into a her Public Key:</h2>
+<pre><code class="lang-python">import bech32
+
+alice_wallet_address = "rdx1qsp8n0nx0muaewav2ksx99wwsu9swq5mlndjmn3gm9vl9q2mzmup0xqm2ylge"
+
+_hrp, alice_readdr_5bit = bech32.bech32_decode(alice_wallet_address)
+alice_readdr_bytes = bech32.convertbits(alice_readdr_5bit, 5, 8, pad=False)
+
+## Remove the REAddr 04 prefix byte
+alice_public_key_bytes = bytes(alice_readdr_bytes)[1:34]
+
+alice_public_key_hex = bytes(alice_public_key_bytes).hex()
+print("Alice Public Key:", alice_public_key_hex)
+
+# Alice Public Key: 0279be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798
+</code></pre>
+<h2>
+<a name="h-2-use-elliptic-curve-diffie-helmann-to-combine-alices-public-key-with-bobs-private-key-4" class="anchor" href="https://radixtalk.com#h-2-use-elliptic-curve-diffie-helmann-to-combine-alices-public-key-with-bobs-private-key-4"></a>2. Use Elliptic Curve Diffie-Helmann to combine Alice’s Public Key with Bob’s Private Key:</h2>
+<pre><code class="lang-python">import hashlib
+from ecdsa.curves import SECP256k1
+from ecdsa.keys import SigningKey, VerifyingKey
+
+alice_public_key_hex = "0279be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798"
+alice_public_key = VerifyingKey.from_string(bytearray.fromhex(alice_public_key_hex), curve=SECP256k1, hashfunc=hashlib.sha256 )
+
+bob_private_key_hex = "0000000000000000000000000000000000000000000000000000000000000002"
+bob_private_key = SigningKey.from_string(bytearray.fromhex(bob_private_key_hex), curve=SECP256k1, hashfunc=hashlib.sha256)
+
+# Diffie-Hellman - we need to use lower level functions here so that we get back dh as a curve point
+dh = alice_public_key.pubkey.point * bob_private_key.privkey.secret_multiplier
+
+</code></pre>
+<p><em>Note: Although it looks like a simple multiplication operation, the  * operator has been overridden in the ECDSA library to perform Elliptic Curve Diffie-Hellman calculation</em></p>
+<h2>
+<a name="h-3-slice-the-encrypted-message-into-its-component-parts-5" class="anchor" href="https://radixtalk.com#h-3-slice-the-encrypted-message-into-its-component-parts-5"></a>3. Slice the encrypted message into its component parts:</h2>
+<pre><code class="lang-python">encrypted_message = "01ff02663a6aaf4d5ec607330b9b74a840bf5c13b0a7357202fa85be56b1326065561657d6ee46d4d84e94ec615b425a472dd8c813bad125335a097d29b64b72319357406b2b04491b4ca1a5a05fe8772b0c05f4633b399914348c5b03af58445d42c2f740f8407e572775a571805e582c6b96ffd4ccca764f2002510abddaab735ee4fb0b18c26d"
+
+# Message Type: 01 (1 byte)
+message_type = encrypted_message[0:2]
+
+# Encryption Type: ff (1 byte)
+encryption_type = encrypted_message[2:4]
+
+# Ephemeral Public Key: 02663a6aaf4d5ec607330b9b74a840bf5c13b0a7357202fa85be56b13260655616 (33 bytes)
+ephemeral_public_key = encrypted_message[4:70]
+
+# Nonce: 57d6ee46d4d84e94ec615b42 (12 bytes)
+nonce = encrypted_message[70:94]
+
+# Auth Tag: 5a472dd8c813bad125335a097d29b64b (16 bytes)
+auth_tag = encrypted_message[94:126]
+
+# Ciphertext: 72319357406b2b04491b4ca1a5a05fe8772b0c05f4633b399914348c5b03af58445d42c2f740f8407e572775a571805e582c6b96ffd4ccca764f2002510abddaab735ee4fb0b18c26d
+ciphertext = encrypted_message[126:]
+
+</code></pre>
+<h2>
+<a name="h-4-convert-the-ephemeral-public-key-into-a-curve-point-6" class="anchor" href="https://radixtalk.com#h-4-convert-the-ephemeral-public-key-into-a-curve-point-6"></a>4. Convert the Ephemeral Public Key into a Curve Point</h2>
+<pre><code class="lang-python"># Convert Ephemeral Public key into a Curve Point
+ephemeral_curve = VerifyingKey.from_string(bytearray.fromhex(ephemeral_public_key), curve=ecdsa.SECP256k1, hashfunc=hashlib.sha256)
+ephemeral_point = ephemeral_curve.pubkey.point
+</code></pre>
+<h2>
+<a name="h-5-use-elliptic-curve-point-addition-to-combine-the-dh-point-with-the-ephemeral-point-7" class="anchor" href="https://radixtalk.com#h-5-use-elliptic-curve-point-addition-to-combine-the-dh-point-with-the-ephemeral-point-7"></a>5. Use Elliptic Curve Point Addition to combine the DH Point with the Ephemeral Point</h2>
+<pre><code class="lang-python"># Elliptic Curve Point Addition
+shared_secret_point = dh + ephemeral_point
+</code></pre>
+<p><em>Note: Although it looks like a simple addition operation, the + operator has been overridden in the ECDSA library to perform Elliptic Curve Point Addition</em></p>
+<h2>
+<a name="h-6-use-the-x-co-ordinate-of-the-shared-secret-point-as-the-shared-secret-8" class="anchor" href="https://radixtalk.com#h-6-use-the-x-co-ordinate-of-the-shared-secret-point-as-the-shared-secret-8"></a>6. Use the x co-ordinate of the Shared Secret Point as the Shared Secret</h2>
+<pre><code class="lang-python">shared_secret_integer = shared_secret_point.x()
+shared_secret_hex = hex(shared_secret_integer)[2:]
+
+print("Shared Secret:", shared_secret_hex)
+
+# Shared Secret: 64567aaa53dadd0d9dade89aca0beba4ea00ff987d986f5af421ff2bd636ca9d
+</code></pre>
+<h2>
+<a name="h-7-use-the-scrypt-key-derivation-function-kdf-to-convert-the-shared-secret-into-the-message-decryption-key-9" class="anchor" href="https://radixtalk.com#h-7-use-the-scrypt-key-derivation-function-kdf-to-convert-the-shared-secret-into-the-message-decryption-key-9"></a>7. Use the Scrypt Key Derivation Function (KDF) to convert the shared secret into the message decryption key:</h2>
+<pre><code class="lang-python">from Crypto.Protocol.KDF import scrypt
+
+# Create the Scrypt salt from the SHA256 of the nonce
+salt = hashlib.sha256(bytearray.fromhex(nonce)).digest()
+
+# Get the Decryption Key
+key = scrypt(bytearray.fromhex(shared_secret_hex), salt, 32, 8192, 8 ,1)
+
+print("Decryption Key:", key.hex())
+
+# Decryption Key: 7a294fd759ffdba936f46f5c773c7c8bd3e44064572b926e4e3e0b7291897a30
+</code></pre>
+<h2>
+<a name="h-8-decrypt-the-cipher-text-with-the-decryption-key-using-aes-gcm-10" class="anchor" href="https://radixtalk.com#h-8-decrypt-the-cipher-text-with-the-decryption-key-using-aes-gcm-10"></a>8. Decrypt the cipher text with the decryption key using AES-GCM:</h2>
+<pre><code class="lang-python">from Crypto.Cipher import AES
+
+decrypt = AES.new(key, AES.MODE_GCM, nonce=bytearray.fromhex(nonce))
+
+# Add the Ephemeral Public Key as Associated Data
+decrypt.update(bytearray.fromhex(ephemeral_public_key))
+
+msg = decrypt.decrypt_and_verify(bytearray.fromhex(ciphertext), bytearray.fromhex(auth_tag))
+
+print("Plaintext Message:", msg)
+
+# Plaintext Message: b'Hey Bob, this is Alice, you and I can read this message, but no one else.'
+</code></pre>
+<h2>
+<a name="h-8-the-entire-script-11" class="anchor" href="https://radixtalk.com#h-8-the-entire-script-11"></a>8. The Entire Script:</h2>
+<pre><code class="lang-python">import bech32
+import ecdsa
+import hashlib
+from ecdsa.curves import SECP256k1
+from ecdsa.keys import SigningKey, VerifyingKey
+from Crypto.Protocol.KDF import scrypt
+from Crypto.Cipher import AES
+
+
+encrypted_message = "01ff02663a6aaf4d5ec607330b9b74a840bf5c13b0a7357202fa85be56b1326065561657d6ee46d4d84e94ec615b425a472dd8c813bad125335a097d29b64b72319357406b2b04491b4ca1a5a05fe8772b0c05f4633b399914348c5b03af58445d42c2f740f8407e572775a571805e582c6b96ffd4ccca764f2002510abddaab735ee4fb0b18c26d"
+alice_wallet_address = "rdx1qsp8n0nx0muaewav2ksx99wwsu9swq5mlndjmn3gm9vl9q2mzmup0xqm2ylge"
+bob_private_key_hex = "0000000000000000000000000000000000000000000000000000000000000002"
+
+
+_hrp, alice_readdr_5bit = bech32.bech32_decode(alice_wallet_address)
+alice_readdr_bytes = bech32.convertbits(alice_readdr_5bit, 5, 8, pad=False)
+
+## Remove the REAddr 04 prefix byte
+alice_public_key_bytes = bytes(alice_readdr_bytes)[1:34]
+
+alice_public_key_hex = bytes(alice_public_key_bytes).hex()
+print("Alice Public Key:", alice_public_key_hex)
+
+alice_public_key = VerifyingKey.from_string(bytearray.fromhex(alice_public_key_hex), curve=SECP256k1, hashfunc=hashlib.sha256 )
+
+bob_private_key_hex = "0000000000000000000000000000000000000000000000000000000000000002"
+bob_private_key = SigningKey.from_string(bytearray.fromhex(bob_private_key_hex), curve=SECP256k1, hashfunc=hashlib.sha256)
+
+# Diffie-Hellman - we need to use lower level functions here so that we get back dh as a curve point
+dh = alice_public_key.pubkey.point * bob_private_key.privkey.secret_multiplier
+
+# Message Type: 01 (1 byte)
+message_type = encrypted_message[1:2]
+
+# Encryption Type: ff (1 byte)
+encryption_type = encrypted_message[2:4]
+
+# Ephemeral Public Key: 02663a6aaf4d5ec607330b9b74a840bf5c13b0a7357202fa85be56b13260655616 (33 bytes)
+ephemeral_public_key = encrypted_message[4:70]
+
+# Nonce: 57d6ee46d4d84e94ec615b42 (12 bytes)
+nonce = encrypted_message[70:94]
+
+# Auth Tag: 5a472dd8c813bad125335a097d29b64b (16 bytes)
+auth_tag = encrypted_message[94:126]
+
+# Ciphertext: 72319357406b2b04491b4ca1a5a05fe8772b0c05f4633b399914348c5b03af58445d42c2f740f8407e572775a571805e582c6b96ffd4ccca764f2002510abddaab735ee4fb0b18c26d
+ciphertext = encrypted_message[126:]
+
+# Convert Ephemeral Public key into a Curve Point
+ephemeral_curve = VerifyingKey.from_string(bytearray.fromhex(ephemeral_public_key), curve=ecdsa.SECP256k1, hashfunc=hashlib.sha256)
+ephemeral_point = ephemeral_curve.pubkey.point
+
+# Elliptic Curve Point Addition
+shared_secret_point = dh + ephemeral_point
+
+shared_secret_integer = shared_secret_point.x()
+shared_secret_hex = hex(shared_secret_integer)[2:]
+
+print("Shared Secret:", shared_secret_hex)
+
+# Create the Scrypt salt from the SHA256 of the nonce
+salt = hashlib.sha256(bytearray.fromhex(nonce)).digest()
+
+# Get the Decryption Key
+key = scrypt(bytearray.fromhex(shared_secret_hex), salt, 32, 8192, 8 ,1)
+
+print("Decryption Key:", key.hex())
+
+decrypt = AES.new(key, AES.MODE_GCM, nonce=bytearray.fromhex(nonce))
+
+# Add the Ephemeral Public Key as Associated Data
+decrypt.update(bytearray.fromhex(ephemeral_public_key))
+
+msg = decrypt.decrypt_and_verify(bytearray.fromhex(ciphertext), bytearray.fromhex(auth_tag))
+
+print("Plaintext Message:", msg)
+
+</code></pre>
+<h2>
+<a name="run-this-code-on-replit-12" class="anchor" href="https://radixtalk.com#run-this-code-on-replit-12"></a>Run this code on Replit</h2>
+<p><iframe src="https://replit.com/@radixtalk/Decrypt-Transaction-Message?lite=true" width="695" height="521" frameborder="0" seamless="seamless" sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox allow-presentation"></iframe></p>
+<p>Also see: <a href="https://radixtalk.com/t/how-to-encrypt-a-transaction-message-that-can-be-read-by-the-radix-wallet/202" class="inline-onebox">How to encrypt a transaction message that can be read by the Radix Wallet</a></p>
+<p>This work by <a href="https://radixpool.com">RadixPool.com</a> is licensed under a <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
+          <p><a href="https://radixtalk.com/t/how-to-decrypt-an-encrypted-transaction-message-created-by-the-radix-wallet/189/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-to-decrypt-an-encrypted-transaction-message-created-by-the-radix-wallet/189/1</link>
+        <pubDate>Fri, 31 Dec 2021 20:45:24 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-189-1</guid>
+        <source url="https://radixtalk.com/t/how-to-decrypt-an-encrypted-transaction-message-created-by-the-radix-wallet/189.rss">How to decrypt an encrypted transaction message created by the Radix Wallet</source>
+      </item>
+  </channel>
+</rss>

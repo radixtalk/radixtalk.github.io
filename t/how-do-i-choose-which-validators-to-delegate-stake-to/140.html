@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <title>How do I choose which Validators to delegate stake to? - Staking - RadixTalk</title>
+    <meta name="description" content="There are a number of considerations to make when selecting validators.  Prior to Xi’an release in 2023 when Radix will be fully sharded, there are 100 validators who take part in consensus and earn emissions, so we must&amp;hellip;">
+    <meta name="generator" content="Discourse 2.9.0.beta4 - https://github.com/discourse/discourse version 8ce29a4a2264ea472a8151bfe2e591ab1101cfeb">
+<link rel="icon" type="image/png" href="https://cdn.radixtalk.com/uploads/default/optimized/1X/023c6f3e74bac599c495c37eecd72f939f3fab87_2_32x32.png">
+<link rel="apple-touch-icon" type="image/png" href="https://cdn.radixtalk.com/uploads/default/optimized/1X/ad9adb26331754b0012edbc9b4796de8dc449fa8_2_180x180.png">
+<meta name="theme-color" content="#ffffff">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<link rel="canonical" href="140.html" />
+<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebSite","url":"https://radixtalk.com","potentialAction":{"@type":"SearchAction","target":"https://radixtalk.com/search?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<link rel="search" type="application/opensearchdescription+xml" href="../../opensearch.xml" title="RadixTalk Search">
+
+    <link href="https://cdn.radixtalk.com/stylesheets/color_definitions_light_4_1_41174e1f8711476b3393f07571899954e9737309.css?__ws=radixtalk.com" media="all" rel="stylesheet" class="light-scheme"/>
+
+  <link href="https://cdn.radixtalk.com/stylesheets/desktop_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="desktop"  />
+
+
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-akismet_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-akismet"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-automation_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-automation"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-cakeday_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-cakeday"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-canned-replies_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-canned-replies"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-checklist_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-checklist"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-data-explorer_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-data-explorer"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-details_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-details"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-docs_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-docs"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-follow_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-follow"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-fontawesome-pro_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-fontawesome-pro"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-footnote_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-footnote"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-local-dates_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-local-dates"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-presence_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-presence"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-rss-polling_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-rss-polling"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-saved-searches_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-saved-searches"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-solved_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-solved"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-tooltips_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-tooltips"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-user-notes_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-user-notes"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-voting_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-voting"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-whos-online_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-whos-online"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/lazy-yt_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="lazy-yt"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/poll_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="poll"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-voting_desktop_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-voting_desktop"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/poll_desktop_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="poll_desktop"  />
+
+  <link href="https://cdn.radixtalk.com/stylesheets/desktop_theme_1_263bf35b28bc3c889d3c5ea8d6e1c519621916e1.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="desktop_theme" data-theme-id="1" data-theme-name="default"/>
+
+    <script defer="" data-domain="radixtalk.com" src="https://plausible.io/js/plausible.hash.js"></script>
+
+    
+        <link rel="alternate nofollow" type="application/rss+xml" title="RSS feed of &#39;How do I choose which Validators to delegate stake to?&#39;" href="140.rss" />
+    <meta property="og:site_name" content="RadixTalk" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:image" content="https://cdn.radixtalk.com/uploads/default/original/1X/9e3624f2a5d4052091ba93563043c233df535486.png" />
+<meta property="og:image" content="https://cdn.radixtalk.com/uploads/default/original/1X/9e3624f2a5d4052091ba93563043c233df535486.png" />
+<meta property="og:url" content="https://radixtalk.com/t/how-do-i-choose-which-validators-to-delegate-stake-to/140" />
+<meta name="twitter:url" content="https://radixtalk.com/t/how-do-i-choose-which-validators-to-delegate-stake-to/140" />
+<meta property="og:title" content="How do I choose which Validators to delegate stake to?" />
+<meta name="twitter:title" content="How do I choose which Validators to delegate stake to?" />
+<meta property="og:description" content="There are a number of considerations to make when selecting validators.  Prior to Xi’an release in 2023 when Radix will be fully sharded, there are 100 validators who take part in consensus and earn emissions, so we must choose carefully between these validators to delegate our stake.  Here’s a guide for some of the considerations to make when selecting validators:  How many?  It is advisable to delegate your stake to a number of different validators.  This reduces your risk of missed rewards in..." />
+<meta name="twitter:description" content="There are a number of considerations to make when selecting validators.  Prior to Xi’an release in 2023 when Radix will be fully sharded, there are 100 validators who take part in consensus and earn emissions, so we must choose carefully between these validators to delegate our stake.  Here’s a guide for some of the considerations to make when selecting validators:  How many?  It is advisable to delegate your stake to a number of different validators.  This reduces your risk of missed rewards in..." />
+<meta name="twitter:label1" value="Reading time" />
+<meta name="twitter:data1" value="2 mins 🕑" />
+<meta name="twitter:label2" value="Likes" />
+<meta name="twitter:data2" value="12 ❤" />
+<meta property="article:published_time" content="2022-01-04T21:24:20+00:00" />
+<meta property="og:ignore_canonical" content="true" />
+
+
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"QAPage","name":"How do I choose which Validators to delegate stake to?","mainEntity":{"@type":"Question","name":"How do I choose which Validators to delegate stake to?","text":"There are a number of considerations to make when selecting validators.  Prior to Xi’an release in 2023 when Radix will be fully sharded, there are 100 validators who take part in consensus and earn emissions, so we must choose carefully between these validators to delegate our stake.  Here’s a guid&hellip;","upvoteCount":3,"answerCount":0,"dateCreated":"2021-12-28T21:28:01.722Z","author":{"@type":"Person","name":"Faraz | Radstakes.com"}}}</script>
+  </head>
+  <body class="crawler">
+    
+    <header>
+  <a href="https://radixtalk.com/">
+    <h1>RadixTalk</h1>
+  </a>
+</header>
+
+    <div id="main-outlet" class="wrap" role="main">
+        <div id="topic-title">
+    <h1>
+      <a href="140.html">How do I choose which Validators to delegate stake to?</a>
+    </h1>
+
+      <div class="topic-category" itemscope itemtype="http://schema.org/BreadcrumbList">
+          <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+            <a href="https://radixtalk.com/c/staking/27" class="badge-wrapper bullet" itemprop="item">
+              <span class='badge-category-bg' style='background-color: #3AB54A'></span>
+              <span class='badge-category clear-badge'>
+                <span class='category-name' itemprop='name'>Staking</span>
+              </span>
+            </a>
+            <meta itemprop="position" content="1" />
+          </span>
+      </div>
+
+      <div class="topic-category">
+        <div class='discourse-tags list-tags'>
+            <a href='../../tag/staking.html' class='discourse-tag' rel="tag">staking</a>, 
+            <a href='../../tag/faq.html' class='discourse-tag' rel="tag">faq</a>, 
+            <a href='../../tag/validators.html' class='discourse-tag' rel="tag">validators</a>
+        </div>
+      </div>
+  </div>
+
+  
+
+
+      <div id='post_1' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+        <div class='crawler-post-meta'>
+          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop='name' content='RadixTalk'>
+              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+                <meta itemprop='url' content='https://cdn.radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+              </div>
+          </div>
+          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a itemprop="url" href='../../u/Faraz.html'><span itemprop='name'>Faraz</span></a>
+            (Faraz | Radstakes.com)
+          </span>
+
+          <link itemprop="mainEntityOfPage" href="140.html">
+
+
+          <span class="crawler-post-infos">
+              <time itemprop='datePublished' datetime='2021-12-28T21:28:01Z' class='post-time'>
+                28 December 2021 21:28
+              </time>
+              <meta itemprop='dateModified' content='2022-01-04T21:24:20Z'>
+          <span itemprop='position'>#1</span>
+          </span>
+        </div>
+        <div class='post' itemprop='articleBody'>
+          <p>There are a number of considerations to make when selecting validators.  Prior to Xi’an release in 2023 when Radix will be fully sharded, there are 100 validators who take part in consensus and earn emissions, so we must choose carefully between these validators to delegate our stake.  Here’s a guide for some of the considerations to make when selecting validators:</p>
+<p><strong>How many?</strong><br>
+It is advisable to delegate your stake to a number of different validators.  This reduces your risk of missed rewards in the event of a validator going offline or suffering some downtime.  A general rule of thumb is to select 5 validators.  There are however no limits, so you may choose to stake with more or less.</p>
+<p><strong>Decentralisation</strong><br>
+In the interest of ensuring that the network is truly decentralised, it is preferable for no single validator to have too much of the total stake.  In an ideal world, the top 100 validators would each have 1% of the total stake, so validators who are already above 2% total stake should be avoided.</p>
+<p><strong>Security</strong><br>
+Similarly to the decentralisation argument above, if one or only a small number of nodes have a considerable amount of stake, this can put the security of the network at risk - for example a malicious actor only would only have to attack a smaller subset of nodes to cause disruption.  As above, it is advisable to stake on nodes with less than 2% stake.</p>
+<p><strong>Fees</strong><br>
+Validator fees are automatically deducted by the protocol and range from 0% - 3% typically.  Many validators operate nodes with 0% fees, however it should be considered that in order to operate robust infrastructure with backup nodes, monitoring systems and DDoS protection requires a significant financial outlay and it therefore may be a false economy to stake only to 0% fee validators.  Many validators will also not be able to sustain 0% fees indefinitely so the best advice is to contact them to understand what their longer term fee strategy is. (remember it takes ~2 weeks to unstake, so any benefit of 0% fees now could soon be lost if a validator then increases fees to 5% and you need to unstake).  Fees also have much less impact on your staking rewards than uptime (see thread <a href="../what-impact-do-validator-fees-have-on-my-staking-rewards/168.html">here</a>).  A general rule of thumb is fees up to around 3% are considered fair.</p>
+<p><strong>Uptime</strong><br>
+Each validator is required to take part in consensus rounds in order to earn emissions.  The number of consensus proposals made are counted along with any proposals that are missed to determine the validator’s uptime.  If a validator’s uptime drops to less than 98% in any single epoch, no emissions are earned for that epoch.  It is therefore recommended to keep an eye on the uptime metric which is recorded on the official <a href="https://explorer.radixdlt.com/#/validators">Radix Explorer</a>, or on community tools such as <a href="https://www.radixscan.io/ValidatorTable.shtml">Radixscan</a> and <a href="https://www.radixdashboard.com/">Radix Dashboard</a>.  This uptime metric is measured over the last 150 epochs (~4 days) and should be 99.9%+ to ensure consistent high performance.</p>
+<p><strong>Geography/Server Provider</strong><br>
+Validators are spread throughout the world, the locations of which can be found using <a href="https://www.radix.earth/">Radix.earth</a> for example. In the interests of decentralisation, it is advisable to choose validators from under-represented geographies.  Furthermore, many validators use cloud providers to host their servers.  It is therefore advisable to consider avoiding the big providers such as Google, AWS, Azure in favour of smaller data centres.  Otherwise an outage at any one data centre could be very detrimental to the performance and security of the network.</p>
+        </div>
+
+        <meta itemprop='headline' content='How do I choose which Validators to delegate stake to?'>
+          <meta itemprop='keywords' content='staking, faq, validators'>
+
+        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+           <meta itemprop="userInteractionCount" content="3" />
+           <span class='post-likes'>3 Likes</span>
+         </div>
+
+         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
+            <meta itemprop="userInteractionCount" content="0" />
+          </div>
+
+            <div class='crawler-linkback-list' itemscope itemtype='http://schema.org/ItemList'>
+                  <div itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+                    <a href="../viskosity-staking-shutting-down/371.html" itemscope itemtype='http://schema.org/DiscussionForumPosting' itemprop='item'>
+                      <meta itemprop='url' content='https://radixtalk.com/t/viskosity-staking-shutting-down/371'>
+                      <span itemprop='name'>Viskosity Staking shutting down</span>
+                    </a>
+                    <meta itemprop='position' content='6'>
+                  </div>
+                  <div itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+                    <a href="../allnodes-increasing-fees-to-5/357/7.html" itemscope itemtype='http://schema.org/DiscussionForumPosting' itemprop='item'>
+                      <meta itemprop='url' content='https://radixtalk.com/t/allnodes-increasing-fees-to-5/357/7'>
+                      <span itemprop='name'>Allnodes increasing fees to 5%</span>
+                    </a>
+                    <meta itemprop='position' content='7'>
+                  </div>
+            </div>
+      </div>
+      <div id='post_2' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+        <div class='crawler-post-meta'>
+          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop='name' content='RadixTalk'>
+              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+                <meta itemprop='url' content='https://cdn.radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+              </div>
+          </div>
+          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a itemprop="url" href='../../u/Mattia.html'><span itemprop='name'>Mattia</span></a>
+            (Mattia | MattiaNode)
+          </span>
+
+          <link itemprop="mainEntityOfPage" href="140.html">
+
+
+          <span class="crawler-post-infos">
+              <time itemprop='datePublished' datetime='2021-12-29T11:37:08Z' class='post-time'>
+                29 December 2021 11:37
+              </time>
+              <meta itemprop='dateModified' content='2021-12-29T11:50:21Z'>
+          <span itemprop='position'>#2</span>
+          </span>
+        </div>
+        <div class='post' itemprop='articleBody'>
+          <p>Great article Faraz!</p>
+<p>I would like to add that fees don’t really impact APY that much, for example:</p>
+<blockquote>
+<p>The APY for a node with 1% fee and the APY for a node with 3% fee is very close: <strong>11.68% vs 11.44%.</strong></p>
+</blockquote>
+<p>Thus, uptime is more important than fee!</p>
+<p>Also, as a TL:DR I would add:</p>
+<h2>
+<a name="things-to-consider-to-choose-a-validator-node-1" class="anchor" href="140.html#things-to-consider-to-choose-a-validator-node-1"></a>Things to consider to choose a validator node:</h2>
+<ul>
+<li>Total Delegated Stake (less than 1% would be great)</li>
+<li>Uptime (avoid 98% or lower, prefer 100%)</li>
+<li>Infrastructure (hardware, backup node, backup internet connection…)</li>
+<li>Owner reachability and community presence</li>
+<li>Owner delegation (important for nodes outside the top 100)</li>
+<li>Geographical location</li>
+<li>Fees</li>
+</ul>
+<p>And a few starting tips:<br>
+<img src="../../images/emoji/twitter/white_check_mark.png%3Fv=10" title=":white_check_mark:" class="emoji" alt=":white_check_mark:"> DO your own research on the node runner<br>
+<img src="../../images/emoji/twitter/white_check_mark.png%3Fv=10" title=":white_check_mark:" class="emoji" alt=":white_check_mark:"> DO delegate to at least 5 different validators with less than 2% of total network stake<br>
+<img src="../../images/emoji/twitter/white_check_mark.png%3Fv=10" title=":white_check_mark:" class="emoji" alt=":white_check_mark:"> DO prefer validators to the bottom of the list<br>
+<img src="../../images/emoji/twitter/white_check_mark.png%3Fv=10" title=":white_check_mark:" class="emoji" alt=":white_check_mark:"> DO contact the node runner if you have any questions or doubts</p>
+<p><img src="../../images/emoji/twitter/x.png%3Fv=10" title=":x:" class="emoji" alt=":x:"> DO NOT blindly stake to the top validators<br>
+<img src="../../images/emoji/twitter/x.png%3Fv=10" title=":x:" class="emoji" alt=":x:"> DO NOT put all your eggs in a basket by delegating to just one node<br>
+<img src="../../images/emoji/twitter/x.png%3Fv=10" title=":x:" class="emoji" alt=":x:"> DO NOT stake your whole balance. <strong>You need 0.6 XRD to request an unstake to ONE node.</strong></p>
+<p>If you want to read more, check out <a href="https://docs.mattia.wiki/radix/howtovalidator/">this article</a> on my wiki!</p>
+        </div>
+
+        <meta itemprop='headline' content='How do I choose which Validators to delegate stake to?'>
+
+        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+           <meta itemprop="userInteractionCount" content="3" />
+           <span class='post-likes'>3 Likes</span>
+         </div>
+
+         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
+            <meta itemprop="userInteractionCount" content="0" />
+          </div>
+
+      </div>
+      <div id='post_3' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+        <div class='crawler-post-meta'>
+          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop='name' content='RadixTalk'>
+              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+                <meta itemprop='url' content='https://cdn.radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+              </div>
+          </div>
+          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a itemprop="url" href='../../u/Stuart.html'><span itemprop='name'>Stuart</span></a>
+            (Stuart | RadixPool)
+          </span>
+
+          <link itemprop="mainEntityOfPage" href="140.html">
+
+
+          <span class="crawler-post-infos">
+              <time itemprop='datePublished' datetime='2021-12-30T12:33:03Z' class='post-time'>
+                30 December 2021 12:33
+              </time>
+              <meta itemprop='dateModified' content='2021-12-30T12:33:03Z'>
+          <span itemprop='position'>#3</span>
+          </span>
+        </div>
+        <div class='post' itemprop='articleBody'>
+          <aside class="onebox allowlistedgeneric" data-onebox-src="https://learn.radixdlt.com/article/how-should-i-choose-validators-to-stake-to">
+  <header class="source">
+      <img src="../../uploads/default/original/1X/fed6c22b3f2ffa507d36ebe7838db55b671cb0c4.png" class="site-icon" width="32" height="32">
+
+      <a href="https://learn.radixdlt.com/article/how-should-i-choose-validators-to-stake-to" target="_blank" rel="noopener">learn.radixdlt.com</a>
+  </header>
+
+  <article class="onebox-body">
+    
+
+<h3><a href="https://learn.radixdlt.com/article/how-should-i-choose-validators-to-stake-to" target="_blank" rel="noopener">FAQ: Staking &amp; Validating on Radix</a></h3>
+
+  <p>How should I choose validators to stake to?</p>
+
+
+  </article>
+
+  <div class="onebox-metadata">
+    
+    
+  </div>
+
+  <div style="clear: both"></div>
+</aside>
+
+        </div>
+
+        <meta itemprop='headline' content='How do I choose which Validators to delegate stake to?'>
+
+        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+           <meta itemprop="userInteractionCount" content="0" />
+           <span class='post-likes'></span>
+         </div>
+
+         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
+            <meta itemprop="userInteractionCount" content="0" />
+          </div>
+
+      </div>
+      <div id='post_4' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+        <div class='crawler-post-meta'>
+          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop='name' content='RadixTalk'>
+              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+                <meta itemprop='url' content='https://cdn.radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+              </div>
+          </div>
+          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a itemprop="url" href='../../u/radixlogicalmoon.html'><span itemprop='name'>radixlogicalmoon</span></a>
+            (Katan &amp; Rory | Radix Logical Moon )
+          </span>
+
+          <link itemprop="mainEntityOfPage" href="140.html">
+
+
+          <span class="crawler-post-infos">
+              <time itemprop='datePublished' datetime='2022-02-02T16:40:39Z' class='post-time'>
+                2 February 2022 16:40
+              </time>
+              <meta itemprop='dateModified' content='2022-02-02T16:40:39Z'>
+          <span itemprop='position'>#4</span>
+          </span>
+        </div>
+        <div class='post' itemprop='articleBody'>
+          <p>And due consideration for all validators following the  <a href="../validator-code-of-conduct/320.html">Validator Code of Conduct - Validators - RadixTalk</a></p>
+        </div>
+
+        <meta itemprop='headline' content='How do I choose which Validators to delegate stake to?'>
+
+        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+           <meta itemprop="userInteractionCount" content="3" />
+           <span class='post-likes'>3 Likes</span>
+         </div>
+
+         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
+            <meta itemprop="userInteractionCount" content="0" />
+          </div>
+
+      </div>
+      <div id='post_5' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+        <div class='crawler-post-meta'>
+          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop='name' content='RadixTalk'>
+              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+                <meta itemprop='url' content='https://cdn.radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+              </div>
+          </div>
+          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a itemprop="url" href='../../u/Mattia.html'><span itemprop='name'>Mattia</span></a>
+            (Mattia | MattiaNode)
+          </span>
+
+          <link itemprop="mainEntityOfPage" href="140.html">
+
+
+          <span class="crawler-post-infos">
+              <time itemprop='datePublished' datetime='2022-03-15T11:24:13Z' class='post-time'>
+                15 March 2022 11:24
+              </time>
+              <meta itemprop='dateModified' content='2022-03-15T11:24:13Z'>
+          <span itemprop='position'>#5</span>
+          </span>
+        </div>
+        <div class='post' itemprop='articleBody'>
+          <p>I suggest new stakers have a look at <a class="mention" href="../../u/minhnn.html">@minhnn</a>’s from EasyStake validator list, which uses a system based on scores to list validators:</p>
+<blockquote>
+<ol>
+<li>
+<strong>Node Stake Score (30%)</strong>: the validators which have smaller stake will have higher score, because this will created the balance, and more decentralization.</li>
+<li>
+<strong>Combined Stake Score (15%)</strong>: similar to the above score, but we based on the combined stakes (some operators run 2 or more validators). You could check the combined information at Florian Pieper’s validators.</li>
+<li>
+<strong>Owner Stake Score (15%)</strong>: Owners who stake more on their validators will have higher score.</li>
+<li>
+<strong>Uptime Score (30%)</strong>: This is very important, the higher uptime means delegators will earn more, the epoch will be faster (so more rewards for all delegators of the top 100 list)</li>
+<li>
+<strong>Fee Score (10%)</strong>: the Fee is needed for covering the hosting and operation cost, but if the Fee is too high this will reduce the rewards.</li>
+</ol>
+</blockquote>
+<p>Check EasyStake Validator List <a href="https://www.easystake.net/radix-validators">here.</a></p>
+        </div>
+
+        <meta itemprop='headline' content='How do I choose which Validators to delegate stake to?'>
+
+        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+           <meta itemprop="userInteractionCount" content="2" />
+           <span class='post-likes'>2 Likes</span>
+         </div>
+
+         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
+            <meta itemprop="userInteractionCount" content="1" />
+          </div>
+
+      </div>
+      <div id='post_6' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+        <div class='crawler-post-meta'>
+          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop='name' content='RadixTalk'>
+              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+                <meta itemprop='url' content='https://cdn.radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+              </div>
+          </div>
+          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a itemprop="url" href='../../u/Jazzer_9F.html'><span itemprop='name'>Jazzer_9F</span></a>
+            (Jazzer 9F)
+          </span>
+
+          <link itemprop="mainEntityOfPage" href="140.html">
+
+
+          <span class="crawler-post-infos">
+              <time itemprop='datePublished' datetime='2022-03-15T19:32:36Z' class='post-time'>
+                15 March 2022 19:32
+              </time>
+              <meta itemprop='dateModified' content='2022-03-15T19:32:36Z'>
+          <span itemprop='position'>#6</span>
+          </span>
+        </div>
+        <div class='post' itemprop='articleBody'>
+          <p>This is pretty cool! Nice idea to have a weighted score.</p>
+        </div>
+
+        <meta itemprop='headline' content='How do I choose which Validators to delegate stake to?'>
+
+        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+           <meta itemprop="userInteractionCount" content="1" />
+           <span class='post-likes'>1 Like</span>
+         </div>
+
+         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
+            <meta itemprop="userInteractionCount" content="0" />
+          </div>
+
+      </div>
+
+
+
+
+
+
+    </div>
+    <footer class="container wrap">
+  <nav class='crawler-nav'>
+    <ul>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='https://radixtalk.com/' itemprop="url">Home </a>
+        </span>
+      </li>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='https://radixtalk.com/categories' itemprop="url">Categories </a>
+        </span>
+      </li>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='https://radixtalk.com/guidelines' itemprop="url">FAQ/Guidelines </a>
+        </span>
+      </li>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='https://radixtalk.com/tos' itemprop="url">Terms of Service </a>
+        </span>
+      </li>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='https://radixtalk.com/privacy' itemprop="url">Privacy Policy </a>
+        </span>
+      </li>
+    </ul>
+  </nav>
+  <p class='powered-by-link'>Powered by <a href="https://www.discourse.org">Discourse</a>, best viewed with JavaScript enabled</p>
+</footer>
+
+    
+    
+  </body>
+  
+</html>

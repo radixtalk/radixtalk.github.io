@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Where can I see where Validator nodes are located/hosted?</title>
+    <link>https://radixtalk.com/t/where-can-i-see-where-validator-nodes-are-located-hosted/89</link>
+    <description>The following websites have details about Radix Validator nodes including location information:
+
+* https://www.radix.earth/
+* https://radixexchange.com/</description>
+    <language>en-GB</language>
+    <lastBuildDate>Sun, 26 Dec 2021 14:33:09 +0000</lastBuildDate>
+    <category>Questions / Help</category>
+    <atom:link href="https://radixtalk.com/t/where-can-i-see-where-validator-nodes-are-located-hosted/89.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Where can I see where Validator nodes are located/hosted?</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>The following websites have details about Radix Validator nodes including location information:</p>
+<ul>
+<li><a href="https://www.radix.earth/">https://www.radix.earth/</a></li>
+<li><a href="https://radixexchange.com/">https://radixexchange.com/</a></li>
+</ul>
+          <p><a href="https://radixtalk.com/t/where-can-i-see-where-validator-nodes-are-located-hosted/89/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/where-can-i-see-where-validator-nodes-are-located-hosted/89/1</link>
+        <pubDate>Sun, 26 Dec 2021 14:33:09 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-89-1</guid>
+        <source url="https://radixtalk.com/t/where-can-i-see-where-validator-nodes-are-located-hosted/89.rss">Where can I see where Validator nodes are located/hosted?</source>
+      </item>
+  </channel>
+</rss>

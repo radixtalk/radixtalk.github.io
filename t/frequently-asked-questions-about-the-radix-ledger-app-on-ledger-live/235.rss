@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Frequently Asked Questions about the Radix Ledger app on Ledger Live</title>
+    <link>https://radixtalk.com/t/frequently-asked-questions-about-the-radix-ledger-app-on-ledger-live/235</link>
+    <description>**Can I install the Radix Ledger app on my Ledger Nano X?**
+Yes!
+
+**What firmware version do I need on my Ledger Nano X to install the Radix Ledger app?**
+Version **2.0.0**
+*If you have an earlier firmware version the Radix Ledger app will not appear in the list of available apps.*
+Ref: https://support.ledger.com/hc/en-us/articles/360013349800-Update-Ledger-Nano-X-firmware?docs=true
+
+**What firmware version do I need on my Ledger Nano S to install the Radix Ledger app?**
+Version **2.1.0**
+*If you have an earlier firmware version the Radix Ledger app will not appear in the list of available apps.*
+Ref: https://support.ledger.com/hc/en-us/articles/360002731113-Update-Ledger-Nano-S-firmware?docs=true
+
+**Do I need to uninstall the sideloaded Radix app from my Ledger Nano S before I install it from Ledger Live?**
+Yes. Instructions for uninstalling the sideloaded Radix app are here for [MacOS](https://docs.radixdlt.com/main/user-applications/ledger-app-sideload-macos.html#_uninstalling_the_radix_ledger_app) and [Windows](https://docs.radixdlt.com/main/user-applications/ledger-app-sideload-windows.html#_uninstalling_the_radix_ledger_app)
+
+**Why can&#39;t I see the Radix Ledger app in the list of available apps in Ledger Live?**
+Ensure you have enabled &quot;Developer Mode&quot; in the Ledger Live application
+*Settings &gt; Experimental Features &gt; Developer Mode*
+![Screenshot 2022-01-14 at 11.11.15|690x408, 75%](upload://6Tn8OHFKvtcFOOJEHnxbbXK1Cuz.png)
+
+**Can I add my Radix wallet to the Ledger Live application as an account?**
+No. Radix is currently not available to add as an account on Ledger Live.
+
+**Will I lose my hardware wallet address when I uninstall the sideloaded Radix app?**
+Absolutely not.
+
+&gt; The address is derived from the hardware device itself and so after you upgrade to the new Radix app, it will use exactly the same Radix address as before.
+
+**Will I have to unstake and restake after updating my Nano S / Nano X to the new Radix Ledger app?**
+Absolutely not. Your hardware wallet address remains exactly the same.
+
+**How do I use the Radix Ledger app with the Radix Desktop wallet?**
+See [Radix Learn: Using Ledger Nano S or X with the Radix Desktop Wallet](https://learn.radixdlt.com/article/using-ledger-nano-s-or-x-with-the-radix-desktop-wallet)
+
+**Can I use my Ledger seed phrase on another device or wallet if Ledger ever ceased to exist?**
+Yes. Ledger uses a standard called BIP-32 to derive a private keys from a seed phrase. You will be able to use your Ledger seed phrase with any other hardware or software wallet that implements the BIP-32 standard.
+
+**Can I use multiple wallet-adresses (&quot;accounts&quot;) when using the Nano just like I can in the normal Radix wallet?**
+You can&#39;t use multiple wallet addresses with the hardware wallet at the moment. However this is a limitation of the current Radix Desktop wallet software and not the Ledger device. So in theory, it should be possible in an updated version of the Radix Desktop wallet software.
+&gt; We want to add support for multiple derived addresses, but no ETA yet (Ref: [Matt](https://discord.com/channels/417762285172555786/421646460258615317/931590045398364171))
+
+**Is there an option to rename the hardware wallet in the Radix Desktop wallet?**
+No, not at the moment. This feature will likely be added when the Radix Desktop wallet supports multiple hardware accounts.
+
+**My Ledger says &quot;Pending Ledger review&quot;. It is not useable yet?**
+Yes it is usable. You need to click both buttons on the Ledger to confirm. The Radix Ledger app will be fully functional after that. The Radix app is current enabled under &quot;Developer Mode&quot; which is why the additional confirmation is displayed.
+
+**Can I move my staking from my Radix Desktop wallet to my Ledger Hardware wallet?**
+You will need to unstake from your Radix Desktop wallet address, transfer your XRD to the hardware wallet address, and then restake from your hardware wallet address.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Sat, 15 Jan 2022 11:52:35 +0000</lastBuildDate>
+    <category>Questions / Help</category>
+    <atom:link href="https://radixtalk.com/t/frequently-asked-questions-about-the-radix-ledger-app-on-ledger-live/235.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Frequently Asked Questions about the Radix Ledger app on Ledger Live</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>The Ledger Hardware wallets supports multiple coin types and multiple wallet addresses for each coin type through the use of derivation paths. The cool thing about derivation paths is that you can have a single master private key (derived from your Ledger seed phrase), and then have all of you other coin addresses derive from that master private key.</p>
+<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.radixtalk.com/uploads/default/original/1X/1ebc9bf2f52e8745ebbb86ea14f2e7fa49ab1094.png" data-download-href="https://cdn.radixtalk.com/uploads/default/1ebc9bf2f52e8745ebbb86ea14f2e7fa49ab1094" title="derivation"><img src="https://cdn.radixtalk.com/uploads/default/optimized/1X/1ebc9bf2f52e8745ebbb86ea14f2e7fa49ab1094_2_690x425.png" alt="derivation" data-base62-sha1="4nUpSwl9Mgv6SRbKLETVjQBiB24" width="690" height="425" srcset="https://cdn.radixtalk.com/uploads/default/optimized/1X/1ebc9bf2f52e8745ebbb86ea14f2e7fa49ab1094_2_690x425.png, https://cdn.radixtalk.com/uploads/default/original/1X/1ebc9bf2f52e8745ebbb86ea14f2e7fa49ab1094.png 1.5x, https://cdn.radixtalk.com/uploads/default/original/1X/1ebc9bf2f52e8745ebbb86ea14f2e7fa49ab1094.png 2x" data-small-upload="https://cdn.radixtalk.com/uploads/default/optimized/1X/1ebc9bf2f52e8745ebbb86ea14f2e7fa49ab1094_2_10x10.png"></a></div><p></p>
+<p>For a given master private key, your wallet addresses are derived using the following derivation path:</p>
+<pre><code class="lang-nohighlight"># XRD
+m/44'/1022'/0'/0/x'
+
+# ETH
+m/44'/60'/0'/0/x
+
+# SOL
+m/44'/501'/0'/0/x
+</code></pre>
+<p>where x is an index starting from 0 and incrementing for every new wallet.</p>
+<p>So the ability to support multiple Radix wallet addresses on a single Ledger hardware device is dependent of the functionality being added to the Radix Desktop wallet application. The current implementation is the “minimum viable product” which was essential at the time mainnet was launched.</p>
+<p>Hopefully support for multiple hardware devices and multiple wallets for each hardware device will be added at some stage.</p>
+<p>Ref: <a href="https://learnmeabitcoin.com/technical/hd-wallets" class="inline-onebox">HD Wallets</a></p>
+          <p><a href="https://radixtalk.com/t/frequently-asked-questions-about-the-radix-ledger-app-on-ledger-live/235/3">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/frequently-asked-questions-about-the-radix-ledger-app-on-ledger-live/235/3</link>
+        <pubDate>Sat, 15 Jan 2022 11:52:35 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-235-3</guid>
+        <source url="https://radixtalk.com/t/frequently-asked-questions-about-the-radix-ledger-app-on-ledger-live/235.rss">Frequently Asked Questions about the Radix Ledger app on Ledger Live</source>
+      </item>
+      <item>
+        <title>Frequently Asked Questions about the Radix Ledger app on Ledger Live</title>
+        <dc:creator><![CDATA[Stephen Raftery]]></dc:creator>
+        <description><![CDATA[
+            <aside class="quote no-group" data-username="Stuart" data-post="1" data-topic="235">
+<div class="title">
+<div class="quote-controls"></div>
+<img alt="" width="20" height="20" src="https://cdn.radixtalk.com/letter_avatar_proxy/v4/letter/s/cab0a1/40.png" class="avatar"> Stuart:</div>
+<blockquote>
+<p>Can I use multiple wallet-adresses (“accounts”) when using the Nano just like I can in the normal Radix wallet?</p>
+</blockquote>
+</aside>
+<p>It is in fact possible to use a single Ledger device to manage several wallets, but it is not intuitive.<br>
+You need to use the ‘Passphrase’ facility of the Ledger device, which has the effect of creating a completely new seed phrase and a new derived wallet address<br>
+Details can be found here: <a href="https://support.ledger.com/hc/en-us/articles/115005214529-Advanced-passphrase-security?docs=true" rel="noopener nofollow ugc">https://support.ledger.com/hc/en-us/articles/115005214529-Advanced-passphrase-security?docs=true</a><br>
+This is not a feature for novice users</p>
+          <p><a href="https://radixtalk.com/t/frequently-asked-questions-about-the-radix-ledger-app-on-ledger-live/235/2">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/frequently-asked-questions-about-the-radix-ledger-app-on-ledger-live/235/2</link>
+        <pubDate>Sat, 15 Jan 2022 11:15:03 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-235-2</guid>
+        <source url="https://radixtalk.com/t/frequently-asked-questions-about-the-radix-ledger-app-on-ledger-live/235.rss">Frequently Asked Questions about the Radix Ledger app on Ledger Live</source>
+      </item>
+      <item>
+        <title>Frequently Asked Questions about the Radix Ledger app on Ledger Live</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p><strong>Can I install the Radix Ledger app on my Ledger Nano X?</strong><br>
+Yes!</p>
+<p><strong>What firmware version do I need on my Ledger Nano X to install the Radix Ledger app?</strong><br>
+Version <strong>2.0.0</strong><br>
+<em>If you have an earlier firmware version the Radix Ledger app will not appear in the list of available apps.</em><br>
+Ref: <a href="https://support.ledger.com/hc/en-us/articles/360013349800-Update-Ledger-Nano-X-firmware?docs=true">https://support.ledger.com/hc/en-us/articles/360013349800-Update-Ledger-Nano-X-firmware?docs=true</a></p>
+<p><strong>What firmware version do I need on my Ledger Nano S to install the Radix Ledger app?</strong><br>
+Version <strong>2.1.0</strong><br>
+<em>If you have an earlier firmware version the Radix Ledger app will not appear in the list of available apps.</em><br>
+Ref: <a href="https://support.ledger.com/hc/en-us/articles/360002731113-Update-Ledger-Nano-S-firmware?docs=true">https://support.ledger.com/hc/en-us/articles/360002731113-Update-Ledger-Nano-S-firmware?docs=true</a></p>
+<p><strong>Do I need to uninstall the sideloaded Radix app from my Ledger Nano S before I install it from Ledger Live?</strong><br>
+Yes. Instructions for uninstalling the sideloaded Radix app are here for <a href="https://docs.radixdlt.com/main/user-applications/ledger-app-sideload-macos.html#_uninstalling_the_radix_ledger_app">MacOS</a> and <a href="https://docs.radixdlt.com/main/user-applications/ledger-app-sideload-windows.html#_uninstalling_the_radix_ledger_app">Windows</a></p>
+<p><strong>Why can’t I see the Radix Ledger app in the list of available apps in Ledger Live?</strong><br>
+Ensure you have enabled “Developer Mode” in the Ledger Live application<br>
+<em>Settings &gt; Experimental Features &gt; Developer Mode</em><br>
+</p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.radixtalk.com/uploads/default/original/1X/304f7388e342c279f456ab4f9ef281bdec1678b7.png" data-download-href="https://cdn.radixtalk.com/uploads/default/304f7388e342c279f456ab4f9ef281bdec1678b7" title="Screenshot 2022-01-14 at 11.11.15"><img src="https://cdn.radixtalk.com/uploads/default/optimized/1X/304f7388e342c279f456ab4f9ef281bdec1678b7_2_517x306.png" alt="Screenshot 2022-01-14 at 11.11.15" data-base62-sha1="6Tn8OHFKvtcFOOJEHnxbbXK1Cuz" width="517" height="306" srcset="https://cdn.radixtalk.com/uploads/default/optimized/1X/304f7388e342c279f456ab4f9ef281bdec1678b7_2_517x306.png, https://cdn.radixtalk.com/uploads/default/optimized/1X/304f7388e342c279f456ab4f9ef281bdec1678b7_2_775x459.png 1.5x, https://cdn.radixtalk.com/uploads/default/optimized/1X/304f7388e342c279f456ab4f9ef281bdec1678b7_2_1034x612.png 2x" data-small-upload="https://cdn.radixtalk.com/uploads/default/optimized/1X/304f7388e342c279f456ab4f9ef281bdec1678b7_2_10x10.png"></a></div><p></p>
+<p><strong>Can I add my Radix wallet to the Ledger Live application as an account?</strong><br>
+No. Radix is currently not available to add as an account on Ledger Live.</p>
+<p><strong>Will I lose my hardware wallet address when I uninstall the sideloaded Radix app?</strong><br>
+Absolutely not.</p>
+<blockquote>
+<p>The address is derived from the hardware device itself and so after you upgrade to the new Radix app, it will use exactly the same Radix address as before.</p>
+</blockquote>
+<p><strong>Will I have to unstake and restake after updating my Nano S / Nano X to the new Radix Ledger app?</strong><br>
+Absolutely not. Your hardware wallet address remains exactly the same.</p>
+<p><strong>How do I use the Radix Ledger app with the Radix Desktop wallet?</strong><br>
+See <a href="https://learn.radixdlt.com/article/using-ledger-nano-s-or-x-with-the-radix-desktop-wallet">Radix Learn: Using Ledger Nano S or X with the Radix Desktop Wallet</a></p>
+<p><strong>Can I use my Ledger seed phrase on another device or wallet if Ledger ever ceased to exist?</strong><br>
+Yes. Ledger uses a standard called BIP-32 to derive a private keys from a seed phrase. You will be able to use your Ledger seed phrase with any other hardware or software wallet that implements the BIP-32 standard.</p>
+<p><strong>Can I use multiple wallet-adresses (“accounts”) when using the Nano just like I can in the normal Radix wallet?</strong><br>
+You can’t use multiple wallet addresses with the hardware wallet at the moment. However this is a limitation of the current Radix Desktop wallet software and not the Ledger device. So in theory, it should be possible in an updated version of the Radix Desktop wallet software.</p>
+<blockquote>
+<p>We want to add support for multiple derived addresses, but no ETA yet (Ref: <a href="https://discord.com/channels/417762285172555786/421646460258615317/931590045398364171">Matt</a>)</p>
+</blockquote>
+<p><strong>Is there an option to rename the hardware wallet in the Radix Desktop wallet?</strong><br>
+No, not at the moment. This feature will likely be added when the Radix Desktop wallet supports multiple hardware accounts.</p>
+<p><strong>My Ledger says “Pending Ledger review”. It is not useable yet?</strong><br>
+Yes it is usable. You need to click both buttons on the Ledger to confirm. The Radix Ledger app will be fully functional after that. The Radix app is current enabled under “Developer Mode” which is why the additional confirmation is displayed.</p>
+<p><strong>Can I move my staking from my Radix Desktop wallet to my Ledger Hardware wallet?</strong><br>
+You will need to unstake from your Radix Desktop wallet address, transfer your XRD to the hardware wallet address, and then restake from your hardware wallet address.</p>
+          <p><a href="https://radixtalk.com/t/frequently-asked-questions-about-the-radix-ledger-app-on-ledger-live/235/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/frequently-asked-questions-about-the-radix-ledger-app-on-ledger-live/235/1</link>
+        <pubDate>Fri, 14 Jan 2022 11:03:48 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-235-1</guid>
+        <source url="https://radixtalk.com/t/frequently-asked-questions-about-the-radix-ledger-app-on-ledger-live/235.rss">Frequently Asked Questions about the Radix Ledger app on Ledger Live</source>
+      </item>
+  </channel>
+</rss>

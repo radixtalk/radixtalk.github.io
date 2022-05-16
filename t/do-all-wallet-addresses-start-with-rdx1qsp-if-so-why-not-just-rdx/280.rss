@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Do all wallet addresses start with rdx1qsp? If so, why not just rdx?</title>
+    <link>https://radixtalk.com/t/do-all-wallet-addresses-start-with-rdx1qsp-if-so-why-not-just-rdx/280</link>
+    <description>Radix wallet addresses are bech32 encoded. `rdx` is the **Human Readable Part (hrp)**, `1` is a separator between the hrp and the rest of the address, and the `qsp` is because every Radix wallet address is a 33 byte compressed public key starting with `0x02` or `0x03` that is prefixed with a `0x04` byte.
+
+Ref: [Telegram](https://t.me/radix_dlt/345164)</description>
+    <language>en-GB</language>
+    <lastBuildDate>Thu, 27 Jan 2022 13:39:19 +0000</lastBuildDate>
+    <category>Questions / Help</category>
+    <atom:link href="https://radixtalk.com/t/do-all-wallet-addresses-start-with-rdx1qsp-if-so-why-not-just-rdx/280.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Do all wallet addresses start with rdx1qsp? If so, why not just rdx?</title>
+        <dc:creator><![CDATA[CaviarNine]]></dc:creator>
+        <description><![CDATA[
+            <p>To add to Stuart’s explanation…<br>
+The first 15 bits of 0x0402 or 0x0403 are (grouped into 5 bit pieces):<br>
+00000 10000 00001<br>
+Which maps to ‘qsp’ under the bech32 character set.<br>
+The mapping for those interested is:</p>
+<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.radixtalk.com/uploads/default/original/1X/8be0abca5232595ef38ad8480564eec5c12de511.png" data-download-href="https://cdn.radixtalk.com/uploads/default/8be0abca5232595ef38ad8480564eec5c12de511" title="image"><img src="https://cdn.radixtalk.com/uploads/default/optimized/1X/8be0abca5232595ef38ad8480564eec5c12de511_2_690x359.png" alt="image" data-base62-sha1="jXpISHXGDbiQhxXTHi8cBRTyvHH" width="690" height="359" srcset="https://cdn.radixtalk.com/uploads/default/optimized/1X/8be0abca5232595ef38ad8480564eec5c12de511_2_690x359.png, https://cdn.radixtalk.com/uploads/default/original/1X/8be0abca5232595ef38ad8480564eec5c12de511.png 1.5x, https://cdn.radixtalk.com/uploads/default/original/1X/8be0abca5232595ef38ad8480564eec5c12de511.png 2x" data-small-upload="https://cdn.radixtalk.com/uploads/default/optimized/1X/8be0abca5232595ef38ad8480564eec5c12de511_2_10x10.png"></a></div><p></p>
+          <p><a href="https://radixtalk.com/t/do-all-wallet-addresses-start-with-rdx1qsp-if-so-why-not-just-rdx/280/2">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/do-all-wallet-addresses-start-with-rdx1qsp-if-so-why-not-just-rdx/280/2</link>
+        <pubDate>Thu, 27 Jan 2022 13:39:19 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-280-2</guid>
+        <source url="https://radixtalk.com/t/do-all-wallet-addresses-start-with-rdx1qsp-if-so-why-not-just-rdx/280.rss">Do all wallet addresses start with rdx1qsp? If so, why not just rdx?</source>
+      </item>
+      <item>
+        <title>Do all wallet addresses start with rdx1qsp? If so, why not just rdx?</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>Radix wallet addresses are bech32 encoded. <code>rdx</code> is the <strong>Human Readable Part (hrp)</strong>, <code>1</code> is a separator between the hrp and the rest of the address, and the <code>qsp</code> is because every Radix wallet address is a 33 byte compressed public key starting with <code>0x02</code> or <code>0x03</code> that is prefixed with a <code>0x04</code> byte.</p>
+<p>Ref: <a href="https://t.me/radix_dlt/345164">Telegram</a></p>
+          <p><a href="https://radixtalk.com/t/do-all-wallet-addresses-start-with-rdx1qsp-if-so-why-not-just-rdx/280/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/do-all-wallet-addresses-start-with-rdx1qsp-if-so-why-not-just-rdx/280/1</link>
+        <pubDate>Mon, 24 Jan 2022 12:33:00 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-280-1</guid>
+        <source url="https://radixtalk.com/t/do-all-wallet-addresses-start-with-rdx1qsp-if-so-why-not-just-rdx/280.rss">Do all wallet addresses start with rdx1qsp? If so, why not just rdx?</source>
+      </item>
+  </channel>
+</rss>

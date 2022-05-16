@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>About the Developers category</title>
+    <link>https://radixtalk.com/t/about-the-developers-category/31</link>
+    <description>Technical topics for Developers</description>
+    <language>en-GB</language>
+    <lastBuildDate>Fri, 24 Dec 2021 16:48:54 +0000</lastBuildDate>
+    <category>Developers</category>
+    <atom:link href="https://radixtalk.com/t/about-the-developers-category/31.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>About the Developers category</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>Technical topics for Developers</p>
+          <p><a href="https://radixtalk.com/t/about-the-developers-category/31/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/about-the-developers-category/31/1</link>
+        <pubDate>Fri, 24 Dec 2021 16:32:19 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-31-1</guid>
+        <source url="https://radixtalk.com/t/about-the-developers-category/31.rss">About the Developers category</source>
+      </item>
+  </channel>
+</rss>

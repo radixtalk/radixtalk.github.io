@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>How to send Bucket or BucketRef through resim</title>
+    <link>https://radixtalk.com/t/how-to-send-bucket-or-bucketref-through-resim/115</link>
+    <description>You send Buckets (or BucketRefs) to method/functions with `resim` by using the following format: `[amount],[token_resource_def]`.
+
+For example, if your component have the following method:
+
+```
+pub fn show_amount(&amp;self, tokens: BucketRef) {
+    info!(&quot;{}&quot;, list.amount());
+    list.drop();
+}
+```
+
+To create a BucketRef of 1000 XRD and send it to this method, you would use `resim` like this:
+
+```
+resim call-method [component_address] show_amount 1000,030000000000000000000000000000000000000000000000000004 
+```
+
+When sending NFTs, you also have the possibility to specify which specific ids to send:
+```
+&quot;#1,#3,[nft_resource_def]&quot; # Create a bucket containing NFT #1 and #3
+```
+Don&#39;t forget to use the quotation marks or you will get an error !</description>
+    <language>en-GB</language>
+    <lastBuildDate>Mon, 27 Dec 2021 15:26:55 +0000</lastBuildDate>
+    <category>Scrypto</category>
+    <atom:link href="https://radixtalk.com/t/how-to-send-bucket-or-bucketref-through-resim/115.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>How to send Bucket or BucketRef through resim</title>
+        <dc:creator><![CDATA[Clement]]></dc:creator>
+        <description><![CDATA[
+            <p>You send Buckets (or BucketRefs) to method/functions with <code>resim</code> by using the following format: <code>[amount],[token_resource_def]</code>.</p>
+<p>For example, if your component have the following method:</p>
+<pre><code class="lang-auto">pub fn show_amount(&amp;self, tokens: BucketRef) {
+    info!("{}", list.amount());
+    list.drop();
+}
+</code></pre>
+<p>To create a BucketRef of 1000 XRD and send it to this method, you would use <code>resim</code> like this:</p>
+<pre><code class="lang-auto">resim call-method [component_address] show_amount 1000,030000000000000000000000000000000000000000000000000004 
+</code></pre>
+<p>When sending NFTs, you also have the possibility to specify which specific ids to send:</p>
+<pre><code class="lang-auto">"#1,#3,[nft_resource_def]" # Create a bucket containing NFT #1 and #3
+</code></pre>
+<p>Don’t forget to use the quotation marks or you will get an error !</p>
+          <p><a href="https://radixtalk.com/t/how-to-send-bucket-or-bucketref-through-resim/115/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-to-send-bucket-or-bucketref-through-resim/115/1</link>
+        <pubDate>Mon, 27 Dec 2021 15:16:43 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-115-1</guid>
+        <source url="https://radixtalk.com/t/how-to-send-bucket-or-bucketref-through-resim/115.rss">How to send Bucket or BucketRef through resim</source>
+      </item>
+  </channel>
+</rss>

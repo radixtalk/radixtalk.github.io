@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>How to create a Radix Wallet for development purposes</title>
+    <link>https://radixtalk.com/t/how-to-create-a-radix-wallet-for-development-purposes/61</link>
+    <description># Creating a Radix Wallet Address for Development Purposes
+
+Radix Wallets are created using Elliptic Curve Cryptography (ECC) to generate a Private/Public Key pair. Specifically, we use an Elliptic Curve Digital Signature Algorithm (ECDSA) with the curve parameters defined by SECP256K1.
+
+## 1. Install Dependencies
+
+Install the following libraries that will be used to create the key pair and then convert them into a Radix Wallet Address:
+
+```bash
+pip install ecdsa
+pip install bech32
+```
+
+## 2. Create Private Key
+
+The following snippet generates a Private Key using the ECDSA algorithm with the SECP256k1 curve parameters. By default, the generate function uses `os.urandom` as a cryptographically secure source of entropy (randomness).
+
+```python
+import ecdsa
+import bech32
+
+# Create the Private Key
+private_key = ecdsa.SigningKey.generate(curve=ecdsa.SECP256k1)
+private_key_bytes = private_key.to_string()
+print(&quot;Private Key: &quot;, private_key_bytes.hex())
+```
+
+Save the **Private Key** value as you will need it to sign transactions later.
+
+## 3. Generate Public Key from Private Key
+
+Append the following snippet to the code above to generate the Public Key that corresponds to your Private Key:
+
+```python
+# Generate Public Key from Private Key
+verifying_key = private_key.get_verifying_key()
+public_key_compressed_bytes = verifying_key.to_string(&quot;compressed&quot;)
+print(&quot;Public Key (Compressed): &quot;, public_key_compressed_bytes.hex())
+```
+
+### 3.1 Compressed Public Keys
+
+The Public Key is made up of two co-ordinates (x, y) on the SECP256k1 curve. These x and y co-ordinates are generated from the Private Key and are 32 bytes each. For example:
+
+```
+x: f219ea5d6b54701c1c14de5b557eb42a8d13f3abbcd08affcc2a5e6b049b8d63
+y: 4cb95957e83d40b0f73af4544cccf6b1f4b08d3c07b27fb8d8c2962a400766d1
+```
+
+The format of a &quot;Full&quot; Public Key consists of prefixing the Public Key with a byte value of &quot;04&quot; and then appending the x and y values to create a 65 byte (1 byte prefix + 32 byte x +32 byte y) value:
+
+```
+Full Public Key: 04f219ea5d6b54701c1c14de5b557eb42a8d13f3abbcd08affcc2a5e6b049b8d634cb95957e83d40b0f73af4544cccf6b1f4b08d3c07b27fb8d8c2962a400766d1
+```
+
+We can reduce the size of the public key without losing any information by &quot;compressing&quot; public key co-ordinates as follows:
+
+* If the value of the y co-ordinate is even, then use a byte value of &quot;02&quot; as a prefix
+* If the value of the y co-ordinate is odd, then use a byte value of &quot;03&quot; as a prefix
+* The compressed public key is: prefix + x co-ordinate
+
+Below is an example of converting our public key into a compressed public key using the rules above:
+
+```
+# y: 4cb95957e83d40b0f73af4544cccf6b1f4b08d3c07b27fb8d8c2962a400766d1
+# y is odd so our prefix will be 03
+# Prepend 03 to x to create our 33 byte compressed public key:
+
+Compressed Public Key: 03f219ea5d6b54701c1c14de5b557eb42a8d13f3abbcd08affcc2a5e6b049b8d63
+```
+
+The compressed public key can be converted back to a full public key using some simple maths (see references below for more details)
+
+## 4. Generate Radix Wallet Address from Public Key
+
+### 4.1 Convert Compressed Public Key to Radix Engine Address
+
+Radix converts the **Compressed Public Key** into a **Radix Engine Address**. The Radix Engine Address is a &quot;1 to 34 byte array describing a resource or component in the Radix Engine&quot;. The first byte of the Radix Engine Address describes the type of address:
+
+* 0x01 - Native Token (XRD)
+* 0x03 - Hashed Key + Nonce (User created Tokens)
+* 0x04 - Public Key
+
+```python
+# Convert Compressed Public Key into a Radix Engine Address
+readdr_bytes = b&quot;\x04&quot; + public_key_compressed_bytes
+```
+
+### 4.2 Convert Radix Engine Address into Bech32 Encoded String
+
+Next, we convert the Radix Engine Address into a **Bech32** encoded string. Bech32 is standard for creating an encoded base 32, checksummed address format. A Bech32 address consists of the following parts:
+
+* A **human readable part** (HRP) which conveys the type of data. Radix mainnet uses **rdx** for the mainnet human readable part.
+* A separator. Always &quot;1&quot;
+* A data part which is always at least 6 alphanumeric characters long excluding &quot;1&quot;, &quot;b&quot;, &quot;i&quot; and &quot;o&quot;. The last 6 characters of the data form a **checksum** using a **BCH Code** and contain no information.
+
+The BCH checksum algorithm guarantees detection of any error affecting at most 4 characters and has a less than 1 in 1 billion chance of failing to detect more errors. BCH can also identify **where** in an address the typos were made.
+
+The python bech32 library we use is a reference implementation and is used to create Bitcoin segwit addresses. The Radix Wallet Address uses a modified version of the Bitcoin BIP-0173 Segwit Address Format so we need to use some lower level functions in the python bech32 library to get the right output format.
+
+Append the following snippet to the code above to convert the Radix Engine Address into the Bech32 encoded Radix Wallet Address format:
+
+```python
+# Convert Radix Engine Address to Bech32 Radix Wallet Address
+readdr_bytes5 = bech32.convertbits(readdr_bytes, 8, 5)
+wallet_address = bech32.bech32_encode(&quot;rdx&quot;, readdr_bytes5)
+print(&quot;Wallet Address: &quot;, wallet_address)
+```
+
+You now have all 3 values required to perform transactions on the Radix Ledger using the RPC API:
+
+* **Private Key**
+* **Compressed Public Key**
+* **Radix Wallet Address**
+
+## 5. Complete Code Snippet
+
+```python
+import ecdsa
+import bech32
+
+# Create the Private Key
+private_key = ecdsa.SigningKey.generate(curve=ecdsa.SECP256k1)
+private_key_bytes = private_key.to_string()
+print(&quot;Private Key: &quot;, private_key_bytes.hex())
+
+# Generate Public Key from Private Key
+verifying_key = private_key.get_verifying_key()
+public_key_compressed_bytes = verifying_key.to_string(&quot;compressed&quot;)
+print(&quot;Public Key (Compressed): &quot;, public_key_compressed_bytes.hex())
+
+# Convert Compressed Public Key into a Radix Engine Address
+readdr_bytes = b&quot;\x04&quot; + public_key_compressed_bytes
+
+# Convert Radix Engine Address to Bech32 Radix Wallet Address
+readdr_bytes5 = bech32.convertbits(readdr_bytes, 8, 5)
+wallet_address = bech32.bech32_encode(&quot;rdx&quot;, readdr_bytes5)
+print(&quot;Wallet Address: &quot;, wallet_address)
+```
+
+## References
+
+* SECP256k1 Curve: [https://en.bitcoin.it/wiki/Secp256k1](https://en.bitcoin.it/wiki/Secp256k1)
+* Public Keys: [https://learnmeabitcoin.com/technical/public-key](https://learnmeabitcoin.com/technical/public-key)
+* Bech32 Specification: [https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki](https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki)
+* BCH Code: [https://en.wikipedia.org/wiki/BCH\_code](https://en.wikipedia.org/wiki/BCH\_code)
+
+
+
+This work by [RadixPool.com](https://radixpool.com) is licensed under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).</description>
+    <language>en-GB</language>
+    <lastBuildDate>Thu, 17 Feb 2022 05:21:01 +0000</lastBuildDate>
+    <category>Developers</category>
+    <atom:link href="https://radixtalk.com/t/how-to-create-a-radix-wallet-for-development-purposes/61.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>How to create a Radix Wallet for development purposes</title>
+        <dc:creator><![CDATA[Jon-Eric Cook]]></dc:creator>
+        <description><![CDATA[
+            <p>figured it out!</p>
+<pre><code class="lang-auto">iex(1)&gt; Radixir.Key.generate
+%{
+  mainnet_address: "rdx1qsp746mjzhuprnkkpl8k4mj4psengdpg7f42ea0nn8asd6askvcvw9shvqzm9",
+  private_key: "981c473d0ec07c0eb771a5896e51465b052cedf31a331098de105f230e20457d",
+  public_key: "03eaeb7215f811ced60fcf6aee550c33343428f26aacf5f399fb06ebb0b330c716",
+  testnet_address: "tdx1qsp746mjzhuprnkkpl8k4mj4psengdpg7f42ea0nn8asd6askvcvw9skq4stx",
+  validator_mainnet_address: "rv1q04wkus4lqgua4s0ea4wu4gvxv6rg28jd2k0tuuelvrwhv9nxrr3vgyfcuf",
+  validator_testnet_address: "tv1q04wkus4lqgua4s0ea4wu4gvxv6rg28jd2k0tuuelvrwhv9nxrr3vwaw7n7"
+}
+iex(2)&gt; Radixir.Gateway.API.derive_validator_identifier(%{network_identifier: %{network: "mainnet"}, public_key: %{hex: "03eaeb7215f811ced60fcf6aee550c33343428f26aacf5f399fb06ebb0b330c716"}}, url: "https://mainnet.radixdlt.com", headers: ["X-Radixdlt-Target-Gw-Api": "1.0.2"])
+{:ok,
+ %{
+   "account_identifier" =&gt; %{
+     "address" =&gt; "rv1q04wkus4lqgua4s0ea4wu4gvxv6rg28jd2k0tuuelvrwhv9nxrr3vgyfcuf"
+   }
+ }}
+
+iex(3)&gt; Radixir.Key.public_key_to_addresses("03eaeb7215f811ced60fcf6aee550c33343428f26aacf5f399fb06ebb0b330c716")
+%{
+  mainnet_address: "rdx1qsp746mjzhuprnkkpl8k4mj4psengdpg7f42ea0nn8asd6askvcvw9shvqzm9",
+  testnet_address: "tdx1qsp746mjzhuprnkkpl8k4mj4psengdpg7f42ea0nn8asd6askvcvw9skq4stx",
+  validator_mainnet_address: "rv1q04wkus4lqgua4s0ea4wu4gvxv6rg28jd2k0tuuelvrwhv9nxrr3vgyfcuf",
+  validator_testnet_address: "tv1q04wkus4lqgua4s0ea4wu4gvxv6rg28jd2k0tuuelvrwhv9nxrr3vwaw7n7"
+}
+</code></pre>
+<aside class="onebox githubblob" data-onebox-src="https://github.com/radixir/radixir/blob/develop/lib/radixir/key.ex#L167">
+  <header class="source">
+
+      <a href="https://github.com/radixir/radixir/blob/develop/lib/radixir/key.ex#L167" target="_blank" rel="noopener nofollow ugc">github.com</a>
+  </header>
+
+  <article class="onebox-body">
+    <h4><a href="https://github.com/radixir/radixir/blob/develop/lib/radixir/key.ex#L167" target="_blank" rel="noopener nofollow ugc">radixir/radixir/blob/develop/lib/radixir/key.ex#L167</a></h4>
+
+
+
+    <pre class="onebox">      <code class="lang-ex">
+        <ol class="start lines" start="157" style="counter-reset: li-counter 156 ;">
+            <li>    |&gt; Curvy.Key.to_privkey()</li>
+            <li>    |&gt; Util.encode16()</li>
+            <li>
+            </li>
+<li>  %{</li>
+            <li>    public_key: public_key,</li>
+            <li>    private_key: private_key</li>
+            <li>  }</li>
+            <li>  |&gt; Map.merge(addresses)</li>
+            <li>end</li>
+            <li>
+            </li>
+<li class="selected">defp pubkey_to_addrs(public_key) do</li>
+            <li>  %{</li>
+            <li>    mainnet_address: Bech32.encode("rdx", &lt;&lt;4&gt;&gt; &lt;&gt; public_key),</li>
+            <li>    testnet_address: Bech32.encode("tdx", &lt;&lt;4&gt;&gt; &lt;&gt; public_key),</li>
+            <li>    validator_mainnet_address: Bech32.encode("rv", public_key),</li>
+            <li>    validator_testnet_address: Bech32.encode("tv", public_key)</li>
+            <li>  }</li>
+            <li>end</li>
+            <li>
+            </li>
+<li>@doc false</li>
+            <li>def validate_public_key(public_key) do</li>
+        </ol>
+      </code>
+    </pre>
+
+
+
+  </article>
+
+  <div class="onebox-metadata">
+    
+    
+  </div>
+
+  <div style="clear: both"></div>
+</aside>
+
+          <p><a href="https://radixtalk.com/t/how-to-create-a-radix-wallet-for-development-purposes/61/4">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-to-create-a-radix-wallet-for-development-purposes/61/4</link>
+        <pubDate>Thu, 17 Feb 2022 05:21:01 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-61-4</guid>
+        <source url="https://radixtalk.com/t/how-to-create-a-radix-wallet-for-development-purposes/61.rss">How to create a Radix Wallet for development purposes</source>
+      </item>
+      <item>
+        <title>How to create a Radix Wallet for development purposes</title>
+        <dc:creator><![CDATA[Jon-Eric Cook]]></dc:creator>
+        <description><![CDATA[
+            <p>i saw this and it makes me think i should just be able to change rdx to rv and get the correct address</p>
+<aside class="onebox githubblob" data-onebox-src="https://github.com/radixdlt/radixdlt/blob/3db00974c2e6a72e471f945807226d7676b1d928/docs/transaction-specs/specs/parsing.md#address">
+  <header class="source">
+
+      <a href="https://github.com/radixdlt/radixdlt/blob/3db00974c2e6a72e471f945807226d7676b1d928/docs/transaction-specs/specs/parsing.md#address" target="_blank" rel="noopener nofollow ugc">github.com</a>
+  </header>
+
+  <article class="onebox-body">
+    <h4><a href="https://github.com/radixdlt/radixdlt/blob/3db00974c2e6a72e471f945807226d7676b1d928/docs/transaction-specs/specs/parsing.md#address" target="_blank" rel="noopener nofollow ugc">radixdlt/radixdlt/blob/3db00974c2e6a72e471f945807226d7676b1d928/docs/transaction-specs/specs/parsing.md#address</a></h4>
+
+
+      <pre><code class="lang-md"># Transaction
+
+A transaction is the serialization of actions that are cryptographically signed and broadcast to the Radix Network. Transactions trigger ledger state transitions, considering blockchain as a [replicated state machine](https://en.wikipedia.org/wiki/State_machine_replication). 
+
+In this documentation, we describe the structure of Radix transaction. If you'd like to understand how transactions are validated, please switch to [the validation doc](./validation.md).
+
+## Basics
+
+This section explains how values of primitive types are read and written.
+
+Unless otherwise specified, the order of bytes is always [big endian](https://en.wikipedia.org/wiki/Endianness). 
+
+### Boolean
+
+A boolean value is encoded as a single byte:
+- `0` represents false
+- `1` represents true
+- Other value are considered invalid
+
+### Integers
+</code></pre>
+
+
+
+  This file has been truncated. <a href="https://github.com/radixdlt/radixdlt/blob/3db00974c2e6a72e471f945807226d7676b1d928/docs/transaction-specs/specs/parsing.md#address" target="_blank" rel="noopener nofollow ugc">show original</a>
+
+  </article>
+
+  <div class="onebox-metadata">
+    
+    
+  </div>
+
+  <div style="clear: both"></div>
+</aside>
+
+          <p><a href="https://radixtalk.com/t/how-to-create-a-radix-wallet-for-development-purposes/61/3">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-to-create-a-radix-wallet-for-development-purposes/61/3</link>
+        <pubDate>Thu, 17 Feb 2022 04:22:33 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-61-3</guid>
+        <source url="https://radixtalk.com/t/how-to-create-a-radix-wallet-for-development-purposes/61.rss">How to create a Radix Wallet for development purposes</source>
+      </item>
+      <item>
+        <title>How to create a Radix Wallet for development purposes</title>
+        <dc:creator><![CDATA[Jon-Eric Cook]]></dc:creator>
+        <description><![CDATA[
+            <p><a class="mention" href="https://radixtalk.com/u/stuart">@Stuart</a> do you know how to create a validator address? I followed how its done here and just changed <code>rdx</code> to <code>rv</code> but am not getting the correct address. How i currently create addresses (rdx/tdx) matches what comes back from <a href="https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/radixdlt/radixdlt-network-gateway/1.0.0/gateway-api-spec.yaml#tag/Account/paths/~1account~1derive/post" class="inline-onebox" rel="noopener nofollow ugc">ReDoc Interactive Demo</a></p>
+          <p><a href="https://radixtalk.com/t/how-to-create-a-radix-wallet-for-development-purposes/61/2">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-to-create-a-radix-wallet-for-development-purposes/61/2</link>
+        <pubDate>Thu, 17 Feb 2022 04:06:44 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-61-2</guid>
+        <source url="https://radixtalk.com/t/how-to-create-a-radix-wallet-for-development-purposes/61.rss">How to create a Radix Wallet for development purposes</source>
+      </item>
+      <item>
+        <title>How to create a Radix Wallet for development purposes</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <h1>
+<a name="creating-a-radix-wallet-address-for-development-purposes-1" class="anchor" href="https://radixtalk.com#creating-a-radix-wallet-address-for-development-purposes-1"></a>Creating a Radix Wallet Address for Development Purposes</h1>
+<p>Radix Wallets are created using Elliptic Curve Cryptography (ECC) to generate a Private/Public Key pair. Specifically, we use an Elliptic Curve Digital Signature Algorithm (ECDSA) with the curve parameters defined by SECP256K1.</p>
+<h2>
+<a name="h-1-install-dependencies-2" class="anchor" href="https://radixtalk.com#h-1-install-dependencies-2"></a>1. Install Dependencies</h2>
+<p>Install the following libraries that will be used to create the key pair and then convert them into a Radix Wallet Address:</p>
+<pre><code class="lang-bash">pip install ecdsa
+pip install bech32
+</code></pre>
+<h2>
+<a name="h-2-create-private-key-3" class="anchor" href="https://radixtalk.com#h-2-create-private-key-3"></a>2. Create Private Key</h2>
+<p>The following snippet generates a Private Key using the ECDSA algorithm with the SECP256k1 curve parameters. By default, the generate function uses <code>os.urandom</code> as a cryptographically secure source of entropy (randomness).</p>
+<pre><code class="lang-python">import ecdsa
+import bech32
+
+# Create the Private Key
+private_key = ecdsa.SigningKey.generate(curve=ecdsa.SECP256k1)
+private_key_bytes = private_key.to_string()
+print("Private Key: ", private_key_bytes.hex())
+</code></pre>
+<p>Save the <strong>Private Key</strong> value as you will need it to sign transactions later.</p>
+<h2>
+<a name="h-3-generate-public-key-from-private-key-4" class="anchor" href="https://radixtalk.com#h-3-generate-public-key-from-private-key-4"></a>3. Generate Public Key from Private Key</h2>
+<p>Append the following snippet to the code above to generate the Public Key that corresponds to your Private Key:</p>
+<pre><code class="lang-python"># Generate Public Key from Private Key
+verifying_key = private_key.get_verifying_key()
+public_key_compressed_bytes = verifying_key.to_string("compressed")
+print("Public Key (Compressed): ", public_key_compressed_bytes.hex())
+</code></pre>
+<h3>
+<a name="h-31-compressed-public-keys-5" class="anchor" href="https://radixtalk.com#h-31-compressed-public-keys-5"></a>3.1 Compressed Public Keys</h3>
+<p>The Public Key is made up of two co-ordinates (x, y) on the SECP256k1 curve. These x and y co-ordinates are generated from the Private Key and are 32 bytes each. For example:</p>
+<pre><code class="lang-auto">x: f219ea5d6b54701c1c14de5b557eb42a8d13f3abbcd08affcc2a5e6b049b8d63
+y: 4cb95957e83d40b0f73af4544cccf6b1f4b08d3c07b27fb8d8c2962a400766d1
+</code></pre>
+<p>The format of a “Full” Public Key consists of prefixing the Public Key with a byte value of “04” and then appending the x and y values to create a 65 byte (1 byte prefix + 32 byte x +32 byte y) value:</p>
+<pre><code class="lang-auto">Full Public Key: 04f219ea5d6b54701c1c14de5b557eb42a8d13f3abbcd08affcc2a5e6b049b8d634cb95957e83d40b0f73af4544cccf6b1f4b08d3c07b27fb8d8c2962a400766d1
+</code></pre>
+<p>We can reduce the size of the public key without losing any information by “compressing” public key co-ordinates as follows:</p>
+<ul>
+<li>If the value of the y co-ordinate is even, then use a byte value of “02” as a prefix</li>
+<li>If the value of the y co-ordinate is odd, then use a byte value of “03” as a prefix</li>
+<li>The compressed public key is: prefix + x co-ordinate</li>
+</ul>
+<p>Below is an example of converting our public key into a compressed public key using the rules above:</p>
+<pre><code class="lang-auto"># y: 4cb95957e83d40b0f73af4544cccf6b1f4b08d3c07b27fb8d8c2962a400766d1
+# y is odd so our prefix will be 03
+# Prepend 03 to x to create our 33 byte compressed public key:
+
+Compressed Public Key: 03f219ea5d6b54701c1c14de5b557eb42a8d13f3abbcd08affcc2a5e6b049b8d63
+</code></pre>
+<p>The compressed public key can be converted back to a full public key using some simple maths (see references below for more details)</p>
+<h2>
+<a name="h-4-generate-radix-wallet-address-from-public-key-6" class="anchor" href="https://radixtalk.com#h-4-generate-radix-wallet-address-from-public-key-6"></a>4. Generate Radix Wallet Address from Public Key</h2>
+<h3>
+<a name="h-41-convert-compressed-public-key-to-radix-engine-address-7" class="anchor" href="https://radixtalk.com#h-41-convert-compressed-public-key-to-radix-engine-address-7"></a>4.1 Convert Compressed Public Key to Radix Engine Address</h3>
+<p>Radix converts the <strong>Compressed Public Key</strong> into a <strong>Radix Engine Address</strong>. The Radix Engine Address is a “1 to 34 byte array describing a resource or component in the Radix Engine”. The first byte of the Radix Engine Address describes the type of address:</p>
+<ul>
+<li>0x01 - Native Token (XRD)</li>
+<li>0x03 - Hashed Key + Nonce (User created Tokens)</li>
+<li>0x04 - Public Key</li>
+</ul>
+<pre><code class="lang-python"># Convert Compressed Public Key into a Radix Engine Address
+readdr_bytes = b"\x04" + public_key_compressed_bytes
+</code></pre>
+<h3>
+<a name="h-42-convert-radix-engine-address-into-bech32-encoded-string-8" class="anchor" href="https://radixtalk.com#h-42-convert-radix-engine-address-into-bech32-encoded-string-8"></a>4.2 Convert Radix Engine Address into Bech32 Encoded String</h3>
+<p>Next, we convert the Radix Engine Address into a <strong>Bech32</strong> encoded string. Bech32 is standard for creating an encoded base 32, checksummed address format. A Bech32 address consists of the following parts:</p>
+<ul>
+<li>A <strong>human readable part</strong> (HRP) which conveys the type of data. Radix mainnet uses <strong>rdx</strong> for the mainnet human readable part.</li>
+<li>A separator. Always “1”</li>
+<li>A data part which is always at least 6 alphanumeric characters long excluding “1”, “b”, “i” and “o”. The last 6 characters of the data form a <strong>checksum</strong> using a <strong>BCH Code</strong> and contain no information.</li>
+</ul>
+<p>The BCH checksum algorithm guarantees detection of any error affecting at most 4 characters and has a less than 1 in 1 billion chance of failing to detect more errors. BCH can also identify <strong>where</strong> in an address the typos were made.</p>
+<p>The python bech32 library we use is a reference implementation and is used to create Bitcoin segwit addresses. The Radix Wallet Address uses a modified version of the Bitcoin BIP-0173 Segwit Address Format so we need to use some lower level functions in the python bech32 library to get the right output format.</p>
+<p>Append the following snippet to the code above to convert the Radix Engine Address into the Bech32 encoded Radix Wallet Address format:</p>
+<pre><code class="lang-python"># Convert Radix Engine Address to Bech32 Radix Wallet Address
+readdr_bytes5 = bech32.convertbits(readdr_bytes, 8, 5)
+wallet_address = bech32.bech32_encode("rdx", readdr_bytes5)
+print("Wallet Address: ", wallet_address)
+</code></pre>
+<p>You now have all 3 values required to perform transactions on the Radix Ledger using the RPC API:</p>
+<ul>
+<li><strong>Private Key</strong></li>
+<li><strong>Compressed Public Key</strong></li>
+<li><strong>Radix Wallet Address</strong></li>
+</ul>
+<h2>
+<a name="h-5-complete-code-snippet-9" class="anchor" href="https://radixtalk.com#h-5-complete-code-snippet-9"></a>5. Complete Code Snippet</h2>
+<pre><code class="lang-python">import ecdsa
+import bech32
+
+# Create the Private Key
+private_key = ecdsa.SigningKey.generate(curve=ecdsa.SECP256k1)
+private_key_bytes = private_key.to_string()
+print("Private Key: ", private_key_bytes.hex())
+
+# Generate Public Key from Private Key
+verifying_key = private_key.get_verifying_key()
+public_key_compressed_bytes = verifying_key.to_string("compressed")
+print("Public Key (Compressed): ", public_key_compressed_bytes.hex())
+
+# Convert Compressed Public Key into a Radix Engine Address
+readdr_bytes = b"\x04" + public_key_compressed_bytes
+
+# Convert Radix Engine Address to Bech32 Radix Wallet Address
+readdr_bytes5 = bech32.convertbits(readdr_bytes, 8, 5)
+wallet_address = bech32.bech32_encode("rdx", readdr_bytes5)
+print("Wallet Address: ", wallet_address)
+</code></pre>
+<h2>
+<a name="references-10" class="anchor" href="https://radixtalk.com#references-10"></a>References</h2>
+<ul>
+<li>SECP256k1 Curve: <a href="https://en.bitcoin.it/wiki/Secp256k1">https://en.bitcoin.it/wiki/Secp256k1</a>
+</li>
+<li>Public Keys: <a href="https://learnmeabitcoin.com/technical/public-key">https://learnmeabitcoin.com/technical/public-key</a>
+</li>
+<li>Bech32 Specification: <a href="https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki">https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki</a>
+</li>
+<li>BCH Code: <a href="https://en.wikipedia.org/wiki/BCH_code">https://en.wikipedia.org/wiki/BCH_code</a>
+</li>
+</ul>
+<p>This work by <a href="https://radixpool.com">RadixPool.com</a> is licensed under a <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
+          <p><a href="https://radixtalk.com/t/how-to-create-a-radix-wallet-for-development-purposes/61/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-to-create-a-radix-wallet-for-development-purposes/61/1</link>
+        <pubDate>Sat, 25 Dec 2021 13:57:56 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-61-1</guid>
+        <source url="https://radixtalk.com/t/how-to-create-a-radix-wallet-for-development-purposes/61.rss">How to create a Radix Wallet for development purposes</source>
+      </item>
+  </channel>
+</rss>

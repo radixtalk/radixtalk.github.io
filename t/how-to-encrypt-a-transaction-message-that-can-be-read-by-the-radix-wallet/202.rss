@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>How to encrypt a transaction message that can be read by the Radix Wallet</title>
+    <link>https://radixtalk.com/t/how-to-encrypt-a-transaction-message-that-can-be-read-by-the-radix-wallet/202</link>
+    <description>TODO: Explain process step by step
+
+```python
+import os
+import bech32
+import ecdsa
+import hashlib
+from ecdsa.curves import SECP256k1
+from ecdsa.keys import SigningKey, VerifyingKey
+from Crypto.Protocol.KDF import scrypt
+from Crypto.Cipher import AES
+
+# Encrypted Message Parameters
+plaintext_message=b&quot;Hey Bob, this is Alice, you and I can read this message, but no one else.&quot;
+alice_private_key_hex = &quot;0000000000000000000000000000000000000000000000000000000000000001&quot;
+bob_wallet_address = &quot;rdx1qspvvprlj3q76ltdxpz5qm54cp7dshrh3e9cemeu5746czdet3cfaegp8alwf&quot;
+
+# Convert receiver&#39;s wallet address into a public key
+_hrp, bob_readdr_5bit = bech32.bech32_decode(bob_wallet_address)
+bob_readdr_bytes = bech32.convertbits(bob_readdr_5bit, 5, 8, pad=False)
+bob_public_key_bytes = bytes(bob_readdr_bytes)[1:34]
+bob_public_key = VerifyingKey.from_string(bob_public_key_bytes, curve=SECP256k1, hashfunc=hashlib.sha256)
+
+print(&quot;Bob Public Key:&quot;, bob_public_key.to_string(&quot;compressed&quot;).hex())
+
+
+alice_private_key = SigningKey.from_string(bytearray.fromhex(alice_private_key_hex), curve=SECP256k1, hashfunc=hashlib.sha256)
+
+# Diffie-Hellman - we need to use lower level functions here so that we get back dh as a curve point
+dh = bob_public_key.pubkey.point * alice_private_key.privkey.secret_multiplier
+
+# Create Ephemeral Key
+ephemeral_private_key = ecdsa.SigningKey.generate(curve=ecdsa.SECP256k1, hashfunc=hashlib.sha256)
+ephemeral_public_key = ephemeral_private_key.get_verifying_key()
+
+print(&quot;Ephemeral Public Key:&quot;, ephemeral_public_key.to_string(&quot;compressed&quot;).hex())
+
+ephemeral_point = ephemeral_public_key.pubkey.point
+
+# Elliptic Curve Point Addition
+shared_secret_point = dh + ephemeral_point
+shared_secret_integer = shared_secret_point.x()
+shared_secret = int.to_bytes(shared_secret_integer, 32, &#39;big&#39;)
+
+print(&quot;Shared Secret: &quot;, shared_secret.hex())
+
+# Create nonce
+nonce_bytes = os.urandom(12)
+print(&quot;Nonce: &quot;, nonce_bytes.hex())
+
+# Generate Scrypt salt from nonce
+salt = hashlib.sha256(nonce_bytes).digest()
+print(&quot;Scrypt Salt: &quot;, salt.hex())
+
+# Create the Encryption Key
+key = scrypt(shared_secret, salt, 32, 8192, 8 ,1)
+
+print(&quot;Encryption Key:&quot;, key.hex())
+
+encrypt = AES.new(key, AES.MODE_GCM, nonce=nonce_bytes)
+
+# Add the Ephemeral Public Key as Associated Data
+encrypt.update(ephemeral_public_key.to_string(&quot;compressed&quot;))
+
+# Perform the Encryption and generate Ciphertext with related Authentication Tag
+ciphertext, auth_tag = encrypt.encrypt_and_digest(plaintext_message)
+
+print(&quot;Ciphertext:&quot;, ciphertext.hex())
+print(&quot;Auth Tag:&quot;, auth_tag.hex())
+
+# Encode the message to submit
+msg = bytearray(b&#39;\x01&#39;)
+msg += bytearray(b&#39;\xff&#39;)
+msg += bytearray(ephemeral_public_key.to_string(&quot;compressed&quot;))
+msg += bytearray(nonce_bytes)
+msg += bytearray(auth_tag)
+msg += bytearray(ciphertext)
+
+print(&quot;Encoded Encrypted Message:&quot;, msg.hex())
+```
+
+## Run this on Replit: 
+https://replit.com/@radixtalk/Encrypt-Transaction-Message#main.py
+
+Also see: https://radixtalk.com/t/how-to-decrypt-an-encrypted-transaction-message-created-by-the-radix-wallet/189
+
+This work by [RadixPool.com](https://radixpool.com/) is licensed under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).</description>
+    <language>en-GB</language>
+    <lastBuildDate>Sat, 08 Jan 2022 19:00:30 +0000</lastBuildDate>
+    <category>Developers</category>
+    <atom:link href="https://radixtalk.com/t/how-to-encrypt-a-transaction-message-that-can-be-read-by-the-radix-wallet/202.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>How to encrypt a transaction message that can be read by the Radix Wallet</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>I replaced the silly <em>integer</em> → <em>hex string</em> → <em>bytes</em> conversion:</p>
+<pre><code class="lang-auto">shared_secret_hex = hex(shared_secret_integer)[2:]
+...
+key = scrypt(bytearray.fromhex(shared_secret_hex), salt, 32, 8192, 8 ,1)
+</code></pre>
+<p>with a straight <em>integer</em> into <em>bytes</em> conversion:</p>
+<pre><code class="lang-auto">shared_secret = int.to_bytes(shared_secret_integer, 32, 'big')
+...
+key = scrypt(shared_secret, salt, 32, 8192, 8 ,1)
+</code></pre>
+<p>Need to do a bit more testing to ensure it is compatible with the javascript version…</p>
+          <p><a href="https://radixtalk.com/t/how-to-encrypt-a-transaction-message-that-can-be-read-by-the-radix-wallet/202/6">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-to-encrypt-a-transaction-message-that-can-be-read-by-the-radix-wallet/202/6</link>
+        <pubDate>Sat, 08 Jan 2022 19:00:30 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-202-6</guid>
+        <source url="https://radixtalk.com/t/how-to-encrypt-a-transaction-message-that-can-be-read-by-the-radix-wallet/202.rss">How to encrypt a transaction message that can be read by the Radix Wallet</source>
+      </item>
+      <item>
+        <title>How to encrypt a transaction message that can be read by the Radix Wallet</title>
+        <dc:creator><![CDATA[minhnn | EasyStake.net]]></dc:creator>
+        <description><![CDATA[
+            <p>From Nodejs document <a href="https://nodejs.org/api/buffer.html" rel="noopener nofollow ugc">https://nodejs.org/api/buffer.html</a>, the convert will truncate the odd character, so <strong>Buffer.from(‘30315’, ‘hex’)</strong> will be the same as <strong>Buffer.from(‘3031’, ‘hex’)</strong></p>
+          <p><a href="https://radixtalk.com/t/how-to-encrypt-a-transaction-message-that-can-be-read-by-the-radix-wallet/202/5">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-to-encrypt-a-transaction-message-that-can-be-read-by-the-radix-wallet/202/5</link>
+        <pubDate>Sat, 08 Jan 2022 16:47:54 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-202-5</guid>
+        <source url="https://radixtalk.com/t/how-to-encrypt-a-transaction-message-that-can-be-read-by-the-radix-wallet/202.rss">How to encrypt a transaction message that can be read by the Radix Wallet</source>
+      </item>
+      <item>
+        <title>How to encrypt a transaction message that can be read by the Radix Wallet</title>
+        <dc:creator><![CDATA[minhnn | EasyStake.net]]></dc:creator>
+        <description><![CDATA[
+            <p>From the typescript at this url <a href="https://github.com/radixdlt/radixdlt-javascript/blob/16b200131729ffb1d2a99f5f4d281a3e3fead467/packages/crypto/src/encryption/messageEncryption.ts#L44" rel="noopener nofollow ugc">https://github.com/radixdlt/radixdlt-javascript/blob/16b200131729ffb1d2a99f5f4d281a3e3fead467/packages/crypto/src/encryption/messageEncryption.ts#L44</a></p>
+<p>The code is<br>
+<strong>return Buffer.from(sharedSecretPoint.x.toString(16), ‘hex’)</strong></p>
+<p>It is quite difficult to check the detailed implementation how to handle the padding or not handling at all (then it means it also possible bug here)</p>
+          <p><a href="https://radixtalk.com/t/how-to-encrypt-a-transaction-message-that-can-be-read-by-the-radix-wallet/202/4">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-to-encrypt-a-transaction-message-that-can-be-read-by-the-radix-wallet/202/4</link>
+        <pubDate>Sat, 08 Jan 2022 15:50:54 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-202-4</guid>
+        <source url="https://radixtalk.com/t/how-to-encrypt-a-transaction-message-that-can-be-read-by-the-radix-wallet/202.rss">How to encrypt a transaction message that can be read by the Radix Wallet</source>
+      </item>
+      <item>
+        <title>How to encrypt a transaction message that can be read by the Radix Wallet</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>Thanks for reporting that. I’m not really a Python user so it’s not the best code… I’ll take a look and see if I can figure it out. Might be a padding issue.</p>
+          <p><a href="https://radixtalk.com/t/how-to-encrypt-a-transaction-message-that-can-be-read-by-the-radix-wallet/202/3">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-to-encrypt-a-transaction-message-that-can-be-read-by-the-radix-wallet/202/3</link>
+        <pubDate>Sat, 08 Jan 2022 10:23:29 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-202-3</guid>
+        <source url="https://radixtalk.com/t/how-to-encrypt-a-transaction-message-that-can-be-read-by-the-radix-wallet/202.rss">How to encrypt a transaction message that can be read by the Radix Wallet</source>
+      </item>
+      <item>
+        <title>How to encrypt a transaction message that can be read by the Radix Wallet</title>
+        <dc:creator><![CDATA[minhnn | EasyStake.net]]></dc:creator>
+        <description><![CDATA[
+            <pre><code class="lang-auto">Bob Public Key: 02c6047f9441ed7d6d3045406e95c07cd85c778e4b8cef3ca7abac09b95c709ee5
+Ephemeral Public Key: 03097444dbe5faf31ebd25d1b78b6ef35641e3f8f6b66dea9c0eb727170ef15cf6
+Shared Secret: 2902821ac3b6bfb391d54b4677b31603cd067593fd4b8a88297870e2a9de396
+Nonce:  5b46d8fac9e9769376de3678
+Scrypt Salt:  f0f90635843a62adfdeff3ea8be8280bd5d3b86e6913783a029fd2857f36e288
+Traceback (most recent call last):
+  File "main.py", line 52, in &lt;module&gt;
+    key = scrypt(bytearray.fromhex(shared_secret_hex), salt, 32, 8192, 8 ,1)
+ValueError: non-hexadecimal number found in fromhex() arg at position 63
+</code></pre>
+<p>The encrypt message currently have issue that the code <strong>shared_secret_hex = hex(shared_secret_integer)[2:]</strong> could return the odd number of characters, and later call <strong>bytearray.fromhex(shared_secret_hex)</strong> will fail because method <strong>bytearray.fromhex()</strong> expect string with even number of characters.</p>
+<p>I am not sure how Radix wallet handle this case, I will try to take a look at Radix typescript source.</p>
+          <p><a href="https://radixtalk.com/t/how-to-encrypt-a-transaction-message-that-can-be-read-by-the-radix-wallet/202/2">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-to-encrypt-a-transaction-message-that-can-be-read-by-the-radix-wallet/202/2</link>
+        <pubDate>Sat, 08 Jan 2022 10:20:18 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-202-2</guid>
+        <source url="https://radixtalk.com/t/how-to-encrypt-a-transaction-message-that-can-be-read-by-the-radix-wallet/202.rss">How to encrypt a transaction message that can be read by the Radix Wallet</source>
+      </item>
+      <item>
+        <title>How to encrypt a transaction message that can be read by the Radix Wallet</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>TODO: Explain process step by step</p>
+<pre><code class="lang-python">import os
+import bech32
+import ecdsa
+import hashlib
+from ecdsa.curves import SECP256k1
+from ecdsa.keys import SigningKey, VerifyingKey
+from Crypto.Protocol.KDF import scrypt
+from Crypto.Cipher import AES
+
+# Encrypted Message Parameters
+plaintext_message=b"Hey Bob, this is Alice, you and I can read this message, but no one else."
+alice_private_key_hex = "0000000000000000000000000000000000000000000000000000000000000001"
+bob_wallet_address = "rdx1qspvvprlj3q76ltdxpz5qm54cp7dshrh3e9cemeu5746czdet3cfaegp8alwf"
+
+# Convert receiver's wallet address into a public key
+_hrp, bob_readdr_5bit = bech32.bech32_decode(bob_wallet_address)
+bob_readdr_bytes = bech32.convertbits(bob_readdr_5bit, 5, 8, pad=False)
+bob_public_key_bytes = bytes(bob_readdr_bytes)[1:34]
+bob_public_key = VerifyingKey.from_string(bob_public_key_bytes, curve=SECP256k1, hashfunc=hashlib.sha256)
+
+print("Bob Public Key:", bob_public_key.to_string("compressed").hex())
+
+
+alice_private_key = SigningKey.from_string(bytearray.fromhex(alice_private_key_hex), curve=SECP256k1, hashfunc=hashlib.sha256)
+
+# Diffie-Hellman - we need to use lower level functions here so that we get back dh as a curve point
+dh = bob_public_key.pubkey.point * alice_private_key.privkey.secret_multiplier
+
+# Create Ephemeral Key
+ephemeral_private_key = ecdsa.SigningKey.generate(curve=ecdsa.SECP256k1, hashfunc=hashlib.sha256)
+ephemeral_public_key = ephemeral_private_key.get_verifying_key()
+
+print("Ephemeral Public Key:", ephemeral_public_key.to_string("compressed").hex())
+
+ephemeral_point = ephemeral_public_key.pubkey.point
+
+# Elliptic Curve Point Addition
+shared_secret_point = dh + ephemeral_point
+shared_secret_integer = shared_secret_point.x()
+shared_secret = int.to_bytes(shared_secret_integer, 32, 'big')
+
+print("Shared Secret: ", shared_secret.hex())
+
+# Create nonce
+nonce_bytes = os.urandom(12)
+print("Nonce: ", nonce_bytes.hex())
+
+# Generate Scrypt salt from nonce
+salt = hashlib.sha256(nonce_bytes).digest()
+print("Scrypt Salt: ", salt.hex())
+
+# Create the Encryption Key
+key = scrypt(shared_secret, salt, 32, 8192, 8 ,1)
+
+print("Encryption Key:", key.hex())
+
+encrypt = AES.new(key, AES.MODE_GCM, nonce=nonce_bytes)
+
+# Add the Ephemeral Public Key as Associated Data
+encrypt.update(ephemeral_public_key.to_string("compressed"))
+
+# Perform the Encryption and generate Ciphertext with related Authentication Tag
+ciphertext, auth_tag = encrypt.encrypt_and_digest(plaintext_message)
+
+print("Ciphertext:", ciphertext.hex())
+print("Auth Tag:", auth_tag.hex())
+
+# Encode the message to submit
+msg = bytearray(b'\x01')
+msg += bytearray(b'\xff')
+msg += bytearray(ephemeral_public_key.to_string("compressed"))
+msg += bytearray(nonce_bytes)
+msg += bytearray(auth_tag)
+msg += bytearray(ciphertext)
+
+print("Encoded Encrypted Message:", msg.hex())
+</code></pre>
+<h2>
+<a name="run-this-on-replit-1" class="anchor" href="https://radixtalk.com#run-this-on-replit-1"></a>Run this on Replit:</h2>
+<p><iframe src="https://replit.com/@radixtalk/Encrypt-Transaction-Message?lite=true" width="695" height="521" frameborder="0" seamless="seamless" sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox allow-presentation"></iframe></p>
+<p>Also see: <a href="https://radixtalk.com/t/how-to-decrypt-an-encrypted-transaction-message-created-by-the-radix-wallet/189" class="inline-onebox">How to decrypt an encrypted transaction message created by the Radix Wallet</a></p>
+<p>This work by <a href="https://radixpool.com/">RadixPool.com</a> is licensed under a <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
+          <p><a href="https://radixtalk.com/t/how-to-encrypt-a-transaction-message-that-can-be-read-by-the-radix-wallet/202/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-to-encrypt-a-transaction-message-that-can-be-read-by-the-radix-wallet/202/1</link>
+        <pubDate>Mon, 03 Jan 2022 15:59:34 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-202-1</guid>
+        <source url="https://radixtalk.com/t/how-to-encrypt-a-transaction-message-that-can-be-read-by-the-radix-wallet/202.rss">How to encrypt a transaction message that can be read by the Radix Wallet</source>
+      </item>
+  </channel>
+</rss>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>My Radix Wallet is not working</title>
+    <link>https://radixtalk.com/t/my-radix-wallet-is-not-working/190</link>
+    <description>## Wallet Version
+Ensure that you are using the latest version of the Radix Wallet available from: 
+https://wallet.radixdlt.com/
+
+Older versions of the wallet (v1.0.x) do not work with the current archive nodes.
+
+## Issues with Official Archive Nodes
+Your wallet may be having problems connecting to the official Radix Archive nodes. RadixDLT run several load balanced, regional archive nodes (Ireland, India, Australia and the United States).
+
+1. If the problem is localised to a region, then using a VPN to connect to a different region may resolve the issue.
+
+2. You can connect  the wallet to a Community Archive node by following the instructions here:
+
+https://radixtalk.com/t/what-community-archive-nodes-can-i-use-with-the-radix-desktop-wallet/156</description>
+    <language>en-GB</language>
+    <lastBuildDate>Sat, 01 Jan 2022 13:00:03 +0000</lastBuildDate>
+    <category>Questions / Help</category>
+    <atom:link href="https://radixtalk.com/t/my-radix-wallet-is-not-working/190.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>My Radix Wallet is not working</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <h2>
+<a name="wallet-version-1" class="anchor" href="https://radixtalk.com#wallet-version-1"></a>Wallet Version</h2>
+<p>Ensure that you are using the latest version of the Radix Wallet available from:<br>
+<a href="https://wallet.radixdlt.com/" class="onebox" target="_blank" rel="noopener">https://wallet.radixdlt.com/</a></p>
+<p>Older versions of the wallet (v1.0.x) do not work with the current archive nodes.</p>
+<h2>
+<a name="issues-with-official-archive-nodes-2" class="anchor" href="https://radixtalk.com#issues-with-official-archive-nodes-2"></a>Issues with Official Archive Nodes</h2>
+<p>Your wallet may be having problems connecting to the official Radix Archive nodes. RadixDLT run several load balanced, regional archive nodes (Ireland, India, Australia and the United States).</p>
+<ol>
+<li>
+<p>If the problem is localised to a region, then using a VPN to connect to a different region may resolve the issue.</p>
+</li>
+<li>
+<p>You can connect  the wallet to a Community Archive node by following the instructions here:</p>
+</li>
+</ol>
+<aside class="quote quote-modified" data-post="1" data-topic="156">
+  <div class="title">
+    <div class="quote-controls"></div>
+    <img loading="lazy" alt="" width="20" height="20" src="https://radixtalk.com/letter_avatar_proxy/v4/letter/s/cab0a1/40.png" class="avatar">
+    <a href="https://radixtalk.com/t/what-community-archive-nodes-can-i-use-with-the-radix-desktop-wallet/156">What community archive nodes can I use with the Radix Desktop Wallet?</a> <a class="badge-wrapper  bullet" href="https://radixtalk.com/c/questions/35"><span class="badge-category-bg" style="background-color: #3AB54A;"></span><span style="" data-drop-close="true" class="badge-category clear-badge" title="Radix Questions / Help">Questions / Help</span></a>
+  </div>
+  <blockquote>
+    Some Validators run public, community archive nodes that may be useful when there is a lot of demand on the official Radix Archive Nodes: 
+
+<a name="community-archive-nodes-mainnet-1" class="anchor" href="https://radixtalk.com#community-archive-nodes-mainnet-1"></a>Community Archive Nodes (MAINNET)
+
+https://api.radix.community
+https://archive.stakesafe.net
+https://node.radixscan.io
+https://node.caviarnine.com
+
+
+<a name="changing-the-radix-wallet-archive-node-2" class="anchor" href="https://radixtalk.com#changing-the-radix-wallet-archive-node-2"></a>Changing the Radix Wallet Archive Node:
+Open the Radix Wallet application, then: 
+
+Select Wallet Settings
+
+Select the Choose Node/Network tab
+Type in one of the Community Archive node addresses from the list abo…
+  </blockquote>
+</aside>
+
+          <p><a href="https://radixtalk.com/t/my-radix-wallet-is-not-working/190/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/my-radix-wallet-is-not-working/190/1</link>
+        <pubDate>Sat, 01 Jan 2022 13:00:03 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-190-1</guid>
+        <source url="https://radixtalk.com/t/my-radix-wallet-is-not-working/190.rss">My Radix Wallet is not working</source>
+      </item>
+  </channel>
+</rss>

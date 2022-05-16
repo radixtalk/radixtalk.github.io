@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Introducing Stakenordic.com</title>
+    <link>https://radixtalk.com/t/introducing-stakenordic-com/355</link>
+    <description>Stakenordic.com - rv1qvq5dpfrte49l3hdzzarftmsqejqzf3d8dxnrx2tzdc0ljcrg88uvnlvpau
+Fees: 0.99%
+
+**Website**
+
+* https://www.stakenordic.com
+
+**Contact Details**
+
+* Telegram: https://t.me/StakeNordic
+* Discord: Trond | Stakenordic.com @ https://discord.com/invite/RadixDLT
+* Twitter: https://www.twitter.com/stakenordic
+
+**Languages**
+
+* English
+
+**About Me/Us**
+I&#39;m Trond from Norway, a working family guy interested in tech in general. I&#39;ve always had a broad interest in technology and have robust little network of servers running in the basement as an example of how nerdy i am. Just so you know how old i am, in my childhood i had fun with gaming and programming on the C64, Amiga, and on PC&#39;s with BBS&#39;s with modems before the internet/http came out. I think that says alot! :smiley: 
+Been following crypto for years, but with covid i had spare time so i got involved in crypto in 2020 with mining. This expanded and today i have several rigs and run some nodes as well as a hobby/investment.
+I came across Radix late last year while looking for a superior technical blockchain which solves the trilemma and immediately saw it&#39;s huge potential. I&#39;m therefore commited to supporting the Radix
+project and to see it grow into that potential with you all. I&#39;m pressed for time between work and family, but asides from the nodes i&#39;m also working on a simple NFT marketplace these days which i think is a fun project.
+I also have a friend/colleague that helps out with monitoring and acting on alarms if i am unavailable as a last resort, but most of the node work is done by me. I&#39;m considering getting some more help if it&#39;s not enough.
+
+**Validator Infrastructure**
+
+The infrastructure is decentralised and avoiding big cloud providers i something that is a main criteria in our setup. This is in case AWS or others have a centralised problem and 30% of the blockchain suffers with it.
+Therefore i run three nodes currently. One is located in Norway, Sandefjord at Terrahost. The other is located in Sweden with Inleed. The tertiary node is in my basement. Nodes are monitored with Grafana, Pagerduty and Uptimerobot.
+Snapshots are taken as well in case of corruption and fast restore is needed/possible. Changes are tested on stokenet (hosted on contabo) before anything is done in production. Failover can be done with premade scripts globally reachable via our phones with termius/VPN.
+
+**Experience**
+I work as a network/IT architect and i&#39;ve been in the business for 25+ years working as a consultant, for different companies and ISPs. Has set up alot servers in different shapes and sizes, late years it&#39;s more linux, containers and clouds.
+At work we do some Terraform/Ansible for automation, i also do some setups in AWS cloud. I&#39;m not a strong coder, have done some java/python before, but mainly focus on running the nodes smooth with tools that are generally available and try to keep things simple and tested so they function when they are needed.
+
+**Why should delegators stake to your validator?**
+Well it&#39;s simple really. I&#39;m dedicated to securing yours and my stake, and everyone else really too. I even got my family invested in Radix because i believe in it, so we need to make it the best crypto out there! I&#39;m also a responsible person so when i set out on doing something it&#39;s all in and doing it properly or not at all.
+I&#39;m just about always online and reachable, and the phone is set to getting messages and alerts in different channels. So therefore i/we will react if something crucial happens fast.
+
+Other things about us is that Norway has green hydropower energy, because we have alot of mountains and waterfalls. We are also an ociswap validator partner, so you get 10% extra $OCI when you stake with us. We are also running $VKC giveaways to new stakers now and in the future. $VKC or vikingcoin as the name is, is a token created for usage in future ecosystem dapps. So now as a start it&#39;s usable as payment on our sistersite www.vikingplanet.net (simple NFT marketplace).
+We are also doing NFT giveaways now and in the future. Lastly we as a node are truly in the bottom of the 100, so we really need your stake to stay there or even climb a bit. Also staking with the bottom 50 helps desentralise the stake, so not the top nodes and downtime on them can affect the entire network.
+
+So hopefully you will consider a portion of your stake with us, we would really appreciate it!
+If you have any questions or anything else you are wondering about that i failed to mention, feel free to contact me.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Tue, 08 Feb 2022 10:14:22 +0000</lastBuildDate>
+    <category>Validator Introductions</category>
+    <atom:link href="https://radixtalk.com/t/introducing-stakenordic-com/355.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Introducing Stakenordic.com</title>
+        <dc:creator><![CDATA[Trond | StakeNordic.com]]></dc:creator>
+        <description><![CDATA[
+            <p><a href="http://Stakenordic.com" rel="noopener nofollow ugc">Stakenordic.com</a> - rv1qvq5dpfrte49l3hdzzarftmsqejqzf3d8dxnrx2tzdc0ljcrg88uvnlvpau<br>
+Fees: 0.99%</p>
+<p><strong>Website</strong></p>
+<ul>
+<li><a href="https://www.stakenordic.com" rel="noopener nofollow ugc">https://www.stakenordic.com</a></li>
+</ul>
+<p><strong>Contact Details</strong></p>
+<ul>
+<li>Telegram: <a href="https://t.me/StakeNordic" class="inline-onebox" rel="noopener nofollow ugc">Telegram: Contact @StakeNordic</a>
+</li>
+<li>Discord: Trond | <a href="http://Stakenordic.com" rel="noopener nofollow ugc">Stakenordic.com</a> @ <a href="https://discord.com/invite/RadixDLT" class="inline-onebox" rel="noopener nofollow ugc">Radix DLT</a>
+</li>
+<li>Twitter: <a href="https://www.twitter.com/stakenordic" rel="noopener nofollow ugc">https://www.twitter.com/stakenordic</a>
+</li>
+</ul>
+<p><strong>Languages</strong></p>
+<ul>
+<li>English</li>
+</ul>
+<p><strong>About Me/Us</strong><br>
+I’m Trond from Norway, a working family guy interested in tech in general. I’ve always had a broad interest in technology and have robust little network of servers running in the basement as an example of how nerdy i am. Just so you know how old i am, in my childhood i had fun with gaming and programming on the C64, Amiga, and on PC’s with BBS’s with modems before the internet/http came out. I think that says alot! <img src="https://cdn.radixtalk.com/images/emoji/twitter/smiley.png?v=12" title=":smiley:" class="emoji" alt=":smiley:"><br>
+Been following crypto for years, but with covid i had spare time so i got involved in crypto in 2020 with mining. This expanded and today i have several rigs and run some nodes as well as a hobby/investment.<br>
+I came across Radix late last year while looking for a superior technical blockchain which solves the trilemma and immediately saw it’s huge potential. I’m therefore commited to supporting the Radix<br>
+project and to see it grow into that potential with you all. I’m pressed for time between work and family, but asides from the nodes i’m also working on a simple NFT marketplace these days which i think is a fun project.<br>
+I also have a friend/colleague that helps out with monitoring and acting on alarms if i am unavailable as a last resort, but most of the node work is done by me. I’m considering getting some more help if it’s not enough.</p>
+<p><strong>Validator Infrastructure</strong></p>
+<p>The infrastructure is decentralised and avoiding big cloud providers i something that is a main criteria in our setup. This is in case AWS or others have a centralised problem and 30% of the blockchain suffers with it.<br>
+Therefore i run three nodes currently. One is located in Norway, Sandefjord at Terrahost. The other is located in Sweden with Inleed. The tertiary node is in my basement. Nodes are monitored with Grafana, Pagerduty and Uptimerobot.<br>
+Snapshots are taken as well in case of corruption and fast restore is needed/possible. Changes are tested on stokenet (hosted on contabo) before anything is done in production. Failover can be done with premade scripts globally reachable via our phones with termius/VPN.</p>
+<p><strong>Experience</strong><br>
+I work as a network/IT architect and i’ve been in the business for 25+ years working as a consultant, for different companies and ISPs. Has set up alot servers in different shapes and sizes, late years it’s more linux, containers and clouds.<br>
+At work we do some Terraform/Ansible for automation, i also do some setups in AWS cloud. I’m not a strong coder, have done some java/python before, but mainly focus on running the nodes smooth with tools that are generally available and try to keep things simple and tested so they function when they are needed.</p>
+<p><strong>Why should delegators stake to your validator?</strong><br>
+Well it’s simple really. I’m dedicated to securing yours and my stake, and everyone else really too. I even got my family invested in Radix because i believe in it, so we need to make it the best crypto out there! I’m also a responsible person so when i set out on doing something it’s all in and doing it properly or not at all.<br>
+I’m just about always online and reachable, and the phone is set to getting messages and alerts in different channels. So therefore i/we will react if something crucial happens fast.</p>
+<p>Other things about us is that Norway has green hydropower energy, because we have alot of mountains and waterfalls. We are also an ociswap validator partner, so you get 10% extra $OCI when you stake with us. We are also running $VKC giveaways to new stakers now and in the future. $VKC or vikingcoin as the name is, is a token created for usage in future ecosystem dapps. So now as a start it’s usable as payment on our sistersite <a href="http://www.vikingplanet.net" rel="noopener nofollow ugc">www.vikingplanet.net</a> (simple NFT marketplace).<br>
+We are also doing NFT giveaways now and in the future. Lastly we as a node are truly in the bottom of the 100, so we really need your stake to stay there or even climb a bit. Also staking with the bottom 50 helps desentralise the stake, so not the top nodes and downtime on them can affect the entire network.</p>
+<p>So hopefully you will consider a portion of your stake with us, we would really appreciate it!<br>
+If you have any questions or anything else you are wondering about that i failed to mention, feel free to contact me.</p>
+          <p><a href="https://radixtalk.com/t/introducing-stakenordic-com/355/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/introducing-stakenordic-com/355/1</link>
+        <pubDate>Tue, 08 Feb 2022 10:14:22 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-355-1</guid>
+        <source url="https://radixtalk.com/t/introducing-stakenordic-com/355.rss">Introducing Stakenordic.com</source>
+      </item>
+  </channel>
+</rss>

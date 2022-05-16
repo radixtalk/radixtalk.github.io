@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>What analytics / tracking does RadixTalk use?</title>
+    <link>https://radixtalk.com/t/what-analytics-tracking-does-radixtalk-use/162</link>
+    <description>RadixTalk uses https://plausible.io/privacy-focused-web-analytics to track website usage. Plausible is open source, does not collect any personally identifiable information (PII), and does not use cookies (no cookie banners :raised_hands:). All collected data is aggregated only and completely anonymous.
+
+https://plausible.io/</description>
+    <language>en-GB</language>
+    <lastBuildDate>Wed, 29 Dec 2021 16:00:25 +0000</lastBuildDate>
+    <category>Questions / Help</category>
+    <atom:link href="https://radixtalk.com/t/what-analytics-tracking-does-radixtalk-use/162.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>What analytics / tracking does RadixTalk use?</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>RadixTalk uses <a href="https://plausible.io/privacy-focused-web-analytics" class="inline-onebox">Plausible: Privacy focused Google Analytics alternative | Plausible Analytics</a> to track website usage. Plausible is open source, does not collect any personally identifiable information (PII), and does not use cookies (no cookie banners <img src="https://radixtalk.com/images/emoji/twitter/raised_hands.png?v=10" title=":raised_hands:" class="emoji" alt=":raised_hands:">). All collected data is aggregated only and completely anonymous.</p>
+<aside class="onebox allowlistedgeneric" data-onebox-src="https://plausible.io/">
+  <header class="source">
+      <img src="https://radixtalk.com/uploads/default/original/1X/51cc68de1df0887ace1aecb2201557a67301cea7.png" class="site-icon" width="36" height="36">
+
+      <a href="https://plausible.io/" target="_blank" rel="noopener">Plausible Analytics</a>
+  </header>
+
+  <article class="onebox-body">
+    <div class="aspect-image" style="--aspect-ratio:690/361;"><img src="https://radixtalk.com/uploads/default/optimized/1X/b47d69c096d67b8374e553653e00b410174d0654_2_690x361.jpeg" class="thumbnail" width="690" height="361" srcset="https://radixtalk.com/uploads/default/optimized/1X/b47d69c096d67b8374e553653e00b410174d0654_2_690x361.jpeg, https://radixtalk.com/uploads/default/optimized/1X/b47d69c096d67b8374e553653e00b410174d0654_2_1035x541.jpeg 1.5x, https://radixtalk.com/uploads/default/original/1X/b47d69c096d67b8374e553653e00b410174d0654.jpeg 2x" data-small-upload="https://radixtalk.com/uploads/default/optimized/1X/b47d69c096d67b8374e553653e00b410174d0654_2_10x10.png"></div>
+
+<h3><a href="https://plausible.io/" target="_blank" rel="noopener">Plausible Analytics</a></h3>
+
+  <p>Plausible is a lightweight and open-source Google Analytics alternative. Your website data is 100% yours and the privacy of your visitors is respected.</p>
+
+
+  </article>
+
+  <div class="onebox-metadata">
+    
+    
+  </div>
+
+  <div style="clear: both"></div>
+</aside>
+
+          <p><a href="https://radixtalk.com/t/what-analytics-tracking-does-radixtalk-use/162/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/what-analytics-tracking-does-radixtalk-use/162/1</link>
+        <pubDate>Wed, 29 Dec 2021 16:00:25 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-162-1</guid>
+        <source url="https://radixtalk.com/t/what-analytics-tracking-does-radixtalk-use/162.rss">What analytics / tracking does RadixTalk use?</source>
+      </item>
+  </channel>
+</rss>

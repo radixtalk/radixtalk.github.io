@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Radix 3rd Party Data Breach</title>
+    <link>https://radixtalk.com/t/radix-3rd-party-data-breach/416</link>
+    <description>It was announced today that a third party service to RDX Works (Active Campaign), who provides email and marketing automation may have been breached resulting in the unauthorised exposure of data (names, emails) provided to RDX for signing up to the mailing list, token sale etc..
+
+Those affected will have received an email if their data may have been compromised.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Fri, 18 Mar 2022 17:46:39 +0000</lastBuildDate>
+    <category>Questions / Help</category>
+    <atom:link href="https://radixtalk.com/t/radix-3rd-party-data-breach/416.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Radix 3rd Party Data Breach</title>
+        <dc:creator><![CDATA[Mattia | MattiaNode]]></dc:creator>
+        <description><![CDATA[
+            <p>I’ll add by saying that if you want more information on what data of yours exactly got breached, you can message the Radix Data Protection Officer, as per the email:</p>
+<blockquote>
+<p>For further information, and any potential updates, you may contact our Data Protection Officer, Lindsay Bracegirdle at <a href="mailto:dpo@radixtokens.com">dpo@radixtokens.com</a></p>
+</blockquote>
+          <p><a href="https://radixtalk.com/t/radix-3rd-party-data-breach/416/2">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/radix-3rd-party-data-breach/416/2</link>
+        <pubDate>Fri, 18 Mar 2022 17:46:39 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-416-2</guid>
+        <source url="https://radixtalk.com/t/radix-3rd-party-data-breach/416.rss">Radix 3rd Party Data Breach</source>
+      </item>
+      <item>
+        <title>Radix 3rd Party Data Breach</title>
+        <dc:creator><![CDATA[Faraz | Radstakes.com]]></dc:creator>
+        <description><![CDATA[
+            <p>It was announced today that a third party service to RDX Works (Active Campaign), who provides email and marketing automation may have been breached resulting in the unauthorised exposure of data (names, emails) provided to RDX for signing up to the mailing list, token sale etc…</p>
+<p>Those affected will have received an email if their data may have been compromised.</p>
+          <p><a href="https://radixtalk.com/t/radix-3rd-party-data-breach/416/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/radix-3rd-party-data-breach/416/1</link>
+        <pubDate>Thu, 17 Mar 2022 22:59:34 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-416-1</guid>
+        <source url="https://radixtalk.com/t/radix-3rd-party-data-breach/416.rss">Radix 3rd Party Data Breach</source>
+      </item>
+  </channel>
+</rss>

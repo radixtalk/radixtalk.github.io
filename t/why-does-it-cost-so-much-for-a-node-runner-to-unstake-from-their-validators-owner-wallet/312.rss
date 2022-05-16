@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Why does it cost so much for a node runner to unstake from their validator&#39;s owner wallet?</title>
+    <link>https://radixtalk.com/t/why-does-it-cost-so-much-for-a-node-runner-to-unstake-from-their-validators-owner-wallet/312</link>
+    <description>When unstaking from the validator&#39;s owner wallet, the transaction fees can be much higher (up to 45 XRD or more) compared to normal unstaking (0.7 XRD).
+
+## Explanation
+The owner wallet generates a large number of substates due to how validator fee distribution is currently done in Alexandria. The more substates involved, the larger the transaction blob, and the higher the fees.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Mon, 31 Jan 2022 15:38:49 +0000</lastBuildDate>
+    <category>Validators</category>
+    <atom:link href="https://radixtalk.com/t/why-does-it-cost-so-much-for-a-node-runner-to-unstake-from-their-validators-owner-wallet/312.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Why does it cost so much for a node runner to unstake from their validator&#39;s owner wallet?</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>When unstaking from the validator’s owner wallet, the transaction fees can be much higher (up to 45 XRD or more) compared to normal unstaking (0.7 XRD).</p>
+<h2>
+<a name="explanation-1" class="anchor" href="https://radixtalk.com#explanation-1"></a>Explanation</h2>
+<p>The owner wallet generates a large number of substates due to how validator fee distribution is currently done in Alexandria. The more substates involved, the larger the transaction blob, and the higher the fees.</p>
+          <p><a href="https://radixtalk.com/t/why-does-it-cost-so-much-for-a-node-runner-to-unstake-from-their-validators-owner-wallet/312/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/why-does-it-cost-so-much-for-a-node-runner-to-unstake-from-their-validators-owner-wallet/312/1</link>
+        <pubDate>Mon, 31 Jan 2022 15:38:49 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-312-1</guid>
+        <source url="https://radixtalk.com/t/why-does-it-cost-so-much-for-a-node-runner-to-unstake-from-their-validators-owner-wallet/312.rss">Why does it cost so much for a node runner to unstake from their validator&#39;s owner wallet?</source>
+      </item>
+  </channel>
+</rss>

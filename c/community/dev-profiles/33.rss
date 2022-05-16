@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:discourse="http://www.discourse.org/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Developer Profiles - RadixTalk</title>
+    <link>https://radixtalk.com/c/community/dev-profiles/33</link>
+    <description>Topics in the &#39;Developer Profiles&#39; category Developer profiles for those available for work/hire</description>
+    <language>en-GB</language>
+      <lastBuildDate>Sun, 26 Dec 2021 00:21:50 +0000</lastBuildDate>
+      <atom:link href="https://radixtalk.com/c/community/dev-profiles/33.rss" rel="self" type="application/rss+xml" />
+        <item>
+          <title>About the Developer Profiles category</title>
+          <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+          <category>Developer Profiles</category>
+          <description><![CDATA[
+            <p>Developer profiles for those available for work/hire</p>
+<p><em>Currently requires moderator approval for posting until we figure out the right template/format for this</em></p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/about-the-developer-profiles-category/77">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/about-the-developer-profiles-category/77</link>
+          <pubDate>Sun, 26 Dec 2021 00:21:50 +0000</pubDate>
+          <discourse:topicPinned>Yes</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-77</guid>
+          <source url="https://radixtalk.com/t/about-the-developer-profiles-category/77.rss">About the Developer Profiles category</source>
+        </item>
+  </channel>
+</rss>

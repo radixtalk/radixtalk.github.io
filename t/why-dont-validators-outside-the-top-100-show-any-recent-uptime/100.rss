@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Why don&#39;t Validators outside the Top 100 show any Recent Uptime?</title>
+    <link>https://radixtalk.com/t/why-dont-validators-outside-the-top-100-show-any-recent-uptime/100</link>
+    <description>The **Recent Uptime** indication of a Validator shows the percentage of “proposals” the validator has successfully made over the past 500 epochs (roughly 2 weeks).
+
+The record of completed proposals and missed proposals is saved on the Radix ledger - but only for the Top 100 validators. Since there is no record of completed or missed proposals for validator nodes outside the Top 100, it is not possible to show a **Recent Uptime** indication for these nodes.
+
+## Further reading:
+https://learn.radixdlt.com/article/how-to-use-the-radix-explorer</description>
+    <language>en-GB</language>
+    <lastBuildDate>Sun, 26 Dec 2021 20:33:52 +0000</lastBuildDate>
+    <category>Questions / Help</category>
+    <atom:link href="https://radixtalk.com/t/why-dont-validators-outside-the-top-100-show-any-recent-uptime/100.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Why don&#39;t Validators outside the Top 100 show any Recent Uptime?</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>The <strong>Recent Uptime</strong> indication of a Validator shows the percentage of “proposals” the validator has successfully made over the past 500 epochs (roughly 2 weeks).</p>
+<p>The record of completed proposals and missed proposals is saved on the Radix ledger - but only for the Top 100 validators. Since there is no record of completed or missed proposals for validator nodes outside the Top 100, it is not possible to show a <strong>Recent Uptime</strong> indication for these nodes.</p>
+<h2>
+<a name="further-reading-1" class="anchor" href="https://radixtalk.com#further-reading-1"></a>Further reading:</h2>
+<aside class="onebox allowlistedgeneric" data-onebox-src="https://learn.radixdlt.com/article/how-to-use-the-radix-explorer">
+  <header class="source">
+      <img src="https://radixtalk.com/uploads/default/original/1X/fed6c22b3f2ffa507d36ebe7838db55b671cb0c4.png" class="site-icon" width="32" height="32">
+
+      <a href="https://learn.radixdlt.com/article/how-to-use-the-radix-explorer" target="_blank" rel="noopener">learn.radixdlt.com</a>
+  </header>
+
+  <article class="onebox-body">
+    
+
+<h3><a href="https://learn.radixdlt.com/article/how-to-use-the-radix-explorer" target="_blank" rel="noopener">FAQ: Radix User Guide</a></h3>
+
+  <p>How to Use the Radix Explorer</p>
+
+
+  </article>
+
+  <div class="onebox-metadata">
+    
+    
+  </div>
+
+  <div style="clear: both"></div>
+</aside>
+
+          <p><a href="https://radixtalk.com/t/why-dont-validators-outside-the-top-100-show-any-recent-uptime/100/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/why-dont-validators-outside-the-top-100-show-any-recent-uptime/100/1</link>
+        <pubDate>Sun, 26 Dec 2021 20:33:52 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-100-1</guid>
+        <source url="https://radixtalk.com/t/why-dont-validators-outside-the-top-100-show-any-recent-uptime/100.rss">Why don&#39;t Validators outside the Top 100 show any Recent Uptime?</source>
+      </item>
+  </channel>
+</rss>

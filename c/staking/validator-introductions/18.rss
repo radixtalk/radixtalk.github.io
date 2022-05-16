@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:discourse="http://www.discourse.org/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Validator Introductions - RadixTalk</title>
+    <link>https://radixtalk.com/c/staking/validator-introductions/18</link>
+    <description>Topics in the &#39;Validator Introductions&#39; category Dedicated Validator Introduction category - please read the guidelines before creating a post.</description>
+    <language>en-GB</language>
+      <lastBuildDate>Tue, 08 Feb 2022 10:14:22 +0000</lastBuildDate>
+      <atom:link href="https://radixtalk.com/c/staking/validator-introductions/18.rss" rel="self" type="application/rss+xml" />
+        <item>
+          <title>Introducing Stakenordic.com</title>
+          <dc:creator><![CDATA[Trond | StakeNordic.com]]></dc:creator>
+          <category>Validator Introductions</category>
+          <description><![CDATA[
+            <p><a href="http://Stakenordic.com" rel="noopener nofollow ugc">Stakenordic.com</a> - rv1qvq5dpfrte49l3hdzzarftmsqejqzf3d8dxnrx2tzdc0ljcrg88uvnlvpau<br>
+Fees: 0.99%</p>
+<p><strong>Website</strong></p>
+<ul>
+<li><a href="https://www.stakenordic.com" rel="noopener nofollow ugc">https://www.stakenordic.com</a></li>
+</ul>
+<p><strong>Contact Details</strong></p>
+<ul>
+<li>Telegram: <a href="https://t.me/StakeNordic" class="inline-onebox" rel="noopener nofollow ugc">Telegram: Contact @StakeNordic</a>
+</li>
+<li>Discord: Trond | <a href="http://Stakenordic.com" rel="noopener nofollow ugc">Stakenordic.com</a> @ <a href="https://discord.com/invite/RadixDLT" class="inline-onebox" rel="noopener nofollow ugc">Radix DLT</a>
+</li>
+<li>Twitter: <a href="https://www.twitter.com/stakenordic" rel="noopener nofollow ugc">https://www.twitter.com/stakenordic</a>
+</li>
+</ul>
+<p><strong>Languages</strong></p>
+<ul>
+<li>English</li>
+</ul>
+<p><strong>About Me/Us</strong><br>
+I’m Trond from Norway, a working family guy interested in tech in general. I’ve always had a broad interest in technology and have robust little network of servers running in the basement as an example of how nerdy i am. Just so you know how old i am, in my childhood i had fun with gaming and programming on the C64, Amiga, and on PC’s with BBS’s with modems before the internet/http came out. I think that says alot! <img src="https://cdn.radixtalk.com/images/emoji/twitter/smiley.png?v=12" title=":smiley:" class="emoji" alt=":smiley:"><br>
+Been following crypto for years, but with covid i had spare time so i got involved in crypto in 2020 with mining. This expanded and today i have several rigs and run some nodes as well as a hobby/investment.<br>
+I came across Radix late last year while looking for a superior technical blockchain which solves the trilemma and immediately saw it’s huge potential. I’m therefore commited to supporting the Radix<br>
+project and to see it grow into that potential with you all. I’m pressed for time between work and family, but asides from the nodes i’m also working on a simple NFT marketplace these days which i think is a fun project.<br>
+I also have a friend/colleague that helps out with monitoring and acting on alarms if i am unavailable as a last resort, but most of the node work is done by me. I’m considering getting some more help if it’s not enough.</p>
+<p><strong>Validator Infrastructure</strong></p>
+<p>The infrastructure is decentralised and avoiding big cloud providers i something that is a main criteria in our setup. This is in case AWS or others have a centralised problem and 30% of the blockchain suffers with it.<br>
+Therefore i run three nodes currently. One is located in Norway, Sandefjord at Terrahost. The other is located in Sweden with Inleed. The tertiary node is in my basement. Nodes are monitored with Grafana, Pagerduty and Uptimerobot.<br>
+Snapshots are taken as well in case of corruption and fast restore is needed/possible. Changes are tested on stokenet (hosted on contabo) before anything is done in production. Failover can be done with premade scripts globally reachable via our phones with termius/VPN.</p>
+<p><strong>Experience</strong><br>
+I work as a network/IT architect and i’ve been in the business for 25+ years working as a consultant, for different companies and ISPs. Has set up alot servers in different shapes and sizes, late years it’s more linux, containers and clouds.<br>
+At work we do some Terraform/Ansible for automation, i also do some setups in AWS cloud. I’m not a strong coder, have done some java/python before, but mainly focus on running the nodes smooth with tools that are generally available and try to keep things simple and tested so they function when they are needed.</p>
+<p><strong>Why should delegators stake to your validator?</strong><br>
+Well it’s simple really. I’m dedicated to securing yours and my stake, and everyone else really too. I even got my family invested in Radix because i believe in it, so we need to make it the best crypto out there! I’m also a responsible person so when i set out on doing something it’s all in and doing it properly or not at all.<br>
+I’m just about always online and reachable, and the phone is set to getting messages and alerts in different channels. So therefore i/we will react if something crucial happens fast.</p>
+<p>Other things about us is that Norway has green hydropower energy, because we have alot of mountains and waterfalls. We are also an ociswap validator partner, so you get 10% extra $OCI when you stake with us. We are also running $VKC giveaways to new stakers now and in the future. $VKC or vikingcoin as the name is, is a token created for usage in future ecosystem dapps. So now as a start it’s usable as payment on our sistersite <a href="http://www.vikingplanet.net" rel="noopener nofollow ugc">www.vikingplanet.net</a> (simple NFT marketplace).<br>
+We are also doing NFT giveaways now and in the future. Lastly we as a node are truly in the bottom of the 100, so we really need your stake to stay there or even climb a bit. Also staking with the bottom 50 helps desentralise the stake, so not the top nodes and downtime on them can affect the entire network.</p>
+<p>So hopefully you will consider a portion of your stake with us, we would really appreciate it!<br>
+If you have any questions or anything else you are wondering about that i failed to mention, feel free to contact me.</p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/introducing-stakenordic-com/355">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/introducing-stakenordic-com/355</link>
+          <pubDate>Tue, 08 Feb 2022 10:14:22 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-355</guid>
+          <source url="https://radixtalk.com/t/introducing-stakenordic-com/355.rss">Introducing Stakenordic.com</source>
+        </item>
+        <item>
+          <title>Introducing Avaunt Staking</title>
+          <dc:creator><![CDATA[Avaunt]]></dc:creator>
+          <category>Validator Introductions</category>
+          <description><![CDATA[
+            <p><img src="https://cdn.radixtalk.com/images/emoji/twitter/fast_forward.png?v=12" title=":fast_forward:" class="emoji" alt=":fast_forward:"> Avaunt Staking <img src="https://cdn.radixtalk.com/images/emoji/twitter/fast_forward.png?v=12" title=":fast_forward:" class="emoji" alt=":fast_forward:"> - rv1qdn4mwharah5c3w5sw4zfyagvkftrj47ruwatjfr6z2r7pmvk5uuu84j45v<br>
+Fees: 2%</p>
+<p><strong>Website</strong></p>
+<ul>
+<li><a href="https://avaunt-staking.com">https://avaunt-staking.com</a></li>
+<li><a href="https://radixdashboard.com">https://radixdashboard.com</a></li>
+</ul>
+<p><strong>Contact Details</strong></p>
+<ul>
+<li>Telegram: <a href="https://t.me/avaunt">@vaunt</a>
+</li>
+<li>Discord: AVaunt#5349</li>
+<li>Twitter: <a href="https://twitter.com/a_vaunt">Avaunt</a>
+</li>
+<li>Email: <a href="mailto:staking@avaunt.io">staking@avaunt.io</a>
+</li>
+</ul>
+<p><strong>Languages</strong></p>
+<ul>
+<li>English</li>
+</ul>
+<p><strong>About Me/Us</strong><br>
+I have been working in infrastructure technologies within the banking and finance industry for over 20 years now. At the start of the pandemic I was forced into bit of a career break which gave me the opportunity to spend more time researching into Proof of Stake projects and looking at where I could apply my skills whilst also being part of the evolution of the industry. At the tail end of 2020 I made the decision to start running nodes and setup Avaunt Staking Services where we run nodes on a number of POS and DPOS networks including Radix and Avalanche.<br>
+I also recently become an official Radvocate, providing support to the community across the many Radix related social channels.</p>
+<p><strong>Validator Infrastructure</strong><br>
+We currently run two nodes (primary &amp; backup) across two separate AWS London Availability Zones. We have decided on AWS as they provide a consistently high SLA and uptime and although they are more expensive than other Cloud providers we have never had an outage or downtime since we first started using them in 2016.</p>
+<p><strong>Experience</strong><br>
+Avaunt Staking has been running a Radix node since the start of Betanet and have been an active member across all the social channels, providing support to new node runners and delegators alike. We created the popular and free community dashboard <a href="https://radixdashboard.com">https://radixdashboard.com</a>. We have been running Validator nodes on other dPOS and standard POS networks for the past 18 months.</p>
+<p><strong>Why should delegators stake to your validator?</strong><br>
+I absolutely love Crypto and Technology innovation and when the opportunity arose to run a validator node on the future of de-fi I immediately jumped at the chance to support the network. I also love learning and have spent many hours reading blogs and watching videos on node running and the different architectures. The pace of innovation is just mind blowing and I absolutely love being a part of it.<br>
+I think all the Radix Validator community are an awesome bunch of people and they never cease to amaze me with the support they give to other validators and delegators for the greater good of the network. I think what sets Avaunt apart however is that we provide value added services like our community dashboard <a href="http://radixdashboard.com">radixdashboard.com</a> and initiating community events like the Know your Node Runner AMA sessions.</p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/introducing-avaunt-staking/298">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/introducing-avaunt-staking/298</link>
+          <pubDate>Fri, 28 Jan 2022 09:55:02 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-298</guid>
+          <source url="https://radixtalk.com/t/introducing-avaunt-staking/298.rss">Introducing Avaunt Staking</source>
+        </item>
+        <item>
+          <title>Introducing &quot;RadixDLT Staking 🇨🇭&quot;</title>
+          <dc:creator><![CDATA[kesswi | radixdltstaking.com]]></dc:creator>
+          <category>Validator Introductions</category>
+          <description><![CDATA[
+            <p>Validator Name - <code>RadixDLT Staking</code><br>
+Fees: <code>0.99%</code></p>
+<p><strong>Website</strong></p>
+<ul>
+<li><a href="https://www.radixdltstaking.com" rel="noopener nofollow ugc">https://www.radixdltstaking.com</a></li>
+</ul>
+<p><strong>Contact Details</strong><br>
+You can reach us via a variety of different communication channels:</p>
+<ul>
+<li>Telegram: <span class="mention">@Kesswitz</span>
+</li>
+<li>Discord: kesswi#1061</li>
+<li>Twitter: <span class="mention">@Kesswitz</span>
+</li>
+<li>Email: info [at] radixdltstaking .com</li>
+</ul>
+<p><strong>Languages</strong></p>
+<ul>
+<li>English</li>
+<li>Germain</li>
+<li>Turkish</li>
+</ul>
+<p><strong>About Me/Us</strong><br>
+We are a small team of IT Infrastructure &amp; Network Engineers and Crypto-Enthusiasts for many years. Our team is very experienced in operating mission critical IT systems and applications in an “Always-On” manner.</p>
+<p><strong>Validator Infrastructure</strong></p>
+<ul>
+<li>0.99% fixed Validator Fee to cover our cost of Infrastructure and Operations</li>
+<li>Local Datacenter Provider, no Hyper-Scaler Setup</li>
+<li>Multiple Security Layers implemented</li>
+<li>Backup Node and Processes in place to minimise potential downtime</li>
+<li>24/7 Monitoring and Alerting</li>
+<li>Large Owner Pledge to the Validator Node</li>
+<li>We are fully “KYC”-ed</li>
+<li>Located and operating in Switzerland  <img src="https://cdn.radixtalk.com/uploads/default/original/1X/bc9de2eebe1c7bcbabc169394f73e1d89ac410e0.png" alt="" data-base62-sha1="qUA293K4h5Ix0GKmoQpYC051Yha" width="17" height="17">
+</li>
+</ul>
+<p><strong>Experience</strong><br>
+Our team consists of professional Systems- and Network Engineers with a lot of experience managing and operating mission critical systems professionally. We work hard and relentlessly to optimize our Node’s uptime and hence our Delegator’s rewards.<br>
+We are a proud member of the Radix Validator family since the early Betanet days all the way through Mainnet launch.</p>
+<p><strong>Why should delegators stake to your validator?</strong></p>
+<ul>
+<li>We distribute XSEED-tokens to all our current and new delegators, which allows them to participate in our Staking Service economic success. So, just stake with us and receive XSEED tokens for free. Find more about the XSEED-token program <a href="https://www.radixdltstaking.com/xseed-token/" rel="noopener nofollow ugc">here</a>.</li>
+<li>To provide our Delegators with additional incentives and benefits, we are forging partnerships with different Radix projects and Node Runners. Our current partner ships can be found on our website.</li>
+<li>Sustainability and Green IT is very important to us. This was one of our main requirements when we evaluated suitable Datacenter providers in Switzerland. Luckily, we found Datacenters providers, who share our vision of a clean and sustainable IT Infrastructure.</li>
+</ul>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/introducing-radixdlt-staking/251">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/introducing-radixdlt-staking/251</link>
+          <pubDate>Mon, 17 Jan 2022 20:46:05 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-251</guid>
+          <source url="https://radixtalk.com/t/introducing-radixdlt-staking/251.rss">Introducing &quot;RadixDLT Staking 🇨🇭&quot;</source>
+        </item>
+        <item>
+          <title>Introducing RadixLogicalMoon</title>
+          <dc:creator><![CDATA[Katan &amp; Rory | Radix Logical Moon ]]></dc:creator>
+          <category>Validator Introductions</category>
+          <description><![CDATA[
+            <p>Validator Name - <code>rv1qtzlupqghjyvdsp3nn0cpkdvmtrfe7ac8czump5r6hgm0rnlhvznj88xw7a</code><br>
+Fees: <code>1.75%</code></p>
+<p><strong>Website</strong></p>
+<ul>
+<li><a href="https://radixlogicalmoon.com/" rel="noopener nofollow ugc">radixlogicalmoon.com</a></li>
+</ul>
+<p><strong>Contact Details</strong></p>
+<ul>
+<li>Telegram: <a href="https://t.me/RadixLogicalMoon_Katan" rel="noopener nofollow ugc">@RadixLogicalMoon_Katan</a>
+</li>
+<li>Discord: <code>@Katan-LogicalMoon | @Rory-LogicalMoon</code>
+</li>
+<li>Twitter: <code>@radixlogical</code>
+</li>
+</ul>
+<p><strong>Languages</strong></p>
+<ul>
+<li>English</li>
+<li>Japanese (Rory)</li>
+</ul>
+<p><strong>About Me/Us</strong><br>
+<em>The team at Logical Moon are composed of two friends who are based out of Brisbane, Australia. We have been involved in the cryptocurrency scene since 2016 and have followed the Radix Project since December 2017. We both have extensive experience in delivering/maintaining enterprise grade solutions across a variety of industries and have a genuine passion for technology</em></p>
+<p><strong>Validator Infrastructure</strong><br>
+<em>The validator node itself was brought to life in September 2021 and we were able to quickly establish ourselves into the top 100 having been involved in an early investment group for Radix. It currently runs on Azure in the Australia South East Region and we have a backup node constantly running in the Australia East region to ensure high availability. We provide 24/7 support and leverage Azure’s alerting capabilities to escalate any issues to our team. We constantly push to ensure the server is performant/secured and review/update our infrastructure regularly</em></p>
+<p><strong>Experience</strong><br>
+<em>Katan is a Solution Architect and Developer with 20 years of industry experience and his colleague Rory is adept in building cloud based applications and currently helps build and manage a number of applications for an international legal software application firm</em></p>
+<p><strong>Why should delegators stake to your validator?</strong><br>
+<em>We care about the network, the community and ultimately the Radix project as a whole. To achieve a truly decentralised network, it is important to ensure there are enough nodes globally available and with a spread of stake distributed adequately amongst them.  We’ve been initially focused on ensuring we have a stable setup, but as we seem to have found our sweet spot, you’ll see us more actively share content built to help support the radix network</em></p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/introducing-radixlogicalmoon/247">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/introducing-radixlogicalmoon/247</link>
+          <pubDate>Mon, 17 Jan 2022 11:26:04 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-247</guid>
+          <source url="https://radixtalk.com/t/introducing-radixlogicalmoon/247.rss">Introducing RadixLogicalMoon</source>
+        </item>
+        <item>
+          <title>Introducing 🍕 MattiaNode</title>
+          <dc:creator><![CDATA[Mattia | MattiaNode]]></dc:creator>
+          <category>Validator Introductions</category>
+          <description><![CDATA[
+            <p>Validator Name - <code>🍕 MattiaNode (IT🇮🇹) </code><br>
+Validator ID - <code>rv1qvjz86qwa7l80y8vhfuhz6957ch6texdmpk98rg2gtakhr0avan4jplkxy7</code><br>
+Fees: <code>1.5%</code></p>
+<p><strong>Website</strong></p>
+<ul>
+<li><a href="http://stake.mattia.wiki/">stake.mattia.wiki</a></li>
+<li><a href="https://explorer.radixdlt.com/#/validators/rv1qvjz86qwa7l80y8vhfuhz6957ch6texdmpk98rg2gtakhr0avan4jplkxy7">Radix Explorer</a></li>
+</ul>
+<p><strong>Contact Details</strong></p>
+<ul>
+<li>Telegram: <a href="https://t.me/mattiaxrd"><img src="https://cdn.radixtalk.com/images/emoji/twitter/pizza.png?v=12" title=":pizza:" class="emoji" alt=":pizza:">MattiaNode (IT​:it:) | stake.mattia.wiki</a>
+</li>
+<li>Telegram (personal): <a href="https://t.me/mattiabe98">@mattiabe98</a>
+</li>
+<li>Discord: <code>Mattia#9426</code>
+</li>
+<li>Twitter: <a href="https://twitter.com/0xMattia">0xMattia</a>
+</li>
+</ul>
+<p><strong>Languages</strong></p>
+<ul>
+<li>English</li>
+<li>Italian</li>
+</ul>
+<p><strong>About Me/Us</strong><br>
+Hello! My name is <em>Mattia</em> and I’m a 23 years old Telecommunications Engineering <img src="https://cdn.radixtalk.com/images/emoji/twitter/satellite.png?v=12" title=":satellite:" class="emoji" alt=":satellite:"> student.<br>
+I’ve been following Radix since 2013 when it was still called eMunie. I decided to run my own validator to have an active part in the community and to promote decentralization.</p>
+<p>I also wrote my own mini “wiki” to help newcomers with easy to follow how-to guides for staking and much more. You can find me on Radix’s Discord or Telegram channel, I often post there!</p>
+<p><strong>Validator Infrastructure</strong><br>
+MattiaNode is running on a beefy self-hosted server in Italy, with an <strong>AMD Ryzen, 48GB of DDR4 3600MHz RAM, 1TB of NVMe SSD storage (WD SN750) and 1Gbit/s fiber connection</strong>, all backed up with an UPS that can keep everything running at least for an hour and a 4G LTE redundant internet connection.</p>
+<p>We also have a <strong>backup node</strong> running in Finland with the <strong>same CPU, 64GB of DDR4 RAM,  1TB of NVMe SSD storage and 1Gbit/s fiber connection</strong>, always synched and ready to failover.</p>
+<p>Everything is monitored with Grafana and multiple alerts are setup with UptimeRobot <img src="https://cdn.radixtalk.com/images/emoji/twitter/robot.png?v=12" title=":robot:" class="emoji" alt=":robot:">, PagerDuty and more.</p>
+<p><strong>Experience</strong><br>
+I’ve been running servers in my homelab for quite some years now; I started small, with just some SBC (single-board computer), and now I have multiple VMs and LXC containers running across all my servers.<br>
+My experience with crypto goes way back though: I got into crypto around 2012, when Bitcointalk was the core of all cryptocurrencies. I mined Bitcoins and Ethereum using my own gaming PC and had lots of fun learning all kinds of new things.<br>
+I’ve been following Radix’s development since 2013 and also participated in eMunie’s beta-testing.</p>
+<p><strong>Why should delegators stake to your validator?</strong><br>
+I’m pretty sure that I’m the only validator node running on a self hosted server, right here where I live!<br>
+By delegating your stake to my validator you’re promoting <em><strong>geographical decentralization</strong></em> and <em><strong>provider decentralization</strong></em>: there aren’t a lot of nodes running in Italy and none that are running on my ISP.<br>
+Most are hosted on Amazon’s AWS, Google Cloud, Azure or Hetzner, while my node is independent from all those companies.<br>
+If all those companies were to go down, most validators would be offline but mine would be still alive and kicking <img src="https://cdn.radixtalk.com/images/emoji/twitter/grinning_face_with_smiling_eyes.png?v=12" title=":grinning_face_with_smiling_eyes:" class="emoji" alt=":grinning_face_with_smiling_eyes:"></p>
+<p>I’m also very dedicated to running a node since it fits two of my hobbies: cryptocurrencies and managing servers <img src="https://cdn.radixtalk.com/images/emoji/twitter/grinning.png?v=12" title=":grinning:" class="emoji" alt=":grinning:"></p>
+<p>I successfully completed <strong>KYC with Radix Foundation</strong> and I am active in both Discord and Telegram groups, helping everyone that needs it and maybe even writing an article just to help them on my wiki.</p>
+<p>All my XRD are staked at my own node, so you can bet that I monitor it closely <img src="https://cdn.radixtalk.com/images/emoji/twitter/wink.png?v=12" title=":wink:" class="emoji" alt=":wink:"><br>
+Oh and I’m an <strong>OciSwap partner</strong>! You get 10% more OCI if you stake at my node. Meow <img src="https://cdn.radixtalk.com/images/emoji/twitter/heart_eyes_cat.png?v=12" title=":heart_eyes_cat:" class="emoji" alt=":heart_eyes_cat:"></p>
+<p>Don’t hesitate to contact me if you have any questions!</p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/introducing-mattianode/152">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/introducing-mattianode/152</link>
+          <pubDate>Wed, 29 Dec 2021 11:01:53 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-152</guid>
+          <source url="https://radixtalk.com/t/introducing-mattianode/152.rss">Introducing 🍕 MattiaNode</source>
+        </item>
+        <item>
+          <title>Introducing Radstakes</title>
+          <dc:creator><![CDATA[Faraz | Radstakes.com]]></dc:creator>
+          <category>Validator Introductions</category>
+          <description><![CDATA[
+            <p>Radstakes - <code>rv1qdzgjh98d4mexymc492eq82zwmspmh9mlz4wqgswta4jcaw0nnwuj53mj5w</code><br>
+Fees: <code>2%</code></p>
+<p><strong>Website</strong></p>
+<ul>
+<li><a href="https://Radstakes.com">https://Radstakes.com</a></li>
+</ul>
+<p><strong>Contact Details</strong></p>
+<ul>
+<li>Telegram: <a href="https://t.me/RadstakesValidator">@Radstakes</a>
+</li>
+<li>Discord: Faraz | <a href="http://Radstakes.com#4550">Radstakes.com#4550</a>
+</li>
+<li>Twitter: <a href="https://twitter.com/Radstakes">@Radstakes</a>
+</li>
+<li>Email: <a href="mailto:Faraz@Radstakes.com">Faraz@Radstakes.com</a>
+</li>
+</ul>
+<p><strong>Languages</strong></p>
+<ul>
+<li>English</li>
+</ul>
+<p><strong>About Me/Us</strong><br>
+Hi, I’m Faraz - owner of the Radstakes validator on Radix.  We were originally selected by the Radix team to run a node during Betanet and Stokenet testing, and have since continued to operate a node in the top 100 since the inception of the Radix mainnet and hope to continue to do so for a very long time to come!</p>
+<p>In addition to operating a validator node, I also assist with the onboarding of newcomers to Radix by assisting other node runners and answering general queries in the official Radix social channels and now here in Radix Talk, so if you have any questions about Radix, please don’t hesitate to ask!</p>
+<p><strong>Validator Infrastructure</strong><br>
+Our primary validator node is hosted in Sweden, with a backup full node hosted in Germany in a separate data centre.  We pledge to only use dedicated hardware to ensure we never share our resources with others, with a minimum of 8 core CPU, 64GB of RAM and 2TB of NVMe SSD storage to future proof our operations and provide consistently high performance to our stakers.</p>
+<p><strong>Experience</strong><br>
+After first diving into the Crypto rabbit hole in 2014, we have mined both Bitcoin and Ethereum previously, using our own hardware and hosted infrastructure.  Since discovering Radix in 2017, we have been avid believers in the promise of this tech to disrupt the crypto industry and lead the DeFi revolution.</p>
+<p><strong>Why should delegators stake to your validator?</strong><br>
+We pride ourselves on transparency and trust, so always maintain an active presence in all social channels, and have completed KYC with the Radix foundation.  With our commitment on fixed fees, reliable infrastructure and honest communication, we aim to provide reassurance to the entire community that they can depend on us.</p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/introducing-radstakes/122">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/introducing-radstakes/122</link>
+          <pubDate>Mon, 27 Dec 2021 16:04:58 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-122</guid>
+          <source url="https://radixtalk.com/t/introducing-radstakes/122.rss">Introducing Radstakes</source>
+        </item>
+        <item>
+          <title>Introducing RadixPool</title>
+          <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+          <category>Validator Introductions</category>
+          <description><![CDATA[
+            <p>RadixPool - <code>rv1q04u5zwtgffsqkvr08xqm6vpm3gwxh4uqwtjpx5p47ew0m0v8m5zs3m3jed</code></p>
+<p>Fees: <code>3%</code></p>
+<p><strong>Website</strong></p>
+<ul>
+<li><a href="https://www.radixpool.com">https://www.radixpool.com</a></li>
+</ul>
+<p><strong>Contact Details</strong></p>
+<ul>
+<li>Telegram: <a href="https://t.me/stuart_radixpool">@Stuart_RadixPool</a>
+</li>
+<li>Discord: Stuart | RadixPool#0282</li>
+<li>Twitter: <a href="https://twitter.com/radixpool">@radixpool</a>
+</li>
+<li>Email: <a href="mailto:stuart@radixpool.com">stuart@radixpool.com</a>
+</li>
+</ul>
+<p><strong>Languages</strong></p>
+<ul>
+<li>English</li>
+<li>Korean</li>
+</ul>
+<p><strong>About Me/Us</strong><br>
+Hi, I’m Stuart from RadixPool. We run professionally managed Radix Validators under our own name and for other clients.</p>
+<p>Although RadixPool is a relative newcomer to the Radix Community, we were fortunate to be selected to take part in the Radix Betanet and subsequent Stokenet Test network. We have tried to make a small contribution back to the community by creating documentation, scripts, performance optimisations and providing support in the Discord channels.</p>
+<p><strong>Validator Infrastructure</strong><br>
+RadixPool is running 8 servers supporting the Radix Mainnet distributed over 3 countries - Germany, United Kingdom and The Netherlands. Each Radix Node is running on dedicated hardware with a minimum specification of 64Gb ECC Ram, 2 x 1Tb NVMe RAID1 storage, 8c/16t CPUs and 1Gbit/s bandwidth. Every Validator node has a backup server of the same specification in a different geographical location to the primary. Multiple service providers (currently Hetzner, OVH, and Scaleway) are used to reduce operation risk due to a provider outage.</p>
+<p><strong>Experience</strong><br>
+My most recent role was System Architect for a Fintech startup (Emerging Markets Bond Exchange) where I was responsible for designing and setting up the production infrastructure. I have also worked as a financial system integrator and worked on a trading floor for 6 years as a front office developer.</p>
+<p><strong>Why should delegators stake to your validator?</strong><br>
+RadixPool is committed to supporting the Radix Community by building tools, understanding the Radix internals and creating documentation to share our experience and findings. RadixPool sponsors the RadixTalk forum.</p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/introducing-radixpool/35">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/introducing-radixpool/35</link>
+          <pubDate>Fri, 24 Dec 2021 16:58:39 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-35</guid>
+          <source url="https://radixtalk.com/t/introducing-radixpool/35.rss">Introducing RadixPool</source>
+        </item>
+        <item>
+          <title>About the Validator Introductions category</title>
+          <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+          <category>Validator Introductions</category>
+          <description><![CDATA[
+            <p>Dedicated Validator Introduction category - please read the guidelines before creating a post.</p>
+<p>You must be a member of the Registered Validators group to be able to post in this category. To request access to the group, go to <a href="https://radixtalk.com/g/registered_validator">https://radixtalk.com/g/registered_validator</a> and provide the Validator Address (rv1…) of your node.</p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/about-the-validator-introductions-category/25">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/about-the-validator-introductions-category/25</link>
+          <pubDate>Fri, 24 Dec 2021 15:47:55 +0000</pubDate>
+          <discourse:topicPinned>Yes</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-25</guid>
+          <source url="https://radixtalk.com/t/about-the-validator-introductions-category/25.rss">About the Validator Introductions category</source>
+        </item>
+  </channel>
+</rss>

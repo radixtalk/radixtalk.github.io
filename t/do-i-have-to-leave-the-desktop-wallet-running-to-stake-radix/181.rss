@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Do I have to leave the desktop wallet running to stake Radix?</title>
+    <link>https://radixtalk.com/t/do-i-have-to-leave-the-desktop-wallet-running-to-stake-radix/181</link>
+    <description>No, there&#39;s no need to leave your wallet open for staking to happen! 
+Radix uses a **DPoS** (***D**elegated **P**roof **o**f **S**take*) system to reach consensus, which is different compared to a **PoW** (***P**roof **o**f **W**ork*) system like Bitcoin.
+Your stake is being handled by the validator node you delegated it to.
+
+You can obviously also turn off your computer.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Wed, 29 Dec 2021 20:40:02 +0000</lastBuildDate>
+    <category>Questions / Help</category>
+    <atom:link href="https://radixtalk.com/t/do-i-have-to-leave-the-desktop-wallet-running-to-stake-radix/181.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Do I have to leave the desktop wallet running to stake Radix?</title>
+        <dc:creator><![CDATA[Mattia | MattiaNode]]></dc:creator>
+        <description><![CDATA[
+            <p>No, there’s no need to leave your wallet open for staking to happen!<br>
+Radix uses a <strong>DPoS</strong> (<em><strong>D</strong>elegated <strong>P</strong>roof <strong>o</strong>f <strong>S</strong>take</em>) system to reach consensus, which is different compared to a <strong>PoW</strong> (<em><strong>P</strong>roof <strong>o</strong>f <strong>W</strong>ork</em>) system like Bitcoin.<br>
+Your stake is being handled by the validator node you delegated it to.</p>
+<p>You can obviously also turn off your computer.</p>
+          <p><a href="https://radixtalk.com/t/do-i-have-to-leave-the-desktop-wallet-running-to-stake-radix/181/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/do-i-have-to-leave-the-desktop-wallet-running-to-stake-radix/181/1</link>
+        <pubDate>Wed, 29 Dec 2021 20:40:02 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-181-1</guid>
+        <source url="https://radixtalk.com/t/do-i-have-to-leave-the-desktop-wallet-running-to-stake-radix/181.rss">Do I have to leave the desktop wallet running to stake Radix?</source>
+      </item>
+  </channel>
+</rss>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Node Releases &amp; Hard Forks</title>
+    <link>https://radixtalk.com/t/node-releases-hard-forks/461</link>
+    <description>Following the recent release of node software v1.1.1, the team have advised on a number of further releases which are planned over the next new months to implement coordinated forking.  This will initiate a fork to an updated protocol, only when a certain threshold of validators (or stake weight) have upgraded.  Validators who have not updated by a prescribed time, will be removed from the validator set until they do so.
+
+Furthermore, an update for Validator Liveness Assurance is planned in June which will temporarily remove validators from the set if they don&#39;t meet the required liveness standards.  See details below (source: [Radix Discord](https://discord.com/channels/417762285172555786/883338066524274695/966728048047185950))
+
+➡️ Node version 1.1.1 released 22nd April 2022. It’s a recommended reliability upgrade, and should be an easy upgrade from 1.1.0 - more details here: [https://github.com/radixdlt/radixdlt/releases/tag/1.1.1](https://github.com/radixdlt/radixdlt/releases/tag/1.1.1)
+
+➡️  1.2.0 - Support for co-ordinated forking [Releases early May] 
+
+This release will enable nodes to recognise fork votes. We’re hoping to have documentation, a new CLI version, and a release candidate available for testing some time next week. As part of preparing for this release, we will run through the process of a hard fork on Stokenet, and we’ll ask for node runners&#39; assistance with testing this. This will hopefully ready for stokenet testing in the middle of next week.
+
+➡️ 1.3.0 - The first candidate fork [Likely releases around mid-May, with fork hopefully enacting around the end of May]
+
+This will capture updates to the fee table. Node runners will need to install the new version of the software, and validators will be taken through the process to vote for the fork. There will be a grace period between the version being released and the fork being able to enact. When the fork is enacted, nodes running old versions of the software will be unable to continue syncing past the fork point.
+
+➡️ 1.4.0 -  Validator Liveness Assurance [Potentially releases early June, with fork enacting soon after a few weeks later]
+
+Our second candidate fork. This update will “jail” validators who don’t meet sufficient liveness guarantees, ensuring validators who crash or fail to meet reasonable liveness standards will be temporarily removed from the validator set, ensuring the network stays running smoothly. More details will follow in due course.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Fri, 29 Apr 2022 17:37:39 +0000</lastBuildDate>
+    <category>Validators</category>
+    <atom:link href="https://radixtalk.com/t/node-releases-hard-forks/461.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Node Releases &amp; Hard Forks</title>
+        <dc:creator><![CDATA[Jazzer 9F]]></dc:creator>
+        <description><![CDATA[
+            <p>For the systemd runners out there, don’t forget to add the --enable-preview to the JAVA_OPTS or your node won’t start at all.</p>
+          <p><a href="https://radixtalk.com/t/node-releases-hard-forks/461/2">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/node-releases-hard-forks/461/2</link>
+        <pubDate>Fri, 29 Apr 2022 17:37:39 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-461-2</guid>
+        <source url="https://radixtalk.com/t/node-releases-hard-forks/461.rss">Node Releases &amp; Hard Forks</source>
+      </item>
+      <item>
+        <title>Node Releases &amp; Hard Forks</title>
+        <dc:creator><![CDATA[Faraz | Radstakes.com]]></dc:creator>
+        <description><![CDATA[
+            <p>Following the recent release of node software v1.1.1, the team have advised on a number of further releases which are planned over the next new months to implement coordinated forking.  This will initiate a fork to an updated protocol, only when a certain threshold of validators (or stake weight) have upgraded.  Validators who have not updated by a prescribed time, will be removed from the validator set until they do so.</p>
+<p>Furthermore, an update for Validator Liveness Assurance is planned in June which will temporarily remove validators from the set if they don’t meet the required liveness standards.  See details below (source: <a href="https://discord.com/channels/417762285172555786/883338066524274695/966728048047185950">Radix Discord</a>)</p>
+<p><img src="https://cdn.radixtalk.com/images/emoji/twitter/arrow_right.png?v=12" title=":arrow_right:" class="emoji" alt=":arrow_right:" loading="lazy" width="20" height="20"> Node version 1.1.1 released 22nd April 2022. It’s a recommended reliability upgrade, and should be an easy upgrade from 1.1.0 - more details here: <a href="https://github.com/radixdlt/radixdlt/releases/tag/1.1.1">https://github.com/radixdlt/radixdlt/releases/tag/1.1.1</a></p>
+<p><img src="https://cdn.radixtalk.com/images/emoji/twitter/arrow_right.png?v=12" title=":arrow_right:" class="emoji" alt=":arrow_right:" loading="lazy" width="20" height="20">  1.2.0 - Support for co-ordinated forking [Releases early May]</p>
+<p>This release will enable nodes to recognise fork votes. We’re hoping to have documentation, a new CLI version, and a release candidate available for testing some time next week. As part of preparing for this release, we will run through the process of a hard fork on Stokenet, and we’ll ask for node runners’ assistance with testing this. This will hopefully ready for stokenet testing in the middle of next week.</p>
+<p><img src="https://cdn.radixtalk.com/images/emoji/twitter/arrow_right.png?v=12" title=":arrow_right:" class="emoji" alt=":arrow_right:" loading="lazy" width="20" height="20"> 1.3.0 - The first candidate fork [Likely releases around mid-May, with fork hopefully enacting around the end of May]</p>
+<p>This will capture updates to the fee table. Node runners will need to install the new version of the software, and validators will be taken through the process to vote for the fork. There will be a grace period between the version being released and the fork being able to enact. When the fork is enacted, nodes running old versions of the software will be unable to continue syncing past the fork point.</p>
+<p><img src="https://cdn.radixtalk.com/images/emoji/twitter/arrow_right.png?v=12" title=":arrow_right:" class="emoji" alt=":arrow_right:" loading="lazy" width="20" height="20"> 1.4.0 -  Validator Liveness Assurance [Potentially releases early June, with fork enacting soon after a few weeks later]</p>
+<p>Our second candidate fork. This update will “jail” validators who don’t meet sufficient liveness guarantees, ensuring validators who crash or fail to meet reasonable liveness standards will be temporarily removed from the validator set, ensuring the network stays running smoothly. More details will follow in due course.</p>
+          <p><a href="https://radixtalk.com/t/node-releases-hard-forks/461/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/node-releases-hard-forks/461/1</link>
+        <pubDate>Sat, 23 Apr 2022 09:32:45 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-461-1</guid>
+        <source url="https://radixtalk.com/t/node-releases-hard-forks/461.rss">Node Releases &amp; Hard Forks</source>
+      </item>
+  </channel>
+</rss>

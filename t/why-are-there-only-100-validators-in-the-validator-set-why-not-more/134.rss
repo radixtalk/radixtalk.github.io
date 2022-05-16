@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Why are there only 100 validators in the validator set? Why not more?</title>
+    <link>https://radixtalk.com/t/why-are-there-only-100-validators-in-the-validator-set-why-not-more/134</link>
+    <description>&gt; [**Validator sets**](https://learn.radixdlt.com/article/what-is-a-validator-set) can only get so large before the messaging complexity gets in the way, causing a direct reduction in [**throughput (TPS)**](https://learn.radixdlt.com/article/what-do-scalability-throughput-and-tps-mean).
+
+So what is the **messaging complexity** that the official docs are referring to?
+ 
+The validator nodes communicate with each other using a **mesh topology** - that is, each validator node in the validator set connects to every other validator node in the validator set.
+
+For a validator set of 100, this means that there are 4950 channels of communication (100 * (100 -1) / 2) between all of the validator nodes assuming a full mesh network.
+
+If the validator set was increased to, say, 250 nodes, then there would be 31,125 channels of communication between all of the nodes.
+
+The more validators that need to communicate with each other to achieve consensus, the longer it takes - and therefore the throughput decreases. 
+
+A value of 100 was chosen for the size of the validator set as it strikes a balance between safety and speed.
+
+https://learn.radixdlt.com/article/why-arent-olympia-validator-sets-larger</description>
+    <language>en-GB</language>
+    <lastBuildDate>Tue, 28 Dec 2021 12:44:29 +0000</lastBuildDate>
+    <category>Questions / Help</category>
+    <atom:link href="https://radixtalk.com/t/why-are-there-only-100-validators-in-the-validator-set-why-not-more/134.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Why are there only 100 validators in the validator set? Why not more?</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <blockquote>
+<p><a href="https://learn.radixdlt.com/article/what-is-a-validator-set"><strong>Validator sets</strong></a> can only get so large before the messaging complexity gets in the way, causing a direct reduction in <a href="https://learn.radixdlt.com/article/what-do-scalability-throughput-and-tps-mean"><strong>throughput (TPS)</strong></a>.</p>
+</blockquote>
+<p>So what is the <strong>messaging complexity</strong> that the official docs are referring to?</p>
+<p>The validator nodes communicate with each other using a <strong>mesh topology</strong> - that is, each validator node in the validator set connects to every other validator node in the validator set.</p>
+<p>For a validator set of 100, this means that there are 4950 channels of communication (100 * (100 -1) / 2) between all of the validator nodes assuming a full mesh network.</p>
+<p>If the validator set was increased to, say, 250 nodes, then there would be 31,125 channels of communication between all of the nodes.</p>
+<p>The more validators that need to communicate with each other to achieve consensus, the longer it takes - and therefore the throughput decreases.</p>
+<p>A value of 100 was chosen for the size of the validator set as it strikes a balance between safety and speed.</p>
+<aside class="onebox allowlistedgeneric" data-onebox-src="https://learn.radixdlt.com/article/why-arent-olympia-validator-sets-larger">
+  <header class="source">
+      <img src="https://radixtalk.com/uploads/default/original/1X/fed6c22b3f2ffa507d36ebe7838db55b671cb0c4.png" class="site-icon" width="32" height="32">
+
+      <a href="https://learn.radixdlt.com/article/why-arent-olympia-validator-sets-larger" target="_blank" rel="noopener">learn.radixdlt.com</a>
+  </header>
+
+  <article class="onebox-body">
+    
+
+<h3><a href="https://learn.radixdlt.com/article/why-arent-olympia-validator-sets-larger" target="_blank" rel="noopener">FAQ: Staking &amp; Validating on Radix</a></h3>
+
+  <p>Why aren’t Olympia validator sets larger?</p>
+
+
+  </article>
+
+  <div class="onebox-metadata">
+    
+    
+  </div>
+
+  <div style="clear: both"></div>
+</aside>
+
+          <p><a href="https://radixtalk.com/t/why-are-there-only-100-validators-in-the-validator-set-why-not-more/134/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/why-are-there-only-100-validators-in-the-validator-set-why-not-more/134/1</link>
+        <pubDate>Tue, 28 Dec 2021 12:44:29 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-134-1</guid>
+        <source url="https://radixtalk.com/t/why-are-there-only-100-validators-in-the-validator-set-why-not-more/134.rss">Why are there only 100 validators in the validator set? Why not more?</source>
+      </item>
+  </channel>
+</rss>

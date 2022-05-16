@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Stake / Unstake via API</title>
+    <link>https://radixtalk.com/t/stake-unstake-via-api/445</link>
+    <description>Has anyone here used the APIs for staking / unstaking found here?
+https://documenter.getpostman.com/view/14449947/UVXnHaJh#32508ddc-bdd0-48d4-9e7a-6a0ff2bd118e
+
+***Staking** may be started by transferring XRD from an account to a `prepared_stake` entity with a specific validator. Once XRD is in this entity, at some point the system will move this XRD to a Validator entity and mint StakeUnits into the originating account.
+
+***Unstaking** may be started by transfering StakeUnits from an account to a `prepared_unstake` entity. Once StakeUnits is in this entity, at some point the system will destroy this StakeUnits and transfer XRD from the Validator entity into your `exiting_stake` entity. Once the unlocking period is over the system will move that XRD from the `exiting_stake` entity into your account.
+
+I&#39;m trying to figure out how to construct the call, but hitting a roadblock.  
+Thanks!</description>
+    <language>en-GB</language>
+    <lastBuildDate>Mon, 18 Apr 2022 03:36:45 +0000</lastBuildDate>
+    <category>Developers</category>
+    <atom:link href="https://radixtalk.com/t/stake-unstake-via-api/445.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Stake / Unstake via API</title>
+        <dc:creator><![CDATA[Jon-Eric Cook]]></dc:creator>
+        <description><![CDATA[
+            <p><a class="mention" href="https://radixtalk.com/u/peachy">@Peachy</a> also i can walk you through how to use <a href="https://hexdocs.pm/radixir/Radixir.Gateway.html#stake_tokens/4" class="inline-onebox" rel="noopener nofollow ugc">Radixir.Gateway — radixir v0.0.4</a> and <a href="https://hexdocs.pm/radixir/Radixir.Gateway.html#unstake_tokens/4" class="inline-onebox" rel="noopener nofollow ugc">Radixir.Gateway — radixir v0.0.4</a></p>
+          <p><a href="https://radixtalk.com/t/stake-unstake-via-api/445/4">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/stake-unstake-via-api/445/4</link>
+        <pubDate>Mon, 18 Apr 2022 03:36:45 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-445-4</guid>
+        <source url="https://radixtalk.com/t/stake-unstake-via-api/445.rss">Stake / Unstake via API</source>
+      </item>
+      <item>
+        <title>Stake / Unstake via API</title>
+        <dc:creator><![CDATA[Shawn]]></dc:creator>
+        <description><![CDATA[
+            <p>You rock cowboy!<br>
+Thanks!!!</p>
+          <p><a href="https://radixtalk.com/t/stake-unstake-via-api/445/3">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/stake-unstake-via-api/445/3</link>
+        <pubDate>Fri, 15 Apr 2022 21:23:16 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-445-3</guid>
+        <source url="https://radixtalk.com/t/stake-unstake-via-api/445.rss">Stake / Unstake via API</source>
+      </item>
+      <item>
+        <title>Stake / Unstake via API</title>
+        <dc:creator><![CDATA[Mattia | MattiaNode]]></dc:creator>
+        <description><![CDATA[
+            <p>I think you have to use the Gateway API like mentioned here: <a href="https://docs.radixdlt.com/main/apis/making-transactions.html" class="inline-onebox">Making Transactions by Gateway API :: Radix Documentation</a><br>
+You can make a POST request to the /transaction/build endpoint of a Gateway (for example <code>https://mainnet.radixdlt.com/transaction/build</code> using cURL or Postman or whatever you prefer) with this syntax: <a href="https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/radixdlt/radixdlt-network-gateway/1.1.1/gateway-api-spec.yaml#tag/Transaction/paths/~1transaction~1build/post" class="inline-onebox">ReDoc Interactive Demo</a></p>
+<h1>
+<a name="stake-1" class="anchor" href="https://radixtalk.com#stake-1"></a>Stake</h1>
+<p>It would look like this:</p>
+<pre><code class="lang-auto">{
+  "network_identifier": {
+    "network": "mainnet"
+  },
+  "actions": [
+    {
+      "type": "StakeTokens",
+      "from_account": {
+        "address": "rdx11..."
+      },
+      "to_validator": {
+        "address": "rv1.."
+      },
+      "amount": {
+        "token_identifier": {
+          "rri": "xrd_rr1qy5wfsfh"
+        },
+        "value": "123000000000000000"
+      }
+    }
+  ],
+  "fee_payer": {
+    "address": "rdx11.."
+  },
+  "disable_token_mint_and_burn": true
+}
+</code></pre>
+<p>from_account’s address and fee_payer’s address should be the address where you want to delegate XRD from.</p>
+<p>Save the response, you’re gonna need <code>unsigned_transaction</code> and <code>payload_to_sign</code> outputs.</p>
+<p>Then, you have to sign the transaction locally, you can use Stuart’s python script here: <a href="https://radixtalk.com/t/how-do-i-locally-sign-a-transaction-with-a-private-key/157" class="inline-onebox">How do I locally sign a transaction with a private key?</a><br>
+You have to insert <code>payload_to_sign</code> in " <code>HASH_OF_BLOB_TO_SIGN</code>".</p>
+<p>Once signed, you should use unsigned_transaction’s output from the POST call and the signed output from Stuart’s script, as mentioned here: <a href="https://docs.radixdlt.com/main/apis/making-transactions.html#_finalize_and_submit_the_transaction" class="inline-onebox">Making Transactions by Gateway API :: Radix Documentation</a></p>
+<p>You can get your wallet’s public key (to finalize and submit the transaction, step 3) from, again, another of Stuarts scripts here: <a href="https://radixtalk.com/t/how-to-convert-a-wallet-address-into-a-public-key/188" class="inline-onebox">How to convert a Wallet Address into a Public Key</a></p>
+<hr>
+<h1>
+<a name="unstake-2" class="anchor" href="https://radixtalk.com#unstake-2"></a>Unstake</h1>
+<p>To unstake, only the first POST call changes:</p>
+<pre><code class="lang-auto">{
+  "network_identifier": {
+    "network": "mainnet"
+  },
+  "actions": [
+    {
+      "type": "UnstakeTokens",
+      "from_validator": {
+        "address": "rv1"
+      },
+      "to_account": {
+        "address": "rdx11.."
+      },
+      "amount": {
+        "token_identifier": {
+          "rri": "xrd_rr1qy5wfsfh"
+        },
+        "value": "123000000000000000"
+      }
+    }
+  ],
+  "fee_payer": {
+    "address": "rdx11.."
+  },
+  "disable_token_mint_and_burn": true
+}
+</code></pre>
+<p>You can use either <code>amount</code> like above or <code>unstake_percentage</code>:</p>
+<pre><code class="lang-auto">{
+  "network_identifier": {
+    "network": "mainnet"
+  },
+  "actions": [
+    {
+      "type": "UnstakeTokens",
+      "from_validator": {
+        "address": "rv1"
+      },
+      "to_account": {
+        "address": "rdx11.."
+      },
+      "unstake_percentage": 100
+    }
+  ],
+  "fee_payer": {
+    "address": "rdx11.."
+  },
+  "disable_token_mint_and_burn": true
+}
+</code></pre>
+<p>Let me know if it helps.</p>
+          <p><a href="https://radixtalk.com/t/stake-unstake-via-api/445/2">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/stake-unstake-via-api/445/2</link>
+        <pubDate>Fri, 15 Apr 2022 20:15:37 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-445-2</guid>
+        <source url="https://radixtalk.com/t/stake-unstake-via-api/445.rss">Stake / Unstake via API</source>
+      </item>
+      <item>
+        <title>Stake / Unstake via API</title>
+        <dc:creator><![CDATA[Shawn]]></dc:creator>
+        <description><![CDATA[
+            <p>Has anyone here used the APIs for staking / unstaking found here?</p><aside class="onebox allowlistedgeneric" data-onebox-src="https://documenter.getpostman.com/view/14449947/UVXnHaJh#32508ddc-bdd0-48d4-9e7a-6a0ff2bd118e">
+  <header class="source">
+      <img src="https://cdn.radixtalk.com/uploads/default/original/1X/23e08811972f34d8a58f14b7bb1968b2034d7de6.png" class="site-icon" width="16" height="16">
+
+      <a href="https://documenter.getpostman.com/view/14449947/UVXnHaJh#32508ddc-bdd0-48d4-9e7a-6a0ff2bd118e" target="_blank" rel="noopener nofollow ugc">Core API</a>
+  </header>
+
+  <article class="onebox-body">
+    <img src="https://cdn.radixtalk.com/uploads/default/original/1X/430c22d4f9808f11a28f78210e77d617f0a99094.png" class="thumbnail onebox-avatar" width="112" height="112">
+
+<h3><a href="https://documenter.getpostman.com/view/14449947/UVXnHaJh#32508ddc-bdd0-48d4-9e7a-6a0ff2bd118e" target="_blank" rel="noopener nofollow ugc">Core API</a></h3>
+
+  <p>| Core API Revision (OpenAPI Doc Version) | v1.0.0 |
+| --- | --- |
+| Radix Release | v1.1.0 |
+
+This API provides endpoints from a node for integration with the Radix ledger.
+
+# Overview
+
+&gt; WARNING
+&gt; 
+&gt; The Core API is **NOT** intended to be...</p>
+
+
+  </article>
+
+  <div class="onebox-metadata">
+    
+    
+  </div>
+
+  <div style="clear: both"></div>
+</aside>
+
+<p>*<strong>Staking</strong> may be started by transferring XRD from an account to a <code>prepared_stake</code> entity with a specific validator. Once XRD is in this entity, at some point the system will move this XRD to a Validator entity and mint StakeUnits into the originating account.</p>
+<p>*<strong>Unstaking</strong> may be started by transfering StakeUnits from an account to a <code>prepared_unstake</code> entity. Once StakeUnits is in this entity, at some point the system will destroy this StakeUnits and transfer XRD from the Validator entity into your <code>exiting_stake</code> entity. Once the unlocking period is over the system will move that XRD from the <code>exiting_stake</code> entity into your account.</p>
+<p>I’m trying to figure out how to construct the call, but hitting a roadblock.<br>
+Thanks!</p>
+          <p><a href="https://radixtalk.com/t/stake-unstake-via-api/445/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/stake-unstake-via-api/445/1</link>
+        <pubDate>Wed, 13 Apr 2022 15:28:50 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-445-1</guid>
+        <source url="https://radixtalk.com/t/stake-unstake-via-api/445.rss">Stake / Unstake via API</source>
+      </item>
+  </channel>
+</rss>

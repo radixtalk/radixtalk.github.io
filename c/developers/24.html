@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <title>Latest Developers topics - RadixTalk</title>
+    <meta name="description" content="Technical topics for Developers">
+    <meta name="generator" content="Discourse 2.9.0.beta4 - https://github.com/discourse/discourse version 8ce29a4a2264ea472a8151bfe2e591ab1101cfeb">
+<link rel="icon" type="image/png" href="https://cdn.radixtalk.com/uploads/default/optimized/1X/023c6f3e74bac599c495c37eecd72f939f3fab87_2_32x32.png">
+<link rel="apple-touch-icon" type="image/png" href="https://cdn.radixtalk.com/uploads/default/optimized/1X/ad9adb26331754b0012edbc9b4796de8dc449fa8_2_180x180.png">
+<meta name="theme-color" content="#ffffff">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<link rel="canonical" href="https://radixtalk.com/c/developers/24" />
+<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebSite","url":"https://radixtalk.com","potentialAction":{"@type":"SearchAction","target":"https://radixtalk.com/search?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<link rel="search" type="application/opensearchdescription+xml" href="../../opensearch.xml" title="RadixTalk Search">
+
+    <link href="https://cdn.radixtalk.com/stylesheets/color_definitions_light_4_1_41174e1f8711476b3393f07571899954e9737309.css?__ws=radixtalk.com" media="all" rel="stylesheet" class="light-scheme"/>
+
+  <link href="https://cdn.radixtalk.com/stylesheets/desktop_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="desktop"  />
+
+
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-akismet_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-akismet"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-automation_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-automation"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-cakeday_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-cakeday"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-canned-replies_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-canned-replies"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-checklist_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-checklist"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-data-explorer_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-data-explorer"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-details_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-details"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-docs_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-docs"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-follow_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-follow"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-fontawesome-pro_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-fontawesome-pro"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-footnote_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-footnote"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-local-dates_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-local-dates"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-presence_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-presence"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-rss-polling_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-rss-polling"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-saved-searches_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-saved-searches"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-solved_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-solved"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-tooltips_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-tooltips"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-user-notes_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-user-notes"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-voting_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-voting"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-whos-online_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-whos-online"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/lazy-yt_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="lazy-yt"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/poll_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="poll"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-voting_desktop_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-voting_desktop"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/poll_desktop_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="poll_desktop"  />
+
+  <link href="https://cdn.radixtalk.com/stylesheets/desktop_theme_1_263bf35b28bc3c889d3c5ea8d6e1c519621916e1.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="desktop_theme" data-theme-id="1" data-theme-name="default"/>
+
+    <script defer="" data-domain="radixtalk.com" src="https://plausible.io/js/plausible.hash.js"></script>
+
+    
+        <link rel="next" href="24%3Fpage=1.html">
+    <link rel="alternate" type="application/rss+xml" title="Latest posts" href="../../posts.rss" />
+    <link rel="alternate" type="application/rss+xml" title="Latest topics" href="../../latest.rss" />
+    <link rel="alternate nofollow" type="application/rss+xml" title="RSS feed of topics in the &#39;Developers&#39; category" href="24.rss" />
+    <meta property="og:site_name" content="RadixTalk" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:image" content="https://cdn.radixtalk.com/uploads/default/original/1X/9e3624f2a5d4052091ba93563043c233df535486.png" />
+<meta property="og:image" content="https://cdn.radixtalk.com/uploads/default/original/1X/9e3624f2a5d4052091ba93563043c233df535486.png" />
+<meta property="og:url" content="https://radixtalk.com/c/developers/24" />
+<meta name="twitter:url" content="https://radixtalk.com/c/developers/24" />
+<meta property="og:title" content="Developers" />
+<meta name="twitter:title" content="Developers" />
+<meta property="og:description" content="Technical topics for Developers" />
+<meta name="twitter:description" content="Technical topics for Developers" />
+
+    
+  </head>
+  <body class="crawler">
+    
+    <header>
+  <a href="../../index.html">
+    <h1>RadixTalk</h1>
+  </a>
+</header>
+
+    <div id="main-outlet" class="wrap" role="main">
+      
+
+
+
+  <h1>
+
+    <a itemprop="item" href="24.html">
+      <span itemprop='name'>Developers</span>
+</a>  </h1>
+  <br/>
+
+      <a href='scrypto/25.html'>
+        <span itemprop='name'>Scrypto</span>
+      </a>
+        <span itemprop='description'>Topics about Scrypto</span>
+    <br/>
+
+<div itemscope itemtype='http://schema.org/ItemList'>
+  <meta itemprop='itemListOrder' content='http://schema.org/ItemListOrderDescending'>
+
+  <table class='topic-list'>
+
+    <thead>
+      <tr>
+        <th>Topic</th>
+        <th></th>
+        <th class="replies">Replies</th>
+        <th class="views">Views</th>
+        <th>Activity</th>
+      </tr>
+    </thead>
+
+    <tbody>
+        <tr class="topic-list-item">
+          <td class="main-link" itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='name' content='About the Developers category'>
+            <meta itemprop='url' content='https://radixtalk.com/t/about-the-developers-category/31'>
+            <meta itemprop='position' content='1'>
+            <span class="link-top-line">
+              <a href='../../t/about-the-developers-category/31.html' class='title raw-link raw-topic-link'>About the Developers category</a>
+            </span>
+            <div class="link-bottom-line">
+                <a href='24.html' class='badge-wrapper bullet'>
+                  <span class='badge-category-bg' style='background-color: #F1592A'></span>
+                  <span class='badge-category clear-badge'>
+                    <span class='category-name'>Developers</span>
+                  </span>
+                </a>
+                <div class="discourse-tags">
+                </div>
+            </div>
+          </td>
+          <td class='posters'>
+              <a href="../../u/Stuart.html" class="latest single">
+                <img width="25" height="25" src="../../letter_avatar_proxy/v4/letter/s/cab0a1/25.png" class="avatar" title='Stuart | RadixPool - Original Poster, Most Recent Poster' aria-label='Stuart | RadixPool - Original Poster, Most Recent Poster'>
+              </a>
+          </td>
+          <td class="replies">
+            <span class='posts' title='posts'>0</span>
+          </td>
+          <td class="views">
+            <span class='views' title='views'>64</span>
+          </td>
+          <td>
+            24 December 2021
+          </td>
+        </tr>
+        <tr class="topic-list-item">
+          <td class="main-link" itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='name' content='How to get started in Scrypto'>
+            <meta itemprop='url' content='https://radixtalk.com/t/how-to-get-started-in-scrypto/283'>
+            <meta itemprop='position' content='2'>
+            <span class="link-top-line">
+              <a href='../../t/how-to-get-started-in-scrypto/283.html' class='title raw-link raw-topic-link'>How to get started in Scrypto</a>
+            </span>
+            <div class="link-bottom-line">
+                <a href='scrypto/25.html' class='badge-wrapper bullet'>
+                  <span class='badge-category-bg' style='background-color: #F7941D'></span>
+                  <span class='badge-category clear-badge'>
+                    <span class='category-name'>Scrypto</span>
+                  </span>
+                </a>
+                <div class="discourse-tags">
+                    <a href='../../tag/faq.html' class='discourse-tag'>faq</a>
+                    
+                </div>
+            </div>
+          </td>
+          <td class='posters'>
+              <a href="../../u/cbisaillon.html" class="">
+                <img width="25" height="25" src="../../user_avatar/radixtalk.com/cbisaillon/25/55_2.png" class="avatar" title='Clement - Original Poster' aria-label='Clement - Original Poster'>
+              </a>
+              <a href="../../u/Rock_Howard.html" class="">
+                <img width="25" height="25" src="../../user_avatar/radixtalk.com/rock_howard/25/22_2.png" class="avatar" title='Rock Howard - Frequent Poster' aria-label='Rock Howard - Frequent Poster'>
+              </a>
+              <a href="../../u/Blind5ight.html" class="latest">
+                <img width="25" height="25" src="../../letter_avatar_proxy/v4/letter/b/3e96dc/25.png" class="avatar" title='BlindSigned - Most Recent Poster' aria-label='BlindSigned - Most Recent Poster'>
+              </a>
+          </td>
+          <td class="replies">
+            <span class='posts' title='posts'>2</span>
+          </td>
+          <td class="views">
+            <span class='views' title='views'>1121</span>
+          </td>
+          <td>
+            28 April 2022
+          </td>
+        </tr>
+        <tr class="topic-list-item">
+          <td class="main-link" itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='name' content='Stake / Unstake via API'>
+            <meta itemprop='url' content='https://radixtalk.com/t/stake-unstake-via-api/445'>
+            <meta itemprop='position' content='3'>
+            <span class="link-top-line">
+              <a href='../../t/stake-unstake-via-api/445.html' class='title raw-link raw-topic-link'>Stake / Unstake via API</a>
+            </span>
+            <div class="link-bottom-line">
+                <a href='24.html' class='badge-wrapper bullet'>
+                  <span class='badge-category-bg' style='background-color: #F1592A'></span>
+                  <span class='badge-category clear-badge'>
+                    <span class='category-name'>Developers</span>
+                  </span>
+                </a>
+                <div class="discourse-tags">
+                    <a href='../../tag/api.html' class='discourse-tag'>api</a>
+                    
+                </div>
+            </div>
+          </td>
+          <td class='posters'>
+              <a href="../../u/Peachy.html" class="">
+                <img width="25" height="25" src="../../user_avatar/radixtalk.com/peachy/25/343_2.png" class="avatar" title='Shawn - Original Poster' aria-label='Shawn - Original Poster'>
+              </a>
+              <a href="../../u/Mattia.html" class="">
+                <img width="25" height="25" src="../../user_avatar/radixtalk.com/mattia/25/64_2.png" class="avatar" title='Mattia | MattiaNode - Frequent Poster, Accepted Answer' aria-label='Mattia | MattiaNode - Frequent Poster, Accepted Answer'>
+              </a>
+              <a href="../../u/jonericcook.html" class="latest">
+                <img width="25" height="25" src="../../user_avatar/radixtalk.com/jonericcook/25/200_2.png" class="avatar" title='Jon-Eric Cook - Most Recent Poster' aria-label='Jon-Eric Cook - Most Recent Poster'>
+              </a>
+          </td>
+          <td class="replies">
+            <span class='posts' title='posts'>3</span>
+          </td>
+          <td class="views">
+            <span class='views' title='views'>81</span>
+          </td>
+          <td>
+            18 April 2022
+          </td>
+        </tr>
+        <tr class="topic-list-item">
+          <td class="main-link" itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='name' content='Error message when requesting from API'>
+            <meta itemprop='url' content='https://radixtalk.com/t/error-message-when-requesting-from-api/451'>
+            <meta itemprop='position' content='4'>
+            <span class="link-top-line">
+              <a href='../../t/error-message-when-requesting-from-api/451.html' class='title raw-link raw-topic-link'>Error message when requesting from API</a>
+            </span>
+            <div class="link-bottom-line">
+                <a href='24.html' class='badge-wrapper bullet'>
+                  <span class='badge-category-bg' style='background-color: #F1592A'></span>
+                  <span class='badge-category clear-badge'>
+                    <span class='category-name'>Developers</span>
+                  </span>
+                </a>
+                <div class="discourse-tags">
+                </div>
+            </div>
+          </td>
+          <td class='posters'>
+              <a href="../../u/newworld.html" class="latest">
+                <img width="25" height="25" src="../../user_avatar/radixtalk.com/newworld/25/335_2.png" class="avatar" title='newworld - Original Poster, Most Recent Poster, Accepted Answer' aria-label='newworld - Original Poster, Most Recent Poster, Accepted Answer'>
+              </a>
+              <a href="../../u/Peachy.html" class="">
+                <img width="25" height="25" src="../../user_avatar/radixtalk.com/peachy/25/343_2.png" class="avatar" title='Shawn - Frequent Poster' aria-label='Shawn - Frequent Poster'>
+              </a>
+          </td>
+          <td class="replies">
+            <span class='posts' title='posts'>2</span>
+          </td>
+          <td class="views">
+            <span class='views' title='views'>35</span>
+          </td>
+          <td>
+            13 April 2022
+          </td>
+        </tr>
+        <tr class="topic-list-item">
+          <td class="main-link" itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='name' content='Why can`t transfer all balance of an address? it must keep some balance'>
+            <meta itemprop='url' content='https://radixtalk.com/t/why-can-t-transfer-all-balance-of-an-address-it-must-keep-some-balance/440'>
+            <meta itemprop='position' content='5'>
+            <span class="link-top-line">
+              <a href='../../t/why-can-t-transfer-all-balance-of-an-address-it-must-keep-some-balance/440.html' class='title raw-link raw-topic-link'>Why can`t transfer all balance of an address? it must keep some balance</a>
+            </span>
+            <div class="link-bottom-line">
+                <a href='24.html' class='badge-wrapper bullet'>
+                  <span class='badge-category-bg' style='background-color: #F1592A'></span>
+                  <span class='badge-category clear-badge'>
+                    <span class='category-name'>Developers</span>
+                  </span>
+                </a>
+                <div class="discourse-tags">
+                </div>
+            </div>
+          </td>
+          <td class='posters'>
+              <a href="../../u/abel.html" class="latest">
+                <img width="25" height="25" src="../../user_avatar/radixtalk.com/abel/25/342_2.png" class="avatar" title='abel - Original Poster, Most Recent Poster' aria-label='abel - Original Poster, Most Recent Poster'>
+              </a>
+              <a href="../../u/Faraz.html" class="">
+                <img width="25" height="25" src="../../user_avatar/radixtalk.com/faraz/25/334_2.png" class="avatar" title='Faraz | Radstakes.com - Frequent Poster' aria-label='Faraz | Radstakes.com - Frequent Poster'>
+              </a>
+          </td>
+          <td class="replies">
+            <span class='posts' title='posts'>2</span>
+          </td>
+          <td class="views">
+            <span class='views' title='views'>44</span>
+          </td>
+          <td>
+            12 April 2022
+          </td>
+        </tr>
+        <tr class="topic-list-item">
+          <td class="main-link" itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='name' content='How to estimate fee of a transaction?'>
+            <meta itemprop='url' content='https://radixtalk.com/t/how-to-estimate-fee-of-a-transaction/429'>
+            <meta itemprop='position' content='6'>
+            <span class="link-top-line">
+              <a href='../../t/how-to-estimate-fee-of-a-transaction/429.html' class='title raw-link raw-topic-link'>How to estimate fee of a transaction?</a>
+            </span>
+            <div class="link-bottom-line">
+                <a href='24.html' class='badge-wrapper bullet'>
+                  <span class='badge-category-bg' style='background-color: #F1592A'></span>
+                  <span class='badge-category clear-badge'>
+                    <span class='category-name'>Developers</span>
+                  </span>
+                </a>
+                <div class="discourse-tags">
+                </div>
+            </div>
+          </td>
+          <td class='posters'>
+              <a href="../../u/abel.html" class="latest">
+                <img width="25" height="25" src="../../user_avatar/radixtalk.com/abel/25/342_2.png" class="avatar" title='abel - Original Poster, Most Recent Poster' aria-label='abel - Original Poster, Most Recent Poster'>
+              </a>
+              <a href="../../u/Jazzer_9F.html" class="">
+                <img width="25" height="25" src="../../user_avatar/radixtalk.com/jazzer_9f/25/24_2.png" class="avatar" title='Jazzer 9F - Frequent Poster' aria-label='Jazzer 9F - Frequent Poster'>
+              </a>
+              <a href="../../u/Faraz.html" class="">
+                <img width="25" height="25" src="../../user_avatar/radixtalk.com/faraz/25/334_2.png" class="avatar" title='Faraz | Radstakes.com - Frequent Poster' aria-label='Faraz | Radstakes.com - Frequent Poster'>
+              </a>
+          </td>
+          <td class="replies">
+            <span class='posts' title='posts'>3</span>
+          </td>
+          <td class="views">
+            <span class='views' title='views'>50</span>
+          </td>
+          <td>
+            11 April 2022
+          </td>
+        </tr>
+        <tr class="topic-list-item">
+          <td class="main-link" itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='name' content='How do I locally sign a transaction with a private key?'>
+            <meta itemprop='url' content='https://radixtalk.com/t/how-do-i-locally-sign-a-transaction-with-a-private-key/157'>
+            <meta itemprop='position' content='7'>
+            <span class="link-top-line">
+              <a href='../../t/how-do-i-locally-sign-a-transaction-with-a-private-key/157.html' class='title raw-link raw-topic-link'>How do I locally sign a transaction with a private key?</a>
+            </span>
+            <div class="link-bottom-line">
+                <a href='24.html' class='badge-wrapper bullet'>
+                  <span class='badge-category-bg' style='background-color: #F1592A'></span>
+                  <span class='badge-category clear-badge'>
+                    <span class='category-name'>Developers</span>
+                  </span>
+                </a>
+                <div class="discourse-tags">
+                    <a href='../../tag/python.html' class='discourse-tag'>python</a>
+                    ,&nbsp;
+                    <a href='../../tag/howto.html' class='discourse-tag'>howto</a>
+                    ,&nbsp;
+                    <a href='../../tag/api.html' class='discourse-tag'>api</a>
+                    
+                </div>
+            </div>
+          </td>
+          <td class='posters'>
+              <a href="../../u/Stuart.html" class="">
+                <img width="25" height="25" src="../../letter_avatar_proxy/v4/letter/s/cab0a1/25.png" class="avatar" title='Stuart | RadixPool - Original Poster' aria-label='Stuart | RadixPool - Original Poster'>
+              </a>
+              <a href="../../u/newworld.html" class="">
+                <img width="25" height="25" src="../../user_avatar/radixtalk.com/newworld/25/335_2.png" class="avatar" title='newworld - Frequent Poster' aria-label='newworld - Frequent Poster'>
+              </a>
+              <a href="../../u/jonericcook.html" class="">
+                <img width="25" height="25" src="../../user_avatar/radixtalk.com/jonericcook/25/200_2.png" class="avatar" title='Jon-Eric Cook - Frequent Poster' aria-label='Jon-Eric Cook - Frequent Poster'>
+              </a>
+              <a href="../../u/Peachy.html" class="">
+                <img width="25" height="25" src="../../user_avatar/radixtalk.com/peachy/25/343_2.png" class="avatar" title='Shawn - Frequent Poster' aria-label='Shawn - Frequent Poster'>
+              </a>
+              <a href="../../u/Faraz.html" class="latest">
+                <img width="25" height="25" src="../../user_avatar/radixtalk.com/faraz/25/334_2.png" class="avatar" title='Faraz | Radstakes.com - Most Recent Poster' aria-label='Faraz | Radstakes.com - Most Recent Poster'>
+              </a>
+          </td>
+          <td class="replies">
+            <span class='posts' title='posts'>10</span>
+          </td>
+          <td class="views">
+            <span class='views' title='views'>469</span>
+          </td>
+          <td>
+            9 April 2022
+          </td>
+        </tr>
+        <tr class="topic-list-item">
+          <td class="main-link" itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='name' content='How do confirm the transaction had a final in radix?'>
+            <meta itemprop='url' content='https://radixtalk.com/t/how-do-confirm-the-transaction-had-a-final-in-radix/433'>
+            <meta itemprop='position' content='8'>
+            <span class="link-top-line">
+              <a href='../../t/how-do-confirm-the-transaction-had-a-final-in-radix/433.html' class='title raw-link raw-topic-link'>How do confirm the transaction had a final in radix?</a>
+            </span>
+            <div class="link-bottom-line">
+                <a href='24.html' class='badge-wrapper bullet'>
+                  <span class='badge-category-bg' style='background-color: #F1592A'></span>
+                  <span class='badge-category clear-badge'>
+                    <span class='category-name'>Developers</span>
+                  </span>
+                </a>
+                <div class="discourse-tags">
+                </div>
+            </div>
+          </td>
+          <td class='posters'>
+              <a href="../../u/abel.html" class="latest">
+                <img width="25" height="25" src="../../user_avatar/radixtalk.com/abel/25/342_2.png" class="avatar" title='abel - Original Poster, Most Recent Poster' aria-label='abel - Original Poster, Most Recent Poster'>
+              </a>
+              <a href="../../u/Faraz.html" class="">
+                <img width="25" height="25" src="../../user_avatar/radixtalk.com/faraz/25/334_2.png" class="avatar" title='Faraz | Radstakes.com - Frequent Poster' aria-label='Faraz | Radstakes.com - Frequent Poster'>
+              </a>
+          </td>
+          <td class="replies">
+            <span class='posts' title='posts'>4</span>
+          </td>
+          <td class="views">
+            <span class='views' title='views'>31</span>
+          </td>
+          <td>
+            7 April 2022
+          </td>
+        </tr>
+        <tr class="topic-list-item">
+          <td class="main-link" itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='name' content='Send multiple consecutive transactions in a short time,how do ensure the unique transaction?'>
+            <meta itemprop='url' content='https://radixtalk.com/t/send-multiple-consecutive-transactions-in-a-short-time-how-do-ensure-the-unique-transaction/431'>
+            <meta itemprop='position' content='9'>
+            <span class="link-top-line">
+              <a href='../../t/send-multiple-consecutive-transactions-in-a-short-time-how-do-ensure-the-unique-transaction/431.html' class='title raw-link raw-topic-link'>Send multiple consecutive transactions in a short time,how do ensure the unique transaction?</a>
+            </span>
+            <div class="link-bottom-line">
+                <a href='24.html' class='badge-wrapper bullet'>
+                  <span class='badge-category-bg' style='background-color: #F1592A'></span>
+                  <span class='badge-category clear-badge'>
+                    <span class='category-name'>Developers</span>
+                  </span>
+                </a>
+                <div class="discourse-tags">
+                </div>
+            </div>
+          </td>
+          <td class='posters'>
+              <a href="../../u/abel.html" class="">
+                <img width="25" height="25" src="../../user_avatar/radixtalk.com/abel/25/342_2.png" class="avatar" title='abel - Original Poster' aria-label='abel - Original Poster'>
+              </a>
+              <a href="../../u/Faraz.html" class="latest">
+                <img width="25" height="25" src="../../user_avatar/radixtalk.com/faraz/25/334_2.png" class="avatar" title='Faraz | Radstakes.com - Most Recent Poster' aria-label='Faraz | Radstakes.com - Most Recent Poster'>
+              </a>
+          </td>
+          <td class="replies">
+            <span class='posts' title='posts'>3</span>
+          </td>
+          <td class="views">
+            <span class='views' title='views'>39</span>
+          </td>
+          <td>
+            7 April 2022
+          </td>
+        </tr>
+        <tr class="topic-list-item">
+          <td class="main-link" itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='name' content='How to query all transactions?'>
+            <meta itemprop='url' content='https://radixtalk.com/t/how-to-query-all-transactions/428'>
+            <meta itemprop='position' content='10'>
+            <span class="link-top-line">
+              <a href='../../t/how-to-query-all-transactions/428.html' class='title raw-link raw-topic-link'>How to query all transactions?</a>
+            </span>
+            <div class="link-bottom-line">
+                <a href='24.html' class='badge-wrapper bullet'>
+                  <span class='badge-category-bg' style='background-color: #F1592A'></span>
+                  <span class='badge-category clear-badge'>
+                    <span class='category-name'>Developers</span>
+                  </span>
+                </a>
+                <div class="discourse-tags">
+                </div>
+            </div>
+          </td>
+          <td class='posters'>
+              <a href="../../u/abel.html" class="latest">
+                <img width="25" height="25" src="../../user_avatar/radixtalk.com/abel/25/342_2.png" class="avatar" title='abel - Original Poster, Most Recent Poster' aria-label='abel - Original Poster, Most Recent Poster'>
+              </a>
+              <a href="../../u/Jazzer_9F.html" class="">
+                <img width="25" height="25" src="../../user_avatar/radixtalk.com/jazzer_9f/25/24_2.png" class="avatar" title='Jazzer 9F - Frequent Poster' aria-label='Jazzer 9F - Frequent Poster'>
+              </a>
+          </td>
+          <td class="replies">
+            <span class='posts' title='posts'>2</span>
+          </td>
+          <td class="views">
+            <span class='views' title='views'>43</span>
+          </td>
+          <td>
+            7 April 2022
+          </td>
+        </tr>
+        <tr class="topic-list-item">
+          <td class="main-link" itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='name' content='Radixir - Elixir Radix Library'>
+            <meta itemprop='url' content='https://radixtalk.com/t/radixir-elixir-radix-library/334'>
+              <meta itemprop='image' content='https://cdn.radixtalk.com/uploads/default/optimized/1X/47ece4af674f94192cfc9cbbb6ad3bcde64f2f5d_2_1024x512.png'>
+            <meta itemprop='position' content='11'>
+            <span class="link-top-line">
+              <a href='../../t/radixir-elixir-radix-library/334.html' class='title raw-link raw-topic-link'>Radixir - Elixir Radix Library</a>
+            </span>
+            <div class="link-bottom-line">
+                <a href='24.html' class='badge-wrapper bullet'>
+                  <span class='badge-category-bg' style='background-color: #F1592A'></span>
+                  <span class='badge-category clear-badge'>
+                    <span class='category-name'>Developers</span>
+                  </span>
+                </a>
+                <div class="discourse-tags">
+                    <a href='../../tag/elixir.html' class='discourse-tag'>elixir</a>
+                    ,&nbsp;
+                    <a href='../../tag/library.html' class='discourse-tag'>library</a>
+                    
+                </div>
+            </div>
+          </td>
+          <td class='posters'>
+              <a href="../../u/Stuart.html" class="">
+                <img width="25" height="25" src="../../letter_avatar_proxy/v4/letter/s/cab0a1/25.png" class="avatar" title='Stuart | RadixPool - Original Poster' aria-label='Stuart | RadixPool - Original Poster'>
+              </a>
+              <a href="../../u/jonericcook.html" class="latest">
+                <img width="25" height="25" src="../../user_avatar/radixtalk.com/jonericcook/25/200_2.png" class="avatar" title='Jon-Eric Cook - Most Recent Poster' aria-label='Jon-Eric Cook - Most Recent Poster'>
+              </a>
+          </td>
+          <td class="replies">
+            <span class='posts' title='posts'>4</span>
+          </td>
+          <td class="views">
+            <span class='views' title='views'>167</span>
+          </td>
+          <td>
+            7 March 2022
+          </td>
+        </tr>
+        <tr class="topic-list-item">
+          <td class="main-link" itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='name' content='How to convert a Wallet Address into a Public Key'>
+            <meta itemprop='url' content='https://radixtalk.com/t/how-to-convert-a-wallet-address-into-a-public-key/188'>
+            <meta itemprop='position' content='12'>
+            <span class="link-top-line">
+              <a href='../../t/how-to-convert-a-wallet-address-into-a-public-key/188.html' class='title raw-link raw-topic-link'>How to convert a Wallet Address into a Public Key</a>
+            </span>
+            <div class="link-bottom-line">
+                <a href='24.html' class='badge-wrapper bullet'>
+                  <span class='badge-category-bg' style='background-color: #F1592A'></span>
+                  <span class='badge-category clear-badge'>
+                    <span class='category-name'>Developers</span>
+                  </span>
+                </a>
+                <div class="discourse-tags">
+                    <a href='../../tag/api.html' class='discourse-tag'>api</a>
+                    ,&nbsp;
+                    <a href='../../tag/howto.html' class='discourse-tag'>howto</a>
+                    ,&nbsp;
+                    <a href='../../tag/python.html' class='discourse-tag'>python</a>
+                    ,&nbsp;
+                    <a href='../../tag/replit.html' class='discourse-tag'>replit</a>
+                    
+                </div>
+            </div>
+          </td>
+          <td class='posters'>
+              <a href="../../u/Stuart.html" class="">
+                <img width="25" height="25" src="../../letter_avatar_proxy/v4/letter/s/cab0a1/25.png" class="avatar" title='Stuart | RadixPool - Original Poster' aria-label='Stuart | RadixPool - Original Poster'>
+              </a>
+              <a href="../../u/minhnn.html" class="">
+                <img width="25" height="25" src="../../letter_avatar_proxy/v4/letter/m/97f17d/25.png" class="avatar" title='minhnn | EasyStake.net - Frequent Poster' aria-label='minhnn | EasyStake.net - Frequent Poster'>
+              </a>
+              <a href="../../u/jonericcook.html" class="latest">
+                <img width="25" height="25" src="../../user_avatar/radixtalk.com/jonericcook/25/200_2.png" class="avatar" title='Jon-Eric Cook - Most Recent Poster' aria-label='Jon-Eric Cook - Most Recent Poster'>
+              </a>
+          </td>
+          <td class="replies">
+            <span class='posts' title='posts'>4</span>
+          </td>
+          <td class="views">
+            <span class='views' title='views'>208</span>
+          </td>
+          <td>
+            18 February 2022
+          </td>
+        </tr>
+        <tr class="topic-list-item">
+          <td class="main-link" itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='name' content='Radix Libraries'>
+            <meta itemprop='url' content='https://radixtalk.com/t/radix-libraries/284'>
+            <meta itemprop='position' content='13'>
+            <span class="link-top-line">
+              <a href='../../t/radix-libraries/284.html' class='title raw-link raw-topic-link'>Radix Libraries</a>
+            </span>
+            <div class="link-bottom-line">
+                <a href='24.html' class='badge-wrapper bullet'>
+                  <span class='badge-category-bg' style='background-color: #F1592A'></span>
+                  <span class='badge-category clear-badge'>
+                    <span class='category-name'>Developers</span>
+                  </span>
+                </a>
+                <div class="discourse-tags">
+                </div>
+            </div>
+          </td>
+          <td class='posters'>
+              <a href="../../u/jonericcook.html" class="latest">
+                <img width="25" height="25" src="../../user_avatar/radixtalk.com/jonericcook/25/200_2.png" class="avatar" title='Jon-Eric Cook - Original Poster, Most Recent Poster' aria-label='Jon-Eric Cook - Original Poster, Most Recent Poster'>
+              </a>
+              <a href="../../u/Stuart.html" class="">
+                <img width="25" height="25" src="../../letter_avatar_proxy/v4/letter/s/cab0a1/25.png" class="avatar" title='Stuart | RadixPool - Frequent Poster' aria-label='Stuart | RadixPool - Frequent Poster'>
+              </a>
+          </td>
+          <td class="replies">
+            <span class='posts' title='posts'>2</span>
+          </td>
+          <td class="views">
+            <span class='views' title='views'>122</span>
+          </td>
+          <td>
+            18 February 2022
+          </td>
+        </tr>
+        <tr class="topic-list-item">
+          <td class="main-link" itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='name' content='Pokemon on radix'>
+            <meta itemprop='url' content='https://radixtalk.com/t/pokemon-on-radix/385'>
+            <meta itemprop='position' content='14'>
+            <span class="link-top-line">
+              <a href='../../t/pokemon-on-radix/385.html' class='title raw-link raw-topic-link'>Pokemon on radix</a>
+            </span>
+            <div class="link-bottom-line">
+                <a href='24.html' class='badge-wrapper bullet'>
+                  <span class='badge-category-bg' style='background-color: #F1592A'></span>
+                  <span class='badge-category clear-badge'>
+                    <span class='category-name'>Developers</span>
+                  </span>
+                </a>
+                <div class="discourse-tags">
+                </div>
+            </div>
+          </td>
+          <td class='posters'>
+              <a href="../../u/Sebah.html" class="latest single">
+                <img width="25" height="25" src="../../letter_avatar_proxy/v4/letter/s/34f0e0/25.png" class="avatar" title='Sebah - Original Poster, Most Recent Poster' aria-label='Sebah - Original Poster, Most Recent Poster'>
+              </a>
+          </td>
+          <td class="replies">
+            <span class='posts' title='posts'>0</span>
+          </td>
+          <td class="views">
+            <span class='views' title='views'>65</span>
+          </td>
+          <td>
+            17 February 2022
+          </td>
+        </tr>
+        <tr class="topic-list-item">
+          <td class="main-link" itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='name' content='How to create a Radix Wallet for development purposes'>
+            <meta itemprop='url' content='https://radixtalk.com/t/how-to-create-a-radix-wallet-for-development-purposes/61'>
+            <meta itemprop='position' content='15'>
+            <span class="link-top-line">
+              <a href='../../t/how-to-create-a-radix-wallet-for-development-purposes/61.html' class='title raw-link raw-topic-link'>How to create a Radix Wallet for development purposes</a>
+            </span>
+            <div class="link-bottom-line">
+                <a href='24.html' class='badge-wrapper bullet'>
+                  <span class='badge-category-bg' style='background-color: #F1592A'></span>
+                  <span class='badge-category clear-badge'>
+                    <span class='category-name'>Developers</span>
+                  </span>
+                </a>
+                <div class="discourse-tags">
+                    <a href='../../tag/python.html' class='discourse-tag'>python</a>
+                    ,&nbsp;
+                    <a href='../../tag/howto.html' class='discourse-tag'>howto</a>
+                    
+                </div>
+            </div>
+          </td>
+          <td class='posters'>
+              <a href="../../u/Stuart.html" class="">
+                <img width="25" height="25" src="../../letter_avatar_proxy/v4/letter/s/cab0a1/25.png" class="avatar" title='Stuart | RadixPool - Original Poster' aria-label='Stuart | RadixPool - Original Poster'>
+              </a>
+              <a href="../../u/jonericcook.html" class="latest">
+                <img width="25" height="25" src="../../user_avatar/radixtalk.com/jonericcook/25/200_2.png" class="avatar" title='Jon-Eric Cook - Most Recent Poster' aria-label='Jon-Eric Cook - Most Recent Poster'>
+              </a>
+          </td>
+          <td class="replies">
+            <span class='posts' title='posts'>3</span>
+          </td>
+          <td class="views">
+            <span class='views' title='views'>402</span>
+          </td>
+          <td>
+            17 February 2022
+          </td>
+        </tr>
+        <tr class="topic-list-item">
+          <td class="main-link" itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='name' content='RadixLib - Radix Python Library'>
+            <meta itemprop='url' content='https://radixtalk.com/t/radixlib-radix-python-library/333'>
+              <meta itemprop='image' content='https://cdn.radixtalk.com/uploads/default/optimized/1X/b15130c00670c2fbe870dcbe521f7fd86dd0edb8_2_1024x512.png'>
+            <meta itemprop='position' content='16'>
+            <span class="link-top-line">
+              <a href='../../t/radixlib-radix-python-library/333.html' class='title raw-link raw-topic-link'>RadixLib - Radix Python Library</a>
+            </span>
+            <div class="link-bottom-line">
+                <a href='24.html' class='badge-wrapper bullet'>
+                  <span class='badge-category-bg' style='background-color: #F1592A'></span>
+                  <span class='badge-category clear-badge'>
+                    <span class='category-name'>Developers</span>
+                  </span>
+                </a>
+                <div class="discourse-tags">
+                    <a href='../../tag/python.html' class='discourse-tag'>python</a>
+                    ,&nbsp;
+                    <a href='../../tag/library.html' class='discourse-tag'>library</a>
+                    
+                </div>
+            </div>
+          </td>
+          <td class='posters'>
+              <a href="../../u/Stuart.html" class="">
+                <img width="25" height="25" src="../../letter_avatar_proxy/v4/letter/s/cab0a1/25.png" class="avatar" title='Stuart | RadixPool - Original Poster' aria-label='Stuart | RadixPool - Original Poster'>
+              </a>
+              <a href="../../u/Jazzer_9F.html" class="">
+                <img width="25" height="25" src="../../user_avatar/radixtalk.com/jazzer_9f/25/24_2.png" class="avatar" title='Jazzer 9F - Frequent Poster' aria-label='Jazzer 9F - Frequent Poster'>
+              </a>
+              <a href="../../u/Yo1234.html" class="">
+                <img width="25" height="25" src="../../user_avatar/radixtalk.com/yo1234/25/54_2.png" class="avatar" title='Yo1234 - Frequent Poster' aria-label='Yo1234 - Frequent Poster'>
+              </a>
+              <a href="../../u/Trond.html" class="">
+                <img width="25" height="25" src="../../user_avatar/radixtalk.com/trond/25/233_2.png" class="avatar" title='Trond | StakeNordic.com - Frequent Poster' aria-label='Trond | StakeNordic.com - Frequent Poster'>
+              </a>
+              <a href="../../u/0xOmar.html" class="latest">
+                <img width="25" height="25" src="../../user_avatar/radixtalk.com/0xomar/25/242_2.png" class="avatar" title='Omar - Most Recent Poster' aria-label='Omar - Most Recent Poster'>
+              </a>
+          </td>
+          <td class="replies">
+            <span class='posts' title='posts'>5</span>
+          </td>
+          <td class="views">
+            <span class='views' title='views'>201</span>
+          </td>
+          <td>
+            9 February 2022
+          </td>
+        </tr>
+        <tr class="topic-list-item">
+          <td class="main-link" itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='name' content='How to setup your own Radix Gateway API server'>
+            <meta itemprop='url' content='https://radixtalk.com/t/how-to-setup-your-own-radix-gateway-api-server/323'>
+            <meta itemprop='position' content='17'>
+            <span class="link-top-line">
+              <a href='../../t/how-to-setup-your-own-radix-gateway-api-server/323.html' class='title raw-link raw-topic-link'>How to setup your own Radix Gateway API server</a>
+            </span>
+            <div class="link-bottom-line">
+                <a href='24.html' class='badge-wrapper bullet'>
+                  <span class='badge-category-bg' style='background-color: #F1592A'></span>
+                  <span class='badge-category clear-badge'>
+                    <span class='category-name'>Developers</span>
+                  </span>
+                </a>
+                <div class="discourse-tags">
+                    <a href='../../tag/howto.html' class='discourse-tag'>howto</a>
+                    ,&nbsp;
+                    <a href='../../tag/core-api.html' class='discourse-tag'>core-api</a>
+                    ,&nbsp;
+                    <a href='../../tag/gateway-api.html' class='discourse-tag'>gateway-api</a>
+                    ,&nbsp;
+                    <a href='../../tag/api.html' class='discourse-tag'>api</a>
+                    
+                </div>
+            </div>
+          </td>
+          <td class='posters'>
+              <a href="../../u/Mleekko.html" class="latest single">
+                <img width="25" height="25" src="../../user_avatar/radixtalk.com/mleekko/25/17_2.png" class="avatar" title='Oleh Koval - Original Poster, Most Recent Poster' aria-label='Oleh Koval - Original Poster, Most Recent Poster'>
+              </a>
+          </td>
+          <td class="replies">
+            <span class='posts' title='posts'>0</span>
+          </td>
+          <td class="views">
+            <span class='views' title='views'>121</span>
+          </td>
+          <td>
+            3 February 2022
+          </td>
+        </tr>
+        <tr class="topic-list-item">
+          <td class="main-link" itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='name' content='What is the maximum length of messages in a transaction?'>
+            <meta itemprop='url' content='https://radixtalk.com/t/what-is-the-maximum-length-of-messages-in-a-transaction/276'>
+            <meta itemprop='position' content='18'>
+            <span class="link-top-line">
+              <a href='../../t/what-is-the-maximum-length-of-messages-in-a-transaction/276.html' class='title raw-link raw-topic-link'>What is the maximum length of messages in a transaction?</a>
+            </span>
+            <div class="link-bottom-line">
+                <a href='24.html' class='badge-wrapper bullet'>
+                  <span class='badge-category-bg' style='background-color: #F1592A'></span>
+                  <span class='badge-category clear-badge'>
+                    <span class='category-name'>Developers</span>
+                  </span>
+                </a>
+                <div class="discourse-tags">
+                    <a href='../../tag/core-api.html' class='discourse-tag'>core-api</a>
+                    ,&nbsp;
+                    <a href='../../tag/api.html' class='discourse-tag'>api</a>
+                    ,&nbsp;
+                    <a href='../../tag/faq.html' class='discourse-tag'>faq</a>
+                    
+                </div>
+            </div>
+          </td>
+          <td class='posters'>
+              <a href="../../u/Stuart.html" class="">
+                <img width="25" height="25" src="../../letter_avatar_proxy/v4/letter/s/cab0a1/25.png" class="avatar" title='Stuart | RadixPool - Original Poster' aria-label='Stuart | RadixPool - Original Poster'>
+              </a>
+              <a href="../../u/Yo1234.html" class="">
+                <img width="25" height="25" src="../../user_avatar/radixtalk.com/yo1234/25/54_2.png" class="avatar" title='Yo1234 - Frequent Poster' aria-label='Yo1234 - Frequent Poster'>
+              </a>
+              <a href="../../u/Mleekko.html" class="latest">
+                <img width="25" height="25" src="../../user_avatar/radixtalk.com/mleekko/25/17_2.png" class="avatar" title='Oleh Koval - Most Recent Poster' aria-label='Oleh Koval - Most Recent Poster'>
+              </a>
+          </td>
+          <td class="replies">
+            <span class='posts' title='posts'>2</span>
+          </td>
+          <td class="views">
+            <span class='views' title='views'>152</span>
+          </td>
+          <td>
+            26 January 2022
+          </td>
+        </tr>
+        <tr class="topic-list-item">
+          <td class="main-link" itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='name' content='How to parse the &quot;blob&quot; content returned from archive node?'>
+            <meta itemprop='url' content='https://radixtalk.com/t/how-to-parse-the-blob-content-returned-from-archive-node/269'>
+            <meta itemprop='position' content='19'>
+            <span class="link-top-line">
+              <a href='../../t/how-to-parse-the-blob-content-returned-from-archive-node/269.html' class='title raw-link raw-topic-link'>How to parse the &quot;blob&quot; content returned from archive node?</a>
+            </span>
+            <div class="link-bottom-line">
+                <a href='24.html' class='badge-wrapper bullet'>
+                  <span class='badge-category-bg' style='background-color: #F1592A'></span>
+                  <span class='badge-category clear-badge'>
+                    <span class='category-name'>Developers</span>
+                  </span>
+                </a>
+                <div class="discourse-tags">
+                </div>
+            </div>
+          </td>
+          <td class='posters'>
+              <a href="../../u/minhnn.html" class="latest">
+                <img width="25" height="25" src="../../letter_avatar_proxy/v4/letter/m/97f17d/25.png" class="avatar" title='minhnn | EasyStake.net - Original Poster, Most Recent Poster' aria-label='minhnn | EasyStake.net - Original Poster, Most Recent Poster'>
+              </a>
+              <a href="../../u/Stuart.html" class="">
+                <img width="25" height="25" src="../../letter_avatar_proxy/v4/letter/s/cab0a1/25.png" class="avatar" title='Stuart | RadixPool - Frequent Poster' aria-label='Stuart | RadixPool - Frequent Poster'>
+              </a>
+          </td>
+          <td class="replies">
+            <span class='posts' title='posts'>4</span>
+          </td>
+          <td class="views">
+            <span class='views' title='views'>102</span>
+          </td>
+          <td>
+            21 January 2022
+          </td>
+        </tr>
+        <tr class="topic-list-item">
+          <td class="main-link" itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='name' content='What is the maximum size of a Radix transaction?'>
+            <meta itemprop='url' content='https://radixtalk.com/t/what-is-the-maximum-size-of-a-radix-transaction/241'>
+            <meta itemprop='position' content='20'>
+            <span class="link-top-line">
+              <a href='../../t/what-is-the-maximum-size-of-a-radix-transaction/241.html' class='title raw-link raw-topic-link'>What is the maximum size of a Radix transaction?</a>
+            </span>
+            <div class="link-bottom-line">
+                <a href='24.html' class='badge-wrapper bullet'>
+                  <span class='badge-category-bg' style='background-color: #F1592A'></span>
+                  <span class='badge-category clear-badge'>
+                    <span class='category-name'>Developers</span>
+                  </span>
+                </a>
+                <div class="discourse-tags">
+                    <a href='../../tag/faq.html' class='discourse-tag'>faq</a>
+                    
+                </div>
+            </div>
+          </td>
+          <td class='posters'>
+              <a href="../../u/Stuart.html" class="latest single">
+                <img width="25" height="25" src="../../letter_avatar_proxy/v4/letter/s/cab0a1/25.png" class="avatar" title='Stuart | RadixPool - Original Poster, Most Recent Poster' aria-label='Stuart | RadixPool - Original Poster, Most Recent Poster'>
+              </a>
+          </td>
+          <td class="replies">
+            <span class='posts' title='posts'>0</span>
+          </td>
+          <td class="views">
+            <span class='views' title='views'>96</span>
+          </td>
+          <td>
+            14 January 2022
+          </td>
+        </tr>
+        <tr class="topic-list-item">
+          <td class="main-link" itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='name' content='What is the accumulator hash?'>
+            <meta itemprop='url' content='https://radixtalk.com/t/what-is-the-accumulator-hash/226'>
+              <meta itemprop='image' content='https://cdn.radixtalk.com/uploads/default/optimized/1X/38d825471842d553f5c62a39901efca74cda3e1e_2_1024x75.png'>
+            <meta itemprop='position' content='21'>
+            <span class="link-top-line">
+              <a href='../../t/what-is-the-accumulator-hash/226.html' class='title raw-link raw-topic-link'>What is the accumulator hash?</a>
+            </span>
+            <div class="link-bottom-line">
+                <a href='24.html' class='badge-wrapper bullet'>
+                  <span class='badge-category-bg' style='background-color: #F1592A'></span>
+                  <span class='badge-category clear-badge'>
+                    <span class='category-name'>Developers</span>
+                  </span>
+                </a>
+                <div class="discourse-tags">
+                    <a href='../../tag/python.html' class='discourse-tag'>python</a>
+                    ,&nbsp;
+                    <a href='../../tag/replit.html' class='discourse-tag'>replit</a>
+                    ,&nbsp;
+                    <a href='../../tag/faq.html' class='discourse-tag'>faq</a>
+                    
+                </div>
+            </div>
+          </td>
+          <td class='posters'>
+              <a href="../../u/Stuart.html" class="latest single">
+                <img width="25" height="25" src="../../letter_avatar_proxy/v4/letter/s/cab0a1/25.png" class="avatar" title='Stuart | RadixPool - Original Poster, Most Recent Poster' aria-label='Stuart | RadixPool - Original Poster, Most Recent Poster'>
+              </a>
+          </td>
+          <td class="replies">
+            <span class='posts' title='posts'>0</span>
+          </td>
+          <td class="views">
+            <span class='views' title='views'>92</span>
+          </td>
+          <td>
+            10 January 2022
+          </td>
+        </tr>
+        <tr class="topic-list-item">
+          <td class="main-link" itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='name' content='How to encrypt a transaction message that can be read by the Radix Wallet'>
+            <meta itemprop='url' content='https://radixtalk.com/t/how-to-encrypt-a-transaction-message-that-can-be-read-by-the-radix-wallet/202'>
+            <meta itemprop='position' content='22'>
+            <span class="link-top-line">
+              <a href='../../t/how-to-encrypt-a-transaction-message-that-can-be-read-by-the-radix-wallet/202.html' class='title raw-link raw-topic-link'>How to encrypt a transaction message that can be read by the Radix Wallet</a>
+            </span>
+            <div class="link-bottom-line">
+                <a href='24.html' class='badge-wrapper bullet'>
+                  <span class='badge-category-bg' style='background-color: #F1592A'></span>
+                  <span class='badge-category clear-badge'>
+                    <span class='category-name'>Developers</span>
+                  </span>
+                </a>
+                <div class="discourse-tags">
+                    <a href='../../tag/python.html' class='discourse-tag'>python</a>
+                    ,&nbsp;
+                    <a href='../../tag/api.html' class='discourse-tag'>api</a>
+                    ,&nbsp;
+                    <a href='../../tag/replit.html' class='discourse-tag'>replit</a>
+                    ,&nbsp;
+                    <a href='../../tag/todo.html' class='discourse-tag'>todo</a>
+                    ,&nbsp;
+                    <a href='../../tag/howto.html' class='discourse-tag'>howto</a>
+                    
+                </div>
+            </div>
+          </td>
+          <td class='posters'>
+              <a href="../../u/Stuart.html" class="latest">
+                <img width="25" height="25" src="../../letter_avatar_proxy/v4/letter/s/cab0a1/25.png" class="avatar" title='Stuart | RadixPool - Original Poster, Most Recent Poster' aria-label='Stuart | RadixPool - Original Poster, Most Recent Poster'>
+              </a>
+              <a href="../../u/minhnn.html" class="">
+                <img width="25" height="25" src="../../letter_avatar_proxy/v4/letter/m/97f17d/25.png" class="avatar" title='minhnn | EasyStake.net - Frequent Poster' aria-label='minhnn | EasyStake.net - Frequent Poster'>
+              </a>
+          </td>
+          <td class="replies">
+            <span class='posts' title='posts'>5</span>
+          </td>
+          <td class="views">
+            <span class='views' title='views'>250</span>
+          </td>
+          <td>
+            8 January 2022
+          </td>
+        </tr>
+        <tr class="topic-list-item">
+          <td class="main-link" itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='name' content='How do I encode a transaction message so that it displays correctly in the Radix Desktop Wallet?'>
+            <meta itemprop='url' content='https://radixtalk.com/t/how-do-i-encode-a-transaction-message-so-that-it-displays-correctly-in-the-radix-desktop-wallet/170'>
+            <meta itemprop='position' content='23'>
+            <span class="link-top-line">
+              <a href='../../t/how-do-i-encode-a-transaction-message-so-that-it-displays-correctly-in-the-radix-desktop-wallet/170.html' class='title raw-link raw-topic-link'>How do I encode a transaction message so that it displays correctly in the Radix Desktop Wallet?</a>
+            </span>
+            <div class="link-bottom-line">
+                <a href='24.html' class='badge-wrapper bullet'>
+                  <span class='badge-category-bg' style='background-color: #F1592A'></span>
+                  <span class='badge-category clear-badge'>
+                    <span class='category-name'>Developers</span>
+                  </span>
+                </a>
+                <div class="discourse-tags">
+                    <a href='../../tag/api.html' class='discourse-tag'>api</a>
+                    ,&nbsp;
+                    <a href='../../tag/howto.html' class='discourse-tag'>howto</a>
+                    
+                </div>
+            </div>
+          </td>
+          <td class='posters'>
+              <a href="../../u/Stuart.html" class="latest">
+                <img width="25" height="25" src="../../letter_avatar_proxy/v4/letter/s/cab0a1/25.png" class="avatar" title='Stuart | RadixPool - Original Poster, Most Recent Poster' aria-label='Stuart | RadixPool - Original Poster, Most Recent Poster'>
+              </a>
+              <a href="../../u/minhnn.html" class="">
+                <img width="25" height="25" src="../../letter_avatar_proxy/v4/letter/m/97f17d/25.png" class="avatar" title='minhnn | EasyStake.net - Frequent Poster' aria-label='minhnn | EasyStake.net - Frequent Poster'>
+              </a>
+          </td>
+          <td class="replies">
+            <span class='posts' title='posts'>6</span>
+          </td>
+          <td class="views">
+            <span class='views' title='views'>265</span>
+          </td>
+          <td>
+            1 January 2022
+          </td>
+        </tr>
+        <tr class="topic-list-item">
+          <td class="main-link" itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='name' content='How to convert a Node Id (02... or 03...) from the Radix log file into a Validator Address (rv...)?'>
+            <meta itemprop='url' content='https://radixtalk.com/t/how-to-convert-a-node-id-02-or-03-from-the-radix-log-file-into-a-validator-address-rv/63'>
+            <meta itemprop='position' content='24'>
+            <span class="link-top-line">
+              <a href='../../t/how-to-convert-a-node-id-02-or-03-from-the-radix-log-file-into-a-validator-address-rv/63.html' class='title raw-link raw-topic-link'>How to convert a Node Id (02... or 03...) from the Radix log file into a Validator Address (rv...)?</a>
+            </span>
+            <div class="link-bottom-line">
+                <a href='24.html' class='badge-wrapper bullet'>
+                  <span class='badge-category-bg' style='background-color: #F1592A'></span>
+                  <span class='badge-category clear-badge'>
+                    <span class='category-name'>Developers</span>
+                  </span>
+                </a>
+                <div class="discourse-tags">
+                    <a href='../../tag/python.html' class='discourse-tag'>python</a>
+                    ,&nbsp;
+                    <a href='../../tag/howto.html' class='discourse-tag'>howto</a>
+                    ,&nbsp;
+                    <a href='../../tag/replit.html' class='discourse-tag'>replit</a>
+                    
+                </div>
+            </div>
+          </td>
+          <td class='posters'>
+              <a href="../../u/Stuart.html" class="latest single">
+                <img width="25" height="25" src="../../letter_avatar_proxy/v4/letter/s/cab0a1/25.png" class="avatar" title='Stuart | RadixPool - Original Poster, Most Recent Poster' aria-label='Stuart | RadixPool - Original Poster, Most Recent Poster'>
+              </a>
+          </td>
+          <td class="replies">
+            <span class='posts' title='posts'>0</span>
+          </td>
+          <td class="views">
+            <span class='views' title='views'>87</span>
+          </td>
+          <td>
+            25 December 2021
+          </td>
+        </tr>
+        <tr class="topic-list-item">
+          <td class="main-link" itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='name' content='How to convert a Node Address (rn...) into a Validator Address (rv...)'>
+            <meta itemprop='url' content='https://radixtalk.com/t/how-to-convert-a-node-address-rn-into-a-validator-address-rv/62'>
+            <meta itemprop='position' content='25'>
+            <span class="link-top-line">
+              <a href='../../t/how-to-convert-a-node-address-rn-into-a-validator-address-rv/62.html' class='title raw-link raw-topic-link'>How to convert a Node Address (rn...) into a Validator Address (rv...)</a>
+            </span>
+            <div class="link-bottom-line">
+                <a href='24.html' class='badge-wrapper bullet'>
+                  <span class='badge-category-bg' style='background-color: #F1592A'></span>
+                  <span class='badge-category clear-badge'>
+                    <span class='category-name'>Developers</span>
+                  </span>
+                </a>
+                <div class="discourse-tags">
+                    <a href='../../tag/python.html' class='discourse-tag'>python</a>
+                    ,&nbsp;
+                    <a href='../../tag/howto.html' class='discourse-tag'>howto</a>
+                    ,&nbsp;
+                    <a href='../../tag/replit.html' class='discourse-tag'>replit</a>
+                    
+                </div>
+            </div>
+          </td>
+          <td class='posters'>
+              <a href="../../u/Stuart.html" class="latest single">
+                <img width="25" height="25" src="../../letter_avatar_proxy/v4/letter/s/cab0a1/25.png" class="avatar" title='Stuart | RadixPool - Original Poster, Most Recent Poster' aria-label='Stuart | RadixPool - Original Poster, Most Recent Poster'>
+              </a>
+          </td>
+          <td class="replies">
+            <span class='posts' title='posts'>0</span>
+          </td>
+          <td class="views">
+            <span class='views' title='views'>78</span>
+          </td>
+          <td>
+            25 December 2021
+          </td>
+        </tr>
+        <tr class="topic-list-item">
+          <td class="main-link" itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='name' content='How to convert a Validator Address (rv...) into a Node Address (rn...)'>
+            <meta itemprop='url' content='https://radixtalk.com/t/how-to-convert-a-validator-address-rv-into-a-node-address-rn/196'>
+            <meta itemprop='position' content='26'>
+            <span class="link-top-line">
+              <a href='../../t/how-to-convert-a-validator-address-rdx-into-a-node-address-rn/196.html' class='title raw-link raw-topic-link'>How to convert a Validator Address (rv...) into a Node Address (rn...)</a>
+            </span>
+            <div class="link-bottom-line">
+                <a href='24.html' class='badge-wrapper bullet'>
+                  <span class='badge-category-bg' style='background-color: #F1592A'></span>
+                  <span class='badge-category clear-badge'>
+                    <span class='category-name'>Developers</span>
+                  </span>
+                </a>
+                <div class="discourse-tags">
+                    <a href='../../tag/howto.html' class='discourse-tag'>howto</a>
+                    ,&nbsp;
+                    <a href='../../tag/python.html' class='discourse-tag'>python</a>
+                    ,&nbsp;
+                    <a href='../../tag/replit.html' class='discourse-tag'>replit</a>
+                    
+                </div>
+            </div>
+          </td>
+          <td class='posters'>
+              <a href="../../u/Stuart.html" class="latest single">
+                <img width="25" height="25" src="../../letter_avatar_proxy/v4/letter/s/cab0a1/25.png" class="avatar" title='Stuart | RadixPool - Original Poster, Most Recent Poster' aria-label='Stuart | RadixPool - Original Poster, Most Recent Poster'>
+              </a>
+          </td>
+          <td class="replies">
+            <span class='posts' title='posts'>0</span>
+          </td>
+          <td class="views">
+            <span class='views' title='views'>109</span>
+          </td>
+          <td>
+            2 January 2022
+          </td>
+        </tr>
+        <tr class="topic-list-item">
+          <td class="main-link" itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='name' content='How to calculate the Radix Resource Id (RRI) for a mutable token'>
+            <meta itemprop='url' content='https://radixtalk.com/t/how-to-calculate-the-radix-resource-id-rri-for-a-mutable-token/65'>
+            <meta itemprop='position' content='27'>
+            <span class="link-top-line">
+              <a href='../../t/how-to-calculate-the-radix-resource-id-rri-for-a-mutable-token/65.html' class='title raw-link raw-topic-link'>How to calculate the Radix Resource Id (RRI) for a mutable token</a>
+            </span>
+            <div class="link-bottom-line">
+                <a href='24.html' class='badge-wrapper bullet'>
+                  <span class='badge-category-bg' style='background-color: #F1592A'></span>
+                  <span class='badge-category clear-badge'>
+                    <span class='category-name'>Developers</span>
+                  </span>
+                </a>
+                <div class="discourse-tags">
+                    <a href='../../tag/python.html' class='discourse-tag'>python</a>
+                    ,&nbsp;
+                    <a href='../../tag/howto.html' class='discourse-tag'>howto</a>
+                    ,&nbsp;
+                    <a href='../../tag/replit.html' class='discourse-tag'>replit</a>
+                    
+                </div>
+            </div>
+          </td>
+          <td class='posters'>
+              <a href="../../u/Stuart.html" class="latest single">
+                <img width="25" height="25" src="../../letter_avatar_proxy/v4/letter/s/cab0a1/25.png" class="avatar" title='Stuart | RadixPool - Original Poster, Most Recent Poster' aria-label='Stuart | RadixPool - Original Poster, Most Recent Poster'>
+              </a>
+          </td>
+          <td class="replies">
+            <span class='posts' title='posts'>0</span>
+          </td>
+          <td class="views">
+            <span class='views' title='views'>151</span>
+          </td>
+          <td>
+            25 December 2021
+          </td>
+        </tr>
+        <tr class="topic-list-item">
+          <td class="main-link" itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='name' content='How to convert a Public Key into a Wallet Address'>
+            <meta itemprop='url' content='https://radixtalk.com/t/how-to-convert-a-public-key-into-a-wallet-address/193'>
+            <meta itemprop='position' content='28'>
+            <span class="link-top-line">
+              <a href='../../t/how-to-convert-a-public-key-into-a-wallet-address/193.html' class='title raw-link raw-topic-link'>How to convert a Public Key into a Wallet Address</a>
+            </span>
+            <div class="link-bottom-line">
+                <a href='24.html' class='badge-wrapper bullet'>
+                  <span class='badge-category-bg' style='background-color: #F1592A'></span>
+                  <span class='badge-category clear-badge'>
+                    <span class='category-name'>Developers</span>
+                  </span>
+                </a>
+                <div class="discourse-tags">
+                    <a href='../../tag/howto.html' class='discourse-tag'>howto</a>
+                    ,&nbsp;
+                    <a href='../../tag/api.html' class='discourse-tag'>api</a>
+                    ,&nbsp;
+                    <a href='../../tag/python.html' class='discourse-tag'>python</a>
+                    ,&nbsp;
+                    <a href='../../tag/replit.html' class='discourse-tag'>replit</a>
+                    
+                </div>
+            </div>
+          </td>
+          <td class='posters'>
+              <a href="../../u/Stuart.html" class="latest single">
+                <img width="25" height="25" src="../../letter_avatar_proxy/v4/letter/s/cab0a1/25.png" class="avatar" title='Stuart | RadixPool - Original Poster, Most Recent Poster' aria-label='Stuart | RadixPool - Original Poster, Most Recent Poster'>
+              </a>
+          </td>
+          <td class="replies">
+            <span class='posts' title='posts'>0</span>
+          </td>
+          <td class="views">
+            <span class='views' title='views'>145</span>
+          </td>
+          <td>
+            1 January 2022
+          </td>
+        </tr>
+        <tr class="topic-list-item">
+          <td class="main-link" itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='name' content='How to decrypt an encrypted transaction message created by the Radix Wallet'>
+            <meta itemprop='url' content='https://radixtalk.com/t/how-to-decrypt-an-encrypted-transaction-message-created-by-the-radix-wallet/189'>
+            <meta itemprop='position' content='29'>
+            <span class="link-top-line">
+              <a href='../../t/how-to-decrypt-an-encrypted-transaction-message-created-by-the-radix-wallet/189.html' class='title raw-link raw-topic-link'>How to decrypt an encrypted transaction message created by the Radix Wallet</a>
+            </span>
+            <div class="link-bottom-line">
+                <a href='24.html' class='badge-wrapper bullet'>
+                  <span class='badge-category-bg' style='background-color: #F1592A'></span>
+                  <span class='badge-category clear-badge'>
+                    <span class='category-name'>Developers</span>
+                  </span>
+                </a>
+                <div class="discourse-tags">
+                    <a href='../../tag/api.html' class='discourse-tag'>api</a>
+                    ,&nbsp;
+                    <a href='../../tag/howto.html' class='discourse-tag'>howto</a>
+                    ,&nbsp;
+                    <a href='../../tag/python.html' class='discourse-tag'>python</a>
+                    ,&nbsp;
+                    <a href='../../tag/replit.html' class='discourse-tag'>replit</a>
+                    
+                </div>
+            </div>
+          </td>
+          <td class='posters'>
+              <a href="../../u/Stuart.html" class="">
+                <img width="25" height="25" src="../../letter_avatar_proxy/v4/letter/s/cab0a1/25.png" class="avatar" title='Stuart | RadixPool - Original Poster' aria-label='Stuart | RadixPool - Original Poster'>
+              </a>
+              <a href="../../u/minhnn.html" class="latest">
+                <img width="25" height="25" src="../../letter_avatar_proxy/v4/letter/m/97f17d/25.png" class="avatar" title='minhnn | EasyStake.net - Most Recent Poster' aria-label='minhnn | EasyStake.net - Most Recent Poster'>
+              </a>
+          </td>
+          <td class="replies">
+            <span class='posts' title='posts'>5</span>
+          </td>
+          <td class="views">
+            <span class='views' title='views'>326</span>
+          </td>
+          <td>
+            3 January 2022
+          </td>
+        </tr>
+        <tr class="topic-list-item">
+          <td class="main-link" itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='name' content='Where can I learn more about Scrypto?'>
+            <meta itemprop='url' content='https://radixtalk.com/t/where-can-i-learn-more-about-scrypto/121'>
+            <meta itemprop='position' content='30'>
+            <span class="link-top-line">
+              <a href='../../t/where-can-i-learn-more-about-scrypto/121.html' class='title raw-link raw-topic-link'>Where can I learn more about Scrypto?</a>
+            </span>
+            <div class="link-bottom-line">
+                <a href='scrypto/25.html' class='badge-wrapper bullet'>
+                  <span class='badge-category-bg' style='background-color: #F7941D'></span>
+                  <span class='badge-category clear-badge'>
+                    <span class='category-name'>Scrypto</span>
+                  </span>
+                </a>
+                <div class="discourse-tags">
+                    <a href='../../tag/community.html' class='discourse-tag'>community</a>
+                    ,&nbsp;
+                    <a href='../../tag/faq.html' class='discourse-tag'>faq</a>
+                    
+                </div>
+            </div>
+          </td>
+          <td class='posters'>
+              <a href="../../u/Stuart.html" class="latest single">
+                <img width="25" height="25" src="../../letter_avatar_proxy/v4/letter/s/cab0a1/25.png" class="avatar" title='Stuart | RadixPool - Original Poster, Most Recent Poster' aria-label='Stuart | RadixPool - Original Poster, Most Recent Poster'>
+              </a>
+          </td>
+          <td class="replies">
+            <span class='posts' title='posts'>0</span>
+          </td>
+          <td class="views">
+            <span class='views' title='views'>86</span>
+          </td>
+          <td>
+            27 December 2021
+          </td>
+        </tr>
+    </tbody>
+
+  </table>
+</div>
+
+  <div role='navigation' itemscope itemtype='http://schema.org/SiteNavigationElement'>
+      <span itemprop='name'><b><a href='24%3Fpage=1.html' rel='next' itemprop='url'>next page →</a></b></span>
+  </div>
+
+
+ <!-- include_crawler_content? -->
+
+
+
+  
+
+    </div>
+    <footer class="container wrap">
+  <nav class='crawler-nav'>
+    <ul>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='../../index.html' itemprop="url">Home </a>
+        </span>
+      </li>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='../../categories.html' itemprop="url">Categories </a>
+        </span>
+      </li>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='../../guidelines.html' itemprop="url">FAQ/Guidelines </a>
+        </span>
+      </li>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='../../tos.html' itemprop="url">Terms of Service </a>
+        </span>
+      </li>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='../../privacy.html' itemprop="url">Privacy Policy </a>
+        </span>
+      </li>
+    </ul>
+  </nav>
+  <p class='powered-by-link'>Powered by <a href="https://www.discourse.org">Discourse</a>, best viewed with JavaScript enabled</p>
+</footer>
+
+    
+    
+  </body>
+  
+</html>

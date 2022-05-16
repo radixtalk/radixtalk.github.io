@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <title>How to create a Radix Wallet for development purposes - Developers - RadixTalk</title>
+    <meta name="description" content="Creating a Radix Wallet Address for Development Purposes
+Radix Wallets are created using Elliptic Curve Cryptography (ECC) to generate a Private/Public Key pair. Specifically, we use an Elliptic Curve Digital Signature &amp;hellip;">
+    <meta name="generator" content="Discourse 2.9.0.beta4 - https://github.com/discourse/discourse version 8ce29a4a2264ea472a8151bfe2e591ab1101cfeb">
+<link rel="icon" type="image/png" href="https://cdn.radixtalk.com/uploads/default/optimized/1X/023c6f3e74bac599c495c37eecd72f939f3fab87_2_32x32.png">
+<link rel="apple-touch-icon" type="image/png" href="https://cdn.radixtalk.com/uploads/default/optimized/1X/ad9adb26331754b0012edbc9b4796de8dc449fa8_2_180x180.png">
+<meta name="theme-color" content="#ffffff">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<link rel="canonical" href="61.html" />
+<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebSite","url":"https://radixtalk.com","potentialAction":{"@type":"SearchAction","target":"https://radixtalk.com/search?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<link rel="search" type="application/opensearchdescription+xml" href="../../opensearch.xml" title="RadixTalk Search">
+
+    <link href="https://cdn.radixtalk.com/stylesheets/color_definitions_light_4_1_41174e1f8711476b3393f07571899954e9737309.css?__ws=radixtalk.com" media="all" rel="stylesheet" class="light-scheme"/>
+
+  <link href="https://cdn.radixtalk.com/stylesheets/desktop_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="desktop"  />
+
+
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-akismet_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-akismet"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-automation_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-automation"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-cakeday_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-cakeday"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-canned-replies_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-canned-replies"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-checklist_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-checklist"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-data-explorer_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-data-explorer"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-details_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-details"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-docs_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-docs"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-follow_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-follow"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-fontawesome-pro_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-fontawesome-pro"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-footnote_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-footnote"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-local-dates_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-local-dates"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-presence_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-presence"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-rss-polling_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-rss-polling"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-saved-searches_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-saved-searches"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-solved_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-solved"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-tooltips_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-tooltips"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-user-notes_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-user-notes"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-voting_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-voting"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-whos-online_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-whos-online"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/lazy-yt_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="lazy-yt"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/poll_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="poll"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/discourse-voting_desktop_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-voting_desktop"  />
+  <link href="https://cdn.radixtalk.com/stylesheets/poll_desktop_e6a5e20fb8d53e9cca6b910a2defcd19bef8590a.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="poll_desktop"  />
+
+  <link href="https://cdn.radixtalk.com/stylesheets/desktop_theme_1_263bf35b28bc3c889d3c5ea8d6e1c519621916e1.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="desktop_theme" data-theme-id="1" data-theme-name="default"/>
+
+    <script defer="" data-domain="radixtalk.com" src="https://plausible.io/js/plausible.hash.js"></script>
+
+    
+        <link rel="alternate nofollow" type="application/rss+xml" title="RSS feed of &#39;How to create a Radix Wallet for development purposes&#39;" href="61.rss" />
+    <meta property="og:site_name" content="RadixTalk" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:image" content="https://cdn.radixtalk.com/uploads/default/original/1X/9e3624f2a5d4052091ba93563043c233df535486.png" />
+<meta property="og:image" content="https://cdn.radixtalk.com/uploads/default/original/1X/9e3624f2a5d4052091ba93563043c233df535486.png" />
+<meta property="og:url" content="https://radixtalk.com/t/how-to-create-a-radix-wallet-for-development-purposes/61" />
+<meta name="twitter:url" content="https://radixtalk.com/t/how-to-create-a-radix-wallet-for-development-purposes/61" />
+<meta property="og:title" content="How to create a Radix Wallet for development purposes" />
+<meta name="twitter:title" content="How to create a Radix Wallet for development purposes" />
+<meta property="og:description" content="Creating a Radix Wallet Address for Development Purposes Radix Wallets are created using Elliptic Curve Cryptography (ECC) to generate a Private/Public Key pair. Specifically, we use an Elliptic Curve Digital Signature Algorithm (ECDSA) with the curve parameters defined by SECP256K1.   1. Install Dependencies Install the following libraries that will be used to create the key pair and then convert them into a Radix Wallet Address:  pip install ecdsa pip install bech32   2. Create Private Key Th..." />
+<meta name="twitter:description" content="Creating a Radix Wallet Address for Development Purposes Radix Wallets are created using Elliptic Curve Cryptography (ECC) to generate a Private/Public Key pair. Specifically, we use an Elliptic Curve Digital Signature Algorithm (ECDSA) with the curve parameters defined by SECP256K1.   1. Install Dependencies Install the following libraries that will be used to create the key pair and then convert them into a Radix Wallet Address:  pip install ecdsa pip install bech32   2. Create Private Key Th..." />
+<meta name="twitter:label1" value="Reading time" />
+<meta name="twitter:data1" value="2 mins 🕑" />
+<meta name="twitter:label2" value="Likes" />
+<meta name="twitter:data2" value="6 ❤" />
+<meta property="article:published_time" content="2021-12-25T13:57:56+00:00" />
+<meta property="og:ignore_canonical" content="true" />
+
+
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"QAPage","name":"How to create a Radix Wallet for development purposes","mainEntity":{"@type":"Question","name":"How to create a Radix Wallet for development purposes","text":"<a name=\"creating-a-radix-wallet-address-for-development-purposes-1\" class=\"anchor\" href="https://radixtalk.com/t/how-to-create-a-radix-wallet-for-development-purposes/\&quot;#creating-a-radix-wallet-address-for-development-purposes-1\""><\/a>Creating a Radix Wallet Address for Development Purposes\n\nRadix Wallets are created using Elliptic Curve Cryptography (ECC) to generate a Private/Public Key pair. Specifically, we use an Elliptic Curve Digital Signature Algorithm (ECDSA) with the curve parameters defined by SECP256K1.\n\n<a name=\"h-1-install-dependencies-2\" class=\"anchor\" href="https://radixtalk.com/t/how-to-create-a-radix-wallet-for-development-purposes/\&quot;#h-1-install-dependencies-2\""><\/a>1. Install D&hellip;","upvoteCount":4,"answerCount":0,"dateCreated":"2021-12-25T13:57:56.269Z","author":{"@type":"Person","name":"Stuart | RadixPool"}}}</script>
+  </head>
+  <body class="crawler">
+    
+    <header>
+  <a href="https://radixtalk.com/">
+    <h1>RadixTalk</h1>
+  </a>
+</header>
+
+    <div id="main-outlet" class="wrap" role="main">
+        <div id="topic-title">
+    <h1>
+      <a href="61.html">How to create a Radix Wallet for development purposes</a>
+    </h1>
+
+      <div class="topic-category" itemscope itemtype="http://schema.org/BreadcrumbList">
+          <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+            <a href="https://radixtalk.com/c/developers/24" class="badge-wrapper bullet" itemprop="item">
+              <span class='badge-category-bg' style='background-color: #F1592A'></span>
+              <span class='badge-category clear-badge'>
+                <span class='category-name' itemprop='name'>Developers</span>
+              </span>
+            </a>
+            <meta itemprop="position" content="1" />
+          </span>
+      </div>
+
+      <div class="topic-category">
+        <div class='discourse-tags list-tags'>
+            <a href='../../tag/python.html' class='discourse-tag' rel="tag">python</a>, 
+            <a href='../../tag/howto.html' class='discourse-tag' rel="tag">howto</a>
+        </div>
+      </div>
+  </div>
+
+  
+
+
+      <div id='post_1' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+        <div class='crawler-post-meta'>
+          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop='name' content='RadixTalk'>
+              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+                <meta itemprop='url' content='https://cdn.radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+              </div>
+          </div>
+          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a itemprop="url" href='../../u/Stuart.html'><span itemprop='name'>Stuart</span></a>
+            (Stuart | RadixPool)
+          </span>
+
+          <link itemprop="mainEntityOfPage" href="61.html">
+
+
+          <span class="crawler-post-infos">
+              <time itemprop='datePublished' datetime='2021-12-25T13:57:56Z' class='post-time'>
+                25 December 2021 13:57
+              </time>
+              <meta itemprop='dateModified' content='2021-12-25T13:57:56Z'>
+          <span itemprop='position'>#1</span>
+          </span>
+        </div>
+        <div class='post' itemprop='articleBody'>
+          <h1>
+<a name="creating-a-radix-wallet-address-for-development-purposes-1" class="anchor" href="61.html#creating-a-radix-wallet-address-for-development-purposes-1"></a>Creating a Radix Wallet Address for Development Purposes</h1>
+<p>Radix Wallets are created using Elliptic Curve Cryptography (ECC) to generate a Private/Public Key pair. Specifically, we use an Elliptic Curve Digital Signature Algorithm (ECDSA) with the curve parameters defined by SECP256K1.</p>
+<h2>
+<a name="h-1-install-dependencies-2" class="anchor" href="61.html#h-1-install-dependencies-2"></a>1. Install Dependencies</h2>
+<p>Install the following libraries that will be used to create the key pair and then convert them into a Radix Wallet Address:</p>
+<pre><code class="lang-bash">pip install ecdsa
+pip install bech32
+</code></pre>
+<h2>
+<a name="h-2-create-private-key-3" class="anchor" href="61.html#h-2-create-private-key-3"></a>2. Create Private Key</h2>
+<p>The following snippet generates a Private Key using the ECDSA algorithm with the SECP256k1 curve parameters. By default, the generate function uses <code>os.urandom</code> as a cryptographically secure source of entropy (randomness).</p>
+<pre><code class="lang-python">import ecdsa
+import bech32
+
+# Create the Private Key
+private_key = ecdsa.SigningKey.generate(curve=ecdsa.SECP256k1)
+private_key_bytes = private_key.to_string()
+print("Private Key: ", private_key_bytes.hex())
+</code></pre>
+<p>Save the <strong>Private Key</strong> value as you will need it to sign transactions later.</p>
+<h2>
+<a name="h-3-generate-public-key-from-private-key-4" class="anchor" href="61.html#h-3-generate-public-key-from-private-key-4"></a>3. Generate Public Key from Private Key</h2>
+<p>Append the following snippet to the code above to generate the Public Key that corresponds to your Private Key:</p>
+<pre><code class="lang-python"># Generate Public Key from Private Key
+verifying_key = private_key.get_verifying_key()
+public_key_compressed_bytes = verifying_key.to_string("compressed")
+print("Public Key (Compressed): ", public_key_compressed_bytes.hex())
+</code></pre>
+<h3>
+<a name="h-31-compressed-public-keys-5" class="anchor" href="61.html#h-31-compressed-public-keys-5"></a>3.1 Compressed Public Keys</h3>
+<p>The Public Key is made up of two co-ordinates (x, y) on the SECP256k1 curve. These x and y co-ordinates are generated from the Private Key and are 32 bytes each. For example:</p>
+<pre><code class="lang-auto">x: f219ea5d6b54701c1c14de5b557eb42a8d13f3abbcd08affcc2a5e6b049b8d63
+y: 4cb95957e83d40b0f73af4544cccf6b1f4b08d3c07b27fb8d8c2962a400766d1
+</code></pre>
+<p>The format of a “Full” Public Key consists of prefixing the Public Key with a byte value of “04” and then appending the x and y values to create a 65 byte (1 byte prefix + 32 byte x +32 byte y) value:</p>
+<pre><code class="lang-auto">Full Public Key: 04f219ea5d6b54701c1c14de5b557eb42a8d13f3abbcd08affcc2a5e6b049b8d634cb95957e83d40b0f73af4544cccf6b1f4b08d3c07b27fb8d8c2962a400766d1
+</code></pre>
+<p>We can reduce the size of the public key without losing any information by “compressing” public key co-ordinates as follows:</p>
+<ul>
+<li>If the value of the y co-ordinate is even, then use a byte value of “02” as a prefix</li>
+<li>If the value of the y co-ordinate is odd, then use a byte value of “03” as a prefix</li>
+<li>The compressed public key is: prefix + x co-ordinate</li>
+</ul>
+<p>Below is an example of converting our public key into a compressed public key using the rules above:</p>
+<pre><code class="lang-auto"># y: 4cb95957e83d40b0f73af4544cccf6b1f4b08d3c07b27fb8d8c2962a400766d1
+# y is odd so our prefix will be 03
+# Prepend 03 to x to create our 33 byte compressed public key:
+
+Compressed Public Key: 03f219ea5d6b54701c1c14de5b557eb42a8d13f3abbcd08affcc2a5e6b049b8d63
+</code></pre>
+<p>The compressed public key can be converted back to a full public key using some simple maths (see references below for more details)</p>
+<h2>
+<a name="h-4-generate-radix-wallet-address-from-public-key-6" class="anchor" href="61.html#h-4-generate-radix-wallet-address-from-public-key-6"></a>4. Generate Radix Wallet Address from Public Key</h2>
+<h3>
+<a name="h-41-convert-compressed-public-key-to-radix-engine-address-7" class="anchor" href="61.html#h-41-convert-compressed-public-key-to-radix-engine-address-7"></a>4.1 Convert Compressed Public Key to Radix Engine Address</h3>
+<p>Radix converts the <strong>Compressed Public Key</strong> into a <strong>Radix Engine Address</strong>. The Radix Engine Address is a “1 to 34 byte array describing a resource or component in the Radix Engine”. The first byte of the Radix Engine Address describes the type of address:</p>
+<ul>
+<li>0x01 - Native Token (XRD)</li>
+<li>0x03 - Hashed Key + Nonce (User created Tokens)</li>
+<li>0x04 - Public Key</li>
+</ul>
+<pre><code class="lang-python"># Convert Compressed Public Key into a Radix Engine Address
+readdr_bytes = b"\x04" + public_key_compressed_bytes
+</code></pre>
+<h3>
+<a name="h-42-convert-radix-engine-address-into-bech32-encoded-string-8" class="anchor" href="61.html#h-42-convert-radix-engine-address-into-bech32-encoded-string-8"></a>4.2 Convert Radix Engine Address into Bech32 Encoded String</h3>
+<p>Next, we convert the Radix Engine Address into a <strong>Bech32</strong> encoded string. Bech32 is standard for creating an encoded base 32, checksummed address format. A Bech32 address consists of the following parts:</p>
+<ul>
+<li>A <strong>human readable part</strong> (HRP) which conveys the type of data. Radix mainnet uses <strong>rdx</strong> for the mainnet human readable part.</li>
+<li>A separator. Always “1”</li>
+<li>A data part which is always at least 6 alphanumeric characters long excluding “1”, “b”, “i” and “o”. The last 6 characters of the data form a <strong>checksum</strong> using a <strong>BCH Code</strong> and contain no information.</li>
+</ul>
+<p>The BCH checksum algorithm guarantees detection of any error affecting at most 4 characters and has a less than 1 in 1 billion chance of failing to detect more errors. BCH can also identify <strong>where</strong> in an address the typos were made.</p>
+<p>The python bech32 library we use is a reference implementation and is used to create Bitcoin segwit addresses. The Radix Wallet Address uses a modified version of the Bitcoin BIP-0173 Segwit Address Format so we need to use some lower level functions in the python bech32 library to get the right output format.</p>
+<p>Append the following snippet to the code above to convert the Radix Engine Address into the Bech32 encoded Radix Wallet Address format:</p>
+<pre><code class="lang-python"># Convert Radix Engine Address to Bech32 Radix Wallet Address
+readdr_bytes5 = bech32.convertbits(readdr_bytes, 8, 5)
+wallet_address = bech32.bech32_encode("rdx", readdr_bytes5)
+print("Wallet Address: ", wallet_address)
+</code></pre>
+<p>You now have all 3 values required to perform transactions on the Radix Ledger using the RPC API:</p>
+<ul>
+<li><strong>Private Key</strong></li>
+<li><strong>Compressed Public Key</strong></li>
+<li><strong>Radix Wallet Address</strong></li>
+</ul>
+<h2>
+<a name="h-5-complete-code-snippet-9" class="anchor" href="61.html#h-5-complete-code-snippet-9"></a>5. Complete Code Snippet</h2>
+<pre><code class="lang-python">import ecdsa
+import bech32
+
+# Create the Private Key
+private_key = ecdsa.SigningKey.generate(curve=ecdsa.SECP256k1)
+private_key_bytes = private_key.to_string()
+print("Private Key: ", private_key_bytes.hex())
+
+# Generate Public Key from Private Key
+verifying_key = private_key.get_verifying_key()
+public_key_compressed_bytes = verifying_key.to_string("compressed")
+print("Public Key (Compressed): ", public_key_compressed_bytes.hex())
+
+# Convert Compressed Public Key into a Radix Engine Address
+readdr_bytes = b"\x04" + public_key_compressed_bytes
+
+# Convert Radix Engine Address to Bech32 Radix Wallet Address
+readdr_bytes5 = bech32.convertbits(readdr_bytes, 8, 5)
+wallet_address = bech32.bech32_encode("rdx", readdr_bytes5)
+print("Wallet Address: ", wallet_address)
+</code></pre>
+<h2>
+<a name="references-10" class="anchor" href="61.html#references-10"></a>References</h2>
+<ul>
+<li>SECP256k1 Curve: <a href="https://en.bitcoin.it/wiki/Secp256k1">https://en.bitcoin.it/wiki/Secp256k1</a>
+</li>
+<li>Public Keys: <a href="https://learnmeabitcoin.com/technical/public-key">https://learnmeabitcoin.com/technical/public-key</a>
+</li>
+<li>Bech32 Specification: <a href="https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki">https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki</a>
+</li>
+<li>BCH Code: <a href="https://en.wikipedia.org/wiki/BCH_code">https://en.wikipedia.org/wiki/BCH_code</a>
+</li>
+</ul>
+<p>This work by <a href="https://radixpool.com">RadixPool.com</a> is licensed under a <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
+        </div>
+
+        <meta itemprop='headline' content='How to create a Radix Wallet for development purposes'>
+          <meta itemprop='keywords' content='python, howto'>
+
+        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+           <meta itemprop="userInteractionCount" content="4" />
+           <span class='post-likes'>4 Likes</span>
+         </div>
+
+         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
+            <meta itemprop="userInteractionCount" content="0" />
+          </div>
+
+            <div class='crawler-linkback-list' itemscope itemtype='http://schema.org/ItemList'>
+                  <div itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+                    <a href="../how-do-i-locally-sign-a-transaction-with-a-private-key/157/5.html" itemscope itemtype='http://schema.org/DiscussionForumPosting' itemprop='item'>
+                      <meta itemprop='url' content='https://radixtalk.com/t/how-do-i-locally-sign-a-transaction-with-a-private-key/157/5'>
+                      <span itemprop='name'>How do I locally sign a transaction with a private key?</span>
+                    </a>
+                    <meta itemprop='position' content='7'>
+                  </div>
+            </div>
+      </div>
+      <div id='post_2' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+        <div class='crawler-post-meta'>
+          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop='name' content='RadixTalk'>
+              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+                <meta itemprop='url' content='https://cdn.radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+              </div>
+          </div>
+          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a itemprop="url" href='../../u/jonericcook.html'><span itemprop='name'>jonericcook</span></a>
+            (Jon-Eric Cook)
+          </span>
+
+          <link itemprop="mainEntityOfPage" href="61.html">
+
+
+          <span class="crawler-post-infos">
+              <time itemprop='datePublished' datetime='2022-02-17T04:06:44Z' class='post-time'>
+                17 February 2022 04:06
+              </time>
+              <meta itemprop='dateModified' content='2022-02-17T04:06:44Z'>
+          <span itemprop='position'>#2</span>
+          </span>
+        </div>
+        <div class='post' itemprop='articleBody'>
+          <p><a class="mention" href="https://radixtalk.com/u/stuart">@Stuart</a> do you know how to create a validator address? I followed how its done here and just changed <code>rdx</code> to <code>rv</code> but am not getting the correct address. How i currently create addresses (rdx/tdx) matches what comes back from <a href="https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/radixdlt/radixdlt-network-gateway/1.0.0/gateway-api-spec.yaml#tag/Account/paths/~1account~1derive/post" class="inline-onebox" rel="noopener nofollow ugc">ReDoc Interactive Demo</a></p>
+        </div>
+
+        <meta itemprop='headline' content='How to create a Radix Wallet for development purposes'>
+
+        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+           <meta itemprop="userInteractionCount" content="0" />
+           <span class='post-likes'></span>
+         </div>
+
+         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
+            <meta itemprop="userInteractionCount" content="0" />
+          </div>
+
+      </div>
+      <div id='post_3' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+        <div class='crawler-post-meta'>
+          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop='name' content='RadixTalk'>
+              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+                <meta itemprop='url' content='https://cdn.radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+              </div>
+          </div>
+          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a itemprop="url" href='../../u/jonericcook.html'><span itemprop='name'>jonericcook</span></a>
+            (Jon-Eric Cook)
+          </span>
+
+          <link itemprop="mainEntityOfPage" href="61.html">
+
+
+          <span class="crawler-post-infos">
+              <time itemprop='datePublished' datetime='2022-02-17T04:22:33Z' class='post-time'>
+                17 February 2022 04:22
+              </time>
+              <meta itemprop='dateModified' content='2022-02-17T04:22:33Z'>
+          <span itemprop='position'>#3</span>
+          </span>
+        </div>
+        <div class='post' itemprop='articleBody'>
+          <p>i saw this and it makes me think i should just be able to change rdx to rv and get the correct address</p>
+<aside class="onebox githubblob" data-onebox-src="https://github.com/radixdlt/radixdlt/blob/3db00974c2e6a72e471f945807226d7676b1d928/docs/transaction-specs/specs/parsing.md#address">
+  <header class="source">
+
+      <a href="https://github.com/radixdlt/radixdlt/blob/3db00974c2e6a72e471f945807226d7676b1d928/docs/transaction-specs/specs/parsing.md#address" target="_blank" rel="noopener nofollow ugc">github.com</a>
+  </header>
+
+  <article class="onebox-body">
+    <h4><a href="https://github.com/radixdlt/radixdlt/blob/3db00974c2e6a72e471f945807226d7676b1d928/docs/transaction-specs/specs/parsing.md#address" target="_blank" rel="noopener nofollow ugc">radixdlt/radixdlt/blob/3db00974c2e6a72e471f945807226d7676b1d928/docs/transaction-specs/specs/parsing.md#address</a></h4>
+
+
+      <pre><code class="lang-md"># Transaction
+
+A transaction is the serialization of actions that are cryptographically signed and broadcast to the Radix Network. Transactions trigger ledger state transitions, considering blockchain as a [replicated state machine](https://en.wikipedia.org/wiki/State_machine_replication). 
+
+In this documentation, we describe the structure of Radix transaction. If you'd like to understand how transactions are validated, please switch to [the validation doc](./validation.md).
+
+## Basics
+
+This section explains how values of primitive types are read and written.
+
+Unless otherwise specified, the order of bytes is always [big endian](https://en.wikipedia.org/wiki/Endianness). 
+
+### Boolean
+
+A boolean value is encoded as a single byte:
+- `0` represents false
+- `1` represents true
+- Other value are considered invalid
+
+### Integers
+</code></pre>
+
+
+
+  This file has been truncated. <a href="https://github.com/radixdlt/radixdlt/blob/3db00974c2e6a72e471f945807226d7676b1d928/docs/transaction-specs/specs/parsing.md#address" target="_blank" rel="noopener nofollow ugc">show original</a>
+
+  </article>
+
+  <div class="onebox-metadata">
+    
+    
+  </div>
+
+  <div style="clear: both"></div>
+</aside>
+
+        </div>
+
+        <meta itemprop='headline' content='How to create a Radix Wallet for development purposes'>
+
+        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+           <meta itemprop="userInteractionCount" content="0" />
+           <span class='post-likes'></span>
+         </div>
+
+         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
+            <meta itemprop="userInteractionCount" content="0" />
+          </div>
+
+      </div>
+      <div id='post_4' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+        <div class='crawler-post-meta'>
+          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop='name' content='RadixTalk'>
+              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+                <meta itemprop='url' content='https://cdn.radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+              </div>
+          </div>
+          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a itemprop="url" href='../../u/jonericcook.html'><span itemprop='name'>jonericcook</span></a>
+            (Jon-Eric Cook)
+          </span>
+
+          <link itemprop="mainEntityOfPage" href="61.html">
+
+
+          <span class="crawler-post-infos">
+              <time itemprop='datePublished' datetime='2022-02-17T05:21:01Z' class='post-time'>
+                17 February 2022 05:21
+              </time>
+              <meta itemprop='dateModified' content='2022-02-17T05:21:01Z'>
+          <span itemprop='position'>#4</span>
+          </span>
+        </div>
+        <div class='post' itemprop='articleBody'>
+          <p>figured it out!</p>
+<pre><code class="lang-auto">iex(1)&gt; Radixir.Key.generate
+%{
+  mainnet_address: "rdx1qsp746mjzhuprnkkpl8k4mj4psengdpg7f42ea0nn8asd6askvcvw9shvqzm9",
+  private_key: "981c473d0ec07c0eb771a5896e51465b052cedf31a331098de105f230e20457d",
+  public_key: "03eaeb7215f811ced60fcf6aee550c33343428f26aacf5f399fb06ebb0b330c716",
+  testnet_address: "tdx1qsp746mjzhuprnkkpl8k4mj4psengdpg7f42ea0nn8asd6askvcvw9skq4stx",
+  validator_mainnet_address: "rv1q04wkus4lqgua4s0ea4wu4gvxv6rg28jd2k0tuuelvrwhv9nxrr3vgyfcuf",
+  validator_testnet_address: "tv1q04wkus4lqgua4s0ea4wu4gvxv6rg28jd2k0tuuelvrwhv9nxrr3vwaw7n7"
+}
+iex(2)&gt; Radixir.Gateway.API.derive_validator_identifier(%{network_identifier: %{network: "mainnet"}, public_key: %{hex: "03eaeb7215f811ced60fcf6aee550c33343428f26aacf5f399fb06ebb0b330c716"}}, url: "https://mainnet.radixdlt.com", headers: ["X-Radixdlt-Target-Gw-Api": "1.0.2"])
+{:ok,
+ %{
+   "account_identifier" =&gt; %{
+     "address" =&gt; "rv1q04wkus4lqgua4s0ea4wu4gvxv6rg28jd2k0tuuelvrwhv9nxrr3vgyfcuf"
+   }
+ }}
+
+iex(3)&gt; Radixir.Key.public_key_to_addresses("03eaeb7215f811ced60fcf6aee550c33343428f26aacf5f399fb06ebb0b330c716")
+%{
+  mainnet_address: "rdx1qsp746mjzhuprnkkpl8k4mj4psengdpg7f42ea0nn8asd6askvcvw9shvqzm9",
+  testnet_address: "tdx1qsp746mjzhuprnkkpl8k4mj4psengdpg7f42ea0nn8asd6askvcvw9skq4stx",
+  validator_mainnet_address: "rv1q04wkus4lqgua4s0ea4wu4gvxv6rg28jd2k0tuuelvrwhv9nxrr3vgyfcuf",
+  validator_testnet_address: "tv1q04wkus4lqgua4s0ea4wu4gvxv6rg28jd2k0tuuelvrwhv9nxrr3vwaw7n7"
+}
+</code></pre>
+<aside class="onebox githubblob" data-onebox-src="https://github.com/radixir/radixir/blob/develop/lib/radixir/key.ex#L167">
+  <header class="source">
+
+      <a href="https://github.com/radixir/radixir/blob/develop/lib/radixir/key.ex#L167" target="_blank" rel="noopener nofollow ugc">github.com</a>
+  </header>
+
+  <article class="onebox-body">
+    <h4><a href="https://github.com/radixir/radixir/blob/develop/lib/radixir/key.ex#L167" target="_blank" rel="noopener nofollow ugc">radixir/radixir/blob/develop/lib/radixir/key.ex#L167</a></h4>
+
+
+
+    <pre class="onebox">      <code class="lang-ex">
+        <ol class="start lines" start="157" style="counter-reset: li-counter 156 ;">
+            <li>    |&gt; Curvy.Key.to_privkey()</li>
+            <li>    |&gt; Util.encode16()</li>
+            <li>
+            </li>
+<li>  %{</li>
+            <li>    public_key: public_key,</li>
+            <li>    private_key: private_key</li>
+            <li>  }</li>
+            <li>  |&gt; Map.merge(addresses)</li>
+            <li>end</li>
+            <li>
+            </li>
+<li class="selected">defp pubkey_to_addrs(public_key) do</li>
+            <li>  %{</li>
+            <li>    mainnet_address: Bech32.encode("rdx", &lt;&lt;4&gt;&gt; &lt;&gt; public_key),</li>
+            <li>    testnet_address: Bech32.encode("tdx", &lt;&lt;4&gt;&gt; &lt;&gt; public_key),</li>
+            <li>    validator_mainnet_address: Bech32.encode("rv", public_key),</li>
+            <li>    validator_testnet_address: Bech32.encode("tv", public_key)</li>
+            <li>  }</li>
+            <li>end</li>
+            <li>
+            </li>
+<li>@doc false</li>
+            <li>def validate_public_key(public_key) do</li>
+        </ol>
+      </code>
+    </pre>
+
+
+
+  </article>
+
+  <div class="onebox-metadata">
+    
+    
+  </div>
+
+  <div style="clear: both"></div>
+</aside>
+
+        </div>
+
+        <meta itemprop='headline' content='How to create a Radix Wallet for development purposes'>
+
+        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+           <meta itemprop="userInteractionCount" content="2" />
+           <span class='post-likes'>2 Likes</span>
+         </div>
+
+         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
+            <meta itemprop="userInteractionCount" content="0" />
+          </div>
+
+      </div>
+
+
+
+
+
+
+    </div>
+    <footer class="container wrap">
+  <nav class='crawler-nav'>
+    <ul>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='https://radixtalk.com/' itemprop="url">Home </a>
+        </span>
+      </li>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='https://radixtalk.com/categories' itemprop="url">Categories </a>
+        </span>
+      </li>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='https://radixtalk.com/guidelines' itemprop="url">FAQ/Guidelines </a>
+        </span>
+      </li>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='https://radixtalk.com/tos' itemprop="url">Terms of Service </a>
+        </span>
+      </li>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='https://radixtalk.com/privacy' itemprop="url">Privacy Policy </a>
+        </span>
+      </li>
+    </ul>
+  </nav>
+  <p class='powered-by-link'>Powered by <a href="https://www.discourse.org">Discourse</a>, best viewed with JavaScript enabled</p>
+</footer>
+
+    
+    
+  </body>
+  
+</html>

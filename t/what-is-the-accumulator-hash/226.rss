@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>What is the accumulator hash?</title>
+    <link>https://radixtalk.com/t/what-is-the-accumulator-hash/226</link>
+    <description>The accumulator hash is a fixed length value that is used to verify that the current transaction, and all transactions before it, have occurred in the correct order and have not been tampered with.
+
+### How is it calculated?
+The **accumulator hash** is calculated by hashing the previous accumulator hash with the current transaction id. 
+
+At the genesis of the Radix public network, the initial accumulator hash was set to 32 bytes of zeros:  `0000000000000000000000000000000000000000000000000000000000000000`
+
+The genesis transaction had a transaction id of: `030E7094728C8D065C5DB696977696BEA9094F67BCFD4C021F99EC784E24023B`
+
+To calculate the very first accumulator hash we:
+1. Concatenate the 32 byte parent accumulator hash (0000...0000) with the 32 byte genesis transaction id (030E...023B) together to create a 64 byte value: `0000000000000000000000000000000000000000000000000000000000000000030E7094728C8D065C5DB696977696BEA9094F67BCFD4C021F99EC784E24023B`
+2. We do a double SHA256 hashing operation: `sha256(sha256(0000...023B))`
+3. The result is the new accumulator hash: `1E62415E5FD95C63AFF69142F1359CC6A981FF7169C128D266F45ADF614D09B0`
+
+To calculate the second accumulator hash, we take the result of the previous (parent) accumulator hash, append the transaction id of the second transaction, and perform the double sha256 operation again.
+
+The code snippet below illustrates the calculation of the first 2 accumulator hashes on the mainnet Radix public network:
+
+```python
+import hashlib
+
+#  32 bytes of zeros
+genesis_accumulator = bytearray.fromhex(&quot;0000000000000000000000000000000000000000000000000000000000000000&quot;)
+
+# First transaction hash
+first_transaction_id = bytearray.fromhex(&quot;030E7094728C8D065C5DB696977696BEA9094F67BCFD4C021F99EC784E24023B&quot;)
+
+inner = hashlib.sha256()
+inner.update(genesis_accumulator + first_transaction_id)
+
+outer = hashlib.sha256()
+outer.update(inner.digest())
+
+# First accumulator hash
+first_accumulator = outer.digest()
+print(&quot;First Accumulator hash:&quot;, first_accumulator.hex())
+
+# Second transaction hash
+second_transaction_id = bytearray.fromhex(&quot;9E4DA050269BB7114AAF2AF7339719C7CD030B19EC32F12AD85B95D5A76CB714&quot;)
+
+inner = hashlib.sha256()
+inner.update(first_accumulator + second_transaction_id)
+
+outer = hashlib.sha256()
+outer.update(inner.digest())
+
+# Second accumulator hash
+second_accumulator = outer.digest()
+print(&quot;Second Accumulator hash:&quot;, second_accumulator.hex())
+```
+
+The calculation of the accumulator hash is repeated for every transaction that occurs on the ledger. As long as transactions occur in the same order, with the same transaction ids, then every validator node will independently calculate the same accumulator hash values and can be confident that they have not received modified transaction data.
+
+We can confirm that our accumulator calculations are correct by comparing them to the values stored in the ledger:
+
+![Screenshot 2022-01-10 at 16.52.59|690x50](upload://86RPlziKn0BZuCNpKL37WFoPX1I.png)
+
+Another very important factor to note is that id of a transaction *is a hash* of all the instructions contained within the transaction. If any of the instructions have been tampered with inside the transaction, then the transaction id will change.
+
+In this way, the accumulator hash is a very simple, but powerful way of ensuring the integrity of transactions on the ledger.
+
+### Run this on Replit:
+https://replit.com/@radixtalk/Accumulator-Hash#main.py</description>
+    <language>en-GB</language>
+    <lastBuildDate>Mon, 10 Jan 2022 16:55:38 +0000</lastBuildDate>
+    <category>Developers</category>
+    <atom:link href="https://radixtalk.com/t/what-is-the-accumulator-hash/226.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>What is the accumulator hash?</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>The accumulator hash is a fixed length value that is used to verify that the current transaction, and all transactions before it, have occurred in the correct order and have not been tampered with.</p>
+<h3>
+<a name="how-is-it-calculated-1" class="anchor" href="https://radixtalk.com#how-is-it-calculated-1"></a>How is it calculated?</h3>
+<p>The <strong>accumulator hash</strong> is calculated by hashing the previous accumulator hash with the current transaction id.</p>
+<p>At the genesis of the Radix public network, the initial accumulator hash was set to 32 bytes of zeros:  <code>0000000000000000000000000000000000000000000000000000000000000000</code></p>
+<p>The genesis transaction had a transaction id of: <code>030E7094728C8D065C5DB696977696BEA9094F67BCFD4C021F99EC784E24023B</code></p>
+<p>To calculate the very first accumulator hash we:</p>
+<ol>
+<li>Concatenate the 32 byte parent accumulator hash (0000…0000) with the 32 byte genesis transaction id (030E…023B) together to create a 64 byte value: <code>0000000000000000000000000000000000000000000000000000000000000000030E7094728C8D065C5DB696977696BEA9094F67BCFD4C021F99EC784E24023B</code>
+</li>
+<li>We do a double SHA256 hashing operation: <code>sha256(sha256(0000...023B))</code>
+</li>
+<li>The result is the new accumulator hash: <code>1E62415E5FD95C63AFF69142F1359CC6A981FF7169C128D266F45ADF614D09B0</code>
+</li>
+</ol>
+<p>To calculate the second accumulator hash, we take the result of the previous (parent) accumulator hash, append the transaction id of the second transaction, and perform the double sha256 operation again.</p>
+<p>The code snippet below illustrates the calculation of the first 2 accumulator hashes on the mainnet Radix public network:</p>
+<pre><code class="lang-python">import hashlib
+
+#  32 bytes of zeros
+genesis_accumulator = bytearray.fromhex("0000000000000000000000000000000000000000000000000000000000000000")
+
+# First transaction hash
+first_transaction_id = bytearray.fromhex("030E7094728C8D065C5DB696977696BEA9094F67BCFD4C021F99EC784E24023B")
+
+inner = hashlib.sha256()
+inner.update(genesis_accumulator + first_transaction_id)
+
+outer = hashlib.sha256()
+outer.update(inner.digest())
+
+# First accumulator hash
+first_accumulator = outer.digest()
+print("First Accumulator hash:", first_accumulator.hex())
+
+# Second transaction hash
+second_transaction_id = bytearray.fromhex("9E4DA050269BB7114AAF2AF7339719C7CD030B19EC32F12AD85B95D5A76CB714")
+
+inner = hashlib.sha256()
+inner.update(first_accumulator + second_transaction_id)
+
+outer = hashlib.sha256()
+outer.update(inner.digest())
+
+# Second accumulator hash
+second_accumulator = outer.digest()
+print("Second Accumulator hash:", second_accumulator.hex())
+</code></pre>
+<p>The calculation of the accumulator hash is repeated for every transaction that occurs on the ledger. As long as transactions occur in the same order, with the same transaction ids, then every validator node will independently calculate the same accumulator hash values and can be confident that they have not received modified transaction data.</p>
+<p>We can confirm that our accumulator calculations are correct by comparing them to the values stored in the ledger:</p>
+<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.radixtalk.com/uploads/default/original/1X/38d825471842d553f5c62a39901efca74cda3e1e.png" data-download-href="https://cdn.radixtalk.com/uploads/default/38d825471842d553f5c62a39901efca74cda3e1e" title="Screenshot 2022-01-10 at 16.52.59"><img src="https://cdn.radixtalk.com/uploads/default/optimized/1X/38d825471842d553f5c62a39901efca74cda3e1e_2_690x50.png" alt="Screenshot 2022-01-10 at 16.52.59" data-base62-sha1="86RPlziKn0BZuCNpKL37WFoPX1I" width="690" height="50" srcset="https://cdn.radixtalk.com/uploads/default/optimized/1X/38d825471842d553f5c62a39901efca74cda3e1e_2_690x50.png, https://cdn.radixtalk.com/uploads/default/optimized/1X/38d825471842d553f5c62a39901efca74cda3e1e_2_1035x75.png 1.5x, https://cdn.radixtalk.com/uploads/default/optimized/1X/38d825471842d553f5c62a39901efca74cda3e1e_2_1380x100.png 2x" data-small-upload="https://cdn.radixtalk.com/uploads/default/optimized/1X/38d825471842d553f5c62a39901efca74cda3e1e_2_10x10.png"></a></div><p></p>
+<p>Another very important factor to note is that id of a transaction <em>is a hash</em> of all the instructions contained within the transaction. If any of the instructions have been tampered with inside the transaction, then the transaction id will change.</p>
+<p>In this way, the accumulator hash is a very simple, but powerful way of ensuring the integrity of transactions on the ledger.</p>
+<h3>
+<a name="run-this-on-replit-2" class="anchor" href="https://radixtalk.com#run-this-on-replit-2"></a>Run this on Replit:</h3>
+<p><iframe src="https://replit.com/@radixtalk/Accumulator-Hash?lite=true" width="695" height="521" frameborder="0" seamless="seamless" sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox allow-presentation"></iframe></p>
+          <p><a href="https://radixtalk.com/t/what-is-the-accumulator-hash/226/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/what-is-the-accumulator-hash/226/1</link>
+        <pubDate>Mon, 10 Jan 2022 14:17:10 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-226-1</guid>
+        <source url="https://radixtalk.com/t/what-is-the-accumulator-hash/226.rss">What is the accumulator hash?</source>
+      </item>
+  </channel>
+</rss>

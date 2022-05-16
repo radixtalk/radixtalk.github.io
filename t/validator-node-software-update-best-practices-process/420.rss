@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Validator Node Software Update Best Practices/Process?</title>
+    <link>https://radixtalk.com/t/validator-node-software-update-best-practices-process/420</link>
+    <description>Hello all.....
+
+In preparation for the eventual upgrade of node software, I was wondering if you guys help could verify the high-level steps of an validator node software update process, or point out what may be unnecessary, missing, or just plain wrong.
+
+The way i see it, one can upgrade the software within the same server.... or one can use a backup server to aid in the switch to the upgrade version.  What are the pros and cons to each option?  I am thinking that using a backup is superior because it allows roll-back to the primary if something goes wrong in the software upgrade process.
+
+Also, should the validators always be un-registered and re-registered within this software upgrade process? I am thinking if they are not, proposals will be missed if a validator is stopped/restarted while it is still registered, so un-register should always be done before stop/restart and re-register after the stop/restart, correct? (assuming all is working as expected)  This would introduce a small period of time when the validator is not generating rewards, but that should be a relatively short amount of time, correct?  Or is there a way to do this without any downtime at all? (without risk of missed proposals)
+
+
+Below are the high-level steps I&#39;ve drafted. Any feedback for refinement is welcome :)
+--------------------------------------------------------------------------------------------------------------------------
+
+
+**Same/single server**
+1.	Unregister node as validator
+2.	Wait until the current epoch ends
+3.	Stop the node
+4.	Upgrade the node software
+5.	Start the node
+6.	Ensure node is up without error and is syncing correctly. Wait until sync&#39;d.
+7.	Register node as validator again
+8. Ensure validator is processing proposals without issues
+
+
+**Using backup server**
+
+0. Step 0... pre-requisite step:   Ensure a backup server is already running as a non-validator node using a non-validator keystore (to ensure it is always in sync, and no lengthy catch-up sync times are ever needed)
+1.	BACKUP SERVER: Stop the node
+2.	BACKUP SERVER: Upgrade the node software
+3.	BACKUP SERVER: Start the node
+4. BACKUP SERVER: Ensure node is up without error and is syncing correctly. Wait until sync&#39;d.
+5.	BACKUP SERVER: Move the validator keystore into the secrets directory in preparation for node restart as validator
+6. PRIMARY SERVER: Unregister node as validator
+7.	PRIMARY SERVER: Wait until the current epoch ends
+8.	PRIMARY SERVER: Stop the node
+9.	BACKUP SERVER: Restart the backup node, which now has validator keystore and is as sync&#39;d up as possible
+10.	BACKUP SERVER: Ensure node is up without error, is syncing correctly. Wait until sync&#39;d. BACKUP SERVER is now the new primary validator node server. Old primary server is now a backup.
+11.	BACKUP SERVER (now new PRIMARY): Register node as validator again
+12.   BACKUP SERVER (now new PRIMARY): Ensure validator is processing proposals without issues
+13.   PRIMARY SERVER (now new BACKUP): Switch to non-validator keystore, upgrade software, start node, and ensure it is up and syncing without error. PRIMARY is now the new BACKUP that is syncing continuously in case a failover from PRIMARY is ever needed.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Thu, 24 Mar 2022 18:45:13 +0000</lastBuildDate>
+    <category>Validators</category>
+    <atom:link href="https://radixtalk.com/t/validator-node-software-update-best-practices-process/420.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Validator Node Software Update Best Practices/Process?</title>
+        <dc:creator><![CDATA[Zero Point Three]]></dc:creator>
+        <description><![CDATA[
+            <p>Thanks very much for this useful response. I’ll look more into those scripts from Florian that you mentioned.</p>
+          <p><a href="https://radixtalk.com/t/validator-node-software-update-best-practices-process/420/3">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/validator-node-software-update-best-practices-process/420/3</link>
+        <pubDate>Thu, 24 Mar 2022 18:45:13 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-420-3</guid>
+        <source url="https://radixtalk.com/t/validator-node-software-update-best-practices-process/420.rss">Validator Node Software Update Best Practices/Process?</source>
+      </item>
+      <item>
+        <title>Validator Node Software Update Best Practices/Process?</title>
+        <dc:creator><![CDATA[Faraz | Radstakes.com]]></dc:creator>
+        <description><![CDATA[
+            <p>Hi,</p>
+<p>You’re pretty much spot on  - there are 2 main options, unregister or live-failover.</p>
+<p>Your steps for the single server are correct, the caveat to this approach being that when you unregister your stakers will lose all rewards for the epochs you are unregistered, however it will preserve your uptime and is the safest option in the event something goes wrong. (you will be unregistered so no affect on the network as a whole)</p>
+<p>Many of us prefer to use the live failover option, which is similar to your ‘backup server’ approach, the main difference would be at step 6, rather than unregistering you simply stop the node on the primary and immediately after, restart the backup with the primary keystore.  The benefit with this approach, is if your proposal rate is not too high and you time it correctly, you can failover in the same epoch with no loss of rewards or uptime.</p>
+<p>I know that Florian has created a script which waits for the next proposal to be made before performing the swap.  You can find this in the Discord node-runner channel if you’re interested (and using systemd).  I use Docker and similarly monitor the proposals completed on the node before I perform the failover.  With 0.5% network stake I’m completing 1 proposal every 35 seconds so there’s plenty of time to switch without missing a proposal.  For the more heavily staked, it becomes a bit more tricky to do, but for the benefit of stakers is probably preferable to miss a proposal or 2 than to lose an entire epoch by unregistering.</p>
+          <p><a href="https://radixtalk.com/t/validator-node-software-update-best-practices-process/420/2">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/validator-node-software-update-best-practices-process/420/2</link>
+        <pubDate>Thu, 24 Mar 2022 16:24:43 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-420-2</guid>
+        <source url="https://radixtalk.com/t/validator-node-software-update-best-practices-process/420.rss">Validator Node Software Update Best Practices/Process?</source>
+      </item>
+      <item>
+        <title>Validator Node Software Update Best Practices/Process?</title>
+        <dc:creator><![CDATA[Zero Point Three]]></dc:creator>
+        <description><![CDATA[
+            <p>Hello all…</p>
+<p>In preparation for the eventual upgrade of node software, I was wondering if you guys help could verify the high-level steps of an validator node software update process, or point out what may be unnecessary, missing, or just plain wrong.</p>
+<p>The way i see it, one can upgrade the software within the same server… or one can use a backup server to aid in the switch to the upgrade version.  What are the pros and cons to each option?  I am thinking that using a backup is superior because it allows roll-back to the primary if something goes wrong in the software upgrade process.</p>
+<p>Also, should the validators always be un-registered and re-registered within this software upgrade process? I am thinking if they are not, proposals will be missed if a validator is stopped/restarted while it is still registered, so un-register should always be done before stop/restart and re-register after the stop/restart, correct? (assuming all is working as expected)  This would introduce a small period of time when the validator is not generating rewards, but that should be a relatively short amount of time, correct?  Or is there a way to do this without any downtime at all? (without risk of missed proposals)</p>
+<h2>
+<a name="below-are-the-high-level-steps-ive-drafted-any-feedback-for-refinement-is-welcome-1" class="anchor" href="https://radixtalk.com#below-are-the-high-level-steps-ive-drafted-any-feedback-for-refinement-is-welcome-1"></a>Below are the high-level steps I’ve drafted. Any feedback for refinement is welcome <img src="https://cdn.radixtalk.com/images/emoji/twitter/slight_smile.png?v=12" title=":slight_smile:" class="emoji" alt=":slight_smile:" loading="lazy" width="20" height="20">
+</h2>
+<p><strong>Same/single server</strong></p>
+<ol>
+<li>Unregister node as validator</li>
+<li>Wait until the current epoch ends</li>
+<li>Stop the node</li>
+<li>Upgrade the node software</li>
+<li>Start the node</li>
+<li>Ensure node is up without error and is syncing correctly. Wait until sync’d.</li>
+<li>Register node as validator again</li>
+<li>Ensure validator is processing proposals without issues</li>
+</ol>
+<p><strong>Using backup server</strong></p>
+<ol start="0">
+<li>Step 0… pre-requisite step:   Ensure a backup server is already running as a non-validator node using a non-validator keystore (to ensure it is always in sync, and no lengthy catch-up sync times are ever needed)</li>
+<li>BACKUP SERVER: Stop the node</li>
+<li>BACKUP SERVER: Upgrade the node software</li>
+<li>BACKUP SERVER: Start the node</li>
+<li>BACKUP SERVER: Ensure node is up without error and is syncing correctly. Wait until sync’d.</li>
+<li>BACKUP SERVER: Move the validator keystore into the secrets directory in preparation for node restart as validator</li>
+<li>PRIMARY SERVER: Unregister node as validator</li>
+<li>PRIMARY SERVER: Wait until the current epoch ends</li>
+<li>PRIMARY SERVER: Stop the node</li>
+<li>BACKUP SERVER: Restart the backup node, which now has validator keystore and is as sync’d up as possible</li>
+<li>BACKUP SERVER: Ensure node is up without error, is syncing correctly. Wait until sync’d. BACKUP SERVER is now the new primary validator node server. Old primary server is now a backup.</li>
+<li>BACKUP SERVER (now new PRIMARY): Register node as validator again</li>
+<li>BACKUP SERVER (now new PRIMARY): Ensure validator is processing proposals without issues</li>
+<li>PRIMARY SERVER (now new BACKUP): Switch to non-validator keystore, upgrade software, start node, and ensure it is up and syncing without error. PRIMARY is now the new BACKUP that is syncing continuously in case a failover from PRIMARY is ever needed.</li>
+</ol>
+          <p><a href="https://radixtalk.com/t/validator-node-software-update-best-practices-process/420/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/validator-node-software-update-best-practices-process/420/1</link>
+        <pubDate>Thu, 24 Mar 2022 15:57:14 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-420-1</guid>
+        <source url="https://radixtalk.com/t/validator-node-software-update-best-practices-process/420.rss">Validator Node Software Update Best Practices/Process?</source>
+      </item>
+  </channel>
+</rss>

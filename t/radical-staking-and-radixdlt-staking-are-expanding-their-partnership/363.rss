@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Radical Staking and RadixDLT Staking are expanding their Partnership</title>
+    <link>https://radixtalk.com/t/radical-staking-and-radixdlt-staking-are-expanding-their-partnership/363</link>
+    <description>Radical Staking and RadixDLT Staking have great news for the Radix community:
+
+We’ve expanded our partnership to support each other’s validator nodes in the very unlikely event of unprecedented situations where one of our nodes goes down and our respective teams are not able to bring it back up.
+
+This will provide an additional layer of security and reliability on top of the existing measures that we already have in place for our productive nodes, such as multiple fully-synced backup servers, multiple database backups, and team members that help provide 24x7x365 on-call support for node issues. This additional layer of security and reliability will provide coverage against catastrophic events that are very unlikely but possible, such as environmental disasters that may cause extended power outages over large geographic areas, or global service outages from multiple cloud providers. We operate in different geographic areas already covering both the U.S. and Europe, and we use different infrastructure and cloud providers, which allows us to complement each other’s validator capabilities in a perfect way.
+
+Radical Staking and RadixDLT Staking have had a close working relationship since Olympia Mainnet went live, in which we collaborate to perform joint troubleshooting of validator node issues and develop best practices to reduce missed proposals and improve node stability. We then share our findings in the Node-Runners channel in Discord and other places such as our GitHub sites to contribute to the continuous improvement of overall network health.
+
+We have abided by the Validator Code of Conduct ([https://radixtalk.com/badges/109/validator-code-of-conduct](https://radixtalk.com/badges/109/validator-code-of-conduct)) and we actively follow its recommendations.
+
+We are driven to operate our nodes with maximum uptime and hence, maximizing our delegator&#39;s rewards, and also securing the Radix network as a whole.
+
+As you evaluate different validator nodes, please consider including our nodes in your delegations. As always, we recommend spreading your XRD stakes across multiple delegators, including validator nodes in the bottom 50% to promote the security and decentralisation of the Radix network.
+
+**RadixDLT Staking Validator Address:**
+rv1qgw68kqkryhgxvcvp04wfss0k76svxkqv3zvf57rcvrkuzdluu9ay4snzxc
+https://www.radixdltstaking.com/
+
+**Radical Staking Validator Address:** rv1qwqf39p307f58y06ejewfwzyuyqd68denpdk3vpp7rsvmqtsc0kdkhq64gc
+https://www.radicalstaking.com/</description>
+    <language>en-GB</language>
+    <lastBuildDate>Fri, 11 Feb 2022 19:48:14 +0000</lastBuildDate>
+    <category>Staking</category>
+    <atom:link href="https://radixtalk.com/t/radical-staking-and-radixdlt-staking-are-expanding-their-partnership/363.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Radical Staking and RadixDLT Staking are expanding their Partnership</title>
+        <dc:creator><![CDATA[kesswi | radixdltstaking.com]]></dc:creator>
+        <description><![CDATA[
+            <p>Radical Staking and RadixDLT Staking have great news for the Radix community:</p>
+<p>We’ve expanded our partnership to support each other’s validator nodes in the very unlikely event of unprecedented situations where one of our nodes goes down and our respective teams are not able to bring it back up.</p>
+<p>This will provide an additional layer of security and reliability on top of the existing measures that we already have in place for our productive nodes, such as multiple fully-synced backup servers, multiple database backups, and team members that help provide 24x7x365 on-call support for node issues. This additional layer of security and reliability will provide coverage against catastrophic events that are very unlikely but possible, such as environmental disasters that may cause extended power outages over large geographic areas, or global service outages from multiple cloud providers. We operate in different geographic areas already covering both the U.S. and Europe, and we use different infrastructure and cloud providers, which allows us to complement each other’s validator capabilities in a perfect way.</p>
+<p>Radical Staking and RadixDLT Staking have had a close working relationship since Olympia Mainnet went live, in which we collaborate to perform joint troubleshooting of validator node issues and develop best practices to reduce missed proposals and improve node stability. We then share our findings in the Node-Runners channel in Discord and other places such as our GitHub sites to contribute to the continuous improvement of overall network health.</p>
+<p>We have abided by the Validator Code of Conduct (<a href="https://radixtalk.com/badges/109/validator-code-of-conduct">https://radixtalk.com/badges/109/validator-code-of-conduct</a>) and we actively follow its recommendations.</p>
+<p>We are driven to operate our nodes with maximum uptime and hence, maximizing our delegator’s rewards, and also securing the Radix network as a whole.</p>
+<p>As you evaluate different validator nodes, please consider including our nodes in your delegations. As always, we recommend spreading your XRD stakes across multiple delegators, including validator nodes in the bottom 50% to promote the security and decentralisation of the Radix network.</p>
+<p><strong>RadixDLT Staking Validator Address:</strong><br>
+rv1qgw68kqkryhgxvcvp04wfss0k76svxkqv3zvf57rcvrkuzdluu9ay4snzxc<br>
+<a href="https://www.radixdltstaking.com/" class="onebox" target="_blank" rel="noopener">https://www.radixdltstaking.com/</a></p>
+<p><strong>Radical Staking Validator Address:</strong> rv1qwqf39p307f58y06ejewfwzyuyqd68denpdk3vpp7rsvmqtsc0kdkhq64gc</p><aside class="onebox allowlistedgeneric" data-onebox-src="https://radicalstaking.com/">
+  <header class="source">
+      <img src="https://cdn.radixtalk.com/uploads/default/original/1X/71a6a0e21fc6fc4295bb35fcb25fc29eda6eb0d6.png" class="site-icon" width="64" height="64">
+
+      <a href="https://radicalstaking.com/" target="_blank" rel="noopener">radicalstaking.com</a>
+  </header>
+
+  <article class="onebox-body">
+    
+
+<h3><a href="https://radicalstaking.com/" target="_blank" rel="noopener">Radical Staking - Radix Validator Node Operator</a></h3>
+
+  <p>Radical Staking is a Radix Validator Node Operator that provides a high performance validator node in a secure cloud environment with 24x7x365 monitoring. We run one of the top Radix validator nodes, so if you hold any XRD or eXRD don't waste any...</p>
+
+
+  </article>
+
+  <div class="onebox-metadata">
+    
+    
+  </div>
+
+  <div style="clear: both"></div>
+</aside>
+
+          <p><a href="https://radixtalk.com/t/radical-staking-and-radixdlt-staking-are-expanding-their-partnership/363/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/radical-staking-and-radixdlt-staking-are-expanding-their-partnership/363/1</link>
+        <pubDate>Fri, 11 Feb 2022 19:40:11 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-363-1</guid>
+        <source url="https://radixtalk.com/t/radical-staking-and-radixdlt-staking-are-expanding-their-partnership/363.rss">Radical Staking and RadixDLT Staking are expanding their Partnership</source>
+      </item>
+  </channel>
+</rss>

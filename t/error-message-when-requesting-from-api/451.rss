@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Error message when requesting from API</title>
+    <link>https://radixtalk.com/t/error-message-when-requesting-from-api/451</link>
+    <description>Hey - if I want to get data form the following Radix API (in this case the account balances) I get the following error message:
+
+{&quot;code&quot;:400,&quot;message&quot;:&quot;One or more validation errors occurred&quot;,&quot;details&quot;:{&quot;validation_errors&quot;:[{&quot;path&quot;:&quot;&quot;,&quot;errors&quot;:[&quot;A non-empty request body is required.&quot;]}],&quot;type&quot;:&quot;InvalidRequestError&quot;},&quot;trace_id&quot;:&quot;00-994592adc1ef158cee927af48dea2cd0-73e5700a464dfe5f-00&quot;}
+
+**this is the request:**
+
+import requests
+
+headers={&#39;Content-Type&#39;:&#39;application/json&#39;}
+
+query = {&quot;network_identifier&quot;: {&quot;network&quot;: &quot;mainnet&quot;}, &quot;account_identifier&quot;: {&quot;address&quot;: &quot;&lt;MY_ADDRESS&gt;&quot;}}
+
+r = requests.post(&#39;&lt;NOT_ALLOWED_TO_POST_LINK&gt;&#39;, params=query, headers=headers)
+
+
+print(r.text)
+
+
+
+
+I&#39;m very new to this topic - maybe someone can help me.
+BRGDS</description>
+    <language>en-GB</language>
+    <lastBuildDate>Wed, 13 Apr 2022 20:33:28 +0000</lastBuildDate>
+    <category>Developers</category>
+    <atom:link href="https://radixtalk.com/t/error-message-when-requesting-from-api/451.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Error message when requesting from API</title>
+        <dc:creator><![CDATA[newworld]]></dc:creator>
+        <description><![CDATA[
+            <p>Alright got it:</p>
+<p>import requests<br>
+import json</p>
+<p>headers={‘Content-Type’:‘application/json’, ‘X-Radixdlt-target-Gw-Api’:‘1.1.2’}</p>
+<p>query = {“network_identifier”: {“network”: “mainnet”}, “account_identifier”: {“address”: “”}}</p>
+<p>r = requests.post(’’, headers=headers, data=json.dumps(query))</p>
+<p>print(r.json())</p>
+          <p><a href="https://radixtalk.com/t/error-message-when-requesting-from-api/451/3">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/error-message-when-requesting-from-api/451/3</link>
+        <pubDate>Wed, 13 Apr 2022 20:33:28 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-451-3</guid>
+        <source url="https://radixtalk.com/t/error-message-when-requesting-from-api/451.rss">Error message when requesting from API</source>
+      </item>
+      <item>
+        <title>Error message when requesting from API</title>
+        <dc:creator><![CDATA[Shawn]]></dc:creator>
+        <description><![CDATA[
+            <p>I use Postman and merely populate it as follows (both Header and Body/raw/json)</p>
+<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.radixtalk.com/uploads/default/original/1X/201f73c1b9a69dac4f7e118f3a45a6533cfaf0f9.png" data-download-href="https://cdn.radixtalk.com/uploads/default/201f73c1b9a69dac4f7e118f3a45a6533cfaf0f9" title="image"><img src="https://cdn.radixtalk.com/uploads/default/original/1X/201f73c1b9a69dac4f7e118f3a45a6533cfaf0f9.png" alt="image" data-base62-sha1="4AaFemNq087NNkqn2SSdIu56GTv" width="690" height="495" data-small-upload="https://cdn.radixtalk.com/uploads/default/optimized/1X/201f73c1b9a69dac4f7e118f3a45a6533cfaf0f9_2_10x10.png"></a></div><p></p>
+          <p><a href="https://radixtalk.com/t/error-message-when-requesting-from-api/451/2">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/error-message-when-requesting-from-api/451/2</link>
+        <pubDate>Wed, 13 Apr 2022 19:58:58 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-451-2</guid>
+        <source url="https://radixtalk.com/t/error-message-when-requesting-from-api/451.rss">Error message when requesting from API</source>
+      </item>
+      <item>
+        <title>Error message when requesting from API</title>
+        <dc:creator><![CDATA[newworld]]></dc:creator>
+        <description><![CDATA[
+            <p>Hey - if I want to get data form the following Radix API (in this case the account balances) I get the following error message:</p>
+<p>{“code”:400,“message”:“One or more validation errors occurred”,“details”:{“validation_errors”:[{“path”:"",“errors”:[“A non-empty request body is required.”]}],“type”:“InvalidRequestError”},“trace_id”:“00-994592adc1ef158cee927af48dea2cd0-73e5700a464dfe5f-00”}</p>
+<p><strong>this is the request:</strong></p>
+<p>import requests</p>
+<p>headers={‘Content-Type’:‘application/json’}</p>
+<p>query = {“network_identifier”: {“network”: “mainnet”}, “account_identifier”: {“address”: “&lt;MY_ADDRESS&gt;”}}</p>
+<p>r = requests.post(’&lt;NOT_ALLOWED_TO_POST_LINK&gt;’, params=query, headers=headers)</p>
+<p>print(r.text)</p>
+<p>I’m very new to this topic - maybe someone can help me.<br>
+BRGDS</p>
+          <p><a href="https://radixtalk.com/t/error-message-when-requesting-from-api/451/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/error-message-when-requesting-from-api/451/1</link>
+        <pubDate>Wed, 13 Apr 2022 19:32:05 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-451-1</guid>
+        <source url="https://radixtalk.com/t/error-message-when-requesting-from-api/451.rss">Error message when requesting from API</source>
+      </item>
+  </channel>
+</rss>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Radixir - Elixir Radix Library</title>
+    <link>https://radixtalk.com/t/radixir-elixir-radix-library/334</link>
+    <description>https://github.com/radixir/radixir
+
+Developer: jonericcook#4697 on Discord</description>
+    <language>en-GB</language>
+    <lastBuildDate>Mon, 07 Mar 2022 19:31:54 +0000</lastBuildDate>
+    <category>Developers</category>
+    <atom:link href="https://radixtalk.com/t/radixir-elixir-radix-library/334.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Radixir - Elixir Radix Library</title>
+        <dc:creator><![CDATA[Jon-Eric Cook]]></dc:creator>
+        <description><![CDATA[
+            <p>radixir now supports all core api endpoints</p>
+<aside class="onebox githubblob" data-onebox-src="https://github.com/radixir/radixir/blob/develop/lib/examples/core/transfer_tokens.ex">
+  <header class="source">
+
+      <a href="https://github.com/radixir/radixir/blob/develop/lib/examples/core/transfer_tokens.ex" target="_blank" rel="noopener nofollow ugc">github.com</a>
+  </header>
+
+  <article class="onebox-body">
+    <h4><a href="https://github.com/radixir/radixir/blob/develop/lib/examples/core/transfer_tokens.ex" target="_blank" rel="noopener nofollow ugc">radixir/radixir/blob/develop/lib/examples/core/transfer_tokens.ex</a></h4>
+
+
+      <pre><code class="lang-ex">defmodule Examples.Core.TransferTokens do
+  @moduledoc false
+  def go do
+    {:ok, %{testnet: %{account_address: account_address}, private_key: private_key}} =
+      Radixir.Key.from_mnemonic()
+
+    {:ok, %{testnet: %{account_address: to_address}}} =
+      Radixir.Key.from_mnemonic(address_index: 1)
+
+    amount_positive = Radixir.Util.xrd_to_atto("1.0")
+    amount_negative = Radixir.Util.xrd_negate(amount_positive)
+
+    token_rri = Radixir.Config.network_native_token_rri()
+
+    operation_type = "Resource"
+
+    options = [api: [auth_index: 0]]
+
+    type = Radixir.Core.build_operation_type(operation_type)
+    entity_identifier_from = Radixir.Core.build_operation_entity_identifier(account_address)
+</code></pre>
+
+
+
+  This file has been truncated. <a href="https://github.com/radixir/radixir/blob/develop/lib/examples/core/transfer_tokens.ex" target="_blank" rel="noopener nofollow ugc">show original</a>
+
+  </article>
+
+  <div class="onebox-metadata">
+    
+    
+  </div>
+
+  <div style="clear: both"></div>
+</aside>
+
+<p>v0.0.4 is now released!</p>
+<p><a href="https://hexdocs.pm/radixir/readme.html" class="onebox" target="_blank" rel="noopener nofollow ugc">https://hexdocs.pm/radixir/readme.html</a></p>
+          <p><a href="https://radixtalk.com/t/radixir-elixir-radix-library/334/5">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/radixir-elixir-radix-library/334/5</link>
+        <pubDate>Mon, 07 Mar 2022 19:31:54 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-334-5</guid>
+        <source url="https://radixtalk.com/t/radixir-elixir-radix-library/334.rss">Radixir - Elixir Radix Library</source>
+      </item>
+      <item>
+        <title>Radixir - Elixir Radix Library</title>
+        <dc:creator><![CDATA[Jon-Eric Cook]]></dc:creator>
+        <description><![CDATA[
+            <p>Im doing a lot of work on the develop branch <a href="https://github.com/radixir/radixir/tree/develop" class="inline-onebox" rel="noopener nofollow ugc">GitHub - radixir/radixir at develop</a></p>
+<p>added some examples <a href="https://github.com/radixir/radixir/tree/develop/lib/examples/gateway" class="inline-onebox" rel="noopener nofollow ugc">radixir/lib/examples/gateway at develop · radixir/radixir · GitHub</a></p>
+          <p><a href="https://radixtalk.com/t/radixir-elixir-radix-library/334/4">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/radixir-elixir-radix-library/334/4</link>
+        <pubDate>Fri, 04 Mar 2022 22:49:20 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-334-4</guid>
+        <source url="https://radixtalk.com/t/radixir-elixir-radix-library/334.rss">Radixir - Elixir Radix Library</source>
+      </item>
+      <item>
+        <title>Radixir - Elixir Radix Library</title>
+        <dc:creator><![CDATA[Jon-Eric Cook]]></dc:creator>
+        <description><![CDATA[
+            <p>v0.0.2 is released! <a href="https://hexdocs.pm/radixir/readme.html" class="inline-onebox" rel="noopener nofollow ugc">Radixir — radixir v0.0.2</a></p>
+          <p><a href="https://radixtalk.com/t/radixir-elixir-radix-library/334/3">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/radixir-elixir-radix-library/334/3</link>
+        <pubDate>Thu, 17 Feb 2022 22:49:43 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-334-3</guid>
+        <source url="https://radixtalk.com/t/radixir-elixir-radix-library/334.rss">Radixir - Elixir Radix Library</source>
+      </item>
+      <item>
+        <title>Radixir - Elixir Radix Library</title>
+        <dc:creator><![CDATA[Jon-Eric Cook]]></dc:creator>
+        <description><![CDATA[
+            <p>Almost to a point where ill be releasing v0.0.2 to hex.pm!</p>
+          <p><a href="https://radixtalk.com/t/radixir-elixir-radix-library/334/2">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/radixir-elixir-radix-library/334/2</link>
+        <pubDate>Thu, 17 Feb 2022 04:15:15 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-334-2</guid>
+        <source url="https://radixtalk.com/t/radixir-elixir-radix-library/334.rss">Radixir - Elixir Radix Library</source>
+      </item>
+      <item>
+        <title>Radixir - Elixir Radix Library</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <aside class="onebox allowlistedgeneric" data-onebox-src="https://github.com/radixir/radixir">
+  <header class="source">
+      <img src="https://github.githubassets.com/favicons/favicon.svg" class="site-icon" width="32" height="32">
+
+      <a href="https://github.com/radixir/radixir" target="_blank" rel="noopener">GitHub</a>
+  </header>
+
+  <article class="onebox-body">
+    <div class="aspect-image" style="--aspect-ratio:690/345;"><img src="https://cdn.radixtalk.com/uploads/default/optimized/1X/47ece4af674f94192cfc9cbbb6ad3bcde64f2f5d_2_690x345.png" class="thumbnail" width="690" height="345" srcset="https://cdn.radixtalk.com/uploads/default/optimized/1X/47ece4af674f94192cfc9cbbb6ad3bcde64f2f5d_2_690x345.png, https://cdn.radixtalk.com/uploads/default/optimized/1X/47ece4af674f94192cfc9cbbb6ad3bcde64f2f5d_2_1035x517.png 1.5x, https://cdn.radixtalk.com/uploads/default/original/1X/47ece4af674f94192cfc9cbbb6ad3bcde64f2f5d.png 2x" data-small-upload="https://cdn.radixtalk.com/uploads/default/optimized/1X/47ece4af674f94192cfc9cbbb6ad3bcde64f2f5d_2_10x10.png"></div>
+
+<h3><a href="https://github.com/radixir/radixir" target="_blank" rel="noopener">GitHub - radixir/radixir: An Elixir wrapper for Radix APIs and functionality.</a></h3>
+
+  <p>An Elixir wrapper for Radix APIs and functionality. - GitHub - radixir/radixir: An Elixir wrapper for Radix APIs and functionality.</p>
+
+
+  </article>
+
+  <div class="onebox-metadata">
+    
+    
+  </div>
+
+  <div style="clear: both"></div>
+</aside>
+
+<p>Developer: jonericcook#4697 on Discord</p>
+          <p><a href="https://radixtalk.com/t/radixir-elixir-radix-library/334/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/radixir-elixir-radix-library/334/1</link>
+        <pubDate>Sat, 05 Feb 2022 10:36:19 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-334-1</guid>
+        <source url="https://radixtalk.com/t/radixir-elixir-radix-library/334.rss">Radixir - Elixir Radix Library</source>
+      </item>
+  </channel>
+</rss>

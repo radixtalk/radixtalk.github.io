@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Raddish Wallet: the first Radix iOS mobile wallet</title>
+    <link>https://radixtalk.com/t/raddish-wallet-the-first-radix-ios-mobile-wallet/331</link>
+    <description># Raddish iOS Mobile Wallet for Radix DLT
+
+
+Introducing the Raddish Wallet! Raddish Wallet is the *first* iOS mobile wallet for the Radix DLT ecosystem!
+
+
+Features of this wallet include:
+
+- Wallet creation and imports
+
+- Multi-wallet, multi-address support
+
+- Ability to display, send, and receive XRD or any other tokens
+
+- QR Code reader for receiving payments
+
+- Ability to stake or unstake XRD to/from any validator
+
+- Ability to create new tokens
+
+
+
+This app can be downloaded and installed on an iPhone from the Apple App Store using the following link:
+
+https://apps.apple.com/us/app/raddish-wallet/id1608033916
+
+NOTE: Due to dependence on certain cryptographic libraries, only iOS v.13.0 and above is supported.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Sat, 05 Feb 2022 07:14:36 +0000</lastBuildDate>
+    <category>Projects</category>
+    <atom:link href="https://radixtalk.com/t/raddish-wallet-the-first-radix-ios-mobile-wallet/331.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Raddish Wallet: the first Radix iOS mobile wallet</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>Source code for the wallet is available here:</p><aside class="onebox allowlistedgeneric" data-onebox-src="https://github.com/ZeroPointThree17/raddish-wallet">
+  <header class="source">
+      <img src="https://github.githubassets.com/favicons/favicon.svg" class="site-icon" width="32" height="32">
+
+      <a href="https://github.com/ZeroPointThree17/raddish-wallet" target="_blank" rel="noopener">GitHub</a>
+  </header>
+
+  <article class="onebox-body">
+    <div class="aspect-image" style="--aspect-ratio:690/345;"><img src="https://cdn.radixtalk.com/uploads/default/optimized/1X/d9a1abb89a7123c2a51a399c2beb30e3be7cfcdf_2_690x345.png" class="thumbnail" width="690" height="345" srcset="https://cdn.radixtalk.com/uploads/default/optimized/1X/d9a1abb89a7123c2a51a399c2beb30e3be7cfcdf_2_690x345.png, https://cdn.radixtalk.com/uploads/default/optimized/1X/d9a1abb89a7123c2a51a399c2beb30e3be7cfcdf_2_1035x517.png 1.5x, https://cdn.radixtalk.com/uploads/default/original/1X/d9a1abb89a7123c2a51a399c2beb30e3be7cfcdf.png 2x" data-small-upload="https://cdn.radixtalk.com/uploads/default/optimized/1X/d9a1abb89a7123c2a51a399c2beb30e3be7cfcdf_2_10x10.png"></div>
+
+<h3><a href="https://github.com/ZeroPointThree17/raddish-wallet" target="_blank" rel="noopener">GitHub - ZeroPointThree17/raddish-wallet: Raddish Wallet Github Repository</a></h3>
+
+  <p>Raddish Wallet Github Repository. Contribute to ZeroPointThree17/raddish-wallet development by creating an account on GitHub.</p>
+
+
+  </article>
+
+  <div class="onebox-metadata">
+    
+    
+  </div>
+
+  <div style="clear: both"></div>
+</aside>
+
+          <p><a href="https://radixtalk.com/t/raddish-wallet-the-first-radix-ios-mobile-wallet/331/2">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/raddish-wallet-the-first-radix-ios-mobile-wallet/331/2</link>
+        <pubDate>Sat, 05 Feb 2022 07:14:36 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-331-2</guid>
+        <source url="https://radixtalk.com/t/raddish-wallet-the-first-radix-ios-mobile-wallet/331.rss">Raddish Wallet: the first Radix iOS mobile wallet</source>
+      </item>
+      <item>
+        <title>Raddish Wallet: the first Radix iOS mobile wallet</title>
+        <dc:creator><![CDATA[Zero Point Three]]></dc:creator>
+        <description><![CDATA[
+            <h1>
+<a name="raddish-ios-mobile-wallet-for-radix-dlt-1" class="anchor" href="https://radixtalk.com#raddish-ios-mobile-wallet-for-radix-dlt-1"></a>Raddish iOS Mobile Wallet for Radix DLT</h1>
+<p>Introducing the Raddish Wallet! Raddish Wallet is the <em>first</em> iOS mobile wallet for the Radix DLT ecosystem!</p>
+<p>Features of this wallet include:</p>
+<ul>
+<li>
+<p>Wallet creation and imports</p>
+</li>
+<li>
+<p>Multi-wallet, multi-address support</p>
+</li>
+<li>
+<p>Ability to display, send, and receive XRD or any other tokens</p>
+</li>
+<li>
+<p>QR Code reader for receiving payments</p>
+</li>
+<li>
+<p>Ability to stake or unstake XRD to/from any validator</p>
+</li>
+<li>
+<p>Ability to create new tokens</p>
+</li>
+</ul>
+<p>This app can be downloaded and installed on an iPhone from the Apple App Store using the following link:</p>
+<aside class="onebox allowlistedgeneric" data-onebox-src="https://apps.apple.com/us/app/raddish-wallet/id1608033916">
+  <header class="source">
+
+      <a href="https://apps.apple.com/us/app/raddish-wallet/id1608033916" target="_blank" rel="noopener nofollow ugc">App Store</a>
+  </header>
+
+  <article class="onebox-body">
+    <div class="aspect-image" style="--aspect-ratio:690/362;"><img src="https://cdn.radixtalk.com/uploads/default/optimized/1X/59533222e907891466263857af1cc0f9d3477578_2_690x362.png" class="thumbnail" width="690" height="362" srcset="https://cdn.radixtalk.com/uploads/default/optimized/1X/59533222e907891466263857af1cc0f9d3477578_2_690x362.png, https://cdn.radixtalk.com/uploads/default/optimized/1X/59533222e907891466263857af1cc0f9d3477578_2_1035x543.png 1.5x, https://cdn.radixtalk.com/uploads/default/original/1X/59533222e907891466263857af1cc0f9d3477578.png 2x" data-small-upload="https://cdn.radixtalk.com/uploads/default/optimized/1X/59533222e907891466263857af1cc0f9d3477578_2_10x10.png"></div>
+
+<h3><a href="https://apps.apple.com/us/app/raddish-wallet/id1608033916" target="_blank" rel="noopener nofollow ugc">‎Raddish Wallet</a></h3>
+
+  <p>‎Introducing the Raddish Wallet! Raddish Wallet is the *first* iOS mobile wallet for the Radix DLT ecosystem!
+
+Features of this wallet include:
+
+- Wallet creation and imports
+- Multi-wallet, multi-address support
+- Ability to display, send, and...</p>
+
+
+  </article>
+
+  <div class="onebox-metadata">
+    
+    
+  </div>
+
+  <div style="clear: both"></div>
+</aside>
+
+<p>NOTE: Due to dependence on certain cryptographic libraries, only iOS v.13.0 and above is supported.</p>
+          <p><a href="https://radixtalk.com/t/raddish-wallet-the-first-radix-ios-mobile-wallet/331/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/raddish-wallet-the-first-radix-ios-mobile-wallet/331/1</link>
+        <pubDate>Fri, 04 Feb 2022 15:04:56 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-331-1</guid>
+        <source url="https://radixtalk.com/t/raddish-wallet-the-first-radix-ios-mobile-wallet/331.rss">Raddish Wallet: the first Radix iOS mobile wallet</source>
+      </item>
+  </channel>
+</rss>

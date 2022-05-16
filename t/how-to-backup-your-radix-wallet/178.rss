@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>How to backup your Radix Wallet</title>
+    <link>https://radixtalk.com/t/how-to-backup-your-radix-wallet/178</link>
+    <description>Your 12 words recovery phrase is the best tool to recover your wallet, but for additional safety measures you may also want to backup your wallet file (for example before updating your wallet, or to move your wallet to another computer).
+
+Here&#39;s how to:
+
+1. Open _Windows Explorer_ (My Computer/My Documents)
+
+![image|183x500](upload://uIkdCQgOh4a8qV5gJK9KvU2CgxI.jpeg)
+
+2. In the address bar, paste `%APPDATA%\radix-olympia-desktop-wallet` and press Enter
+
+![image|690x412](upload://mK4gkd30GLwHL6mcp5MH5TanJLH.png)
+
+3. To backup your wallet, simply copy the file `wallet.json` and paste it somewhere safe.
+
+![image|690x414](upload://kDZMWNrNT7ZfiE3Z8bXVYZtyISm.png)
+
+&gt; If you want to delete your wallet and start fresh, simply delete the file `wallet.json`.
+
+To restore your wallet on another computer, simply do the same steps but instead of copying the file, paste it in the _radix-olympia-desktop-wallet_ directory.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Wed, 29 Dec 2021 20:13:52 +0000</lastBuildDate>
+    <category>Questions / Help</category>
+    <atom:link href="https://radixtalk.com/t/how-to-backup-your-radix-wallet/178.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>How to backup your Radix Wallet</title>
+        <dc:creator><![CDATA[Mattia | MattiaNode]]></dc:creator>
+        <description><![CDATA[
+            <p>Your 12 words recovery phrase is the best tool to recover your wallet, but for additional safety measures you may also want to backup your wallet file (for example before updating your wallet, or to move your wallet to another computer).</p>
+<p>Here’s how to:</p>
+<ol>
+<li>Open <em>Windows Explorer</em> (My Computer/My Documents)</li>
+</ol>
+<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://radixtalk.com/uploads/default/original/1X/d743f0fb3bc8f3c627422dfa2c1c05fb6768c41a.jpeg" data-download-href="https://radixtalk.com/uploads/default/d743f0fb3bc8f3c627422dfa2c1c05fb6768c41a" title="image"><img src="https://radixtalk.com/uploads/default/optimized/1X/d743f0fb3bc8f3c627422dfa2c1c05fb6768c41a_2_183x500.jpeg" alt="image" data-base62-sha1="uIkdCQgOh4a8qV5gJK9KvU2CgxI" width="183" height="500" srcset="https://radixtalk.com/uploads/default/optimized/1X/d743f0fb3bc8f3c627422dfa2c1c05fb6768c41a_2_183x500.jpeg, https://radixtalk.com/uploads/default/original/1X/d743f0fb3bc8f3c627422dfa2c1c05fb6768c41a.jpeg 1.5x, https://radixtalk.com/uploads/default/original/1X/d743f0fb3bc8f3c627422dfa2c1c05fb6768c41a.jpeg 2x" data-small-upload="https://radixtalk.com/uploads/default/optimized/1X/d743f0fb3bc8f3c627422dfa2c1c05fb6768c41a_2_10x10.png"></a></div><p></p>
+<ol start="2">
+<li>In the address bar, paste <code>%APPDATA%\radix-olympia-desktop-wallet</code> and press Enter</li>
+</ol>
+<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://radixtalk.com/uploads/default/original/1X/9f64fa817e5d53c7b13f737f0aebb33cad305f09.png" data-download-href="https://radixtalk.com/uploads/default/9f64fa817e5d53c7b13f737f0aebb33cad305f09" title="image"><img src="https://radixtalk.com/uploads/default/optimized/1X/9f64fa817e5d53c7b13f737f0aebb33cad305f09_2_690x412.png" alt="image" data-base62-sha1="mK4gkd30GLwHL6mcp5MH5TanJLH" width="690" height="412" srcset="https://radixtalk.com/uploads/default/optimized/1X/9f64fa817e5d53c7b13f737f0aebb33cad305f09_2_690x412.png, https://radixtalk.com/uploads/default/optimized/1X/9f64fa817e5d53c7b13f737f0aebb33cad305f09_2_1035x618.png 1.5x, https://radixtalk.com/uploads/default/original/1X/9f64fa817e5d53c7b13f737f0aebb33cad305f09.png 2x" data-small-upload="https://radixtalk.com/uploads/default/optimized/1X/9f64fa817e5d53c7b13f737f0aebb33cad305f09_2_10x10.png"></a></div><p></p>
+<ol start="3">
+<li>To backup your wallet, simply copy the file <code>wallet.json</code> and paste it somewhere safe.</li>
+</ol>
+<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://radixtalk.com/uploads/default/original/1X/90b0e9a7b8a10d3dc92b981ecc774bb94eaa8c7a.png" data-download-href="https://radixtalk.com/uploads/default/90b0e9a7b8a10d3dc92b981ecc774bb94eaa8c7a" title="image"><img src="https://radixtalk.com/uploads/default/optimized/1X/90b0e9a7b8a10d3dc92b981ecc774bb94eaa8c7a_2_690x414.png" alt="image" data-base62-sha1="kDZMWNrNT7ZfiE3Z8bXVYZtyISm" width="690" height="414" srcset="https://radixtalk.com/uploads/default/optimized/1X/90b0e9a7b8a10d3dc92b981ecc774bb94eaa8c7a_2_690x414.png, https://radixtalk.com/uploads/default/optimized/1X/90b0e9a7b8a10d3dc92b981ecc774bb94eaa8c7a_2_1035x621.png 1.5x, https://radixtalk.com/uploads/default/original/1X/90b0e9a7b8a10d3dc92b981ecc774bb94eaa8c7a.png 2x" data-small-upload="https://radixtalk.com/uploads/default/optimized/1X/90b0e9a7b8a10d3dc92b981ecc774bb94eaa8c7a_2_10x10.png"></a></div><p></p>
+<blockquote>
+<p>If you want to delete your wallet and start fresh, simply delete the file <code>wallet.json</code>.</p>
+</blockquote>
+<p>To restore your wallet on another computer, simply do the same steps but instead of copying the file, paste it in the <em>radix-olympia-desktop-wallet</em> directory.</p>
+          <p><a href="https://radixtalk.com/t/how-to-backup-your-radix-wallet/178/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-to-backup-your-radix-wallet/178/1</link>
+        <pubDate>Wed, 29 Dec 2021 20:13:52 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-178-1</guid>
+        <source url="https://radixtalk.com/t/how-to-backup-your-radix-wallet/178.rss">How to backup your Radix Wallet</source>
+      </item>
+  </channel>
+</rss>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Why do I have these weird tokens in my wallet?</title>
+    <link>https://radixtalk.com/t/why-do-i-have-these-weird-tokens-in-my-wallet/128</link>
+    <description>Some Validator Nodes issue their own tokens and distribute them to their stakers via airdrops as an incentive to stake with them.
+
+Some common tokens are:
+
+* dgc - Doge³
+* floop - issued by [CaviarNine](https://caviarnine.com/)
+* foton - issued by [Nerds Republic](https://nerdsrepublic.net)
+* gold - issued by [Radix.plus](https://www.radix.plus/gold/)
+* inu - issued by [Radix Inu](Https://radixinu.com)
+* oci - issued by [Ociswap](https://ociswap.com)
+* smk - issued by [Samuskycoin](https://www.samusky.com)
+* xseed - issued by [RadixDLTStaking](https://www.radixdltstaking.com/xseed-token/)</description>
+    <language>en-GB</language>
+    <lastBuildDate>Wed, 05 Jan 2022 12:28:39 +0000</lastBuildDate>
+    <category>Tokens</category>
+    <atom:link href="https://radixtalk.com/t/why-do-i-have-these-weird-tokens-in-my-wallet/128.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Why do I have these weird tokens in my wallet?</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>Some Validator Nodes issue their own tokens and distribute them to their stakers via airdrops as an incentive to stake with them.</p>
+<p>Some common tokens are:</p>
+<ul>
+<li>dgc - Doge³</li>
+<li>floop - issued by <a href="https://caviarnine.com/">CaviarNine</a>
+</li>
+<li>foton - issued by <a href="https://nerdsrepublic.net">Nerds Republic</a>
+</li>
+<li>gold - issued by <a href="https://www.radix.plus/gold/">Radix.plus</a>
+</li>
+<li>inu - issued by <a href="Https://radixinu.com">Radix Inu</a>
+</li>
+<li>oci - issued by <a href="https://ociswap.com">Ociswap</a>
+</li>
+<li>smk - issued by <a href="https://www.samusky.com">Samuskycoin</a>
+</li>
+<li>xseed - issued by <a href="https://www.radixdltstaking.com/xseed-token/">RadixDLTStaking</a>
+</li>
+</ul>
+          <p><a href="https://radixtalk.com/t/why-do-i-have-these-weird-tokens-in-my-wallet/128/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/why-do-i-have-these-weird-tokens-in-my-wallet/128/1</link>
+        <pubDate>Mon, 27 Dec 2021 20:41:06 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-128-1</guid>
+        <source url="https://radixtalk.com/t/why-do-i-have-these-weird-tokens-in-my-wallet/128.rss">Why do I have these weird tokens in my wallet?</source>
+      </item>
+  </channel>
+</rss>

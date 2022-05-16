@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Useful Radix related links (community tools and more)</title>
+    <link>https://radixtalk.com/t/useful-radix-related-links-community-tools-and-more/183</link>
+    <description># Useful links
+
+### Official links
+
+* [Website](https://www.radixdlt.com/)  
+* [Radix blog](https://www.radixdlt.com/blog)  
+* [Wallet download](https://wallet.radixdlt.com/)  
+* [Explorer](https://explorer.radixdlt.com/#/)  
+* [Instapass (KYC)](https://www.instapass.io/)  
+* [Instabridge (eXRD -&gt; XRD)](https://www.instabridge.io/)  
+
+### Telegram groups
+
+* [Radix DLT Official](https://t.me/radix_dlt)  
+* [Radix Trader (for price talk)](https://t.me/Radix_TRADER)  
+* [Unofficial community managed groups](https://radixtalk.com/t/unofficial-community-managed-groups/81)
+
+### eXRD stats
+* [Coinmarketcap](https://coinmarketcap.com/currencies/radix/)  
+* [CoinGecko](https://www.coingecko.com/en/coins/e-radix)  
+
+### Community tools
+* **[Florian Pieper Staking](https://florianpieperstaking.com/)**
+    * Staking rewards calculator
+    * [Validator list](https://florianpieperstaking.com/validators)
+* **[Radix Portfolio](https://www.radixportfolio.info/)**  
+    * Staking dashboard and more great tools for staking
+* **[RadixScan](https://www.radixscan.io/)**
+    * [Validator list](https://www.radixscan.io/ValidatorTable.shtml)
+    * [Network explorer](https://www.radixscan.io/JSONExplorer.shtml)
+    * [Network utilization](https://www.radixscan.io/NetworkUtilization.shtml)
+    * [Radix Tokens list](https://www.radixscan.io/TokenTable.shtml)
+* **[Radix Dashboard](https://www.radixdashboard.com/)**
+    * Staking APY %
+    * Epoch information
+    * Network &amp; XRD metrics
+    * Validator list
+* **[CaviarNine Stats](https://caviarnine.com/stats)**
+    * Amount of XRD staked
+    * Total number of XRD wallets
+    * Amount of XRD fee burned
+    * Number of actions (transfers, staking, etc..)
+* **[Radix Earth](https://www.radix.earth/)**
+    * Validator list with node geolocation (useful to promote geographical decentralization)</description>
+    <language>en-GB</language>
+    <lastBuildDate>Thu, 30 Dec 2021 14:37:52 +0000</lastBuildDate>
+    <category>Questions / Help</category>
+    <atom:link href="https://radixtalk.com/t/useful-radix-related-links-community-tools-and-more/183.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Useful Radix related links (community tools and more)</title>
+        <dc:creator><![CDATA[Mattia | MattiaNode]]></dc:creator>
+        <description><![CDATA[
+            <h1>
+<a name="useful-links-1" class="anchor" href="https://radixtalk.com#useful-links-1"></a>Useful links</h1>
+<h3>
+<a name="official-links-2" class="anchor" href="https://radixtalk.com#official-links-2"></a>Official links</h3>
+<ul>
+<li><a href="https://www.radixdlt.com/">Website</a></li>
+<li><a href="https://www.radixdlt.com/blog">Radix blog</a></li>
+<li><a href="https://wallet.radixdlt.com/">Wallet download</a></li>
+<li><a href="https://explorer.radixdlt.com/#/">Explorer</a></li>
+<li><a href="https://www.instapass.io/">Instapass (KYC)</a></li>
+<li><a href="https://www.instabridge.io/">Instabridge (eXRD → XRD)</a></li>
+</ul>
+<h3>
+<a name="telegram-groups-3" class="anchor" href="https://radixtalk.com#telegram-groups-3"></a>Telegram groups</h3>
+<ul>
+<li><a href="https://t.me/radix_dlt">Radix DLT Official</a></li>
+<li><a href="https://t.me/Radix_TRADER">Radix Trader (for price talk)</a></li>
+<li><a href="https://radixtalk.com/t/unofficial-community-managed-groups/81">Unofficial community managed groups</a></li>
+</ul>
+<h3>
+<a name="exrd-stats-4" class="anchor" href="https://radixtalk.com#exrd-stats-4"></a>eXRD stats</h3>
+<ul>
+<li><a href="https://coinmarketcap.com/currencies/radix/">Coinmarketcap</a></li>
+<li><a href="https://www.coingecko.com/en/coins/e-radix">CoinGecko</a></li>
+</ul>
+<h3>
+<a name="community-tools-5" class="anchor" href="https://radixtalk.com#community-tools-5"></a>Community tools</h3>
+<ul>
+<li>
+<strong><a href="https://florianpieperstaking.com/">Florian Pieper Staking</a></strong>
+<ul>
+<li>Staking rewards calculator</li>
+<li><a href="https://florianpieperstaking.com/validators">Validator list</a></li>
+</ul>
+</li>
+<li>
+<strong><a href="https://www.radixportfolio.info/">Radix Portfolio</a></strong>
+<ul>
+<li>Staking dashboard and more great tools for staking</li>
+</ul>
+</li>
+<li>
+<strong><a href="https://www.radixscan.io/">RadixScan</a></strong>
+<ul>
+<li><a href="https://www.radixscan.io/ValidatorTable.shtml">Validator list</a></li>
+<li><a href="https://www.radixscan.io/JSONExplorer.shtml">Network explorer</a></li>
+<li><a href="https://www.radixscan.io/NetworkUtilization.shtml">Network utilization</a></li>
+<li><a href="https://www.radixscan.io/TokenTable.shtml">Radix Tokens list</a></li>
+</ul>
+</li>
+<li>
+<strong><a href="https://www.radixdashboard.com/">Radix Dashboard</a></strong>
+<ul>
+<li>Staking APY %</li>
+<li>Epoch information</li>
+<li>Network &amp; XRD metrics</li>
+<li>Validator list</li>
+</ul>
+</li>
+<li>
+<strong><a href="https://caviarnine.com/stats">CaviarNine Stats</a></strong>
+<ul>
+<li>Amount of XRD staked</li>
+<li>Total number of XRD wallets</li>
+<li>Amount of XRD fee burned</li>
+<li>Number of actions (transfers, staking, etc…)</li>
+</ul>
+</li>
+<li>
+<strong><a href="https://www.radix.earth/">Radix Earth</a></strong>
+<ul>
+<li>Validator list with node geolocation (useful to promote geographical decentralization)</li>
+</ul>
+</li>
+</ul>
+          <p><a href="https://radixtalk.com/t/useful-radix-related-links-community-tools-and-more/183/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/useful-radix-related-links-community-tools-and-more/183/1</link>
+        <pubDate>Thu, 30 Dec 2021 14:24:14 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-183-1</guid>
+        <source url="https://radixtalk.com/t/useful-radix-related-links-community-tools-and-more/183.rss">Useful Radix related links (community tools and more)</source>
+      </item>
+  </channel>
+</rss>

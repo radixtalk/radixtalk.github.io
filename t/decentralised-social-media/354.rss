@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Decentralised Social Media?</title>
+    <link>https://radixtalk.com/t/decentralised-social-media/354</link>
+    <description>So, in the last 24 hours we have seen two announcements regarding blockchain/web3 social media networks.
+One from BlueSky (Jack Dorsey &amp; Co) and another called Lens Protocol (Stani Kulechov from AAVE).
+
+BlueSky - https://blueskyweb.org/blog/2-7-2022-overview
+Lens Protocol - https://lens.dev/  https://docs.lens.dev/docs 
+
+Bluesky appears to be a bit more abstract and not looking to define a specific protocol or blockchain/DLT network to base itself on.
+
+Lens is being built on Polygon and looks to be leveraging IPFS for content.
+
+Knowing what we know of the actors in the space, the technologies being used and their inherrent weaknesses do we see either or both of these projects succeeding, is there a better option?</description>
+    <language>en-GB</language>
+    <lastBuildDate>Tue, 08 Feb 2022 08:29:02 +0000</lastBuildDate>
+    <category>Chat / Discussion</category>
+    <atom:link href="https://radixtalk.com/t/decentralised-social-media/354.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Decentralised Social Media?</title>
+        <dc:creator><![CDATA[Avaunt]]></dc:creator>
+        <description><![CDATA[
+            <p>So, in the last 24 hours we have seen two announcements regarding blockchain/web3 social media networks.<br>
+One from BlueSky (Jack Dorsey &amp; Co) and another called Lens Protocol (Stani Kulechov from AAVE).</p>
+<p>BlueSky - <a href="https://blueskyweb.org/blog/2-7-2022-overview" class="inline-onebox">Announcing Bluesky PBLLC - Bluesky</a><br>
+Lens Protocol - <a href="https://lens.dev/">https://lens.dev/</a>  <a href="https://docs.lens.dev/docs" class="inline-onebox">What is Lens? 🌿</a></p>
+<p>Bluesky appears to be a bit more abstract and not looking to define a specific protocol or blockchain/DLT network to base itself on.</p>
+<p>Lens is being built on Polygon and looks to be leveraging IPFS for content.</p>
+<p>Knowing what we know of the actors in the space, the technologies being used and their inherrent weaknesses do we see either or both of these projects succeeding, is there a better option?</p>
+          <p><a href="https://radixtalk.com/t/decentralised-social-media/354/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/decentralised-social-media/354/1</link>
+        <pubDate>Tue, 08 Feb 2022 08:29:02 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-354-1</guid>
+        <source url="https://radixtalk.com/t/decentralised-social-media/354.rss">Decentralised Social Media?</source>
+      </item>
+  </channel>
+</rss>

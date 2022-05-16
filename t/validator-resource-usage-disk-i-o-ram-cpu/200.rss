@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Validator resource usage (disk I/O, RAM, CPU..)</title>
+    <link>https://radixtalk.com/t/validator-resource-usage-disk-i-o-ram-cpu/200</link>
+    <description>Hello! I created this thread to discuss the resource usage of the node runner software for Radix nodes.
+
+I&#39;ve always encountered high disk I/O usage by the Checkpointer thread that I&#39;ve managed to mitigate somehow by increasing -Xms and -Xmx arguments in the Enviroment file.
+The higher the value, the lower the disk usage is. On a node with 64 GB of RAM, setting both arguments to 30G almost fixes the problem, bringing my average disk write to 4 MB/s.
+On another node with less RAM I am unable to set -Xms and -Xmx to 30G and the average disk writes are much higher, reaching more than 10MB/s. 
+
+![image|690x216](upload://umLPp8wVRJUf2QVtYVymmWLvFGc.png)
+
+This is with -Xms and -Xmx to 20G. Lowering the value increases disk writes even more, with a default setting of 8G this is what I was getting: 
+
+![image|690x218](upload://v5S2BciOF4TfgHT4iI3y7TJTvbU.png)
+![Few minutes of iotop -a|690x86, 100%](upload://ncxs0XfSAazk1kQeITCr9dYIeVY.png)
+
+
+Those are all writes even though my hypervisor is reporting them as reads (old bug). Obviously this was destroying my SSDs pretty quickly.
+
+I&#39;ve found some helpful information on Berkeley DBs and how its cache works ([start here](https://docs.huihoo.com/berkeley/je-1.5.1/docs/GettingStartedGuide/cachesize.html)) and apparently 20% of the JVM memory is reserved for cache (`je.maxMemoryPercent` has a default value of 20%).
+I tried calculating the optimal memory size using [this guide](https://gist.github.com/gbehrmann/df1abbe45c03356eff2e) and got the following:
+
+I ran `java -cp je-18.3.12.jar com.sleepycat.je.util.DbPrintLog -S -h /data/` and then` java -cp je-18.3.12.jar com.sleepycat.je.util.DbCacheSize -records 85002586 -key 20 -data 63` using the data I got from the first command.
+
+
+```
+=== Environment Cache Overhead ===
+
+3,158,773 minimum bytes
+
+To account for JE daemon operation, record locks, HA network connections, etc,
+a larger amount is needed in practice.
+
+=== Database Cache Size ===
+
+   Number of Bytes  Description
+   ---------------  -----------
+     4,169,465,456  Internal nodes only
+    13,529,308,256  Internal nodes and leaf nodes
+
+For further information see the DbCacheSize javadoc.
+```
+ 
+
+So, to cache all the internal nodes only I would need 4GB of memory, which considering the default je.maxMemoryPercent of 20%, amounts to 20~GB of -Xmx for the JVM. 
+As you can see comparing the two screenshots, increasing Java&#39;s memory 20G helped reduce the writes, but they&#39;re still very high compared to what Radix Team and others are seeing on their nodes.
+
+I also followed this [tip](https://docs.radixdlt.com/main/node/troubleshooting.html#excessive-disk-writes) from Stuart and set `je.log.fileMax=1073741824` and `je.checkpointer.bytesInterval=250000000`.
+I tried doubling the Checkpointer&#39;s bytesInterval value and it increased the time between each write spike, but also increased the maximum disk write during those spikes.
+
+The issue goes away by making the node a fullnode instead of a validator node; writes pretty much disappear or drop to some KB/s. More info in this [GitHub issue.](https://github.com/radixdlt/radixdlt/issues/513)
+
+Please feel free to discuss other performance optimization or resource usage concerns you have in this thread.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Mon, 03 Jan 2022 11:15:03 +0000</lastBuildDate>
+    <category>Validators</category>
+    <atom:link href="https://radixtalk.com/t/validator-resource-usage-disk-i-o-ram-cpu/200.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Validator resource usage (disk I/O, RAM, CPU..)</title>
+        <dc:creator><![CDATA[Mattia | MattiaNode]]></dc:creator>
+        <description><![CDATA[
+            <p>Hello! I created this thread to discuss the resource usage of the node runner software for Radix nodes.</p>
+<p>I’ve always encountered high disk I/O usage by the Checkpointer thread that I’ve managed to mitigate somehow by increasing -Xms and -Xmx arguments in the Enviroment file.<br>
+The higher the value, the lower the disk usage is. On a node with 64 GB of RAM, setting both arguments to 30G almost fixes the problem, bringing my average disk write to 4 MB/s.<br>
+On another node with less RAM I am unable to set -Xms and -Xmx to 30G and the average disk writes are much higher, reaching more than 10MB/s.</p>
+<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://radixtalk.com/uploads/default/original/1X/d4d42f7e637e8ff63baffca85c3dbaadf8873c14.png" data-download-href="https://radixtalk.com/uploads/default/d4d42f7e637e8ff63baffca85c3dbaadf8873c14" title="image"><img src="https://radixtalk.com/uploads/default/optimized/1X/d4d42f7e637e8ff63baffca85c3dbaadf8873c14_2_690x216.png" alt="image" data-base62-sha1="umLPp8wVRJUf2QVtYVymmWLvFGc" width="690" height="216" srcset="https://radixtalk.com/uploads/default/optimized/1X/d4d42f7e637e8ff63baffca85c3dbaadf8873c14_2_690x216.png, https://radixtalk.com/uploads/default/optimized/1X/d4d42f7e637e8ff63baffca85c3dbaadf8873c14_2_1035x324.png 1.5x, https://radixtalk.com/uploads/default/original/1X/d4d42f7e637e8ff63baffca85c3dbaadf8873c14.png 2x" data-small-upload="https://radixtalk.com/uploads/default/optimized/1X/d4d42f7e637e8ff63baffca85c3dbaadf8873c14_2_10x10.png"></a></div><p></p>
+<p>This is with -Xms and -Xmx to 20G. Lowering the value increases disk writes even more, with a default setting of 8G this is what I was getting:</p>
+<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://radixtalk.com/uploads/default/original/1X/d9ed4ef1a29553f1a06919122f4166ac00031b56.png" data-download-href="https://radixtalk.com/uploads/default/d9ed4ef1a29553f1a06919122f4166ac00031b56" title="image"><img src="https://radixtalk.com/uploads/default/original/1X/d9ed4ef1a29553f1a06919122f4166ac00031b56.png" alt="image" data-base62-sha1="v5S2BciOF4TfgHT4iI3y7TJTvbU" width="690" height="218" data-small-upload="https://radixtalk.com/uploads/default/optimized/1X/d9ed4ef1a29553f1a06919122f4166ac00031b56_2_10x10.png"></a></div><br>
+<div class="lightbox-wrapper"><a class="lightbox" href="https://radixtalk.com/uploads/default/original/1X/a29cdfd2770db68071ae8e94ebb24e6ab405d5c2.png" data-download-href="https://radixtalk.com/uploads/default/a29cdfd2770db68071ae8e94ebb24e6ab405d5c2" title="Few minutes of iotop -a"><img src="https://radixtalk.com/uploads/default/optimized/1X/a29cdfd2770db68071ae8e94ebb24e6ab405d5c2_2_690x86.png" alt="Few minutes of iotop -a" data-base62-sha1="ncxs0XfSAazk1kQeITCr9dYIeVY" width="690" height="86" srcset="https://radixtalk.com/uploads/default/optimized/1X/a29cdfd2770db68071ae8e94ebb24e6ab405d5c2_2_690x86.png, https://radixtalk.com/uploads/default/optimized/1X/a29cdfd2770db68071ae8e94ebb24e6ab405d5c2_2_1035x129.png 1.5x, https://radixtalk.com/uploads/default/optimized/1X/a29cdfd2770db68071ae8e94ebb24e6ab405d5c2_2_1380x172.png 2x" data-small-upload="https://radixtalk.com/uploads/default/optimized/1X/a29cdfd2770db68071ae8e94ebb24e6ab405d5c2_2_10x10.png"></a></div><p></p>
+<p>Those are all writes even though my hypervisor is reporting them as reads (old bug). Obviously this was destroying my SSDs pretty quickly.</p>
+<p>I’ve found some helpful information on Berkeley DBs and how its cache works (<a href="https://docs.huihoo.com/berkeley/je-1.5.1/docs/GettingStartedGuide/cachesize.html">start here</a>) and apparently 20% of the JVM memory is reserved for cache (<code>je.maxMemoryPercent</code> has a default value of 20%).<br>
+I tried calculating the optimal memory size using <a href="https://gist.github.com/gbehrmann/df1abbe45c03356eff2e">this guide</a> and got the following:</p>
+<p>I ran <code>java -cp je-18.3.12.jar com.sleepycat.je.util.DbPrintLog -S -h /data/</code> and then<code> java -cp je-18.3.12.jar com.sleepycat.je.util.DbCacheSize -records 85002586 -key 20 -data 63</code> using the data I got from the first command.</p>
+<pre><code class="lang-auto">=== Environment Cache Overhead ===
+
+3,158,773 minimum bytes
+
+To account for JE daemon operation, record locks, HA network connections, etc,
+a larger amount is needed in practice.
+
+=== Database Cache Size ===
+
+   Number of Bytes  Description
+   ---------------  -----------
+     4,169,465,456  Internal nodes only
+    13,529,308,256  Internal nodes and leaf nodes
+
+For further information see the DbCacheSize javadoc.
+</code></pre>
+<p>So, to cache all the internal nodes only I would need 4GB of memory, which considering the default je.maxMemoryPercent of 20%, amounts to 20~GB of -Xmx for the JVM.<br>
+As you can see comparing the two screenshots, increasing Java’s memory 20G helped reduce the writes, but they’re still very high compared to what Radix Team and others are seeing on their nodes.</p>
+<p>I also followed this <a href="https://docs.radixdlt.com/main/node/troubleshooting.html#excessive-disk-writes">tip</a> from Stuart and set <code>je.log.fileMax=1073741824</code> and <code>je.checkpointer.bytesInterval=250000000</code>.<br>
+I tried doubling the Checkpointer’s bytesInterval value and it increased the time between each write spike, but also increased the maximum disk write during those spikes.</p>
+<p>The issue goes away by making the node a fullnode instead of a validator node; writes pretty much disappear or drop to some KB/s. More info in this <a href="https://github.com/radixdlt/radixdlt/issues/513">GitHub issue.</a></p>
+<p>Please feel free to discuss other performance optimization or resource usage concerns you have in this thread.</p>
+          <p><a href="https://radixtalk.com/t/validator-resource-usage-disk-i-o-ram-cpu/200/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/validator-resource-usage-disk-i-o-ram-cpu/200/1</link>
+        <pubDate>Mon, 03 Jan 2022 11:05:31 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-200-1</guid>
+        <source url="https://radixtalk.com/t/validator-resource-usage-disk-i-o-ram-cpu/200.rss">Validator resource usage (disk I/O, RAM, CPU..)</source>
+      </item>
+  </channel>
+</rss>

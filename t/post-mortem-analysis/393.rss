@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Post mortem analysis</title>
+    <link>https://radixtalk.com/t/post-mortem-analysis/393</link>
+    <description>Hi guys, [here&#39;s a post mortem analysis](https://drive.google.com/file/d/1dkBxgSLjKDpyUJLo4Mo0PNXr2kQhJZQN/view?usp=sharing) of our node outage yesterday. Hope it helps others recover faster!</description>
+    <language>en-GB</language>
+    <lastBuildDate>Sun, 20 Feb 2022 21:47:13 +0000</lastBuildDate>
+    <category>Validators</category>
+    <atom:link href="https://radixtalk.com/t/post-mortem-analysis/393.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Post mortem analysis</title>
+        <dc:creator><![CDATA[Mattia | MattiaNode]]></dc:creator>
+        <description><![CDATA[
+            <p>Very well written! Explains what happened, how it got solved, and what could be improved. Everything you could need for a great post mortem, useful for other validators as well.</p>
+          <p><a href="https://radixtalk.com/t/post-mortem-analysis/393/3">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/post-mortem-analysis/393/3</link>
+        <pubDate>Sun, 20 Feb 2022 21:47:13 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-393-3</guid>
+        <source url="https://radixtalk.com/t/post-mortem-analysis/393.rss">Post mortem analysis</source>
+      </item>
+      <item>
+        <title>Post mortem analysis</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>This is brilliant Jazzer. Thanks for sharing.</p>
+          <p><a href="https://radixtalk.com/t/post-mortem-analysis/393/2">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/post-mortem-analysis/393/2</link>
+        <pubDate>Sun, 20 Feb 2022 20:40:44 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-393-2</guid>
+        <source url="https://radixtalk.com/t/post-mortem-analysis/393.rss">Post mortem analysis</source>
+      </item>
+      <item>
+        <title>Post mortem analysis</title>
+        <dc:creator><![CDATA[Jazzer 9F]]></dc:creator>
+        <description><![CDATA[
+            <p>Hi guys, <a href="https://drive.google.com/file/d/1dkBxgSLjKDpyUJLo4Mo0PNXr2kQhJZQN/view?usp=sharing" rel="noopener nofollow ugc">here’s a post mortem analysis</a> of our node outage yesterday. Hope it helps others recover faster!</p>
+          <p><a href="https://radixtalk.com/t/post-mortem-analysis/393/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/post-mortem-analysis/393/1</link>
+        <pubDate>Sun, 20 Feb 2022 20:08:10 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-393-1</guid>
+        <source url="https://radixtalk.com/t/post-mortem-analysis/393.rss">Post mortem analysis</source>
+      </item>
+  </channel>
+</rss>

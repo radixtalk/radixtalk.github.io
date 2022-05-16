@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Why do I get &quot;invalid PROXY&quot; exceptions in Radix node logs after I enable &quot;proxy_protocol on;&quot; in nginx?</title>
+    <link>https://radixtalk.com/t/why-do-i-get-invalid-proxy-exceptions-in-radix-node-logs-after-i-enable-proxy-protocol-on-in-nginx/242</link>
+    <description>Check that you have both the `proxy_protocol on;` **and** `listen &lt;port&gt; proxy_protocol;` configured in you server block in `nginx.conf`
+
+For example:
+```
+  server {
+    listen 30000 proxy_protocol;
+    proxy_protocol on;
+    proxy_pass 127.0.0.1:30001;
+  }
+```
+ Both `proxy_protocol` directives are required to work correctly.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Sat, 15 Jan 2022 10:58:32 +0000</lastBuildDate>
+    <category>Validators</category>
+    <atom:link href="https://radixtalk.com/t/why-do-i-get-invalid-proxy-exceptions-in-radix-node-logs-after-i-enable-proxy-protocol-on-in-nginx/242.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Why do I get &quot;invalid PROXY&quot; exceptions in Radix node logs after I enable &quot;proxy_protocol on;&quot; in nginx?</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>Check that you have both the <code>proxy_protocol on;</code> <strong>and</strong> <code>listen &lt;port&gt; proxy_protocol;</code> configured in you server block in <code>nginx.conf</code></p>
+<p>For example:</p>
+<pre><code class="lang-auto">  server {
+    listen 30000 proxy_protocol;
+    proxy_protocol on;
+    proxy_pass 127.0.0.1:30001;
+  }
+</code></pre>
+<p>Both <code>proxy_protocol</code> directives are required to work correctly.</p>
+          <p><a href="https://radixtalk.com/t/why-do-i-get-invalid-proxy-exceptions-in-radix-node-logs-after-i-enable-proxy-protocol-on-in-nginx/242/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/why-do-i-get-invalid-proxy-exceptions-in-radix-node-logs-after-i-enable-proxy-protocol-on-in-nginx/242/1</link>
+        <pubDate>Sat, 15 Jan 2022 10:58:32 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-242-1</guid>
+        <source url="https://radixtalk.com/t/why-do-i-get-invalid-proxy-exceptions-in-radix-node-logs-after-i-enable-proxy-protocol-on-in-nginx/242.rss">Why do I get &quot;invalid PROXY&quot; exceptions in Radix node logs after I enable &quot;proxy_protocol on;&quot; in nginx?</source>
+      </item>
+  </channel>
+</rss>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>How to parse the &quot;blob&quot; content returned from archive node?</title>
+    <link>https://radixtalk.com/t/how-to-parse-the-blob-content-returned-from-archive-node/269</link>
+    <description>Below is the answer by Stuart in discord:
+
+The specs for parsing transactions are here: 
+
+https://github.com/radixdlt/radixdlt/blob/develop/docs/transaction-specs/specs/parsing.md. 
+
+I implemented the spec to create my own parser but there is a Rust example here: 
+https://github.com/radixdlt/radixdlt/tree/develop/docs/transaction-specs/test/parser</description>
+    <language>en-GB</language>
+    <lastBuildDate>Fri, 21 Jan 2022 13:25:44 +0000</lastBuildDate>
+    <category>Developers</category>
+    <atom:link href="https://radixtalk.com/t/how-to-parse-the-blob-content-returned-from-archive-node/269.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>How to parse the &quot;blob&quot; content returned from archive node?</title>
+        <dc:creator><![CDATA[minhnn | EasyStake.net]]></dc:creator>
+        <description><![CDATA[
+            <p>Thanks, I will try this soon.</p>
+          <p><a href="https://radixtalk.com/t/how-to-parse-the-blob-content-returned-from-archive-node/269/5">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-to-parse-the-blob-content-returned-from-archive-node/269/5</link>
+        <pubDate>Fri, 21 Jan 2022 13:25:44 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-269-5</guid>
+        <source url="https://radixtalk.com/t/how-to-parse-the-blob-content-returned-from-archive-node/269.rss">How to parse the &quot;blob&quot; content returned from archive node?</source>
+      </item>
+      <item>
+        <title>How to parse the &quot;blob&quot; content returned from archive node?</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>Yes, there is an “signed” option in the api call which you can just set to false and it will parse the unsigned transaction hex blob.</p>
+          <p><a href="https://radixtalk.com/t/how-to-parse-the-blob-content-returned-from-archive-node/269/4">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-to-parse-the-blob-content-returned-from-archive-node/269/4</link>
+        <pubDate>Fri, 21 Jan 2022 13:24:04 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-269-4</guid>
+        <source url="https://radixtalk.com/t/how-to-parse-the-blob-content-returned-from-archive-node/269.rss">How to parse the &quot;blob&quot; content returned from archive node?</source>
+      </item>
+      <item>
+        <title>How to parse the &quot;blob&quot; content returned from archive node?</title>
+        <dc:creator><![CDATA[minhnn | EasyStake.net]]></dc:creator>
+        <description><![CDATA[
+            <p>Thank, if the transaction is not existed yet (just in prepare step and not in the finalize step yet), can we do the parse with new core-api?</p>
+          <p><a href="https://radixtalk.com/t/how-to-parse-the-blob-content-returned-from-archive-node/269/3">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-to-parse-the-blob-content-returned-from-archive-node/269/3</link>
+        <pubDate>Fri, 21 Jan 2022 13:22:50 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-269-3</guid>
+        <source url="https://radixtalk.com/t/how-to-parse-the-blob-content-returned-from-archive-node/269.rss">How to parse the &quot;blob&quot; content returned from archive node?</source>
+      </item>
+      <item>
+        <title>How to parse the &quot;blob&quot; content returned from archive node?</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>The new core-api has a parse function that will take an unsigned or signed transaction blob and return the component parts.</p>
+<p>Ref:</p>
+<aside class="onebox allowlistedgeneric" data-onebox-src="https://redocly.github.io/redoc/?url=https:%2F%2Fraw.githubusercontent.com%2Fradixdlt%2Fradixdlt%2Frelease%2F1.1.0%2Fradixdlt-core%2Fradixdlt%2Fsrc%2Fmain%2Fjava%2Fcom%2Fradixdlt%2Fapi%2Fcore%2Fapi.yaml#tag/construction/paths/~1construction~1parse/post">
+  <header class="source">
+
+      <a href="https://redocly.github.io/redoc/?url=https:%2F%2Fraw.githubusercontent.com%2Fradixdlt%2Fradixdlt%2Frelease%2F1.1.0%2Fradixdlt-core%2Fradixdlt%2Fsrc%2Fmain%2Fjava%2Fcom%2Fradixdlt%2Fapi%2Fcore%2Fapi.yaml#tag/construction/paths/~1construction~1parse/post" target="_blank" rel="noopener">redocly.github.io</a>
+  </header>
+
+  <article class="onebox-body">
+    <div class="aspect-image" style="--aspect-ratio:690/310;"><img src="https://cdn.radixtalk.com/uploads/default/optimized/1X/02ad96212c4c2ccdf57c076909cb9efb7f1935aa_2_690x310.png" class="thumbnail" width="690" height="310" srcset="https://cdn.radixtalk.com/uploads/default/optimized/1X/02ad96212c4c2ccdf57c076909cb9efb7f1935aa_2_690x310.png, https://cdn.radixtalk.com/uploads/default/optimized/1X/02ad96212c4c2ccdf57c076909cb9efb7f1935aa_2_1035x465.png 1.5x, https://cdn.radixtalk.com/uploads/default/optimized/1X/02ad96212c4c2ccdf57c076909cb9efb7f1935aa_2_1380x620.png 2x" data-small-upload="https://cdn.radixtalk.com/uploads/default/optimized/1X/02ad96212c4c2ccdf57c076909cb9efb7f1935aa_2_10x10.png"></div>
+
+<h3><a href="https://redocly.github.io/redoc/?url=https:%2F%2Fraw.githubusercontent.com%2Fradixdlt%2Fradixdlt%2Frelease%2F1.1.0%2Fradixdlt-core%2Fradixdlt%2Fsrc%2Fmain%2Fjava%2Fcom%2Fradixdlt%2Fapi%2Fcore%2Fapi.yaml#tag/construction/paths/~1construction~1parse/post" target="_blank" rel="noopener">ReDoc Interactive Demo</a></h3>
+
+  <p>ReDoc Interactive Demo. OpenAPI/Swagger-generated API Reference Documentation</p>
+
+
+  </article>
+
+  <div class="onebox-metadata">
+    
+    
+  </div>
+
+  <div style="clear: both"></div>
+</aside>
+
+          <p><a href="https://radixtalk.com/t/how-to-parse-the-blob-content-returned-from-archive-node/269/2">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-to-parse-the-blob-content-returned-from-archive-node/269/2</link>
+        <pubDate>Fri, 21 Jan 2022 11:58:04 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-269-2</guid>
+        <source url="https://radixtalk.com/t/how-to-parse-the-blob-content-returned-from-archive-node/269.rss">How to parse the &quot;blob&quot; content returned from archive node?</source>
+      </item>
+      <item>
+        <title>How to parse the &quot;blob&quot; content returned from archive node?</title>
+        <dc:creator><![CDATA[minhnn | EasyStake.net]]></dc:creator>
+        <description><![CDATA[
+            <p>Below is the answer by Stuart in discord:</p>
+<p>The specs for parsing transactions are here:</p>
+<p><a href="https://github.com/radixdlt/radixdlt/blob/develop/docs/transaction-specs/specs/parsing.md" class="inline-onebox" rel="noopener nofollow ugc">radixdlt/parsing.md at develop · radixdlt/radixdlt · GitHub</a>.</p>
+<p>I implemented the spec to create my own parser but there is a Rust example here:</p><aside class="onebox githubfolder" data-onebox-src="https://github.com/radixdlt/radixdlt/tree/develop/docs/transaction-specs/test/parser">
+  <header class="source">
+      <img src="https://github.githubassets.com/favicons/favicon.svg" class="site-icon" width="32" height="32">
+
+      <a href="https://github.com/radixdlt/radixdlt/tree/develop/docs/transaction-specs/test/parser" target="_blank" rel="noopener nofollow ugc">github.com</a>
+  </header>
+
+  <article class="onebox-body">
+    <h3><a href="https://github.com/radixdlt/radixdlt/tree/develop/docs/transaction-specs/test/parser" target="_blank" rel="noopener nofollow ugc">radixdlt/docs/transaction-specs/test/parser at develop · radixdlt/radixdlt</a></h3>
+
+  <p><a href="https://github.com/radixdlt/radixdlt/tree/develop/docs/transaction-specs/test/parser" target="_blank" rel="noopener nofollow ugc">develop/docs/transaction-specs/test/parser</a></p>
+
+  <p><span class="label1">Radix monorepo. Contribute to radixdlt/radixdlt development by creating an account on GitHub.</span></p>
+
+  </article>
+
+  <div class="onebox-metadata">
+    
+    
+  </div>
+
+  <div style="clear: both"></div>
+</aside>
+
+          <p><a href="https://radixtalk.com/t/how-to-parse-the-blob-content-returned-from-archive-node/269/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-to-parse-the-blob-content-returned-from-archive-node/269/1</link>
+        <pubDate>Fri, 21 Jan 2022 01:54:44 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-269-1</guid>
+        <source url="https://radixtalk.com/t/how-to-parse-the-blob-content-returned-from-archive-node/269.rss">How to parse the &quot;blob&quot; content returned from archive node?</source>
+      </item>
+  </channel>
+</rss>

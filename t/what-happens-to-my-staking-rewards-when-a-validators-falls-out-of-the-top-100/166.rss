@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>What happens to my staking rewards when a validators falls out of the Top 100?</title>
+    <link>https://radixtalk.com/t/what-happens-to-my-staking-rewards-when-a-validators-falls-out-of-the-top-100/166</link>
+    <description>If a validator you&#39;re delegated to drops out of the Top 100, it automatically gets removed from the *validator set.*
+This means that the validator node **won&#39;t be making proposals and thus won&#39;t earn any staking rewards**, until it reaches back into the Top 100.
+
+It is advised in those cases to either contact the node runner (to see if he/she has any plans to push the validator back into the top 100) or to request an unstake and join another validator in the top 100.
+Keep in mind that unstaking *always* takes 500 epochs (read more about why [here.](https://radixtalk.com/t/why-does-it-take-so-long-to-unstake-from-a-validator/176))</description>
+    <language>en-GB</language>
+    <lastBuildDate>Fri, 07 Jan 2022 10:23:54 +0000</lastBuildDate>
+    <category>Staking</category>
+    <atom:link href="https://radixtalk.com/t/what-happens-to-my-staking-rewards-when-a-validators-falls-out-of-the-top-100/166.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>What happens to my staking rewards when a validators falls out of the Top 100?</title>
+        <dc:creator><![CDATA[Mattia | MattiaNode]]></dc:creator>
+        <description><![CDATA[
+            <p>If a validator you’re delegated to drops out of the Top 100, it automatically gets removed from the <em>validator set.</em><br>
+This means that the validator node <strong>won’t be making proposals and thus won’t earn any staking rewards</strong>, until it reaches back into the Top 100.</p>
+<p>It is advised in those cases to either contact the node runner (to see if he/she has any plans to push the validator back into the top 100) or to request an unstake and join another validator in the top 100.<br>
+Keep in mind that unstaking <em>always</em> takes 500 epochs (read more about why <a href="https://radixtalk.com/t/why-does-it-take-so-long-to-unstake-from-a-validator/176">here.</a>)</p>
+          <p><a href="https://radixtalk.com/t/what-happens-to-my-staking-rewards-when-a-validators-falls-out-of-the-top-100/166/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/what-happens-to-my-staking-rewards-when-a-validators-falls-out-of-the-top-100/166/1</link>
+        <pubDate>Wed, 29 Dec 2021 19:05:05 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-166-1</guid>
+        <source url="https://radixtalk.com/t/what-happens-to-my-staking-rewards-when-a-validators-falls-out-of-the-top-100/166.rss">What happens to my staking rewards when a validators falls out of the Top 100?</source>
+      </item>
+  </channel>
+</rss>

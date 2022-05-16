@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>What sensitive data is stored by the Radix Desktop Wallet on my computer?</title>
+    <link>https://radixtalk.com/t/what-sensitive-data-is-stored-by-the-radix-desktop-wallet-on-my-computer/112</link>
+    <description>The Radix Desktop Wallet creates a `wallet.json` file that contains the encrypted parameters used to derive your wallet private keys and addresses.
+
+The most sensitive value in the wallet.json file is the `ciphertext` value which is the AES-256-GCM encrypted value of the `entropy` that determines your seed phrase. The safety of this ciphertext value is dependent on:
+
+1. The strength of the password/passphrase that you use to unlock the Radix Desktop Wallet
+2. The strength/security of the AES-256-GCM cipher
+
+For a detailed analysis of how the wallet.json works, see:
+https://docs.radixpool.com/decoding-the-radix-wallet</description>
+    <language>en-GB</language>
+    <lastBuildDate>Mon, 27 Dec 2021 13:19:36 +0000</lastBuildDate>
+    <category>Questions / Help</category>
+    <atom:link href="https://radixtalk.com/t/what-sensitive-data-is-stored-by-the-radix-desktop-wallet-on-my-computer/112.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>What sensitive data is stored by the Radix Desktop Wallet on my computer?</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>The Radix Desktop Wallet creates a <code>wallet.json</code> file that contains the encrypted parameters used to derive your wallet private keys and addresses.</p>
+<p>The most sensitive value in the wallet.json file is the <code>ciphertext</code> value which is the AES-256-GCM encrypted value of the <code>entropy</code> that determines your seed phrase. The safety of this ciphertext value is dependent on:</p>
+<ol>
+<li>The strength of the password/passphrase that you use to unlock the Radix Desktop Wallet</li>
+<li>The strength/security of the AES-256-GCM cipher</li>
+</ol>
+<p>For a detailed analysis of how the wallet.json works, see:</p><aside class="onebox allowlistedgeneric" data-onebox-src="https://docs.radixpool.com/decoding-the-radix-wallet">
+  <header class="source">
+      
+
+      <a href="https://docs.radixpool.com/decoding-the-radix-wallet" target="_blank" rel="noopener">docs.radixpool.com</a>
+  </header>
+
+  <article class="onebox-body">
+    <div class="aspect-image" style="--aspect-ratio:690/362;"><img src="https://app.gitbook.com/share/space/thumbnail/-Ml9yAhhe4CL5oy6Qxa6.png?color=%23000000&amp;logo=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fgitbook-28427.appspot.com%2Fo%2Fspaces%252F-Ml9yAhhe4CL5oy6Qxa6%252Fuploads%252Fsquare%252Fradix_logo_black.png%3Falt%3Dmedia%26token%3Dc323f8c5-5301-4f53-be51-01c63206aa4d&amp;theme=none" class="thumbnail" width="690" height="362"></div>
+
+<h3><a href="https://docs.radixpool.com/decoding-the-radix-wallet" target="_blank" rel="noopener">Decoding the Radix Wallet</a></h3>
+
+  <p>Decoding the wallet.json file to understand how the wallet creates multiple addresses and keys from a single source</p>
+
+
+  </article>
+
+  <div class="onebox-metadata">
+    
+    
+  </div>
+
+  <div style="clear: both"></div>
+</aside>
+
+          <p><a href="https://radixtalk.com/t/what-sensitive-data-is-stored-by-the-radix-desktop-wallet-on-my-computer/112/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/what-sensitive-data-is-stored-by-the-radix-desktop-wallet-on-my-computer/112/1</link>
+        <pubDate>Mon, 27 Dec 2021 13:19:36 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-112-1</guid>
+        <source url="https://radixtalk.com/t/what-sensitive-data-is-stored-by-the-radix-desktop-wallet-on-my-computer/112.rss">What sensitive data is stored by the Radix Desktop Wallet on my computer?</source>
+      </item>
+  </channel>
+</rss>

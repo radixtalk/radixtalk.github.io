@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>How do I locally sign a transaction with a private key?</title>
+    <link>https://radixtalk.com/t/how-do-i-locally-sign-a-transaction-with-a-private-key/157</link>
+    <description>When you are [making a transaction using the Node API](https://docs.radixdlt.com/main/node-api/making-transactions.html), you will need to sign the transaction locally using your private key:
+
+&gt; Next, you need to sign the hashOfBlobToSign using the private key of your account (ie. the &quot;from&quot; account). The details of doing so are outside the scope of this doc, but Radix follows a similar signature method as that of Bitcoin, using ECDSA signatures using EC curve “secp256k1”.
+&gt; 
+&gt; The result should be a DER encoded signature in hex that you will use in the following step.
+
+The following python script will perform the signing operation and produce the correct hex formatted DER encoded signature that you can use to complete the transaction process:
+
+```
+import ecdsa
+import hashlib
+from ecdsa.curves import SECP256k1
+from ecdsa.util import sigencode_der
+
+private_key_hex = &quot;YOUR_PRIVATE_KEY_AS_A_HEX_STRING&quot;
+hash_to_sign = &quot;HASH_OF_BLOB_TO_SIGN&quot;
+
+# Create Private Key object from Private Key Hex String
+signing_key = ecdsa.SigningKey.from_string(bytearray.fromhex(private_key_hex), curve=SECP256k1, hashfunc=hashlib.sha256)
+
+# Use the Private Key to Sign the Transaction Hash
+signed_hash = signing_key.sign_digest(bytearray.fromhex(hash_to_sign), sigencode=sigencode_der)
+
+print(&quot;Signed Hash (DER Format): &quot;, signed_hash.hex())
+```
+
+Note: You will need to change the `YOUR_PRIVATE_KEY_AS_A_HEX_STRING` and `HASH_OF_BLOB_TO_SIGN` variables</description>
+    <language>en-GB</language>
+    <lastBuildDate>Sat, 09 Apr 2022 20:02:12 +0000</lastBuildDate>
+    <category>Developers</category>
+    <atom:link href="https://radixtalk.com/t/how-do-i-locally-sign-a-transaction-with-a-private-key/157.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>How do I locally sign a transaction with a private key?</title>
+        <dc:creator><![CDATA[Faraz | Radstakes.com]]></dc:creator>
+        <description><![CDATA[
+            <p>Once you have the signature, the finalise tx is as follows:</p>
+<pre><code class="lang-auto">curl -s POST -k 'https://mainnet-gateway.radixdlt.com/transaction/finalize' -H 'Content-Type: application/json' \
+-d '{
+  "network_identifier": {
+    "network": "mainnet"
+  },
+  "unsigned_transaction": "&lt;unsigned tx blob&gt;",
+  "signature": {
+    "bytes": "&lt;signature from step above&gt;",
+    "public_key": {
+      "hex": "&lt;your public key&gt;"
+    }
+  },
+  "submit": true
+}'
+</code></pre>
+          <p><a href="https://radixtalk.com/t/how-do-i-locally-sign-a-transaction-with-a-private-key/157/12">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-do-i-locally-sign-a-transaction-with-a-private-key/157/12</link>
+        <pubDate>Sat, 09 Apr 2022 20:02:12 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-157-12</guid>
+        <source url="https://radixtalk.com/t/how-do-i-locally-sign-a-transaction-with-a-private-key/157.rss">How do I locally sign a transaction with a private key?</source>
+      </item>
+      <item>
+        <title>How do I locally sign a transaction with a private key?</title>
+        <dc:creator><![CDATA[Faraz | Radstakes.com]]></dc:creator>
+        <description><![CDATA[
+            <p>Once you have the unsigned_transaction blob, you need to finalise the transaction with this along with the signature.  The signature is a hash of your private key and the payload_to_sign from the construction step.  Here’s a python snippet for that part:</p>
+<pre><code class="lang-auto">import ecdsa
+import hashlib
+from ecdsa.curves import SECP256k1
+from ecdsa.util import sigencode_der
+
+private_key_hex = "&lt;enter private key here&gt;"
+hash_to_sign = "&lt;enter payload to sign here&gt;"
+
+# Create Private Key object from Private Key Hex String
+signing_key = ecdsa.SigningKey.from_string(bytearray.fromhex(private_key_hex), curve=SECP256k1, hashfunc=hashlib.sha256)
+# Use the Private Key to Sign the Transaction Hash
+signed_hash = signing_key.sign_digest(bytearray.fromhex(hash_to_sign), sigencode=sigencode_der)
+
+print("Signed Hash (DER Format): ", signed_hash.hex())
+</code></pre>
+          <p><a href="https://radixtalk.com/t/how-do-i-locally-sign-a-transaction-with-a-private-key/157/11">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-do-i-locally-sign-a-transaction-with-a-private-key/157/11</link>
+        <pubDate>Sat, 09 Apr 2022 20:00:16 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-157-11</guid>
+        <source url="https://radixtalk.com/t/how-do-i-locally-sign-a-transaction-with-a-private-key/157.rss">How do I locally sign a transaction with a private key?</source>
+      </item>
+      <item>
+        <title>How do I locally sign a transaction with a private key?</title>
+        <dc:creator><![CDATA[abel]]></dc:creator>
+        <description><![CDATA[
+            <p>I use  <code>construction/build</code> to build a tx, it returned  <code>{"unsigned_transaction":"070d8ba1cbec4f2779517da61fb","payload_to_sign":"05a987eec4fa0ea073f5dc68b2689fa19bd03bd35f055da9370a1d5457279342"} </code>,</p>
+<p>then I use construction/submit to send tx , <code>{   "network_identifier": {     "network": "mainnet"   },   "signed_transaction": "07030e70947..." }</code></p>
+<p>by locally signed tx, How to construct the content  signed_transaction of the field？</p>
+<p>How the content of the transaction and the signature of the transaction are structured into one field</p>
+<p><a class="mention" href="https://radixtalk.com/u/faraz">@Faraz</a></p>
+          <p><a href="https://radixtalk.com/t/how-do-i-locally-sign-a-transaction-with-a-private-key/157/10">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-do-i-locally-sign-a-transaction-with-a-private-key/157/10</link>
+        <pubDate>Fri, 08 Apr 2022 02:13:57 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-157-10</guid>
+        <source url="https://radixtalk.com/t/how-do-i-locally-sign-a-transaction-with-a-private-key/157.rss">How do I locally sign a transaction with a private key?</source>
+      </item>
+      <item>
+        <title>How do I locally sign a transaction with a private key?</title>
+        <dc:creator><![CDATA[Shawn]]></dc:creator>
+        <description><![CDATA[
+            <p>More comfortable with Python, but it’s been a few years.<br>
+Anything you can provided would be welcomed.<br>
+Thanks!</p>
+          <p><a href="https://radixtalk.com/t/how-do-i-locally-sign-a-transaction-with-a-private-key/157/9">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-do-i-locally-sign-a-transaction-with-a-private-key/157/9</link>
+        <pubDate>Wed, 06 Apr 2022 19:27:03 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-157-9</guid>
+        <source url="https://radixtalk.com/t/how-do-i-locally-sign-a-transaction-with-a-private-key/157.rss">How do I locally sign a transaction with a private key?</source>
+      </item>
+      <item>
+        <title>How do I locally sign a transaction with a private key?</title>
+        <dc:creator><![CDATA[Shawn]]></dc:creator>
+        <description><![CDATA[
+            <p>Yeah, I read over that, but his steps are a 1-way process:<br>
+Generate hex(private) → generate hex(public) → generate account (RDX…etc)</p>
+<p>Wanting to go backwards is what I’m after.</p>
+          <p><a href="https://radixtalk.com/t/how-do-i-locally-sign-a-transaction-with-a-private-key/157/8">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-do-i-locally-sign-a-transaction-with-a-private-key/157/8</link>
+        <pubDate>Wed, 06 Apr 2022 19:26:33 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-157-8</guid>
+        <source url="https://radixtalk.com/t/how-do-i-locally-sign-a-transaction-with-a-private-key/157.rss">How do I locally sign a transaction with a private key?</source>
+      </item>
+      <item>
+        <title>How do I locally sign a transaction with a private key?</title>
+        <dc:creator><![CDATA[Jon-Eric Cook]]></dc:creator>
+        <description><![CDATA[
+            <p>Hi <a class="mention" href="https://radixtalk.com/u/peachy">@Peachy</a> ! Are you comfortable with the programming languages python or elixir?</p>
+          <p><a href="https://radixtalk.com/t/how-do-i-locally-sign-a-transaction-with-a-private-key/157/6">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-do-i-locally-sign-a-transaction-with-a-private-key/157/6</link>
+        <pubDate>Wed, 06 Apr 2022 18:30:01 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-157-6</guid>
+        <source url="https://radixtalk.com/t/how-do-i-locally-sign-a-transaction-with-a-private-key/157.rss">How do I locally sign a transaction with a private key?</source>
+      </item>
+      <item>
+        <title>How do I locally sign a transaction with a private key?</title>
+        <dc:creator><![CDATA[Faraz | Radstakes.com]]></dc:creator>
+        <description><![CDATA[
+            <p>Hi Peachy, I had the exact same problem and couldn’t figure it out so just created a development wallet using Stuart’s script here: <a href="https://radixtalk.com/t/how-to-create-a-radix-wallet-for-development-purposes/61">Development Wallet Creation</a></p>
+<p>This will allow you to create the necessary hex encoded keys to play around with txs using the API.</p>
+<p>I believe 0xOmar in Discord has also created a python library that can extract the private key from the desktop wallet seed, so you could look into that if you want to use the desktop wallet created address.</p>
+          <p><a href="https://radixtalk.com/t/how-do-i-locally-sign-a-transaction-with-a-private-key/157/5">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-do-i-locally-sign-a-transaction-with-a-private-key/157/5</link>
+        <pubDate>Wed, 06 Apr 2022 17:09:21 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-157-5</guid>
+        <source url="https://radixtalk.com/t/how-do-i-locally-sign-a-transaction-with-a-private-key/157.rss">How do I locally sign a transaction with a private key?</source>
+      </item>
+      <item>
+        <title>How do I locally sign a transaction with a private key?</title>
+        <dc:creator><![CDATA[Shawn]]></dc:creator>
+        <description><![CDATA[
+            <p>REALLY dumb question:<br>
+How do I get the private key from a Desktop Wallet-created address?</p>
+<p>I’m trying to test out doing txns via APIs and that step has me stumped.</p>
+<p>Per this: (Step 2)<br>
+<a href="https://docs.radixdlt.com/main/apis/making-transactions.html" class="onebox" target="_blank" rel="noopener nofollow ugc">https://docs.radixdlt.com/main/apis/making-transactions.html</a></p>
+<p><em>Next, you need to sign the payload_to_sign using the private key of your account (ie. the “from” account). The details of doing so are outside the scope of this doc, but Radix follows a similar signature method as that of Bitcoin, using ECDSA signatures using EC curve “secp256k1”.</em><br>
+<em>The result should be a DER encoded signature in hex that you will use in the following step.</em></p>
+<p>I (obviously) know the 24 words, but how does that translate into the longstring needed?</p>
+<p>No idea how to get that value.</p>
+          <p><a href="https://radixtalk.com/t/how-do-i-locally-sign-a-transaction-with-a-private-key/157/4">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-do-i-locally-sign-a-transaction-with-a-private-key/157/4</link>
+        <pubDate>Wed, 06 Apr 2022 13:11:55 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-157-4</guid>
+        <source url="https://radixtalk.com/t/how-do-i-locally-sign-a-transaction-with-a-private-key/157.rss">How do I locally sign a transaction with a private key?</source>
+      </item>
+      <item>
+        <title>How do I locally sign a transaction with a private key?</title>
+        <dc:creator><![CDATA[Faraz | Radstakes.com]]></dc:creator>
+        <description><![CDATA[
+            <p>Hi, if you have your node’s keystore.ks file then you can extract the private key using part of <a class="mention" href="https://radixtalk.com/u/stuart">@Stuart</a>’s unregister script and hex encode it as follows:</p>
+<pre><code class="lang-auto">import bech32
+import ecdsa
+import hashlib
+from cryptography.hazmat.primitives.serialization import pkcs12
+from cryptography.hazmat.primitives.serialization import Encoding, PrivateFormat, NoEncryption
+from cryptography.hazmat.backends import default_backend
+from ecdsa.curves import SECP256k1
+from ecdsa.util import sigencode_der
+import requests
+import json
+
+password = b"&lt;KEYSTORE PASSWORD&gt;"
+
+# Read the Radix Keystore File (which is in PKCS12 format)
+with open("node-keystore.ks", "rb") as f:
+private_key, certificate, additional_certificates = pkcs12.load_key_and_certificates(f.read(), password, default_backend())
+
+# Extract the unencrypted Private Key bytes
+private_key_bytes = private_key.private_bytes(Encoding.DER, PrivateFormat.PKCS8, NoEncryption())
+
+# Convert into Elliptic Curve Digital Signature Algorithm (ecdsa) private key object
+private_key = ecdsa.SigningKey.from_der(private_key_bytes, hashfunc=hashlib.sha256)
+private_key_string = private_key.to_string()
+print("Private Key (Hex): ", private_key_string.hex())
+</code></pre>
+          <p><a href="https://radixtalk.com/t/how-do-i-locally-sign-a-transaction-with-a-private-key/157/3">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-do-i-locally-sign-a-transaction-with-a-private-key/157/3</link>
+        <pubDate>Sat, 19 Mar 2022 13:46:18 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-157-3</guid>
+        <source url="https://radixtalk.com/t/how-do-i-locally-sign-a-transaction-with-a-private-key/157.rss">How do I locally sign a transaction with a private key?</source>
+      </item>
+      <item>
+        <title>How do I locally sign a transaction with a private key?</title>
+        <dc:creator><![CDATA[newworld]]></dc:creator>
+        <description><![CDATA[
+            <p>hey, really really stupid question maybe, but: how do I get my private key hex? I only have my node-config file with password protection how can i read the private key from that?.. I’m sorry if that question is stupid but i am a beginner. brgds and thx</p>
+          <p><a href="https://radixtalk.com/t/how-do-i-locally-sign-a-transaction-with-a-private-key/157/2">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-do-i-locally-sign-a-transaction-with-a-private-key/157/2</link>
+        <pubDate>Sat, 19 Mar 2022 13:01:51 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-157-2</guid>
+        <source url="https://radixtalk.com/t/how-do-i-locally-sign-a-transaction-with-a-private-key/157.rss">How do I locally sign a transaction with a private key?</source>
+      </item>
+      <item>
+        <title>How do I locally sign a transaction with a private key?</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>When you are <a href="https://docs.radixdlt.com/main/node-api/making-transactions.html">making a transaction using the Node API</a>, you will need to sign the transaction locally using your private key:</p>
+<blockquote>
+<p>Next, you need to sign the hashOfBlobToSign using the private key of your account (ie. the “from” account). The details of doing so are outside the scope of this doc, but Radix follows a similar signature method as that of Bitcoin, using ECDSA signatures using EC curve “secp256k1”.</p>
+<p>The result should be a DER encoded signature in hex that you will use in the following step.</p>
+</blockquote>
+<p>The following python script will perform the signing operation and produce the correct hex formatted DER encoded signature that you can use to complete the transaction process:</p>
+<pre><code class="lang-auto">import ecdsa
+import hashlib
+from ecdsa.curves import SECP256k1
+from ecdsa.util import sigencode_der
+
+private_key_hex = "YOUR_PRIVATE_KEY_AS_A_HEX_STRING"
+hash_to_sign = "HASH_OF_BLOB_TO_SIGN"
+
+# Create Private Key object from Private Key Hex String
+signing_key = ecdsa.SigningKey.from_string(bytearray.fromhex(private_key_hex), curve=SECP256k1, hashfunc=hashlib.sha256)
+
+# Use the Private Key to Sign the Transaction Hash
+signed_hash = signing_key.sign_digest(bytearray.fromhex(hash_to_sign), sigencode=sigencode_der)
+
+print("Signed Hash (DER Format): ", signed_hash.hex())
+</code></pre>
+<p>Note: You will need to change the <code>YOUR_PRIVATE_KEY_AS_A_HEX_STRING</code> and <code>HASH_OF_BLOB_TO_SIGN</code> variables</p>
+          <p><a href="https://radixtalk.com/t/how-do-i-locally-sign-a-transaction-with-a-private-key/157/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-do-i-locally-sign-a-transaction-with-a-private-key/157/1</link>
+        <pubDate>Wed, 29 Dec 2021 13:50:54 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-157-1</guid>
+        <source url="https://radixtalk.com/t/how-do-i-locally-sign-a-transaction-with-a-private-key/157.rss">How do I locally sign a transaction with a private key?</source>
+      </item>
+  </channel>
+</rss>

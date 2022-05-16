@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>How do I choose which Validators to delegate stake to?</title>
+    <link>https://radixtalk.com/t/how-do-i-choose-which-validators-to-delegate-stake-to/140</link>
+    <description>There are a number of considerations to make when selecting validators.  Prior to Xi&#39;an release in 2023 when Radix will be fully sharded, there are 100 validators who take part in consensus and earn emissions, so we must choose carefully between these validators to delegate our stake.  Here&#39;s a guide for some of the considerations to make when selecting validators:
+
+**How many?**
+It is advisable to delegate your stake to a number of different validators.  This reduces your risk of missed rewards in the event of a validator going offline or suffering some downtime.  A general rule of thumb is to select 5 validators.  There are however no limits, so you may choose to stake with more or less.
+
+**Decentralisation**
+In the interest of ensuring that the network is truly decentralised, it is preferable for no single validator to have too much of the total stake.  In an ideal world, the top 100 validators would each have 1% of the total stake, so validators who are already above 2% total stake should be avoided.
+
+**Security**
+Similarly to the decentralisation argument above, if one or only a small number of nodes have a considerable amount of stake, this can put the security of the network at risk - for example a malicious actor only would only have to attack a smaller subset of nodes to cause disruption.  As above, it is advisable to stake on nodes with less than 2% stake.
+
+**Fees**
+Validator fees are automatically deducted by the protocol and range from 0% - 3% typically.  Many validators operate nodes with 0% fees, however it should be considered that in order to operate robust infrastructure with backup nodes, monitoring systems and DDoS protection requires a significant financial outlay and it therefore may be a false economy to stake only to 0% fee validators.  Many validators will also not be able to sustain 0% fees indefinitely so the best advice is to contact them to understand what their longer term fee strategy is. (remember it takes ~2 weeks to unstake, so any benefit of 0% fees now could soon be lost if a validator then increases fees to 5% and you need to unstake).  Fees also have much less impact on your staking rewards than uptime (see thread [here](https://radixtalk.com/t/what-impact-do-validator-fees-have-on-my-staking-rewards/168)).  A general rule of thumb is fees up to around 3% are considered fair.
+
+**Uptime**
+Each validator is required to take part in consensus rounds in order to earn emissions.  The number of consensus proposals made are counted along with any proposals that are missed to determine the validator&#39;s uptime.  If a validator&#39;s uptime drops to less than 98% in any single epoch, no emissions are earned for that epoch.  It is therefore recommended to keep an eye on the uptime metric which is recorded on the official [Radix Explorer](https://explorer.radixdlt.com/#/validators), or on community tools such as [Radixscan](https://www.radixscan.io/ValidatorTable.shtml) and [Radix Dashboard](https://www.radixdashboard.com/).  This uptime metric is measured over the last 150 epochs (~4 days) and should be 99.9%+ to ensure consistent high performance.
+
+**Geography/Server Provider**
+Validators are spread throughout the world, the locations of which can be found using [Radix.earth](https://www.radix.earth/) for example. In the interests of decentralisation, it is advisable to choose validators from under-represented geographies.  Furthermore, many validators use cloud providers to host their servers.  It is therefore advisable to consider avoiding the big providers such as Google, AWS, Azure in favour of smaller data centres.  Otherwise an outage at any one data centre could be very detrimental to the performance and security of the network.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Tue, 15 Mar 2022 19:32:36 +0000</lastBuildDate>
+    <category>Staking</category>
+    <atom:link href="https://radixtalk.com/t/how-do-i-choose-which-validators-to-delegate-stake-to/140.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>How do I choose which Validators to delegate stake to?</title>
+        <dc:creator><![CDATA[Jazzer 9F]]></dc:creator>
+        <description><![CDATA[
+            <p>This is pretty cool! Nice idea to have a weighted score.</p>
+          <p><a href="https://radixtalk.com/t/how-do-i-choose-which-validators-to-delegate-stake-to/140/6">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-do-i-choose-which-validators-to-delegate-stake-to/140/6</link>
+        <pubDate>Tue, 15 Mar 2022 19:32:36 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-140-6</guid>
+        <source url="https://radixtalk.com/t/how-do-i-choose-which-validators-to-delegate-stake-to/140.rss">How do I choose which Validators to delegate stake to?</source>
+      </item>
+      <item>
+        <title>How do I choose which Validators to delegate stake to?</title>
+        <dc:creator><![CDATA[Mattia | MattiaNode]]></dc:creator>
+        <description><![CDATA[
+            <p>I suggest new stakers have a look at <a class="mention" href="https://radixtalk.com/u/minhnn">@minhnn</a>’s from EasyStake validator list, which uses a system based on scores to list validators:</p>
+<blockquote>
+<ol>
+<li>
+<strong>Node Stake Score (30%)</strong>: the validators which have smaller stake will have higher score, because this will created the balance, and more decentralization.</li>
+<li>
+<strong>Combined Stake Score (15%)</strong>: similar to the above score, but we based on the combined stakes (some operators run 2 or more validators). You could check the combined information at Florian Pieper’s validators.</li>
+<li>
+<strong>Owner Stake Score (15%)</strong>: Owners who stake more on their validators will have higher score.</li>
+<li>
+<strong>Uptime Score (30%)</strong>: This is very important, the higher uptime means delegators will earn more, the epoch will be faster (so more rewards for all delegators of the top 100 list)</li>
+<li>
+<strong>Fee Score (10%)</strong>: the Fee is needed for covering the hosting and operation cost, but if the Fee is too high this will reduce the rewards.</li>
+</ol>
+</blockquote>
+<p>Check EasyStake Validator List <a href="https://www.easystake.net/radix-validators">here.</a></p>
+          <p><a href="https://radixtalk.com/t/how-do-i-choose-which-validators-to-delegate-stake-to/140/5">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-do-i-choose-which-validators-to-delegate-stake-to/140/5</link>
+        <pubDate>Tue, 15 Mar 2022 11:24:13 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-140-5</guid>
+        <source url="https://radixtalk.com/t/how-do-i-choose-which-validators-to-delegate-stake-to/140.rss">How do I choose which Validators to delegate stake to?</source>
+      </item>
+      <item>
+        <title>How do I choose which Validators to delegate stake to?</title>
+        <dc:creator><![CDATA[Katan &amp; Rory | Radix Logical Moon ]]></dc:creator>
+        <description><![CDATA[
+            <p>And due consideration for all validators following the  <a href="https://radixtalk.com/t/validator-code-of-conduct/320">Validator Code of Conduct - Validators - RadixTalk</a></p>
+          <p><a href="https://radixtalk.com/t/how-do-i-choose-which-validators-to-delegate-stake-to/140/4">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-do-i-choose-which-validators-to-delegate-stake-to/140/4</link>
+        <pubDate>Wed, 02 Feb 2022 16:40:39 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-140-4</guid>
+        <source url="https://radixtalk.com/t/how-do-i-choose-which-validators-to-delegate-stake-to/140.rss">How do I choose which Validators to delegate stake to?</source>
+      </item>
+      <item>
+        <title>How do I choose which Validators to delegate stake to?</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <aside class="onebox allowlistedgeneric" data-onebox-src="https://learn.radixdlt.com/article/how-should-i-choose-validators-to-stake-to">
+  <header class="source">
+      <img src="https://radixtalk.com/uploads/default/original/1X/fed6c22b3f2ffa507d36ebe7838db55b671cb0c4.png" class="site-icon" width="32" height="32">
+
+      <a href="https://learn.radixdlt.com/article/how-should-i-choose-validators-to-stake-to" target="_blank" rel="noopener">learn.radixdlt.com</a>
+  </header>
+
+  <article class="onebox-body">
+    
+
+<h3><a href="https://learn.radixdlt.com/article/how-should-i-choose-validators-to-stake-to" target="_blank" rel="noopener">FAQ: Staking &amp; Validating on Radix</a></h3>
+
+  <p>How should I choose validators to stake to?</p>
+
+
+  </article>
+
+  <div class="onebox-metadata">
+    
+    
+  </div>
+
+  <div style="clear: both"></div>
+</aside>
+
+          <p><a href="https://radixtalk.com/t/how-do-i-choose-which-validators-to-delegate-stake-to/140/3">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-do-i-choose-which-validators-to-delegate-stake-to/140/3</link>
+        <pubDate>Thu, 30 Dec 2021 12:33:03 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-140-3</guid>
+        <source url="https://radixtalk.com/t/how-do-i-choose-which-validators-to-delegate-stake-to/140.rss">How do I choose which Validators to delegate stake to?</source>
+      </item>
+      <item>
+        <title>How do I choose which Validators to delegate stake to?</title>
+        <dc:creator><![CDATA[Mattia | MattiaNode]]></dc:creator>
+        <description><![CDATA[
+            <p>Great article Faraz!</p>
+<p>I would like to add that fees don’t really impact APY that much, for example:</p>
+<blockquote>
+<p>The APY for a node with 1% fee and the APY for a node with 3% fee is very close: <strong>11.68% vs 11.44%.</strong></p>
+</blockquote>
+<p>Thus, uptime is more important than fee!</p>
+<p>Also, as a TL:DR I would add:</p>
+<h2>
+<a name="things-to-consider-to-choose-a-validator-node-1" class="anchor" href="https://radixtalk.com#things-to-consider-to-choose-a-validator-node-1"></a>Things to consider to choose a validator node:</h2>
+<ul>
+<li>Total Delegated Stake (less than 1% would be great)</li>
+<li>Uptime (avoid 98% or lower, prefer 100%)</li>
+<li>Infrastructure (hardware, backup node, backup internet connection…)</li>
+<li>Owner reachability and community presence</li>
+<li>Owner delegation (important for nodes outside the top 100)</li>
+<li>Geographical location</li>
+<li>Fees</li>
+</ul>
+<p>And a few starting tips:<br>
+<img src="https://radixtalk.com/images/emoji/twitter/white_check_mark.png?v=10" title=":white_check_mark:" class="emoji" alt=":white_check_mark:"> DO your own research on the node runner<br>
+<img src="https://radixtalk.com/images/emoji/twitter/white_check_mark.png?v=10" title=":white_check_mark:" class="emoji" alt=":white_check_mark:"> DO delegate to at least 5 different validators with less than 2% of total network stake<br>
+<img src="https://radixtalk.com/images/emoji/twitter/white_check_mark.png?v=10" title=":white_check_mark:" class="emoji" alt=":white_check_mark:"> DO prefer validators to the bottom of the list<br>
+<img src="https://radixtalk.com/images/emoji/twitter/white_check_mark.png?v=10" title=":white_check_mark:" class="emoji" alt=":white_check_mark:"> DO contact the node runner if you have any questions or doubts</p>
+<p><img src="https://radixtalk.com/images/emoji/twitter/x.png?v=10" title=":x:" class="emoji" alt=":x:"> DO NOT blindly stake to the top validators<br>
+<img src="https://radixtalk.com/images/emoji/twitter/x.png?v=10" title=":x:" class="emoji" alt=":x:"> DO NOT put all your eggs in a basket by delegating to just one node<br>
+<img src="https://radixtalk.com/images/emoji/twitter/x.png?v=10" title=":x:" class="emoji" alt=":x:"> DO NOT stake your whole balance. <strong>You need 0.6 XRD to request an unstake to ONE node.</strong></p>
+<p>If you want to read more, check out <a href="https://docs.mattia.wiki/radix/howtovalidator/">this article</a> on my wiki!</p>
+          <p><a href="https://radixtalk.com/t/how-do-i-choose-which-validators-to-delegate-stake-to/140/2">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-do-i-choose-which-validators-to-delegate-stake-to/140/2</link>
+        <pubDate>Wed, 29 Dec 2021 11:37:08 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-140-2</guid>
+        <source url="https://radixtalk.com/t/how-do-i-choose-which-validators-to-delegate-stake-to/140.rss">How do I choose which Validators to delegate stake to?</source>
+      </item>
+      <item>
+        <title>How do I choose which Validators to delegate stake to?</title>
+        <dc:creator><![CDATA[Faraz | Radstakes.com]]></dc:creator>
+        <description><![CDATA[
+            <p>There are a number of considerations to make when selecting validators.  Prior to Xi’an release in 2023 when Radix will be fully sharded, there are 100 validators who take part in consensus and earn emissions, so we must choose carefully between these validators to delegate our stake.  Here’s a guide for some of the considerations to make when selecting validators:</p>
+<p><strong>How many?</strong><br>
+It is advisable to delegate your stake to a number of different validators.  This reduces your risk of missed rewards in the event of a validator going offline or suffering some downtime.  A general rule of thumb is to select 5 validators.  There are however no limits, so you may choose to stake with more or less.</p>
+<p><strong>Decentralisation</strong><br>
+In the interest of ensuring that the network is truly decentralised, it is preferable for no single validator to have too much of the total stake.  In an ideal world, the top 100 validators would each have 1% of the total stake, so validators who are already above 2% total stake should be avoided.</p>
+<p><strong>Security</strong><br>
+Similarly to the decentralisation argument above, if one or only a small number of nodes have a considerable amount of stake, this can put the security of the network at risk - for example a malicious actor only would only have to attack a smaller subset of nodes to cause disruption.  As above, it is advisable to stake on nodes with less than 2% stake.</p>
+<p><strong>Fees</strong><br>
+Validator fees are automatically deducted by the protocol and range from 0% - 3% typically.  Many validators operate nodes with 0% fees, however it should be considered that in order to operate robust infrastructure with backup nodes, monitoring systems and DDoS protection requires a significant financial outlay and it therefore may be a false economy to stake only to 0% fee validators.  Many validators will also not be able to sustain 0% fees indefinitely so the best advice is to contact them to understand what their longer term fee strategy is. (remember it takes ~2 weeks to unstake, so any benefit of 0% fees now could soon be lost if a validator then increases fees to 5% and you need to unstake).  Fees also have much less impact on your staking rewards than uptime (see thread <a href="https://radixtalk.com/t/what-impact-do-validator-fees-have-on-my-staking-rewards/168">here</a>).  A general rule of thumb is fees up to around 3% are considered fair.</p>
+<p><strong>Uptime</strong><br>
+Each validator is required to take part in consensus rounds in order to earn emissions.  The number of consensus proposals made are counted along with any proposals that are missed to determine the validator’s uptime.  If a validator’s uptime drops to less than 98% in any single epoch, no emissions are earned for that epoch.  It is therefore recommended to keep an eye on the uptime metric which is recorded on the official <a href="https://explorer.radixdlt.com/#/validators">Radix Explorer</a>, or on community tools such as <a href="https://www.radixscan.io/ValidatorTable.shtml">Radixscan</a> and <a href="https://www.radixdashboard.com/">Radix Dashboard</a>.  This uptime metric is measured over the last 150 epochs (~4 days) and should be 99.9%+ to ensure consistent high performance.</p>
+<p><strong>Geography/Server Provider</strong><br>
+Validators are spread throughout the world, the locations of which can be found using <a href="https://www.radix.earth/">Radix.earth</a> for example. In the interests of decentralisation, it is advisable to choose validators from under-represented geographies.  Furthermore, many validators use cloud providers to host their servers.  It is therefore advisable to consider avoiding the big providers such as Google, AWS, Azure in favour of smaller data centres.  Otherwise an outage at any one data centre could be very detrimental to the performance and security of the network.</p>
+          <p><a href="https://radixtalk.com/t/how-do-i-choose-which-validators-to-delegate-stake-to/140/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-do-i-choose-which-validators-to-delegate-stake-to/140/1</link>
+        <pubDate>Tue, 28 Dec 2021 21:28:01 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-140-1</guid>
+        <source url="https://radixtalk.com/t/how-do-i-choose-which-validators-to-delegate-stake-to/140.rss">How do I choose which Validators to delegate stake to?</source>
+      </item>
+  </channel>
+</rss>

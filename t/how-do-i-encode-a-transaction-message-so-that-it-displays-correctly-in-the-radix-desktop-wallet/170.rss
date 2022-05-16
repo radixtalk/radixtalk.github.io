@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>How do I encode a transaction message so that it displays correctly in the Radix Desktop Wallet?</title>
+    <link>https://radixtalk.com/t/how-do-i-encode-a-transaction-message-so-that-it-displays-correctly-in-the-radix-desktop-wallet/170</link>
+    <description>The Radix Desktop Wallet expects messages to be hex encoded strings prefixed with `0000`
+
+For example, to send a message that will display as `Hello` in the wallet, you could use the following python snippet:
+
+```
+&quot;0000&quot; + &quot;Hello&quot;.encode(&#39;utf-8&#39;).hex()
+
+# &#39;000048656c6c6f&#39;
+```
+
+The message field in your transaction would be: `000048656c6c6f`
+
+### Message Prefix explained:
+Message Type (Byte 1):
+* 00 -&gt; Plaintext/Unencrypted
+* 01 -&gt; Encrypted
+
+Encryption Scheme (Byte 2):
+* 00 -&gt; None
+* FF -&gt; DH_ADD_EPH_AESGCM256_SCRYPT_000
+
+So a prefix of `0000` means a plaintext message with no encryption scheme.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Wed, 05 Jan 2022 09:58:40 +0000</lastBuildDate>
+    <category>Developers</category>
+    <atom:link href="https://radixtalk.com/t/how-do-i-encode-a-transaction-message-so-that-it-displays-correctly-in-the-radix-desktop-wallet/170.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>How do I encode a transaction message so that it displays correctly in the Radix Desktop Wallet?</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>Part 1: Decrypting Encrypted Messages</p><aside class="quote quote-modified" data-post="1" data-topic="189">
+  <div class="title">
+    <div class="quote-controls"></div>
+    <img loading="lazy" alt="" width="20" height="20" src="https://radixtalk.com/letter_avatar_proxy/v4/letter/s/cab0a1/40.png" class="avatar">
+    <a href="https://radixtalk.com/t/how-to-decrypt-an-encrypted-transaction-message-created-by-the-radix-wallet/189">How to decrypt an encrypted transaction message created by the Radix Wallet</a> <a class="badge-wrapper  bullet" href="https://radixtalk.com/c/developers/24"><span class="badge-category-bg" style="background-color: #F1592A;"></span><span style="" data-drop-close="true" class="badge-category clear-badge" title="Technical topics for Developers">Developers</span></a>
+  </div>
+  <blockquote>
+    <a name="how-to-decrypt-an-encrypted-transaction-message-created-by-the-radix-wallet-1" class="anchor" href="https://radixtalk.com#how-to-decrypt-an-encrypted-transaction-message-created-by-the-radix-wallet-1"></a>How to decrypt an encrypted transaction message created by the Radix Wallet
+
+<a name="h-0-introduction-2" class="anchor" href="https://radixtalk.com#h-0-introduction-2"></a>0. Introduction
+The encryption scheme used by the Radix Wallet is called DH_ADD_EPH_AESGCM256_SCRYPT_000 
+Where: 
+
+DH → <a href="https://cryptobook.nakov.com/asymmetric-key-ciphers/ecdh-key-exchange">(Elliptic Curve) Diffie-Hellman</a> (A key exchange protocol that allows untrusted parties to construct a shared secret)
+ADD → Elliptic Curve Point Addition (The operation we use to create the shared secret)
+EPH → Ephemeral Public Key (A temporary public key that is only used for the purpose of encrypting…
+  </blockquote>
+</aside>
+
+<p>Part 2: Encrypting Messages</p><aside class="quote quote-modified" data-post="1" data-topic="202">
+  <div class="title">
+    <div class="quote-controls"></div>
+    <img loading="lazy" alt="" width="20" height="20" src="https://radixtalk.com/letter_avatar_proxy/v4/letter/s/cab0a1/40.png" class="avatar">
+    <a href="https://radixtalk.com/t/how-to-encrypt-a-transaction-message-that-can-be-read-by-the-radix-wallet/202">How to encrypt a transaction message that can be read by the Radix Wallet</a> <a class="badge-wrapper  bullet" href="https://radixtalk.com/c/developers/24"><span class="badge-category-bg" style="background-color: #F1592A;"></span><span style="" data-drop-close="true" class="badge-category clear-badge" title="Technical topics for Developers">Developers</span></a>
+  </div>
+  <blockquote>
+    TODO: Explain process step by step 
+import os
+import bech32
+import ecdsa
+import hashlib
+from ecdsa.curves import SECP256k1
+from ecdsa.keys import SigningKey, VerifyingKey
+from Crypto.Protocol.KDF import scrypt
+from Crypto.Cipher import AES
+
+# Encrypted Message Parameters
+plaintext_message=b"Hey Bob, this is Alice, you and I can read this message, but no one else."
+alice_private_key_hex = "0000000000000000000000000000000000000000000000000000000000000001"
+bob_wallet_address = "rdx1qspvvprlj3q76ltd…
+  </blockquote>
+</aside>
+
+          <p><a href="https://radixtalk.com/t/how-do-i-encode-a-transaction-message-so-that-it-displays-correctly-in-the-radix-desktop-wallet/170/7">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-do-i-encode-a-transaction-message-so-that-it-displays-correctly-in-the-radix-desktop-wallet/170/7</link>
+        <pubDate>Sat, 01 Jan 2022 19:24:04 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-170-7</guid>
+        <source url="https://radixtalk.com/t/how-do-i-encode-a-transaction-message-so-that-it-displays-correctly-in-the-radix-desktop-wallet/170.rss">How do I encode a transaction message so that it displays correctly in the Radix Desktop Wallet?</source>
+      </item>
+      <item>
+        <title>How do I encode a transaction message so that it displays correctly in the Radix Desktop Wallet?</title>
+        <dc:creator><![CDATA[minhnn | EasyStake.net]]></dc:creator>
+        <description><![CDATA[
+            <p>Thanks a lot, and I am looking forward to your howto post.</p>
+          <p><a href="https://radixtalk.com/t/how-do-i-encode-a-transaction-message-so-that-it-displays-correctly-in-the-radix-desktop-wallet/170/6">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-do-i-encode-a-transaction-message-so-that-it-displays-correctly-in-the-radix-desktop-wallet/170/6</link>
+        <pubDate>Sat, 01 Jan 2022 18:49:45 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-170-6</guid>
+        <source url="https://radixtalk.com/t/how-do-i-encode-a-transaction-message-so-that-it-displays-correctly-in-the-radix-desktop-wallet/170.rss">How do I encode a transaction message so that it displays correctly in the Radix Desktop Wallet?</source>
+      </item>
+      <item>
+        <title>How do I encode a transaction message so that it displays correctly in the Radix Desktop Wallet?</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>I couldn’t find a Java implementation in the <a href="https://github.com/radixdlt/radixdlt" class="inline-onebox">GitHub - radixdlt/radixdlt: Radix monorepo</a> unfortunately. It looks like there is only a Typescript implementation.</p>
+<p>The good news is that I have figured out how to get decryption working with Python <img src="https://radixtalk.com/images/emoji/twitter/raised_hands.png?v=10" title=":raised_hands:" class="emoji" alt=":raised_hands:"><br>
+I’m just working on the encryption now which shouldn’t take long and then I’ll write some <a class="hashtag" href="https://radixtalk.com/tag/howto">#<span>howto</span></a> posts.</p>
+          <p><a href="https://radixtalk.com/t/how-do-i-encode-a-transaction-message-so-that-it-displays-correctly-in-the-radix-desktop-wallet/170/5">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-do-i-encode-a-transaction-message-so-that-it-displays-correctly-in-the-radix-desktop-wallet/170/5</link>
+        <pubDate>Sat, 01 Jan 2022 18:06:38 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-170-5</guid>
+        <source url="https://radixtalk.com/t/how-do-i-encode-a-transaction-message-so-that-it-displays-correctly-in-the-radix-desktop-wallet/170.rss">How do I encode a transaction message so that it displays correctly in the Radix Desktop Wallet?</source>
+      </item>
+      <item>
+        <title>How do I encode a transaction message so that it displays correctly in the Radix Desktop Wallet?</title>
+        <dc:creator><![CDATA[minhnn | EasyStake.net]]></dc:creator>
+        <description><![CDATA[
+            <p>Thanks, I will have a look at your link soon. Btw do you know which Java file also implement this encrypt/decrypt in the <a href="https://github.com/radixdlt/radixdlt" class="inline-onebox" rel="noopener nofollow ugc">GitHub - radixdlt/radixdlt: Radix monorepo</a> Java implementation?</p>
+          <p><a href="https://radixtalk.com/t/how-do-i-encode-a-transaction-message-so-that-it-displays-correctly-in-the-radix-desktop-wallet/170/4">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-do-i-encode-a-transaction-message-so-that-it-displays-correctly-in-the-radix-desktop-wallet/170/4</link>
+        <pubDate>Sat, 01 Jan 2022 17:41:12 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-170-4</guid>
+        <source url="https://radixtalk.com/t/how-do-i-encode-a-transaction-message-so-that-it-displays-correctly-in-the-radix-desktop-wallet/170.rss">How do I encode a transaction message so that it displays correctly in the Radix Desktop Wallet?</source>
+      </item>
+      <item>
+        <title>How do I encode a transaction message so that it displays correctly in the Radix Desktop Wallet?</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>I’m working on that right now <img src="https://radixtalk.com/images/emoji/twitter/slight_smile.png?v=10" title=":slight_smile:" class="emoji" alt=":slight_smile:"></p>
+<p>It uses a form of Elliptic Curve Integrated Encryption Scheme (ECIES) where an ephemeral key, the private key of the sender, and the public key of the receiver are combined to encrypt/decrypt the message. As soon as I have some working code I’ll create <a class="hashtag" href="https://radixtalk.com/tag/howto">#<span>howto</span></a> post.</p>
+<p>The relevant code in Typescript from the <a href="https://github.com/radixdlt/radixdlt-javascript">radixdlt/radixdlt-javascript</a> repo is in this file:   <a href="https://github.com/radixdlt/radixdlt-javascript/blob/main/packages/crypto/src/encryption/messageEncryption.ts">messageEncryption.ts</a></p>
+<p>And here’s a StackOverflow posting by the RadixDLT dev who created the scheme:</p><aside class="onebox stackexchange" data-onebox-src="https://crypto.stackexchange.com/questions/88083/modified-ecies-using-ec-point-add-with-dh-key">
+  <header class="source">
+
+      <a href="https://crypto.stackexchange.com/questions/88083/modified-ecies-using-ec-point-add-with-dh-key" target="_blank" rel="noopener">crypto.stackexchange.com</a>
+  </header>
+
+  <article class="onebox-body">
+      <a href="https://crypto.stackexchange.com/users/60476/sajjon" target="_blank" rel="noopener">
+    <img alt="Sajjon" src="https://radixtalk.com/uploads/default/original/1X/d2a275bd43c2f843e8cb4f0e3cdbee009209d62b.jpeg" class="thumbnail onebox-avatar" width="256" height="256">
+  </a>
+
+<h4>
+  <a href="https://crypto.stackexchange.com/questions/88083/modified-ecies-using-ec-point-add-with-dh-key" target="_blank" rel="noopener">Modified ECIES using EC point ADD with DH key</a>
+</h4>
+
+<div class="tags">
+  <strong>encryption, elliptic-curves, diffie-hellman, ecies</strong>
+</div>
+
+<div class="date">
+  asked by
+  
+  <a href="https://crypto.stackexchange.com/users/60476/sajjon" target="_blank" rel="noopener">
+    Sajjon
+  </a>
+  on <a href="https://crypto.stackexchange.com/questions/88083/modified-ecies-using-ec-point-add-with-dh-key" target="_blank" rel="noopener">10:30AM - 08 Feb 21 UTC</a>
+</div>
+
+  </article>
+
+  <div class="onebox-metadata">
+    
+    
+  </div>
+
+  <div style="clear: both"></div>
+</aside>
+
+          <p><a href="https://radixtalk.com/t/how-do-i-encode-a-transaction-message-so-that-it-displays-correctly-in-the-radix-desktop-wallet/170/3">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-do-i-encode-a-transaction-message-so-that-it-displays-correctly-in-the-radix-desktop-wallet/170/3</link>
+        <pubDate>Fri, 31 Dec 2021 16:11:42 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-170-3</guid>
+        <source url="https://radixtalk.com/t/how-do-i-encode-a-transaction-message-so-that-it-displays-correctly-in-the-radix-desktop-wallet/170.rss">How do I encode a transaction message so that it displays correctly in the Radix Desktop Wallet?</source>
+      </item>
+      <item>
+        <title>How do I encode a transaction message so that it displays correctly in the Radix Desktop Wallet?</title>
+        <dc:creator><![CDATA[minhnn | EasyStake.net]]></dc:creator>
+        <description><![CDATA[
+            <p>Hi Stuart, how could I use the encrypt method DH_ADD_EPH_AESGCM256_SCRYPT_000 ? could you give some python example to encrypt and decrypt the message ?</p>
+          <p><a href="https://radixtalk.com/t/how-do-i-encode-a-transaction-message-so-that-it-displays-correctly-in-the-radix-desktop-wallet/170/2">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-do-i-encode-a-transaction-message-so-that-it-displays-correctly-in-the-radix-desktop-wallet/170/2</link>
+        <pubDate>Fri, 31 Dec 2021 15:41:27 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-170-2</guid>
+        <source url="https://radixtalk.com/t/how-do-i-encode-a-transaction-message-so-that-it-displays-correctly-in-the-radix-desktop-wallet/170.rss">How do I encode a transaction message so that it displays correctly in the Radix Desktop Wallet?</source>
+      </item>
+      <item>
+        <title>How do I encode a transaction message so that it displays correctly in the Radix Desktop Wallet?</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>The Radix Desktop Wallet expects messages to be hex encoded strings prefixed with <code>0000</code></p>
+<p>For example, to send a message that will display as <code>Hello</code> in the wallet, you could use the following python snippet:</p>
+<pre><code class="lang-auto">"0000" + "Hello".encode('utf-8').hex()
+
+# '000048656c6c6f'
+</code></pre>
+<p>The message field in your transaction would be: <code>000048656c6c6f</code></p>
+<h3>
+<a name="message-prefix-explained-1" class="anchor" href="https://radixtalk.com#message-prefix-explained-1"></a>Message Prefix explained:</h3>
+<p>Message Type (Byte 1):</p>
+<ul>
+<li>00 → Plaintext/Unencrypted</li>
+<li>01 → Encrypted</li>
+</ul>
+<p>Encryption Scheme (Byte 2):</p>
+<ul>
+<li>00 → None</li>
+<li>FF → DH_ADD_EPH_AESGCM256_SCRYPT_000</li>
+</ul>
+<p>So a prefix of <code>0000</code> means a plaintext message with no encryption scheme.</p>
+          <p><a href="https://radixtalk.com/t/how-do-i-encode-a-transaction-message-so-that-it-displays-correctly-in-the-radix-desktop-wallet/170/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-do-i-encode-a-transaction-message-so-that-it-displays-correctly-in-the-radix-desktop-wallet/170/1</link>
+        <pubDate>Wed, 29 Dec 2021 19:09:51 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-170-1</guid>
+        <source url="https://radixtalk.com/t/how-do-i-encode-a-transaction-message-so-that-it-displays-correctly-in-the-radix-desktop-wallet/170.rss">How do I encode a transaction message so that it displays correctly in the Radix Desktop Wallet?</source>
+      </item>
+  </channel>
+</rss>

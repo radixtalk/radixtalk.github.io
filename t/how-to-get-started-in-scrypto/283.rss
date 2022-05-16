@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>How to get started in Scrypto</title>
+    <link>https://radixtalk.com/t/how-to-get-started-in-scrypto/283</link>
+    <description>A lot of developers are asking about how to get started in Scrypto. On this post, I am giving guidelines to help you become the Scrypto expert you want to become.
+
+## Should I know Rust before starting ?
+This is a question we get a lot. Knowing the basics of Rust&#39;s syntax will make it easier for you to understand and write Scrypto code, but you don&#39;t need to be an expert in Rust. We suggest people new to Rust to read [A half-hour to learn Rust](https://fasterthanli.me/articles/a-half-hour-to-learn-rust). This quick tutorial will teach just about anyone with a little programming experience enough of the Rust basics to start building with Scrypto quickly.
+
+## From zero to expert
+1. Read the [Scrypto documentation](https://docs.radixdlt.com/main/scrypto/introduction.html) and try the concepts you learn in the [Scrypto Playground](https://play.scrypto-lang.org/)
+2. Install Rust and the Scrypto simulator by following [these instructions](https://docs.radixdlt.com/main/scrypto/getting-started/install-scrypto.html)
+3. Look at Scrypto examples in the [community-scrypto](https://github.com/radixdlt/community-scrypto-examples) GitHub repository
+4. Make your own example and create a pull request to that same repository. This will allow you to get feedback from RDX Works
+5. Participate in the discussions on the Scrypto [Discord](https://discord.gg/tfw6vhY32n) and [Telegram](t.me/RadixDevelopers) channels
+
+After that, it&#39;s only a matter of coding, coding, and more coding. After writing a couple of examples, you will become good enough in Scrypto to make your own project and help people in the community !</description>
+    <language>en-GB</language>
+    <lastBuildDate>Thu, 28 Apr 2022 07:33:08 +0000</lastBuildDate>
+    <category>Scrypto</category>
+    <atom:link href="https://radixtalk.com/t/how-to-get-started-in-scrypto/283.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>How to get started in Scrypto</title>
+        <dc:creator><![CDATA[BlindSigned]]></dc:creator>
+        <description><![CDATA[
+            <p>Release of Scrypto v0.4: first public test <em>environment</em> (not a network running consensus)</p>
+<p>Front-ends can now be hooked into the Radix components (equivalent of smart contracts)<br>
+Authorization system rehaul<br>
+…</p>
+<p>Full feature list: <a href="https://www.radixdlt.com/post/scrypto-v0-4-released" rel="noopener nofollow ugc">https://www.radixdlt.com/post/scrypto-v0-4-released</a></p>
+          <p><a href="https://radixtalk.com/t/how-to-get-started-in-scrypto/283/3">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-to-get-started-in-scrypto/283/3</link>
+        <pubDate>Thu, 28 Apr 2022 07:33:08 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-283-3</guid>
+        <source url="https://radixtalk.com/t/how-to-get-started-in-scrypto/283.rss">How to get started in Scrypto</source>
+      </item>
+      <item>
+        <title>How to get started in Scrypto</title>
+        <dc:creator><![CDATA[Rock Howard]]></dc:creator>
+        <description><![CDATA[
+            <p>In case you need additional details such as setting up and using GitHub, check this blog post: <a href="https://www.publish0x.com/radix-programmers-guild/get-paid-in-radix-dollar-xrd-for-coding-with-scrypto-complet-xzndgve" class="inline-onebox" rel="noopener nofollow ugc">Get Paid in Radix $XRD for Coding with Scrypto - Complete Step by Step Instructions</a></p>
+          <p><a href="https://radixtalk.com/t/how-to-get-started-in-scrypto/283/2">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-to-get-started-in-scrypto/283/2</link>
+        <pubDate>Wed, 26 Jan 2022 16:00:21 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-283-2</guid>
+        <source url="https://radixtalk.com/t/how-to-get-started-in-scrypto/283.rss">How to get started in Scrypto</source>
+      </item>
+      <item>
+        <title>How to get started in Scrypto</title>
+        <dc:creator><![CDATA[Clement]]></dc:creator>
+        <description><![CDATA[
+            <p>A lot of developers are asking about how to get started in Scrypto. On this post, I am giving guidelines to help you become the Scrypto expert you want to become.</p>
+<h2>
+<a name="should-i-know-rust-before-starting-1" class="anchor" href="https://radixtalk.com#should-i-know-rust-before-starting-1"></a>Should I know Rust before starting ?</h2>
+<p>This is a question we get a lot. Knowing the basics of Rust’s syntax will make it easier for you to understand and write Scrypto code, but you don’t need to be an expert in Rust. We suggest people new to Rust to read <a href="https://fasterthanli.me/articles/a-half-hour-to-learn-rust">A half-hour to learn Rust</a>. This quick tutorial will teach just about anyone with a little programming experience enough of the Rust basics to start building with Scrypto quickly.</p>
+<h2>
+<a name="from-zero-to-expert-2" class="anchor" href="https://radixtalk.com#from-zero-to-expert-2"></a>From zero to expert</h2>
+<ol>
+<li>Read the <a href="https://docs.radixdlt.com/main/scrypto/introduction.html">Scrypto documentation</a> and try the concepts you learn in the <a href="https://play.scrypto-lang.org/">Scrypto Playground</a>
+</li>
+<li>Install Rust and the Scrypto simulator by following <a href="https://docs.radixdlt.com/main/scrypto/getting-started/install-scrypto.html">these instructions</a>
+</li>
+<li>Look at Scrypto examples in the <a href="https://github.com/radixdlt/community-scrypto-examples">community-scrypto</a> GitHub repository</li>
+<li>Make your own example and create a pull request to that same repository. This will allow you to get feedback from RDX Works</li>
+<li>Participate in the discussions on the Scrypto <a href="https://discord.gg/tfw6vhY32n">Discord</a> and <a href="https://radixtalk.com">Telegram</a> channels</li>
+</ol>
+<p>After that, it’s only a matter of coding, coding, and more coding. After writing a couple of examples, you will become good enough in Scrypto to make your own project and help people in the community !</p>
+          <p><a href="https://radixtalk.com/t/how-to-get-started-in-scrypto/283/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-to-get-started-in-scrypto/283/1</link>
+        <pubDate>Tue, 25 Jan 2022 20:47:45 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-283-1</guid>
+        <source url="https://radixtalk.com/t/how-to-get-started-in-scrypto/283.rss">How to get started in Scrypto</source>
+      </item>
+  </channel>
+</rss>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Why am I getting a &quot;Store of atom failed&quot; or &quot;Unable to store atom&quot; errors after I upgrade my node to 1.1.0?</title>
+    <link>https://radixtalk.com/t/why-am-i-getting-a-store-of-atom-failed-or-unable-to-store-atom-errors-after-i-upgrade-my-node-to-1-1-0/238</link>
+    <description>You have most likely set `api.transactions.enabled=true` in your node `default.config` file, but have not resynced your Radix database from the beginning.
+
+### Explanation
+The `api.transactions.enabled=true` setting adds new tables to the Radix database to support the new `/transactions` endpoint used by the Gateway API and Data Aggregator. 
+
+If you try to enable this flag with an existing Radix database, it fails with the error messages above. This is because the new transaction tables need to be populated with transaction data from the start of the Radix ledger.
+
+To enable this feature, stop the Radix node, delete the contents of the Radix database directory, and start the Radix node again. The resync process may take up to 24 hours to complete.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Fri, 14 Jan 2022 13:07:38 +0000</lastBuildDate>
+    <category>Validators</category>
+    <atom:link href="https://radixtalk.com/t/why-am-i-getting-a-store-of-atom-failed-or-unable-to-store-atom-errors-after-i-upgrade-my-node-to-1-1-0/238.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Why am I getting a &quot;Store of atom failed&quot; or &quot;Unable to store atom&quot; errors after I upgrade my node to 1.1.0?</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>You have most likely set <code>api.transactions.enabled=true</code> in your node <code>default.config</code> file, but have not resynced your Radix database from the beginning.</p>
+<h3>
+<a name="explanation-1" class="anchor" href="https://radixtalk.com#explanation-1"></a>Explanation</h3>
+<p>The <code>api.transactions.enabled=true</code> setting adds new tables to the Radix database to support the new <code>/transactions</code> endpoint used by the Gateway API and Data Aggregator.</p>
+<p>If you try to enable this flag with an existing Radix database, it fails with the error messages above. This is because the new transaction tables need to be populated with transaction data from the start of the Radix ledger.</p>
+<p>To enable this feature, stop the Radix node, delete the contents of the Radix database directory, and start the Radix node again. The resync process may take up to 24 hours to complete.</p>
+          <p><a href="https://radixtalk.com/t/why-am-i-getting-a-store-of-atom-failed-or-unable-to-store-atom-errors-after-i-upgrade-my-node-to-1-1-0/238/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/why-am-i-getting-a-store-of-atom-failed-or-unable-to-store-atom-errors-after-i-upgrade-my-node-to-1-1-0/238/1</link>
+        <pubDate>Fri, 14 Jan 2022 12:13:23 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-238-1</guid>
+        <source url="https://radixtalk.com/t/why-am-i-getting-a-store-of-atom-failed-or-unable-to-store-atom-errors-after-i-upgrade-my-node-to-1-1-0/238.rss">Why am I getting a &quot;Store of atom failed&quot; or &quot;Unable to store atom&quot; errors after I upgrade my node to 1.1.0?</source>
+      </item>
+  </channel>
+</rss>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Where is the wallet.json file for the Radix Desktop Wallet stored?</title>
+    <link>https://radixtalk.com/t/where-is-the-wallet-json-file-for-the-radix-desktop-wallet-stored/111</link>
+    <description>The location of the wallet.json file is dependent on the operating system you are using:
+
+Win: `%APPDATA%\radix-olympia-desktop-wallet`
+Mac: `~/Library/Application Support/radix-olympia-desktop-wallet`
+Linux: `~/.config/radix-olympia-desktop-wallet`
+Linux: `$XDG_CONFIG_HOME/radix-olympia-desktop-wallet`
+
+### Further reading:
+https://learn.radixdlt.com/article/how-to-completely-reset-your-desktop-wallet-by-deleting-the-keystore</description>
+    <language>en-GB</language>
+    <lastBuildDate>Mon, 27 Dec 2021 13:03:41 +0000</lastBuildDate>
+    <category>Questions / Help</category>
+    <atom:link href="https://radixtalk.com/t/where-is-the-wallet-json-file-for-the-radix-desktop-wallet-stored/111.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Where is the wallet.json file for the Radix Desktop Wallet stored?</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>The location of the wallet.json file is dependent on the operating system you are using:</p>
+<p>Win: <code>%APPDATA%\radix-olympia-desktop-wallet</code><br>
+Mac: <code>~/Library/Application Support/radix-olympia-desktop-wallet</code><br>
+Linux: <code>~/.config/radix-olympia-desktop-wallet</code><br>
+Linux: <code>$XDG_CONFIG_HOME/radix-olympia-desktop-wallet</code></p>
+<h3>
+<a name="further-reading-1" class="anchor" href="https://radixtalk.com#further-reading-1"></a>Further reading:</h3>
+<aside class="onebox allowlistedgeneric" data-onebox-src="https://learn.radixdlt.com/article/how-to-completely-reset-your-desktop-wallet-by-deleting-the-keystore">
+  <header class="source">
+      <img src="https://radixtalk.com/uploads/default/original/1X/fed6c22b3f2ffa507d36ebe7838db55b671cb0c4.png" class="site-icon" width="32" height="32">
+
+      <a href="https://learn.radixdlt.com/article/how-to-completely-reset-your-desktop-wallet-by-deleting-the-keystore" target="_blank" rel="noopener">learn.radixdlt.com</a>
+  </header>
+
+  <article class="onebox-body">
+    
+
+<h3><a href="https://learn.radixdlt.com/article/how-to-completely-reset-your-desktop-wallet-by-deleting-the-keystore" target="_blank" rel="noopener">FAQ: Radix User Guide</a></h3>
+
+  <p>How to completely reset your Desktop Wallet</p>
+
+
+  </article>
+
+  <div class="onebox-metadata">
+    
+    
+  </div>
+
+  <div style="clear: both"></div>
+</aside>
+
+          <p><a href="https://radixtalk.com/t/where-is-the-wallet-json-file-for-the-radix-desktop-wallet-stored/111/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/where-is-the-wallet-json-file-for-the-radix-desktop-wallet-stored/111/1</link>
+        <pubDate>Mon, 27 Dec 2021 13:03:41 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-111-1</guid>
+        <source url="https://radixtalk.com/t/where-is-the-wallet-json-file-for-the-radix-desktop-wallet-stored/111.rss">Where is the wallet.json file for the Radix Desktop Wallet stored?</source>
+      </item>
+  </channel>
+</rss>

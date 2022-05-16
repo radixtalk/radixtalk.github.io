@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:discourse="http://www.discourse.org/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Uncategorized - RadixTalk</title>
+    <link>https://radixtalk.com/c/uncategorized/1</link>
+    <description>Topics in the &#39;Uncategorized&#39; category </description>
+    <language>en-GB</language>
+      <lastBuildDate>Tue, 08 Feb 2022 11:03:33 +0000</lastBuildDate>
+      <atom:link href="https://radixtalk.com/c/uncategorized/1.rss" rel="self" type="application/rss+xml" />
+        <item>
+          <title>Radix Foundation Reducing Stake/Nodes - Discussion</title>
+          <dc:creator><![CDATA[Faraz | Radstakes.com]]></dc:creator>
+          <category>Uncategorized</category>
+          <description><![CDATA[
+            <p>The Radix foundation announced yesterday that they were reducing the number of nodes they operate on the Radix network.  This is great news for the community as it increases the APY for all stakers, whilst providing further decentralisation and opening up 4 new slots for community validators to fill.</p>
+<p><a href="https://www.radixdlt.com/post/rtjl-reduces-stake-as-node-runner-community-steps-up">Radix Announcement - Reducing Stake</a></p>
+<p>Who are the validators you’re looking forward to seeing enter the set?  Is anybody using this as an opportunity to adjust their existing stake?</p>
+            <p><small>5 posts - 4 participants</small></p>
+            <p><a href="https://radixtalk.com/t/radix-foundation-reducing-stake-nodes-discussion/356">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/radix-foundation-reducing-stake-nodes-discussion/356</link>
+          <pubDate>Tue, 08 Feb 2022 11:03:33 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-356</guid>
+          <source url="https://radixtalk.com/t/radix-foundation-reducing-stake-nodes-discussion/356.rss">Radix Foundation Reducing Stake/Nodes - Discussion</source>
+        </item>
+        <item>
+          <title>Welcome to Radix Talk</title>
+          <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+          <category>Uncategorized</category>
+          <description><![CDATA[
+            <p>Radix Talk is a community run forum for topics related to Radix</p>
+            <p><small>2 posts - 1 participant</small></p>
+            <p><a href="https://radixtalk.com/t/welcome-to-radix-talk/36">Read full topic</a></p>
+          ]]></description>
+          <link>https://radixtalk.com/t/welcome-to-radix-talk/36</link>
+          <pubDate>Fri, 24 Dec 2021 17:05:08 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>Yes</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">radixtalk.com-topic-36</guid>
+          <source url="https://radixtalk.com/t/welcome-to-radix-talk/36.rss">Welcome to Radix Talk</source>
+        </item>
+  </channel>
+</rss>

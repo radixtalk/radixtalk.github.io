@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Why do I get &quot;Adjusted frame length exceeds 1048580&quot; error messages in my Radix node logs after I upgrade to 1.1.0?</title>
+    <link>https://radixtalk.com/t/why-do-i-get-adjusted-frame-length-exceeds-1048580-error-messages-in-my-radix-node-logs-after-i-upgrade-to-1-1-0/239</link>
+    <description>It is likely that you have enabled the `proxy_protocol on;` setting in your `nginx.conf` file, but have not added the `network.p2p.use_proxy_protocol=true` setting to your Radix `default.config` file.
+
+### Explanation
+If you have an Nginx reverse proxy in front of your Radix node then the Radix log file will show connections from `127.0.0.1` instead of the real IP address of the node you are connected to.
+
+For example:
+```
+Auth handshake failed on {-&gt; ?@127.0.0.1:57872 | AUTH_HANDSHAKE}: Handshake decryption failed (Invalid MAC)
+```
+
+Nginx can be configured to pass the real IP details to an application by adding the `proxy_protocol on;` setting to the `server` block in the `nginx.conf` file.
+
+The Radix node needs to be configured to expect this additional real IP address details otherwise it fails with an **`Adjusted frame length exceeds 1048580`** error and discards the message.
+
+Add the following line to your Radix `default.config` file to enable the real IP feature and then restart the Radix node.
+
+After the change has been applied you will now see the real ip logged:
+```
+Auth handshake failed on {-&gt; ?@164.132.201.13:51752 | AUTH_HANDSHAKE}: Handshake decryption failed (Invalid MAC)
+```</description>
+    <language>en-GB</language>
+    <lastBuildDate>Sat, 15 Jan 2022 10:58:52 +0000</lastBuildDate>
+    <category>Validators</category>
+    <atom:link href="https://radixtalk.com/t/why-do-i-get-adjusted-frame-length-exceeds-1048580-error-messages-in-my-radix-node-logs-after-i-upgrade-to-1-1-0/239.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Why do I get &quot;Adjusted frame length exceeds 1048580&quot; error messages in my Radix node logs after I upgrade to 1.1.0?</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>It is likely that you have enabled the <code>proxy_protocol on;</code> setting in your <code>nginx.conf</code> file, but have not added the <code>network.p2p.use_proxy_protocol=true</code> setting to your Radix <code>default.config</code> file.</p>
+<h3>
+<a name="explanation-1" class="anchor" href="https://radixtalk.com#explanation-1"></a>Explanation</h3>
+<p>If you have an Nginx reverse proxy in front of your Radix node then the Radix log file will show connections from <code>127.0.0.1</code> instead of the real IP address of the node you are connected to.</p>
+<p>For example:</p>
+<pre><code class="lang-auto">Auth handshake failed on {-&gt; ?@127.0.0.1:57872 | AUTH_HANDSHAKE}: Handshake decryption failed (Invalid MAC)
+</code></pre>
+<p>Nginx can be configured to pass the real IP details to an application by adding the <code>proxy_protocol on;</code> setting to the <code>server</code> block in the <code>nginx.conf</code> file.</p>
+<p>The Radix node needs to be configured to expect this additional real IP address details otherwise it fails with an <strong><code>Adjusted frame length exceeds 1048580</code></strong> error and discards the message.</p>
+<p>Add the following line to your Radix <code>default.config</code> file to enable the real IP feature and then restart the Radix node.</p>
+<p>After the change has been applied you will now see the real ip logged:</p>
+<pre><code class="lang-auto">Auth handshake failed on {-&gt; ?@164.132.201.13:51752 | AUTH_HANDSHAKE}: Handshake decryption failed (Invalid MAC)
+</code></pre>
+          <p><a href="https://radixtalk.com/t/why-do-i-get-adjusted-frame-length-exceeds-1048580-error-messages-in-my-radix-node-logs-after-i-upgrade-to-1-1-0/239/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/why-do-i-get-adjusted-frame-length-exceeds-1048580-error-messages-in-my-radix-node-logs-after-i-upgrade-to-1-1-0/239/1</link>
+        <pubDate>Fri, 14 Jan 2022 12:33:20 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-239-1</guid>
+        <source url="https://radixtalk.com/t/why-do-i-get-adjusted-frame-length-exceeds-1048580-error-messages-in-my-radix-node-logs-after-i-upgrade-to-1-1-0/239.rss">Why do I get &quot;Adjusted frame length exceeds 1048580&quot; error messages in my Radix node logs after I upgrade to 1.1.0?</source>
+      </item>
+  </channel>
+</rss>

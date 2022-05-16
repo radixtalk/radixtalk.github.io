@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Why doesn’t my password work with 1.3.0 of the Radix Wallet?</title>
+    <link>https://radixtalk.com/t/why-doesn-t-my-password-work-with-1-3-0-of-the-radix-wallet/293</link>
+    <description>There is a bug with version 1.3.0 of the Radix Desktop Wallet that returns invalid password after trying to login to your wallet after upgrading.
+
+## Explanation 
+The problem occurs if you were using a Community Archive node before you upgraded.
+
+## Solution
+Update your wallet to version 1.3.1 which fixes this specific issue.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Fri, 28 Jan 2022 04:56:53 +0000</lastBuildDate>
+    <category>Questions / Help</category>
+    <atom:link href="https://radixtalk.com/t/why-doesn-t-my-password-work-with-1-3-0-of-the-radix-wallet/293.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Why doesn’t my password work with 1.3.0 of the Radix Wallet?</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>There is a bug with version 1.3.0 of the Radix Desktop Wallet that returns invalid password after trying to login to your wallet after upgrading.</p>
+<h2>
+<a name="explanation-1" class="anchor" href="https://radixtalk.com#explanation-1"></a>Explanation</h2>
+<p>The problem occurs if you were using a Community Archive node before you upgraded.</p>
+<h2>
+<a name="solution-2" class="anchor" href="https://radixtalk.com#solution-2"></a>Solution</h2>
+<p>Update your wallet to version 1.3.1 which fixes this specific issue.</p>
+          <p><a href="https://radixtalk.com/t/why-doesn-t-my-password-work-with-1-3-0-of-the-radix-wallet/293/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/why-doesn-t-my-password-work-with-1-3-0-of-the-radix-wallet/293/1</link>
+        <pubDate>Thu, 27 Jan 2022 22:40:40 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-293-1</guid>
+        <source url="https://radixtalk.com/t/why-doesn-t-my-password-work-with-1-3-0-of-the-radix-wallet/293.rss">Why doesn’t my password work with 1.3.0 of the Radix Wallet?</source>
+      </item>
+  </channel>
+</rss>

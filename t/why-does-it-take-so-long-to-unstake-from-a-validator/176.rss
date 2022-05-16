@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Why does it take so long to unstake from a Validator?</title>
+    <link>https://radixtalk.com/t/why-does-it-take-so-long-to-unstake-from-a-validator/176</link>
+    <description>Whenever a delegator unstakes from a validator there is a 500 epoch (~12-14 days) delay before the staked tokens are available to be used.  This delay is designed to allow adequate time for any malicious behaviour by a validator to be detected and punished accordingly.
+
+In future, slashing will be implemented that will penalise validators (and their stakers to some extent) in the event of malicious behaviour (such as a double spend).  The details of how slashing will be implemented is not yet known.  See also this topic for further details on slashing:
+
+[Does Radix implement slashing?](https://radixtalk.com/t/does-radix-implement-slashing/175)</description>
+    <language>en-GB</language>
+    <lastBuildDate>Wed, 29 Dec 2021 19:39:54 +0000</lastBuildDate>
+    <category>Staking</category>
+    <atom:link href="https://radixtalk.com/t/why-does-it-take-so-long-to-unstake-from-a-validator/176.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Why does it take so long to unstake from a Validator?</title>
+        <dc:creator><![CDATA[Faraz | Radstakes.com]]></dc:creator>
+        <description><![CDATA[
+            <p>Whenever a delegator unstakes from a validator there is a 500 epoch (~12-14 days) delay before the staked tokens are available to be used.  This delay is designed to allow adequate time for any malicious behaviour by a validator to be detected and punished accordingly.</p>
+<p>In future, slashing will be implemented that will penalise validators (and their stakers to some extent) in the event of malicious behaviour (such as a double spend).  The details of how slashing will be implemented is not yet known.  See also this topic for further details on slashing:</p>
+<p><a href="https://radixtalk.com/t/does-radix-implement-slashing/175">Does Radix implement slashing?</a></p>
+          <p><a href="https://radixtalk.com/t/why-does-it-take-so-long-to-unstake-from-a-validator/176/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/why-does-it-take-so-long-to-unstake-from-a-validator/176/1</link>
+        <pubDate>Wed, 29 Dec 2021 19:21:13 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-176-1</guid>
+        <source url="https://radixtalk.com/t/why-does-it-take-so-long-to-unstake-from-a-validator/176.rss">Why does it take so long to unstake from a Validator?</source>
+      </item>
+  </channel>
+</rss>

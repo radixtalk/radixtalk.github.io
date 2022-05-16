@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>What is the equivalent of gas fees in radix and what are the mechanism to make it dynamic so the fee stays low without human interventions? (hypothetically since governance not implemented yet)</title>
+    <link>https://radixtalk.com/t/what-is-the-equivalent-of-gas-fees-in-radix-and-what-are-the-mechanism-to-make-it-dynamic-so-the-fee-stays-low-without-human-interventions-hypothetically-since-governance-not-implemented-yet/382</link>
+    <description>regarding the low fees, is it by updating to the full node or perhaps competing node? I read somewhere a top 100 validator is building a C# based node implementation.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Thu, 24 Feb 2022 14:08:20 +0000</lastBuildDate>
+    <category>Questions / Help</category>
+    <atom:link href="https://radixtalk.com/t/what-is-the-equivalent-of-gas-fees-in-radix-and-what-are-the-mechanism-to-make-it-dynamic-so-the-fee-stays-low-without-human-interventions-hypothetically-since-governance-not-implemented-yet/382.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>What is the equivalent of gas fees in radix and what are the mechanism to make it dynamic so the fee stays low without human interventions? (hypothetically since governance not implemented yet)</title>
+        <dc:creator><![CDATA[Jazzer 9F]]></dc:creator>
+        <description><![CDATA[
+            <p>Currently transaction costs are hard coded.</p>
+<p>The cost model for smart contacts hasn’t been shared yet, so we don’t exactly know what the equivalent of ‘gas costs’ looks like on Radix.</p>
+<p>Furthermore, there is no mechanism to bid for capacity should capacity become constraint. I know Matt has no warm feelings for auctioning off network capacity. Which I feel is still the best way to deal with congestion if it arises.</p>
+<p>The team hopes that there won’t be congestion between Babylon and Xian…</p>
+<p>As so often the case, we just need to wait longer…</p>
+          <p><a href="https://radixtalk.com/t/what-is-the-equivalent-of-gas-fees-in-radix-and-what-are-the-mechanism-to-make-it-dynamic-so-the-fee-stays-low-without-human-interventions-hypothetically-since-governance-not-implemented-yet/382/2">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/what-is-the-equivalent-of-gas-fees-in-radix-and-what-are-the-mechanism-to-make-it-dynamic-so-the-fee-stays-low-without-human-interventions-hypothetically-since-governance-not-implemented-yet/382/2</link>
+        <pubDate>Thu, 24 Feb 2022 14:08:20 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-382-2</guid>
+        <source url="https://radixtalk.com/t/what-is-the-equivalent-of-gas-fees-in-radix-and-what-are-the-mechanism-to-make-it-dynamic-so-the-fee-stays-low-without-human-interventions-hypothetically-since-governance-not-implemented-yet/382.rss">What is the equivalent of gas fees in radix and what are the mechanism to make it dynamic so the fee stays low without human interventions? (hypothetically since governance not implemented yet)</source>
+      </item>
+      <item>
+        <title>What is the equivalent of gas fees in radix and what are the mechanism to make it dynamic so the fee stays low without human interventions? (hypothetically since governance not implemented yet)</title>
+        <dc:creator><![CDATA[nurazhar]]></dc:creator>
+        <description><![CDATA[
+            <p>regarding the low fees, is it by updating to the full node or perhaps competing node? I read somewhere a top 100 validator is building a C# based node implementation.</p>
+          <p><a href="https://radixtalk.com/t/what-is-the-equivalent-of-gas-fees-in-radix-and-what-are-the-mechanism-to-make-it-dynamic-so-the-fee-stays-low-without-human-interventions-hypothetically-since-governance-not-implemented-yet/382/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/what-is-the-equivalent-of-gas-fees-in-radix-and-what-are-the-mechanism-to-make-it-dynamic-so-the-fee-stays-low-without-human-interventions-hypothetically-since-governance-not-implemented-yet/382/1</link>
+        <pubDate>Thu, 17 Feb 2022 11:10:54 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-382-1</guid>
+        <source url="https://radixtalk.com/t/what-is-the-equivalent-of-gas-fees-in-radix-and-what-are-the-mechanism-to-make-it-dynamic-so-the-fee-stays-low-without-human-interventions-hypothetically-since-governance-not-implemented-yet/382.rss">What is the equivalent of gas fees in radix and what are the mechanism to make it dynamic so the fee stays low without human interventions? (hypothetically since governance not implemented yet)</source>
+      </item>
+  </channel>
+</rss>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>What to do when your validator node can&#39;t connect to the official Radix seed nodes</title>
+    <link>https://radixtalk.com/t/what-to-do-when-your-validator-node-cant-connect-to-the-official-radix-seed-nodes/194</link>
+    <description>A new Radix node contacts one or more seed nodes to get a list of other nodes on the network when it starts up. If the node is unable to connect to one of the [official Radix seed nodes](https://radixtalk.com/t/what-are-the-official-radix-seed-node-addresses/195), then the node will stall.
+
+The seed node is specified in the `default.config` file under the `network.p2p.seed_nodes` key
+
+```text
+network.p2p.seed_nodes=radix://rn1qvw5v4w8llexz99uc9gmeh47qp2h9ax2y3aewm5e6vj5sdx8uuph2vfuvg3@3.221.232.135
+```
+
+It is possible to specify multiple seed nodes by separating them with a comma:
+```text
+network.p2p.seed_nodes=radix://rn1qvw5v4w8llexz99uc9gmeh47qp2h9ax2y3aewm5e6vj5sdx8uuph2vfuvg3@3.221.232.135,radix://rn1qtq336a2nn2269fjes53pynwlytrv0katm6uzlfcyl6m7yscac5g7mh8prw@3.220.101.80,radix://rn1qwa45jjf40vuf9xlq85xym86yegnm95h3g8d4lul5hskrws9gm6ykyx7hsf@3.214.160.245
+```
+
+The good news is that any node on the Radix network can act as a seed node - as long as you know the IP address of the node and node address (rdx1....).
+
+Seed nodes have the following URI format: 
+
+`radix://rn1....@ip.address`
+
+The `rn1...` part is the **Radix Node Address** that is used during the Radix node handshake protocol to created a shared secret for encrypted communication between the two nodes.
+
+Convert the Validator Address into a Node Address: https://radixtalk.com/t/how-to-convert-a-validator-address-rdx-into-a-node-address-rn/196
+
+See also: https://radixtalk.com/t/what-community-archive-nodes-can-i-use-with-the-radix-desktop-wallet/156</description>
+    <language>en-GB</language>
+    <lastBuildDate>Tue, 04 Jan 2022 08:51:08 +0000</lastBuildDate>
+    <category>Validators</category>
+    <atom:link href="https://radixtalk.com/t/what-to-do-when-your-validator-node-cant-connect-to-the-official-radix-seed-nodes/194.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>What to do when your validator node can&#39;t connect to the official Radix seed nodes</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>A new Radix node contacts one or more seed nodes to get a list of other nodes on the network when it starts up. If the node is unable to connect to one of the <a href="https://radixtalk.com/t/what-are-the-official-radix-seed-node-addresses/195">official Radix seed nodes</a>, then the node will stall.</p>
+<p>The seed node is specified in the <code>default.config</code> file under the <code>network.p2p.seed_nodes</code> key</p>
+<pre><code class="lang-nohighlight">network.p2p.seed_nodes=radix://rn1qvw5v4w8llexz99uc9gmeh47qp2h9ax2y3aewm5e6vj5sdx8uuph2vfuvg3@3.221.232.135
+</code></pre>
+<p>It is possible to specify multiple seed nodes by separating them with a comma:</p>
+<pre><code class="lang-nohighlight">network.p2p.seed_nodes=radix://rn1qvw5v4w8llexz99uc9gmeh47qp2h9ax2y3aewm5e6vj5sdx8uuph2vfuvg3@3.221.232.135,radix://rn1qtq336a2nn2269fjes53pynwlytrv0katm6uzlfcyl6m7yscac5g7mh8prw@3.220.101.80,radix://rn1qwa45jjf40vuf9xlq85xym86yegnm95h3g8d4lul5hskrws9gm6ykyx7hsf@3.214.160.245
+</code></pre>
+<p>The good news is that any node on the Radix network can act as a seed node - as long as you know the IP address of the node and node address (rdx1…).</p>
+<p>Seed nodes have the following URI format:</p>
+<p><code>radix://rn1....@ip.address</code></p>
+<p>The <code>rn1...</code> part is the <strong>Radix Node Address</strong> that is used during the Radix node handshake protocol to created a shared secret for encrypted communication between the two nodes.</p>
+<p>Convert the Validator Address into a Node Address: <a href="https://radixtalk.com/t/how-to-convert-a-validator-address-rdx-into-a-node-address-rn/196" class="inline-onebox">How to convert a Validator Address (rv...) into a Node Address (rn...)</a></p>
+<p>See also: <a href="https://radixtalk.com/t/what-community-archive-nodes-can-i-use-with-the-radix-desktop-wallet/156" class="inline-onebox">What community archive nodes can I use with the Radix Desktop Wallet?</a></p>
+          <p><a href="https://radixtalk.com/t/what-to-do-when-your-validator-node-cant-connect-to-the-official-radix-seed-nodes/194/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/what-to-do-when-your-validator-node-cant-connect-to-the-official-radix-seed-nodes/194/1</link>
+        <pubDate>Sun, 02 Jan 2022 14:14:32 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-194-1</guid>
+        <source url="https://radixtalk.com/t/what-to-do-when-your-validator-node-cant-connect-to-the-official-radix-seed-nodes/194.rss">What to do when your validator node can&#39;t connect to the official Radix seed nodes</source>
+      </item>
+  </channel>
+</rss>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Why does the Grafana dashboard not show my node as registered after upgrading to v1.1.0?</title>
+    <link>https://radixtalk.com/t/why-does-the-grafana-dashboard-not-show-my-node-as-registered-after-upgrading-to-v1-1-0/370</link>
+    <description>The official Radix docs for installing the node software includes instructions for setting up Grafana locally to visualise the Prometheus metrics: [Installing Grafana Dashboard](https://docs.radixdlt.com/main/node-and-gateway/install-grafana-dashboard.html)
+
+The panel which shows &quot;Registered Validator&quot; reads a metric from the node info called **validator_registered**.  Unfortunately this metric no longer exists in v1.1.0 so if you are setting up a Grafana dashboard after upgrading to this node version, the panel will incorrectly state &quot;No&quot; even if your node is correctly registered.
+
+![unknown-1|690x354, 100%](upload://dkB4PHMGwSvaukhUEselrlsfft7.png)
+
+The Radix team have acknowledged this and will be updating the Grafana dashboard in a future update.  In the meantime, you can edit the panel and change the metric to **nodeinfo{is_in_validator_set=&quot;true&quot;}**</description>
+    <language>en-GB</language>
+    <lastBuildDate>Tue, 15 Feb 2022 18:16:17 +0000</lastBuildDate>
+    <category>Validators</category>
+    <atom:link href="https://radixtalk.com/t/why-does-the-grafana-dashboard-not-show-my-node-as-registered-after-upgrading-to-v1-1-0/370.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Why does the Grafana dashboard not show my node as registered after upgrading to v1.1.0?</title>
+        <dc:creator><![CDATA[Faraz | Radstakes.com]]></dc:creator>
+        <description><![CDATA[
+            <p>The official Radix docs for installing the node software includes instructions for setting up Grafana locally to visualise the Prometheus metrics: <a href="https://docs.radixdlt.com/main/node-and-gateway/install-grafana-dashboard.html">Installing Grafana Dashboard</a></p>
+<p>The panel which shows “Registered Validator” reads a metric from the node info called <strong>validator_registered</strong>.  Unfortunately this metric no longer exists in v1.1.0 so if you are setting up a Grafana dashboard after upgrading to this node version, the panel will incorrectly state “No” even if your node is correctly registered.</p>
+<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.radixtalk.com/uploads/default/original/1X/5d70555a31037e923d999f756f6aed02acec1a31.png" data-download-href="https://cdn.radixtalk.com/uploads/default/5d70555a31037e923d999f756f6aed02acec1a31" title="unknown-1"><img src="https://cdn.radixtalk.com/uploads/default/optimized/1X/5d70555a31037e923d999f756f6aed02acec1a31_2_690x354.png" alt="unknown-1" data-base62-sha1="dkB4PHMGwSvaukhUEselrlsfft7" width="690" height="354" srcset="https://cdn.radixtalk.com/uploads/default/optimized/1X/5d70555a31037e923d999f756f6aed02acec1a31_2_690x354.png, https://cdn.radixtalk.com/uploads/default/original/1X/5d70555a31037e923d999f756f6aed02acec1a31.png 1.5x, https://cdn.radixtalk.com/uploads/default/original/1X/5d70555a31037e923d999f756f6aed02acec1a31.png 2x" data-small-upload="https://cdn.radixtalk.com/uploads/default/optimized/1X/5d70555a31037e923d999f756f6aed02acec1a31_2_10x10.png"></a></div><p></p>
+<p>The Radix team have acknowledged this and will be updating the Grafana dashboard in a future update.  In the meantime, you can edit the panel and change the metric to <strong>nodeinfo{is_in_validator_set=“true”}</strong></p>
+          <p><a href="https://radixtalk.com/t/why-does-the-grafana-dashboard-not-show-my-node-as-registered-after-upgrading-to-v1-1-0/370/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/why-does-the-grafana-dashboard-not-show-my-node-as-registered-after-upgrading-to-v1-1-0/370/1</link>
+        <pubDate>Tue, 15 Feb 2022 18:16:17 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-370-1</guid>
+        <source url="https://radixtalk.com/t/why-does-the-grafana-dashboard-not-show-my-node-as-registered-after-upgrading-to-v1-1-0/370.rss">Why does the Grafana dashboard not show my node as registered after upgrading to v1.1.0?</source>
+      </item>
+  </channel>
+</rss>

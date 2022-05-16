@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>What happens to my stake if a validator unregisters / goes offline permanently?</title>
+    <link>https://radixtalk.com/t/what-happens-to-my-stake-if-a-validator-unregisters-goes-offline-permanently/135</link>
+    <description>Your staked XRD is safe. You can just request to unstake in the Radix Wallet and your XRD will be unlocked after 500 epochs (about 12 days)
+
+## Longer explaination:
+When you stake with a validator, a record is written to the Radix ledger that delegates a quantity of XRD to that validator. The staked XRD never leaves your wallet and still belongs to you.
+
+If a validator decides to unregister as a validator, or just stops running the validator node then your stake will no longer receive further staking rewards - but you will not lose any of your staked XRD and the rewards you have already earned.
+
+You will need to unstake from the validator in the Radix Wallet which will write a record to the Radix ledger to unlock the stake from the validator. The unstake operation is part of the Radix protocol and so it can always be performed irrespective of whether your staked validator is running or not.
+
+The unstaking process will take 500 epochs (about 12 days) to unlock and then you will be free to restake with another validator.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Tue, 28 Dec 2021 13:27:33 +0000</lastBuildDate>
+    <category>Questions / Help</category>
+    <atom:link href="https://radixtalk.com/t/what-happens-to-my-stake-if-a-validator-unregisters-goes-offline-permanently/135.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>What happens to my stake if a validator unregisters / goes offline permanently?</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>Your staked XRD is safe. You can just request to unstake in the Radix Wallet and your XRD will be unlocked after 500 epochs (about 12 days)</p>
+<h2>
+<a name="longer-explaination-1" class="anchor" href="https://radixtalk.com#longer-explaination-1"></a>Longer explaination:</h2>
+<p>When you stake with a validator, a record is written to the Radix ledger that delegates a quantity of XRD to that validator. The staked XRD never leaves your wallet and still belongs to you.</p>
+<p>If a validator decides to unregister as a validator, or just stops running the validator node then your stake will no longer receive further staking rewards - but you will not lose any of your staked XRD and the rewards you have already earned.</p>
+<p>You will need to unstake from the validator in the Radix Wallet which will write a record to the Radix ledger to unlock the stake from the validator. The unstake operation is part of the Radix protocol and so it can always be performed irrespective of whether your staked validator is running or not.</p>
+<p>The unstaking process will take 500 epochs (about 12 days) to unlock and then you will be free to restake with another validator.</p>
+          <p><a href="https://radixtalk.com/t/what-happens-to-my-stake-if-a-validator-unregisters-goes-offline-permanently/135/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/what-happens-to-my-stake-if-a-validator-unregisters-goes-offline-permanently/135/1</link>
+        <pubDate>Tue, 28 Dec 2021 13:06:56 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-135-1</guid>
+        <source url="https://radixtalk.com/t/what-happens-to-my-stake-if-a-validator-unregisters-goes-offline-permanently/135.rss">What happens to my stake if a validator unregisters / goes offline permanently?</source>
+      </item>
+  </channel>
+</rss>

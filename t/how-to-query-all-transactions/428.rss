@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>How to query all transactions?</title>
+    <link>https://radixtalk.com/t/how-to-query-all-transactions/428</link>
+    <description>how to query all transactions?</description>
+    <language>en-GB</language>
+    <lastBuildDate>Thu, 07 Apr 2022 02:13:48 +0000</lastBuildDate>
+    <category>Developers</category>
+    <atom:link href="https://radixtalk.com/t/how-to-query-all-transactions/428.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>How to query all transactions?</title>
+        <dc:creator><![CDATA[abel]]></dc:creator>
+        <description><![CDATA[
+            <p>yeah, need all  historic transactions , likely exchange, I need to find  all transactions of ourselves  by  node of my</p>
+          <p><a href="https://radixtalk.com/t/how-to-query-all-transactions/428/3">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-to-query-all-transactions/428/3</link>
+        <pubDate>Thu, 07 Apr 2022 02:13:48 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-428-3</guid>
+        <source url="https://radixtalk.com/t/how-to-query-all-transactions/428.rss">How to query all transactions?</source>
+      </item>
+      <item>
+        <title>How to query all transactions?</title>
+        <dc:creator><![CDATA[Jazzer 9F]]></dc:creator>
+        <description><![CDATA[
+            <p>Hi and welcome Abel,</p>
+<p>We might need a bit more context here:</p>
+<ul>
+<li>Do you need all historic transactions?</li>
+<li>For one address? Or the whole database?</li>
+</ul>
+<p>Maybe you want to catch transactions as they happen? In which case <a href="https://clana.io/" rel="noopener nofollow ugc">https://clana.io/</a> by Florian can be a great help.</p>
+          <p><a href="https://radixtalk.com/t/how-to-query-all-transactions/428/2">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-to-query-all-transactions/428/2</link>
+        <pubDate>Wed, 06 Apr 2022 13:30:09 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-428-2</guid>
+        <source url="https://radixtalk.com/t/how-to-query-all-transactions/428.rss">How to query all transactions?</source>
+      </item>
+      <item>
+        <title>How to query all transactions?</title>
+        <dc:creator><![CDATA[abel]]></dc:creator>
+        <description><![CDATA[
+            <p>how to query all transactions?</p>
+          <p><a href="https://radixtalk.com/t/how-to-query-all-transactions/428/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/how-to-query-all-transactions/428/1</link>
+        <pubDate>Wed, 06 Apr 2022 01:43:22 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-428-1</guid>
+        <source url="https://radixtalk.com/t/how-to-query-all-transactions/428.rss">How to query all transactions?</source>
+      </item>
+  </channel>
+</rss>

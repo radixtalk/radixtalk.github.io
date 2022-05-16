@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Introducing 🍕 MattiaNode</title>
+    <link>https://radixtalk.com/t/introducing-mattianode/152</link>
+    <description>Validator Name - `🍕 MattiaNode (IT🇮🇹) `
+Validator ID - `rv1qvjz86qwa7l80y8vhfuhz6957ch6texdmpk98rg2gtakhr0avan4jplkxy7`
+Fees: `1.5%`
+
+**Website**
+
+* [stake.mattia.wiki](http://stake.mattia.wiki/)
+* [Radix Explorer](https://explorer.radixdlt.com/#/validators/rv1qvjz86qwa7l80y8vhfuhz6957ch6texdmpk98rg2gtakhr0avan4jplkxy7)
+
+**Contact Details**
+
+* Telegram: [🍕MattiaNode (IT🇮🇹) | stake.mattia.wiki](https://t.me/mattiaxrd)
+* Telegram (personal): [@mattiabe98](https://t.me/mattiabe98)
+* Discord: `Mattia#9426`
+* Twitter: [0xMattia](https://twitter.com/0xMattia)
+
+**Languages**
+* English
+* Italian
+
+**About Me/Us** 
+Hello! My name is *Mattia* and I&#39;m a 23 years old Telecommunications Engineering 📡 student.
+I&#39;ve been following Radix since 2013 when it was still called eMunie. I decided to run my own validator to have an active part in the community and to promote decentralization. 
+
+I also wrote my own mini &quot;wiki&quot; to help newcomers with easy to follow how-to guides for staking and much more. You can find me on Radix&#39;s Discord or Telegram channel, I often post there!
+
+**Validator Infrastructure**
+MattiaNode is running on a beefy self-hosted server in Italy, with an **AMD Ryzen, 48GB of DDR4 3600MHz RAM, 1TB of NVMe SSD storage (WD SN750) and 1Gbit/s fiber connection**, all backed up with an UPS that can keep everything running at least for an hour and a 4G LTE redundant internet connection.
+
+We also have a **backup node** running in Finland with the **same CPU, 64GB of DDR4 RAM,  1TB of NVMe SSD storage and 1Gbit/s fiber connection**, always synched and ready to failover. 
+
+Everything is monitored with Grafana and multiple alerts are setup with UptimeRobot :robot:, PagerDuty and more.
+
+**Experience**
+I&#39;ve been running servers in my homelab for quite some years now; I started small, with just some SBC (single-board computer), and now I have multiple VMs and LXC containers running across all my servers.
+My experience with crypto goes way back though: I got into crypto around 2012, when Bitcointalk was the core of all cryptocurrencies. I mined Bitcoins and Ethereum using my own gaming PC and had lots of fun learning all kinds of new things. 
+I&#39;ve been following Radix&#39;s development since 2013 and also participated in eMunie&#39;s beta-testing.
+
+**Why should delegators stake to your validator?**
+I&#39;m pretty sure that I&#39;m the only validator node running on a self hosted server, right here where I live! 
+By delegating your stake to my validator you&#39;re promoting ***geographical decentralization*** and ***provider decentralization***: there aren&#39;t a lot of nodes running in Italy and none that are running on my ISP.
+Most are hosted on Amazon&#39;s AWS, Google Cloud, Azure or Hetzner, while my node is independent from all those companies. 
+If all those companies were to go down, most validators would be offline but mine would be still alive and kicking :grinning_face_with_smiling_eyes:
+
+I&#39;m also very dedicated to running a node since it fits two of my hobbies: cryptocurrencies and managing servers :grinning:
+
+I successfully completed **KYC with Radix Foundation** and I am active in both Discord and Telegram groups, helping everyone that needs it and maybe even writing an article just to help them on my wiki.
+
+All my XRD are staked at my own node, so you can bet that I monitor it closely :wink:
+Oh and I&#39;m an **OciSwap partner**! You get 10% more OCI if you stake at my node. Meow :heart_eyes_cat:
+
+Don&#39;t hesitate to contact me if you have any questions!</description>
+    <language>en-GB</language>
+    <lastBuildDate>Fri, 21 Jan 2022 11:52:40 +0000</lastBuildDate>
+    <category>Validator Introductions</category>
+    <atom:link href="https://radixtalk.com/t/introducing-mattianode/152.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Introducing 🍕 MattiaNode</title>
+        <dc:creator><![CDATA[Mattia | MattiaNode]]></dc:creator>
+        <description><![CDATA[
+            <p>Validator Name - <code>🍕 MattiaNode (IT🇮🇹) </code><br>
+Validator ID - <code>rv1qvjz86qwa7l80y8vhfuhz6957ch6texdmpk98rg2gtakhr0avan4jplkxy7</code><br>
+Fees: <code>1.5%</code></p>
+<p><strong>Website</strong></p>
+<ul>
+<li><a href="http://stake.mattia.wiki/">stake.mattia.wiki</a></li>
+<li><a href="https://explorer.radixdlt.com/#/validators/rv1qvjz86qwa7l80y8vhfuhz6957ch6texdmpk98rg2gtakhr0avan4jplkxy7">Radix Explorer</a></li>
+</ul>
+<p><strong>Contact Details</strong></p>
+<ul>
+<li>Telegram: <a href="https://t.me/mattiaxrd"><img src="https://cdn.radixtalk.com/images/emoji/twitter/pizza.png?v=12" title=":pizza:" class="emoji" alt=":pizza:">MattiaNode (IT​:it:) | stake.mattia.wiki</a>
+</li>
+<li>Telegram (personal): <a href="https://t.me/mattiabe98">@mattiabe98</a>
+</li>
+<li>Discord: <code>Mattia#9426</code>
+</li>
+<li>Twitter: <a href="https://twitter.com/0xMattia">0xMattia</a>
+</li>
+</ul>
+<p><strong>Languages</strong></p>
+<ul>
+<li>English</li>
+<li>Italian</li>
+</ul>
+<p><strong>About Me/Us</strong><br>
+Hello! My name is <em>Mattia</em> and I’m a 23 years old Telecommunications Engineering <img src="https://cdn.radixtalk.com/images/emoji/twitter/satellite.png?v=12" title=":satellite:" class="emoji" alt=":satellite:"> student.<br>
+I’ve been following Radix since 2013 when it was still called eMunie. I decided to run my own validator to have an active part in the community and to promote decentralization.</p>
+<p>I also wrote my own mini “wiki” to help newcomers with easy to follow how-to guides for staking and much more. You can find me on Radix’s Discord or Telegram channel, I often post there!</p>
+<p><strong>Validator Infrastructure</strong><br>
+MattiaNode is running on a beefy self-hosted server in Italy, with an <strong>AMD Ryzen, 48GB of DDR4 3600MHz RAM, 1TB of NVMe SSD storage (WD SN750) and 1Gbit/s fiber connection</strong>, all backed up with an UPS that can keep everything running at least for an hour and a 4G LTE redundant internet connection.</p>
+<p>We also have a <strong>backup node</strong> running in Finland with the <strong>same CPU, 64GB of DDR4 RAM,  1TB of NVMe SSD storage and 1Gbit/s fiber connection</strong>, always synched and ready to failover.</p>
+<p>Everything is monitored with Grafana and multiple alerts are setup with UptimeRobot <img src="https://cdn.radixtalk.com/images/emoji/twitter/robot.png?v=12" title=":robot:" class="emoji" alt=":robot:">, PagerDuty and more.</p>
+<p><strong>Experience</strong><br>
+I’ve been running servers in my homelab for quite some years now; I started small, with just some SBC (single-board computer), and now I have multiple VMs and LXC containers running across all my servers.<br>
+My experience with crypto goes way back though: I got into crypto around 2012, when Bitcointalk was the core of all cryptocurrencies. I mined Bitcoins and Ethereum using my own gaming PC and had lots of fun learning all kinds of new things.<br>
+I’ve been following Radix’s development since 2013 and also participated in eMunie’s beta-testing.</p>
+<p><strong>Why should delegators stake to your validator?</strong><br>
+I’m pretty sure that I’m the only validator node running on a self hosted server, right here where I live!<br>
+By delegating your stake to my validator you’re promoting <em><strong>geographical decentralization</strong></em> and <em><strong>provider decentralization</strong></em>: there aren’t a lot of nodes running in Italy and none that are running on my ISP.<br>
+Most are hosted on Amazon’s AWS, Google Cloud, Azure or Hetzner, while my node is independent from all those companies.<br>
+If all those companies were to go down, most validators would be offline but mine would be still alive and kicking <img src="https://cdn.radixtalk.com/images/emoji/twitter/grinning_face_with_smiling_eyes.png?v=12" title=":grinning_face_with_smiling_eyes:" class="emoji" alt=":grinning_face_with_smiling_eyes:"></p>
+<p>I’m also very dedicated to running a node since it fits two of my hobbies: cryptocurrencies and managing servers <img src="https://cdn.radixtalk.com/images/emoji/twitter/grinning.png?v=12" title=":grinning:" class="emoji" alt=":grinning:"></p>
+<p>I successfully completed <strong>KYC with Radix Foundation</strong> and I am active in both Discord and Telegram groups, helping everyone that needs it and maybe even writing an article just to help them on my wiki.</p>
+<p>All my XRD are staked at my own node, so you can bet that I monitor it closely <img src="https://cdn.radixtalk.com/images/emoji/twitter/wink.png?v=12" title=":wink:" class="emoji" alt=":wink:"><br>
+Oh and I’m an <strong>OciSwap partner</strong>! You get 10% more OCI if you stake at my node. Meow <img src="https://cdn.radixtalk.com/images/emoji/twitter/heart_eyes_cat.png?v=12" title=":heart_eyes_cat:" class="emoji" alt=":heart_eyes_cat:"></p>
+<p>Don’t hesitate to contact me if you have any questions!</p>
+          <p><a href="https://radixtalk.com/t/introducing-mattianode/152/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/introducing-mattianode/152/1</link>
+        <pubDate>Wed, 29 Dec 2021 11:01:53 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-152-1</guid>
+        <source url="https://radixtalk.com/t/introducing-mattianode/152.rss">Introducing 🍕 MattiaNode</source>
+      </item>
+  </channel>
+</rss>

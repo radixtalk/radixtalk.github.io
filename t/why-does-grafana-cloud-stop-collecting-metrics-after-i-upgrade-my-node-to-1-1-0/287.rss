@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Why does Grafana Cloud stop collecting metrics after I upgrade my node to 1.1.0?</title>
+    <link>https://radixtalk.com/t/why-does-grafana-cloud-stop-collecting-metrics-after-i-upgrade-my-node-to-1-1-0/287</link>
+    <description>The endpoint for the Prometheus / Grafana metrics has changed from `/metrics` to `/prometheus/metrics` from version 1.1.0 onwards.
+
+You will need to modify your `/etc/grafana-agent.yaml` file to include the `metrics_path: /prometheus/metrics` under the `job_name` row:
+
+Before:
+```yaml
+prometheus:
+  configs:
+  - name: integrations
+    scrape_configs:
+      - job_name: my_job_name
+        static_configs:
+...
+```
+
+After:
+```yaml
+prometheus:
+  configs:
+  - name: integrations
+    scrape_configs:
+      - job_name: my_job_name
+        metrics_path: /prometheus/metrics
+        static_configs:
+...
+```</description>
+    <language>en-GB</language>
+    <lastBuildDate>Thu, 03 Feb 2022 21:09:11 +0000</lastBuildDate>
+    <category>Validators</category>
+    <atom:link href="https://radixtalk.com/t/why-does-grafana-cloud-stop-collecting-metrics-after-i-upgrade-my-node-to-1-1-0/287.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Why does Grafana Cloud stop collecting metrics after I upgrade my node to 1.1.0?</title>
+        <dc:creator><![CDATA[Jazzer 9F]]></dc:creator>
+        <description><![CDATA[
+            <p>This is such a powerful knowledge base. Thanks!</p>
+          <p><a href="https://radixtalk.com/t/why-does-grafana-cloud-stop-collecting-metrics-after-i-upgrade-my-node-to-1-1-0/287/2">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/why-does-grafana-cloud-stop-collecting-metrics-after-i-upgrade-my-node-to-1-1-0/287/2</link>
+        <pubDate>Thu, 03 Feb 2022 21:09:11 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-287-2</guid>
+        <source url="https://radixtalk.com/t/why-does-grafana-cloud-stop-collecting-metrics-after-i-upgrade-my-node-to-1-1-0/287.rss">Why does Grafana Cloud stop collecting metrics after I upgrade my node to 1.1.0?</source>
+      </item>
+      <item>
+        <title>Why does Grafana Cloud stop collecting metrics after I upgrade my node to 1.1.0?</title>
+        <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[
+            <p>The endpoint for the Prometheus / Grafana metrics has changed from <code>/metrics</code> to <code>/prometheus/metrics</code> from version 1.1.0 onwards.</p>
+<p>You will need to modify your <code>/etc/grafana-agent.yaml</code> file to include the <code>metrics_path: /prometheus/metrics</code> under the <code>job_name</code> row:</p>
+<p>Before:</p>
+<pre><code class="lang-auto">prometheus:
+  configs:
+  - name: integrations
+    scrape_configs:
+      - job_name: my_job_name
+        static_configs:
+...
+</code></pre>
+<p>After:</p>
+<pre><code class="lang-auto">prometheus:
+  configs:
+  - name: integrations
+    scrape_configs:
+      - job_name: my_job_name
+        metrics_path: /prometheus/metrics
+        static_configs:
+...
+</code></pre>
+          <p><a href="https://radixtalk.com/t/why-does-grafana-cloud-stop-collecting-metrics-after-i-upgrade-my-node-to-1-1-0/287/1">Read full topic</a></p>
+        ]]></description>
+        <link>https://radixtalk.com/t/why-does-grafana-cloud-stop-collecting-metrics-after-i-upgrade-my-node-to-1-1-0/287/1</link>
+        <pubDate>Wed, 26 Jan 2022 12:05:43 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-287-1</guid>
+        <source url="https://radixtalk.com/t/why-does-grafana-cloud-stop-collecting-metrics-after-i-upgrade-my-node-to-1-1-0/287.rss">Why does Grafana Cloud stop collecting metrics after I upgrade my node to 1.1.0?</source>
+      </item>
+  </channel>
+</rss>
