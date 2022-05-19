@@ -87,7 +87,7 @@ Developer: jonericcook#4697 on Discord</description>
         <title>Radixir - Elixir Radix Library</title>
         <dc:creator><![CDATA[Jon-Eric Cook]]></dc:creator>
         <description><![CDATA[
-            <p>v0.0.2 is released! <a href="https://hexdocs.pm/radixir/readme.html" class="inline-onebox" rel="noopener nofollow ugc">Radixir — radixir v0.0.2</a></p>
+            <p>v0.0.2 is released! <a href="https://hexdocs.pm/radixir/readme.html" class="inline-onebox" rel="noopener nofollow ugc">Radixir — radixir v0.0.4</a></p>
           <p><a href="https://radixtalk.com/t/radixir-elixir-radix-library/334/3">Read full topic</a></p>
         ]]></description>
         <link>https://radixtalk.com/t/radixir-elixir-radix-library/334/3</link>
@@ -119,11 +119,11 @@ Developer: jonericcook#4697 on Discord</description>
   </header>
 
   <article class="onebox-body">
-    <div class="aspect-image" style="--aspect-ratio:690/345;"><img src="https://cdn.radixtalk.com/uploads/default/optimized/1X/47ece4af674f94192cfc9cbbb6ad3bcde64f2f5d_2_690x345.png" class="thumbnail" width="690" height="345" srcset="https://cdn.radixtalk.com/uploads/default/optimized/1X/47ece4af674f94192cfc9cbbb6ad3bcde64f2f5d_2_690x345.png, https://cdn.radixtalk.com/uploads/default/optimized/1X/47ece4af674f94192cfc9cbbb6ad3bcde64f2f5d_2_1035x517.png 1.5x, https://cdn.radixtalk.com/uploads/default/original/1X/47ece4af674f94192cfc9cbbb6ad3bcde64f2f5d.png 2x" data-small-upload="https://cdn.radixtalk.com/uploads/default/optimized/1X/47ece4af674f94192cfc9cbbb6ad3bcde64f2f5d_2_10x10.png"></div>
+    <div class="aspect-image" style="--aspect-ratio:690/345;"><img src="https://opengraph.githubassets.com/d87311adad4ff9f4db89d734ffb2a1fcf3f622dd669c4f7434d038d1ca676b41/radixir/radixir" class="thumbnail" width="690" height="345"></div>
 
-<h3><a href="https://github.com/radixir/radixir" target="_blank" rel="noopener">GitHub - radixir/radixir: An Elixir wrapper for Radix APIs and functionality.</a></h3>
+<h3><a href="https://github.com/radixir/radixir" target="_blank" rel="noopener">GitHub - radixir/radixir: Radix + Elixir</a></h3>
 
-  <p>An Elixir wrapper for Radix APIs and functionality. - GitHub - radixir/radixir: An Elixir wrapper for Radix APIs and functionality.</p>
+  <p>Radix + Elixir. Contribute to radixir/radixir development by creating an account on GitHub.</p>
 
 
   </article>

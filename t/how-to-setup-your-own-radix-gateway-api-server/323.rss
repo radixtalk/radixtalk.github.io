@@ -36,11 +36,11 @@ The result of this setup is Gateway API running on <code>http://&lt;server_ip&gt
 
 ## Introduction
 The setup includes: Radix Full Node + Data Aggregator + Gateway API + Postres DB used by Aggregator + Read-only Replica used by the Gateway API itself, all running on the same dedicated server.
-I used `Intel Xeon W-2145, 8/16x 3.70GHz, 128Gb RAM, 4x 480 GB SSD` but half of RAM/CPU should be more than enough for a single consumer (to separate Porsgres from Node DB we still need at least 3 SSDs for the scenario with replica or 2 SSDs without it).
+I used `Intel Xeon W-2145, 8/16x 3.70GHz, 128Gb RAM, 4x 480 Gb SSD` but half of RAM/CPU should be more than enough for a single consumer (to separate Porsgres from Node DB we still need at least 3 SSDs for the scenario with replica or 2 SSDs without it).
 
 The result of this setup is Gateway API running on `http://&lt;server_ip&gt;:5308`, Core/System API - on `https://&lt;server_ip&gt;:443` (requires authentication with admin/superadmin passwords).
 
-Closing all internal ports - TBD.
+This doc is based on Radix [Node](https://docs.radixdlt.com/main/node-and-gateway/node-introduction.html) and [Network Gateway](https://docs.radixdlt.com/main/node-and-gateway/network-gateway.html) setup guides.
 </code></pre>
     This file has been truncated. <a href="https://gist.github.com/Mleekko/8168601a61ff4f9cc932a5425c5ccd37" target="_blank" rel="noopener nofollow ugc">show original</a>
   <h5>.env</h5>

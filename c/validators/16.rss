@@ -16,14 +16,14 @@
 <p>However, there may be other metrics that node runners desire that are not currently present in the core API, but may be present in the Gateway.  This post explains how to import REST API data directly into Grafana.  For this example we will use Validator Total Stake (this is currently not available in the Core API, but can be requested through the Gateway).</p>
 <ol>
 <li>Find the Infinity data source by selecting configuration–&gt;data sources–&gt;add data source–&gt;find more data source plugins on grafana<br>
-<div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.radixtalk.com/uploads/default/original/1X/1ff62c47a0b7fe6bd97b47d32e8b40e8883cef90.png" data-download-href="https://cdn.radixtalk.com/uploads/default/1ff62c47a0b7fe6bd97b47d32e8b40e8883cef90" title="image"><img src="https://cdn.radixtalk.com/uploads/default/optimized/1X/1ff62c47a0b7fe6bd97b47d32e8b40e8883cef90_2_690x343.png" alt="image" data-base62-sha1="4yKdVSItCzgRMW7D9LlnyyS4JAA" width="690" height="343" srcset="https://cdn.radixtalk.com/uploads/default/optimized/1X/1ff62c47a0b7fe6bd97b47d32e8b40e8883cef90_2_690x343.png, https://cdn.radixtalk.com/uploads/default/optimized/1X/1ff62c47a0b7fe6bd97b47d32e8b40e8883cef90_2_1035x514.png 1.5x, https://cdn.radixtalk.com/uploads/default/original/1X/1ff62c47a0b7fe6bd97b47d32e8b40e8883cef90.png 2x" data-small-upload="https://cdn.radixtalk.com/uploads/default/optimized/1X/1ff62c47a0b7fe6bd97b47d32e8b40e8883cef90_2_10x10.png"></a></div>
+<div class="lightbox-wrapper"><a class="lightbox" href="https://radixtalk.com/uploads/default/original/1X/1ff62c47a0b7fe6bd97b47d32e8b40e8883cef90.png" data-download-href="https://radixtalk.com/uploads/default/1ff62c47a0b7fe6bd97b47d32e8b40e8883cef90" title="image"><img src="https://radixtalk.com/uploads/default/optimized/1X/1ff62c47a0b7fe6bd97b47d32e8b40e8883cef90_2_690x343.png" alt="image" data-base62-sha1="4yKdVSItCzgRMW7D9LlnyyS4JAA" width="690" height="343" srcset="https://radixtalk.com/uploads/default/optimized/1X/1ff62c47a0b7fe6bd97b47d32e8b40e8883cef90_2_690x343.png, https://radixtalk.com/uploads/default/optimized/1X/1ff62c47a0b7fe6bd97b47d32e8b40e8883cef90_2_1035x514.png 1.5x, https://radixtalk.com/uploads/default/original/1X/1ff62c47a0b7fe6bd97b47d32e8b40e8883cef90.png 2x" data-small-upload="https://radixtalk.com/uploads/default/optimized/1X/1ff62c47a0b7fe6bd97b47d32e8b40e8883cef90_2_10x10.png"></a></div>
 </li>
 <li>add the plugin to Grafana cloud (there are also instructions if you are using Grafana locally)<br>
-<div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.radixtalk.com/uploads/default/original/1X/b16a088075ec7cabca340002d6079ca8f6ce7a0d.png" data-download-href="https://cdn.radixtalk.com/uploads/default/b16a088075ec7cabca340002d6079ca8f6ce7a0d" title="image"><img src="https://cdn.radixtalk.com/uploads/default/optimized/1X/b16a088075ec7cabca340002d6079ca8f6ce7a0d_2_690x418.png" alt="image" data-base62-sha1="pjtGCgAOu3F30EKBd0gtstq4Icl" width="690" height="418" srcset="https://cdn.radixtalk.com/uploads/default/optimized/1X/b16a088075ec7cabca340002d6079ca8f6ce7a0d_2_690x418.png, https://cdn.radixtalk.com/uploads/default/original/1X/b16a088075ec7cabca340002d6079ca8f6ce7a0d.png 1.5x, https://cdn.radixtalk.com/uploads/default/original/1X/b16a088075ec7cabca340002d6079ca8f6ce7a0d.png 2x" data-small-upload="https://cdn.radixtalk.com/uploads/default/optimized/1X/b16a088075ec7cabca340002d6079ca8f6ce7a0d_2_10x10.png"></a></div>
+<div class="lightbox-wrapper"><a class="lightbox" href="https://radixtalk.com/uploads/default/original/1X/b16a088075ec7cabca340002d6079ca8f6ce7a0d.png" data-download-href="https://radixtalk.com/uploads/default/b16a088075ec7cabca340002d6079ca8f6ce7a0d" title="image"><img src="https://radixtalk.com/uploads/default/optimized/1X/b16a088075ec7cabca340002d6079ca8f6ce7a0d_2_690x418.png" alt="image" data-base62-sha1="pjtGCgAOu3F30EKBd0gtstq4Icl" width="690" height="418" srcset="https://radixtalk.com/uploads/default/optimized/1X/b16a088075ec7cabca340002d6079ca8f6ce7a0d_2_690x418.png, https://radixtalk.com/uploads/default/original/1X/b16a088075ec7cabca340002d6079ca8f6ce7a0d.png 1.5x, https://radixtalk.com/uploads/default/original/1X/b16a088075ec7cabca340002d6079ca8f6ce7a0d.png 2x" data-small-upload="https://radixtalk.com/uploads/default/optimized/1X/b16a088075ec7cabca340002d6079ca8f6ce7a0d_2_10x10.png"></a></div>
 </li>
 <li>add the data source by selecting it from the list in Grafana cloud</li>
 <li>add a new panel using the “Stat” visualisation and the fields below:<br>
-<div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.radixtalk.com/uploads/default/original/1X/5d19420a030c9bf524535c9ac576e6a885d6b886.png" data-download-href="https://cdn.radixtalk.com/uploads/default/5d19420a030c9bf524535c9ac576e6a885d6b886" title="image"><img src="https://cdn.radixtalk.com/uploads/default/optimized/1X/5d19420a030c9bf524535c9ac576e6a885d6b886_2_690x372.png" alt="image" data-base62-sha1="dhAwdHl5hlu8FIyMyC4cVWB7sNw" width="690" height="372" srcset="https://cdn.radixtalk.com/uploads/default/optimized/1X/5d19420a030c9bf524535c9ac576e6a885d6b886_2_690x372.png, https://cdn.radixtalk.com/uploads/default/optimized/1X/5d19420a030c9bf524535c9ac576e6a885d6b886_2_1035x558.png 1.5x, https://cdn.radixtalk.com/uploads/default/original/1X/5d19420a030c9bf524535c9ac576e6a885d6b886.png 2x" data-small-upload="https://cdn.radixtalk.com/uploads/default/optimized/1X/5d19420a030c9bf524535c9ac576e6a885d6b886_2_10x10.png"></a></div>
+<div class="lightbox-wrapper"><a class="lightbox" href="https://radixtalk.com/uploads/default/original/1X/5d19420a030c9bf524535c9ac576e6a885d6b886.png" data-download-href="https://radixtalk.com/uploads/default/5d19420a030c9bf524535c9ac576e6a885d6b886" title="image"><img src="https://radixtalk.com/uploads/default/optimized/1X/5d19420a030c9bf524535c9ac576e6a885d6b886_2_690x372.png" alt="image" data-base62-sha1="dhAwdHl5hlu8FIyMyC4cVWB7sNw" width="690" height="372" srcset="https://radixtalk.com/uploads/default/optimized/1X/5d19420a030c9bf524535c9ac576e6a885d6b886_2_690x372.png, https://radixtalk.com/uploads/default/optimized/1X/5d19420a030c9bf524535c9ac576e6a885d6b886_2_1035x558.png 1.5x, https://radixtalk.com/uploads/default/original/1X/5d19420a030c9bf524535c9ac576e6a885d6b886.png 2x" data-small-upload="https://radixtalk.com/uploads/default/optimized/1X/5d19420a030c9bf524535c9ac576e6a885d6b886_2_10x10.png"></a></div>
 </li>
 <li>in the HTTP method, query param, headers option - enter POST as the method along with the following body:</li>
 </ol>
@@ -42,7 +42,7 @@
 <ol start="6">
 <li>Make sure the header “content-type = application/json” is also included in the header tab.</li>
 <li>Using the transform field, reduce the field to a more human number by dividing by 1E18 and select ‘replace all fields’<br>
-<div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.radixtalk.com/uploads/default/original/1X/8a9ca6b91a3729ee1b80b3215a351237d380add9.png" data-download-href="https://cdn.radixtalk.com/uploads/default/8a9ca6b91a3729ee1b80b3215a351237d380add9" title="image"><img src="https://cdn.radixtalk.com/uploads/default/optimized/1X/8a9ca6b91a3729ee1b80b3215a351237d380add9_2_690x321.png" alt="image" data-base62-sha1="jMdvUw5oNpVPKp6Ytpq7jWeJp8d" width="690" height="321" srcset="https://cdn.radixtalk.com/uploads/default/optimized/1X/8a9ca6b91a3729ee1b80b3215a351237d380add9_2_690x321.png, https://cdn.radixtalk.com/uploads/default/optimized/1X/8a9ca6b91a3729ee1b80b3215a351237d380add9_2_1035x481.png 1.5x, https://cdn.radixtalk.com/uploads/default/original/1X/8a9ca6b91a3729ee1b80b3215a351237d380add9.png 2x" data-small-upload="https://cdn.radixtalk.com/uploads/default/optimized/1X/8a9ca6b91a3729ee1b80b3215a351237d380add9_2_10x10.png"></a></div>
+<div class="lightbox-wrapper"><a class="lightbox" href="https://radixtalk.com/uploads/default/original/1X/8a9ca6b91a3729ee1b80b3215a351237d380add9.png" data-download-href="https://radixtalk.com/uploads/default/8a9ca6b91a3729ee1b80b3215a351237d380add9" title="image"><img src="https://radixtalk.com/uploads/default/optimized/1X/8a9ca6b91a3729ee1b80b3215a351237d380add9_2_690x321.png" alt="image" data-base62-sha1="jMdvUw5oNpVPKp6Ytpq7jWeJp8d" width="690" height="321" srcset="https://radixtalk.com/uploads/default/optimized/1X/8a9ca6b91a3729ee1b80b3215a351237d380add9_2_690x321.png, https://radixtalk.com/uploads/default/optimized/1X/8a9ca6b91a3729ee1b80b3215a351237d380add9_2_1035x481.png 1.5x, https://radixtalk.com/uploads/default/original/1X/8a9ca6b91a3729ee1b80b3215a351237d380add9.png 2x" data-small-upload="https://radixtalk.com/uploads/default/optimized/1X/8a9ca6b91a3729ee1b80b3215a351237d380add9_2_10x10.png"></a></div>
 </li>
 <li>In the panel options, select 0 for decimals</li>
 <li>You now have validator total stake displayed on your dashboard!</li>
@@ -65,12 +65,12 @@
           <description><![CDATA[
             <p>Following the recent release of node software v1.1.1, the team have advised on a number of further releases which are planned over the next new months to implement coordinated forking.  This will initiate a fork to an updated protocol, only when a certain threshold of validators (or stake weight) have upgraded.  Validators who have not updated by a prescribed time, will be removed from the validator set until they do so.</p>
 <p>Furthermore, an update for Validator Liveness Assurance is planned in June which will temporarily remove validators from the set if they don’t meet the required liveness standards.  See details below (source: <a href="https://discord.com/channels/417762285172555786/883338066524274695/966728048047185950">Radix Discord</a>)</p>
-<p><img src="https://cdn.radixtalk.com/images/emoji/twitter/arrow_right.png?v=12" title=":arrow_right:" class="emoji" alt=":arrow_right:" loading="lazy" width="20" height="20"> Node version 1.1.1 released 22nd April 2022. It’s a recommended reliability upgrade, and should be an easy upgrade from 1.1.0 - more details here: <a href="https://github.com/radixdlt/radixdlt/releases/tag/1.1.1">https://github.com/radixdlt/radixdlt/releases/tag/1.1.1</a></p>
-<p><img src="https://cdn.radixtalk.com/images/emoji/twitter/arrow_right.png?v=12" title=":arrow_right:" class="emoji" alt=":arrow_right:" loading="lazy" width="20" height="20">  1.2.0 - Support for co-ordinated forking [Releases early May]</p>
+<p><img src="https://radixtalk.com/images/emoji/twitter/arrow_right.png?v=12" title=":arrow_right:" class="emoji" alt=":arrow_right:" loading="lazy" width="20" height="20"> Node version 1.1.1 released 22nd April 2022. It’s a recommended reliability upgrade, and should be an easy upgrade from 1.1.0 - more details here: <a href="https://github.com/radixdlt/radixdlt/releases/tag/1.1.1">https://github.com/radixdlt/radixdlt/releases/tag/1.1.1</a></p>
+<p><img src="https://radixtalk.com/images/emoji/twitter/arrow_right.png?v=12" title=":arrow_right:" class="emoji" alt=":arrow_right:" loading="lazy" width="20" height="20">  1.2.0 - Support for co-ordinated forking [Releases early May]</p>
 <p>This release will enable nodes to recognise fork votes. We’re hoping to have documentation, a new CLI version, and a release candidate available for testing some time next week. As part of preparing for this release, we will run through the process of a hard fork on Stokenet, and we’ll ask for node runners’ assistance with testing this. This will hopefully ready for stokenet testing in the middle of next week.</p>
-<p><img src="https://cdn.radixtalk.com/images/emoji/twitter/arrow_right.png?v=12" title=":arrow_right:" class="emoji" alt=":arrow_right:" loading="lazy" width="20" height="20"> 1.3.0 - The first candidate fork [Likely releases around mid-May, with fork hopefully enacting around the end of May]</p>
+<p><img src="https://radixtalk.com/images/emoji/twitter/arrow_right.png?v=12" title=":arrow_right:" class="emoji" alt=":arrow_right:" loading="lazy" width="20" height="20"> 1.3.0 - The first candidate fork [Likely releases around mid-May, with fork hopefully enacting around the end of May]</p>
 <p>This will capture updates to the fee table. Node runners will need to install the new version of the software, and validators will be taken through the process to vote for the fork. There will be a grace period between the version being released and the fork being able to enact. When the fork is enacted, nodes running old versions of the software will be unable to continue syncing past the fork point.</p>
-<p><img src="https://cdn.radixtalk.com/images/emoji/twitter/arrow_right.png?v=12" title=":arrow_right:" class="emoji" alt=":arrow_right:" loading="lazy" width="20" height="20"> 1.4.0 -  Validator Liveness Assurance [Potentially releases early June, with fork enacting soon after a few weeks later]</p>
+<p><img src="https://radixtalk.com/images/emoji/twitter/arrow_right.png?v=12" title=":arrow_right:" class="emoji" alt=":arrow_right:" loading="lazy" width="20" height="20"> 1.4.0 -  Validator Liveness Assurance [Potentially releases early June, with fork enacting soon after a few weeks later]</p>
 <p>Our second candidate fork. This update will “jail” validators who don’t meet sufficient liveness guarantees, ensuring validators who crash or fail to meet reasonable liveness standards will be temporarily removed from the validator set, ensuring the network stays running smoothly. More details will follow in due course.</p>
             <p><small>2 posts - 2 participants</small></p>
             <p><a href="https://radixtalk.com/t/node-releases-hard-forks/461">Read full topic</a></p>
@@ -90,14 +90,14 @@
           <description><![CDATA[
             <p>Dear All,<br>
 The long awaited announcement is here:</p>
-<p>Announcing the <img src="https://cdn.radixtalk.com/images/emoji/twitter/ringer_planet.png?v=12" title=":ringer_planet:" class="emoji" alt=":ringer_planet:" loading="lazy" width="20" height="20">RadixPlanet Validator Node, now up and running with 0% fee promo for two months</p>
+<p>Announcing the <img src="https://radixtalk.com/images/emoji/twitter/ringer_planet.png?v=12" title=":ringer_planet:" class="emoji" alt=":ringer_planet:" loading="lazy" width="20" height="20">RadixPlanet Validator Node, now up and running with 0% fee promo for two months</p>
 <p>Our node offers the following features and benefits:</p>
-<p><img src="https://cdn.radixtalk.com/images/emoji/twitter/white_check_mark.png?v=12" title=":white_check_mark:" class="emoji" alt=":white_check_mark:" loading="lazy" width="20" height="20"> PLANET airdrop rewards to stakers until we achieve 2% of total network stake</p>
-<p><img src="https://cdn.radixtalk.com/images/emoji/twitter/white_check_mark.png?v=12" title=":white_check_mark:" class="emoji" alt=":white_check_mark:" loading="lazy" width="20" height="20"> Early staking IS beneficial, the earlier you stake the larger amount of PLANET rewards you get</p>
-<p><img src="https://cdn.radixtalk.com/images/emoji/twitter/white_check_mark.png?v=12" title=":white_check_mark:" class="emoji" alt=":white_check_mark:" loading="lazy" width="20" height="20"> Rewards are proportional to the staked amount, The larger amount you stake, the larger amount of PLANET rewards you get</p>
-<p><img src="https://cdn.radixtalk.com/images/emoji/twitter/white_check_mark.png?v=12" title=":white_check_mark:" class="emoji" alt=":white_check_mark:" loading="lazy" width="20" height="20"> Monthly rewards distribution of PLANET tokens to ALL stakers</p>
-<p><img src="https://cdn.radixtalk.com/images/emoji/twitter/white_check_mark.png?v=12" title=":white_check_mark:" class="emoji" alt=":white_check_mark:" loading="lazy" width="20" height="20"> Validator fee is set to rise from 0% to a reasonable 2.5% after two months to help support and develop the RadixPlanet exchange</p>
-<p><img src="https://cdn.radixtalk.com/images/emoji/twitter/white_check_mark.png?v=12" title=":white_check_mark:" class="emoji" alt=":white_check_mark:" loading="lazy" width="20" height="20"> The ONLY case the validator fee is expected to be raised above 2.5% is if the node exceeds 3% of total network stake, where an increase in fee will be used to deter further staking and improve decentralization.</p>
+<p><img src="https://radixtalk.com/images/emoji/twitter/white_check_mark.png?v=12" title=":white_check_mark:" class="emoji" alt=":white_check_mark:" loading="lazy" width="20" height="20"> PLANET airdrop rewards to stakers until we achieve 2% of total network stake</p>
+<p><img src="https://radixtalk.com/images/emoji/twitter/white_check_mark.png?v=12" title=":white_check_mark:" class="emoji" alt=":white_check_mark:" loading="lazy" width="20" height="20"> Early staking IS beneficial, the earlier you stake the larger amount of PLANET rewards you get</p>
+<p><img src="https://radixtalk.com/images/emoji/twitter/white_check_mark.png?v=12" title=":white_check_mark:" class="emoji" alt=":white_check_mark:" loading="lazy" width="20" height="20"> Rewards are proportional to the staked amount, The larger amount you stake, the larger amount of PLANET rewards you get</p>
+<p><img src="https://radixtalk.com/images/emoji/twitter/white_check_mark.png?v=12" title=":white_check_mark:" class="emoji" alt=":white_check_mark:" loading="lazy" width="20" height="20"> Monthly rewards distribution of PLANET tokens to ALL stakers</p>
+<p><img src="https://radixtalk.com/images/emoji/twitter/white_check_mark.png?v=12" title=":white_check_mark:" class="emoji" alt=":white_check_mark:" loading="lazy" width="20" height="20"> Validator fee is set to rise from 0% to a reasonable 2.5% after two months to help support and develop the RadixPlanet exchange</p>
+<p><img src="https://radixtalk.com/images/emoji/twitter/white_check_mark.png?v=12" title=":white_check_mark:" class="emoji" alt=":white_check_mark:" loading="lazy" width="20" height="20"> The ONLY case the validator fee is expected to be raised above 2.5% is if the node exceeds 3% of total network stake, where an increase in fee will be used to deter further staking and improve decentralization.</p>
 <p>Validator address: rv1qfppqvvkcyl5dd2ee6wr4ljp7kxrwlej8q4td5cd4gpc6wqylqt22wljdq5</p>
 <p>For more information about PLANET token, please check the following link: <a href="https://www.radixplanet.com/PlanetToken" class="inline-onebox" rel="noopener nofollow ugc">Planet Token - RadixPlanet</a></p>
             <p><small>1 post - 1 participant</small></p>
@@ -166,7 +166,7 @@ when I usee the API to see my delegators I only see 10 of them. How can i see al
 <p>The way i see it, one can upgrade the software within the same server… or one can use a backup server to aid in the switch to the upgrade version.  What are the pros and cons to each option?  I am thinking that using a backup is superior because it allows roll-back to the primary if something goes wrong in the software upgrade process.</p>
 <p>Also, should the validators always be un-registered and re-registered within this software upgrade process? I am thinking if they are not, proposals will be missed if a validator is stopped/restarted while it is still registered, so un-register should always be done before stop/restart and re-register after the stop/restart, correct? (assuming all is working as expected)  This would introduce a small period of time when the validator is not generating rewards, but that should be a relatively short amount of time, correct?  Or is there a way to do this without any downtime at all? (without risk of missed proposals)</p>
 <h2>
-<a name="below-are-the-high-level-steps-ive-drafted-any-feedback-for-refinement-is-welcome-1" class="anchor" href="https://radixtalk.com#below-are-the-high-level-steps-ive-drafted-any-feedback-for-refinement-is-welcome-1"></a>Below are the high-level steps I’ve drafted. Any feedback for refinement is welcome <img src="https://cdn.radixtalk.com/images/emoji/twitter/slight_smile.png?v=12" title=":slight_smile:" class="emoji" alt=":slight_smile:" loading="lazy" width="20" height="20">
+<a name="below-are-the-high-level-steps-ive-drafted-any-feedback-for-refinement-is-welcome-1" class="anchor" href="https://radixtalk.com#below-are-the-high-level-steps-ive-drafted-any-feedback-for-refinement-is-welcome-1"></a>Below are the high-level steps I’ve drafted. Any feedback for refinement is welcome <img src="https://radixtalk.com/images/emoji/twitter/slight_smile.png?v=12" title=":slight_smile:" class="emoji" alt=":slight_smile:" loading="lazy" width="20" height="20">
 </h2>
 <p><strong>Same/single server</strong></p>
 <ol>
@@ -269,7 +269,7 @@ when I usee the API to see my delegators I only see 10 of them. How can i see al
           <description><![CDATA[
             <p>The official Radix docs for installing the node software includes instructions for setting up Grafana locally to visualise the Prometheus metrics: <a href="https://docs.radixdlt.com/main/node-and-gateway/install-grafana-dashboard.html">Installing Grafana Dashboard</a></p>
 <p>The panel which shows “Registered Validator” reads a metric from the node info called <strong>validator_registered</strong>.  Unfortunately this metric no longer exists in v1.1.0 so if you are setting up a Grafana dashboard after upgrading to this node version, the panel will incorrectly state “No” even if your node is correctly registered.</p>
-<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.radixtalk.com/uploads/default/original/1X/5d70555a31037e923d999f756f6aed02acec1a31.png" data-download-href="https://cdn.radixtalk.com/uploads/default/5d70555a31037e923d999f756f6aed02acec1a31" title="unknown-1"><img src="https://cdn.radixtalk.com/uploads/default/optimized/1X/5d70555a31037e923d999f756f6aed02acec1a31_2_690x354.png" alt="unknown-1" data-base62-sha1="dkB4PHMGwSvaukhUEselrlsfft7" width="690" height="354" srcset="https://cdn.radixtalk.com/uploads/default/optimized/1X/5d70555a31037e923d999f756f6aed02acec1a31_2_690x354.png, https://cdn.radixtalk.com/uploads/default/original/1X/5d70555a31037e923d999f756f6aed02acec1a31.png 1.5x, https://cdn.radixtalk.com/uploads/default/original/1X/5d70555a31037e923d999f756f6aed02acec1a31.png 2x" data-small-upload="https://cdn.radixtalk.com/uploads/default/optimized/1X/5d70555a31037e923d999f756f6aed02acec1a31_2_10x10.png"></a></div><p></p>
+<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://radixtalk.com/uploads/default/original/1X/5d70555a31037e923d999f756f6aed02acec1a31.png" data-download-href="https://radixtalk.com/uploads/default/5d70555a31037e923d999f756f6aed02acec1a31" title="unknown-1"><img src="https://radixtalk.com/uploads/default/optimized/1X/5d70555a31037e923d999f756f6aed02acec1a31_2_690x354.png" alt="unknown-1" data-base62-sha1="dkB4PHMGwSvaukhUEselrlsfft7" width="690" height="354" srcset="https://radixtalk.com/uploads/default/optimized/1X/5d70555a31037e923d999f756f6aed02acec1a31_2_690x354.png, https://radixtalk.com/uploads/default/original/1X/5d70555a31037e923d999f756f6aed02acec1a31.png 1.5x, https://radixtalk.com/uploads/default/original/1X/5d70555a31037e923d999f756f6aed02acec1a31.png 2x" data-small-upload="https://radixtalk.com/uploads/default/optimized/1X/5d70555a31037e923d999f756f6aed02acec1a31_2_10x10.png"></a></div><p></p>
 <p>The Radix team have acknowledged this and will be updating the Grafana dashboard in a future update.  In the meantime, you can edit the panel and change the metric to <strong>nodeinfo{is_in_validator_set=“true”}</strong></p>
             <p><small>1 post - 1 participant</small></p>
             <p><a href="https://radixtalk.com/t/why-does-the-grafana-dashboard-not-show-my-node-as-registered-after-upgrading-to-v1-1-0/370">Read full topic</a></p>
@@ -362,7 +362,7 @@ when I usee the API to see my delegators I only see 10 of them. How can i see al
   </header>
 
   <article class="onebox-body">
-    <div class="aspect-image" style="--aspect-ratio:690/345;"><img src="https://cdn.radixtalk.com/uploads/default/optimized/1X/cd3724a8a5aa55dd09dad6936cada458acc5be6b_2_690x345.png" class="thumbnail" width="690" height="345" srcset="https://cdn.radixtalk.com/uploads/default/optimized/1X/cd3724a8a5aa55dd09dad6936cada458acc5be6b_2_690x345.png, https://cdn.radixtalk.com/uploads/default/optimized/1X/cd3724a8a5aa55dd09dad6936cada458acc5be6b_2_1035x517.png 1.5x, https://cdn.radixtalk.com/uploads/default/original/1X/cd3724a8a5aa55dd09dad6936cada458acc5be6b.png 2x" data-small-upload="https://cdn.radixtalk.com/uploads/default/optimized/1X/cd3724a8a5aa55dd09dad6936cada458acc5be6b_2_10x10.png"></div>
+    <div class="aspect-image" style="--aspect-ratio:690/345;"><img src="https://opengraph.githubassets.com/4c40246bcec82215667cd2601caa3d2138c2fcbbe22ce9e0c90ecfe1f9a11a5c/radixpool/validator-tools" class="thumbnail" width="690" height="345"></div>
 
 <h3><a href="https://github.com/radixpool/validator-tools" target="_blank" rel="noopener">GitHub - radixpool/validator-tools</a></h3>
 
@@ -468,8 +468,8 @@ In the case of a temporary, localised and known issue then the appropriate strat
 <p>After the incident is resolved and is still fresh in your mind, take a moment to make notes about what happened and how you resolved it.</p>
 <p>Consider:</p>
 <ul>
-<li>What worked well? (eg. Monitoring system promptly generated alerts about the issue <img src="https://cdn.radixtalk.com/images/emoji/twitter/slight_smile.png?v=12" title=":slight_smile:" class="emoji" alt=":slight_smile:">)</li>
-<li>What didn’t work well? (eg. Phone was set to silent so missed the alerts <img src="https://cdn.radixtalk.com/images/emoji/twitter/upside_down_face.png?v=12" title=":upside_down_face:" class="emoji" alt=":upside_down_face:">)</li>
+<li>What worked well? (eg. Monitoring system promptly generated alerts about the issue <img src="https://radixtalk.com/images/emoji/twitter/slight_smile.png?v=12" title=":slight_smile:" class="emoji" alt=":slight_smile:" loading="lazy" width="20" height="20">)</li>
+<li>What didn’t work well? (eg. Phone was set to silent so missed the alerts <img src="https://radixtalk.com/images/emoji/twitter/upside_down_face.png?v=12" title=":upside_down_face:" class="emoji" alt=":upside_down_face:" loading="lazy" width="20" height="20">)</li>
 <li>Is there anything I can do to prevent the issue from occurring again? (eg. Monitor additional metrics, create alerts for low disk space, automate some process, pay more attention to planned maintenance notifications)</li>
 <li>Are their opportunities to automate some of the recovery steps using tested scripts that reduce operator error when under stress?</li>
 <li>[TODO]</li>
@@ -516,7 +516,7 @@ In the case of a temporary, localised and known issue then the appropriate strat
             <p>The endpoint for the Prometheus / Grafana metrics has changed from <code>/metrics</code> to <code>/prometheus/metrics</code> from version 1.1.0 onwards.</p>
 <p>You will need to modify your <code>/etc/grafana-agent.yaml</code> file to include the <code>metrics_path: /prometheus/metrics</code> under the <code>job_name</code> row:</p>
 <p>Before:</p>
-<pre><code class="lang-auto">prometheus:
+<pre data-code-wrap="yaml"><code class="lang-nohighlight">prometheus:
   configs:
   - name: integrations
     scrape_configs:
@@ -525,7 +525,7 @@ In the case of a temporary, localised and known issue then the appropriate strat
 ...
 </code></pre>
 <p>After:</p>
-<pre><code class="lang-auto">prometheus:
+<pre data-code-wrap="yaml"><code class="lang-nohighlight">prometheus:
   configs:
   - name: integrations
     scrape_configs:
@@ -735,30 +735,7 @@ If you are using an Nginx reverse proxy on your node, ensure that the location i
           <category>Validators</category>
           <description><![CDATA[
             <p>I’m happy to announce that RadixPool is now creating daily snapshots of the Radix database to support the Radix Node Runners community:</p>
-<aside class="onebox allowlistedgeneric" data-onebox-src="https://snapshots.radixpool.com">
-  <header class="source">
-
-      <a href="https://snapshots.radixpool.com" target="_blank" rel="noopener">snapshots.radixpool.com</a>
-  </header>
-
-  <article class="onebox-body">
-    
-
-<h3><a href="https://snapshots.radixpool.com" target="_blank" rel="noopener">RadixPool · Snapshots</a></h3>
-
-  <p>Radix Database snapshots by RadixPool</p>
-
-
-  </article>
-
-  <div class="onebox-metadata">
-    
-    
-  </div>
-
-  <div style="clear: both"></div>
-</aside>
-
+<p><a href="https://snapshots.radixpool.com" class="onebox" target="_blank" rel="noopener">https://snapshots.radixpool.com</a></p>
 <h3>
 <a name="features-1" class="anchor" href="https://radixtalk.com#features-1"></a>Features:</h3>
 <ul>
@@ -1053,34 +1030,34 @@ radix://rn1qdnsa7cn3q9yzw0dtu27f3yz0y4wn9nej8eupre666c6srldhgjqcd08jd2@138.201.2
           <description><![CDATA[
             <p>The current official Radix seed node addresses are:</p>
 <h2>
-<a name="asia-pacific-south-east-australia-1" class="anchor" href="https://radixtalk.com#asia-pacific-south-east-australia-1"></a>Asia-Pacific (South-East <img src="https://radixtalk.com/images/emoji/twitter/australia.png?v=10" title=":australia:" class="emoji" alt=":australia:">)</h2>
+<a name="asia-pacific-south-east-australia-1" class="anchor" href="https://radixtalk.com#asia-pacific-south-east-australia-1"></a>Asia-Pacific (South-East <img src="https://radixtalk.com/images/emoji/twitter/australia.png?v=12" title=":australia:" class="emoji" alt=":australia:" loading="lazy" width="20" height="20">)</h2>
 <pre><code class="lang-nohighlight">radix://rn1q2jt0jswv3lpct8tavr5tvlg2kv25f26x7w8kf6dz2hp4pu9cwq4we9tm5f@13.238.198.54
 radix://rn1qvmp586ylq9e26n98zwyu9s5hdkq8j63t8l028x8wj4vqzk32dwzw0vrg58@54.66.161.181
 radix://rn1q2fqfp9smlv3x5j4gca400j3mg9q63pgpu8hmd0xs0a3dgw5mv5s6jgznp3@3.106.155.92
 radix://rn1qvcrg55mcgx6qgs7hj5arpvakvyzpc9pnp5ywhgcs4mvmp7ee4846p5zsdg@54.79.170.237
 </code></pre>
 <h2>
-<a name="asia-pacific-south-india-2" class="anchor" href="https://radixtalk.com#asia-pacific-south-india-2"></a>Asia-Pacific (South <img src="https://radixtalk.com/images/emoji/twitter/india.png?v=10" title=":india:" class="emoji" alt=":india:">)</h2>
+<a name="asia-pacific-south-india-2" class="anchor" href="https://radixtalk.com#asia-pacific-south-india-2"></a>Asia-Pacific (South <img src="https://radixtalk.com/images/emoji/twitter/india.png?v=12" title=":india:" class="emoji" alt=":india:" loading="lazy" width="20" height="20">)</h2>
 <pre><code class="lang-nohighlight">radix://rn1qg54vufz29c5hcwqxuv4pr60f4fsq6ds0qpa7qnrchdwnapkw6qcxymhy7l@3.109.57.223
 radix://rn1qgf0tug4nmxfa7su8zsu8pejzq48eeglvxf8le09cuy0nsghzg44weacz2q@3.109.36.249
 radix://rn1qfcl8ml7vm2gnyvm6tslmemrjmds6apajrk3vvyl4the0wsm0mkvjrjgtl2@65.0.241.14
 radix://rn1qd4nnpfkafpljwt8xmvk5ksqy6cn7n3j6t2pcqrx4p2h6drt9qqksn8m94r@3.108.213.235
 </code></pre>
 <h2>
-<a name="eu-west-ireland-3" class="anchor" href="https://radixtalk.com#eu-west-ireland-3"></a>EU (West <img src="https://radixtalk.com/images/emoji/twitter/ireland.png?v=10" title=":ireland:" class="emoji" alt=":ireland:">)</h2>
+<a name="eu-west-ireland-3" class="anchor" href="https://radixtalk.com#eu-west-ireland-3"></a>EU (West <img src="https://radixtalk.com/images/emoji/twitter/ireland.png?v=12" title=":ireland:" class="emoji" alt=":ireland:" loading="lazy" width="20" height="20">)</h2>
 <pre><code class="lang-nohighlight">radix://rn1qthu8yn06k75dnwpkysyl8smtwn0v4xy29auzjlcrw7vgduxvnwnst6derj@99.80.126.26
 radix://rn1qtk3g0a2ra663wyua0l4720vfzdje9uqsdzgzjet5w9dhspkaywnjal6dv6@52.49.146.20
 radix://rn1qgvg5c20ude9cwxuxenrltemtw5zsg6n879kguwy0cx4mzq5plqg532l2xf@34.242.56.73
 radix://rn1q040l0vqzuglnj6t5ffue3nacnj30h0thyrses0f5cc0n2fvx4wtknv2t7y@54.74.152.104
 </code></pre>
 <h2>
-<a name="us-east-us-4" class="anchor" href="https://radixtalk.com#us-east-us-4"></a>US (East <img src="https://radixtalk.com/images/emoji/twitter/us.png?v=10" title=":us:" class="emoji" alt=":us:">)</h2>
+<a name="us-east-us-4" class="anchor" href="https://radixtalk.com#us-east-us-4"></a>US (East <img src="https://radixtalk.com/images/emoji/twitter/us.png?v=12" title=":us:" class="emoji" alt=":us:" loading="lazy" width="20" height="20">)</h2>
 <pre><code class="lang-nohighlight">radix://rn1qvw5v4w8llexz99uc9gmeh47qp2h9ax2y3aewm5e6vj5sdx8uuph2vfuvg3@3.221.232.135
 radix://rn1qtq336a2nn2269fjes53pynwlytrv0katm6uzlfcyl6m7yscac5g7mh8prw@3.220.101.80
 radix://rn1qwa45jjf40vuf9xlq85xym86yegnm95h3g8d4lul5hskrws9gm6ykyx7hsf@3.214.160.245
 radix://rn1qvv0uljlqdsmed4kwjqr56sqkgcl8jer3z7w68ssfele3e4cz6uzugfjf0h@44.194.199.37
 </code></pre>
-<p>Source: <a href="https://docs.radixdlt.com/main/node/systemd-install-node.html#create-node-configuration-file-for-systemd-install" class="inline-onebox">Installing and Running a Node Using systemd :: Radix Documentation</a></p>
+<p>Source: <a href="https://docs.radixdlt.com/main/node/systemd-install-node.html#create-node-configuration-file-for-systemd-install">https://docs.radixdlt.com/main/node/systemd-install-node.html#create-node-configuration-file-for-systemd-install</a></p>
             <p><small>1 post - 1 participant</small></p>
             <p><a href="https://radixtalk.com/t/what-are-the-official-radix-seed-node-addresses/195">Read full topic</a></p>
           ]]></description>

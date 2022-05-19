@@ -100,7 +100,7 @@ bob_wallet_address = "rdx1qspvvprlj3q76ltd…
         <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
         <description><![CDATA[
             <p>I couldn’t find a Java implementation in the <a href="https://github.com/radixdlt/radixdlt" class="inline-onebox">GitHub - radixdlt/radixdlt: Radix monorepo</a> unfortunately. It looks like there is only a Typescript implementation.</p>
-<p>The good news is that I have figured out how to get decryption working with Python <img src="https://radixtalk.com/images/emoji/twitter/raised_hands.png?v=10" title=":raised_hands:" class="emoji" alt=":raised_hands:"><br>
+<p>The good news is that I have figured out how to get decryption working with Python <img src="https://radixtalk.com/images/emoji/twitter/raised_hands.png?v=12" title=":raised_hands:" class="emoji" alt=":raised_hands:" loading="lazy" width="20" height="20"><br>
 I’m just working on the encryption now which shouldn’t take long and then I’ll write some <a class="hashtag" href="https://radixtalk.com/tag/howto">#<span>howto</span></a> posts.</p>
           <p><a href="https://radixtalk.com/t/how-do-i-encode-a-transaction-message-so-that-it-displays-correctly-in-the-radix-desktop-wallet/170/5">Read full topic</a></p>
         ]]></description>
@@ -125,7 +125,7 @@ I’m just working on the encryption now which shouldn’t take long and then I�
         <title>How do I encode a transaction message so that it displays correctly in the Radix Desktop Wallet?</title>
         <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
         <description><![CDATA[
-            <p>I’m working on that right now <img src="https://radixtalk.com/images/emoji/twitter/slight_smile.png?v=10" title=":slight_smile:" class="emoji" alt=":slight_smile:"></p>
+            <p>I’m working on that right now <img src="https://radixtalk.com/images/emoji/twitter/slight_smile.png?v=12" title=":slight_smile:" class="emoji" alt=":slight_smile:" loading="lazy" width="20" height="20"></p>
 <p>It uses a form of Elliptic Curve Integrated Encryption Scheme (ECIES) where an ephemeral key, the private key of the sender, and the public key of the receiver are combined to encrypt/decrypt the message. As soon as I have some working code I’ll create <a class="hashtag" href="https://radixtalk.com/tag/howto">#<span>howto</span></a> post.</p>
 <p>The relevant code in Typescript from the <a href="https://github.com/radixdlt/radixdlt-javascript">radixdlt/radixdlt-javascript</a> repo is in this file:   <a href="https://github.com/radixdlt/radixdlt-javascript/blob/main/packages/crypto/src/encryption/messageEncryption.ts">messageEncryption.ts</a></p>
 <p>And here’s a StackOverflow posting by the RadixDLT dev who created the scheme:</p><aside class="onebox stackexchange" data-onebox-src="https://crypto.stackexchange.com/questions/88083/modified-ecies-using-ec-point-add-with-dh-key">

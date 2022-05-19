@@ -15,31 +15,7 @@ https://docs.radixpool.com/bleeding-edge/running-a-radix-data-aggregator</descri
         <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
         <description><![CDATA[
             <p>Installation steps for the Radix DataAggregator service are documented here:</p>
-<aside class="onebox allowlistedgeneric" data-onebox-src="https://docs.radixpool.com/bleeding-edge/running-a-radix-data-aggregator">
-  <header class="source">
-      
-
-      <a href="https://docs.radixpool.com/bleeding-edge/running-a-radix-data-aggregator" target="_blank" rel="noopener">docs.radixpool.com</a>
-  </header>
-
-  <article class="onebox-body">
-    <div class="aspect-image" style="--aspect-ratio:690/362;"><img src="https://app.gitbook.com/share/space/thumbnail/-Ml9yAhhe4CL5oy6Qxa6.png?color=%23000000&amp;logo=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fgitbook-28427.appspot.com%2Fo%2Fspaces%252F-Ml9yAhhe4CL5oy6Qxa6%252Fuploads%252Fsquare%252Fradix_logo_black.png%3Falt%3Dmedia%26token%3Dc323f8c5-5301-4f53-be51-01c63206aa4d&amp;theme=none" class="thumbnail" width="690" height="362"></div>
-
-<h3><a href="https://docs.radixpool.com/bleeding-edge/running-a-radix-data-aggregator" target="_blank" rel="noopener">Running a Radix Data Aggregator</a></h3>
-
-  <p>The Radix Data Aggregator polls a Radix Core-Api Node continuously for ledger transactions and mempool contents to store in a PostgreSQL database</p>
-
-
-  </article>
-
-  <div class="onebox-metadata">
-    
-    
-  </div>
-
-  <div style="clear: both"></div>
-</aside>
-
+<p><a href="https://docs.radixpool.com/bleeding-edge/running-a-radix-data-aggregator" class="onebox" target="_blank" rel="noopener">https://docs.radixpool.com/bleeding-edge/running-a-radix-data-aggregator</a></p>
           <p><a href="https://radixtalk.com/t/how-do-i-install-the-radix-dataaggregator/119/1">Read full topic</a></p>
         ]]></description>
         <link>https://radixtalk.com/t/how-do-i-install-the-radix-dataaggregator/119/1</link>

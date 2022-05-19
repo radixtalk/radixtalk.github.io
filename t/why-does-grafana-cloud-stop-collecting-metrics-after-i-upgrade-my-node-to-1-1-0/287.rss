@@ -52,7 +52,7 @@ prometheus:
             <p>The endpoint for the Prometheus / Grafana metrics has changed from <code>/metrics</code> to <code>/prometheus/metrics</code> from version 1.1.0 onwards.</p>
 <p>You will need to modify your <code>/etc/grafana-agent.yaml</code> file to include the <code>metrics_path: /prometheus/metrics</code> under the <code>job_name</code> row:</p>
 <p>Before:</p>
-<pre><code class="lang-auto">prometheus:
+<pre data-code-wrap="yaml"><code class="lang-nohighlight">prometheus:
   configs:
   - name: integrations
     scrape_configs:
@@ -61,7 +61,7 @@ prometheus:
 ...
 </code></pre>
 <p>After:</p>
-<pre><code class="lang-auto">prometheus:
+<pre data-code-wrap="yaml"><code class="lang-nohighlight">prometheus:
   configs:
   - name: integrations
     scrape_configs:

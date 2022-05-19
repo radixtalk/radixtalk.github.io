@@ -108,30 +108,7 @@ thanks Andrew</p>
         <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
         <description><![CDATA[
             <p>I’m happy to announce that RadixPool is now creating daily snapshots of the Radix database to support the Radix Node Runners community:</p>
-<aside class="onebox allowlistedgeneric" data-onebox-src="https://snapshots.radixpool.com">
-  <header class="source">
-
-      <a href="https://snapshots.radixpool.com" target="_blank" rel="noopener">snapshots.radixpool.com</a>
-  </header>
-
-  <article class="onebox-body">
-    
-
-<h3><a href="https://snapshots.radixpool.com" target="_blank" rel="noopener">RadixPool · Snapshots</a></h3>
-
-  <p>Radix Database snapshots by RadixPool</p>
-
-
-  </article>
-
-  <div class="onebox-metadata">
-    
-    
-  </div>
-
-  <div style="clear: both"></div>
-</aside>
-
+<p><a href="https://snapshots.radixpool.com" class="onebox" target="_blank" rel="noopener">https://snapshots.radixpool.com</a></p>
 <h3>
 <a name="features-1" class="anchor" href="https://radixtalk.com#features-1"></a>Features:</h3>
 <ul>

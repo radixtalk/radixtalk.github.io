@@ -26,7 +26,7 @@ sudo apt install build-essential
         <title>“error: linker cc not found” when installing Scypto simulator</title>
         <dc:creator><![CDATA[Clement]]></dc:creator>
         <description><![CDATA[
-            <p>If you get similar compiler error on Windows, make sure you installed <strong>Desktop development with C++</strong> with <a href="https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=BuildTools&amp;rel=16" rel="noopener nofollow ugc">Build Tools for Visual Studio 2019</a></p>
+            <p>If you get similar compiler error on Windows, make sure you installed <strong>Desktop development with C++</strong> with <a href="https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=BuildTools&amp;rel=16">Build Tools for Visual Studio 2019</a></p>
           <p><a href="https://radixtalk.com/t/error-linker-cc-not-found-when-installing-scypto-simulator/73/2">Read full topic</a></p>
         ]]></description>
         <link>https://radixtalk.com/t/error-linker-cc-not-found-when-installing-scypto-simulator/73/2</link>

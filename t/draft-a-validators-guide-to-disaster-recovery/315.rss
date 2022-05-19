@@ -246,7 +246,7 @@ Done! Ability to choose mainnet or stokenet, and to do a dry-run which doesn’t
   </header>
 
   <article class="onebox-body">
-    <div class="aspect-image" style="--aspect-ratio:690/345;"><img src="https://cdn.radixtalk.com/uploads/default/optimized/1X/cd3724a8a5aa55dd09dad6936cada458acc5be6b_2_690x345.png" class="thumbnail" width="690" height="345" srcset="https://cdn.radixtalk.com/uploads/default/optimized/1X/cd3724a8a5aa55dd09dad6936cada458acc5be6b_2_690x345.png, https://cdn.radixtalk.com/uploads/default/optimized/1X/cd3724a8a5aa55dd09dad6936cada458acc5be6b_2_1035x517.png 1.5x, https://cdn.radixtalk.com/uploads/default/original/1X/cd3724a8a5aa55dd09dad6936cada458acc5be6b.png 2x" data-small-upload="https://cdn.radixtalk.com/uploads/default/optimized/1X/cd3724a8a5aa55dd09dad6936cada458acc5be6b_2_10x10.png"></div>
+    <div class="aspect-image" style="--aspect-ratio:690/345;"><img src="https://radixtalk.com/uploads/default/optimized/1X/a1ed89b95e674c115886215df27f8ea4f053ea8e_2_690x345.png" class="thumbnail" width="690" height="345" srcset="https://radixtalk.com/uploads/default/optimized/1X/a1ed89b95e674c115886215df27f8ea4f053ea8e_2_690x345.png, https://radixtalk.com/uploads/default/optimized/1X/a1ed89b95e674c115886215df27f8ea4f053ea8e_2_1035x517.png 1.5x, https://radixtalk.com/uploads/default/original/1X/a1ed89b95e674c115886215df27f8ea4f053ea8e.png 2x" data-small-upload="https://radixtalk.com/uploads/default/optimized/1X/a1ed89b95e674c115886215df27f8ea4f053ea8e_2_10x10.png"></div>
 
 <h3><a href="https://github.com/radixpool/validator-tools" target="_blank" rel="noopener">GitHub - radixpool/validator-tools</a></h3>
 
@@ -352,8 +352,8 @@ In the case of a temporary, localised and known issue then the appropriate strat
 <p>After the incident is resolved and is still fresh in your mind, take a moment to make notes about what happened and how you resolved it.</p>
 <p>Consider:</p>
 <ul>
-<li>What worked well? (eg. Monitoring system promptly generated alerts about the issue <img src="https://cdn.radixtalk.com/images/emoji/twitter/slight_smile.png?v=12" title=":slight_smile:" class="emoji" alt=":slight_smile:">)</li>
-<li>What didn’t work well? (eg. Phone was set to silent so missed the alerts <img src="https://cdn.radixtalk.com/images/emoji/twitter/upside_down_face.png?v=12" title=":upside_down_face:" class="emoji" alt=":upside_down_face:">)</li>
+<li>What worked well? (eg. Monitoring system promptly generated alerts about the issue <img src="https://radixtalk.com/images/emoji/twitter/slight_smile.png?v=12" title=":slight_smile:" class="emoji" alt=":slight_smile:" loading="lazy" width="20" height="20">)</li>
+<li>What didn’t work well? (eg. Phone was set to silent so missed the alerts <img src="https://radixtalk.com/images/emoji/twitter/upside_down_face.png?v=12" title=":upside_down_face:" class="emoji" alt=":upside_down_face:" loading="lazy" width="20" height="20">)</li>
 <li>Is there anything I can do to prevent the issue from occurring again? (eg. Monitor additional metrics, create alerts for low disk space, automate some process, pay more attention to planned maintenance notifications)</li>
 <li>Are their opportunities to automate some of the recovery steps using tested scripts that reduce operator error when under stress?</li>
 <li>[TODO]</li>

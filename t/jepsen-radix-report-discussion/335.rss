@@ -19,17 +19,17 @@ What are your thoughts on the report and RDX Works response?</description>
         <description><![CDATA[
             <p>The tricky thing about these reports is that you can spin them two ways: “Radix has fixed the issues, the most important stuff worked”, or “See? So many issues… Told you Radix sucks!”</p>
 <p>Something like the supposed double-spend issue doesn’t help. In the end, it was, again, an API issue (and no on-ledger double-spend) from what I’m reading, but it’s really easy to grab that info and create FUD, unfortunately.</p>
-<p>Either way, I’m glad they got someone who tried to break what they built. I like that <img src="https://cdn.radixtalk.com/images/emoji/twitter/slight_smile.png?v=12" title=":slight_smile:" class="emoji" alt=":slight_smile:"></p>
+<p>Either way, I’m glad they got someone who tried to break what they built. I like that <img src="https://radixtalk.com/images/emoji/twitter/slight_smile.png?v=12" title=":slight_smile:" class="emoji" alt=":slight_smile:" loading="lazy" width="20" height="20"></p>
 <p>Someone also linked to these ‘tweets’ or whatever they are from Jepsen’s site:</p>
 <aside class="onebox allowlistedgeneric" data-onebox-src="https://mastodon.jepsen.io/@jepsen/107759347110188122">
   <header class="source">
-      <img src="https://cdn.radixtalk.com/uploads/default/original/1X/312d6dcb3eef2fd117f692094c52f0171066bb40.png" class="site-icon" width="45" height="48">
+      <img src="https://radixtalk.com/uploads/default/original/1X/312d6dcb3eef2fd117f692094c52f0171066bb40.png" class="site-icon" width="45" height="48">
 
       <a href="https://mastodon.jepsen.io/@jepsen/107759347110188122" target="_blank" rel="noopener nofollow ugc" title="11:39PM - 07 February 2022">Jepsen – 7 Feb 22</a>
   </header>
 
   <article class="onebox-body">
-    <img src="https://cdn.radixtalk.com/uploads/default/original/1X/03eda39f3641901dec70748e7944504423ac2665.png" class="thumbnail onebox-avatar" width="400" height="400">
+    <img src="https://radixtalk.com/uploads/default/original/1X/03eda39f3641901dec70748e7944504423ac2665.png" class="thumbnail onebox-avatar" width="400" height="400">
 
 <h3><a href="https://mastodon.jepsen.io/@jepsen/107759347110188122" target="_blank" rel="noopener nofollow ugc">Jepsen (@jepsen@jepsen.io)</a></h3>
 
@@ -47,13 +47,13 @@ What are your thoughts on the report and RDX Works response?</description>
 </aside>
 <aside class="onebox allowlistedgeneric" data-onebox-src="https://mastodon.jepsen.io/@jepsen/107757109186060716">
   <header class="source">
-      <img src="https://cdn.radixtalk.com/uploads/default/original/1X/312d6dcb3eef2fd117f692094c52f0171066bb40.png" class="site-icon" width="45" height="48">
+      <img src="https://radixtalk.com/uploads/default/original/1X/312d6dcb3eef2fd117f692094c52f0171066bb40.png" class="site-icon" width="45" height="48">
 
       <a href="https://mastodon.jepsen.io/@jepsen/107757109186060716" target="_blank" rel="noopener nofollow ugc" title="02:09PM - 07 February 2022">Jepsen – 7 Feb 22</a>
   </header>
 
   <article class="onebox-body">
-    <img src="https://cdn.radixtalk.com/uploads/default/original/1X/03eda39f3641901dec70748e7944504423ac2665.png" class="thumbnail onebox-avatar" width="400" height="400">
+    <img src="https://radixtalk.com/uploads/default/original/1X/03eda39f3641901dec70748e7944504423ac2665.png" class="thumbnail onebox-avatar" width="400" height="400">
 
 <h3><a href="https://mastodon.jepsen.io/@jepsen/107757109186060716" target="_blank" rel="noopener nofollow ugc">Jepsen (@jepsen@jepsen.io)</a></h3>
 

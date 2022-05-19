@@ -476,30 +476,27 @@ iex(3)&gt; Radixir.Key.public_key_to_addresses("03eaeb7215f811ced60fcf6aee550c33
 
     <pre class="onebox">      <code class="lang-ex">
         <ol class="start lines" start="157" style="counter-reset: li-counter 156 ;">
-            <li>    |&gt; Curvy.Key.to_privkey()</li>
-            <li>    |&gt; Util.encode16()</li>
-            <li>
-            </li>
-<li>  %{</li>
-            <li>    public_key: public_key,</li>
-            <li>    private_key: private_key</li>
-            <li>  }</li>
-            <li>  |&gt; Map.merge(addresses)</li>
+            <li>        account_address: "tdx1qspjlxkvcnueqm0l5gfdtnhc7y78ltmqqfpwu3q3r4x7un72l9uxgmccyzjy7",</li>
+            <li>        node_address: "tn1qvhe4nxylxgxmlazzt2ua78383l67cqzgthygygafhhyljhe0pjx7apvxlm",</li>
+            <li>        validator_address: "tv1qvhe4nxylxgxmlazzt2ua78383l67cqzgthygygafhhyljhe0pjx79jxkn9"</li>
+            <li>      }</li>
+            <li>    }}</li>
+            <li>"""</li>
+            <li>@spec from_private_key(private_key) :: {:ok, map} | {:error, error_message}</li>
+            <li>def from_private_key(private_key) do</li>
+            <li>  with private_key &lt;- String.downcase(private_key),</li>
+            <li>       {:ok, private_key} &lt;- validate_private_key(private_key),</li>
+            <li class="selected">       {:ok, keypair} &lt;- private_key_to_keypair(private_key) do</li>
+            <li>    {:ok, format(keypair)}</li>
+            <li>  end</li>
             <li>end</li>
             <li>
-            </li>
-<li class="selected">defp pubkey_to_addrs(public_key) do</li>
-            <li>  %{</li>
-            <li>    mainnet_address: Bech32.encode("rdx", &lt;&lt;4&gt;&gt; &lt;&gt; public_key),</li>
-            <li>    testnet_address: Bech32.encode("tdx", &lt;&lt;4&gt;&gt; &lt;&gt; public_key),</li>
-            <li>    validator_mainnet_address: Bech32.encode("rv", public_key),</li>
-            <li>    validator_testnet_address: Bech32.encode("tv", public_key)</li>
-            <li>  }</li>
-            <li>end</li>
+            <li>@doc """</li>
+            <li>Derives account extended private key and account extended public key from mnemonic.</li>
             <li>
-            </li>
-<li>@doc false</li>
-            <li>def validate_public_key(public_key) do</li>
+            <li>## Parameters</li>
+            <li>  - `options`: Keyword list that contains</li>
+            <li>    - `mnemonic` (optional, string): If `mnemonic` is not in `options` then the mnemonic set in the configs will be used.</li>
         </ol>
       </code>
     </pre>

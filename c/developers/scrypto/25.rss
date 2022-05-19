@@ -190,12 +190,10 @@ Execution Time: 4 ms
   <div class="title">
     <div class="quote-controls"></div>
     <img loading="lazy" alt="" width="20" height="20" src="https://radixtalk.com/letter_avatar_proxy/v4/letter/s/cab0a1/40.png" class="avatar">
-    <a href="https://radixtalk.com/t/how-to-update-scrypto-simulator/71">How to update Scrypto simulator</a> <a class="badge-wrapper  bullet" href="https://radixtalk.com/c/developers/scrypto/25"><span class="badge-category-parent-bg" style="background-color: #F7941D;"></span><span class="badge-category-bg" style="background-color: #F1592A;"></span><span style="" data-drop-close="true" class="badge-category clear-badge" title="Topics about Scrypto">Scrypto</span></a>
+    <a href="https://radixtalk.com/t/how-to-update-scrypto-simulator/71">How to update Scrypto simulator</a> <a class="badge-wrapper  bullet" href="https://radixtalk.com/c/developers/scrypto/25"><span class="badge-category-parent-bg" style="background-color: #F1592A;"></span><span class="badge-category-bg" style="background-color: #F7941D;"></span><span style="" data-drop-close="true" class="badge-category clear-badge" title="Topics about Scrypto">Scrypto</span></a>
   </div>
   <blockquote>
-    How to update scrypto simulator 
-
-Pull the latest changes from <a href="https://github.com/radixdlt/radixdlt-scrypto" class="inline-onebox">GitHub - radixdlt/radixdlt-scrypto: Asset-oriented Programming for DeFi.</a>
+    Pull the latest changes from <a href="https://github.com/radixdlt/radixdlt-scrypto" class="inline-onebox-loading">https://github.com/radixdlt/radixdlt-scrypto</a>
 
 rustup update stable
 cargo install --path ./simulator

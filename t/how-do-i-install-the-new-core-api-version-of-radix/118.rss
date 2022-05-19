@@ -16,31 +16,8 @@ https://docs.radixpool.com/bleeding-edge/running-a-radix-core-api-node</descript
         <dc:creator><![CDATA[Stuart | RadixPool]]></dc:creator>
         <description><![CDATA[
             <p>The Radix Core-Api branch of code in the RadixDLT repository is the latest version of the Radix Node software that is under active development. It implements the new low level Core-Api that will replace the existing Archive node API and is required by the new Radix Network Gateway reference implementation.</p>
-<p>The installation steps are documented here:</p><aside class="onebox allowlistedgeneric" data-onebox-src="https://docs.radixpool.com/bleeding-edge/running-a-radix-core-api-node">
-  <header class="source">
-      
-
-      <a href="https://docs.radixpool.com/bleeding-edge/running-a-radix-core-api-node" target="_blank" rel="noopener">docs.radixpool.com</a>
-  </header>
-
-  <article class="onebox-body">
-    <div class="aspect-image" style="--aspect-ratio:690/362;"><img src="https://app.gitbook.com/share/space/thumbnail/-Ml9yAhhe4CL5oy6Qxa6.png?color=%23000000&amp;logo=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fgitbook-28427.appspot.com%2Fo%2Fspaces%252F-Ml9yAhhe4CL5oy6Qxa6%252Fuploads%252Fsquare%252Fradix_logo_black.png%3Falt%3Dmedia%26token%3Dc323f8c5-5301-4f53-be51-01c63206aa4d&amp;theme=none" class="thumbnail" width="690" height="362"></div>
-
-<h3><a href="https://docs.radixpool.com/bleeding-edge/running-a-radix-core-api-node" target="_blank" rel="noopener">Running a Radix Core-Api Node</a></h3>
-
-  <p>How to build and run the new, under-development Radix Core-Api node</p>
-
-
-  </article>
-
-  <div class="onebox-metadata">
-    
-    
-  </div>
-
-  <div style="clear: both"></div>
-</aside>
-
+<p>The installation steps are documented here:<br>
+<a href="https://docs.radixpool.com/bleeding-edge/running-a-radix-core-api-node" class="onebox" target="_blank" rel="noopener">https://docs.radixpool.com/bleeding-edge/running-a-radix-core-api-node</a></p>
           <p><a href="https://radixtalk.com/t/how-do-i-install-the-new-core-api-version-of-radix/118/1">Read full topic</a></p>
         ]]></description>
         <link>https://radixtalk.com/t/how-do-i-install-the-new-core-api-version-of-radix/118/1</link>

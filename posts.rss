@@ -7,6 +7,26 @@
       <item>
         <title>Radix Talk is shutting down</title>
         <dc:creator><![CDATA[@Stuart Stuart | RadixPool]]></dc:creator>
+        <description><![CDATA[ <p>Thanks Mattia. I think some of the image links are still pointing at <a href="http://cdn.radixtalk.com">cdn.radixtalk.com</a> which doesn’t exist anymore and are getting redirected to a generic http page.</p>
+<p>I’ve rebuilt the forum to use local files instead of the CDN files and will re-do the forum archiving/mirroring to make sure it uses the correct links.</p>
+<p>Stuart</p> ]]></description>
+        <link>https://radixtalk.com/t/radix-talk-is-shutting-down/472#post_4</link>
+        <pubDate>Thu, 19 May 2022 09:22:21 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-872</guid>
+      </item>
+      <item>
+        <title>Radix Talk is shutting down</title>
+        <dc:creator><![CDATA[@Mattia Mattia | MattiaNode]]></dc:creator>
+        <description><![CDATA[ <p>Images aren’t working for me, not sure if that’s intended or not:</p>
+<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://radixtalk.com/uploads/default/original/1X/aad93dc4a97e379729c9c31a42a48a362c4f2535.png" data-download-href="https://radixtalk.com/uploads/default/aad93dc4a97e379729c9c31a42a48a362c4f2535" title="image"><img src="https://radixtalk.com/uploads/default/original/1X/aad93dc4a97e379729c9c31a42a48a362c4f2535.png" alt="image" data-base62-sha1="onoBEn1fMw0LpmkGkghWHTsxmdv" width="660" height="500" data-small-upload="https://radixtalk.com/uploads/default/optimized/1X/aad93dc4a97e379729c9c31a42a48a362c4f2535_2_10x10.png"></a></div><p></p>
+<p>For example the images here: <a href="https://archive.radixtalk.com/t/how-do-i-get-gateway-api-data-into-grafana-cloud/462.html" class="inline-onebox">How do I get Gateway API data into Grafana Cloud - Validators - RadixTalk</a></p> ]]></description>
+        <link>https://radixtalk.com/t/radix-talk-is-shutting-down/472#post_3</link>
+        <pubDate>Thu, 19 May 2022 09:06:59 +0000</pubDate>
+        <guid isPermaLink="false">radixtalk.com-post-871</guid>
+      </item>
+      <item>
+        <title>Radix Talk is shutting down</title>
+        <dc:creator><![CDATA[@Stuart Stuart | RadixPool]]></dc:creator>
         <description><![CDATA[ <p>I’ve created a static html snapshot of the Radix Talk forum at <a href="https://archive.radixtalk.com">https://archive.radixtalk.com</a></p>
 <p>Please let me know if you find anything broken or missing before 23 May 2022. I’ll take a final archive snapshot on this date and then point <a href="https://radixtalk.com">https://radixtalk.com</a> to the static content.</p> ]]></description>
         <link>https://radixtalk.com/t/radix-talk-is-shutting-down/472#post_2</link>
@@ -39,7 +59,7 @@
         <description><![CDATA[ <h1>
 <a name="radheads-1" class="anchor" href="https://radixtalk.com#radheads-1"></a>RadHeads</h1>
 <div align="center">
-<p><img src="https://cdn.radixtalk.com/uploads/default/original/1X/c9b98e5a59cbccea6a02b50e6ffe0d5e6b44d4b4.gif" alt="https://radheads.com/ico/logo_anim.gif" data-base62-sha1="sMxwsIb5u33b8McUuETFKfU5igk" width="500" height="500" class="animated"></p>
+<p><img src="https://radixtalk.com/uploads/default/original/1X/c9b98e5a59cbccea6a02b50e6ffe0d5e6b44d4b4.gif" alt="https://radheads.com/ico/logo_anim.gif" data-base62-sha1="sMxwsIb5u33b8McUuETFKfU5igk" width="500" height="500" class="animated"></p>
 </div>
 <blockquote>
 <p>RadHeads is a 3D <span class="hashtag">#FT</span> collection of 10,000 unique heads designed to represent the <span class="hashtag">#Radix</span> community!</p>
@@ -64,7 +84,7 @@
         <description><![CDATA[ <h1>
 <a name="egx-2022-1" class="anchor" href="https://radixtalk.com#egx-2022-1"></a>Egx 2022</h1>
 <div align="center">
-<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.radixtalk.com/uploads/default/original/1X/6d3ec03cb9b04edffbdf9c129f3aa3977f98c828.jpeg" data-download-href="https://cdn.radixtalk.com/uploads/default/6d3ec03cb9b04edffbdf9c129f3aa3977f98c828" title="image"><img src="https://cdn.radixtalk.com/uploads/default/optimized/1X/6d3ec03cb9b04edffbdf9c129f3aa3977f98c828_2_500x500.jpeg" alt="image" data-base62-sha1="fAque1suC8A4cI4PxIe6I2ul6NW" width="500" height="500" srcset="https://cdn.radixtalk.com/uploads/default/optimized/1X/6d3ec03cb9b04edffbdf9c129f3aa3977f98c828_2_500x500.jpeg, https://cdn.radixtalk.com/uploads/default/optimized/1X/6d3ec03cb9b04edffbdf9c129f3aa3977f98c828_2_750x750.jpeg 1.5x, https://cdn.radixtalk.com/uploads/default/optimized/1X/6d3ec03cb9b04edffbdf9c129f3aa3977f98c828_2_1000x1000.jpeg 2x" data-small-upload="https://cdn.radixtalk.com/uploads/default/optimized/1X/6d3ec03cb9b04edffbdf9c129f3aa3977f98c828_2_10x10.png"></a></div><p></p>
+<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://radixtalk.com/uploads/default/original/1X/6d3ec03cb9b04edffbdf9c129f3aa3977f98c828.jpeg" data-download-href="https://radixtalk.com/uploads/default/6d3ec03cb9b04edffbdf9c129f3aa3977f98c828" title="image"><img src="https://radixtalk.com/uploads/default/optimized/1X/6d3ec03cb9b04edffbdf9c129f3aa3977f98c828_2_500x500.jpeg" alt="image" data-base62-sha1="fAque1suC8A4cI4PxIe6I2ul6NW" width="500" height="500" srcset="https://radixtalk.com/uploads/default/optimized/1X/6d3ec03cb9b04edffbdf9c129f3aa3977f98c828_2_500x500.jpeg, https://radixtalk.com/uploads/default/optimized/1X/6d3ec03cb9b04edffbdf9c129f3aa3977f98c828_2_750x750.jpeg 1.5x, https://radixtalk.com/uploads/default/optimized/1X/6d3ec03cb9b04edffbdf9c129f3aa3977f98c828_2_1000x1000.jpeg 2x" data-small-upload="https://radixtalk.com/uploads/default/optimized/1X/6d3ec03cb9b04edffbdf9c129f3aa3977f98c828_2_10x10.png"></a></div><p></p>
 </div>
 <blockquote>
 <p>Egx 2022 - A festive NFT collection of 2022 randomly generated Easter Eggs for <span class="hashtag">#RadixMaxis</span> &amp; <span class="hashtag">#RadixHodlers</span></p>
@@ -93,18 +113,18 @@
       <item>
         <title>Staking Airdrop #2 of Delphibets</title>
         <dc:creator><![CDATA[@DELPHIBETS DELPHIBETS]]></dc:creator>
-        <description><![CDATA[ <p><img src="https://cdn.radixtalk.com/images/emoji/twitter/stop_sign.png?v=12" title=":stop_sign:" class="emoji" alt=":stop_sign:" loading="lazy" width="20" height="20"> <strong>STAKERS PAY ATTENTION!</strong><br>
+        <description><![CDATA[ <p><img src="https://radixtalk.com/images/emoji/twitter/stop_sign.png?v=12" title=":stop_sign:" class="emoji" alt=":stop_sign:" loading="lazy" width="20" height="20"> <strong>STAKERS PAY ATTENTION!</strong><br>
 After exciting and successful (prediction) events, we want to focus on the stakers again:</p>
-<p><img src="https://cdn.radixtalk.com/images/emoji/twitter/fire.png?v=12" title=":fire:" class="emoji" alt=":fire:" loading="lazy" width="20" height="20"> <strong>500,000 $DPH will be distributed</strong> <img src="https://cdn.radixtalk.com/images/emoji/twitter/fire.png?v=12" title=":fire:" class="emoji" alt=":fire:" loading="lazy" width="20" height="20"></p>
-<p><img src="https://cdn.radixtalk.com/images/emoji/twitter/one.png?v=12" title=":one:" class="emoji" alt=":one:" loading="lazy" width="20" height="20"> Staking snapshot is taken on 15th of May 2022<br>
-<img src="https://cdn.radixtalk.com/images/emoji/twitter/two.png?v=12" title=":two:" class="emoji" alt=":two:" loading="lazy" width="20" height="20"> The more you stake, the bigger your airdrop<br>
-<img src="https://cdn.radixtalk.com/images/emoji/twitter/three.png?v=12" title=":three:" class="emoji" alt=":three:" loading="lazy" width="20" height="20"> STAKE ON THE DELPHINODE TO RECEIVE 50% AIRDROP BONUS <img src="https://cdn.radixtalk.com/images/emoji/twitter/heart_eyes.png?v=12" title=":heart_eyes:" class="emoji" alt=":heart_eyes:" loading="lazy" width="20" height="20"></p>
+<p><img src="https://radixtalk.com/images/emoji/twitter/fire.png?v=12" title=":fire:" class="emoji" alt=":fire:" loading="lazy" width="20" height="20"> <strong>500,000 $DPH will be distributed</strong> <img src="https://radixtalk.com/images/emoji/twitter/fire.png?v=12" title=":fire:" class="emoji" alt=":fire:" loading="lazy" width="20" height="20"></p>
+<p><img src="https://radixtalk.com/images/emoji/twitter/one.png?v=12" title=":one:" class="emoji" alt=":one:" loading="lazy" width="20" height="20"> Staking snapshot is taken on 15th of May 2022<br>
+<img src="https://radixtalk.com/images/emoji/twitter/two.png?v=12" title=":two:" class="emoji" alt=":two:" loading="lazy" width="20" height="20"> The more you stake, the bigger your airdrop<br>
+<img src="https://radixtalk.com/images/emoji/twitter/three.png?v=12" title=":three:" class="emoji" alt=":three:" loading="lazy" width="20" height="20"> STAKE ON THE DELPHINODE TO RECEIVE 50% AIRDROP BONUS <img src="https://radixtalk.com/images/emoji/twitter/heart_eyes.png?v=12" title=":heart_eyes:" class="emoji" alt=":heart_eyes:" loading="lazy" width="20" height="20"></p>
 <p>Stakers of the <a href="https://www.radixscan.io/validator/rv1qtj3zvu8ttar6mluw6qzlfu5mnjqpeswcjs07ayalyx4gje4wy4xwq85hhs" rel="noopener nofollow ugc">DELPHINODE</a> have advantages and will receive the <a href="https://t.me/delphibets/12347" rel="noopener nofollow ugc">highest bonus</a>. The airdrop will follow in the next few days after the snapshot is taken. Starting in May we will introduce a validator fee in line with other Radix nodes of 2.8%.</p>
-<p><img src="https://cdn.radixtalk.com/images/emoji/twitter/computer.png?v=12" title=":computer:" class="emoji" alt=":computer:" loading="lazy" width="20" height="20"> <strong>How to stake $XRD?</strong><br>
-For those who want to stake on the DELPHINODE for the first time, Pythia has recorded a video. It was her concern to explain you all in the most simple way, so you can get as many $DPH as possible <img src="https://cdn.radixtalk.com/images/emoji/twitter/heart.png?v=12" title=":heart:" class="emoji" alt=":heart:" loading="lazy" width="20" height="20"></p>
+<p><img src="https://radixtalk.com/images/emoji/twitter/computer.png?v=12" title=":computer:" class="emoji" alt=":computer:" loading="lazy" width="20" height="20"> <strong>How to stake $XRD?</strong><br>
+For those who want to stake on the DELPHINODE for the first time, Pythia has recorded a video. It was her concern to explain you all in the most simple way, so you can get as many $DPH as possible <img src="https://radixtalk.com/images/emoji/twitter/heart.png?v=12" title=":heart:" class="emoji" alt=":heart:" loading="lazy" width="20" height="20"></p>
 <p><a href="https://www.youtube.com/embed/wX1qB2p1Dns?autoplay=1&amp;feature=oembed&amp;wmode=opaque">https://www.youtube.com/embed/wX1qB2p1Dns</a></p>
 
-<p><img src="https://cdn.radixtalk.com/images/emoji/twitter/star.png?v=12" title=":star:" class="emoji" alt=":star:" loading="lazy" width="20" height="20"> Stay tuned and visit our <a href="https://t.me/delphibets" rel="noopener nofollow ugc">Telegram channel</a> or follow us on <a href="https://twitter.com/delphibets" rel="noopener nofollow ugc">Twitter</a>.</p>
+<p><img src="https://radixtalk.com/images/emoji/twitter/star.png?v=12" title=":star:" class="emoji" alt=":star:" loading="lazy" width="20" height="20"> Stay tuned and visit our <a href="https://t.me/delphibets" rel="noopener nofollow ugc">Telegram channel</a> or follow us on <a href="https://twitter.com/delphibets" rel="noopener nofollow ugc">Twitter</a>.</p>
 <p><em>The validator stake of the DELPHINODE is currently 1.65%. Only 0.35% remain to secure the 50% bonus.</em></p> ]]></description>
         <link>https://radixtalk.com/t/staking-airdrop-2-of-delphibets/463#post_1</link>
         <pubDate>Thu, 28 Apr 2022 19:23:07 +0000</pubDate>
@@ -129,14 +149,14 @@ Authorization system rehaul<br>
 <p>However, there may be other metrics that node runners desire that are not currently present in the core API, but may be present in the Gateway.  This post explains how to import REST API data directly into Grafana.  For this example we will use Validator Total Stake (this is currently not available in the Core API, but can be requested through the Gateway).</p>
 <ol>
 <li>Find the Infinity data source by selecting configuration–&gt;data sources–&gt;add data source–&gt;find more data source plugins on grafana<br>
-<div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.radixtalk.com/uploads/default/original/1X/1ff62c47a0b7fe6bd97b47d32e8b40e8883cef90.png" data-download-href="https://cdn.radixtalk.com/uploads/default/1ff62c47a0b7fe6bd97b47d32e8b40e8883cef90" title="image"><img src="https://cdn.radixtalk.com/uploads/default/optimized/1X/1ff62c47a0b7fe6bd97b47d32e8b40e8883cef90_2_690x343.png" alt="image" data-base62-sha1="4yKdVSItCzgRMW7D9LlnyyS4JAA" width="690" height="343" srcset="https://cdn.radixtalk.com/uploads/default/optimized/1X/1ff62c47a0b7fe6bd97b47d32e8b40e8883cef90_2_690x343.png, https://cdn.radixtalk.com/uploads/default/optimized/1X/1ff62c47a0b7fe6bd97b47d32e8b40e8883cef90_2_1035x514.png 1.5x, https://cdn.radixtalk.com/uploads/default/original/1X/1ff62c47a0b7fe6bd97b47d32e8b40e8883cef90.png 2x" data-small-upload="https://cdn.radixtalk.com/uploads/default/optimized/1X/1ff62c47a0b7fe6bd97b47d32e8b40e8883cef90_2_10x10.png"></a></div>
+<div class="lightbox-wrapper"><a class="lightbox" href="https://radixtalk.com/uploads/default/original/1X/1ff62c47a0b7fe6bd97b47d32e8b40e8883cef90.png" data-download-href="https://radixtalk.com/uploads/default/1ff62c47a0b7fe6bd97b47d32e8b40e8883cef90" title="image"><img src="https://radixtalk.com/uploads/default/optimized/1X/1ff62c47a0b7fe6bd97b47d32e8b40e8883cef90_2_690x343.png" alt="image" data-base62-sha1="4yKdVSItCzgRMW7D9LlnyyS4JAA" width="690" height="343" srcset="https://radixtalk.com/uploads/default/optimized/1X/1ff62c47a0b7fe6bd97b47d32e8b40e8883cef90_2_690x343.png, https://radixtalk.com/uploads/default/optimized/1X/1ff62c47a0b7fe6bd97b47d32e8b40e8883cef90_2_1035x514.png 1.5x, https://radixtalk.com/uploads/default/original/1X/1ff62c47a0b7fe6bd97b47d32e8b40e8883cef90.png 2x" data-small-upload="https://radixtalk.com/uploads/default/optimized/1X/1ff62c47a0b7fe6bd97b47d32e8b40e8883cef90_2_10x10.png"></a></div>
 </li>
 <li>add the plugin to Grafana cloud (there are also instructions if you are using Grafana locally)<br>
-<div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.radixtalk.com/uploads/default/original/1X/b16a088075ec7cabca340002d6079ca8f6ce7a0d.png" data-download-href="https://cdn.radixtalk.com/uploads/default/b16a088075ec7cabca340002d6079ca8f6ce7a0d" title="image"><img src="https://cdn.radixtalk.com/uploads/default/optimized/1X/b16a088075ec7cabca340002d6079ca8f6ce7a0d_2_690x418.png" alt="image" data-base62-sha1="pjtGCgAOu3F30EKBd0gtstq4Icl" width="690" height="418" srcset="https://cdn.radixtalk.com/uploads/default/optimized/1X/b16a088075ec7cabca340002d6079ca8f6ce7a0d_2_690x418.png, https://cdn.radixtalk.com/uploads/default/original/1X/b16a088075ec7cabca340002d6079ca8f6ce7a0d.png 1.5x, https://cdn.radixtalk.com/uploads/default/original/1X/b16a088075ec7cabca340002d6079ca8f6ce7a0d.png 2x" data-small-upload="https://cdn.radixtalk.com/uploads/default/optimized/1X/b16a088075ec7cabca340002d6079ca8f6ce7a0d_2_10x10.png"></a></div>
+<div class="lightbox-wrapper"><a class="lightbox" href="https://radixtalk.com/uploads/default/original/1X/b16a088075ec7cabca340002d6079ca8f6ce7a0d.png" data-download-href="https://radixtalk.com/uploads/default/b16a088075ec7cabca340002d6079ca8f6ce7a0d" title="image"><img src="https://radixtalk.com/uploads/default/optimized/1X/b16a088075ec7cabca340002d6079ca8f6ce7a0d_2_690x418.png" alt="image" data-base62-sha1="pjtGCgAOu3F30EKBd0gtstq4Icl" width="690" height="418" srcset="https://radixtalk.com/uploads/default/optimized/1X/b16a088075ec7cabca340002d6079ca8f6ce7a0d_2_690x418.png, https://radixtalk.com/uploads/default/original/1X/b16a088075ec7cabca340002d6079ca8f6ce7a0d.png 1.5x, https://radixtalk.com/uploads/default/original/1X/b16a088075ec7cabca340002d6079ca8f6ce7a0d.png 2x" data-small-upload="https://radixtalk.com/uploads/default/optimized/1X/b16a088075ec7cabca340002d6079ca8f6ce7a0d_2_10x10.png"></a></div>
 </li>
 <li>add the data source by selecting it from the list in Grafana cloud</li>
 <li>add a new panel using the “Stat” visualisation and the fields below:<br>
-<div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.radixtalk.com/uploads/default/original/1X/5d19420a030c9bf524535c9ac576e6a885d6b886.png" data-download-href="https://cdn.radixtalk.com/uploads/default/5d19420a030c9bf524535c9ac576e6a885d6b886" title="image"><img src="https://cdn.radixtalk.com/uploads/default/optimized/1X/5d19420a030c9bf524535c9ac576e6a885d6b886_2_690x372.png" alt="image" data-base62-sha1="dhAwdHl5hlu8FIyMyC4cVWB7sNw" width="690" height="372" srcset="https://cdn.radixtalk.com/uploads/default/optimized/1X/5d19420a030c9bf524535c9ac576e6a885d6b886_2_690x372.png, https://cdn.radixtalk.com/uploads/default/optimized/1X/5d19420a030c9bf524535c9ac576e6a885d6b886_2_1035x558.png 1.5x, https://cdn.radixtalk.com/uploads/default/original/1X/5d19420a030c9bf524535c9ac576e6a885d6b886.png 2x" data-small-upload="https://cdn.radixtalk.com/uploads/default/optimized/1X/5d19420a030c9bf524535c9ac576e6a885d6b886_2_10x10.png"></a></div>
+<div class="lightbox-wrapper"><a class="lightbox" href="https://radixtalk.com/uploads/default/original/1X/5d19420a030c9bf524535c9ac576e6a885d6b886.png" data-download-href="https://radixtalk.com/uploads/default/5d19420a030c9bf524535c9ac576e6a885d6b886" title="image"><img src="https://radixtalk.com/uploads/default/optimized/1X/5d19420a030c9bf524535c9ac576e6a885d6b886_2_690x372.png" alt="image" data-base62-sha1="dhAwdHl5hlu8FIyMyC4cVWB7sNw" width="690" height="372" srcset="https://radixtalk.com/uploads/default/optimized/1X/5d19420a030c9bf524535c9ac576e6a885d6b886_2_690x372.png, https://radixtalk.com/uploads/default/optimized/1X/5d19420a030c9bf524535c9ac576e6a885d6b886_2_1035x558.png 1.5x, https://radixtalk.com/uploads/default/original/1X/5d19420a030c9bf524535c9ac576e6a885d6b886.png 2x" data-small-upload="https://radixtalk.com/uploads/default/optimized/1X/5d19420a030c9bf524535c9ac576e6a885d6b886_2_10x10.png"></a></div>
 </li>
 <li>in the HTTP method, query param, headers option - enter POST as the method along with the following body:</li>
 </ol>
@@ -155,7 +175,7 @@ Authorization system rehaul<br>
 <ol start="6">
 <li>Make sure the header “content-type = application/json” is also included in the header tab.</li>
 <li>Using the transform field, reduce the field to a more human number by dividing by 1E18 and select ‘replace all fields’<br>
-<div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.radixtalk.com/uploads/default/original/1X/8a9ca6b91a3729ee1b80b3215a351237d380add9.png" data-download-href="https://cdn.radixtalk.com/uploads/default/8a9ca6b91a3729ee1b80b3215a351237d380add9" title="image"><img src="https://cdn.radixtalk.com/uploads/default/optimized/1X/8a9ca6b91a3729ee1b80b3215a351237d380add9_2_690x321.png" alt="image" data-base62-sha1="jMdvUw5oNpVPKp6Ytpq7jWeJp8d" width="690" height="321" srcset="https://cdn.radixtalk.com/uploads/default/optimized/1X/8a9ca6b91a3729ee1b80b3215a351237d380add9_2_690x321.png, https://cdn.radixtalk.com/uploads/default/optimized/1X/8a9ca6b91a3729ee1b80b3215a351237d380add9_2_1035x481.png 1.5x, https://cdn.radixtalk.com/uploads/default/original/1X/8a9ca6b91a3729ee1b80b3215a351237d380add9.png 2x" data-small-upload="https://cdn.radixtalk.com/uploads/default/optimized/1X/8a9ca6b91a3729ee1b80b3215a351237d380add9_2_10x10.png"></a></div>
+<div class="lightbox-wrapper"><a class="lightbox" href="https://radixtalk.com/uploads/default/original/1X/8a9ca6b91a3729ee1b80b3215a351237d380add9.png" data-download-href="https://radixtalk.com/uploads/default/8a9ca6b91a3729ee1b80b3215a351237d380add9" title="image"><img src="https://radixtalk.com/uploads/default/optimized/1X/8a9ca6b91a3729ee1b80b3215a351237d380add9_2_690x321.png" alt="image" data-base62-sha1="jMdvUw5oNpVPKp6Ytpq7jWeJp8d" width="690" height="321" srcset="https://radixtalk.com/uploads/default/optimized/1X/8a9ca6b91a3729ee1b80b3215a351237d380add9_2_690x321.png, https://radixtalk.com/uploads/default/optimized/1X/8a9ca6b91a3729ee1b80b3215a351237d380add9_2_1035x481.png 1.5x, https://radixtalk.com/uploads/default/original/1X/8a9ca6b91a3729ee1b80b3215a351237d380add9.png 2x" data-small-upload="https://radixtalk.com/uploads/default/optimized/1X/8a9ca6b91a3729ee1b80b3215a351237d380add9_2_10x10.png"></a></div>
 </li>
 <li>In the panel options, select 0 for decimals</li>
 <li>You now have validator total stake displayed on your dashboard!</li>
@@ -169,12 +189,12 @@ Authorization system rehaul<br>
         <dc:creator><![CDATA[@Faraz Faraz | Radstakes.com]]></dc:creator>
         <description><![CDATA[ <p>Following the recent release of node software v1.1.1, the team have advised on a number of further releases which are planned over the next new months to implement coordinated forking.  This will initiate a fork to an updated protocol, only when a certain threshold of validators (or stake weight) have upgraded.  Validators who have not updated by a prescribed time, will be removed from the validator set until they do so.</p>
 <p>Furthermore, an update for Validator Liveness Assurance is planned in June which will temporarily remove validators from the set if they don’t meet the required liveness standards.  See details below (source: <a href="https://discord.com/channels/417762285172555786/883338066524274695/966728048047185950">Radix Discord</a>)</p>
-<p><img src="https://cdn.radixtalk.com/images/emoji/twitter/arrow_right.png?v=12" title=":arrow_right:" class="emoji" alt=":arrow_right:" loading="lazy" width="20" height="20"> Node version 1.1.1 released 22nd April 2022. It’s a recommended reliability upgrade, and should be an easy upgrade from 1.1.0 - more details here: <a href="https://github.com/radixdlt/radixdlt/releases/tag/1.1.1">https://github.com/radixdlt/radixdlt/releases/tag/1.1.1</a></p>
-<p><img src="https://cdn.radixtalk.com/images/emoji/twitter/arrow_right.png?v=12" title=":arrow_right:" class="emoji" alt=":arrow_right:" loading="lazy" width="20" height="20">  1.2.0 - Support for co-ordinated forking [Releases early May]</p>
+<p><img src="https://radixtalk.com/images/emoji/twitter/arrow_right.png?v=12" title=":arrow_right:" class="emoji" alt=":arrow_right:" loading="lazy" width="20" height="20"> Node version 1.1.1 released 22nd April 2022. It’s a recommended reliability upgrade, and should be an easy upgrade from 1.1.0 - more details here: <a href="https://github.com/radixdlt/radixdlt/releases/tag/1.1.1">https://github.com/radixdlt/radixdlt/releases/tag/1.1.1</a></p>
+<p><img src="https://radixtalk.com/images/emoji/twitter/arrow_right.png?v=12" title=":arrow_right:" class="emoji" alt=":arrow_right:" loading="lazy" width="20" height="20">  1.2.0 - Support for co-ordinated forking [Releases early May]</p>
 <p>This release will enable nodes to recognise fork votes. We’re hoping to have documentation, a new CLI version, and a release candidate available for testing some time next week. As part of preparing for this release, we will run through the process of a hard fork on Stokenet, and we’ll ask for node runners’ assistance with testing this. This will hopefully ready for stokenet testing in the middle of next week.</p>
-<p><img src="https://cdn.radixtalk.com/images/emoji/twitter/arrow_right.png?v=12" title=":arrow_right:" class="emoji" alt=":arrow_right:" loading="lazy" width="20" height="20"> 1.3.0 - The first candidate fork [Likely releases around mid-May, with fork hopefully enacting around the end of May]</p>
+<p><img src="https://radixtalk.com/images/emoji/twitter/arrow_right.png?v=12" title=":arrow_right:" class="emoji" alt=":arrow_right:" loading="lazy" width="20" height="20"> 1.3.0 - The first candidate fork [Likely releases around mid-May, with fork hopefully enacting around the end of May]</p>
 <p>This will capture updates to the fee table. Node runners will need to install the new version of the software, and validators will be taken through the process to vote for the fork. There will be a grace period between the version being released and the fork being able to enact. When the fork is enacted, nodes running old versions of the software will be unable to continue syncing past the fork point.</p>
-<p><img src="https://cdn.radixtalk.com/images/emoji/twitter/arrow_right.png?v=12" title=":arrow_right:" class="emoji" alt=":arrow_right:" loading="lazy" width="20" height="20"> 1.4.0 -  Validator Liveness Assurance [Potentially releases early June, with fork enacting soon after a few weeks later]</p>
+<p><img src="https://radixtalk.com/images/emoji/twitter/arrow_right.png?v=12" title=":arrow_right:" class="emoji" alt=":arrow_right:" loading="lazy" width="20" height="20"> 1.4.0 -  Validator Liveness Assurance [Potentially releases early June, with fork enacting soon after a few weeks later]</p>
 <p>Our second candidate fork. This update will “jail” validators who don’t meet sufficient liveness guarantees, ensuring validators who crash or fail to meet reasonable liveness standards will be temporarily removed from the validator set, ensuring the network stays running smoothly. More details will follow in due course.</p> ]]></description>
         <link>https://radixtalk.com/t/node-releases-hard-forks/461#post_1</link>
         <pubDate>Sat, 23 Apr 2022 09:32:45 +0000</pubDate>
@@ -185,14 +205,14 @@ Authorization system rehaul<br>
         <dc:creator><![CDATA[@AhmedSedeek Ahmed Sedeek]]></dc:creator>
         <description><![CDATA[ <p>Dear All,<br>
 The long awaited announcement is here:</p>
-<p>Announcing the <img src="https://cdn.radixtalk.com/images/emoji/twitter/ringer_planet.png?v=12" title=":ringer_planet:" class="emoji" alt=":ringer_planet:" loading="lazy" width="20" height="20">RadixPlanet Validator Node, now up and running with 0% fee promo for two months</p>
+<p>Announcing the <img src="https://radixtalk.com/images/emoji/twitter/ringer_planet.png?v=12" title=":ringer_planet:" class="emoji" alt=":ringer_planet:" loading="lazy" width="20" height="20">RadixPlanet Validator Node, now up and running with 0% fee promo for two months</p>
 <p>Our node offers the following features and benefits:</p>
-<p><img src="https://cdn.radixtalk.com/images/emoji/twitter/white_check_mark.png?v=12" title=":white_check_mark:" class="emoji" alt=":white_check_mark:" loading="lazy" width="20" height="20"> PLANET airdrop rewards to stakers until we achieve 2% of total network stake</p>
-<p><img src="https://cdn.radixtalk.com/images/emoji/twitter/white_check_mark.png?v=12" title=":white_check_mark:" class="emoji" alt=":white_check_mark:" loading="lazy" width="20" height="20"> Early staking IS beneficial, the earlier you stake the larger amount of PLANET rewards you get</p>
-<p><img src="https://cdn.radixtalk.com/images/emoji/twitter/white_check_mark.png?v=12" title=":white_check_mark:" class="emoji" alt=":white_check_mark:" loading="lazy" width="20" height="20"> Rewards are proportional to the staked amount, The larger amount you stake, the larger amount of PLANET rewards you get</p>
-<p><img src="https://cdn.radixtalk.com/images/emoji/twitter/white_check_mark.png?v=12" title=":white_check_mark:" class="emoji" alt=":white_check_mark:" loading="lazy" width="20" height="20"> Monthly rewards distribution of PLANET tokens to ALL stakers</p>
-<p><img src="https://cdn.radixtalk.com/images/emoji/twitter/white_check_mark.png?v=12" title=":white_check_mark:" class="emoji" alt=":white_check_mark:" loading="lazy" width="20" height="20"> Validator fee is set to rise from 0% to a reasonable 2.5% after two months to help support and develop the RadixPlanet exchange</p>
-<p><img src="https://cdn.radixtalk.com/images/emoji/twitter/white_check_mark.png?v=12" title=":white_check_mark:" class="emoji" alt=":white_check_mark:" loading="lazy" width="20" height="20"> The ONLY case the validator fee is expected to be raised above 2.5% is if the node exceeds 3% of total network stake, where an increase in fee will be used to deter further staking and improve decentralization.</p>
+<p><img src="https://radixtalk.com/images/emoji/twitter/white_check_mark.png?v=12" title=":white_check_mark:" class="emoji" alt=":white_check_mark:" loading="lazy" width="20" height="20"> PLANET airdrop rewards to stakers until we achieve 2% of total network stake</p>
+<p><img src="https://radixtalk.com/images/emoji/twitter/white_check_mark.png?v=12" title=":white_check_mark:" class="emoji" alt=":white_check_mark:" loading="lazy" width="20" height="20"> Early staking IS beneficial, the earlier you stake the larger amount of PLANET rewards you get</p>
+<p><img src="https://radixtalk.com/images/emoji/twitter/white_check_mark.png?v=12" title=":white_check_mark:" class="emoji" alt=":white_check_mark:" loading="lazy" width="20" height="20"> Rewards are proportional to the staked amount, The larger amount you stake, the larger amount of PLANET rewards you get</p>
+<p><img src="https://radixtalk.com/images/emoji/twitter/white_check_mark.png?v=12" title=":white_check_mark:" class="emoji" alt=":white_check_mark:" loading="lazy" width="20" height="20"> Monthly rewards distribution of PLANET tokens to ALL stakers</p>
+<p><img src="https://radixtalk.com/images/emoji/twitter/white_check_mark.png?v=12" title=":white_check_mark:" class="emoji" alt=":white_check_mark:" loading="lazy" width="20" height="20"> Validator fee is set to rise from 0% to a reasonable 2.5% after two months to help support and develop the RadixPlanet exchange</p>
+<p><img src="https://radixtalk.com/images/emoji/twitter/white_check_mark.png?v=12" title=":white_check_mark:" class="emoji" alt=":white_check_mark:" loading="lazy" width="20" height="20"> The ONLY case the validator fee is expected to be raised above 2.5% is if the node exceeds 3% of total network stake, where an increase in fee will be used to deter further staking and improve decentralization.</p>
 <p>Validator address: rv1qfppqvvkcyl5dd2ee6wr4ljp7kxrwlej8q4td5cd4gpc6wqylqt22wljdq5</p>
 <p>For more information about PLANET token, please check the following link: <a href="https://www.radixplanet.com/PlanetToken" class="inline-onebox" rel="noopener nofollow ugc">Planet Token - RadixPlanet</a></p> ]]></description>
         <link>https://radixtalk.com/t/radixplanet-validator-node/458#post_1</link>
@@ -334,7 +354,7 @@ import json</p>
         <title>Error message when requesting from API</title>
         <dc:creator><![CDATA[@Peachy Shawn]]></dc:creator>
         <description><![CDATA[ <p>I use Postman and merely populate it as follows (both Header and Body/raw/json)</p>
-<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.radixtalk.com/uploads/default/original/1X/201f73c1b9a69dac4f7e118f3a45a6533cfaf0f9.png" data-download-href="https://cdn.radixtalk.com/uploads/default/201f73c1b9a69dac4f7e118f3a45a6533cfaf0f9" title="image"><img src="https://cdn.radixtalk.com/uploads/default/original/1X/201f73c1b9a69dac4f7e118f3a45a6533cfaf0f9.png" alt="image" data-base62-sha1="4AaFemNq087NNkqn2SSdIu56GTv" width="690" height="495" data-small-upload="https://cdn.radixtalk.com/uploads/default/optimized/1X/201f73c1b9a69dac4f7e118f3a45a6533cfaf0f9_2_10x10.png"></a></div><p></p> ]]></description>
+<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://radixtalk.com/uploads/default/original/1X/201f73c1b9a69dac4f7e118f3a45a6533cfaf0f9.png" data-download-href="https://radixtalk.com/uploads/default/201f73c1b9a69dac4f7e118f3a45a6533cfaf0f9" title="image"><img src="https://radixtalk.com/uploads/default/original/1X/201f73c1b9a69dac4f7e118f3a45a6533cfaf0f9.png" alt="image" data-base62-sha1="4AaFemNq087NNkqn2SSdIu56GTv" width="690" height="495" data-small-upload="https://radixtalk.com/uploads/default/optimized/1X/201f73c1b9a69dac4f7e118f3a45a6533cfaf0f9_2_10x10.png"></a></div><p></p> ]]></description>
         <link>https://radixtalk.com/t/error-message-when-requesting-from-api/451#post_2</link>
         <pubDate>Wed, 13 Apr 2022 19:58:58 +0000</pubDate>
         <guid isPermaLink="false">radixtalk.com-post-837</guid>
@@ -361,13 +381,13 @@ BRGDS</p> ]]></description>
         <dc:creator><![CDATA[@Peachy Shawn]]></dc:creator>
         <description><![CDATA[ <p>Has anyone here used the APIs for staking / unstaking found here?</p><aside class="onebox allowlistedgeneric" data-onebox-src="https://documenter.getpostman.com/view/14449947/UVXnHaJh#32508ddc-bdd0-48d4-9e7a-6a0ff2bd118e">
   <header class="source">
-      <img src="https://cdn.radixtalk.com/uploads/default/original/1X/23e08811972f34d8a58f14b7bb1968b2034d7de6.png" class="site-icon" width="16" height="16">
+      <img src="https://radixtalk.com/uploads/default/original/1X/23e08811972f34d8a58f14b7bb1968b2034d7de6.png" class="site-icon" width="16" height="16">
 
       <a href="https://documenter.getpostman.com/view/14449947/UVXnHaJh#32508ddc-bdd0-48d4-9e7a-6a0ff2bd118e" target="_blank" rel="noopener nofollow ugc">Core API</a>
   </header>
 
   <article class="onebox-body">
-    <img src="https://cdn.radixtalk.com/uploads/default/original/1X/430c22d4f9808f11a28f78210e77d617f0a99094.png" class="thumbnail onebox-avatar" width="112" height="112">
+    <img src="https://radixtalk.com/uploads/default/original/1X/430c22d4f9808f11a28f78210e77d617f0a99094.png" class="thumbnail onebox-avatar" width="112" height="112">
 
 <h3><a href="https://documenter.getpostman.com/view/14449947/UVXnHaJh#32508ddc-bdd0-48d4-9e7a-6a0ff2bd118e" target="_blank" rel="noopener nofollow ugc">Core API</a></h3>
 
@@ -416,7 +436,7 @@ Thanks!</p> ]]></description>
 <p>Mini-pets have levels that can be increased through winning battles. If a mini-pet gets traded to another player the levels are reset. Damage and defence levels have a “base” and then takes a multiplier from their level.</p>
 <p>Golemz will have a special attack for their weapons.</p>
 <p><a href="https://raduel.com/golemz" rel="noopener nofollow ugc">Buy Golemz:</a></p>
-<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.radixtalk.com/uploads/default/original/1X/4681b6f3d249d82d5e32f444ad6405537e615773.png" data-download-href="https://cdn.radixtalk.com/uploads/default/4681b6f3d249d82d5e32f444ad6405537e615773" title="10000"><img src="https://cdn.radixtalk.com/uploads/default/optimized/1X/4681b6f3d249d82d5e32f444ad6405537e615773_2_499x499.png" alt="10000" data-base62-sha1="a3JkMUp8byWRVeoaSiDaI7KJf6H" width="499" height="499" srcset="https://cdn.radixtalk.com/uploads/default/optimized/1X/4681b6f3d249d82d5e32f444ad6405537e615773_2_499x499.png, https://cdn.radixtalk.com/uploads/default/optimized/1X/4681b6f3d249d82d5e32f444ad6405537e615773_2_748x748.png 1.5x, https://cdn.radixtalk.com/uploads/default/optimized/1X/4681b6f3d249d82d5e32f444ad6405537e615773_2_998x998.png 2x" data-small-upload="https://cdn.radixtalk.com/uploads/default/optimized/1X/4681b6f3d249d82d5e32f444ad6405537e615773_2_10x10.png"></a></div><p></p>
+<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://radixtalk.com/uploads/default/original/1X/4681b6f3d249d82d5e32f444ad6405537e615773.png" data-download-href="https://radixtalk.com/uploads/default/4681b6f3d249d82d5e32f444ad6405537e615773" title="10000"><img src="https://radixtalk.com/uploads/default/optimized/1X/4681b6f3d249d82d5e32f444ad6405537e615773_2_499x499.png" alt="10000" data-base62-sha1="a3JkMUp8byWRVeoaSiDaI7KJf6H" width="499" height="499" srcset="https://radixtalk.com/uploads/default/optimized/1X/4681b6f3d249d82d5e32f444ad6405537e615773_2_499x499.png, https://radixtalk.com/uploads/default/optimized/1X/4681b6f3d249d82d5e32f444ad6405537e615773_2_748x748.png 1.5x, https://radixtalk.com/uploads/default/optimized/1X/4681b6f3d249d82d5e32f444ad6405537e615773_2_998x998.png 2x" data-small-upload="https://radixtalk.com/uploads/default/optimized/1X/4681b6f3d249d82d5e32f444ad6405537e615773_2_10x10.png"></a></div><p></p>
 <p><strong>RULE</strong></p>
 <p>RULE is the in-game currency that can be used to purchase things in game. Our MMORPG will not be pay to win. If there is an item in-game that can be used to do things such as kill other players (swords, guns, laser rifles, etc) then it can be purchased with either in-game gold or RULE!</p>
 <p>We also plan to give RULE holders a percentage of the earnings that the game makes back to those holders.</p>
@@ -450,29 +470,6 @@ I have tested  a transfer to find a desktop wallet</p> ]]></description>
         <link>https://radixtalk.com/t/why-can-i-only-see-my-first-10-delegators/439#post_5</link>
         <pubDate>Mon, 11 Apr 2022 12:35:19 +0000</pubDate>
         <guid isPermaLink="false">radixtalk.com-post-823</guid>
-      </item>
-      <item>
-        <title>Why can I only see my first 10 delegators?</title>
-        <dc:creator><![CDATA[@RadUp.io Ed &amp; James]]></dc:creator>
-        <description><![CDATA[ <p>Try this:</p>
-<aside class="quote no-group">
-<blockquote>
-<p>curl -s POST -k ‘<a href="https://mainnet-gateway.radixdlt.com/validator/stakes%E2%80%99" rel="noopener nofollow ugc">https://mainnet-gateway.radixdlt.com/validator/stakes’</a> -H ‘Content-Type: application/json’ \ -d ’<br>
-{<br>
-“network_identifier”: {<br>
-“network”: “mainnet”<br>
-},<br>
-“validator_identifier”: {<br>
-“address”: “&lt;VALIDATOR_ID&gt;”<br>
-},<br>
-“cursor”: “&lt;NEXT_CURSOR_FROM_PREVIOUS_API_CALL&gt;”<br>
-}’ | jq</p>
-</blockquote>
-</aside>
-<p>Let me know if that works ok for you.</p> ]]></description>
-        <link>https://radixtalk.com/t/why-can-i-only-see-my-first-10-delegators/439#post_4</link>
-        <pubDate>Mon, 11 Apr 2022 12:07:20 +0000</pubDate>
-        <guid isPermaLink="false">radixtalk.com-post-821</guid>
       </item>
   </channel>
 </rss>

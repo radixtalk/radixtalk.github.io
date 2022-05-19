@@ -41,15 +41,15 @@ sudo rngd -r /dev/random
 </code></pre>
 <p>Alternatively, you can install the <code>haveged</code> package by following the instructions here:</p><aside class="onebox allowlistedgeneric" data-onebox-src="https://www.digitalocean.com/community/tutorials/how-to-setup-additional-entropy-for-cloud-servers-using-haveged">
   <header class="source">
-      <img src="https://radixtalk.com/uploads/default/original/1X/1abf2298dc405e5555391af1cdba955187b73f2f.png" class="site-icon" width="192" height="192">
+      <img src="https://radixtalk.com/uploads/default/original/1X/39595abc65b3dac1dada8b9ce702b3d294561542.png" class="site-icon" width="192" height="192">
 
-      <a href="https://www.digitalocean.com/community/tutorials/how-to-setup-additional-entropy-for-cloud-servers-using-haveged" target="_blank" rel="noopener">DigitalOcean</a>
+      <a href="https://www.digitalocean.com/community/tutorials/how-to-setup-additional-entropy-for-cloud-servers-using-haveged" target="_blank" rel="noopener">digitalocean.com</a>
   </header>
 
   <article class="onebox-body">
-    <div class="aspect-image" style="--aspect-ratio:690/362;"><img src="https://radixtalk.com/uploads/default/optimized/1X/22ad520270b256a36e732e6fe2a4d6c2e11e7b60_2_690x362.jpeg" class="thumbnail" width="690" height="362" srcset="https://radixtalk.com/uploads/default/optimized/1X/22ad520270b256a36e732e6fe2a4d6c2e11e7b60_2_690x362.jpeg, https://radixtalk.com/uploads/default/optimized/1X/22ad520270b256a36e732e6fe2a4d6c2e11e7b60_2_1035x543.jpeg 1.5x, https://radixtalk.com/uploads/default/original/1X/22ad520270b256a36e732e6fe2a4d6c2e11e7b60.jpeg 2x" data-small-upload="https://radixtalk.com/uploads/default/optimized/1X/22ad520270b256a36e732e6fe2a4d6c2e11e7b60_2_10x10.png"></div>
+    <div class="aspect-image" style="--aspect-ratio:690/345;"><img src="https://radixtalk.com/uploads/default/optimized/1X/b48d8dfb3e7a211c28d5c6ffbe626c49491c59fc_2_690x345.jpeg" class="thumbnail" width="690" height="345" srcset="https://radixtalk.com/uploads/default/optimized/1X/b48d8dfb3e7a211c28d5c6ffbe626c49491c59fc_2_690x345.jpeg, https://radixtalk.com/uploads/default/optimized/1X/b48d8dfb3e7a211c28d5c6ffbe626c49491c59fc_2_1035x517.jpeg 1.5x, https://radixtalk.com/uploads/default/original/1X/b48d8dfb3e7a211c28d5c6ffbe626c49491c59fc.jpeg 2x" data-small-upload="https://radixtalk.com/uploads/default/optimized/1X/b48d8dfb3e7a211c28d5c6ffbe626c49491c59fc_2_10x10.png"></div>
 
-<h3><a href="https://www.digitalocean.com/community/tutorials/how-to-setup-additional-entropy-for-cloud-servers-using-haveged" target="_blank" rel="noopener">How to Setup Additional Entropy for Cloud Servers Using Haveged | DigitalOcean</a></h3>
+<h3><a href="https://www.digitalocean.com/community/tutorials/how-to-setup-additional-entropy-for-cloud-servers-using-haveged" target="_blank" rel="noopener">How to Setup Additional Entropy for Cloud Servers Using Haveged  | DigitalOcean</a></h3>
 
   <p>Entropy is important, and haveged is an application that can provide your system with more of it.</p>
 
