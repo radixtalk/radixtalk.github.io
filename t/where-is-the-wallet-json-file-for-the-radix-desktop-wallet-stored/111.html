@@ -1,227 +1,304 @@
 <!DOCTYPE html>
 <html lang="en-GB">
-  <head>
-    <meta charset="utf-8">
-    <title>Where is the wallet.json file for the Radix Desktop Wallet stored? - Questions / Help - RadixTalk</title>
-    <meta name="description" content="The location of the wallet.json file is dependent on the operating system you are using: 
-Win: %APPDATA%\radix-olympia-desktop-wallet 
-Mac: ~/Library/Application Support/radix-olympia-desktop-wallet 
+
+<head>
+  <meta charset="utf-8">
+  <title>Where is the wallet.json file for the Radix Desktop Wallet stored? - Questions / Help - RadixTalk</title>
+  <meta name="description" content="The location of the wallet.json file is dependent on the operating system you are using:
+Win: %APPDATA%\radix-olympia-desktop-wallet
+Mac: ~/Library/Application Support/radix-olympia-desktop-wallet
 Linux: ~/.config/rad&amp;hellip;">
-    <meta name="generator" content="Discourse 2.9.0.beta4 - https://github.com/discourse/discourse version b65ecf69871656155c381343cd84de919cbbf803">
-<link rel="icon" type="image/png" href="../../uploads/default/optimized/1X/023c6f3e74bac599c495c37eecd72f939f3fab87_2_32x32.png">
-<link rel="apple-touch-icon" type="image/png" href="../../uploads/default/optimized/1X/ad9adb26331754b0012edbc9b4796de8dc449fa8_2_180x180.png">
-<meta name="theme-color" content="#ffffff">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
-<link rel="canonical" href="111.html" />
-<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebSite","url":"https://radixtalk.com","potentialAction":{"@type":"SearchAction","target":"https://radixtalk.com/search?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
-<link rel="search" type="application/opensearchdescription+xml" href="../../opensearch.xml" title="RadixTalk Search">
+  <meta name="generator"
+    content="Discourse 2.9.0.beta4 - https://github.com/discourse/discourse version b65ecf69871656155c381343cd84de919cbbf803">
+  <link rel="icon" type="image/png"
+    href="../../uploads/default/optimized/1X/023c6f3e74bac599c495c37eecd72f939f3fab87_2_32x32.png">
+  <link rel="apple-touch-icon" type="image/png"
+    href="../../uploads/default/optimized/1X/ad9adb26331754b0012edbc9b4796de8dc449fa8_2_180x180.png">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <link rel="canonical" href="111.html" />
+  <script
+    type="application/ld+json">{"@context":"http://schema.org","@type":"WebSite","url":"https://radixtalk.com","potentialAction":{"@type":"SearchAction","target":"https://radixtalk.com/search?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
+  <link rel="search" type="application/opensearchdescription+xml" href="../../opensearch.xml" title="RadixTalk Search">
 
-    <link href="https://radixtalk.com/stylesheets/color_definitions_light_4_1_328257c7bbc55122a1aafbbd296477820001ddd2.css?__ws=radixtalk.com" media="all" rel="stylesheet" class="light-scheme"/>
+  <link
+    href="https://radixtalk.com/stylesheets/color_definitions_light_4_1_328257c7bbc55122a1aafbbd296477820001ddd2.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" class="light-scheme" />
 
-  <link href="https://radixtalk.com/stylesheets/desktop_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="desktop"  />
-
-
-  <link href="https://radixtalk.com/stylesheets/discourse-akismet_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-akismet"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-automation_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-automation"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-cakeday_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-cakeday"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-canned-replies_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-canned-replies"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-checklist_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-checklist"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-data-explorer_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-data-explorer"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-details_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-details"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-docs_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-docs"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-follow_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-follow"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-fontawesome-pro_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-fontawesome-pro"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-footnote_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-footnote"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-local-dates_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-local-dates"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-presence_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-presence"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-rss-polling_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-rss-polling"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-saved-searches_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-saved-searches"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-solved_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-solved"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-tooltips_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-tooltips"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-user-notes_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-user-notes"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-voting_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-voting"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-whos-online_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-whos-online"  />
-  <link href="https://radixtalk.com/stylesheets/lazy-yt_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="lazy-yt"  />
-  <link href="https://radixtalk.com/stylesheets/poll_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="poll"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-voting_desktop_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-voting_desktop"  />
-  <link href="https://radixtalk.com/stylesheets/poll_desktop_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="poll_desktop"  />
-
-  <link href="https://radixtalk.com/stylesheets/desktop_theme_1_9a2d2d666d7d7c2df1111a85e8451fea3ca2dfc2.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="desktop_theme" data-theme-id="1" data-theme-name="default"/>
-
-    <script defer="" data-domain="radixtalk.com" src="https://plausible.io/js/plausible.hash.js"></script>
-
-    
-        <link rel="alternate nofollow" type="application/rss+xml" title="RSS feed of &#39;Where is the wallet.json file for the Radix Desktop Wallet stored?&#39;" href="111.rss" />
-    <meta property="og:site_name" content="RadixTalk" />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:image" content="https://radixtalk.com/uploads/default/original/1X/9e3624f2a5d4052091ba93563043c233df535486.png" />
-<meta property="og:image" content="https://radixtalk.com/uploads/default/original/1X/9e3624f2a5d4052091ba93563043c233df535486.png" />
-<meta property="og:url" content="https://radixtalk.com/t/where-is-the-wallet-json-file-for-the-radix-desktop-wallet-stored/111" />
-<meta name="twitter:url" content="https://radixtalk.com/t/where-is-the-wallet-json-file-for-the-radix-desktop-wallet-stored/111" />
-<meta property="og:title" content="Where is the wallet.json file for the Radix Desktop Wallet stored?" />
-<meta name="twitter:title" content="Where is the wallet.json file for the Radix Desktop Wallet stored?" />
-<meta property="og:description" content="The location of the wallet.json file is dependent on the operating system you are using:  Win: %APPDATA%\radix-olympia-desktop-wallet  Mac: ~/Library/Application Support/radix-olympia-desktop-wallet  Linux: ~/.config/radix-olympia-desktop-wallet  Linux: $XDG_CONFIG_HOME/radix-olympia-desktop-wallet   Further reading:" />
-<meta name="twitter:description" content="The location of the wallet.json file is dependent on the operating system you are using:  Win: %APPDATA%\radix-olympia-desktop-wallet  Mac: ~/Library/Application Support/radix-olympia-desktop-wallet  Linux: ~/.config/radix-olympia-desktop-wallet  Linux: $XDG_CONFIG_HOME/radix-olympia-desktop-wallet   Further reading:" />
-<meta property="article:published_time" content="2021-12-27T13:03:41+00:00" />
-<meta property="og:ignore_canonical" content="true" />
+  <link
+    href="https://radixtalk.com/stylesheets/desktop_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="desktop" />
 
 
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"QAPage","name":"Where is the wallet.json file for the Radix Desktop Wallet stored?","mainEntity":{"@type":"Question","name":"Where is the wallet.json file for the Radix Desktop Wallet stored?","text":"The location of the wallet.json file is dependent on the operating system you are using:\n\nWin: %APPDATA%\\radix-olympia-desktop-wallet\n\nMac: ~/Library/Application Support/radix-olympia-desktop-wallet\n\nLinux: ~/.config/radix-olympia-desktop-wallet\n\nLinux: $XDG_CONFIG_HOME/radix-olympia-desktop-wallet\n\n&hellip;","upvoteCount":0,"answerCount":0,"dateCreated":"2021-12-27T13:03:41.359Z","author":{"@type":"Person","name":"Stuart | RadixPool"}}}</script>
-  </head>
-  <body class="crawler">
-    
-    <header>
-  <a href="https://radixtalk.com/">
-    <h1>RadixTalk</h1>
-  </a>
-</header>
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-akismet_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-akismet" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-automation_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-automation" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-cakeday_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-cakeday" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-canned-replies_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-canned-replies" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-checklist_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-checklist" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-data-explorer_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-data-explorer" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-details_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-details" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-docs_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-docs" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-follow_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-follow" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-fontawesome-pro_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-fontawesome-pro" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-footnote_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-footnote" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-local-dates_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-local-dates" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-presence_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-presence" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-rss-polling_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-rss-polling" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-saved-searches_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-saved-searches" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-solved_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-solved" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-tooltips_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-tooltips" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-user-notes_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-user-notes" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-voting_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-voting" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-whos-online_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-whos-online" />
+  <link
+    href="https://radixtalk.com/stylesheets/lazy-yt_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="lazy-yt" />
+  <link
+    href="https://radixtalk.com/stylesheets/poll_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="poll" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-voting_desktop_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-voting_desktop" />
+  <link
+    href="https://radixtalk.com/stylesheets/poll_desktop_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="poll_desktop" />
 
-    <div id="main-outlet" class="wrap" role="main">
-        <div id="topic-title">
-    <h1>
-      <a href="111.html">Where is the wallet.json file for the Radix Desktop Wallet stored?</a>
-    </h1>
+  <link
+    href="https://radixtalk.com/stylesheets/desktop_theme_1_9a2d2d666d7d7c2df1111a85e8451fea3ca2dfc2.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="desktop_theme" data-theme-id="1" data-theme-name="default" />
+
+  <script defer="" data-domain="radixtalk.com" src="https://plausible.io/js/plausible.hash.js"></script>
+
+
+  <link rel="alternate nofollow" type="application/rss+xml"
+    title="RSS feed of &#39;Where is the wallet.json file for the Radix Desktop Wallet stored?&#39;" href="111.rss" />
+  <meta property="og:site_name" content="RadixTalk" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:image"
+    content="https://radixtalk.com/uploads/default/original/1X/9e3624f2a5d4052091ba93563043c233df535486.png" />
+  <meta property="og:image"
+    content="https://radixtalk.com/uploads/default/original/1X/9e3624f2a5d4052091ba93563043c233df535486.png" />
+  <meta property="og:url"
+    content="https://radixtalk.com/t/where-is-the-wallet-json-file-for-the-radix-desktop-wallet-stored/111" />
+  <meta name="twitter:url"
+    content="https://radixtalk.com/t/where-is-the-wallet-json-file-for-the-radix-desktop-wallet-stored/111" />
+  <meta property="og:title" content="Where is the wallet.json file for the Radix Desktop Wallet stored?" />
+  <meta name="twitter:title" content="Where is the wallet.json file for the Radix Desktop Wallet stored?" />
+  <meta property="og:description"
+    content="The location of the wallet.json file is dependent on the operating system you are using:  Win: %APPDATA%\radix-olympia-desktop-wallet  Mac: ~/Library/Application Support/radix-olympia-desktop-wallet  Linux: ~/.config/radix-olympia-desktop-wallet  Linux: $XDG_CONFIG_HOME/radix-olympia-desktop-wallet   Further reading:" />
+  <meta name="twitter:description"
+    content="The location of the wallet.json file is dependent on the operating system you are using:  Win: %APPDATA%\radix-olympia-desktop-wallet  Mac: ~/Library/Application Support/radix-olympia-desktop-wallet  Linux: ~/.config/radix-olympia-desktop-wallet  Linux: $XDG_CONFIG_HOME/radix-olympia-desktop-wallet   Further reading:" />
+  <meta property="article:published_time" content="2021-12-27T13:03:41+00:00" />
+  <meta property="og:ignore_canonical" content="true" />
+
+
+  <script
+    type="application/ld+json">{"@context":"http://schema.org","@type":"QAPage","name":"Where is the wallet.json file for the Radix Desktop Wallet stored?","mainEntity":{"@type":"Question","name":"Where is the wallet.json file for the Radix Desktop Wallet stored?","text":"The location of the wallet.json file is dependent on the operating system you are using:\n\nWin: %APPDATA%\\radix-olympia-desktop-wallet\n\nMac: ~/Library/Application Support/radix-olympia-desktop-wallet\n\nLinux: ~/.config/radix-olympia-desktop-wallet\n\nLinux: $XDG_CONFIG_HOME/radix-olympia-desktop-wallet\n\n&hellip;","upvoteCount":0,"answerCount":0,"dateCreated":"2021-12-27T13:03:41.359Z","author":{"@type":"Person","name":"Stuart | RadixPool"}}}</script>
+</head>
+
+<body class="crawler">
+
+  <header>
+    <a href="https://radixtalk.com/">
+      <h1>RadixTalk</h1>
+    </a>
+  </header>
+
+  <div id="main-outlet" class="wrap" role="main">
+    <div id="topic-title">
+      <h1>
+        <a href="111.html">Where is the wallet.json file for the Radix Desktop Wallet stored?</a>
+      </h1>
 
       <div class="topic-category" itemscope itemtype="http://schema.org/BreadcrumbList">
-          <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-            <a href="https://radixtalk.com/c/questions/35" class="badge-wrapper bullet" itemprop="item">
-              <span class='badge-category-bg' style='background-color: #3AB54A'></span>
-              <span class='badge-category clear-badge'>
-                <span class='category-name' itemprop='name'>Questions / Help</span>
-              </span>
-            </a>
-            <meta itemprop="position" content="1" />
-          </span>
+        <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a href="https://radixtalk.com/c/questions/35" class="badge-wrapper bullet" itemprop="item">
+            <span class='badge-category-bg' style='background-color: #3AB54A'></span>
+            <span class='badge-category clear-badge'>
+              <span class='category-name' itemprop='name'>Questions / Help</span>
+            </span>
+          </a>
+          <meta itemprop="position" content="1" />
+        </span>
       </div>
 
       <div class="topic-category">
         <div class='discourse-tags list-tags'>
-            <a href='../../tag/wallet.html' class='discourse-tag' rel="tag">wallet</a>, 
-            <a href='../../tag/faq.html' class='discourse-tag' rel="tag">faq</a>
+          <a href='../../tag/wallet.html' class='discourse-tag' rel="tag">wallet</a>,
+          <a href='../../tag/faq.html' class='discourse-tag' rel="tag">faq</a>
         </div>
       </div>
-  </div>
-
-  
+    </div>
 
 
-      <div id='post_1' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
-        <div class='crawler-post-meta'>
-          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
-            <meta itemprop='name' content='RadixTalk'>
-              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
-                <meta itemprop='url' content='https://radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
-              </div>
+
+
+    <div id='post_1' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+      <div class='crawler-post-meta'>
+        <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+          <meta itemprop='name' content='RadixTalk'>
+          <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+            <meta itemprop='url'
+              content='https://radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
           </div>
-          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <a itemprop="url" href='../../u/Stuart.html'><span itemprop='name'>Stuart</span></a>
-            (Stuart | RadixPool)
-          </span>
+        </div>
+        <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a itemprop="url" href='../../u/Stuart.html'><span itemprop='name'>Stuart</span></a>
+          (Stuart | RadixPool)
+        </span>
 
-          <link itemprop="mainEntityOfPage" href="111.html">
+        <link itemprop="mainEntityOfPage" href="111.html">
 
 
-          <span class="crawler-post-infos">
-              <time itemprop='datePublished' datetime='2021-12-27T13:03:41Z' class='post-time'>
-                27 December 2021 13:03
-              </time>
-              <meta itemprop='dateModified' content='2021-12-27T13:03:41Z'>
+        <span class="crawler-post-infos">
+          <time itemprop='datePublished' datetime='2021-12-27T13:03:41Z' class='post-time'>
+            27 December 2021 13:03
+          </time>
+          <meta itemprop='dateModified' content='2021-12-27T13:03:41Z'>
           <span itemprop='position'>#1</span>
-          </span>
-        </div>
-        <div class='post' itemprop='articleBody'>
-          <p>The location of the wallet.json file is dependent on the operating system you are using:</p>
-<p>Win: <code>%APPDATA%\radix-olympia-desktop-wallet</code><br>
-Mac: <code>~/Library/Application Support/radix-olympia-desktop-wallet</code><br>
-Linux: <code>~/.config/radix-olympia-desktop-wallet</code><br>
-Linux: <code>$XDG_CONFIG_HOME/radix-olympia-desktop-wallet</code></p>
-<h3>
-<a name="further-reading-1" class="anchor" href="111.html#further-reading-1"></a>Further reading:</h3>
-<aside class="onebox allowlistedgeneric" data-onebox-src="https://learn.radixdlt.com/article/how-to-completely-reset-your-desktop-wallet-by-deleting-the-keystore">
-  <header class="source">
-      <img src="../../uploads/default/original/1X/fed6c22b3f2ffa507d36ebe7838db55b671cb0c4.png" class="site-icon" width="32" height="32">
+        </span>
+      </div>
+      <div class='post' itemprop='articleBody'>
+        <p>The location of the wallet.json file is dependent on the operating system you are using:</p>
+        <p>Win: <code>%APPDATA%\radix-olympia-desktop-wallet</code><br>
+          Mac: <code>~/Library/Application Support/radix-olympia-desktop-wallet</code><br>
+          Linux: <code>~/.config/radix-olympia-desktop-wallet</code><br>
+          Linux: <code>$XDG_CONFIG_HOME/radix-olympia-desktop-wallet</code></p>
+        <h3>
+          <a name="further-reading-1" class="anchor" href="111.html#further-reading-1"></a>Further reading:
+        </h3>
+        <aside class="onebox allowlistedgeneric"
+          data-onebox-src="https://learn.radixdlt.com/article/how-to-completely-reset-your-desktop-wallet-by-deleting-the-keystore">
+          <header class="source">
+            <img src="../../uploads/default/original/1X/fed6c22b3f2ffa507d36ebe7838db55b671cb0c4.png" class="site-icon"
+              width="32" height="32">
 
-      <a href="https://learn.radixdlt.com/article/how-to-completely-reset-your-desktop-wallet-by-deleting-the-keystore" target="_blank" rel="noopener">learn.radixdlt.com</a>
-  </header>
+            <a href="https://learn.radixdlt.com/article/how-to-completely-reset-your-desktop-wallet-by-deleting-the-keystore"
+              target="_blank" rel="noopener">learn.radixdlt.com</a>
+          </header>
 
-  <article class="onebox-body">
-    
-
-<h3><a href="https://learn.radixdlt.com/article/how-to-completely-reset-your-desktop-wallet-by-deleting-the-keystore" target="_blank" rel="noopener">FAQ: Radix User Guide</a></h3>
-
-  <p>How to completely reset your Desktop Wallet</p>
+          <article class="onebox-body">
 
 
-  </article>
+            <h3><a
+                href="https://learn.radixdlt.com/article/how-to-completely-reset-your-desktop-wallet-by-deleting-the-keystore"
+                target="_blank" rel="noopener">FAQ: Radix User Guide</a></h3>
 
-  <div class="onebox-metadata">
-    
-    
-  </div>
+            <p>How to completely reset your Desktop Wallet</p>
 
-  <div style="clear: both"></div>
-</aside>
 
-        </div>
+          </article>
 
-        <meta itemprop='headline' content='Where is the wallet.json file for the Radix Desktop Wallet stored?'>
-          <meta itemprop='keywords' content='wallet, faq'>
+          <div class="onebox-metadata">
 
-        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
-           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
-           <meta itemprop="userInteractionCount" content="0" />
-           <span class='post-likes'></span>
-         </div>
 
-         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
-            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
-            <meta itemprop="userInteractionCount" content="0" />
           </div>
+
+          <div style="clear: both"></div>
+        </aside>
 
       </div>
 
+      <meta itemprop='headline' content='Where is the wallet.json file for the Radix Desktop Wallet stored?'>
+      <meta itemprop='keywords' content='wallet, faq'>
 
+      <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+        <meta itemprop="interactionType" content="http://schema.org/LikeAction" />
+        <meta itemprop="userInteractionCount" content="0" />
+        <span class='post-likes'></span>
+      </div>
 
-
-
+      <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+        <meta itemprop="interactionType" content="http://schema.org/CommentAction" />
+        <meta itemprop="userInteractionCount" content="0" />
+      </div>
 
     </div>
-    <footer class="container wrap">
-  <nav class='crawler-nav'>
-    <ul>
-      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
-        <span itemprop='name'>
-          <a href='https://radixtalk.com/' itemprop="url">Home </a>
-        </span>
-      </li>
-      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
-        <span itemprop='name'>
-          <a href='https://radixtalk.com/categories' itemprop="url">Categories </a>
-        </span>
-      </li>
-      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
-        <span itemprop='name'>
-          <a href='https://radixtalk.com/guidelines' itemprop="url">FAQ/Guidelines </a>
-        </span>
-      </li>
-      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
-        <span itemprop='name'>
-          <a href='https://radixtalk.com/tos' itemprop="url">Terms of Service </a>
-        </span>
-      </li>
-      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
-        <span itemprop='name'>
-          <a href='https://radixtalk.com/privacy' itemprop="url">Privacy Policy </a>
-        </span>
-      </li>
-    </ul>
-  </nav>
-  <p class='powered-by-link'>Powered by <a href="https://www.discourse.org">Discourse</a>, best viewed with JavaScript enabled</p>
-</footer>
 
-    
-    
-  </body>
-  
+
+
+
+
+
+  </div>
+  <footer class="container wrap">
+    <nav class='crawler-nav'>
+      <ul>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='https://radixtalk.com/' itemprop="url">Home </a>
+          </span>
+        </li>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='https://radixtalk.com/categories' itemprop="url">Categories </a>
+          </span>
+        </li>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='https://radixtalk.com/guidelines' itemprop="url">FAQ/Guidelines </a>
+          </span>
+        </li>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='https://radixtalk.com/tos' itemprop="url">Terms of Service </a>
+          </span>
+        </li>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='https://radixtalk.com/privacy' itemprop="url">Privacy Policy </a>
+          </span>
+        </li>
+      </ul>
+    </nav>
+    <p class='powered-by-link'>Powered by <a href="https://www.discourse.org">Discourse</a>, best viewed with JavaScript
+      enabled</p>
+  </footer>
+
+
+
+</body>
+
 </html>

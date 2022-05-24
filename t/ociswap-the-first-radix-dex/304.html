@@ -1,358 +1,481 @@
 <!DOCTYPE html>
 <html lang="en-GB">
-  <head>
-    <meta charset="utf-8">
-    <title>Ociswap 🐈 the first Radix DEX - Projects - RadixTalk</title>
-    <meta name="description" content="Ociswap is the first pairwise DEX that will be launched at the Radix Babylon release. 
-The combination of low fees on the Radix network, and the masterminds behind Ociswap, makes this project very promising. 
+
+<head>
+  <meta charset="utf-8">
+  <title>Ociswap 🐈 the first Radix DEX - Projects - RadixTalk</title>
+  <meta name="description" content="Ociswap is the first pairwise DEX that will be launched at the Radix Babylon release.
+The combination of low fees on the Radix network, and the masterminds behind Ociswap, makes this project very promising.
 The inten&amp;hellip;">
-    <meta name="generator" content="Discourse 2.9.0.beta4 - https://github.com/discourse/discourse version b65ecf69871656155c381343cd84de919cbbf803">
-<link rel="icon" type="image/png" href="../../uploads/default/optimized/1X/023c6f3e74bac599c495c37eecd72f939f3fab87_2_32x32.png">
-<link rel="apple-touch-icon" type="image/png" href="../../uploads/default/optimized/1X/ad9adb26331754b0012edbc9b4796de8dc449fa8_2_180x180.png">
-<meta name="theme-color" content="#ffffff">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
-<link rel="canonical" href="304.html" />
-<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebSite","url":"https://radixtalk.com","potentialAction":{"@type":"SearchAction","target":"https://radixtalk.com/search?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
-<link rel="search" type="application/opensearchdescription+xml" href="../../opensearch.xml" title="RadixTalk Search">
+  <meta name="generator"
+    content="Discourse 2.9.0.beta4 - https://github.com/discourse/discourse version b65ecf69871656155c381343cd84de919cbbf803">
+  <link rel="icon" type="image/png"
+    href="../../uploads/default/optimized/1X/023c6f3e74bac599c495c37eecd72f939f3fab87_2_32x32.png">
+  <link rel="apple-touch-icon" type="image/png"
+    href="../../uploads/default/optimized/1X/ad9adb26331754b0012edbc9b4796de8dc449fa8_2_180x180.png">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <link rel="canonical" href="304.html" />
+  <script
+    type="application/ld+json">{"@context":"http://schema.org","@type":"WebSite","url":"https://radixtalk.com","potentialAction":{"@type":"SearchAction","target":"https://radixtalk.com/search?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
+  <link rel="search" type="application/opensearchdescription+xml" href="../../opensearch.xml" title="RadixTalk Search">
 
-    <link href="https://radixtalk.com/stylesheets/color_definitions_light_4_1_328257c7bbc55122a1aafbbd296477820001ddd2.css?__ws=radixtalk.com" media="all" rel="stylesheet" class="light-scheme"/>
+  <link
+    href="https://radixtalk.com/stylesheets/color_definitions_light_4_1_328257c7bbc55122a1aafbbd296477820001ddd2.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" class="light-scheme" />
 
-  <link href="https://radixtalk.com/stylesheets/desktop_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="desktop"  />
-
-
-  <link href="https://radixtalk.com/stylesheets/discourse-akismet_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-akismet"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-automation_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-automation"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-cakeday_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-cakeday"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-canned-replies_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-canned-replies"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-checklist_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-checklist"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-data-explorer_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-data-explorer"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-details_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-details"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-docs_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-docs"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-follow_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-follow"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-fontawesome-pro_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-fontawesome-pro"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-footnote_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-footnote"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-local-dates_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-local-dates"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-presence_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-presence"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-rss-polling_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-rss-polling"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-saved-searches_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-saved-searches"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-solved_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-solved"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-tooltips_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-tooltips"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-user-notes_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-user-notes"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-voting_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-voting"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-whos-online_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-whos-online"  />
-  <link href="https://radixtalk.com/stylesheets/lazy-yt_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="lazy-yt"  />
-  <link href="https://radixtalk.com/stylesheets/poll_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="poll"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-voting_desktop_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-voting_desktop"  />
-  <link href="https://radixtalk.com/stylesheets/poll_desktop_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="poll_desktop"  />
-
-  <link href="https://radixtalk.com/stylesheets/desktop_theme_1_9a2d2d666d7d7c2df1111a85e8451fea3ca2dfc2.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="desktop_theme" data-theme-id="1" data-theme-name="default"/>
-
-    <script defer="" data-domain="radixtalk.com" src="https://plausible.io/js/plausible.hash.js"></script>
-
-    
-        <link rel="alternate nofollow" type="application/rss+xml" title="RSS feed of &#39;Ociswap 🐈 the first Radix DEX&#39;" href="304.rss" />
-    <meta property="og:site_name" content="RadixTalk" />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:image" content="https://radixtalk.com/uploads/default/original/1X/bf7fd9311820eec3bd0c7f182c547bb7397c369b.jpeg" />
-<meta property="og:image" content="https://radixtalk.com/uploads/default/original/1X/bf7fd9311820eec3bd0c7f182c547bb7397c369b.jpeg" />
-<meta property="og:url" content="https://radixtalk.com/t/ociswap-the-first-radix-dex/304" />
-<meta name="twitter:url" content="https://radixtalk.com/t/ociswap-the-first-radix-dex/304" />
-<meta property="og:title" content="Ociswap 🐈 the first Radix DEX" />
-<meta name="twitter:title" content="Ociswap 🐈 the first Radix DEX" />
-<meta property="og:description" content="Ociswap is the first pairwise DEX that will be launched at the Radix Babylon release.  The combination of low fees on the Radix network, and the masterminds behind Ociswap, makes this project very promising.  The intention is to create a decentralized exchange, where people could easily swap one token for another token, without the use of a third party, directly from their wallets.  —  #ROADMAP  Our main goal is to become the default DEX on Radix. We have some potential long term features like..." />
-<meta name="twitter:description" content="Ociswap is the first pairwise DEX that will be launched at the Radix Babylon release.  The combination of low fees on the Radix network, and the masterminds behind Ociswap, makes this project very promising.  The intention is to create a decentralized exchange, where people could easily swap one token for another token, without the use of a third party, directly from their wallets.  —  #ROADMAP  Our main goal is to become the default DEX on Radix. We have some potential long term features like..." />
-<meta name="twitter:label1" value="Reading time" />
-<meta name="twitter:data1" value="1 mins 🕑" />
-<meta name="twitter:label2" value="Likes" />
-<meta name="twitter:data2" value="3 ❤" />
-<meta property="article:published_time" content="2022-01-30T13:27:58+00:00" />
-<meta property="og:ignore_canonical" content="true" />
+  <link
+    href="https://radixtalk.com/stylesheets/desktop_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="desktop" />
 
 
-    
-  </head>
-  <body class="crawler">
-    
-    <header>
-  <a href="https://radixtalk.com/">
-    <h1>RadixTalk</h1>
-  </a>
-</header>
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-akismet_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-akismet" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-automation_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-automation" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-cakeday_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-cakeday" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-canned-replies_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-canned-replies" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-checklist_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-checklist" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-data-explorer_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-data-explorer" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-details_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-details" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-docs_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-docs" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-follow_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-follow" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-fontawesome-pro_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-fontawesome-pro" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-footnote_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-footnote" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-local-dates_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-local-dates" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-presence_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-presence" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-rss-polling_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-rss-polling" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-saved-searches_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-saved-searches" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-solved_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-solved" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-tooltips_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-tooltips" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-user-notes_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-user-notes" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-voting_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-voting" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-whos-online_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-whos-online" />
+  <link
+    href="https://radixtalk.com/stylesheets/lazy-yt_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="lazy-yt" />
+  <link
+    href="https://radixtalk.com/stylesheets/poll_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="poll" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-voting_desktop_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-voting_desktop" />
+  <link
+    href="https://radixtalk.com/stylesheets/poll_desktop_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="poll_desktop" />
 
-    <div id="main-outlet" class="wrap" role="main">
-        <div id="topic-title">
-    <h1>
-      <a href="304.html">Ociswap 🐈 the first Radix DEX</a>
-    </h1>
+  <link
+    href="https://radixtalk.com/stylesheets/desktop_theme_1_9a2d2d666d7d7c2df1111a85e8451fea3ca2dfc2.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="desktop_theme" data-theme-id="1" data-theme-name="default" />
+
+  <script defer="" data-domain="radixtalk.com" src="https://plausible.io/js/plausible.hash.js"></script>
+
+
+  <link rel="alternate nofollow" type="application/rss+xml" title="RSS feed of &#39;Ociswap 🐈 the first Radix DEX&#39;"
+    href="304.rss" />
+  <meta property="og:site_name" content="RadixTalk" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:image"
+    content="https://radixtalk.com/uploads/default/original/1X/bf7fd9311820eec3bd0c7f182c547bb7397c369b.jpeg" />
+  <meta property="og:image"
+    content="https://radixtalk.com/uploads/default/original/1X/bf7fd9311820eec3bd0c7f182c547bb7397c369b.jpeg" />
+  <meta property="og:url" content="https://radixtalk.com/t/ociswap-the-first-radix-dex/304" />
+  <meta name="twitter:url" content="https://radixtalk.com/t/ociswap-the-first-radix-dex/304" />
+  <meta property="og:title" content="Ociswap 🐈 the first Radix DEX" />
+  <meta name="twitter:title" content="Ociswap 🐈 the first Radix DEX" />
+  <meta property="og:description"
+    content="Ociswap is the first pairwise DEX that will be launched at the Radix Babylon release.  The combination of low fees on the Radix network, and the masterminds behind Ociswap, makes this project very promising.  The intention is to create a decentralized exchange, where people could easily swap one token for another token, without the use of a third party, directly from their wallets.  —  #ROADMAP  Our main goal is to become the default DEX on Radix. We have some potential long term features like..." />
+  <meta name="twitter:description"
+    content="Ociswap is the first pairwise DEX that will be launched at the Radix Babylon release.  The combination of low fees on the Radix network, and the masterminds behind Ociswap, makes this project very promising.  The intention is to create a decentralized exchange, where people could easily swap one token for another token, without the use of a third party, directly from their wallets.  —  #ROADMAP  Our main goal is to become the default DEX on Radix. We have some potential long term features like..." />
+  <meta name="twitter:label1" value="Reading time" />
+  <meta name="twitter:data1" value="1 mins 🕑" />
+  <meta name="twitter:label2" value="Likes" />
+  <meta name="twitter:data2" value="3 ❤" />
+  <meta property="article:published_time" content="2022-01-30T13:27:58+00:00" />
+  <meta property="og:ignore_canonical" content="true" />
+
+
+
+</head>
+
+<body class="crawler">
+
+  <header>
+    <a href="https://radixtalk.com/">
+      <h1>RadixTalk</h1>
+    </a>
+  </header>
+
+  <div id="main-outlet" class="wrap" role="main">
+    <div id="topic-title">
+      <h1>
+        <a href="304.html">Ociswap 🐈 the first Radix DEX</a>
+      </h1>
 
       <div class="topic-category" itemscope itemtype="http://schema.org/BreadcrumbList">
-          <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-            <a href="https://radixtalk.com/c/projects/40" class="badge-wrapper bullet" itemprop="item">
-              <span class='badge-category-bg' style='background-color: #92278F'></span>
-              <span class='badge-category clear-badge'>
-                <span class='category-name' itemprop='name'>Projects</span>
-              </span>
-            </a>
-            <meta itemprop="position" content="1" />
-          </span>
+        <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a href="https://radixtalk.com/c/projects/40" class="badge-wrapper bullet" itemprop="item">
+            <span class='badge-category-bg' style='background-color: #92278F'></span>
+            <span class='badge-category clear-badge'>
+              <span class='category-name' itemprop='name'>Projects</span>
+            </span>
+          </a>
+          <meta itemprop="position" content="1" />
+        </span>
       </div>
-
-  </div>
-
-  
-
-
-      <div id='post_1' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
-        <div class='crawler-post-meta'>
-          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
-            <meta itemprop='name' content='RadixTalk'>
-              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
-                <meta itemprop='url' content='https://radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
-              </div>
-          </div>
-          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <a itemprop="url" href='../../u/ociswap.html'><span itemprop='name'>ociswap</span></a>
-            (Ociswap 🐈)
-          </span>
-
-          <link itemprop="mainEntityOfPage" href="304.html">
-
-            <link itemprop="image" href="../../uploads/default/original/1X/bf7fd9311820eec3bd0c7f182c547bb7397c369b.jpeg">
-
-          <span class="crawler-post-infos">
-              <time itemprop='datePublished' datetime='2022-01-30T13:27:58Z' class='post-time'>
-                30 January 2022 13:27
-              </time>
-              <meta itemprop='dateModified' content='2022-02-27T00:00:46Z'>
-          <span itemprop='position'>#1</span>
-          </span>
-        </div>
-        <div class='post' itemprop='articleBody'>
-          <p><img src="../../uploads/default/original/1X/bf7fd9311820eec3bd0c7f182c547bb7397c369b.jpeg" alt="photo5287593337311836475" data-base62-sha1="rk56RUYIGjMtHweGzqO6azQlRxh" width="500" height="333"></p>
-<p><strong>Ociswap is the first pairwise DEX that will be launched at the Radix Babylon release.</strong></p>
-<p>The combination of low fees on the Radix network, and the masterminds behind Ociswap, makes this project very promising.</p>
-<p>The intention is to create a decentralized exchange, where people could easily swap one token for another token, without the use of a third party, directly from their wallets.</p>
-<p>—</p>
-<p><strong><span class="hashtag">#ROADMAP</span></strong></p>
-<p>Our main goal is to become the default DEX on Radix. We have some potential long term features like futures, order books, limit orders and stuff like that. However, this will probably rather be a separate section, because we want to keep the main interface simple and clean.</p>
-<p>In general, we are currently exploring different options regarding reducing impermanent loss, on-ledger multi pool routing or token mechanics and incentives. But Babylon is roughly a year away and a lot depends on the Babylon fee model which isn’t announced yet (because Babylon isn’t implemented yet).</p>
-<p>Also we are exploring protocol owned liquidity. The reward mechanism is different, instead of staking LP tokens the protocol is buying the LP tokens at a premium (giving LP providers a discount).</p>
-<p>The advantage is that the protocol then owns the liquidity, because with basic liquidity mining you often have the problem that people farm the rewards, dump them and then remove their liquidity afterwards.<br>
-However, in both cases people start by adding tokens to the pool. Only the second step regarding rewards is different.</p>
-<p>DeFi is moving fast and a year is a long time to commit to a specific feature set (not even talking about long term roadmap 2 years away).</p>
-<p>Babylon is coming late 2022 probably. So we are just very early and now is the time for experimentation and exploring the capabilities of Scrypto.</p>
-<p>We are thinking for a dApp user on Radix there are multiple implicit advantages:<br>
-Smart contracts and tokens are much more safe, fees are cheap, transactions are fast without any scalability issue and finality is low. <img src="../../images/emoji/twitter/fire.png%3Fv=12" title=":fire:" class="emoji" alt=":fire:" loading="lazy" width="20" height="20"></p>
-<p>So far so good, what we are thinking will be a really cool feature for users which developers can use is atomic composability from the frontend. Your dApp can compose ad-hoc different transactions together and even your wallet could do it if the dApp doesn’t support it.</p>
-<p>This opens the path to countless opportunities, so you could take out a flash loan to arbitrage a pool - all from your dApp - no smart contracts needed.</p>
-<p>In general Ociswap will be a pair wise DEX with a mechanism to incentive liquidity providing. However, a lot can happen until Babylon and we can’t commit a year in advance to a certain mechanism like liquidity mining. The general tokenomics don’t change, 60% will be used for liquidity rewards some way or another)!</p>
-<p>—</p>
-<p><img src="../../images/emoji/twitter/man_mage.png%3Fv=12" title=":man_mage:" class="emoji" alt=":man_mage:" loading="lazy" width="20" height="20"> <strong>Ociswap ($OCI) Tokenomics:</strong></p>
-<p>16 million (16%) Team/Marketing/Development</p>
-<p>24 million (24%) Airdrops</p>
-<p>60 million (60%) Liquidity Mining Rewards</p>
-<p>—</p>
-<p><img src="../../images/emoji/twitter/cloud.png%3Fv=12" title=":cloud:" class="emoji" alt=":cloud:" loading="lazy" width="20" height="20"> <strong>AIRDROPS</strong> <img src="../../images/emoji/twitter/droplet.png%3Fv=12" title=":droplet:" class="emoji" alt=":droplet:" loading="lazy" width="20" height="20"></p>
-<p>Thank you very much for all of your support since we started Ociswap. You are an amazing community <img src="../../images/emoji/twitter/fire.png%3Fv=12" title=":fire:" class="emoji" alt=":fire:" loading="lazy" width="20" height="20"></p>
-<p><img src="../../images/emoji/twitter/love_you_gesture.png%3Fv=12" title=":love_you_gesture:" class="emoji" alt=":love_you_gesture:" loading="lazy" width="20" height="20"> The details about the upcoming airdrops and community events are here!</p>
-<p>24,000,000 $OCI are waiting for you! <img src="../../images/emoji/twitter/cat2.png%3Fv=12" title=":cat2:" class="emoji" alt=":cat2:" loading="lazy" width="20" height="20"></p>
-<p>We have made the conscious decision not to do a pre-sale but to support the community as much as possible with cool events and airdrops!</p>
-<p><strong>To register for the airdrops either:</strong></p>
-<ol>
-<li>Tell your wallet address to our <a href="https://t.me/ocicatbot" rel="noopener nofollow ugc">@ocicatbot</a> over Telegram</li>
-</ol>
-<p><strong>OR</strong></p>
-<ol start="2">
-<li>Send the message <span class="hashtag">#OciStaker</span> to this Radix wallet rdx1qspwv9l3ls4lxwkrqrrvtwdskg2hjue0ywpfqlxvj5pzpalvlext5hq5fl2u6</li>
-</ol>
-<p>(the second option will only count for staking airdrops <img src="../../images/emoji/twitter/bangbang.png%3Fv=12" title=":bangbang:" class="emoji" alt=":bangbang:" loading="lazy" width="20" height="20"> <a href="https://t.me/ocicatbot" rel="noopener nofollow ugc">@ocicatbot</a> is required for all upcoming community airdrops)</p>
-<p>—</p>
-<p><strong>People who lead this initiative</strong></p>
-<p>Florian - Christoph - Marco - Lukas</p>
-<p>—</p>
-<p><strong>Meow-y way to swap links:</strong></p>
-<p><a href="https://ociswap.com" class="onebox" target="_blank" rel="noopener nofollow ugc">https://ociswap.com</a><br>
-<a href="https://twitter.com/ociswap" class="onebox" target="_blank" rel="noopener nofollow ugc">https://twitter.com/ociswap</a></p><aside class="onebox allowlistedgeneric" data-onebox-src="https://www.reddit.com/r/ociswap">
-  <header class="source">
-      <img src="../../uploads/default/original/1X/a70ab5d077374748901898cfcd9c7a09b8a303a9.png" class="site-icon" width="192" height="192">
-
-      <a href="https://www.reddit.com/r/ociswap" target="_blank" rel="noopener nofollow ugc">reddit</a>
-  </header>
-
-  <article class="onebox-body">
-    <img src="../../uploads/default/original/1X/eb7fba3d8e805f3025d2719dd09643030faf79d4.jpeg" class="thumbnail onebox-avatar" width="256" height="256">
-
-<h3><a href="https://www.reddit.com/r/ociswap" target="_blank" rel="noopener nofollow ugc">r/Ociswap</a></h3>
-
-  <p>r/Ociswap: The No.1️⃣ decentralized exchange native to Radix $OCI - ociswap.com</p>
-
-
-  </article>
-
-  <div class="onebox-metadata">
-    
-    
-  </div>
-
-  <div style="clear: both"></div>
-</aside>
-<aside class="onebox allowlistedgeneric" data-onebox-src="https://t.me/ociswap">
-  <header class="source">
-      <img src="https://telegram.org/img/website_icon.svg?4" class="site-icon" width="16" height="16">
-
-      <a href="https://t.me/ociswap" target="_blank" rel="noopener nofollow ugc">Telegram</a>
-  </header>
-
-  <article class="onebox-body">
-    <img src="https://cdn4.telegram-cdn.org/file/ajHM5zOQTn4Y3u0t7Jy24wB8V0Q9bCpzRhbYWZgwHvsgD7onhCX3c5QELs4rQoVv1prc9CF_eOsfApMt8P3BkgXDjXMNR7FXl6G427kyCL8kQ9my3eeRmQdJEX7bIJJ9YToFqRTnpnnV1oRlgBiqCWDZEMAx8esJGcVOToDQfiId0CV1x8siORSP5qQoM0ufPWF5ZY_NpxI72_gi27u8m59IuOsdmcXAR209pNW6bnxD1hYmrrGR786PphwY5UP1BUlv9UgrYS9AXt0arOKSwsreRW4cpWyG2Umru1bgMYwuJSkMknNOvg18A1xFcVjq0gD790ZA9OwIQ3NsUI4hBg.jpg" class="thumbnail onebox-avatar" width="320" height="320">
-
-<h3><a href="https://t.me/ociswap" target="_blank" rel="noopener nofollow ugc">Ociswap - the first Radix DEX</a></h3>
-
-  <p>The no.1️⃣ decentralized exchange native to Radix #Oci		🐈 ociswap.com		📣 news @OciswapAnnouncements		☁️ airdrop + FAQs @ocicatbot		🐦 twitter.com/ociswap		💬 reddit.com/r/ociswap</p>
-
-
-  </article>
-
-  <div class="onebox-metadata">
-    
-    
-  </div>
-
-  <div style="clear: both"></div>
-</aside>
-<aside class="onebox allowlistedgeneric" data-onebox-src="https://t.me/OciswapAnnouncements">
-  <header class="source">
-      <img src="https://telegram.org/img/website_icon.svg?4" class="site-icon" width="16" height="16">
-
-      <a href="https://t.me/OciswapAnnouncements" target="_blank" rel="noopener nofollow ugc">Telegram</a>
-  </header>
-
-  <article class="onebox-body">
-    <img src="https://cdn4.telegram-cdn.org/file/eYEE2GN8L60kWJ0C7yP25tbTK_dgwg7w12YbdjEXQAVESqxENoM0w8-FzDsRRJ9KFn8lz0srcrmKT1H-s1ewx6sccFCgpRzsraZTS_wUyQYb7yQRtnkfFfAQg3uxqViv_NTq3FpbtkztF49M6XpWwIVPYIcWe5HwBAjiuICAoXLU1O49fXaDQ3GDOH1RudOXz43SCHFC6uJ5e_Qza0RZCeGDFc27QwJFi5prvbEh8i1ketmN6NOVG5vtUGPhd6mdzjdqR1kXCfAHjg56QS8Tjoc5mdduvldsLQJGqnE9GfHS2zVrjPCFBlyFHzCUoyVszCHCymQaWRNoG1VTnXKf4g.jpg" class="thumbnail onebox-avatar" width="320" height="320">
-
-<h3><a href="https://t.me/OciswapAnnouncements" target="_blank" rel="noopener nofollow ugc">Ociswap Official Announcements</a></h3>
-
-  <p>The no.1️⃣ decentralized exchange native to Radix #Oci		🐈 ociswap.com		😻 mainchat @ociswap		☁️ airdrop + FAQs @ocicatbot		🐦 twitter.com/ociswap		💬 reddit.com/r/ociswap</p>
-
-
-  </article>
-
-  <div class="onebox-metadata">
-    
-    
-  </div>
-
-  <div style="clear: both"></div>
-</aside>
-<aside class="onebox allowlistedgeneric" data-onebox-src="https://t.me/ocicatbot">
-  <header class="source">
-      <img src="https://telegram.org/img/website_icon.svg?4" class="site-icon" width="16" height="16">
-
-      <a href="https://t.me/ocicatbot" target="_blank" rel="noopener nofollow ugc">Telegram</a>
-  </header>
-
-  <article class="onebox-body">
-    <img src="https://cdn4.telegram-cdn.org/file/pyqqaSEwQkXzsfxyUatnEDK25mQEEk5WOT679NjY5uRMtwRraqkNaxVnRANvfVnDLJSfpRYn8E9iEmy0Hod23JKMsMNCjjgnXmv_FaAhiydbWwkLnaK0cQVxNmpGSO5OyvXDSyBG-tr21vjg96ETCh4vF5vfoniVSKZ_Uapk0-fxC8_GbD-mLZN6m7t-A7Orno8ecJOVYFkIij8WV_4cIRW74R4Y3THc1cyzrVS9S1OgE91kx82bTlILgTItPZQa7r_GVh0majXnW7IqfRIYvDjD4WOwJDU9JD2-Wb5yk624lkWL6ezAPQc-WtBgt0pqEVcqdkS4mzZBmpNm2tJZfQ.jpg" class="thumbnail onebox-avatar" width="320" height="320">
-
-<h3><a href="https://t.me/ocicatbot" target="_blank" rel="noopener nofollow ugc">Ocicat</a></h3>
-
-  <p>You can contact @ocicatbot right away.</p>
-
-
-  </article>
-
-  <div class="onebox-metadata">
-    
-    
-  </div>
-
-  <div style="clear: both"></div>
-</aside>
-<aside class="onebox allowlistedgeneric" data-onebox-src="https://www.radixscan.io/token/oci_rr1qws04shqrz3cdjljdp5kczgv7wd3jxytagk95qlk7ecquzq8e7">
-  <header class="source">
-      <img src="../../uploads/default/original/1X/fa79a8de9f2f87f5358690f370b2323864d33d55.png" class="site-icon" width="32" height="32">
-
-      <a href="https://www.radixscan.io/token/oci_rr1qws04shqrz3cdjljdp5kczgv7wd3jxytagk95qlk7ecquzq8e7" target="_blank" rel="noopener nofollow ugc">radixscan.io</a>
-  </header>
-
-  <article class="onebox-body">
-    
-
-<h3><a href="https://www.radixscan.io/token/oci_rr1qws04shqrz3cdjljdp5kczgv7wd3jxytagk95qlk7ecquzq8e7" target="_blank" rel="noopener nofollow ugc">RadixScan, discover and explore the Radix network</a></h3>
-
-  <p>RadixScan is a community explorer for the Radix network</p>
-
-
-  </article>
-
-  <div class="onebox-metadata">
-    
-    
-  </div>
-
-  <div style="clear: both"></div>
-</aside>
-
-        </div>
-
-        <meta itemprop='headline' content='Ociswap 🐈 the first Radix DEX'>
-          <meta itemprop='keywords' content=''>
-
-        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
-           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
-           <meta itemprop="userInteractionCount" content="3" />
-           <span class='post-likes'>3 Likes</span>
-         </div>
-
-         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
-            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
-            <meta itemprop="userInteractionCount" content="0" />
-          </div>
-
-      </div>
-
-
-
-
-
 
     </div>
-    <footer class="container wrap">
-  <nav class='crawler-nav'>
-    <ul>
-      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
-        <span itemprop='name'>
-          <a href='https://radixtalk.com/' itemprop="url">Home </a>
-        </span>
-      </li>
-      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
-        <span itemprop='name'>
-          <a href='https://radixtalk.com/categories' itemprop="url">Categories </a>
-        </span>
-      </li>
-      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
-        <span itemprop='name'>
-          <a href='https://radixtalk.com/guidelines' itemprop="url">FAQ/Guidelines </a>
-        </span>
-      </li>
-      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
-        <span itemprop='name'>
-          <a href='https://radixtalk.com/tos' itemprop="url">Terms of Service </a>
-        </span>
-      </li>
-      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
-        <span itemprop='name'>
-          <a href='https://radixtalk.com/privacy' itemprop="url">Privacy Policy </a>
-        </span>
-      </li>
-    </ul>
-  </nav>
-  <p class='powered-by-link'>Powered by <a href="https://www.discourse.org">Discourse</a>, best viewed with JavaScript enabled</p>
-</footer>
 
-    
-    
-  </body>
-  
+
+
+
+    <div id='post_1' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+      <div class='crawler-post-meta'>
+        <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+          <meta itemprop='name' content='RadixTalk'>
+          <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+            <meta itemprop='url'
+              content='https://radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+          </div>
+        </div>
+        <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a itemprop="url" href='../../u/ociswap.html'><span itemprop='name'>ociswap</span></a>
+          (Ociswap 🐈)
+        </span>
+
+        <link itemprop="mainEntityOfPage" href="304.html">
+
+        <link itemprop="image" href="../../uploads/default/original/1X/bf7fd9311820eec3bd0c7f182c547bb7397c369b.jpeg">
+
+        <span class="crawler-post-infos">
+          <time itemprop='datePublished' datetime='2022-01-30T13:27:58Z' class='post-time'>
+            30 January 2022 13:27
+          </time>
+          <meta itemprop='dateModified' content='2022-02-27T00:00:46Z'>
+          <span itemprop='position'>#1</span>
+        </span>
+      </div>
+      <div class='post' itemprop='articleBody'>
+        <p><img src="../../uploads/default/original/1X/bf7fd9311820eec3bd0c7f182c547bb7397c369b.jpeg"
+            alt="photo5287593337311836475" data-base62-sha1="rk56RUYIGjMtHweGzqO6azQlRxh" width="500" height="333"></p>
+        <p><strong>Ociswap is the first pairwise DEX that will be launched at the Radix Babylon release.</strong></p>
+        <p>The combination of low fees on the Radix network, and the masterminds behind Ociswap, makes this project very
+          promising.</p>
+        <p>The intention is to create a decentralized exchange, where people could easily swap one token for another
+          token, without the use of a third party, directly from their wallets.</p>
+        <p>—</p>
+        <p><strong><span class="hashtag">#ROADMAP</span></strong></p>
+        <p>Our main goal is to become the default DEX on Radix. We have some potential long term features like futures,
+          order books, limit orders and stuff like that. However, this will probably rather be a separate section,
+          because we want to keep the main interface simple and clean.</p>
+        <p>In general, we are currently exploring different options regarding reducing impermanent loss, on-ledger multi
+          pool routing or token mechanics and incentives. But Babylon is roughly a year away and a lot depends on the
+          Babylon fee model which isn’t announced yet (because Babylon isn’t implemented yet).</p>
+        <p>Also we are exploring protocol owned liquidity. The reward mechanism is different, instead of staking LP
+          tokens the protocol is buying the LP tokens at a premium (giving LP providers a discount).</p>
+        <p>The advantage is that the protocol then owns the liquidity, because with basic liquidity mining you often
+          have the problem that people farm the rewards, dump them and then remove their liquidity afterwards.<br>
+          However, in both cases people start by adding tokens to the pool. Only the second step regarding rewards is
+          different.</p>
+        <p>DeFi is moving fast and a year is a long time to commit to a specific feature set (not even talking about
+          long term roadmap 2 years away).</p>
+        <p>Babylon is coming late 2022 probably. So we are just very early and now is the time for experimentation and
+          exploring the capabilities of Scrypto.</p>
+        <p>We are thinking for a dApp user on Radix there are multiple implicit advantages:<br>
+          Smart contracts and tokens are much more safe, fees are cheap, transactions are fast without any scalability
+          issue and finality is low. <img src="../../images/emoji/twitter/fire.png%3Fv=12" title=":fire:" class="emoji"
+            alt=":fire:" loading="lazy" width="20" height="20"></p>
+        <p>So far so good, what we are thinking will be a really cool feature for users which developers can use is
+          atomic composability from the frontend. Your dApp can compose ad-hoc different transactions together and even
+          your wallet could do it if the dApp doesn’t support it.</p>
+        <p>This opens the path to countless opportunities, so you could take out a flash loan to arbitrage a pool - all
+          from your dApp - no smart contracts needed.</p>
+        <p>In general Ociswap will be a pair wise DEX with a mechanism to incentive liquidity providing. However, a lot
+          can happen until Babylon and we can’t commit a year in advance to a certain mechanism like liquidity mining.
+          The general tokenomics don’t change, 60% will be used for liquidity rewards some way or another)!</p>
+        <p>—</p>
+        <p><img src="../../images/emoji/twitter/man_mage.png%3Fv=12" title=":man_mage:" class="emoji" alt=":man_mage:"
+            loading="lazy" width="20" height="20"> <strong>Ociswap ($OCI) Tokenomics:</strong></p>
+        <p>16 million (16%) Team/Marketing/Development</p>
+        <p>24 million (24%) Airdrops</p>
+        <p>60 million (60%) Liquidity Mining Rewards</p>
+        <p>—</p>
+        <p><img src="../../images/emoji/twitter/cloud.png%3Fv=12" title=":cloud:" class="emoji" alt=":cloud:"
+            loading="lazy" width="20" height="20"> <strong>AIRDROPS</strong> <img
+            src="../../images/emoji/twitter/droplet.png%3Fv=12" title=":droplet:" class="emoji" alt=":droplet:"
+            loading="lazy" width="20" height="20"></p>
+        <p>Thank you very much for all of your support since we started Ociswap. You are an amazing community <img
+            src="../../images/emoji/twitter/fire.png%3Fv=12" title=":fire:" class="emoji" alt=":fire:" loading="lazy"
+            width="20" height="20"></p>
+        <p><img src="../../images/emoji/twitter/love_you_gesture.png%3Fv=12" title=":love_you_gesture:" class="emoji"
+            alt=":love_you_gesture:" loading="lazy" width="20" height="20"> The details about the upcoming airdrops and
+          community events are here!</p>
+        <p>24,000,000 $OCI are waiting for you! <img src="../../images/emoji/twitter/cat2.png%3Fv=12" title=":cat2:"
+            class="emoji" alt=":cat2:" loading="lazy" width="20" height="20"></p>
+        <p>We have made the conscious decision not to do a pre-sale but to support the community as much as possible
+          with cool events and airdrops!</p>
+        <p><strong>To register for the airdrops either:</strong></p>
+        <ol>
+          <li>Tell your wallet address to our <a href="https://t.me/ocicatbot"
+              rel="noopener nofollow ugc">@ocicatbot</a> over Telegram</li>
+        </ol>
+        <p><strong>OR</strong></p>
+        <ol start="2">
+          <li>Send the message <span class="hashtag">#OciStaker</span> to this Radix wallet
+            rdx1qspwv9l3ls4lxwkrqrrvtwdskg2hjue0ywpfqlxvj5pzpalvlext5hq5fl2u6</li>
+        </ol>
+        <p>(the second option will only count for staking airdrops <img
+            src="../../images/emoji/twitter/bangbang.png%3Fv=12" title=":bangbang:" class="emoji" alt=":bangbang:"
+            loading="lazy" width="20" height="20"> <a href="https://t.me/ocicatbot"
+            rel="noopener nofollow ugc">@ocicatbot</a> is required for all upcoming community airdrops)</p>
+        <p>—</p>
+        <p><strong>People who lead this initiative</strong></p>
+        <p>Florian - Christoph - Marco - Lukas</p>
+        <p>—</p>
+        <p><strong>Meow-y way to swap links:</strong></p>
+        <p><a href="https://ociswap.com" class="onebox" target="_blank"
+            rel="noopener nofollow ugc">https://ociswap.com</a><br>
+          <a href="https://twitter.com/ociswap" class="onebox" target="_blank"
+            rel="noopener nofollow ugc">https://twitter.com/ociswap</a>
+        </p>
+        <aside class="onebox allowlistedgeneric" data-onebox-src="https://www.reddit.com/r/ociswap">
+          <header class="source">
+            <img src="../../uploads/default/original/1X/a70ab5d077374748901898cfcd9c7a09b8a303a9.png" class="site-icon"
+              width="192" height="192">
+
+            <a href="https://www.reddit.com/r/ociswap" target="_blank" rel="noopener nofollow ugc">reddit</a>
+          </header>
+
+          <article class="onebox-body">
+            <img src="../../uploads/default/original/1X/eb7fba3d8e805f3025d2719dd09643030faf79d4.jpeg"
+              class="thumbnail onebox-avatar" width="256" height="256">
+
+            <h3><a href="https://www.reddit.com/r/ociswap" target="_blank" rel="noopener nofollow ugc">r/Ociswap</a>
+            </h3>
+
+            <p>r/Ociswap: The No.1️⃣ decentralized exchange native to Radix $OCI - ociswap.com</p>
+
+
+          </article>
+
+          <div class="onebox-metadata">
+
+
+          </div>
+
+          <div style="clear: both"></div>
+        </aside>
+        <aside class="onebox allowlistedgeneric" data-onebox-src="https://t.me/ociswap">
+          <header class="source">
+            <img src="https://telegram.org/img/website_icon.svg?4" class="site-icon" width="16" height="16">
+
+            <a href="https://t.me/ociswap" target="_blank" rel="noopener nofollow ugc">Telegram</a>
+          </header>
+
+          <article class="onebox-body">
+            <img
+              src="https://cdn4.telegram-cdn.org/file/ajHM5zOQTn4Y3u0t7Jy24wB8V0Q9bCpzRhbYWZgwHvsgD7onhCX3c5QELs4rQoVv1prc9CF_eOsfApMt8P3BkgXDjXMNR7FXl6G427kyCL8kQ9my3eeRmQdJEX7bIJJ9YToFqRTnpnnV1oRlgBiqCWDZEMAx8esJGcVOToDQfiId0CV1x8siORSP5qQoM0ufPWF5ZY_NpxI72_gi27u8m59IuOsdmcXAR209pNW6bnxD1hYmrrGR786PphwY5UP1BUlv9UgrYS9AXt0arOKSwsreRW4cpWyG2Umru1bgMYwuJSkMknNOvg18A1xFcVjq0gD790ZA9OwIQ3NsUI4hBg.jpg"
+              class="thumbnail onebox-avatar" width="320" height="320">
+
+            <h3><a href="https://t.me/ociswap" target="_blank" rel="noopener nofollow ugc">Ociswap - the first Radix
+                DEX</a></h3>
+
+            <p>The no.1️⃣ decentralized exchange native to Radix #Oci 🐈 ociswap.com 📣 news @OciswapAnnouncements ☁️
+              airdrop + FAQs @ocicatbot 🐦 twitter.com/ociswap 💬 reddit.com/r/ociswap</p>
+
+
+          </article>
+
+          <div class="onebox-metadata">
+
+
+          </div>
+
+          <div style="clear: both"></div>
+        </aside>
+        <aside class="onebox allowlistedgeneric" data-onebox-src="https://t.me/OciswapAnnouncements">
+          <header class="source">
+            <img src="https://telegram.org/img/website_icon.svg?4" class="site-icon" width="16" height="16">
+
+            <a href="https://t.me/OciswapAnnouncements" target="_blank" rel="noopener nofollow ugc">Telegram</a>
+          </header>
+
+          <article class="onebox-body">
+            <img
+              src="https://cdn4.telegram-cdn.org/file/eYEE2GN8L60kWJ0C7yP25tbTK_dgwg7w12YbdjEXQAVESqxENoM0w8-FzDsRRJ9KFn8lz0srcrmKT1H-s1ewx6sccFCgpRzsraZTS_wUyQYb7yQRtnkfFfAQg3uxqViv_NTq3FpbtkztF49M6XpWwIVPYIcWe5HwBAjiuICAoXLU1O49fXaDQ3GDOH1RudOXz43SCHFC6uJ5e_Qza0RZCeGDFc27QwJFi5prvbEh8i1ketmN6NOVG5vtUGPhd6mdzjdqR1kXCfAHjg56QS8Tjoc5mdduvldsLQJGqnE9GfHS2zVrjPCFBlyFHzCUoyVszCHCymQaWRNoG1VTnXKf4g.jpg"
+              class="thumbnail onebox-avatar" width="320" height="320">
+
+            <h3><a href="https://t.me/OciswapAnnouncements" target="_blank" rel="noopener nofollow ugc">Ociswap Official
+                Announcements</a></h3>
+
+            <p>The no.1️⃣ decentralized exchange native to Radix #Oci 🐈 ociswap.com 😻 mainchat @ociswap ☁️ airdrop +
+              FAQs @ocicatbot 🐦 twitter.com/ociswap 💬 reddit.com/r/ociswap</p>
+
+
+          </article>
+
+          <div class="onebox-metadata">
+
+
+          </div>
+
+          <div style="clear: both"></div>
+        </aside>
+        <aside class="onebox allowlistedgeneric" data-onebox-src="https://t.me/ocicatbot">
+          <header class="source">
+            <img src="https://telegram.org/img/website_icon.svg?4" class="site-icon" width="16" height="16">
+
+            <a href="https://t.me/ocicatbot" target="_blank" rel="noopener nofollow ugc">Telegram</a>
+          </header>
+
+          <article class="onebox-body">
+            <img
+              src="https://cdn4.telegram-cdn.org/file/pyqqaSEwQkXzsfxyUatnEDK25mQEEk5WOT679NjY5uRMtwRraqkNaxVnRANvfVnDLJSfpRYn8E9iEmy0Hod23JKMsMNCjjgnXmv_FaAhiydbWwkLnaK0cQVxNmpGSO5OyvXDSyBG-tr21vjg96ETCh4vF5vfoniVSKZ_Uapk0-fxC8_GbD-mLZN6m7t-A7Orno8ecJOVYFkIij8WV_4cIRW74R4Y3THc1cyzrVS9S1OgE91kx82bTlILgTItPZQa7r_GVh0majXnW7IqfRIYvDjD4WOwJDU9JD2-Wb5yk624lkWL6ezAPQc-WtBgt0pqEVcqdkS4mzZBmpNm2tJZfQ.jpg"
+              class="thumbnail onebox-avatar" width="320" height="320">
+
+            <h3><a href="https://t.me/ocicatbot" target="_blank" rel="noopener nofollow ugc">Ocicat</a></h3>
+
+            <p>You can contact @ocicatbot right away.</p>
+
+
+          </article>
+
+          <div class="onebox-metadata">
+
+
+          </div>
+
+          <div style="clear: both"></div>
+        </aside>
+        <aside class="onebox allowlistedgeneric"
+          data-onebox-src="https://www.radixscan.io/token/oci_rr1qws04shqrz3cdjljdp5kczgv7wd3jxytagk95qlk7ecquzq8e7">
+          <header class="source">
+            <img src="../../uploads/default/original/1X/fa79a8de9f2f87f5358690f370b2323864d33d55.png" class="site-icon"
+              width="32" height="32">
+
+            <a href="https://www.radixscan.io/token/oci_rr1qws04shqrz3cdjljdp5kczgv7wd3jxytagk95qlk7ecquzq8e7"
+              target="_blank" rel="noopener nofollow ugc">radixscan.io</a>
+          </header>
+
+          <article class="onebox-body">
+
+
+            <h3><a href="https://www.radixscan.io/token/oci_rr1qws04shqrz3cdjljdp5kczgv7wd3jxytagk95qlk7ecquzq8e7"
+                target="_blank" rel="noopener nofollow ugc">RadixScan, discover and explore the Radix network</a></h3>
+
+            <p>RadixScan is a community explorer for the Radix network</p>
+
+
+          </article>
+
+          <div class="onebox-metadata">
+
+
+          </div>
+
+          <div style="clear: both"></div>
+        </aside>
+
+      </div>
+
+      <meta itemprop='headline' content='Ociswap 🐈 the first Radix DEX'>
+      <meta itemprop='keywords' content=''>
+
+      <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+        <meta itemprop="interactionType" content="http://schema.org/LikeAction" />
+        <meta itemprop="userInteractionCount" content="3" />
+        <span class='post-likes'>3 Likes</span>
+      </div>
+
+      <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+        <meta itemprop="interactionType" content="http://schema.org/CommentAction" />
+        <meta itemprop="userInteractionCount" content="0" />
+      </div>
+
+    </div>
+
+
+
+
+
+
+  </div>
+  <footer class="container wrap">
+    <nav class='crawler-nav'>
+      <ul>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='https://radixtalk.com/' itemprop="url">Home </a>
+          </span>
+        </li>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='https://radixtalk.com/categories' itemprop="url">Categories </a>
+          </span>
+        </li>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='https://radixtalk.com/guidelines' itemprop="url">FAQ/Guidelines </a>
+          </span>
+        </li>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='https://radixtalk.com/tos' itemprop="url">Terms of Service </a>
+          </span>
+        </li>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='https://radixtalk.com/privacy' itemprop="url">Privacy Policy </a>
+          </span>
+        </li>
+      </ul>
+    </nav>
+    <p class='powered-by-link'>Powered by <a href="https://www.discourse.org">Discourse</a>, best viewed with JavaScript
+      enabled</p>
+  </footer>
+
+
+
+</body>
+
 </html>

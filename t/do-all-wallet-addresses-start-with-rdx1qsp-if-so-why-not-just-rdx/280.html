@@ -1,248 +1,340 @@
 <!DOCTYPE html>
 <html lang="en-GB">
-  <head>
-    <meta charset="utf-8">
-    <title>Do all wallet addresses start with rdx1qsp? If so, why not just rdx? - Questions / Help - RadixTalk</title>
-    <meta name="description" content="Radix wallet addresses are bech32 encoded. rdx is the Human Readable Part (hrp), 1 is a separator between the hrp and the rest of the address, and the qsp is because every Radix wallet address is a 33 byte compressed pub&amp;hellip;">
-    <meta name="generator" content="Discourse 2.9.0.beta4 - https://github.com/discourse/discourse version b65ecf69871656155c381343cd84de919cbbf803">
-<link rel="icon" type="image/png" href="../../uploads/default/optimized/1X/023c6f3e74bac599c495c37eecd72f939f3fab87_2_32x32.png">
-<link rel="apple-touch-icon" type="image/png" href="../../uploads/default/optimized/1X/ad9adb26331754b0012edbc9b4796de8dc449fa8_2_180x180.png">
-<meta name="theme-color" content="#ffffff">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
-<link rel="canonical" href="280.html" />
-<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebSite","url":"https://radixtalk.com","potentialAction":{"@type":"SearchAction","target":"https://radixtalk.com/search?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
-<link rel="search" type="application/opensearchdescription+xml" href="../../opensearch.xml" title="RadixTalk Search">
 
-    <link href="https://radixtalk.com/stylesheets/color_definitions_light_4_1_328257c7bbc55122a1aafbbd296477820001ddd2.css?__ws=radixtalk.com" media="all" rel="stylesheet" class="light-scheme"/>
+<head>
+  <meta charset="utf-8">
+  <title>Do all wallet addresses start with rdx1qsp? If so, why not just rdx? - Questions / Help - RadixTalk</title>
+  <meta name="description"
+    content="Radix wallet addresses are bech32 encoded. rdx is the Human Readable Part (hrp), 1 is a separator between the hrp and the rest of the address, and the qsp is because every Radix wallet address is a 33 byte compressed pub&amp;hellip;">
+  <meta name="generator"
+    content="Discourse 2.9.0.beta4 - https://github.com/discourse/discourse version b65ecf69871656155c381343cd84de919cbbf803">
+  <link rel="icon" type="image/png"
+    href="../../uploads/default/optimized/1X/023c6f3e74bac599c495c37eecd72f939f3fab87_2_32x32.png">
+  <link rel="apple-touch-icon" type="image/png"
+    href="../../uploads/default/optimized/1X/ad9adb26331754b0012edbc9b4796de8dc449fa8_2_180x180.png">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <link rel="canonical" href="280.html" />
+  <script
+    type="application/ld+json">{"@context":"http://schema.org","@type":"WebSite","url":"https://radixtalk.com","potentialAction":{"@type":"SearchAction","target":"https://radixtalk.com/search?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
+  <link rel="search" type="application/opensearchdescription+xml" href="../../opensearch.xml" title="RadixTalk Search">
 
-  <link href="https://radixtalk.com/stylesheets/desktop_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="desktop"  />
+  <link
+    href="https://radixtalk.com/stylesheets/color_definitions_light_4_1_328257c7bbc55122a1aafbbd296477820001ddd2.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" class="light-scheme" />
 
-
-  <link href="https://radixtalk.com/stylesheets/discourse-akismet_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-akismet"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-automation_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-automation"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-cakeday_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-cakeday"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-canned-replies_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-canned-replies"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-checklist_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-checklist"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-data-explorer_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-data-explorer"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-details_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-details"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-docs_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-docs"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-follow_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-follow"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-fontawesome-pro_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-fontawesome-pro"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-footnote_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-footnote"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-local-dates_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-local-dates"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-presence_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-presence"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-rss-polling_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-rss-polling"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-saved-searches_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-saved-searches"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-solved_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-solved"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-tooltips_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-tooltips"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-user-notes_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-user-notes"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-voting_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-voting"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-whos-online_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-whos-online"  />
-  <link href="https://radixtalk.com/stylesheets/lazy-yt_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="lazy-yt"  />
-  <link href="https://radixtalk.com/stylesheets/poll_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="poll"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-voting_desktop_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-voting_desktop"  />
-  <link href="https://radixtalk.com/stylesheets/poll_desktop_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="poll_desktop"  />
-
-  <link href="https://radixtalk.com/stylesheets/desktop_theme_1_9a2d2d666d7d7c2df1111a85e8451fea3ca2dfc2.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="desktop_theme" data-theme-id="1" data-theme-name="default"/>
-
-    <script defer="" data-domain="radixtalk.com" src="https://plausible.io/js/plausible.hash.js"></script>
-
-    
-        <link rel="alternate nofollow" type="application/rss+xml" title="RSS feed of &#39;Do all wallet addresses start with rdx1qsp? If so, why not just rdx?&#39;" href="280.rss" />
-    <meta property="og:site_name" content="RadixTalk" />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:image" content="https://radixtalk.com/uploads/default/original/1X/9e3624f2a5d4052091ba93563043c233df535486.png" />
-<meta property="og:image" content="https://radixtalk.com/uploads/default/original/1X/9e3624f2a5d4052091ba93563043c233df535486.png" />
-<meta property="og:url" content="https://radixtalk.com/t/do-all-wallet-addresses-start-with-rdx1qsp-if-so-why-not-just-rdx/280" />
-<meta name="twitter:url" content="https://radixtalk.com/t/do-all-wallet-addresses-start-with-rdx1qsp-if-so-why-not-just-rdx/280" />
-<meta property="og:title" content="Do all wallet addresses start with rdx1qsp? If so, why not just rdx?" />
-<meta name="twitter:title" content="Do all wallet addresses start with rdx1qsp? If so, why not just rdx?" />
-<meta property="og:description" content="Radix wallet addresses are bech32 encoded. rdx is the Human Readable Part (hrp), 1 is a separator between the hrp and the rest of the address, and the qsp is because every Radix wallet address is a 33 byte compressed public key starting with 0x02 or 0x03 that is prefixed with a 0x04 byte.  Ref: Telegram" />
-<meta name="twitter:description" content="Radix wallet addresses are bech32 encoded. rdx is the Human Readable Part (hrp), 1 is a separator between the hrp and the rest of the address, and the qsp is because every Radix wallet address is a 33 byte compressed public key starting with 0x02 or 0x03 that is prefixed with a 0x04 byte.  Ref: Telegram" />
-<meta name="twitter:label1" value="Reading time" />
-<meta name="twitter:data1" value="1 mins 🕑" />
-<meta name="twitter:label2" value="Likes" />
-<meta name="twitter:data2" value="2 ❤" />
-<meta property="article:published_time" content="2022-01-24T12:33:00+00:00" />
-<meta property="og:ignore_canonical" content="true" />
+  <link
+    href="https://radixtalk.com/stylesheets/desktop_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="desktop" />
 
 
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"QAPage","name":"Do all wallet addresses start with rdx1qsp? If so, why not just rdx?","mainEntity":{"@type":"Question","name":"Do all wallet addresses start with rdx1qsp? If so, why not just rdx?","text":"Radix wallet addresses are bech32 encoded. rdx is the Human Readable Part (hrp), 1 is a separator between the hrp and the rest of the address, and the qsp is because every Radix wallet address is a 33 byte compressed public key starting with 0x02 or 0x03 that is prefixed with a 0x04 byte.\n\nRef: <a href="https://radixtalk.com/t/do-all-wallet-addresses-start-with-rdx1qsp-if-so-why-not-just-rdx/\&quot;https://t.me/radix_dlt/345164\&quot;">Tele&hellip;<\/a>","upvoteCount":1,"answerCount":0,"dateCreated":"2022-01-24T12:33:00.725Z","author":{"@type":"Person","name":"Stuart | RadixPool"}}}</script>
-  </head>
-  <body class="crawler">
-    
-    <header>
-  <a href="https://radixtalk.com/">
-    <h1>RadixTalk</h1>
-  </a>
-</header>
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-akismet_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-akismet" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-automation_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-automation" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-cakeday_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-cakeday" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-canned-replies_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-canned-replies" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-checklist_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-checklist" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-data-explorer_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-data-explorer" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-details_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-details" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-docs_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-docs" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-follow_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-follow" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-fontawesome-pro_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-fontawesome-pro" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-footnote_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-footnote" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-local-dates_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-local-dates" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-presence_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-presence" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-rss-polling_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-rss-polling" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-saved-searches_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-saved-searches" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-solved_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-solved" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-tooltips_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-tooltips" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-user-notes_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-user-notes" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-voting_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-voting" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-whos-online_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-whos-online" />
+  <link
+    href="https://radixtalk.com/stylesheets/lazy-yt_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="lazy-yt" />
+  <link
+    href="https://radixtalk.com/stylesheets/poll_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="poll" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-voting_desktop_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-voting_desktop" />
+  <link
+    href="https://radixtalk.com/stylesheets/poll_desktop_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="poll_desktop" />
 
-    <div id="main-outlet" class="wrap" role="main">
-        <div id="topic-title">
-    <h1>
-      <a href="280.html">Do all wallet addresses start with rdx1qsp? If so, why not just rdx?</a>
-    </h1>
+  <link
+    href="https://radixtalk.com/stylesheets/desktop_theme_1_9a2d2d666d7d7c2df1111a85e8451fea3ca2dfc2.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="desktop_theme" data-theme-id="1" data-theme-name="default" />
+
+  <script defer="" data-domain="radixtalk.com" src="https://plausible.io/js/plausible.hash.js"></script>
+
+
+  <link rel="alternate nofollow" type="application/rss+xml"
+    title="RSS feed of &#39;Do all wallet addresses start with rdx1qsp? If so, why not just rdx?&#39;" href="280.rss" />
+  <meta property="og:site_name" content="RadixTalk" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:image"
+    content="https://radixtalk.com/uploads/default/original/1X/9e3624f2a5d4052091ba93563043c233df535486.png" />
+  <meta property="og:image"
+    content="https://radixtalk.com/uploads/default/original/1X/9e3624f2a5d4052091ba93563043c233df535486.png" />
+  <meta property="og:url"
+    content="https://radixtalk.com/t/do-all-wallet-addresses-start-with-rdx1qsp-if-so-why-not-just-rdx/280" />
+  <meta name="twitter:url"
+    content="https://radixtalk.com/t/do-all-wallet-addresses-start-with-rdx1qsp-if-so-why-not-just-rdx/280" />
+  <meta property="og:title" content="Do all wallet addresses start with rdx1qsp? If so, why not just rdx?" />
+  <meta name="twitter:title" content="Do all wallet addresses start with rdx1qsp? If so, why not just rdx?" />
+  <meta property="og:description"
+    content="Radix wallet addresses are bech32 encoded. rdx is the Human Readable Part (hrp), 1 is a separator between the hrp and the rest of the address, and the qsp is because every Radix wallet address is a 33 byte compressed public key starting with 0x02 or 0x03 that is prefixed with a 0x04 byte.  Ref: Telegram" />
+  <meta name="twitter:description"
+    content="Radix wallet addresses are bech32 encoded. rdx is the Human Readable Part (hrp), 1 is a separator between the hrp and the rest of the address, and the qsp is because every Radix wallet address is a 33 byte compressed public key starting with 0x02 or 0x03 that is prefixed with a 0x04 byte.  Ref: Telegram" />
+  <meta name="twitter:label1" value="Reading time" />
+  <meta name="twitter:data1" value="1 mins 🕑" />
+  <meta name="twitter:label2" value="Likes" />
+  <meta name="twitter:data2" value="2 ❤" />
+  <meta property="article:published_time" content="2022-01-24T12:33:00+00:00" />
+  <meta property="og:ignore_canonical" content="true" />
+
+
+  <script
+    type="application/ld+json">{"@context":"http://schema.org","@type":"QAPage","name":"Do all wallet addresses start with rdx1qsp? If so, why not just rdx?","mainEntity":{"@type":"Question","name":"Do all wallet addresses start with rdx1qsp? If so, why not just rdx?","text":"Radix wallet addresses are bech32 encoded. rdx is the Human Readable Part (hrp), 1 is a separator between the hrp and the rest of the address, and the qsp is because every Radix wallet address is a 33 byte compressed public key starting with 0x02 or 0x03 that is prefixed with a 0x04 byte.\n\nRef: <a href="https://radixtalk.com/t/do-all-wallet-addresses-start-with-rdx1qsp-if-so-why-not-just-rdx/\&quot;https://t.me/radix_dlt/345164\&quot;">Tele&hellip;<\/a>","upvoteCount":1,"answerCount":0,"dateCreated":"2022-01-24T12:33:00.725Z","author":{"@type":"Person","name":"Stuart | RadixPool"}}}</script>
+</head>
+
+<body class="crawler">
+
+  <header>
+    <a href="https://radixtalk.com/">
+      <h1>RadixTalk</h1>
+    </a>
+  </header>
+
+  <div id="main-outlet" class="wrap" role="main">
+    <div id="topic-title">
+      <h1>
+        <a href="280.html">Do all wallet addresses start with rdx1qsp? If so, why not just rdx?</a>
+      </h1>
 
       <div class="topic-category" itemscope itemtype="http://schema.org/BreadcrumbList">
-          <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-            <a href="https://radixtalk.com/c/questions/35" class="badge-wrapper bullet" itemprop="item">
-              <span class='badge-category-bg' style='background-color: #3AB54A'></span>
-              <span class='badge-category clear-badge'>
-                <span class='category-name' itemprop='name'>Questions / Help</span>
-              </span>
-            </a>
-            <meta itemprop="position" content="1" />
-          </span>
+        <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a href="https://radixtalk.com/c/questions/35" class="badge-wrapper bullet" itemprop="item">
+            <span class='badge-category-bg' style='background-color: #3AB54A'></span>
+            <span class='badge-category clear-badge'>
+              <span class='category-name' itemprop='name'>Questions / Help</span>
+            </span>
+          </a>
+          <meta itemprop="position" content="1" />
+        </span>
       </div>
 
       <div class="topic-category">
         <div class='discourse-tags list-tags'>
-            <a href='../../tag/wallet.html' class='discourse-tag' rel="tag">wallet</a>, 
-            <a href='../../tag/faq.html' class='discourse-tag' rel="tag">faq</a>
+          <a href='../../tag/wallet.html' class='discourse-tag' rel="tag">wallet</a>,
+          <a href='../../tag/faq.html' class='discourse-tag' rel="tag">faq</a>
         </div>
       </div>
-  </div>
-
-  
+    </div>
 
 
-      <div id='post_1' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
-        <div class='crawler-post-meta'>
-          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
-            <meta itemprop='name' content='RadixTalk'>
-              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
-                <meta itemprop='url' content='https://radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
-              </div>
+
+
+    <div id='post_1' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+      <div class='crawler-post-meta'>
+        <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+          <meta itemprop='name' content='RadixTalk'>
+          <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+            <meta itemprop='url'
+              content='https://radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
           </div>
-          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <a itemprop="url" href='../../u/Stuart.html'><span itemprop='name'>Stuart</span></a>
-            (Stuart | RadixPool)
-          </span>
+        </div>
+        <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a itemprop="url" href='../../u/Stuart.html'><span itemprop='name'>Stuart</span></a>
+          (Stuart | RadixPool)
+        </span>
 
-          <link itemprop="mainEntityOfPage" href="280.html">
+        <link itemprop="mainEntityOfPage" href="280.html">
 
 
-          <span class="crawler-post-infos">
-              <time itemprop='datePublished' datetime='2022-01-24T12:33:00Z' class='post-time'>
-                24 January 2022 12:33
-              </time>
-              <meta itemprop='dateModified' content='2022-01-24T12:59:02Z'>
+        <span class="crawler-post-infos">
+          <time itemprop='datePublished' datetime='2022-01-24T12:33:00Z' class='post-time'>
+            24 January 2022 12:33
+          </time>
+          <meta itemprop='dateModified' content='2022-01-24T12:59:02Z'>
           <span itemprop='position'>#1</span>
-          </span>
-        </div>
-        <div class='post' itemprop='articleBody'>
-          <p>Radix wallet addresses are bech32 encoded. <code>rdx</code> is the <strong>Human Readable Part (hrp)</strong>, <code>1</code> is a separator between the hrp and the rest of the address, and the <code>qsp</code> is because every Radix wallet address is a 33 byte compressed public key starting with <code>0x02</code> or <code>0x03</code> that is prefixed with a <code>0x04</code> byte.</p>
-<p>Ref: <a href="https://t.me/radix_dlt/345164">Telegram</a></p>
-        </div>
-
-        <meta itemprop='headline' content='Do all wallet addresses start with rdx1qsp? If so, why not just rdx?'>
-          <meta itemprop='keywords' content='wallet, faq'>
-
-        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
-           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
-           <meta itemprop="userInteractionCount" content="1" />
-           <span class='post-likes'>1 Like</span>
-         </div>
-
-         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
-            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
-            <meta itemprop="userInteractionCount" content="0" />
-          </div>
-
+        </span>
       </div>
-      <div id='post_2' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
-        <div class='crawler-post-meta'>
-          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
-            <meta itemprop='name' content='RadixTalk'>
-              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
-                <meta itemprop='url' content='https://radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
-              </div>
-          </div>
-          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <a itemprop="url" href='../../u/CaviarNine.html'><span itemprop='name'>CaviarNine</span></a>
-            
-          </span>
-
-          <link itemprop="mainEntityOfPage" href="280.html">
-
-            <link itemprop="image" href="../../uploads/default/original/1X/8be0abca5232595ef38ad8480564eec5c12de511.png">
-
-          <span class="crawler-post-infos">
-              <time itemprop='datePublished' datetime='2022-01-27T13:39:19Z' class='post-time'>
-                27 January 2022 13:39
-              </time>
-              <meta itemprop='dateModified' content='2022-01-27T13:39:19Z'>
-          <span itemprop='position'>#2</span>
-          </span>
-        </div>
-        <div class='post' itemprop='articleBody'>
-          <p>To add to Stuart’s explanation…<br>
-The first 15 bits of 0x0402 or 0x0403 are (grouped into 5 bit pieces):<br>
-00000 10000 00001<br>
-Which maps to ‘qsp’ under the bech32 character set.<br>
-The mapping for those interested is:</p>
-<p><div class="lightbox-wrapper"><a class="lightbox" href="../../uploads/default/original/1X/8be0abca5232595ef38ad8480564eec5c12de511.png" data-download-href="https://radixtalk.com/uploads/default/8be0abca5232595ef38ad8480564eec5c12de511" title="image"><img src="../../uploads/default/optimized/1X/8be0abca5232595ef38ad8480564eec5c12de511_2_690x359.png" alt="image" data-base62-sha1="jXpISHXGDbiQhxXTHi8cBRTyvHH" width="690" height="359" srcset="../../uploads/default/optimized/1X/8be0abca5232595ef38ad8480564eec5c12de511_2_690x359.png, ../../uploads/default/original/1X/8be0abca5232595ef38ad8480564eec5c12de511.png 1.5x, ../../uploads/default/original/1X/8be0abca5232595ef38ad8480564eec5c12de511.png 2x" data-small-upload="https://radixtalk.com/uploads/default/optimized/1X/8be0abca5232595ef38ad8480564eec5c12de511_2_10x10.png"><div class="meta">
-<svg class="fa d-icon d-icon-far-image svg-icon" aria-hidden="true"><use href="#far-image"></use></svg><span class="filename">image</span><span class="informations">798×416 19.3 KB</span><svg class="fa d-icon d-icon-discourse-expand svg-icon" aria-hidden="true"><use href="#discourse-expand"></use></svg>
-</div></a></div></p>
-        </div>
-
-        <meta itemprop='headline' content='Do all wallet addresses start with rdx1qsp? If so, why not just rdx?'>
-
-        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
-           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
-           <meta itemprop="userInteractionCount" content="1" />
-           <span class='post-likes'>1 Like</span>
-         </div>
-
-         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
-            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
-            <meta itemprop="userInteractionCount" content="0" />
-          </div>
-
+      <div class='post' itemprop='articleBody'>
+        <p>Radix wallet addresses are bech32 encoded. <code>rdx</code> is the <strong>Human Readable Part
+            (hrp)</strong>, <code>1</code> is a separator between the hrp and the rest of the address, and the
+          <code>qsp</code> is because every Radix wallet address is a 33 byte compressed public key starting with
+          <code>0x02</code> or <code>0x03</code> that is prefixed with a <code>0x04</code> byte.</p>
+        <p>Ref: <a href="https://t.me/radix_dlt/345164">Telegram</a></p>
       </div>
 
+      <meta itemprop='headline' content='Do all wallet addresses start with rdx1qsp? If so, why not just rdx?'>
+      <meta itemprop='keywords' content='wallet, faq'>
 
+      <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+        <meta itemprop="interactionType" content="http://schema.org/LikeAction" />
+        <meta itemprop="userInteractionCount" content="1" />
+        <span class='post-likes'>1 Like</span>
+      </div>
 
-
-
+      <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+        <meta itemprop="interactionType" content="http://schema.org/CommentAction" />
+        <meta itemprop="userInteractionCount" content="0" />
+      </div>
 
     </div>
-    <footer class="container wrap">
-  <nav class='crawler-nav'>
-    <ul>
-      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
-        <span itemprop='name'>
-          <a href='https://radixtalk.com/' itemprop="url">Home </a>
-        </span>
-      </li>
-      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
-        <span itemprop='name'>
-          <a href='https://radixtalk.com/categories' itemprop="url">Categories </a>
-        </span>
-      </li>
-      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
-        <span itemprop='name'>
-          <a href='https://radixtalk.com/guidelines' itemprop="url">FAQ/Guidelines </a>
-        </span>
-      </li>
-      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
-        <span itemprop='name'>
-          <a href='https://radixtalk.com/tos' itemprop="url">Terms of Service </a>
-        </span>
-      </li>
-      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
-        <span itemprop='name'>
-          <a href='https://radixtalk.com/privacy' itemprop="url">Privacy Policy </a>
-        </span>
-      </li>
-    </ul>
-  </nav>
-  <p class='powered-by-link'>Powered by <a href="https://www.discourse.org">Discourse</a>, best viewed with JavaScript enabled</p>
-</footer>
+    <div id='post_2' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+      <div class='crawler-post-meta'>
+        <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+          <meta itemprop='name' content='RadixTalk'>
+          <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+            <meta itemprop='url'
+              content='https://radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+          </div>
+        </div>
+        <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a itemprop="url" href='../../u/CaviarNine.html'><span itemprop='name'>CaviarNine</span></a>
 
-    
-    
-  </body>
-  
+        </span>
+
+        <link itemprop="mainEntityOfPage" href="280.html">
+
+        <link itemprop="image" href="../../uploads/default/original/1X/8be0abca5232595ef38ad8480564eec5c12de511.png">
+
+        <span class="crawler-post-infos">
+          <time itemprop='datePublished' datetime='2022-01-27T13:39:19Z' class='post-time'>
+            27 January 2022 13:39
+          </time>
+          <meta itemprop='dateModified' content='2022-01-27T13:39:19Z'>
+          <span itemprop='position'>#2</span>
+        </span>
+      </div>
+      <div class='post' itemprop='articleBody'>
+        <p>To add to Stuart’s explanation…<br>
+          The first 15 bits of 0x0402 or 0x0403 are (grouped into 5 bit pieces):<br>
+          00000 10000 00001<br>
+          Which maps to ‘qsp’ under the bech32 character set.<br>
+          The mapping for those interested is:</p>
+        <p>
+        <div class="lightbox-wrapper"><a class="lightbox"
+            href="../../uploads/default/original/1X/8be0abca5232595ef38ad8480564eec5c12de511.png"
+            data-download-href="https://radixtalk.com/uploads/default/8be0abca5232595ef38ad8480564eec5c12de511"
+            title="image"><img
+              src="../../uploads/default/optimized/1X/8be0abca5232595ef38ad8480564eec5c12de511_2_690x359.png"
+              alt="image" data-base62-sha1="jXpISHXGDbiQhxXTHi8cBRTyvHH" width="690" height="359"
+              srcset="../../uploads/default/optimized/1X/8be0abca5232595ef38ad8480564eec5c12de511_2_690x359.png, ../../uploads/default/original/1X/8be0abca5232595ef38ad8480564eec5c12de511.png 1.5x, ../../uploads/default/original/1X/8be0abca5232595ef38ad8480564eec5c12de511.png 2x"
+              data-small-upload="https://radixtalk.com/uploads/default/optimized/1X/8be0abca5232595ef38ad8480564eec5c12de511_2_10x10.png">
+            <div class="meta">
+              <svg class="fa d-icon d-icon-far-image svg-icon" aria-hidden="true">
+                <use href="#far-image"></use>
+              </svg><span class="filename">image</span><span class="informations">798×416 19.3 KB</span><svg
+                class="fa d-icon d-icon-discourse-expand svg-icon" aria-hidden="true">
+                <use href="#discourse-expand"></use>
+              </svg>
+            </div>
+          </a></div>
+        </p>
+      </div>
+
+      <meta itemprop='headline' content='Do all wallet addresses start with rdx1qsp? If so, why not just rdx?'>
+
+      <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+        <meta itemprop="interactionType" content="http://schema.org/LikeAction" />
+        <meta itemprop="userInteractionCount" content="1" />
+        <span class='post-likes'>1 Like</span>
+      </div>
+
+      <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+        <meta itemprop="interactionType" content="http://schema.org/CommentAction" />
+        <meta itemprop="userInteractionCount" content="0" />
+      </div>
+
+    </div>
+
+
+
+
+
+
+  </div>
+  <footer class="container wrap">
+    <nav class='crawler-nav'>
+      <ul>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='https://radixtalk.com/' itemprop="url">Home </a>
+          </span>
+        </li>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='https://radixtalk.com/categories' itemprop="url">Categories </a>
+          </span>
+        </li>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='https://radixtalk.com/guidelines' itemprop="url">FAQ/Guidelines </a>
+          </span>
+        </li>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='https://radixtalk.com/tos' itemprop="url">Terms of Service </a>
+          </span>
+        </li>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='https://radixtalk.com/privacy' itemprop="url">Privacy Policy </a>
+          </span>
+        </li>
+      </ul>
+    </nav>
+    <p class='powered-by-link'>Powered by <a href="https://www.discourse.org">Discourse</a>, best viewed with JavaScript
+      enabled</p>
+  </footer>
+
+
+
+</body>
+
 </html>

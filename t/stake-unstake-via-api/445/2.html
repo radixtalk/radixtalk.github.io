@@ -1,221 +1,311 @@
 <!DOCTYPE html>
 <html lang="en-GB">
-  <head>
-    <meta charset="utf-8">
-    <title>Stake / Unstake via API - #2 by Mattia - Developers - RadixTalk</title>
-    <meta name="description" content="Has anyone here used the APIs for staking / unstaking found here? 
+
+<head>
+  <meta charset="utf-8">
+  <title>Stake / Unstake via API - #2 by Mattia - Developers - RadixTalk</title>
+  <meta name="description"
+    content="Has anyone here used the APIs for staking / unstaking found here?
 
 *Staking may be started by transferring XRD from an account to a prepared_stake entity with a specific validator. Once XRD is in this entity, at some po&amp;hellip;">
-    <meta name="generator" content="Discourse 2.9.0.beta4 - https://github.com/discourse/discourse version b65ecf69871656155c381343cd84de919cbbf803">
-<link rel="icon" type="image/png" href="../../../uploads/default/optimized/1X/023c6f3e74bac599c495c37eecd72f939f3fab87_2_32x32.png">
-<link rel="apple-touch-icon" type="image/png" href="../../../uploads/default/optimized/1X/ad9adb26331754b0012edbc9b4796de8dc449fa8_2_180x180.png">
-<meta name="theme-color" content="#ffffff">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
-<link rel="canonical" href="../445.html" />
-<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebSite","url":"https://radixtalk.com","potentialAction":{"@type":"SearchAction","target":"https://radixtalk.com/search?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
-<link rel="search" type="application/opensearchdescription+xml" href="../../../opensearch.xml" title="RadixTalk Search">
+  <meta name="generator"
+    content="Discourse 2.9.0.beta4 - https://github.com/discourse/discourse version b65ecf69871656155c381343cd84de919cbbf803">
+  <link rel="icon" type="image/png"
+    href="../../../uploads/default/optimized/1X/023c6f3e74bac599c495c37eecd72f939f3fab87_2_32x32.png">
+  <link rel="apple-touch-icon" type="image/png"
+    href="../../../uploads/default/optimized/1X/ad9adb26331754b0012edbc9b4796de8dc449fa8_2_180x180.png">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <link rel="canonical" href="../445.html" />
+  <script
+    type="application/ld+json">{"@context":"http://schema.org","@type":"WebSite","url":"https://radixtalk.com","potentialAction":{"@type":"SearchAction","target":"https://radixtalk.com/search?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
+  <link rel="search" type="application/opensearchdescription+xml" href="../../../opensearch.xml"
+    title="RadixTalk Search">
 
-    <link href="https://radixtalk.com/stylesheets/color_definitions_light_4_1_328257c7bbc55122a1aafbbd296477820001ddd2.css?__ws=radixtalk.com" media="all" rel="stylesheet" class="light-scheme"/>
+  <link
+    href="https://radixtalk.com/stylesheets/color_definitions_light_4_1_328257c7bbc55122a1aafbbd296477820001ddd2.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" class="light-scheme" />
 
-  <link href="https://radixtalk.com/stylesheets/desktop_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="desktop"  />
-
-
-  <link href="https://radixtalk.com/stylesheets/discourse-akismet_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-akismet"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-automation_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-automation"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-cakeday_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-cakeday"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-canned-replies_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-canned-replies"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-checklist_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-checklist"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-data-explorer_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-data-explorer"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-details_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-details"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-docs_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-docs"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-follow_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-follow"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-fontawesome-pro_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-fontawesome-pro"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-footnote_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-footnote"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-local-dates_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-local-dates"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-presence_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-presence"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-rss-polling_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-rss-polling"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-saved-searches_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-saved-searches"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-solved_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-solved"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-tooltips_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-tooltips"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-user-notes_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-user-notes"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-voting_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-voting"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-whos-online_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-whos-online"  />
-  <link href="https://radixtalk.com/stylesheets/lazy-yt_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="lazy-yt"  />
-  <link href="https://radixtalk.com/stylesheets/poll_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="poll"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-voting_desktop_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-voting_desktop"  />
-  <link href="https://radixtalk.com/stylesheets/poll_desktop_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="poll_desktop"  />
-
-  <link href="https://radixtalk.com/stylesheets/desktop_theme_1_9a2d2d666d7d7c2df1111a85e8451fea3ca2dfc2.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="desktop_theme" data-theme-id="1" data-theme-name="default"/>
-
-    <script defer="" data-domain="radixtalk.com" src="https://plausible.io/js/plausible.hash.js"></script>
-
-    
-        <link rel="alternate nofollow" type="application/rss+xml" title="RSS feed of &#39;Stake / Unstake via API&#39;" href="../445.rss" />
-    <meta property="og:site_name" content="RadixTalk" />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:image" content="https://radixtalk.com/uploads/default/original/1X/9e3624f2a5d4052091ba93563043c233df535486.png" />
-<meta property="og:image" content="https://radixtalk.com/uploads/default/original/1X/9e3624f2a5d4052091ba93563043c233df535486.png" />
-<meta property="og:url" content="https://radixtalk.com/t/stake-unstake-via-api/445/2" />
-<meta name="twitter:url" content="https://radixtalk.com/t/stake-unstake-via-api/445/2" />
-<meta property="og:title" content="Stake / Unstake via API" />
-<meta name="twitter:title" content="Stake / Unstake via API" />
-<meta property="og:description" content="I think you have to use the Gateway API like mentioned here: Making Transactions by Gateway API :: Radix Documentation  You can make a POST request to the /transaction/build endpoint of a Gateway (for example https://mainnet.radixdlt.com/transaction/build using cURL or Postman or whatever you prefer) with this syntax: ReDoc Interactive Demo   Stake It would look like this:  {   &quot;network_identifier&quot;: {     &quot;network&quot;: &quot;mainnet&quot;   },   &quot;actions&quot;: [     {       &quot;type&quot;: &quot;StakeTokens&quot;,       &quot;from_acc..." />
-<meta name="twitter:description" content="I think you have to use the Gateway API like mentioned here: Making Transactions by Gateway API :: Radix Documentation  You can make a POST request to the /transaction/build endpoint of a Gateway (for example https://mainnet.radixdlt.com/transaction/build using cURL or Postman or whatever you prefer) with this syntax: ReDoc Interactive Demo   Stake It would look like this:  {   &quot;network_identifier&quot;: {     &quot;network&quot;: &quot;mainnet&quot;   },   &quot;actions&quot;: [     {       &quot;type&quot;: &quot;StakeTokens&quot;,       &quot;from_acc..." />
-<meta property="article:published_time" content="2022-04-15T20:15:37+00:00" />
-<meta property="og:ignore_canonical" content="true" />
+  <link
+    href="https://radixtalk.com/stylesheets/desktop_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="desktop" />
 
 
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"QAPage","name":"Stake / Unstake via API","mainEntity":{"@type":"Question","name":"Stake / Unstake via API","text":"Has anyone here used the APIs for staking / unstaking found here?\n\n[image]\n\n<a href="https://radixtalk.com/t/stake-unstake-via-api/445/\&quot;https://documenter.getpostman.com/view/14449947/UVXnHaJh#32508ddc-bdd0-48d4-9e7a-6a0ff2bd118e\"" target=\"_blank\" rel=\"noopener nofollow ugc\">Core API<\/a>\n\n| Core API Revision (OpenAPI Doc Version) | v1.0.0 |\n\n| --- | --- |\n\n| Radix Release | v1.1.0 |\n\nThis API provides endpoints from a node for integration with the Radix ledger.\n\n# Overview\n\n&gt; WARNING\n\n&gt;\n\n&gt; The&hellip;","upvoteCount":0,"answerCount":1,"dateCreated":"2022-04-13T15:28:50.658Z","author":{"@type":"Person","name":"Shawn"},"acceptedAnswer":{"@type":"Answer","text":"I think you have to use the Gateway API like mentioned here: <a href="https://radixtalk.com/t/stake-unstake-via-api/445/\&quot;https://docs.radixdlt.com/main/apis/making-transactions.html\&quot;" class=\"inline-onebox\">Making Transactions by Gateway API :: Radix Documentation<\/a>\n\nYou can make a POST request to the /transaction/build endpoint of a Gateway (for example https://mainnet.radixdlt.com/transaction/build using cURL or Postman or whatever you prefer&hellip;","upvoteCount":0,"dateCreated":"2022-04-15T20:15:37.510Z","url":"https://radixtalk.com/t/stake-unstake-via-api/445/2","author":{"@type":"Person","name":"Mattia"}}}}</script>
-  </head>
-  <body class="crawler">
-    
-    <header>
-  <a href="https://radixtalk.com/">
-    <h1>RadixTalk</h1>
-  </a>
-</header>
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-akismet_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-akismet" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-automation_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-automation" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-cakeday_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-cakeday" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-canned-replies_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-canned-replies" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-checklist_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-checklist" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-data-explorer_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-data-explorer" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-details_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-details" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-docs_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-docs" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-follow_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-follow" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-fontawesome-pro_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-fontawesome-pro" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-footnote_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-footnote" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-local-dates_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-local-dates" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-presence_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-presence" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-rss-polling_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-rss-polling" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-saved-searches_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-saved-searches" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-solved_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-solved" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-tooltips_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-tooltips" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-user-notes_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-user-notes" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-voting_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-voting" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-whos-online_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-whos-online" />
+  <link
+    href="https://radixtalk.com/stylesheets/lazy-yt_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="lazy-yt" />
+  <link
+    href="https://radixtalk.com/stylesheets/poll_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="poll" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-voting_desktop_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-voting_desktop" />
+  <link
+    href="https://radixtalk.com/stylesheets/poll_desktop_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="poll_desktop" />
 
-    <div id="main-outlet" class="wrap" role="main">
-        <div id="topic-title">
-    <h1>
-      <a href="../445.html">Stake / Unstake via API</a>
-    </h1>
+  <link
+    href="https://radixtalk.com/stylesheets/desktop_theme_1_9a2d2d666d7d7c2df1111a85e8451fea3ca2dfc2.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="desktop_theme" data-theme-id="1" data-theme-name="default" />
+
+  <script defer="" data-domain="radixtalk.com" src="https://plausible.io/js/plausible.hash.js"></script>
+
+
+  <link rel="alternate nofollow" type="application/rss+xml" title="RSS feed of &#39;Stake / Unstake via API&#39;"
+    href="../445.rss" />
+  <meta property="og:site_name" content="RadixTalk" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:image"
+    content="https://radixtalk.com/uploads/default/original/1X/9e3624f2a5d4052091ba93563043c233df535486.png" />
+  <meta property="og:image"
+    content="https://radixtalk.com/uploads/default/original/1X/9e3624f2a5d4052091ba93563043c233df535486.png" />
+  <meta property="og:url" content="https://radixtalk.com/t/stake-unstake-via-api/445/2" />
+  <meta name="twitter:url" content="https://radixtalk.com/t/stake-unstake-via-api/445/2" />
+  <meta property="og:title" content="Stake / Unstake via API" />
+  <meta name="twitter:title" content="Stake / Unstake via API" />
+  <meta property="og:description"
+    content="I think you have to use the Gateway API like mentioned here: Making Transactions by Gateway API :: Radix Documentation  You can make a POST request to the /transaction/build endpoint of a Gateway (for example https://mainnet.radixdlt.com/transaction/build using cURL or Postman or whatever you prefer) with this syntax: ReDoc Interactive Demo   Stake It would look like this:  {   &quot;network_identifier&quot;: {     &quot;network&quot;: &quot;mainnet&quot;   },   &quot;actions&quot;: [     {       &quot;type&quot;: &quot;StakeTokens&quot;,       &quot;from_acc..." />
+  <meta name="twitter:description"
+    content="I think you have to use the Gateway API like mentioned here: Making Transactions by Gateway API :: Radix Documentation  You can make a POST request to the /transaction/build endpoint of a Gateway (for example https://mainnet.radixdlt.com/transaction/build using cURL or Postman or whatever you prefer) with this syntax: ReDoc Interactive Demo   Stake It would look like this:  {   &quot;network_identifier&quot;: {     &quot;network&quot;: &quot;mainnet&quot;   },   &quot;actions&quot;: [     {       &quot;type&quot;: &quot;StakeTokens&quot;,       &quot;from_acc..." />
+  <meta property="article:published_time" content="2022-04-15T20:15:37+00:00" />
+  <meta property="og:ignore_canonical" content="true" />
+
+
+  <script
+    type="application/ld+json">{"@context":"http://schema.org","@type":"QAPage","name":"Stake / Unstake via API","mainEntity":{"@type":"Question","name":"Stake / Unstake via API","text":"Has anyone here used the APIs for staking / unstaking found here?\n\n[image]\n\n<a href="https://radixtalk.com/t/stake-unstake-via-api/445/\&quot;https://documenter.getpostman.com/view/14449947/UVXnHaJh#32508ddc-bdd0-48d4-9e7a-6a0ff2bd118e\"" target=\"_blank\" rel=\"noopener nofollow ugc\">Core API<\/a>\n\n| Core API Revision (OpenAPI Doc Version) | v1.0.0 |\n\n| --- | --- |\n\n| Radix Release | v1.1.0 |\n\nThis API provides endpoints from a node for integration with the Radix ledger.\n\n# Overview\n\n&gt; WARNING\n\n&gt;\n\n&gt; The&hellip;","upvoteCount":0,"answerCount":1,"dateCreated":"2022-04-13T15:28:50.658Z","author":{"@type":"Person","name":"Shawn"},"acceptedAnswer":{"@type":"Answer","text":"I think you have to use the Gateway API like mentioned here: <a href="https://radixtalk.com/t/stake-unstake-via-api/445/\&quot;https://docs.radixdlt.com/main/apis/making-transactions.html\&quot;" class=\"inline-onebox\">Making Transactions by Gateway API :: Radix Documentation<\/a>\n\nYou can make a POST request to the /transaction/build endpoint of a Gateway (for example https://mainnet.radixdlt.com/transaction/build using cURL or Postman or whatever you prefer&hellip;","upvoteCount":0,"dateCreated":"2022-04-15T20:15:37.510Z","url":"https://radixtalk.com/t/stake-unstake-via-api/445/2","author":{"@type":"Person","name":"Mattia"}}}}</script>
+</head>
+
+<body class="crawler">
+
+  <header>
+    <a href="https://radixtalk.com/">
+      <h1>RadixTalk</h1>
+    </a>
+  </header>
+
+  <div id="main-outlet" class="wrap" role="main">
+    <div id="topic-title">
+      <h1>
+        <a href="../445.html">Stake / Unstake via API</a>
+      </h1>
 
       <div class="topic-category" itemscope itemtype="http://schema.org/BreadcrumbList">
-          <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-            <a href="https://radixtalk.com/c/developers/24" class="badge-wrapper bullet" itemprop="item">
-              <span class='badge-category-bg' style='background-color: #F1592A'></span>
-              <span class='badge-category clear-badge'>
-                <span class='category-name' itemprop='name'>Developers</span>
-              </span>
-            </a>
-            <meta itemprop="position" content="1" />
-          </span>
+        <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a href="https://radixtalk.com/c/developers/24" class="badge-wrapper bullet" itemprop="item">
+            <span class='badge-category-bg' style='background-color: #F1592A'></span>
+            <span class='badge-category clear-badge'>
+              <span class='category-name' itemprop='name'>Developers</span>
+            </span>
+          </a>
+          <meta itemprop="position" content="1" />
+        </span>
       </div>
 
       <div class="topic-category">
         <div class='discourse-tags list-tags'>
-            <a href='../../../tag/api.html' class='discourse-tag' rel="tag">api</a>
+          <a href='../../../tag/api.html' class='discourse-tag' rel="tag">api</a>
         </div>
       </div>
-  </div>
-
-  
+    </div>
 
 
-      <div id='post_1' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
-        <div class='crawler-post-meta'>
-          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
-            <meta itemprop='name' content='RadixTalk'>
-              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
-                <meta itemprop='url' content='https://radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
-              </div>
+
+
+    <div id='post_1' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+      <div class='crawler-post-meta'>
+        <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+          <meta itemprop='name' content='RadixTalk'>
+          <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+            <meta itemprop='url'
+              content='https://radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
           </div>
-          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <a itemprop="url" href='../../../u/Peachy.html'><span itemprop='name'>Peachy</span></a>
-            (Shawn)
-          </span>
+        </div>
+        <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a itemprop="url" href='../../../u/Peachy.html'><span itemprop='name'>Peachy</span></a>
+          (Shawn)
+        </span>
 
-          <link itemprop="mainEntityOfPage" href="../445.html">
+        <link itemprop="mainEntityOfPage" href="../445.html">
 
 
-          <span class="crawler-post-infos">
-              <time itemprop='datePublished' datetime='2022-04-13T15:28:50Z' class='post-time'>
-                13 April 2022 15:28
-              </time>
-              <meta itemprop='dateModified' content='2022-04-13T15:28:50Z'>
+        <span class="crawler-post-infos">
+          <time itemprop='datePublished' datetime='2022-04-13T15:28:50Z' class='post-time'>
+            13 April 2022 15:28
+          </time>
+          <meta itemprop='dateModified' content='2022-04-13T15:28:50Z'>
           <span itemprop='position'>#1</span>
-          </span>
-        </div>
-        <div class='post' itemprop='articleBody'>
-          <p>Has anyone here used the APIs for staking / unstaking found here?</p><aside class="onebox allowlistedgeneric" data-onebox-src="https://documenter.getpostman.com/view/14449947/UVXnHaJh#32508ddc-bdd0-48d4-9e7a-6a0ff2bd118e">
-  <header class="source">
-      <img src="../../../uploads/default/original/1X/23e08811972f34d8a58f14b7bb1968b2034d7de6.png" class="site-icon" width="16" height="16">
-
-      <a href="https://documenter.getpostman.com/view/14449947/UVXnHaJh#32508ddc-bdd0-48d4-9e7a-6a0ff2bd118e" target="_blank" rel="noopener nofollow ugc">Core API</a>
-  </header>
-
-  <article class="onebox-body">
-    <img src="../../../uploads/default/original/1X/430c22d4f9808f11a28f78210e77d617f0a99094.png" class="thumbnail onebox-avatar" width="112" height="112">
-
-<h3><a href="https://documenter.getpostman.com/view/14449947/UVXnHaJh#32508ddc-bdd0-48d4-9e7a-6a0ff2bd118e" target="_blank" rel="noopener nofollow ugc">Core API</a></h3>
-
-  <p>| Core API Revision (OpenAPI Doc Version) | v1.0.0 |
-| --- | --- |
-| Radix Release | v1.1.0 |
-
-This API provides endpoints from a node for integration with the Radix ledger.
-
-# Overview
-
-&gt; WARNING
-&gt; 
-&gt; The Core API is **NOT** intended to be...</p>
-
-
-  </article>
-
-  <div class="onebox-metadata">
-    
-    
-  </div>
-
-  <div style="clear: both"></div>
-</aside>
-
-<p>*<strong>Staking</strong> may be started by transferring XRD from an account to a <code>prepared_stake</code> entity with a specific validator. Once XRD is in this entity, at some point the system will move this XRD to a Validator entity and mint StakeUnits into the originating account.</p>
-<p>*<strong>Unstaking</strong> may be started by transfering StakeUnits from an account to a <code>prepared_unstake</code> entity. Once StakeUnits is in this entity, at some point the system will destroy this StakeUnits and transfer XRD from the Validator entity into your <code>exiting_stake</code> entity. Once the unlocking period is over the system will move that XRD from the <code>exiting_stake</code> entity into your account.</p>
-<p>I’m trying to figure out how to construct the call, but hitting a roadblock.<br>
-Thanks!</p>
-        </div>
-
-        <meta itemprop='headline' content='Stake / Unstake via API'>
-          <meta itemprop='keywords' content='api'>
-
-        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
-           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
-           <meta itemprop="userInteractionCount" content="0" />
-           <span class='post-likes'></span>
-         </div>
-
-         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
-            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
-            <meta itemprop="userInteractionCount" content="0" />
-          </div>
-
+        </span>
       </div>
-      <div id='post_2' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
-        <div class='crawler-post-meta'>
-          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
-            <meta itemprop='name' content='RadixTalk'>
-              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
-                <meta itemprop='url' content='https://radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
-              </div>
+      <div class='post' itemprop='articleBody'>
+        <p>Has anyone here used the APIs for staking / unstaking found here?</p>
+        <aside class="onebox allowlistedgeneric"
+          data-onebox-src="https://documenter.getpostman.com/view/14449947/UVXnHaJh#32508ddc-bdd0-48d4-9e7a-6a0ff2bd118e">
+          <header class="source">
+            <img src="../../../uploads/default/original/1X/23e08811972f34d8a58f14b7bb1968b2034d7de6.png"
+              class="site-icon" width="16" height="16">
+
+            <a href="https://documenter.getpostman.com/view/14449947/UVXnHaJh#32508ddc-bdd0-48d4-9e7a-6a0ff2bd118e"
+              target="_blank" rel="noopener nofollow ugc">Core API</a>
+          </header>
+
+          <article class="onebox-body">
+            <img src="../../../uploads/default/original/1X/430c22d4f9808f11a28f78210e77d617f0a99094.png"
+              class="thumbnail onebox-avatar" width="112" height="112">
+
+            <h3><a href="https://documenter.getpostman.com/view/14449947/UVXnHaJh#32508ddc-bdd0-48d4-9e7a-6a0ff2bd118e"
+                target="_blank" rel="noopener nofollow ugc">Core API</a></h3>
+
+            <p>| Core API Revision (OpenAPI Doc Version) | v1.0.0 |
+              | --- | --- |
+              | Radix Release | v1.1.0 |
+
+              This API provides endpoints from a node for integration with the Radix ledger.
+
+              # Overview
+
+              &gt; WARNING
+              &gt;
+              &gt; The Core API is **NOT** intended to be...</p>
+
+
+          </article>
+
+          <div class="onebox-metadata">
+
+
           </div>
-          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <a itemprop="url" href='../../../u/Mattia.html'><span itemprop='name'>Mattia</span></a>
-            (Mattia | MattiaNode)
-          </span>
 
-          <link itemprop="mainEntityOfPage" href="../445.html">
+          <div style="clear: both"></div>
+        </aside>
 
+        <p>*<strong>Staking</strong> may be started by transferring XRD from an account to a <code>prepared_stake</code>
+          entity with a specific validator. Once XRD is in this entity, at some point the system will move this XRD to a
+          Validator entity and mint StakeUnits into the originating account.</p>
+        <p>*<strong>Unstaking</strong> may be started by transfering StakeUnits from an account to a
+          <code>prepared_unstake</code> entity. Once StakeUnits is in this entity, at some point the system will destroy
+          this StakeUnits and transfer XRD from the Validator entity into your <code>exiting_stake</code> entity. Once
+          the unlocking period is over the system will move that XRD from the <code>exiting_stake</code> entity into
+          your account.</p>
+        <p>I’m trying to figure out how to construct the call, but hitting a roadblock.<br>
+          Thanks!</p>
+      </div>
 
-          <span class="crawler-post-infos">
-              <time itemprop='datePublished' datetime='2022-04-15T20:15:37Z' class='post-time'>
-                15 April 2022 20:15
-              </time>
-              <meta itemprop='dateModified' content='2022-04-15T20:38:35Z'>
-          <span itemprop='position'>#2</span>
-          </span>
+      <meta itemprop='headline' content='Stake / Unstake via API'>
+      <meta itemprop='keywords' content='api'>
+
+      <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+        <meta itemprop="interactionType" content="http://schema.org/LikeAction" />
+        <meta itemprop="userInteractionCount" content="0" />
+        <span class='post-likes'></span>
+      </div>
+
+      <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+        <meta itemprop="interactionType" content="http://schema.org/CommentAction" />
+        <meta itemprop="userInteractionCount" content="0" />
+      </div>
+
+    </div>
+    <div id='post_2' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+      <div class='crawler-post-meta'>
+        <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+          <meta itemprop='name' content='RadixTalk'>
+          <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+            <meta itemprop='url'
+              content='https://radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+          </div>
         </div>
-        <div class='post' itemprop='articleBody'>
-          <p>I think you have to use the Gateway API like mentioned here: <a href="https://docs.radixdlt.com/main/apis/making-transactions.html" class="inline-onebox">Making Transactions by Gateway API :: Radix Documentation</a><br>
-You can make a POST request to the /transaction/build endpoint of a Gateway (for example <code>https://mainnet.radixdlt.com/transaction/build</code> using cURL or Postman or whatever you prefer) with this syntax: <a href="https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/radixdlt/radixdlt-network-gateway/1.1.1/gateway-api-spec.yaml#tag/Transaction/paths/~1transaction~1build/post" class="inline-onebox">ReDoc Interactive Demo</a></p>
-<h1>
-<a name="stake-1" class="anchor" href="2.html#stake-1"></a>Stake</h1>
-<p>It would look like this:</p>
-<pre><code class="lang-auto">{
+        <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a itemprop="url" href='../../../u/Mattia.html'><span itemprop='name'>Mattia</span></a>
+          (Mattia | MattiaNode)
+        </span>
+
+        <link itemprop="mainEntityOfPage" href="../445.html">
+
+
+        <span class="crawler-post-infos">
+          <time itemprop='datePublished' datetime='2022-04-15T20:15:37Z' class='post-time'>
+            15 April 2022 20:15
+          </time>
+          <meta itemprop='dateModified' content='2022-04-15T20:38:35Z'>
+          <span itemprop='position'>#2</span>
+        </span>
+      </div>
+      <div class='post' itemprop='articleBody'>
+        <p>I think you have to use the Gateway API like mentioned here: <a
+            href="https://docs.radixdlt.com/main/apis/making-transactions.html" class="inline-onebox">Making
+            Transactions by Gateway API :: Radix Documentation</a><br>
+          You can make a POST request to the /transaction/build endpoint of a Gateway (for example
+          <code>https://mainnet.radixdlt.com/transaction/build</code> using cURL or Postman or whatever you prefer) with
+          this syntax: <a
+            href="https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/radixdlt/radixdlt-network-gateway/1.1.1/gateway-api-spec.yaml#tag/Transaction/paths/~1transaction~1build/post"
+            class="inline-onebox">ReDoc Interactive Demo</a></p>
+        <h1>
+          <a name="stake-1" class="anchor" href="2.html#stake-1"></a>Stake
+        </h1>
+        <p>It would look like this:</p>
+        <pre><code class="lang-auto">{
   "network_identifier": {
     "network": "mainnet"
   },
@@ -242,17 +332,26 @@ You can make a POST request to the /transaction/build endpoint of a Gateway (for
   "disable_token_mint_and_burn": true
 }
 </code></pre>
-<p>from_account’s address and fee_payer’s address should be the address where you want to delegate XRD from.</p>
-<p>Save the response, you’re gonna need <code>unsigned_transaction</code> and <code>payload_to_sign</code> outputs.</p>
-<p>Then, you have to sign the transaction locally, you can use Stuart’s python script here: <a href="../../how-do-i-locally-sign-a-transaction-with-a-private-key/157.html" class="inline-onebox">How do I locally sign a transaction with a private key?</a><br>
-You have to insert <code>payload_to_sign</code> in " <code>HASH_OF_BLOB_TO_SIGN</code>".</p>
-<p>Once signed, you should use unsigned_transaction’s output from the POST call and the signed output from Stuart’s script, as mentioned here: <a href="https://docs.radixdlt.com/main/apis/making-transactions.html#_finalize_and_submit_the_transaction" class="inline-onebox">Making Transactions by Gateway API :: Radix Documentation</a></p>
-<p>You can get your wallet’s public key (to finalize and submit the transaction, step 3) from, again, another of Stuarts scripts here: <a href="../../how-to-convert-a-wallet-address-into-a-public-key/188.html" class="inline-onebox">How to convert a Wallet Address into a Public Key</a></p>
-<hr>
-<h1>
-<a name="unstake-2" class="anchor" href="2.html#unstake-2"></a>Unstake</h1>
-<p>To unstake, only the first POST call changes:</p>
-<pre><code class="lang-auto">{
+        <p>from_account’s address and fee_payer’s address should be the address where you want to delegate XRD from.</p>
+        <p>Save the response, you’re gonna need <code>unsigned_transaction</code> and <code>payload_to_sign</code>
+          outputs.</p>
+        <p>Then, you have to sign the transaction locally, you can use Stuart’s python script here: <a
+            href="../../how-do-i-locally-sign-a-transaction-with-a-private-key/157.html" class="inline-onebox">How do I
+            locally sign a transaction with a private key?</a><br>
+          You have to insert <code>payload_to_sign</code> in " <code>HASH_OF_BLOB_TO_SIGN</code>".</p>
+        <p>Once signed, you should use unsigned_transaction’s output from the POST call and the signed output from
+          Stuart’s script, as mentioned here: <a
+            href="https://docs.radixdlt.com/main/apis/making-transactions.html#_finalize_and_submit_the_transaction"
+            class="inline-onebox">Making Transactions by Gateway API :: Radix Documentation</a></p>
+        <p>You can get your wallet’s public key (to finalize and submit the transaction, step 3) from, again, another of
+          Stuarts scripts here: <a href="../../how-to-convert-a-wallet-address-into-a-public-key/188.html"
+            class="inline-onebox">How to convert a Wallet Address into a Public Key</a></p>
+        <hr>
+        <h1>
+          <a name="unstake-2" class="anchor" href="2.html#unstake-2"></a>Unstake
+        </h1>
+        <p>To unstake, only the first POST call changes:</p>
+        <pre><code class="lang-auto">{
   "network_identifier": {
     "network": "mainnet"
   },
@@ -279,8 +378,8 @@ You have to insert <code>payload_to_sign</code> in " <code>HASH_OF_BLOB_TO_SIGN<
   "disable_token_mint_and_burn": true
 }
 </code></pre>
-<p>You can use either <code>amount</code> like above or <code>unstake_percentage</code>:</p>
-<pre><code class="lang-auto">{
+        <p>You can use either <code>amount</code> like above or <code>unstake_percentage</code>:</p>
+        <pre><code class="lang-auto">{
   "network_identifier": {
     "network": "mainnet"
   },
@@ -302,150 +401,157 @@ You have to insert <code>payload_to_sign</code> in " <code>HASH_OF_BLOB_TO_SIGN<
   "disable_token_mint_and_burn": true
 }
 </code></pre>
-<p>Let me know if it helps.</p>
-        </div>
-
-        <meta itemprop='headline' content='Stake / Unstake via API'>
-
-        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
-           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
-           <meta itemprop="userInteractionCount" content="0" />
-           <span class='post-likes'></span>
-         </div>
-
-         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
-            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
-            <meta itemprop="userInteractionCount" content="0" />
-          </div>
-
-      </div>
-      <div id='post_3' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
-        <div class='crawler-post-meta'>
-          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
-            <meta itemprop='name' content='RadixTalk'>
-              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
-                <meta itemprop='url' content='https://radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
-              </div>
-          </div>
-          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <a itemprop="url" href='../../../u/Peachy.html'><span itemprop='name'>Peachy</span></a>
-            (Shawn)
-          </span>
-
-          <link itemprop="mainEntityOfPage" href="../445.html">
-
-
-          <span class="crawler-post-infos">
-              <time itemprop='datePublished' datetime='2022-04-15T21:23:16Z' class='post-time'>
-                15 April 2022 21:23
-              </time>
-              <meta itemprop='dateModified' content='2022-04-15T21:23:16Z'>
-          <span itemprop='position'>#3</span>
-          </span>
-        </div>
-        <div class='post' itemprop='articleBody'>
-          <p>You rock cowboy!<br>
-Thanks!!!</p>
-        </div>
-
-        <meta itemprop='headline' content='Stake / Unstake via API'>
-
-        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
-           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
-           <meta itemprop="userInteractionCount" content="1" />
-           <span class='post-likes'>1 Like</span>
-         </div>
-
-         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
-            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
-            <meta itemprop="userInteractionCount" content="0" />
-          </div>
-
-      </div>
-      <div id='post_4' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
-        <div class='crawler-post-meta'>
-          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
-            <meta itemprop='name' content='RadixTalk'>
-              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
-                <meta itemprop='url' content='https://radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
-              </div>
-          </div>
-          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <a itemprop="url" href='../../../u/jonericcook.html'><span itemprop='name'>jonericcook</span></a>
-            (Jon-Eric Cook)
-          </span>
-
-          <link itemprop="mainEntityOfPage" href="../445.html">
-
-
-          <span class="crawler-post-infos">
-              <time itemprop='datePublished' datetime='2022-04-18T03:36:45Z' class='post-time'>
-                18 April 2022 03:36
-              </time>
-              <meta itemprop='dateModified' content='2022-04-18T03:43:49Z'>
-          <span itemprop='position'>#4</span>
-          </span>
-        </div>
-        <div class='post' itemprop='articleBody'>
-          <p><a class="mention" href="../../../u/peachy.html">@Peachy</a> also i can walk you through how to use <a href="https://hexdocs.pm/radixir/Radixir.Gateway.html#stake_tokens/4" class="inline-onebox" rel="noopener nofollow ugc">Radixir.Gateway — radixir v0.0.4</a> and <a href="https://hexdocs.pm/radixir/Radixir.Gateway.html#unstake_tokens/4" class="inline-onebox" rel="noopener nofollow ugc">Radixir.Gateway — radixir v0.0.4</a></p>
-        </div>
-
-        <meta itemprop='headline' content='Stake / Unstake via API'>
-
-        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
-           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
-           <meta itemprop="userInteractionCount" content="0" />
-           <span class='post-likes'></span>
-         </div>
-
-         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
-            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
-            <meta itemprop="userInteractionCount" content="0" />
-          </div>
-
+        <p>Let me know if it helps.</p>
       </div>
 
+      <meta itemprop='headline' content='Stake / Unstake via API'>
 
+      <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+        <meta itemprop="interactionType" content="http://schema.org/LikeAction" />
+        <meta itemprop="userInteractionCount" content="0" />
+        <span class='post-likes'></span>
+      </div>
 
-
-
+      <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+        <meta itemprop="interactionType" content="http://schema.org/CommentAction" />
+        <meta itemprop="userInteractionCount" content="0" />
+      </div>
 
     </div>
-    <footer class="container wrap">
-  <nav class='crawler-nav'>
-    <ul>
-      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
-        <span itemprop='name'>
-          <a href='https://radixtalk.com/' itemprop="url">Home </a>
+    <div id='post_3' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+      <div class='crawler-post-meta'>
+        <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+          <meta itemprop='name' content='RadixTalk'>
+          <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+            <meta itemprop='url'
+              content='https://radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+          </div>
+        </div>
+        <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a itemprop="url" href='../../../u/Peachy.html'><span itemprop='name'>Peachy</span></a>
+          (Shawn)
         </span>
-      </li>
-      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
-        <span itemprop='name'>
-          <a href='https://radixtalk.com/categories' itemprop="url">Categories </a>
-        </span>
-      </li>
-      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
-        <span itemprop='name'>
-          <a href='https://radixtalk.com/guidelines' itemprop="url">FAQ/Guidelines </a>
-        </span>
-      </li>
-      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
-        <span itemprop='name'>
-          <a href='https://radixtalk.com/tos' itemprop="url">Terms of Service </a>
-        </span>
-      </li>
-      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
-        <span itemprop='name'>
-          <a href='https://radixtalk.com/privacy' itemprop="url">Privacy Policy </a>
-        </span>
-      </li>
-    </ul>
-  </nav>
-  <p class='powered-by-link'>Powered by <a href="https://www.discourse.org">Discourse</a>, best viewed with JavaScript enabled</p>
-</footer>
 
-    
-    
-  </body>
-  
+        <link itemprop="mainEntityOfPage" href="../445.html">
+
+
+        <span class="crawler-post-infos">
+          <time itemprop='datePublished' datetime='2022-04-15T21:23:16Z' class='post-time'>
+            15 April 2022 21:23
+          </time>
+          <meta itemprop='dateModified' content='2022-04-15T21:23:16Z'>
+          <span itemprop='position'>#3</span>
+        </span>
+      </div>
+      <div class='post' itemprop='articleBody'>
+        <p>You rock cowboy!<br>
+          Thanks!!!</p>
+      </div>
+
+      <meta itemprop='headline' content='Stake / Unstake via API'>
+
+      <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+        <meta itemprop="interactionType" content="http://schema.org/LikeAction" />
+        <meta itemprop="userInteractionCount" content="1" />
+        <span class='post-likes'>1 Like</span>
+      </div>
+
+      <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+        <meta itemprop="interactionType" content="http://schema.org/CommentAction" />
+        <meta itemprop="userInteractionCount" content="0" />
+      </div>
+
+    </div>
+    <div id='post_4' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+      <div class='crawler-post-meta'>
+        <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+          <meta itemprop='name' content='RadixTalk'>
+          <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+            <meta itemprop='url'
+              content='https://radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+          </div>
+        </div>
+        <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a itemprop="url" href='../../../u/jonericcook.html'><span itemprop='name'>jonericcook</span></a>
+          (Jon-Eric Cook)
+        </span>
+
+        <link itemprop="mainEntityOfPage" href="../445.html">
+
+
+        <span class="crawler-post-infos">
+          <time itemprop='datePublished' datetime='2022-04-18T03:36:45Z' class='post-time'>
+            18 April 2022 03:36
+          </time>
+          <meta itemprop='dateModified' content='2022-04-18T03:43:49Z'>
+          <span itemprop='position'>#4</span>
+        </span>
+      </div>
+      <div class='post' itemprop='articleBody'>
+        <p><a class="mention" href="../../../u/peachy.html">@Peachy</a> also i can walk you through how to use <a
+            href="https://hexdocs.pm/radixir/Radixir.Gateway.html#stake_tokens/4" class="inline-onebox"
+            rel="noopener nofollow ugc">Radixir.Gateway — radixir v0.0.4</a> and <a
+            href="https://hexdocs.pm/radixir/Radixir.Gateway.html#unstake_tokens/4" class="inline-onebox"
+            rel="noopener nofollow ugc">Radixir.Gateway — radixir v0.0.4</a></p>
+      </div>
+
+      <meta itemprop='headline' content='Stake / Unstake via API'>
+
+      <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+        <meta itemprop="interactionType" content="http://schema.org/LikeAction" />
+        <meta itemprop="userInteractionCount" content="0" />
+        <span class='post-likes'></span>
+      </div>
+
+      <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+        <meta itemprop="interactionType" content="http://schema.org/CommentAction" />
+        <meta itemprop="userInteractionCount" content="0" />
+      </div>
+
+    </div>
+
+
+
+
+
+
+  </div>
+  <footer class="container wrap">
+    <nav class='crawler-nav'>
+      <ul>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='https://radixtalk.com/' itemprop="url">Home </a>
+          </span>
+        </li>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='https://radixtalk.com/categories' itemprop="url">Categories </a>
+          </span>
+        </li>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='https://radixtalk.com/guidelines' itemprop="url">FAQ/Guidelines </a>
+          </span>
+        </li>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='https://radixtalk.com/tos' itemprop="url">Terms of Service </a>
+          </span>
+        </li>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='https://radixtalk.com/privacy' itemprop="url">Privacy Policy </a>
+          </span>
+        </li>
+      </ul>
+    </nav>
+    <p class='powered-by-link'>Powered by <a href="https://www.discourse.org">Discourse</a>, best viewed with JavaScript
+      enabled</p>
+  </footer>
+
+
+
+</body>
+
 </html>

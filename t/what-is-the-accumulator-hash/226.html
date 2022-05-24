@@ -1,159 +1,238 @@
 <!DOCTYPE html>
 <html lang="en-GB">
-  <head>
-    <meta charset="utf-8">
-    <title>What is the accumulator hash? - Developers - RadixTalk</title>
-    <meta name="description" content="The accumulator hash is a fixed length value that is used to verify that the current transaction, and all transactions before it, have occurred in the correct order and have not been tampered with. 
+
+<head>
+  <meta charset="utf-8">
+  <title>What is the accumulator hash? - Developers - RadixTalk</title>
+  <meta name="description" content="The accumulator hash is a fixed length value that is used to verify that the current transaction, and all transactions before it, have occurred in the correct order and have not been tampered with.
 
 How is it calculated&amp;hellip;">
-    <meta name="generator" content="Discourse 2.9.0.beta4 - https://github.com/discourse/discourse version b65ecf69871656155c381343cd84de919cbbf803">
-<link rel="icon" type="image/png" href="../../uploads/default/optimized/1X/023c6f3e74bac599c495c37eecd72f939f3fab87_2_32x32.png">
-<link rel="apple-touch-icon" type="image/png" href="../../uploads/default/optimized/1X/ad9adb26331754b0012edbc9b4796de8dc449fa8_2_180x180.png">
-<meta name="theme-color" content="#ffffff">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
-<link rel="canonical" href="226.html" />
-<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebSite","url":"https://radixtalk.com","potentialAction":{"@type":"SearchAction","target":"https://radixtalk.com/search?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
-<link rel="search" type="application/opensearchdescription+xml" href="../../opensearch.xml" title="RadixTalk Search">
+  <meta name="generator"
+    content="Discourse 2.9.0.beta4 - https://github.com/discourse/discourse version b65ecf69871656155c381343cd84de919cbbf803">
+  <link rel="icon" type="image/png"
+    href="../../uploads/default/optimized/1X/023c6f3e74bac599c495c37eecd72f939f3fab87_2_32x32.png">
+  <link rel="apple-touch-icon" type="image/png"
+    href="../../uploads/default/optimized/1X/ad9adb26331754b0012edbc9b4796de8dc449fa8_2_180x180.png">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <link rel="canonical" href="226.html" />
+  <script
+    type="application/ld+json">{"@context":"http://schema.org","@type":"WebSite","url":"https://radixtalk.com","potentialAction":{"@type":"SearchAction","target":"https://radixtalk.com/search?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
+  <link rel="search" type="application/opensearchdescription+xml" href="../../opensearch.xml" title="RadixTalk Search">
 
-    <link href="https://radixtalk.com/stylesheets/color_definitions_light_4_1_328257c7bbc55122a1aafbbd296477820001ddd2.css?__ws=radixtalk.com" media="all" rel="stylesheet" class="light-scheme"/>
+  <link
+    href="https://radixtalk.com/stylesheets/color_definitions_light_4_1_328257c7bbc55122a1aafbbd296477820001ddd2.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" class="light-scheme" />
 
-  <link href="https://radixtalk.com/stylesheets/desktop_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="desktop"  />
-
-
-  <link href="https://radixtalk.com/stylesheets/discourse-akismet_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-akismet"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-automation_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-automation"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-cakeday_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-cakeday"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-canned-replies_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-canned-replies"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-checklist_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-checklist"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-data-explorer_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-data-explorer"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-details_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-details"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-docs_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-docs"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-follow_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-follow"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-fontawesome-pro_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-fontawesome-pro"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-footnote_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-footnote"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-local-dates_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-local-dates"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-presence_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-presence"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-rss-polling_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-rss-polling"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-saved-searches_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-saved-searches"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-solved_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-solved"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-tooltips_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-tooltips"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-user-notes_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-user-notes"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-voting_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-voting"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-whos-online_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-whos-online"  />
-  <link href="https://radixtalk.com/stylesheets/lazy-yt_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="lazy-yt"  />
-  <link href="https://radixtalk.com/stylesheets/poll_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="poll"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-voting_desktop_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-voting_desktop"  />
-  <link href="https://radixtalk.com/stylesheets/poll_desktop_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="poll_desktop"  />
-
-  <link href="https://radixtalk.com/stylesheets/desktop_theme_1_9a2d2d666d7d7c2df1111a85e8451fea3ca2dfc2.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="desktop_theme" data-theme-id="1" data-theme-name="default"/>
-
-    <script defer="" data-domain="radixtalk.com" src="https://plausible.io/js/plausible.hash.js"></script>
-
-    
-        <link rel="alternate nofollow" type="application/rss+xml" title="RSS feed of &#39;What is the accumulator hash?&#39;" href="226.rss" />
-    <meta property="og:site_name" content="RadixTalk" />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:image" content="https://radixtalk.com/uploads/default/optimized/1X/38d825471842d553f5c62a39901efca74cda3e1e_2_1024x75.png" />
-<meta property="og:image" content="https://radixtalk.com/uploads/default/optimized/1X/38d825471842d553f5c62a39901efca74cda3e1e_2_1024x75.png" />
-<meta property="og:url" content="https://radixtalk.com/t/what-is-the-accumulator-hash/226" />
-<meta name="twitter:url" content="https://radixtalk.com/t/what-is-the-accumulator-hash/226" />
-<meta property="og:title" content="What is the accumulator hash?" />
-<meta name="twitter:title" content="What is the accumulator hash?" />
-<meta property="og:description" content="The accumulator hash is a fixed length value that is used to verify that the current transaction, and all transactions before it, have occurred in the correct order and have not been tampered with.   How is it calculated? The accumulator hash is calculated by hashing the previous accumulator hash with the current transaction id.  At the genesis of the Radix public network, the initial accumulator hash was set to 32 bytes of zeros:  0000000000000000000000000000000000000000000000000000000000000000 ..." />
-<meta name="twitter:description" content="The accumulator hash is a fixed length value that is used to verify that the current transaction, and all transactions before it, have occurred in the correct order and have not been tampered with.   How is it calculated? The accumulator hash is calculated by hashing the previous accumulator hash with the current transaction id.  At the genesis of the Radix public network, the initial accumulator hash was set to 32 bytes of zeros:  0000000000000000000000000000000000000000000000000000000000000000 ..." />
-<meta name="twitter:label1" value="Reading time" />
-<meta name="twitter:data1" value="1 mins 🕑" />
-<meta name="twitter:label2" value="Likes" />
-<meta name="twitter:data2" value="1 ❤" />
-<meta property="article:published_time" content="2022-01-10T14:17:10+00:00" />
-<meta property="og:ignore_canonical" content="true" />
+  <link
+    href="https://radixtalk.com/stylesheets/desktop_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="desktop" />
 
 
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"QAPage","name":"What is the accumulator hash?","mainEntity":{"@type":"Question","name":"What is the accumulator hash?","text":"The accumulator hash is a fixed length value that is used to verify that the current transaction, and all transactions before it, have occurred in the correct order and have not been tampered with.\n\n<a name=\"how-is-it-calculated-1\" class=\"anchor\" href="https://radixtalk.com/t/what-is-the-accumulator-hash/\&quot;#how-is-it-calculated-1\""><\/a>How is it calculated?\n\nThe accumulator hash is calculated by hashing the previous accumulator hash wi&hellip;","upvoteCount":1,"answerCount":0,"dateCreated":"2022-01-10T14:17:09.972Z","author":{"@type":"Person","name":"Stuart | RadixPool"}}}</script>
-  </head>
-  <body class="crawler">
-    
-    <header>
-  <a href="https://radixtalk.com/">
-    <h1>RadixTalk</h1>
-  </a>
-</header>
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-akismet_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-akismet" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-automation_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-automation" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-cakeday_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-cakeday" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-canned-replies_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-canned-replies" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-checklist_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-checklist" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-data-explorer_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-data-explorer" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-details_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-details" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-docs_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-docs" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-follow_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-follow" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-fontawesome-pro_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-fontawesome-pro" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-footnote_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-footnote" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-local-dates_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-local-dates" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-presence_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-presence" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-rss-polling_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-rss-polling" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-saved-searches_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-saved-searches" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-solved_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-solved" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-tooltips_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-tooltips" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-user-notes_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-user-notes" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-voting_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-voting" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-whos-online_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-whos-online" />
+  <link
+    href="https://radixtalk.com/stylesheets/lazy-yt_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="lazy-yt" />
+  <link
+    href="https://radixtalk.com/stylesheets/poll_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="poll" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-voting_desktop_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-voting_desktop" />
+  <link
+    href="https://radixtalk.com/stylesheets/poll_desktop_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="poll_desktop" />
 
-    <div id="main-outlet" class="wrap" role="main">
-        <div id="topic-title">
-    <h1>
-      <a href="226.html">What is the accumulator hash?</a>
-    </h1>
+  <link
+    href="https://radixtalk.com/stylesheets/desktop_theme_1_9a2d2d666d7d7c2df1111a85e8451fea3ca2dfc2.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="desktop_theme" data-theme-id="1" data-theme-name="default" />
+
+  <script defer="" data-domain="radixtalk.com" src="https://plausible.io/js/plausible.hash.js"></script>
+
+
+  <link rel="alternate nofollow" type="application/rss+xml" title="RSS feed of &#39;What is the accumulator hash?&#39;"
+    href="226.rss" />
+  <meta property="og:site_name" content="RadixTalk" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:image"
+    content="https://radixtalk.com/uploads/default/optimized/1X/38d825471842d553f5c62a39901efca74cda3e1e_2_1024x75.png" />
+  <meta property="og:image"
+    content="https://radixtalk.com/uploads/default/optimized/1X/38d825471842d553f5c62a39901efca74cda3e1e_2_1024x75.png" />
+  <meta property="og:url" content="https://radixtalk.com/t/what-is-the-accumulator-hash/226" />
+  <meta name="twitter:url" content="https://radixtalk.com/t/what-is-the-accumulator-hash/226" />
+  <meta property="og:title" content="What is the accumulator hash?" />
+  <meta name="twitter:title" content="What is the accumulator hash?" />
+  <meta property="og:description"
+    content="The accumulator hash is a fixed length value that is used to verify that the current transaction, and all transactions before it, have occurred in the correct order and have not been tampered with.   How is it calculated? The accumulator hash is calculated by hashing the previous accumulator hash with the current transaction id.  At the genesis of the Radix public network, the initial accumulator hash was set to 32 bytes of zeros:  0000000000000000000000000000000000000000000000000000000000000000 ..." />
+  <meta name="twitter:description"
+    content="The accumulator hash is a fixed length value that is used to verify that the current transaction, and all transactions before it, have occurred in the correct order and have not been tampered with.   How is it calculated? The accumulator hash is calculated by hashing the previous accumulator hash with the current transaction id.  At the genesis of the Radix public network, the initial accumulator hash was set to 32 bytes of zeros:  0000000000000000000000000000000000000000000000000000000000000000 ..." />
+  <meta name="twitter:label1" value="Reading time" />
+  <meta name="twitter:data1" value="1 mins 🕑" />
+  <meta name="twitter:label2" value="Likes" />
+  <meta name="twitter:data2" value="1 ❤" />
+  <meta property="article:published_time" content="2022-01-10T14:17:10+00:00" />
+  <meta property="og:ignore_canonical" content="true" />
+
+
+  <script
+    type="application/ld+json">{"@context":"http://schema.org","@type":"QAPage","name":"What is the accumulator hash?","mainEntity":{"@type":"Question","name":"What is the accumulator hash?","text":"The accumulator hash is a fixed length value that is used to verify that the current transaction, and all transactions before it, have occurred in the correct order and have not been tampered with.\n\n<a name=\"how-is-it-calculated-1\" class=\"anchor\" href="https://radixtalk.com/t/what-is-the-accumulator-hash/\&quot;#how-is-it-calculated-1\""><\/a>How is it calculated?\n\nThe accumulator hash is calculated by hashing the previous accumulator hash wi&hellip;","upvoteCount":1,"answerCount":0,"dateCreated":"2022-01-10T14:17:09.972Z","author":{"@type":"Person","name":"Stuart | RadixPool"}}}</script>
+</head>
+
+<body class="crawler">
+
+  <header>
+    <a href="https://radixtalk.com/">
+      <h1>RadixTalk</h1>
+    </a>
+  </header>
+
+  <div id="main-outlet" class="wrap" role="main">
+    <div id="topic-title">
+      <h1>
+        <a href="226.html">What is the accumulator hash?</a>
+      </h1>
 
       <div class="topic-category" itemscope itemtype="http://schema.org/BreadcrumbList">
-          <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-            <a href="https://radixtalk.com/c/developers/24" class="badge-wrapper bullet" itemprop="item">
-              <span class='badge-category-bg' style='background-color: #F1592A'></span>
-              <span class='badge-category clear-badge'>
-                <span class='category-name' itemprop='name'>Developers</span>
-              </span>
-            </a>
-            <meta itemprop="position" content="1" />
-          </span>
+        <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a href="https://radixtalk.com/c/developers/24" class="badge-wrapper bullet" itemprop="item">
+            <span class='badge-category-bg' style='background-color: #F1592A'></span>
+            <span class='badge-category clear-badge'>
+              <span class='category-name' itemprop='name'>Developers</span>
+            </span>
+          </a>
+          <meta itemprop="position" content="1" />
+        </span>
       </div>
 
       <div class="topic-category">
         <div class='discourse-tags list-tags'>
-            <a href='../../tag/python.html' class='discourse-tag' rel="tag">python</a>, 
-            <a href='../../tag/faq.html' class='discourse-tag' rel="tag">faq</a>, 
-            <a href='../../tag/replit.html' class='discourse-tag' rel="tag">replit</a>
+          <a href='../../tag/python.html' class='discourse-tag' rel="tag">python</a>,
+          <a href='../../tag/faq.html' class='discourse-tag' rel="tag">faq</a>,
+          <a href='../../tag/replit.html' class='discourse-tag' rel="tag">replit</a>
         </div>
       </div>
-  </div>
-
-  
+    </div>
 
 
-      <div id='post_1' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
-        <div class='crawler-post-meta'>
-          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
-            <meta itemprop='name' content='RadixTalk'>
-              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
-                <meta itemprop='url' content='https://radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
-              </div>
+
+
+    <div id='post_1' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+      <div class='crawler-post-meta'>
+        <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+          <meta itemprop='name' content='RadixTalk'>
+          <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+            <meta itemprop='url'
+              content='https://radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
           </div>
-          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <a itemprop="url" href='../../u/Stuart.html'><span itemprop='name'>Stuart</span></a>
-            (Stuart | RadixPool)
-          </span>
-
-          <link itemprop="mainEntityOfPage" href="226.html">
-
-            <link itemprop="image" href="../../uploads/default/original/1X/38d825471842d553f5c62a39901efca74cda3e1e.png">
-
-          <span class="crawler-post-infos">
-              <time itemprop='datePublished' datetime='2022-01-10T14:17:10Z' class='post-time'>
-                10 January 2022 14:17
-              </time>
-              <meta itemprop='dateModified' content='2022-01-10T16:55:38Z'>
-          <span itemprop='position'>#1</span>
-          </span>
         </div>
-        <div class='post' itemprop='articleBody'>
-          <p>The accumulator hash is a fixed length value that is used to verify that the current transaction, and all transactions before it, have occurred in the correct order and have not been tampered with.</p>
-<h3>
-<a name="how-is-it-calculated-1" class="anchor" href="226.html#how-is-it-calculated-1"></a>How is it calculated?</h3>
-<p>The <strong>accumulator hash</strong> is calculated by hashing the previous accumulator hash with the current transaction id.</p>
-<p>At the genesis of the Radix public network, the initial accumulator hash was set to 32 bytes of zeros:  <code>0000000000000000000000000000000000000000000000000000000000000000</code></p>
-<p>The genesis transaction had a transaction id of: <code>030E7094728C8D065C5DB696977696BEA9094F67BCFD4C021F99EC784E24023B</code></p>
-<p>To calculate the very first accumulator hash we:</p>
-<ol>
-<li>Concatenate the 32 byte parent accumulator hash (0000…0000) with the 32 byte genesis transaction id (030E…023B) together to create a 64 byte value: <code>0000000000000000000000000000000000000000000000000000000000000000030E7094728C8D065C5DB696977696BEA9094F67BCFD4C021F99EC784E24023B</code>
-</li>
-<li>We do a double SHA256 hashing operation: <code>sha256(sha256(0000...023B))</code>
-</li>
-<li>The result is the new accumulator hash: <code>1E62415E5FD95C63AFF69142F1359CC6A981FF7169C128D266F45ADF614D09B0</code>
-</li>
-</ol>
-<p>To calculate the second accumulator hash, we take the result of the previous (parent) accumulator hash, append the transaction id of the second transaction, and perform the double sha256 operation again.</p>
-<p>The code snippet below illustrates the calculation of the first 2 accumulator hashes on the mainnet Radix public network:</p>
-<pre><code class="lang-python">import hashlib
+        <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a itemprop="url" href='../../u/Stuart.html'><span itemprop='name'>Stuart</span></a>
+          (Stuart | RadixPool)
+        </span>
+
+        <link itemprop="mainEntityOfPage" href="226.html">
+
+        <link itemprop="image" href="../../uploads/default/original/1X/38d825471842d553f5c62a39901efca74cda3e1e.png">
+
+        <span class="crawler-post-infos">
+          <time itemprop='datePublished' datetime='2022-01-10T14:17:10Z' class='post-time'>
+            10 January 2022 14:17
+          </time>
+          <meta itemprop='dateModified' content='2022-01-10T16:55:38Z'>
+          <span itemprop='position'>#1</span>
+        </span>
+      </div>
+      <div class='post' itemprop='articleBody'>
+        <p>The accumulator hash is a fixed length value that is used to verify that the current transaction, and all
+          transactions before it, have occurred in the correct order and have not been tampered with.</p>
+        <h3>
+          <a name="how-is-it-calculated-1" class="anchor" href="226.html#how-is-it-calculated-1"></a>How is it
+          calculated?
+        </h3>
+        <p>The <strong>accumulator hash</strong> is calculated by hashing the previous accumulator hash with the current
+          transaction id.</p>
+        <p>At the genesis of the Radix public network, the initial accumulator hash was set to 32 bytes of zeros:
+          <code>0000000000000000000000000000000000000000000000000000000000000000</code></p>
+        <p>The genesis transaction had a transaction id of:
+          <code>030E7094728C8D065C5DB696977696BEA9094F67BCFD4C021F99EC784E24023B</code></p>
+        <p>To calculate the very first accumulator hash we:</p>
+        <ol>
+          <li>Concatenate the 32 byte parent accumulator hash (0000…0000) with the 32 byte genesis transaction id
+            (030E…023B) together to create a 64 byte value:
+            <code>0000000000000000000000000000000000000000000000000000000000000000030E7094728C8D065C5DB696977696BEA9094F67BCFD4C021F99EC784E24023B</code>
+          </li>
+          <li>We do a double SHA256 hashing operation: <code>sha256(sha256(0000...023B))</code>
+          </li>
+          <li>The result is the new accumulator hash:
+            <code>1E62415E5FD95C63AFF69142F1359CC6A981FF7169C128D266F45ADF614D09B0</code>
+          </li>
+        </ol>
+        <p>To calculate the second accumulator hash, we take the result of the previous (parent) accumulator hash,
+          append the transaction id of the second transaction, and perform the double sha256 operation again.</p>
+        <p>The code snippet below illustrates the calculation of the first 2 accumulator hashes on the mainnet Radix
+          public network:</p>
+        <pre><code class="lang-python">import hashlib
 
 #  32 bytes of zeros
 genesis_accumulator = bytearray.fromhex("0000000000000000000000000000000000000000000000000000000000000000")
@@ -184,75 +263,104 @@ outer.update(inner.digest())
 second_accumulator = outer.digest()
 print("Second Accumulator hash:", second_accumulator.hex())
 </code></pre>
-<p>The calculation of the accumulator hash is repeated for every transaction that occurs on the ledger. As long as transactions occur in the same order, with the same transaction ids, then every validator node will independently calculate the same accumulator hash values and can be confident that they have not received modified transaction data.</p>
-<p>We can confirm that our accumulator calculations are correct by comparing them to the values stored in the ledger:</p>
-<p><div class="lightbox-wrapper"><a class="lightbox" href="../../uploads/default/original/1X/38d825471842d553f5c62a39901efca74cda3e1e.png" data-download-href="https://radixtalk.com/uploads/default/38d825471842d553f5c62a39901efca74cda3e1e" title="Screenshot 2022-01-10 at 16.52.59"><img src="../../uploads/default/optimized/1X/38d825471842d553f5c62a39901efca74cda3e1e_2_690x50.png" alt="Screenshot 2022-01-10 at 16.52.59" data-base62-sha1="86RPlziKn0BZuCNpKL37WFoPX1I" width="690" height="50" srcset="../../uploads/default/optimized/1X/38d825471842d553f5c62a39901efca74cda3e1e_2_690x50.png, ../../uploads/default/optimized/1X/38d825471842d553f5c62a39901efca74cda3e1e_2_1035x75.png 1.5x, ../../uploads/default/optimized/1X/38d825471842d553f5c62a39901efca74cda3e1e_2_1380x100.png 2x" data-small-upload="https://radixtalk.com/uploads/default/optimized/1X/38d825471842d553f5c62a39901efca74cda3e1e_2_10x10.png"><div class="meta">
-<svg class="fa d-icon d-icon-far-image svg-icon" aria-hidden="true"><use href="#far-image"></use></svg><span class="filename">Screenshot 2022-01-10 at 16.52.59</span><span class="informations">2452×180 52.3 KB</span><svg class="fa d-icon d-icon-discourse-expand svg-icon" aria-hidden="true"><use href="#discourse-expand"></use></svg>
-</div></a></div></p>
-<p>Another very important factor to note is that id of a transaction <em>is a hash</em> of all the instructions contained within the transaction. If any of the instructions have been tampered with inside the transaction, then the transaction id will change.</p>
-<p>In this way, the accumulator hash is a very simple, but powerful way of ensuring the integrity of transactions on the ledger.</p>
-<h3>
-<a name="run-this-on-replit-2" class="anchor" href="226.html#run-this-on-replit-2"></a>Run this on Replit:</h3>
-<p><iframe src="https://replit.com/@radixtalk/Accumulator-Hash?lite=true" width="695" height="521" frameborder="0" seamless="seamless" sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox allow-presentation"></iframe></p>
-        </div>
-
-        <meta itemprop='headline' content='What is the accumulator hash?'>
-          <meta itemprop='keywords' content='python, faq, replit'>
-
-        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
-           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
-           <meta itemprop="userInteractionCount" content="1" />
-           <span class='post-likes'>1 Like</span>
-         </div>
-
-         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
-            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
-            <meta itemprop="userInteractionCount" content="0" />
-          </div>
-
+        <p>The calculation of the accumulator hash is repeated for every transaction that occurs on the ledger. As long
+          as transactions occur in the same order, with the same transaction ids, then every validator node will
+          independently calculate the same accumulator hash values and can be confident that they have not received
+          modified transaction data.</p>
+        <p>We can confirm that our accumulator calculations are correct by comparing them to the values stored in the
+          ledger:</p>
+        <p>
+        <div class="lightbox-wrapper"><a class="lightbox"
+            href="../../uploads/default/original/1X/38d825471842d553f5c62a39901efca74cda3e1e.png"
+            data-download-href="https://radixtalk.com/uploads/default/38d825471842d553f5c62a39901efca74cda3e1e"
+            title="Screenshot 2022-01-10 at 16.52.59"><img
+              src="../../uploads/default/optimized/1X/38d825471842d553f5c62a39901efca74cda3e1e_2_690x50.png"
+              alt="Screenshot 2022-01-10 at 16.52.59" data-base62-sha1="86RPlziKn0BZuCNpKL37WFoPX1I" width="690"
+              height="50"
+              srcset="../../uploads/default/optimized/1X/38d825471842d553f5c62a39901efca74cda3e1e_2_690x50.png, ../../uploads/default/optimized/1X/38d825471842d553f5c62a39901efca74cda3e1e_2_1035x75.png 1.5x, ../../uploads/default/optimized/1X/38d825471842d553f5c62a39901efca74cda3e1e_2_1380x100.png 2x"
+              data-small-upload="https://radixtalk.com/uploads/default/optimized/1X/38d825471842d553f5c62a39901efca74cda3e1e_2_10x10.png">
+            <div class="meta">
+              <svg class="fa d-icon d-icon-far-image svg-icon" aria-hidden="true">
+                <use href="#far-image"></use>
+              </svg><span class="filename">Screenshot 2022-01-10 at 16.52.59</span><span class="informations">2452×180
+                52.3 KB</span><svg class="fa d-icon d-icon-discourse-expand svg-icon" aria-hidden="true">
+                <use href="#discourse-expand"></use>
+              </svg>
+            </div>
+          </a></div>
+        </p>
+        <p>Another very important factor to note is that id of a transaction <em>is a hash</em> of all the instructions
+          contained within the transaction. If any of the instructions have been tampered with inside the transaction,
+          then the transaction id will change.</p>
+        <p>In this way, the accumulator hash is a very simple, but powerful way of ensuring the integrity of
+          transactions on the ledger.</p>
+        <h3>
+          <a name="run-this-on-replit-2" class="anchor" href="226.html#run-this-on-replit-2"></a>Run this on Replit:
+        </h3>
+        <p><iframe src="https://replit.com/@radixtalk/Accumulator-Hash?lite=true" width="695" height="521"
+            frameborder="0" seamless="seamless"
+            sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox allow-presentation"></iframe>
+        </p>
       </div>
 
+      <meta itemprop='headline' content='What is the accumulator hash?'>
+      <meta itemprop='keywords' content='python, faq, replit'>
 
+      <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+        <meta itemprop="interactionType" content="http://schema.org/LikeAction" />
+        <meta itemprop="userInteractionCount" content="1" />
+        <span class='post-likes'>1 Like</span>
+      </div>
 
-
-
+      <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+        <meta itemprop="interactionType" content="http://schema.org/CommentAction" />
+        <meta itemprop="userInteractionCount" content="0" />
+      </div>
 
     </div>
-    <footer class="container wrap">
-  <nav class='crawler-nav'>
-    <ul>
-      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
-        <span itemprop='name'>
-          <a href='https://radixtalk.com/' itemprop="url">Home </a>
-        </span>
-      </li>
-      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
-        <span itemprop='name'>
-          <a href='https://radixtalk.com/categories' itemprop="url">Categories </a>
-        </span>
-      </li>
-      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
-        <span itemprop='name'>
-          <a href='https://radixtalk.com/guidelines' itemprop="url">FAQ/Guidelines </a>
-        </span>
-      </li>
-      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
-        <span itemprop='name'>
-          <a href='https://radixtalk.com/tos' itemprop="url">Terms of Service </a>
-        </span>
-      </li>
-      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
-        <span itemprop='name'>
-          <a href='https://radixtalk.com/privacy' itemprop="url">Privacy Policy </a>
-        </span>
-      </li>
-    </ul>
-  </nav>
-  <p class='powered-by-link'>Powered by <a href="https://www.discourse.org">Discourse</a>, best viewed with JavaScript enabled</p>
-</footer>
 
-    
-    
-  </body>
-  
+
+
+
+
+
+  </div>
+  <footer class="container wrap">
+    <nav class='crawler-nav'>
+      <ul>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='https://radixtalk.com/' itemprop="url">Home </a>
+          </span>
+        </li>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='https://radixtalk.com/categories' itemprop="url">Categories </a>
+          </span>
+        </li>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='https://radixtalk.com/guidelines' itemprop="url">FAQ/Guidelines </a>
+          </span>
+        </li>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='https://radixtalk.com/tos' itemprop="url">Terms of Service </a>
+          </span>
+        </li>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='https://radixtalk.com/privacy' itemprop="url">Privacy Policy </a>
+          </span>
+        </li>
+      </ul>
+    </nav>
+    <p class='powered-by-link'>Powered by <a href="https://www.discourse.org">Discourse</a>, best viewed with JavaScript
+      enabled</p>
+  </footer>
+
+
+
+</body>
+
 </html>

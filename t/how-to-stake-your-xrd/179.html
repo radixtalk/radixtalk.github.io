@@ -1,229 +1,353 @@
 <!DOCTYPE html>
 <html lang="en-GB">
-  <head>
-    <meta charset="utf-8">
-    <title>How to stake your XRD - Staking - RadixTalk</title>
-    <meta name="description" content="How to stake XRD
-Staking your XRD makes you earn rewards at the end of each epoch and helps secure the network, so let’s stake! 
+
+<head>
+  <meta charset="utf-8">
+  <title>How to stake your XRD - Staking - RadixTalk</title>
+  <meta name="description" content="How to stake XRD
+Staking your XRD makes you earn rewards at the end of each epoch and helps secure the network, so let’s stake!
 You can check the current APY % anytime on Radix Dashboard by Avaunt Staking, calculated a&amp;hellip;">
-    <meta name="generator" content="Discourse 2.9.0.beta4 - https://github.com/discourse/discourse version b65ecf69871656155c381343cd84de919cbbf803">
-<link rel="icon" type="image/png" href="../../uploads/default/optimized/1X/023c6f3e74bac599c495c37eecd72f939f3fab87_2_32x32.png">
-<link rel="apple-touch-icon" type="image/png" href="../../uploads/default/optimized/1X/ad9adb26331754b0012edbc9b4796de8dc449fa8_2_180x180.png">
-<meta name="theme-color" content="#ffffff">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
-<link rel="canonical" href="179.html" />
-<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebSite","url":"https://radixtalk.com","potentialAction":{"@type":"SearchAction","target":"https://radixtalk.com/search?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
-<link rel="search" type="application/opensearchdescription+xml" href="../../opensearch.xml" title="RadixTalk Search">
+  <meta name="generator"
+    content="Discourse 2.9.0.beta4 - https://github.com/discourse/discourse version b65ecf69871656155c381343cd84de919cbbf803">
+  <link rel="icon" type="image/png"
+    href="../../uploads/default/optimized/1X/023c6f3e74bac599c495c37eecd72f939f3fab87_2_32x32.png">
+  <link rel="apple-touch-icon" type="image/png"
+    href="../../uploads/default/optimized/1X/ad9adb26331754b0012edbc9b4796de8dc449fa8_2_180x180.png">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <link rel="canonical" href="179.html" />
+  <script
+    type="application/ld+json">{"@context":"http://schema.org","@type":"WebSite","url":"https://radixtalk.com","potentialAction":{"@type":"SearchAction","target":"https://radixtalk.com/search?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
+  <link rel="search" type="application/opensearchdescription+xml" href="../../opensearch.xml" title="RadixTalk Search">
 
-    <link href="https://radixtalk.com/stylesheets/color_definitions_light_4_1_328257c7bbc55122a1aafbbd296477820001ddd2.css?__ws=radixtalk.com" media="all" rel="stylesheet" class="light-scheme"/>
+  <link
+    href="https://radixtalk.com/stylesheets/color_definitions_light_4_1_328257c7bbc55122a1aafbbd296477820001ddd2.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" class="light-scheme" />
 
-  <link href="https://radixtalk.com/stylesheets/desktop_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="desktop"  />
-
-
-  <link href="https://radixtalk.com/stylesheets/discourse-akismet_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-akismet"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-automation_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-automation"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-cakeday_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-cakeday"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-canned-replies_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-canned-replies"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-checklist_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-checklist"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-data-explorer_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-data-explorer"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-details_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-details"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-docs_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-docs"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-follow_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-follow"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-fontawesome-pro_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-fontawesome-pro"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-footnote_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-footnote"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-local-dates_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-local-dates"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-presence_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-presence"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-rss-polling_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-rss-polling"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-saved-searches_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-saved-searches"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-solved_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-solved"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-tooltips_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-tooltips"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-user-notes_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-user-notes"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-voting_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-voting"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-whos-online_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-whos-online"  />
-  <link href="https://radixtalk.com/stylesheets/lazy-yt_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="lazy-yt"  />
-  <link href="https://radixtalk.com/stylesheets/poll_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="poll"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-voting_desktop_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-voting_desktop"  />
-  <link href="https://radixtalk.com/stylesheets/poll_desktop_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="poll_desktop"  />
-
-  <link href="https://radixtalk.com/stylesheets/desktop_theme_1_9a2d2d666d7d7c2df1111a85e8451fea3ca2dfc2.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="desktop_theme" data-theme-id="1" data-theme-name="default"/>
-
-    <script defer="" data-domain="radixtalk.com" src="https://plausible.io/js/plausible.hash.js"></script>
-
-    
-        <link rel="alternate nofollow" type="application/rss+xml" title="RSS feed of &#39;How to stake your XRD&#39;" href="179.rss" />
-    <meta property="og:site_name" content="RadixTalk" />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:image" content="https://radixtalk.com/uploads/default/optimized/1X/3a51bed546e2a2c75272147c852768c259067b66_2_1024x555.png" />
-<meta property="og:image" content="https://radixtalk.com/uploads/default/optimized/1X/3a51bed546e2a2c75272147c852768c259067b66_2_1024x555.png" />
-<meta property="og:url" content="https://radixtalk.com/t/how-to-stake-your-xrd/179" />
-<meta name="twitter:url" content="https://radixtalk.com/t/how-to-stake-your-xrd/179" />
-<meta property="og:title" content="How to stake your XRD" />
-<meta name="twitter:title" content="How to stake your XRD" />
-<meta property="og:description" content="How to stake XRD Staking your XRD makes you earn rewards at the end of each epoch and helps secure the network, so let’s stake!  You can check the current APY % anytime on Radix Dashboard by Avaunt Staking, calculated as an estimate per epoch with a 3% fee.   Login into your wallet      Click on “Stake &amp; Unstake”      Enter the validator address and how much XRD you want to stake (minimum 90 XRD)      You need at least 0.6 XRD to request an unstake, so don’t stake 100% of your balance!  Click “..." />
-<meta name="twitter:description" content="How to stake XRD Staking your XRD makes you earn rewards at the end of each epoch and helps secure the network, so let’s stake!  You can check the current APY % anytime on Radix Dashboard by Avaunt Staking, calculated as an estimate per epoch with a 3% fee.   Login into your wallet      Click on “Stake &amp; Unstake”      Enter the validator address and how much XRD you want to stake (minimum 90 XRD)      You need at least 0.6 XRD to request an unstake, so don’t stake 100% of your balance!  Click “..." />
-<meta property="article:published_time" content="2021-12-29T20:20:22+00:00" />
-<meta property="og:ignore_canonical" content="true" />
+  <link
+    href="https://radixtalk.com/stylesheets/desktop_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="desktop" />
 
 
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"QAPage","name":"How to stake your XRD","mainEntity":{"@type":"Question","name":"How to stake your XRD","text":"<a name=\"how-to-stake-xrd-1\" class=\"anchor\" href="https://radixtalk.com/t/how-to-stake-your-xrd/\&quot;#how-to-stake-xrd-1\""><\/a>How to stake XRD\n\nStaking your XRD makes you earn rewards at the end of each epoch and helps secure the network, so let’s stake!\n\nYou can check the current APY % anytime on <a href="https://radixtalk.com/t/how-to-stake-your-xrd/\&quot;https://www.radixdashboard.com/\&quot;">Radix Dashboard<\/a> by Avaunt Staking, calculated as an estimate per epoch with a 3% fee.\n\nLogin into your wallet\n\n<a class=\"lightbox\" href="https://radixtalk.com/t/how-to-stake-your-xrd/\&quot;https://radixtalk.com/uploads/default/original/1X/3a51bed546e2a2c75272147c852768c259067b66.png\&quot;" data-download-href=\"https://radixtalk.com/uploads/default/3a51bed546e2a2c75272147c852768c259067b66\" title=\"image\">[image]<\/a>\n\nClic&hellip;","upvoteCount":0,"answerCount":0,"dateCreated":"2021-12-29T20:20:22.151Z","author":{"@type":"Person","name":"Mattia | MattiaNode"}}}</script>
-  </head>
-  <body class="crawler">
-    
-    <header>
-  <a href="https://radixtalk.com/">
-    <h1>RadixTalk</h1>
-  </a>
-</header>
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-akismet_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-akismet" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-automation_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-automation" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-cakeday_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-cakeday" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-canned-replies_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-canned-replies" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-checklist_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-checklist" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-data-explorer_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-data-explorer" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-details_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-details" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-docs_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-docs" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-follow_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-follow" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-fontawesome-pro_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-fontawesome-pro" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-footnote_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-footnote" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-local-dates_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-local-dates" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-presence_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-presence" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-rss-polling_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-rss-polling" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-saved-searches_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-saved-searches" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-solved_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-solved" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-tooltips_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-tooltips" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-user-notes_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-user-notes" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-voting_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-voting" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-whos-online_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-whos-online" />
+  <link
+    href="https://radixtalk.com/stylesheets/lazy-yt_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="lazy-yt" />
+  <link
+    href="https://radixtalk.com/stylesheets/poll_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="poll" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-voting_desktop_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-voting_desktop" />
+  <link
+    href="https://radixtalk.com/stylesheets/poll_desktop_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="poll_desktop" />
 
-    <div id="main-outlet" class="wrap" role="main">
-        <div id="topic-title">
-    <h1>
-      <a href="179.html">How to stake your XRD</a>
-    </h1>
+  <link
+    href="https://radixtalk.com/stylesheets/desktop_theme_1_9a2d2d666d7d7c2df1111a85e8451fea3ca2dfc2.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="desktop_theme" data-theme-id="1" data-theme-name="default" />
+
+  <script defer="" data-domain="radixtalk.com" src="https://plausible.io/js/plausible.hash.js"></script>
+
+
+  <link rel="alternate nofollow" type="application/rss+xml" title="RSS feed of &#39;How to stake your XRD&#39;"
+    href="179.rss" />
+  <meta property="og:site_name" content="RadixTalk" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:image"
+    content="https://radixtalk.com/uploads/default/optimized/1X/3a51bed546e2a2c75272147c852768c259067b66_2_1024x555.png" />
+  <meta property="og:image"
+    content="https://radixtalk.com/uploads/default/optimized/1X/3a51bed546e2a2c75272147c852768c259067b66_2_1024x555.png" />
+  <meta property="og:url" content="https://radixtalk.com/t/how-to-stake-your-xrd/179" />
+  <meta name="twitter:url" content="https://radixtalk.com/t/how-to-stake-your-xrd/179" />
+  <meta property="og:title" content="How to stake your XRD" />
+  <meta name="twitter:title" content="How to stake your XRD" />
+  <meta property="og:description"
+    content="How to stake XRD Staking your XRD makes you earn rewards at the end of each epoch and helps secure the network, so let’s stake!  You can check the current APY % anytime on Radix Dashboard by Avaunt Staking, calculated as an estimate per epoch with a 3% fee.   Login into your wallet      Click on “Stake &amp; Unstake”      Enter the validator address and how much XRD you want to stake (minimum 90 XRD)      You need at least 0.6 XRD to request an unstake, so don’t stake 100% of your balance!  Click “..." />
+  <meta name="twitter:description"
+    content="How to stake XRD Staking your XRD makes you earn rewards at the end of each epoch and helps secure the network, so let’s stake!  You can check the current APY % anytime on Radix Dashboard by Avaunt Staking, calculated as an estimate per epoch with a 3% fee.   Login into your wallet      Click on “Stake &amp; Unstake”      Enter the validator address and how much XRD you want to stake (minimum 90 XRD)      You need at least 0.6 XRD to request an unstake, so don’t stake 100% of your balance!  Click “..." />
+  <meta property="article:published_time" content="2021-12-29T20:20:22+00:00" />
+  <meta property="og:ignore_canonical" content="true" />
+
+
+  <script
+    type="application/ld+json">{"@context":"http://schema.org","@type":"QAPage","name":"How to stake your XRD","mainEntity":{"@type":"Question","name":"How to stake your XRD","text":"<a name=\"how-to-stake-xrd-1\" class=\"anchor\" href="https://radixtalk.com/t/how-to-stake-your-xrd/\&quot;#how-to-stake-xrd-1\""><\/a>How to stake XRD\n\nStaking your XRD makes you earn rewards at the end of each epoch and helps secure the network, so let’s stake!\n\nYou can check the current APY % anytime on <a href="https://radixtalk.com/t/how-to-stake-your-xrd/\&quot;https://www.radixdashboard.com/\&quot;">Radix Dashboard<\/a> by Avaunt Staking, calculated as an estimate per epoch with a 3% fee.\n\nLogin into your wallet\n\n<a class=\"lightbox\" href="https://radixtalk.com/t/how-to-stake-your-xrd/\&quot;https://radixtalk.com/uploads/default/original/1X/3a51bed546e2a2c75272147c852768c259067b66.png\&quot;" data-download-href=\"https://radixtalk.com/uploads/default/3a51bed546e2a2c75272147c852768c259067b66\" title=\"image\">[image]<\/a>\n\nClic&hellip;","upvoteCount":0,"answerCount":0,"dateCreated":"2021-12-29T20:20:22.151Z","author":{"@type":"Person","name":"Mattia | MattiaNode"}}}</script>
+</head>
+
+<body class="crawler">
+
+  <header>
+    <a href="https://radixtalk.com/">
+      <h1>RadixTalk</h1>
+    </a>
+  </header>
+
+  <div id="main-outlet" class="wrap" role="main">
+    <div id="topic-title">
+      <h1>
+        <a href="179.html">How to stake your XRD</a>
+      </h1>
 
       <div class="topic-category" itemscope itemtype="http://schema.org/BreadcrumbList">
-          <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-            <a href="https://radixtalk.com/c/staking/27" class="badge-wrapper bullet" itemprop="item">
-              <span class='badge-category-bg' style='background-color: #3AB54A'></span>
-              <span class='badge-category clear-badge'>
-                <span class='category-name' itemprop='name'>Staking</span>
-              </span>
-            </a>
-            <meta itemprop="position" content="1" />
-          </span>
+        <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a href="https://radixtalk.com/c/staking/27" class="badge-wrapper bullet" itemprop="item">
+            <span class='badge-category-bg' style='background-color: #3AB54A'></span>
+            <span class='badge-category clear-badge'>
+              <span class='category-name' itemprop='name'>Staking</span>
+            </span>
+          </a>
+          <meta itemprop="position" content="1" />
+        </span>
       </div>
 
       <div class="topic-category">
         <div class='discourse-tags list-tags'>
-            <a href='../../tag/staking.html' class='discourse-tag' rel="tag">staking</a>, 
-            <a href='../../tag/xrd.html' class='discourse-tag' rel="tag">xrd</a>, 
-            <a href='../../tag/faq.html' class='discourse-tag' rel="tag">faq</a>
+          <a href='../../tag/staking.html' class='discourse-tag' rel="tag">staking</a>,
+          <a href='../../tag/xrd.html' class='discourse-tag' rel="tag">xrd</a>,
+          <a href='../../tag/faq.html' class='discourse-tag' rel="tag">faq</a>
         </div>
       </div>
-  </div>
-
-  
+    </div>
 
 
-      <div id='post_1' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
-        <div class='crawler-post-meta'>
-          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
-            <meta itemprop='name' content='RadixTalk'>
-              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
-                <meta itemprop='url' content='https://radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
-              </div>
+
+
+    <div id='post_1' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+      <div class='crawler-post-meta'>
+        <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+          <meta itemprop='name' content='RadixTalk'>
+          <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+            <meta itemprop='url'
+              content='https://radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
           </div>
-          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <a itemprop="url" href='../../u/Mattia.html'><span itemprop='name'>Mattia</span></a>
-            (Mattia | MattiaNode)
-          </span>
+        </div>
+        <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a itemprop="url" href='../../u/Mattia.html'><span itemprop='name'>Mattia</span></a>
+          (Mattia | MattiaNode)
+        </span>
 
-          <link itemprop="mainEntityOfPage" href="179.html">
+        <link itemprop="mainEntityOfPage" href="179.html">
 
-            <link itemprop="image" href="../../uploads/default/original/1X/3a51bed546e2a2c75272147c852768c259067b66.png">
+        <link itemprop="image" href="../../uploads/default/original/1X/3a51bed546e2a2c75272147c852768c259067b66.png">
 
-          <span class="crawler-post-infos">
-              <time itemprop='datePublished' datetime='2021-12-29T20:20:22Z' class='post-time'>
-                29 December 2021 20:20
-              </time>
-              <meta itemprop='dateModified' content='2022-01-16T11:25:30Z'>
+        <span class="crawler-post-infos">
+          <time itemprop='datePublished' datetime='2021-12-29T20:20:22Z' class='post-time'>
+            29 December 2021 20:20
+          </time>
+          <meta itemprop='dateModified' content='2022-01-16T11:25:30Z'>
           <span itemprop='position'>#1</span>
-          </span>
-        </div>
-        <div class='post' itemprop='articleBody'>
-          <h1>
-<a name="how-to-stake-xrd-1" class="anchor" href="179.html#how-to-stake-xrd-1"></a>How to stake XRD</h1>
-<p>Staking your XRD makes you earn rewards at the end of each epoch and helps secure the network, so let’s stake!<br>
-You can check the current <em><em>APY %</em></em> anytime on <a href="https://www.radixdashboard.com/">Radix Dashboard</a> by Avaunt Staking, calculated as an estimate per epoch with a 3% fee.</p>
-<ol>
-<li>Login into your wallet</li>
-</ol>
-<p><div class="lightbox-wrapper"><a class="lightbox" href="../../uploads/default/original/1X/3a51bed546e2a2c75272147c852768c259067b66.png" data-download-href="https://radixtalk.com/uploads/default/3a51bed546e2a2c75272147c852768c259067b66" title="image"><img src="../../uploads/default/optimized/1X/3a51bed546e2a2c75272147c852768c259067b66_2_690x374.png" alt="image" data-base62-sha1="8jUPAxK3oDBpv7eqTJqMd6hXK86" width="690" height="374" srcset="../../uploads/default/optimized/1X/3a51bed546e2a2c75272147c852768c259067b66_2_690x374.png, ../../uploads/default/optimized/1X/3a51bed546e2a2c75272147c852768c259067b66_2_1035x561.png 1.5x, ../../uploads/default/original/1X/3a51bed546e2a2c75272147c852768c259067b66.png 2x" data-small-upload="https://radixtalk.com/uploads/default/optimized/1X/3a51bed546e2a2c75272147c852768c259067b66_2_10x10.png"><div class="meta">
-<svg class="fa d-icon d-icon-far-image svg-icon" aria-hidden="true"><use href="#far-image"></use></svg><span class="filename">image</span><span class="informations">1186×643 69 KB</span><svg class="fa d-icon d-icon-discourse-expand svg-icon" aria-hidden="true"><use href="#discourse-expand"></use></svg>
-</div></a></div></p>
-<ol start="2">
-<li>Click on “Stake &amp; Unstake”</li>
-</ol>
-<p><div class="lightbox-wrapper"><a class="lightbox" href="../../uploads/default/original/1X/7ed8e61dce40454a939a798425db1a3949af1060.jpeg" data-download-href="https://radixtalk.com/uploads/default/7ed8e61dce40454a939a798425db1a3949af1060" title="image"><img src="../../uploads/default/optimized/1X/7ed8e61dce40454a939a798425db1a3949af1060_2_690x374.jpeg" alt="image" data-base62-sha1="i68RD68sGR5RwMWoy5wX4AGa0cE" width="690" height="374" srcset="../../uploads/default/optimized/1X/7ed8e61dce40454a939a798425db1a3949af1060_2_690x374.jpeg, ../../uploads/default/optimized/1X/7ed8e61dce40454a939a798425db1a3949af1060_2_1035x561.jpeg 1.5x, ../../uploads/default/original/1X/7ed8e61dce40454a939a798425db1a3949af1060.jpeg 2x" data-small-upload="https://radixtalk.com/uploads/default/optimized/1X/7ed8e61dce40454a939a798425db1a3949af1060_2_10x10.png"><div class="meta">
-<svg class="fa d-icon d-icon-far-image svg-icon" aria-hidden="true"><use href="#far-image"></use></svg><span class="filename">image</span><span class="informations">1186×643 82.8 KB</span><svg class="fa d-icon d-icon-discourse-expand svg-icon" aria-hidden="true"><use href="#discourse-expand"></use></svg>
-</div></a></div></p>
-<ol start="3">
-<li>Enter the validator address and how much XRD you want to stake (<strong>minimum 90 XRD</strong>)</li>
-</ol>
-<p><div class="lightbox-wrapper"><a class="lightbox" href="../../uploads/default/original/1X/bb8dc76401b5c12cdeb02e11731ca6cd3c49f4ec.jpeg" data-download-href="https://radixtalk.com/uploads/default/bb8dc76401b5c12cdeb02e11731ca6cd3c49f4ec" title="image"><img src="../../uploads/default/optimized/1X/bb8dc76401b5c12cdeb02e11731ca6cd3c49f4ec_2_690x374.jpeg" alt="image" data-base62-sha1="qLb2TU5TayLxQgJbE32sYVPenko" width="690" height="374" srcset="../../uploads/default/optimized/1X/bb8dc76401b5c12cdeb02e11731ca6cd3c49f4ec_2_690x374.jpeg, ../../uploads/default/optimized/1X/bb8dc76401b5c12cdeb02e11731ca6cd3c49f4ec_2_1035x561.jpeg 1.5x, ../../uploads/default/original/1X/bb8dc76401b5c12cdeb02e11731ca6cd3c49f4ec.jpeg 2x" data-small-upload="https://radixtalk.com/uploads/default/optimized/1X/bb8dc76401b5c12cdeb02e11731ca6cd3c49f4ec_2_10x10.png"><div class="meta">
-<svg class="fa d-icon d-icon-far-image svg-icon" aria-hidden="true"><use href="#far-image"></use></svg><span class="filename">image</span><span class="informations">1186×643 115 KB</span><svg class="fa d-icon d-icon-discourse-expand svg-icon" aria-hidden="true"><use href="#discourse-expand"></use></svg>
-</div></a></div></p>
-<h3>
-<a name="you-need-at-least-06-xrd-to-request-an-unstake-so-dont-stake-100-of-your-balance-2" class="anchor" href="179.html#you-need-at-least-06-xrd-to-request-an-unstake-so-dont-stake-100-of-your-balance-2"></a>You need at least 0.6 XRD to request an unstake, so don’t stake 100% of your balance!</h3>
-<ol start="4">
-<li>Click “Stake” and enter your PIN.</li>
-</ol>
-<blockquote>
-<p>Forgot your PIN? You can change it, using your password, by going to <em>Wallet Settings</em> (lower left corner) and clicking on <em>Change PIN</em>.</p>
-</blockquote>
-<ol start="5">
-<li>Done! You can now close your wallet.</li>
-</ol>
-        </div>
-
-        <meta itemprop='headline' content='How to stake your XRD'>
-          <meta itemprop='keywords' content='staking, xrd, faq'>
-
-        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
-           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
-           <meta itemprop="userInteractionCount" content="0" />
-           <span class='post-likes'></span>
-         </div>
-
-         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
-            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
-            <meta itemprop="userInteractionCount" content="0" />
-          </div>
-
+        </span>
+      </div>
+      <div class='post' itemprop='articleBody'>
+        <h1>
+          <a name="how-to-stake-xrd-1" class="anchor" href="179.html#how-to-stake-xrd-1"></a>How to stake XRD
+        </h1>
+        <p>Staking your XRD makes you earn rewards at the end of each epoch and helps secure the network, so let’s
+          stake!<br>
+          You can check the current <em><em>APY %</em></em> anytime on <a href="https://www.radixdashboard.com/">Radix
+            Dashboard</a> by Avaunt Staking, calculated as an estimate per epoch with a 3% fee.</p>
+        <ol>
+          <li>Login into your wallet</li>
+        </ol>
+        <p>
+        <div class="lightbox-wrapper"><a class="lightbox"
+            href="../../uploads/default/original/1X/3a51bed546e2a2c75272147c852768c259067b66.png"
+            data-download-href="https://radixtalk.com/uploads/default/3a51bed546e2a2c75272147c852768c259067b66"
+            title="image"><img
+              src="../../uploads/default/optimized/1X/3a51bed546e2a2c75272147c852768c259067b66_2_690x374.png"
+              alt="image" data-base62-sha1="8jUPAxK3oDBpv7eqTJqMd6hXK86" width="690" height="374"
+              srcset="../../uploads/default/optimized/1X/3a51bed546e2a2c75272147c852768c259067b66_2_690x374.png, ../../uploads/default/optimized/1X/3a51bed546e2a2c75272147c852768c259067b66_2_1035x561.png 1.5x, ../../uploads/default/original/1X/3a51bed546e2a2c75272147c852768c259067b66.png 2x"
+              data-small-upload="https://radixtalk.com/uploads/default/optimized/1X/3a51bed546e2a2c75272147c852768c259067b66_2_10x10.png">
+            <div class="meta">
+              <svg class="fa d-icon d-icon-far-image svg-icon" aria-hidden="true">
+                <use href="#far-image"></use>
+              </svg><span class="filename">image</span><span class="informations">1186×643 69 KB</span><svg
+                class="fa d-icon d-icon-discourse-expand svg-icon" aria-hidden="true">
+                <use href="#discourse-expand"></use>
+              </svg>
+            </div>
+          </a></div>
+        </p>
+        <ol start="2">
+          <li>Click on “Stake &amp; Unstake”</li>
+        </ol>
+        <p>
+        <div class="lightbox-wrapper"><a class="lightbox"
+            href="../../uploads/default/original/1X/7ed8e61dce40454a939a798425db1a3949af1060.jpeg"
+            data-download-href="https://radixtalk.com/uploads/default/7ed8e61dce40454a939a798425db1a3949af1060"
+            title="image"><img
+              src="../../uploads/default/optimized/1X/7ed8e61dce40454a939a798425db1a3949af1060_2_690x374.jpeg"
+              alt="image" data-base62-sha1="i68RD68sGR5RwMWoy5wX4AGa0cE" width="690" height="374"
+              srcset="../../uploads/default/optimized/1X/7ed8e61dce40454a939a798425db1a3949af1060_2_690x374.jpeg, ../../uploads/default/optimized/1X/7ed8e61dce40454a939a798425db1a3949af1060_2_1035x561.jpeg 1.5x, ../../uploads/default/original/1X/7ed8e61dce40454a939a798425db1a3949af1060.jpeg 2x"
+              data-small-upload="https://radixtalk.com/uploads/default/optimized/1X/7ed8e61dce40454a939a798425db1a3949af1060_2_10x10.png">
+            <div class="meta">
+              <svg class="fa d-icon d-icon-far-image svg-icon" aria-hidden="true">
+                <use href="#far-image"></use>
+              </svg><span class="filename">image</span><span class="informations">1186×643 82.8 KB</span><svg
+                class="fa d-icon d-icon-discourse-expand svg-icon" aria-hidden="true">
+                <use href="#discourse-expand"></use>
+              </svg>
+            </div>
+          </a></div>
+        </p>
+        <ol start="3">
+          <li>Enter the validator address and how much XRD you want to stake (<strong>minimum 90 XRD</strong>)</li>
+        </ol>
+        <p>
+        <div class="lightbox-wrapper"><a class="lightbox"
+            href="../../uploads/default/original/1X/bb8dc76401b5c12cdeb02e11731ca6cd3c49f4ec.jpeg"
+            data-download-href="https://radixtalk.com/uploads/default/bb8dc76401b5c12cdeb02e11731ca6cd3c49f4ec"
+            title="image"><img
+              src="../../uploads/default/optimized/1X/bb8dc76401b5c12cdeb02e11731ca6cd3c49f4ec_2_690x374.jpeg"
+              alt="image" data-base62-sha1="qLb2TU5TayLxQgJbE32sYVPenko" width="690" height="374"
+              srcset="../../uploads/default/optimized/1X/bb8dc76401b5c12cdeb02e11731ca6cd3c49f4ec_2_690x374.jpeg, ../../uploads/default/optimized/1X/bb8dc76401b5c12cdeb02e11731ca6cd3c49f4ec_2_1035x561.jpeg 1.5x, ../../uploads/default/original/1X/bb8dc76401b5c12cdeb02e11731ca6cd3c49f4ec.jpeg 2x"
+              data-small-upload="https://radixtalk.com/uploads/default/optimized/1X/bb8dc76401b5c12cdeb02e11731ca6cd3c49f4ec_2_10x10.png">
+            <div class="meta">
+              <svg class="fa d-icon d-icon-far-image svg-icon" aria-hidden="true">
+                <use href="#far-image"></use>
+              </svg><span class="filename">image</span><span class="informations">1186×643 115 KB</span><svg
+                class="fa d-icon d-icon-discourse-expand svg-icon" aria-hidden="true">
+                <use href="#discourse-expand"></use>
+              </svg>
+            </div>
+          </a></div>
+        </p>
+        <h3>
+          <a name="you-need-at-least-06-xrd-to-request-an-unstake-so-dont-stake-100-of-your-balance-2" class="anchor"
+            href="179.html#you-need-at-least-06-xrd-to-request-an-unstake-so-dont-stake-100-of-your-balance-2"></a>You
+          need at least 0.6 XRD to request an unstake, so don’t stake 100% of your balance!
+        </h3>
+        <ol start="4">
+          <li>Click “Stake” and enter your PIN.</li>
+        </ol>
+        <blockquote>
+          <p>Forgot your PIN? You can change it, using your password, by going to <em>Wallet Settings</em> (lower left
+            corner) and clicking on <em>Change PIN</em>.</p>
+        </blockquote>
+        <ol start="5">
+          <li>Done! You can now close your wallet.</li>
+        </ol>
       </div>
 
+      <meta itemprop='headline' content='How to stake your XRD'>
+      <meta itemprop='keywords' content='staking, xrd, faq'>
 
+      <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+        <meta itemprop="interactionType" content="http://schema.org/LikeAction" />
+        <meta itemprop="userInteractionCount" content="0" />
+        <span class='post-likes'></span>
+      </div>
 
-
-
+      <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+        <meta itemprop="interactionType" content="http://schema.org/CommentAction" />
+        <meta itemprop="userInteractionCount" content="0" />
+      </div>
 
     </div>
-    <footer class="container wrap">
-  <nav class='crawler-nav'>
-    <ul>
-      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
-        <span itemprop='name'>
-          <a href='https://radixtalk.com/' itemprop="url">Home </a>
-        </span>
-      </li>
-      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
-        <span itemprop='name'>
-          <a href='https://radixtalk.com/categories' itemprop="url">Categories </a>
-        </span>
-      </li>
-      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
-        <span itemprop='name'>
-          <a href='https://radixtalk.com/guidelines' itemprop="url">FAQ/Guidelines </a>
-        </span>
-      </li>
-      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
-        <span itemprop='name'>
-          <a href='https://radixtalk.com/tos' itemprop="url">Terms of Service </a>
-        </span>
-      </li>
-      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
-        <span itemprop='name'>
-          <a href='https://radixtalk.com/privacy' itemprop="url">Privacy Policy </a>
-        </span>
-      </li>
-    </ul>
-  </nav>
-  <p class='powered-by-link'>Powered by <a href="https://www.discourse.org">Discourse</a>, best viewed with JavaScript enabled</p>
-</footer>
 
-    
-    
-  </body>
-  
+
+
+
+
+
+  </div>
+  <footer class="container wrap">
+    <nav class='crawler-nav'>
+      <ul>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='https://radixtalk.com/' itemprop="url">Home </a>
+          </span>
+        </li>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='https://radixtalk.com/categories' itemprop="url">Categories </a>
+          </span>
+        </li>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='https://radixtalk.com/guidelines' itemprop="url">FAQ/Guidelines </a>
+          </span>
+        </li>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='https://radixtalk.com/tos' itemprop="url">Terms of Service </a>
+          </span>
+        </li>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='https://radixtalk.com/privacy' itemprop="url">Privacy Policy </a>
+          </span>
+        </li>
+      </ul>
+    </nav>
+    <p class='powered-by-link'>Powered by <a href="https://www.discourse.org">Discourse</a>, best viewed with JavaScript
+      enabled</p>
+  </footer>
+
+
+
+</body>
+
 </html>

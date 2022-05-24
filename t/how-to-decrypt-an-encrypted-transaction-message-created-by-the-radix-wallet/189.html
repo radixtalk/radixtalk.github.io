@@ -1,168 +1,252 @@
 <!DOCTYPE html>
 <html lang="en-GB">
-  <head>
-    <meta charset="utf-8">
-    <title>How to decrypt an encrypted transaction message created by the Radix Wallet - Developers - RadixTalk</title>
-    <meta name="description" content="How to decrypt an encrypted transaction message created by the Radix Wallet
+
+<head>
+  <meta charset="utf-8">
+  <title>How to decrypt an encrypted transaction message created by the Radix Wallet - Developers - RadixTalk</title>
+  <meta name="description" content="How to decrypt an encrypted transaction message created by the Radix Wallet
 
 0. Introduction
-The encryption scheme used by the Radix Wallet is called DH_ADD_EPH_AESGCM256_SCRYPT_000 
-Where: 
+The encryption scheme used by the Radix Wallet is called DH_ADD_EPH_AESGCM256_SCRYPT_000
+Where:
 
 DH → (Elliptic Curve) Diffi&amp;hellip;">
-    <meta name="generator" content="Discourse 2.9.0.beta4 - https://github.com/discourse/discourse version b65ecf69871656155c381343cd84de919cbbf803">
-<link rel="icon" type="image/png" href="../../uploads/default/optimized/1X/023c6f3e74bac599c495c37eecd72f939f3fab87_2_32x32.png">
-<link rel="apple-touch-icon" type="image/png" href="../../uploads/default/optimized/1X/ad9adb26331754b0012edbc9b4796de8dc449fa8_2_180x180.png">
-<meta name="theme-color" content="#ffffff">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
-<link rel="canonical" href="189.html" />
-<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebSite","url":"https://radixtalk.com","potentialAction":{"@type":"SearchAction","target":"https://radixtalk.com/search?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
-<link rel="search" type="application/opensearchdescription+xml" href="../../opensearch.xml" title="RadixTalk Search">
+  <meta name="generator"
+    content="Discourse 2.9.0.beta4 - https://github.com/discourse/discourse version b65ecf69871656155c381343cd84de919cbbf803">
+  <link rel="icon" type="image/png"
+    href="../../uploads/default/optimized/1X/023c6f3e74bac599c495c37eecd72f939f3fab87_2_32x32.png">
+  <link rel="apple-touch-icon" type="image/png"
+    href="../../uploads/default/optimized/1X/ad9adb26331754b0012edbc9b4796de8dc449fa8_2_180x180.png">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <link rel="canonical" href="189.html" />
+  <script
+    type="application/ld+json">{"@context":"http://schema.org","@type":"WebSite","url":"https://radixtalk.com","potentialAction":{"@type":"SearchAction","target":"https://radixtalk.com/search?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
+  <link rel="search" type="application/opensearchdescription+xml" href="../../opensearch.xml" title="RadixTalk Search">
 
-    <link href="https://radixtalk.com/stylesheets/color_definitions_light_4_1_328257c7bbc55122a1aafbbd296477820001ddd2.css?__ws=radixtalk.com" media="all" rel="stylesheet" class="light-scheme"/>
+  <link
+    href="https://radixtalk.com/stylesheets/color_definitions_light_4_1_328257c7bbc55122a1aafbbd296477820001ddd2.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" class="light-scheme" />
 
-  <link href="https://radixtalk.com/stylesheets/desktop_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="desktop"  />
-
-
-  <link href="https://radixtalk.com/stylesheets/discourse-akismet_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-akismet"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-automation_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-automation"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-cakeday_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-cakeday"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-canned-replies_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-canned-replies"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-checklist_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-checklist"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-data-explorer_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-data-explorer"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-details_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-details"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-docs_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-docs"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-follow_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-follow"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-fontawesome-pro_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-fontawesome-pro"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-footnote_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-footnote"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-local-dates_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-local-dates"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-presence_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-presence"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-rss-polling_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-rss-polling"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-saved-searches_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-saved-searches"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-solved_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-solved"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-tooltips_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-tooltips"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-user-notes_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-user-notes"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-voting_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-voting"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-whos-online_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-whos-online"  />
-  <link href="https://radixtalk.com/stylesheets/lazy-yt_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="lazy-yt"  />
-  <link href="https://radixtalk.com/stylesheets/poll_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="poll"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-voting_desktop_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-voting_desktop"  />
-  <link href="https://radixtalk.com/stylesheets/poll_desktop_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="poll_desktop"  />
-
-  <link href="https://radixtalk.com/stylesheets/desktop_theme_1_9a2d2d666d7d7c2df1111a85e8451fea3ca2dfc2.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="desktop_theme" data-theme-id="1" data-theme-name="default"/>
-
-    <script defer="" data-domain="radixtalk.com" src="https://plausible.io/js/plausible.hash.js"></script>
-
-    
-        <link rel="alternate nofollow" type="application/rss+xml" title="RSS feed of &#39;How to decrypt an encrypted transaction message created by the Radix Wallet&#39;" href="189.rss" />
-    <meta property="og:site_name" content="RadixTalk" />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:image" content="https://radixtalk.com/uploads/default/original/1X/9e3624f2a5d4052091ba93563043c233df535486.png" />
-<meta property="og:image" content="https://radixtalk.com/uploads/default/original/1X/9e3624f2a5d4052091ba93563043c233df535486.png" />
-<meta property="og:url" content="https://radixtalk.com/t/how-to-decrypt-an-encrypted-transaction-message-created-by-the-radix-wallet/189" />
-<meta name="twitter:url" content="https://radixtalk.com/t/how-to-decrypt-an-encrypted-transaction-message-created-by-the-radix-wallet/189" />
-<meta property="og:title" content="How to decrypt an encrypted transaction message created by the Radix Wallet" />
-<meta name="twitter:title" content="How to decrypt an encrypted transaction message created by the Radix Wallet" />
-<meta property="og:description" content="How to decrypt an encrypted transaction message created by the Radix Wallet  0. Introduction The encryption scheme used by the Radix Wallet is called DH_ADD_EPH_AESGCM256_SCRYPT_000  Where:   DH → (Elliptic Curve) Diffie-Hellman (A key exchange protocol that allows untrusted parties to construct a shared secret) ADD → Elliptic Curve Point Addition (The operation we use to create the shared secret) EPH → Ephemeral Public Key (A temporary public key that is only used for the purpose of encrypting..." />
-<meta name="twitter:description" content="How to decrypt an encrypted transaction message created by the Radix Wallet  0. Introduction The encryption scheme used by the Radix Wallet is called DH_ADD_EPH_AESGCM256_SCRYPT_000  Where:   DH → (Elliptic Curve) Diffie-Hellman (A key exchange protocol that allows untrusted parties to construct a shared secret) ADD → Elliptic Curve Point Addition (The operation we use to create the shared secret) EPH → Ephemeral Public Key (A temporary public key that is only used for the purpose of encrypting..." />
-<meta property="article:published_time" content="2021-12-31T20:45:24+00:00" />
-<meta property="og:ignore_canonical" content="true" />
+  <link
+    href="https://radixtalk.com/stylesheets/desktop_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="desktop" />
 
 
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"QAPage","name":"How to decrypt an encrypted transaction message created by the Radix Wallet","mainEntity":{"@type":"Question","name":"How to decrypt an encrypted transaction message created by the Radix Wallet","text":"<a name=\"how-to-decrypt-an-encrypted-transaction-message-created-by-the-radix-wallet-1\" class=\"anchor\" href="https://radixtalk.com/t/how-to-decrypt-an-encrypted-transaction-message-created-by-the-radix-wallet/\&quot;#how-to-decrypt-an-encrypted-transaction-message-created-by-the-radix-wallet-1\""><\/a>How to decrypt an encrypted transaction message created by the Radix Wallet\n\n<a name=\"h-0-introduction-2\" class=\"anchor\" href="https://radixtalk.com/t/how-to-decrypt-an-encrypted-transaction-message-created-by-the-radix-wallet/\&quot;#h-0-introduction-2\""><\/a>0. Introduction\n\nThe encryption scheme used by the Radix Wallet is called DH_ADD_EPH_AESGCM256_SCRYPT_000\n\nWhere:\n\nDH → <a href="https://radixtalk.com/t/how-to-decrypt-an-encrypted-transaction-message-created-by-the-radix-wallet/\&quot;https://cryptobook.nakov.com/asymmetric-key-ciphers/ecdh-key-exchange\&quot;">(Elliptic Curve) Diffie-Hellman<\/a> (A key exchange protocol that allows untrusted parties to construct a &hellip;","upvoteCount":0,"answerCount":0,"dateCreated":"2021-12-31T20:45:24.217Z","author":{"@type":"Person","name":"Stuart | RadixPool"}}}</script>
-  </head>
-  <body class="crawler">
-    
-    <header>
-  <a href="https://radixtalk.com/">
-    <h1>RadixTalk</h1>
-  </a>
-</header>
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-akismet_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-akismet" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-automation_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-automation" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-cakeday_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-cakeday" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-canned-replies_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-canned-replies" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-checklist_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-checklist" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-data-explorer_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-data-explorer" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-details_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-details" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-docs_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-docs" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-follow_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-follow" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-fontawesome-pro_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-fontawesome-pro" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-footnote_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-footnote" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-local-dates_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-local-dates" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-presence_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-presence" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-rss-polling_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-rss-polling" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-saved-searches_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-saved-searches" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-solved_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-solved" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-tooltips_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-tooltips" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-user-notes_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-user-notes" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-voting_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-voting" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-whos-online_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-whos-online" />
+  <link
+    href="https://radixtalk.com/stylesheets/lazy-yt_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="lazy-yt" />
+  <link
+    href="https://radixtalk.com/stylesheets/poll_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="poll" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-voting_desktop_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-voting_desktop" />
+  <link
+    href="https://radixtalk.com/stylesheets/poll_desktop_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="poll_desktop" />
 
-    <div id="main-outlet" class="wrap" role="main">
-        <div id="topic-title">
-    <h1>
-      <a href="189.html">How to decrypt an encrypted transaction message created by the Radix Wallet</a>
-    </h1>
+  <link
+    href="https://radixtalk.com/stylesheets/desktop_theme_1_9a2d2d666d7d7c2df1111a85e8451fea3ca2dfc2.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="desktop_theme" data-theme-id="1" data-theme-name="default" />
+
+  <script defer="" data-domain="radixtalk.com" src="https://plausible.io/js/plausible.hash.js"></script>
+
+
+  <link rel="alternate nofollow" type="application/rss+xml"
+    title="RSS feed of &#39;How to decrypt an encrypted transaction message created by the Radix Wallet&#39;"
+    href="189.rss" />
+  <meta property="og:site_name" content="RadixTalk" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:image"
+    content="https://radixtalk.com/uploads/default/original/1X/9e3624f2a5d4052091ba93563043c233df535486.png" />
+  <meta property="og:image"
+    content="https://radixtalk.com/uploads/default/original/1X/9e3624f2a5d4052091ba93563043c233df535486.png" />
+  <meta property="og:url"
+    content="https://radixtalk.com/t/how-to-decrypt-an-encrypted-transaction-message-created-by-the-radix-wallet/189" />
+  <meta name="twitter:url"
+    content="https://radixtalk.com/t/how-to-decrypt-an-encrypted-transaction-message-created-by-the-radix-wallet/189" />
+  <meta property="og:title" content="How to decrypt an encrypted transaction message created by the Radix Wallet" />
+  <meta name="twitter:title" content="How to decrypt an encrypted transaction message created by the Radix Wallet" />
+  <meta property="og:description"
+    content="How to decrypt an encrypted transaction message created by the Radix Wallet  0. Introduction The encryption scheme used by the Radix Wallet is called DH_ADD_EPH_AESGCM256_SCRYPT_000  Where:   DH → (Elliptic Curve) Diffie-Hellman (A key exchange protocol that allows untrusted parties to construct a shared secret) ADD → Elliptic Curve Point Addition (The operation we use to create the shared secret) EPH → Ephemeral Public Key (A temporary public key that is only used for the purpose of encrypting..." />
+  <meta name="twitter:description"
+    content="How to decrypt an encrypted transaction message created by the Radix Wallet  0. Introduction The encryption scheme used by the Radix Wallet is called DH_ADD_EPH_AESGCM256_SCRYPT_000  Where:   DH → (Elliptic Curve) Diffie-Hellman (A key exchange protocol that allows untrusted parties to construct a shared secret) ADD → Elliptic Curve Point Addition (The operation we use to create the shared secret) EPH → Ephemeral Public Key (A temporary public key that is only used for the purpose of encrypting..." />
+  <meta property="article:published_time" content="2021-12-31T20:45:24+00:00" />
+  <meta property="og:ignore_canonical" content="true" />
+
+
+  <script
+    type="application/ld+json">{"@context":"http://schema.org","@type":"QAPage","name":"How to decrypt an encrypted transaction message created by the Radix Wallet","mainEntity":{"@type":"Question","name":"How to decrypt an encrypted transaction message created by the Radix Wallet","text":"<a name=\"how-to-decrypt-an-encrypted-transaction-message-created-by-the-radix-wallet-1\" class=\"anchor\" href="https://radixtalk.com/t/how-to-decrypt-an-encrypted-transaction-message-created-by-the-radix-wallet/\&quot;#how-to-decrypt-an-encrypted-transaction-message-created-by-the-radix-wallet-1\""><\/a>How to decrypt an encrypted transaction message created by the Radix Wallet\n\n<a name=\"h-0-introduction-2\" class=\"anchor\" href="https://radixtalk.com/t/how-to-decrypt-an-encrypted-transaction-message-created-by-the-radix-wallet/\&quot;#h-0-introduction-2\""><\/a>0. Introduction\n\nThe encryption scheme used by the Radix Wallet is called DH_ADD_EPH_AESGCM256_SCRYPT_000\n\nWhere:\n\nDH → <a href="https://radixtalk.com/t/how-to-decrypt-an-encrypted-transaction-message-created-by-the-radix-wallet/\&quot;https://cryptobook.nakov.com/asymmetric-key-ciphers/ecdh-key-exchange\&quot;">(Elliptic Curve) Diffie-Hellman<\/a> (A key exchange protocol that allows untrusted parties to construct a &hellip;","upvoteCount":0,"answerCount":0,"dateCreated":"2021-12-31T20:45:24.217Z","author":{"@type":"Person","name":"Stuart | RadixPool"}}}</script>
+</head>
+
+<body class="crawler">
+
+  <header>
+    <a href="https://radixtalk.com/">
+      <h1>RadixTalk</h1>
+    </a>
+  </header>
+
+  <div id="main-outlet" class="wrap" role="main">
+    <div id="topic-title">
+      <h1>
+        <a href="189.html">How to decrypt an encrypted transaction message created by the Radix Wallet</a>
+      </h1>
 
       <div class="topic-category" itemscope itemtype="http://schema.org/BreadcrumbList">
-          <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-            <a href="https://radixtalk.com/c/developers/24" class="badge-wrapper bullet" itemprop="item">
-              <span class='badge-category-bg' style='background-color: #F1592A'></span>
-              <span class='badge-category clear-badge'>
-                <span class='category-name' itemprop='name'>Developers</span>
-              </span>
-            </a>
-            <meta itemprop="position" content="1" />
-          </span>
+        <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a href="https://radixtalk.com/c/developers/24" class="badge-wrapper bullet" itemprop="item">
+            <span class='badge-category-bg' style='background-color: #F1592A'></span>
+            <span class='badge-category clear-badge'>
+              <span class='category-name' itemprop='name'>Developers</span>
+            </span>
+          </a>
+          <meta itemprop="position" content="1" />
+        </span>
       </div>
 
       <div class="topic-category">
         <div class='discourse-tags list-tags'>
-            <a href='../../tag/python.html' class='discourse-tag' rel="tag">python</a>, 
-            <a href='../../tag/howto.html' class='discourse-tag' rel="tag">howto</a>, 
-            <a href='../../tag/api.html' class='discourse-tag' rel="tag">api</a>, 
-            <a href='../../tag/replit.html' class='discourse-tag' rel="tag">replit</a>
+          <a href='../../tag/python.html' class='discourse-tag' rel="tag">python</a>,
+          <a href='../../tag/howto.html' class='discourse-tag' rel="tag">howto</a>,
+          <a href='../../tag/api.html' class='discourse-tag' rel="tag">api</a>,
+          <a href='../../tag/replit.html' class='discourse-tag' rel="tag">replit</a>
         </div>
       </div>
-  </div>
-
-  
+    </div>
 
 
-      <div id='post_1' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
-        <div class='crawler-post-meta'>
-          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
-            <meta itemprop='name' content='RadixTalk'>
-              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
-                <meta itemprop='url' content='https://radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
-              </div>
+
+
+    <div id='post_1' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+      <div class='crawler-post-meta'>
+        <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+          <meta itemprop='name' content='RadixTalk'>
+          <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+            <meta itemprop='url'
+              content='https://radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
           </div>
-          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <a itemprop="url" href='../../u/Stuart.html'><span itemprop='name'>Stuart</span></a>
-            (Stuart | RadixPool)
-          </span>
-
-          <link itemprop="mainEntityOfPage" href="189.html">
-
-
-          <span class="crawler-post-infos">
-              <time itemprop='datePublished' datetime='2021-12-31T20:45:24Z' class='post-time'>
-                31 December 2021 20:45
-              </time>
-              <meta itemprop='dateModified' content='2022-01-05T09:57:19Z'>
-          <span itemprop='position'>#1</span>
-          </span>
         </div>
-        <div class='post' itemprop='articleBody'>
-          <h1>
-<a name="how-to-decrypt-an-encrypted-transaction-message-created-by-the-radix-wallet-1" class="anchor" href="189.html#how-to-decrypt-an-encrypted-transaction-message-created-by-the-radix-wallet-1"></a>How to decrypt an encrypted transaction message created by the Radix Wallet</h1>
-<h2>
-<a name="h-0-introduction-2" class="anchor" href="189.html#h-0-introduction-2"></a>0. Introduction</h2>
-<p>The encryption scheme used by the Radix Wallet is called <code>DH_ADD_EPH_AESGCM256_SCRYPT_000</code></p>
-<p>Where:</p>
-<ul>
-<li>DH → <a href="https://cryptobook.nakov.com/asymmetric-key-ciphers/ecdh-key-exchange">(Elliptic Curve) Diffie-Hellman</a> (A key exchange protocol that allows untrusted parties to construct a shared secret)</li>
-<li>ADD → Elliptic Curve Point Addition (The operation we use to create the shared secret)</li>
-<li>EPH → Ephemeral Public Key (A temporary public key that is only used for the purpose of encrypting/decrypting the message)</li>
-<li>AESGCM256 → The symmetrical encryption algorithm used to encrypt/decrypt the message (Advanced Encryption Standard, Galios Counter Mode, 256 bits)</li>
-<li>SCRYPT → The Key Derivation Function (KDF) used (Scrypt)</li>
-<li>000 → The version of the scheme</li>
-</ul>
-<p>The encryption scheme allows both the sender and receiver to decrypt the message - but no one else.</p>
-<p>Alice sends the following encrypted message to Bob:</p>
-<p><code>01ff02663a6aaf4d5ec607330b9b74a840bf5c13b0a7357202fa85be56b1326065561657d6ee46d4d84e94ec615b425a472dd8c813bad125335a097d29b64b72319357406b2b04491b4ca1a5a05fe8772b0c05f4633b399914348c5b03af58445d42c2f740f8407e572775a571805e582c6b96ffd4ccca764f2002510abddaab735ee4fb0b18c26d</code></p>
-<p>Alice’s Wallet Address: <code>rdx1qsp8n0nx0muaewav2ksx99wwsu9swq5mlndjmn3gm9vl9q2mzmup0xqm2ylge</code></p>
-<p>Bob’s Wallet Address: <code>rdx1qspvvprlj3q76ltdxpz5qm54cp7dshrh3e9cemeu5746czdet3cfaegp8alwf</code></p>
-<p>For Bob to decrypt the message, he needs:</p>
-<ul>
-<li>Alice’s Public Key</li>
-<li>Bob’s Private Key</li>
-</ul>
-<h2>
-<a name="h-1-convert-alices-wallet-address-into-a-her-public-key-3" class="anchor" href="189.html#h-1-convert-alices-wallet-address-into-a-her-public-key-3"></a>1. Convert Alice’s Wallet address into a her Public Key:</h2>
-<pre><code class="lang-python">import bech32
+        <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a itemprop="url" href='../../u/Stuart.html'><span itemprop='name'>Stuart</span></a>
+          (Stuart | RadixPool)
+        </span>
+
+        <link itemprop="mainEntityOfPage" href="189.html">
+
+
+        <span class="crawler-post-infos">
+          <time itemprop='datePublished' datetime='2021-12-31T20:45:24Z' class='post-time'>
+            31 December 2021 20:45
+          </time>
+          <meta itemprop='dateModified' content='2022-01-05T09:57:19Z'>
+          <span itemprop='position'>#1</span>
+        </span>
+      </div>
+      <div class='post' itemprop='articleBody'>
+        <h1>
+          <a name="how-to-decrypt-an-encrypted-transaction-message-created-by-the-radix-wallet-1" class="anchor"
+            href="189.html#how-to-decrypt-an-encrypted-transaction-message-created-by-the-radix-wallet-1"></a>How to
+          decrypt an encrypted transaction message created by the Radix Wallet
+        </h1>
+        <h2>
+          <a name="h-0-introduction-2" class="anchor" href="189.html#h-0-introduction-2"></a>0. Introduction
+        </h2>
+        <p>The encryption scheme used by the Radix Wallet is called <code>DH_ADD_EPH_AESGCM256_SCRYPT_000</code></p>
+        <p>Where:</p>
+        <ul>
+          <li>DH → <a href="https://cryptobook.nakov.com/asymmetric-key-ciphers/ecdh-key-exchange">(Elliptic Curve)
+              Diffie-Hellman</a> (A key exchange protocol that allows untrusted parties to construct a shared secret)
+          </li>
+          <li>ADD → Elliptic Curve Point Addition (The operation we use to create the shared secret)</li>
+          <li>EPH → Ephemeral Public Key (A temporary public key that is only used for the purpose of
+            encrypting/decrypting the message)</li>
+          <li>AESGCM256 → The symmetrical encryption algorithm used to encrypt/decrypt the message (Advanced Encryption
+            Standard, Galios Counter Mode, 256 bits)</li>
+          <li>SCRYPT → The Key Derivation Function (KDF) used (Scrypt)</li>
+          <li>000 → The version of the scheme</li>
+        </ul>
+        <p>The encryption scheme allows both the sender and receiver to decrypt the message - but no one else.</p>
+        <p>Alice sends the following encrypted message to Bob:</p>
+        <p>
+          <code>01ff02663a6aaf4d5ec607330b9b74a840bf5c13b0a7357202fa85be56b1326065561657d6ee46d4d84e94ec615b425a472dd8c813bad125335a097d29b64b72319357406b2b04491b4ca1a5a05fe8772b0c05f4633b399914348c5b03af58445d42c2f740f8407e572775a571805e582c6b96ffd4ccca764f2002510abddaab735ee4fb0b18c26d</code>
+        </p>
+        <p>Alice’s Wallet Address: <code>rdx1qsp8n0nx0muaewav2ksx99wwsu9swq5mlndjmn3gm9vl9q2mzmup0xqm2ylge</code></p>
+        <p>Bob’s Wallet Address: <code>rdx1qspvvprlj3q76ltdxpz5qm54cp7dshrh3e9cemeu5746czdet3cfaegp8alwf</code></p>
+        <p>For Bob to decrypt the message, he needs:</p>
+        <ul>
+          <li>Alice’s Public Key</li>
+          <li>Bob’s Private Key</li>
+        </ul>
+        <h2>
+          <a name="h-1-convert-alices-wallet-address-into-a-her-public-key-3" class="anchor"
+            href="189.html#h-1-convert-alices-wallet-address-into-a-her-public-key-3"></a>1. Convert Alice’s Wallet
+          address into a her Public Key:
+        </h2>
+        <pre><code class="lang-python">import bech32
 
 alice_wallet_address = "rdx1qsp8n0nx0muaewav2ksx99wwsu9swq5mlndjmn3gm9vl9q2mzmup0xqm2ylge"
 
@@ -177,9 +261,13 @@ print("Alice Public Key:", alice_public_key_hex)
 
 # Alice Public Key: 0279be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798
 </code></pre>
-<h2>
-<a name="h-2-use-elliptic-curve-diffie-helmann-to-combine-alices-public-key-with-bobs-private-key-4" class="anchor" href="189.html#h-2-use-elliptic-curve-diffie-helmann-to-combine-alices-public-key-with-bobs-private-key-4"></a>2. Use Elliptic Curve Diffie-Helmann to combine Alice’s Public Key with Bob’s Private Key:</h2>
-<pre><code class="lang-python">import hashlib
+        <h2>
+          <a name="h-2-use-elliptic-curve-diffie-helmann-to-combine-alices-public-key-with-bobs-private-key-4"
+            class="anchor"
+            href="189.html#h-2-use-elliptic-curve-diffie-helmann-to-combine-alices-public-key-with-bobs-private-key-4"></a>2.
+          Use Elliptic Curve Diffie-Helmann to combine Alice’s Public Key with Bob’s Private Key:
+        </h2>
+        <pre><code class="lang-python">import hashlib
 from ecdsa.curves import SECP256k1
 from ecdsa.keys import SigningKey, VerifyingKey
 
@@ -193,10 +281,14 @@ bob_private_key = SigningKey.from_string(bytearray.fromhex(bob_private_key_hex),
 dh = alice_public_key.pubkey.point * bob_private_key.privkey.secret_multiplier
 
 </code></pre>
-<p><em>Note: Although it looks like a simple multiplication operation, the  * operator has been overridden in the ECDSA library to perform Elliptic Curve Diffie-Hellman calculation</em></p>
-<h2>
-<a name="h-3-slice-the-encrypted-message-into-its-component-parts-5" class="anchor" href="189.html#h-3-slice-the-encrypted-message-into-its-component-parts-5"></a>3. Slice the encrypted message into its component parts:</h2>
-<pre><code class="lang-python">encrypted_message = "01ff02663a6aaf4d5ec607330b9b74a840bf5c13b0a7357202fa85be56b1326065561657d6ee46d4d84e94ec615b425a472dd8c813bad125335a097d29b64b72319357406b2b04491b4ca1a5a05fe8772b0c05f4633b399914348c5b03af58445d42c2f740f8407e572775a571805e582c6b96ffd4ccca764f2002510abddaab735ee4fb0b18c26d"
+        <p><em>Note: Although it looks like a simple multiplication operation, the * operator has been overridden in the
+            ECDSA library to perform Elliptic Curve Diffie-Hellman calculation</em></p>
+        <h2>
+          <a name="h-3-slice-the-encrypted-message-into-its-component-parts-5" class="anchor"
+            href="189.html#h-3-slice-the-encrypted-message-into-its-component-parts-5"></a>3. Slice the encrypted
+          message into its component parts:
+        </h2>
+        <pre><code class="lang-python">encrypted_message = "01ff02663a6aaf4d5ec607330b9b74a840bf5c13b0a7357202fa85be56b1326065561657d6ee46d4d84e94ec615b425a472dd8c813bad125335a097d29b64b72319357406b2b04491b4ca1a5a05fe8772b0c05f4633b399914348c5b03af58445d42c2f740f8407e572775a571805e582c6b96ffd4ccca764f2002510abddaab735ee4fb0b18c26d"
 
 # Message Type: 01 (1 byte)
 message_type = encrypted_message[0:2]
@@ -217,30 +309,45 @@ auth_tag = encrypted_message[94:126]
 ciphertext = encrypted_message[126:]
 
 </code></pre>
-<h2>
-<a name="h-4-convert-the-ephemeral-public-key-into-a-curve-point-6" class="anchor" href="189.html#h-4-convert-the-ephemeral-public-key-into-a-curve-point-6"></a>4. Convert the Ephemeral Public Key into a Curve Point</h2>
-<pre><code class="lang-python"># Convert Ephemeral Public key into a Curve Point
+        <h2>
+          <a name="h-4-convert-the-ephemeral-public-key-into-a-curve-point-6" class="anchor"
+            href="189.html#h-4-convert-the-ephemeral-public-key-into-a-curve-point-6"></a>4. Convert the Ephemeral
+          Public Key into a Curve Point
+        </h2>
+        <pre><code class="lang-python"># Convert Ephemeral Public key into a Curve Point
 ephemeral_curve = VerifyingKey.from_string(bytearray.fromhex(ephemeral_public_key), curve=ecdsa.SECP256k1, hashfunc=hashlib.sha256)
 ephemeral_point = ephemeral_curve.pubkey.point
 </code></pre>
-<h2>
-<a name="h-5-use-elliptic-curve-point-addition-to-combine-the-dh-point-with-the-ephemeral-point-7" class="anchor" href="189.html#h-5-use-elliptic-curve-point-addition-to-combine-the-dh-point-with-the-ephemeral-point-7"></a>5. Use Elliptic Curve Point Addition to combine the DH Point with the Ephemeral Point</h2>
-<pre><code class="lang-python"># Elliptic Curve Point Addition
+        <h2>
+          <a name="h-5-use-elliptic-curve-point-addition-to-combine-the-dh-point-with-the-ephemeral-point-7"
+            class="anchor"
+            href="189.html#h-5-use-elliptic-curve-point-addition-to-combine-the-dh-point-with-the-ephemeral-point-7"></a>5.
+          Use Elliptic Curve Point Addition to combine the DH Point with the Ephemeral Point
+        </h2>
+        <pre><code class="lang-python"># Elliptic Curve Point Addition
 shared_secret_point = dh + ephemeral_point
 </code></pre>
-<p><em>Note: Although it looks like a simple addition operation, the + operator has been overridden in the ECDSA library to perform Elliptic Curve Point Addition</em></p>
-<h2>
-<a name="h-6-use-the-x-co-ordinate-of-the-shared-secret-point-as-the-shared-secret-8" class="anchor" href="189.html#h-6-use-the-x-co-ordinate-of-the-shared-secret-point-as-the-shared-secret-8"></a>6. Use the x co-ordinate of the Shared Secret Point as the Shared Secret</h2>
-<pre><code class="lang-python">shared_secret_integer = shared_secret_point.x()
+        <p><em>Note: Although it looks like a simple addition operation, the + operator has been overridden in the ECDSA
+            library to perform Elliptic Curve Point Addition</em></p>
+        <h2>
+          <a name="h-6-use-the-x-co-ordinate-of-the-shared-secret-point-as-the-shared-secret-8" class="anchor"
+            href="189.html#h-6-use-the-x-co-ordinate-of-the-shared-secret-point-as-the-shared-secret-8"></a>6. Use the x
+          co-ordinate of the Shared Secret Point as the Shared Secret
+        </h2>
+        <pre><code class="lang-python">shared_secret_integer = shared_secret_point.x()
 shared_secret_hex = hex(shared_secret_integer)[2:]
 
 print("Shared Secret:", shared_secret_hex)
 
 # Shared Secret: 64567aaa53dadd0d9dade89aca0beba4ea00ff987d986f5af421ff2bd636ca9d
 </code></pre>
-<h2>
-<a name="h-7-use-the-scrypt-key-derivation-function-kdf-to-convert-the-shared-secret-into-the-message-decryption-key-9" class="anchor" href="189.html#h-7-use-the-scrypt-key-derivation-function-kdf-to-convert-the-shared-secret-into-the-message-decryption-key-9"></a>7. Use the Scrypt Key Derivation Function (KDF) to convert the shared secret into the message decryption key:</h2>
-<pre><code class="lang-python">from Crypto.Protocol.KDF import scrypt
+        <h2>
+          <a name="h-7-use-the-scrypt-key-derivation-function-kdf-to-convert-the-shared-secret-into-the-message-decryption-key-9"
+            class="anchor"
+            href="189.html#h-7-use-the-scrypt-key-derivation-function-kdf-to-convert-the-shared-secret-into-the-message-decryption-key-9"></a>7.
+          Use the Scrypt Key Derivation Function (KDF) to convert the shared secret into the message decryption key:
+        </h2>
+        <pre><code class="lang-python">from Crypto.Protocol.KDF import scrypt
 
 # Create the Scrypt salt from the SHA256 of the nonce
 salt = hashlib.sha256(bytearray.fromhex(nonce)).digest()
@@ -252,9 +359,12 @@ print("Decryption Key:", key.hex())
 
 # Decryption Key: 7a294fd759ffdba936f46f5c773c7c8bd3e44064572b926e4e3e0b7291897a30
 </code></pre>
-<h2>
-<a name="h-8-decrypt-the-cipher-text-with-the-decryption-key-using-aes-gcm-10" class="anchor" href="189.html#h-8-decrypt-the-cipher-text-with-the-decryption-key-using-aes-gcm-10"></a>8. Decrypt the cipher text with the decryption key using AES-GCM:</h2>
-<pre><code class="lang-python">from Crypto.Cipher import AES
+        <h2>
+          <a name="h-8-decrypt-the-cipher-text-with-the-decryption-key-using-aes-gcm-10" class="anchor"
+            href="189.html#h-8-decrypt-the-cipher-text-with-the-decryption-key-using-aes-gcm-10"></a>8. Decrypt the
+          cipher text with the decryption key using AES-GCM:
+        </h2>
+        <pre><code class="lang-python">from Crypto.Cipher import AES
 
 decrypt = AES.new(key, AES.MODE_GCM, nonce=bytearray.fromhex(nonce))
 
@@ -267,9 +377,11 @@ print("Plaintext Message:", msg)
 
 # Plaintext Message: b'Hey Bob, this is Alice, you and I can read this message, but no one else.'
 </code></pre>
-<h2>
-<a name="h-8-the-entire-script-11" class="anchor" href="189.html#h-8-the-entire-script-11"></a>8. The Entire Script:</h2>
-<pre><code class="lang-python">import bech32
+        <h2>
+          <a name="h-8-the-entire-script-11" class="anchor" href="189.html#h-8-the-entire-script-11"></a>8. The Entire
+          Script:
+        </h2>
+        <pre><code class="lang-python">import bech32
 import ecdsa
 import hashlib
 from ecdsa.curves import SECP256k1
@@ -348,339 +460,380 @@ msg = decrypt.decrypt_and_verify(bytearray.fromhex(ciphertext), bytearray.fromhe
 print("Plaintext Message:", msg)
 
 </code></pre>
-<h2>
-<a name="run-this-code-on-replit-12" class="anchor" href="189.html#run-this-code-on-replit-12"></a>Run this code on Replit</h2>
-<p><iframe src="https://replit.com/@radixtalk/Decrypt-Transaction-Message?lite=true" width="695" height="521" frameborder="0" seamless="seamless" sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox allow-presentation"></iframe></p>
-<p>Also see: <a href="../how-to-encrypt-a-transaction-message-that-can-be-read-by-the-radix-wallet/202.html" class="inline-onebox">How to encrypt a transaction message that can be read by the Radix Wallet</a></p>
-<p>This work by <a href="https://radixpool.com">RadixPool.com</a> is licensed under a <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
-        </div>
-
-        <meta itemprop='headline' content='How to decrypt an encrypted transaction message created by the Radix Wallet'>
-          <meta itemprop='keywords' content='python, howto, api, replit'>
-
-        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
-           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
-           <meta itemprop="userInteractionCount" content="0" />
-           <span class='post-likes'></span>
-         </div>
-
-         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
-            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
-            <meta itemprop="userInteractionCount" content="1" />
-          </div>
-
-            <div class='crawler-linkback-list' itemscope itemtype='http://schema.org/ItemList'>
-                  <div itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
-                    <a href="../how-to-encrypt-a-transaction-message-that-can-be-read-by-the-radix-wallet/202.html" itemscope itemtype='http://schema.org/DiscussionForumPosting' itemprop='item'>
-                      <meta itemprop='url' content='https://radixtalk.com/t/how-to-encrypt-a-transaction-message-that-can-be-read-by-the-radix-wallet/202'>
-                      <span itemprop='name'>How to encrypt a transaction message that can be read by the Radix Wallet</span>
-                    </a>
-                    <meta itemprop='position' content='4'>
-                  </div>
-                  <div itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
-                    <a href="../how-do-i-encode-a-transaction-message-so-that-it-displays-correctly-in-the-radix-desktop-wallet/170/7.html" itemscope itemtype='http://schema.org/DiscussionForumPosting' itemprop='item'>
-                      <meta itemprop='url' content='https://radixtalk.com/t/how-do-i-encode-a-transaction-message-so-that-it-displays-correctly-in-the-radix-desktop-wallet/170/7'>
-                      <span itemprop='name'>How do I encode a transaction message so that it displays correctly in the Radix Desktop Wallet?</span>
-                    </a>
-                    <meta itemprop='position' content='5'>
-                  </div>
-            </div>
+        <h2>
+          <a name="run-this-code-on-replit-12" class="anchor" href="189.html#run-this-code-on-replit-12"></a>Run this
+          code on Replit
+        </h2>
+        <p><iframe src="https://replit.com/@radixtalk/Decrypt-Transaction-Message?lite=true" width="695" height="521"
+            frameborder="0" seamless="seamless"
+            sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox allow-presentation"></iframe>
+        </p>
+        <p>Also see: <a href="../how-to-encrypt-a-transaction-message-that-can-be-read-by-the-radix-wallet/202.html"
+            class="inline-onebox">How to encrypt a transaction message that can be read by the Radix Wallet</a></p>
+        <p>This work by <a href="https://radixpool.com">RadixPool.com</a> is licensed under a <a
+            href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International
+            License</a>.</p>
       </div>
-      <div id='post_2' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
-        <div class='crawler-post-meta'>
-          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
-            <meta itemprop='name' content='RadixTalk'>
-              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
-                <meta itemprop='url' content='https://radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
-              </div>
+
+      <meta itemprop='headline' content='How to decrypt an encrypted transaction message created by the Radix Wallet'>
+      <meta itemprop='keywords' content='python, howto, api, replit'>
+
+      <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+        <meta itemprop="interactionType" content="http://schema.org/LikeAction" />
+        <meta itemprop="userInteractionCount" content="0" />
+        <span class='post-likes'></span>
+      </div>
+
+      <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+        <meta itemprop="interactionType" content="http://schema.org/CommentAction" />
+        <meta itemprop="userInteractionCount" content="1" />
+      </div>
+
+      <div class='crawler-linkback-list' itemscope itemtype='http://schema.org/ItemList'>
+        <div itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+          <a href="../how-to-encrypt-a-transaction-message-that-can-be-read-by-the-radix-wallet/202.html" itemscope
+            itemtype='http://schema.org/DiscussionForumPosting' itemprop='item'>
+            <meta itemprop='url'
+              content='https://radixtalk.com/t/how-to-encrypt-a-transaction-message-that-can-be-read-by-the-radix-wallet/202'>
+            <span itemprop='name'>How to encrypt a transaction message that can be read by the Radix Wallet</span>
+          </a>
+          <meta itemprop='position' content='4'>
+        </div>
+        <div itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+          <a href="../how-do-i-encode-a-transaction-message-so-that-it-displays-correctly-in-the-radix-desktop-wallet/170/7.html"
+            itemscope itemtype='http://schema.org/DiscussionForumPosting' itemprop='item'>
+            <meta itemprop='url'
+              content='https://radixtalk.com/t/how-do-i-encode-a-transaction-message-so-that-it-displays-correctly-in-the-radix-desktop-wallet/170/7'>
+            <span itemprop='name'>How do I encode a transaction message so that it displays correctly in the Radix
+              Desktop Wallet?</span>
+          </a>
+          <meta itemprop='position' content='5'>
+        </div>
+      </div>
+    </div>
+    <div id='post_2' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+      <div class='crawler-post-meta'>
+        <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+          <meta itemprop='name' content='RadixTalk'>
+          <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+            <meta itemprop='url'
+              content='https://radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
           </div>
-          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <a itemprop="url" href='../../u/Stuart.html'><span itemprop='name'>Stuart</span></a>
-            (Stuart | RadixPool)
-          </span>
+        </div>
+        <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a itemprop="url" href='../../u/Stuart.html'><span itemprop='name'>Stuart</span></a>
+          (Stuart | RadixPool)
+        </span>
 
-          <link itemprop="mainEntityOfPage" href="189.html">
+        <link itemprop="mainEntityOfPage" href="189.html">
 
 
-          <span class="crawler-post-infos">
-              <time itemprop='datePublished' datetime='2022-01-01T19:37:50Z' class='post-time'>
-                1 January 2022 19:37
-              </time>
-              <meta itemprop='dateModified' content='2022-01-01T19:37:50Z'>
+        <span class="crawler-post-infos">
+          <time itemprop='datePublished' datetime='2022-01-01T19:37:50Z' class='post-time'>
+            1 January 2022 19:37
+          </time>
+          <meta itemprop='dateModified' content='2022-01-01T19:37:50Z'>
           <span itemprop='position'>#2</span>
-          </span>
-        </div>
-        <div class='post' itemprop='articleBody'>
-          <p>Similarly, Alice can decrypt her message that she sent to Bob with:</p>
-<ul>
-<li>Alice’s Private Key</li>
-<li>Bob’s Public Key</li>
-</ul>
-<p>DH = Alice Private Key * Bob Public Key = Alice Public Key * Bob Private Key</p>
-        </div>
-
-        <meta itemprop='headline' content='How to decrypt an encrypted transaction message created by the Radix Wallet'>
-
-        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
-           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
-           <meta itemprop="userInteractionCount" content="0" />
-           <span class='post-likes'></span>
-         </div>
-
-         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
-            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
-            <meta itemprop="userInteractionCount" content="0" />
-          </div>
-
+        </span>
       </div>
-      <div id='post_3' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
-        <div class='crawler-post-meta'>
-          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
-            <meta itemprop='name' content='RadixTalk'>
-              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
-                <meta itemprop='url' content='https://radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
-              </div>
-          </div>
-          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <a itemprop="url" href='../../u/minhnn.html'><span itemprop='name'>minhnn</span></a>
-            (minhnn | EasyStake.net)
-          </span>
-
-          <link itemprop="mainEntityOfPage" href="189.html">
-
-
-          <span class="crawler-post-infos">
-              <time itemprop='datePublished' datetime='2022-01-03T05:29:54Z' class='post-time'>
-                3 January 2022 05:29
-              </time>
-              <meta itemprop='dateModified' content='2022-01-03T05:29:54Z'>
-          <span itemprop='position'>#3</span>
-          </span>
-        </div>
-        <div class='post' itemprop='articleBody'>
-          <aside class="quote no-group" data-username="Stuart" data-post="1" data-topic="189">
-<div class="title">
-<div class="quote-controls"></div>
-<img loading="lazy" alt="" width="20" height="20" src="../../letter_avatar_proxy/v4/letter/s/cab0a1/40.png" class="avatar"> Stuart:</div>
-<blockquote>
-<p><code>message_type = encrypted_message[1:2]</code></p>
-</blockquote>
-</aside>
-<p>I have a small suggestion that this should be changed to message_type = encrypted_message[0:2] to get the string value of “01”</p>
-<p>Also could you be able to verify the auth_tag ? I test with your hard coded data, then if we do AES encrypt with empty associatedData, then the auth_tag should be “101416c4f912797fe53f87c3f96f4374”</p>
-<p>If the auth_tag is “5a472dd8c813bad125335a097d29b64b” then it means Alice encrypted via AES with some value of associatedData (this is a parameter name of AEADParameters in the pointycastle library)</p>
-        </div>
-
-        <meta itemprop='headline' content='How to decrypt an encrypted transaction message created by the Radix Wallet'>
-
-        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
-           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
-           <meta itemprop="userInteractionCount" content="0" />
-           <span class='post-likes'></span>
-         </div>
-
-         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
-            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
-            <meta itemprop="userInteractionCount" content="1" />
-          </div>
-
-      </div>
-      <div id='post_4' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
-        <div class='crawler-post-meta'>
-          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
-            <meta itemprop='name' content='RadixTalk'>
-              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
-                <meta itemprop='url' content='https://radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
-              </div>
-          </div>
-          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <a itemprop="url" href='../../u/Stuart.html'><span itemprop='name'>Stuart</span></a>
-            (Stuart | RadixPool)
-          </span>
-
-          <link itemprop="mainEntityOfPage" href="189.html">
-
-
-          <span class="crawler-post-infos">
-              <time itemprop='datePublished' datetime='2022-01-03T10:15:44Z' class='post-time'>
-                3 January 2022 10:15
-              </time>
-              <meta itemprop='dateModified' content='2022-01-03T10:15:44Z'>
-          <span itemprop='position'>#4</span>
-          </span>
-        </div>
-        <div class='post' itemprop='articleBody'>
-          <aside class="quote no-group" data-username="minhnn" data-post="3" data-topic="189">
-<div class="title">
-<div class="quote-controls"></div>
-<img loading="lazy" alt="" width="20" height="20" src="../../letter_avatar_proxy/v4/letter/m/97f17d/40.png" class="avatar"> minhnn:</div>
-<blockquote>
-<p>I have a small suggestion that this should be changed to message_type = encrypted_message[0:2] to get the string value of “01”</p>
-</blockquote>
-</aside>
-<p>Doh! Thanks, I’ve edited the code to fix that.</p>
-<aside class="quote no-group" data-username="minhnn" data-post="3" data-topic="189">
-<div class="title">
-<div class="quote-controls"></div>
-<img loading="lazy" alt="" width="20" height="20" src="../../letter_avatar_proxy/v4/letter/m/97f17d/40.png" class="avatar"> minhnn:</div>
-<blockquote>
-<p>Also could you be able to verify the auth_tag ?</p>
-</blockquote>
-</aside>
-<p>I originally used <code>decrypt.decrypt_and_verify(bytearray.fromhex(ciphertext), bytearray.fromhex(auth_tag))</code> but the MAC (Message Authentication Code) check always failed. I didn’t notice the message was decrypting “correctly” until I split the operation into separate <code>decrypt</code> and then <code>verify</code> steps. Of course the <code>verify</code> step using the auth_tag should be working to ensure that the decrypted message is verifiably correct.</p>
-<aside class="quote no-group" data-username="minhnn" data-post="3" data-topic="189">
-<div class="title">
-<div class="quote-controls"></div>
-<img loading="lazy" alt="" width="20" height="20" src="../../letter_avatar_proxy/v4/letter/m/97f17d/40.png" class="avatar"> minhnn:</div>
-<blockquote>
-<p>If the auth_tag is “5a472dd8c813bad125335a097d29b64b” then it means Alice encrypted via AES with some value of associatedData</p>
-</blockquote>
-</aside>
-<p>Yes, I think you’re right. The problem is almost certainly related to associated data. Associated data is not encrypted as part of the ciphertext but is used when calculating the auth_tag.</p>
-<p>Once the auth_tag problem is fixed then I’ll be able to write up a guide to encrypting messages. Hopefully that will be very soon™…</p>
-        </div>
-
-        <meta itemprop='headline' content='How to decrypt an encrypted transaction message created by the Radix Wallet'>
-
-        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
-           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
-           <meta itemprop="userInteractionCount" content="0" />
-           <span class='post-likes'></span>
-         </div>
-
-         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
-            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
-            <meta itemprop="userInteractionCount" content="1" />
-          </div>
-
-      </div>
-      <div id='post_5' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
-        <div class='crawler-post-meta'>
-          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
-            <meta itemprop='name' content='RadixTalk'>
-              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
-                <meta itemprop='url' content='https://radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
-              </div>
-          </div>
-          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <a itemprop="url" href='../../u/Stuart.html'><span itemprop='name'>Stuart</span></a>
-            (Stuart | RadixPool)
-          </span>
-
-          <link itemprop="mainEntityOfPage" href="189.html">
-
-
-          <span class="crawler-post-infos">
-              <time itemprop='datePublished' datetime='2022-01-03T15:08:05Z' class='post-time'>
-                3 January 2022 15:08
-              </time>
-              <meta itemprop='dateModified' content='2022-01-03T15:20:34Z'>
-          <span itemprop='position'>#5</span>
-          </span>
-        </div>
-        <div class='post' itemprop='articleBody'>
-          <p>The <code>decrypt_and_verify</code> function works correctly now. I had to add the following line to include the associated data before calling the <code>decrypt_and_verify</code> function:</p>
-<p><code>decrypt.update(bytearray.fromhex(ephemeral_public_key))</code></p>
-        </div>
-
-        <meta itemprop='headline' content='How to decrypt an encrypted transaction message created by the Radix Wallet'>
-
-        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
-           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
-           <meta itemprop="userInteractionCount" content="0" />
-           <span class='post-likes'></span>
-         </div>
-
-         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
-            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
-            <meta itemprop="userInteractionCount" content="0" />
-          </div>
-
-      </div>
-      <div id='post_6' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
-        <div class='crawler-post-meta'>
-          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
-            <meta itemprop='name' content='RadixTalk'>
-              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
-                <meta itemprop='url' content='https://radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
-              </div>
-          </div>
-          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <a itemprop="url" href='../../u/minhnn.html'><span itemprop='name'>minhnn</span></a>
-            (minhnn | EasyStake.net)
-          </span>
-
-          <link itemprop="mainEntityOfPage" href="189.html">
-
-
-          <span class="crawler-post-infos">
-              <time itemprop='datePublished' datetime='2022-01-03T17:35:22Z' class='post-time'>
-                3 January 2022 17:35
-              </time>
-              <meta itemprop='dateModified' content='2022-01-03T17:35:22Z'>
-          <span itemprop='position'>#6</span>
-          </span>
-        </div>
-        <div class='post' itemprop='articleBody'>
-          <p>Thanks, I tested and including the associated data will make the verify successfully, and port your code to pointycastle library also work correctly.</p>
-        </div>
-
-        <meta itemprop='headline' content='How to decrypt an encrypted transaction message created by the Radix Wallet'>
-
-        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
-           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
-           <meta itemprop="userInteractionCount" content="0" />
-           <span class='post-likes'></span>
-         </div>
-
-         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
-            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
-            <meta itemprop="userInteractionCount" content="0" />
-          </div>
-
+      <div class='post' itemprop='articleBody'>
+        <p>Similarly, Alice can decrypt her message that she sent to Bob with:</p>
+        <ul>
+          <li>Alice’s Private Key</li>
+          <li>Bob’s Public Key</li>
+        </ul>
+        <p>DH = Alice Private Key * Bob Public Key = Alice Public Key * Bob Private Key</p>
       </div>
 
+      <meta itemprop='headline' content='How to decrypt an encrypted transaction message created by the Radix Wallet'>
 
+      <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+        <meta itemprop="interactionType" content="http://schema.org/LikeAction" />
+        <meta itemprop="userInteractionCount" content="0" />
+        <span class='post-likes'></span>
+      </div>
 
-
-
+      <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+        <meta itemprop="interactionType" content="http://schema.org/CommentAction" />
+        <meta itemprop="userInteractionCount" content="0" />
+      </div>
 
     </div>
-    <footer class="container wrap">
-  <nav class='crawler-nav'>
-    <ul>
-      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
-        <span itemprop='name'>
-          <a href='https://radixtalk.com/' itemprop="url">Home </a>
+    <div id='post_3' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+      <div class='crawler-post-meta'>
+        <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+          <meta itemprop='name' content='RadixTalk'>
+          <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+            <meta itemprop='url'
+              content='https://radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+          </div>
+        </div>
+        <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a itemprop="url" href='../../u/minhnn.html'><span itemprop='name'>minhnn</span></a>
+          (minhnn | EasyStake.net)
         </span>
-      </li>
-      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
-        <span itemprop='name'>
-          <a href='https://radixtalk.com/categories' itemprop="url">Categories </a>
-        </span>
-      </li>
-      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
-        <span itemprop='name'>
-          <a href='https://radixtalk.com/guidelines' itemprop="url">FAQ/Guidelines </a>
-        </span>
-      </li>
-      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
-        <span itemprop='name'>
-          <a href='https://radixtalk.com/tos' itemprop="url">Terms of Service </a>
-        </span>
-      </li>
-      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
-        <span itemprop='name'>
-          <a href='https://radixtalk.com/privacy' itemprop="url">Privacy Policy </a>
-        </span>
-      </li>
-    </ul>
-  </nav>
-  <p class='powered-by-link'>Powered by <a href="https://www.discourse.org">Discourse</a>, best viewed with JavaScript enabled</p>
-</footer>
 
-    
-    
-  </body>
-  
+        <link itemprop="mainEntityOfPage" href="189.html">
+
+
+        <span class="crawler-post-infos">
+          <time itemprop='datePublished' datetime='2022-01-03T05:29:54Z' class='post-time'>
+            3 January 2022 05:29
+          </time>
+          <meta itemprop='dateModified' content='2022-01-03T05:29:54Z'>
+          <span itemprop='position'>#3</span>
+        </span>
+      </div>
+      <div class='post' itemprop='articleBody'>
+        <aside class="quote no-group" data-username="Stuart" data-post="1" data-topic="189">
+          <div class="title">
+            <div class="quote-controls"></div>
+            <img loading="lazy" alt="" width="20" height="20" src="../../letter_avatar_proxy/v4/letter/s/cab0a1/40.png"
+              class="avatar"> Stuart:
+          </div>
+          <blockquote>
+            <p><code>message_type = encrypted_message[1:2]</code></p>
+          </blockquote>
+        </aside>
+        <p>I have a small suggestion that this should be changed to message_type = encrypted_message[0:2] to get the
+          string value of “01”</p>
+        <p>Also could you be able to verify the auth_tag ? I test with your hard coded data, then if we do AES encrypt
+          with empty associatedData, then the auth_tag should be “101416c4f912797fe53f87c3f96f4374”</p>
+        <p>If the auth_tag is “5a472dd8c813bad125335a097d29b64b” then it means Alice encrypted via AES with some value
+          of associatedData (this is a parameter name of AEADParameters in the pointycastle library)</p>
+      </div>
+
+      <meta itemprop='headline' content='How to decrypt an encrypted transaction message created by the Radix Wallet'>
+
+      <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+        <meta itemprop="interactionType" content="http://schema.org/LikeAction" />
+        <meta itemprop="userInteractionCount" content="0" />
+        <span class='post-likes'></span>
+      </div>
+
+      <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+        <meta itemprop="interactionType" content="http://schema.org/CommentAction" />
+        <meta itemprop="userInteractionCount" content="1" />
+      </div>
+
+    </div>
+    <div id='post_4' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+      <div class='crawler-post-meta'>
+        <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+          <meta itemprop='name' content='RadixTalk'>
+          <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+            <meta itemprop='url'
+              content='https://radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+          </div>
+        </div>
+        <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a itemprop="url" href='../../u/Stuart.html'><span itemprop='name'>Stuart</span></a>
+          (Stuart | RadixPool)
+        </span>
+
+        <link itemprop="mainEntityOfPage" href="189.html">
+
+
+        <span class="crawler-post-infos">
+          <time itemprop='datePublished' datetime='2022-01-03T10:15:44Z' class='post-time'>
+            3 January 2022 10:15
+          </time>
+          <meta itemprop='dateModified' content='2022-01-03T10:15:44Z'>
+          <span itemprop='position'>#4</span>
+        </span>
+      </div>
+      <div class='post' itemprop='articleBody'>
+        <aside class="quote no-group" data-username="minhnn" data-post="3" data-topic="189">
+          <div class="title">
+            <div class="quote-controls"></div>
+            <img loading="lazy" alt="" width="20" height="20" src="../../letter_avatar_proxy/v4/letter/m/97f17d/40.png"
+              class="avatar"> minhnn:
+          </div>
+          <blockquote>
+            <p>I have a small suggestion that this should be changed to message_type = encrypted_message[0:2] to get the
+              string value of “01”</p>
+          </blockquote>
+        </aside>
+        <p>Doh! Thanks, I’ve edited the code to fix that.</p>
+        <aside class="quote no-group" data-username="minhnn" data-post="3" data-topic="189">
+          <div class="title">
+            <div class="quote-controls"></div>
+            <img loading="lazy" alt="" width="20" height="20" src="../../letter_avatar_proxy/v4/letter/m/97f17d/40.png"
+              class="avatar"> minhnn:
+          </div>
+          <blockquote>
+            <p>Also could you be able to verify the auth_tag ?</p>
+          </blockquote>
+        </aside>
+        <p>I originally used
+          <code>decrypt.decrypt_and_verify(bytearray.fromhex(ciphertext), bytearray.fromhex(auth_tag))</code> but the
+          MAC (Message Authentication Code) check always failed. I didn’t notice the message was decrypting “correctly”
+          until I split the operation into separate <code>decrypt</code> and then <code>verify</code> steps. Of course
+          the <code>verify</code> step using the auth_tag should be working to ensure that the decrypted message is
+          verifiably correct.</p>
+        <aside class="quote no-group" data-username="minhnn" data-post="3" data-topic="189">
+          <div class="title">
+            <div class="quote-controls"></div>
+            <img loading="lazy" alt="" width="20" height="20" src="../../letter_avatar_proxy/v4/letter/m/97f17d/40.png"
+              class="avatar"> minhnn:
+          </div>
+          <blockquote>
+            <p>If the auth_tag is “5a472dd8c813bad125335a097d29b64b” then it means Alice encrypted via AES with some
+              value of associatedData</p>
+          </blockquote>
+        </aside>
+        <p>Yes, I think you’re right. The problem is almost certainly related to associated data. Associated data is not
+          encrypted as part of the ciphertext but is used when calculating the auth_tag.</p>
+        <p>Once the auth_tag problem is fixed then I’ll be able to write up a guide to encrypting messages. Hopefully
+          that will be very soon™…</p>
+      </div>
+
+      <meta itemprop='headline' content='How to decrypt an encrypted transaction message created by the Radix Wallet'>
+
+      <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+        <meta itemprop="interactionType" content="http://schema.org/LikeAction" />
+        <meta itemprop="userInteractionCount" content="0" />
+        <span class='post-likes'></span>
+      </div>
+
+      <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+        <meta itemprop="interactionType" content="http://schema.org/CommentAction" />
+        <meta itemprop="userInteractionCount" content="1" />
+      </div>
+
+    </div>
+    <div id='post_5' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+      <div class='crawler-post-meta'>
+        <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+          <meta itemprop='name' content='RadixTalk'>
+          <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+            <meta itemprop='url'
+              content='https://radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+          </div>
+        </div>
+        <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a itemprop="url" href='../../u/Stuart.html'><span itemprop='name'>Stuart</span></a>
+          (Stuart | RadixPool)
+        </span>
+
+        <link itemprop="mainEntityOfPage" href="189.html">
+
+
+        <span class="crawler-post-infos">
+          <time itemprop='datePublished' datetime='2022-01-03T15:08:05Z' class='post-time'>
+            3 January 2022 15:08
+          </time>
+          <meta itemprop='dateModified' content='2022-01-03T15:20:34Z'>
+          <span itemprop='position'>#5</span>
+        </span>
+      </div>
+      <div class='post' itemprop='articleBody'>
+        <p>The <code>decrypt_and_verify</code> function works correctly now. I had to add the following line to include
+          the associated data before calling the <code>decrypt_and_verify</code> function:</p>
+        <p><code>decrypt.update(bytearray.fromhex(ephemeral_public_key))</code></p>
+      </div>
+
+      <meta itemprop='headline' content='How to decrypt an encrypted transaction message created by the Radix Wallet'>
+
+      <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+        <meta itemprop="interactionType" content="http://schema.org/LikeAction" />
+        <meta itemprop="userInteractionCount" content="0" />
+        <span class='post-likes'></span>
+      </div>
+
+      <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+        <meta itemprop="interactionType" content="http://schema.org/CommentAction" />
+        <meta itemprop="userInteractionCount" content="0" />
+      </div>
+
+    </div>
+    <div id='post_6' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+      <div class='crawler-post-meta'>
+        <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+          <meta itemprop='name' content='RadixTalk'>
+          <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+            <meta itemprop='url'
+              content='https://radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+          </div>
+        </div>
+        <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a itemprop="url" href='../../u/minhnn.html'><span itemprop='name'>minhnn</span></a>
+          (minhnn | EasyStake.net)
+        </span>
+
+        <link itemprop="mainEntityOfPage" href="189.html">
+
+
+        <span class="crawler-post-infos">
+          <time itemprop='datePublished' datetime='2022-01-03T17:35:22Z' class='post-time'>
+            3 January 2022 17:35
+          </time>
+          <meta itemprop='dateModified' content='2022-01-03T17:35:22Z'>
+          <span itemprop='position'>#6</span>
+        </span>
+      </div>
+      <div class='post' itemprop='articleBody'>
+        <p>Thanks, I tested and including the associated data will make the verify successfully, and port your code to
+          pointycastle library also work correctly.</p>
+      </div>
+
+      <meta itemprop='headline' content='How to decrypt an encrypted transaction message created by the Radix Wallet'>
+
+      <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+        <meta itemprop="interactionType" content="http://schema.org/LikeAction" />
+        <meta itemprop="userInteractionCount" content="0" />
+        <span class='post-likes'></span>
+      </div>
+
+      <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+        <meta itemprop="interactionType" content="http://schema.org/CommentAction" />
+        <meta itemprop="userInteractionCount" content="0" />
+      </div>
+
+    </div>
+
+
+
+
+
+
+  </div>
+  <footer class="container wrap">
+    <nav class='crawler-nav'>
+      <ul>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='https://radixtalk.com/' itemprop="url">Home </a>
+          </span>
+        </li>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='https://radixtalk.com/categories' itemprop="url">Categories </a>
+          </span>
+        </li>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='https://radixtalk.com/guidelines' itemprop="url">FAQ/Guidelines </a>
+          </span>
+        </li>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='https://radixtalk.com/tos' itemprop="url">Terms of Service </a>
+          </span>
+        </li>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='https://radixtalk.com/privacy' itemprop="url">Privacy Policy </a>
+          </span>
+        </li>
+      </ul>
+    </nav>
+    <p class='powered-by-link'>Powered by <a href="https://www.discourse.org">Discourse</a>, best viewed with JavaScript
+      enabled</p>
+  </footer>
+
+
+
+</body>
+
 </html>

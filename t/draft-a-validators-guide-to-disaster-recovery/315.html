@@ -1,185 +1,279 @@
 <!DOCTYPE html>
 <html lang="en-GB">
-  <head>
-    <meta charset="utf-8">
-    <title>DRAFT: A Validators Guide to Disaster Recovery - Validators - RadixTalk</title>
-    <meta name="description" content="Overview
-A major incident is when your validator node becomes unavailable on the Radix Public Network and you are unable to fail over to a backup node in a timely manner. 
+
+<head>
+  <meta charset="utf-8">
+  <title>DRAFT: A Validators Guide to Disaster Recovery - Validators - RadixTalk</title>
+  <meta name="description" content="Overview
+A major incident is when your validator node becomes unavailable on the Radix Public Network and you are unable to fail over to a backup node in a timely manner.
 You should strongly consider unregistering your&amp;hellip;">
-    <meta name="generator" content="Discourse 2.9.0.beta4 - https://github.com/discourse/discourse version b65ecf69871656155c381343cd84de919cbbf803">
-<link rel="icon" type="image/png" href="../../uploads/default/optimized/1X/023c6f3e74bac599c495c37eecd72f939f3fab87_2_32x32.png">
-<link rel="apple-touch-icon" type="image/png" href="../../uploads/default/optimized/1X/ad9adb26331754b0012edbc9b4796de8dc449fa8_2_180x180.png">
-<meta name="theme-color" content="#ffffff">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
-<link rel="canonical" href="315.html" />
-<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebSite","url":"https://radixtalk.com","potentialAction":{"@type":"SearchAction","target":"https://radixtalk.com/search?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
-<link rel="search" type="application/opensearchdescription+xml" href="../../opensearch.xml" title="RadixTalk Search">
+  <meta name="generator"
+    content="Discourse 2.9.0.beta4 - https://github.com/discourse/discourse version b65ecf69871656155c381343cd84de919cbbf803">
+  <link rel="icon" type="image/png"
+    href="../../uploads/default/optimized/1X/023c6f3e74bac599c495c37eecd72f939f3fab87_2_32x32.png">
+  <link rel="apple-touch-icon" type="image/png"
+    href="../../uploads/default/optimized/1X/ad9adb26331754b0012edbc9b4796de8dc449fa8_2_180x180.png">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <link rel="canonical" href="315.html" />
+  <script
+    type="application/ld+json">{"@context":"http://schema.org","@type":"WebSite","url":"https://radixtalk.com","potentialAction":{"@type":"SearchAction","target":"https://radixtalk.com/search?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
+  <link rel="search" type="application/opensearchdescription+xml" href="../../opensearch.xml" title="RadixTalk Search">
 
-    <link href="https://radixtalk.com/stylesheets/color_definitions_light_4_1_328257c7bbc55122a1aafbbd296477820001ddd2.css?__ws=radixtalk.com" media="all" rel="stylesheet" class="light-scheme"/>
+  <link
+    href="https://radixtalk.com/stylesheets/color_definitions_light_4_1_328257c7bbc55122a1aafbbd296477820001ddd2.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" class="light-scheme" />
 
-  <link href="https://radixtalk.com/stylesheets/desktop_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="desktop"  />
-
-
-  <link href="https://radixtalk.com/stylesheets/discourse-akismet_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-akismet"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-automation_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-automation"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-cakeday_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-cakeday"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-canned-replies_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-canned-replies"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-checklist_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-checklist"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-data-explorer_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-data-explorer"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-details_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-details"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-docs_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-docs"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-follow_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-follow"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-fontawesome-pro_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-fontawesome-pro"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-footnote_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-footnote"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-local-dates_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-local-dates"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-presence_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-presence"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-rss-polling_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-rss-polling"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-saved-searches_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-saved-searches"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-solved_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-solved"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-tooltips_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-tooltips"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-user-notes_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-user-notes"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-voting_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-voting"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-whos-online_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-whos-online"  />
-  <link href="https://radixtalk.com/stylesheets/lazy-yt_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="lazy-yt"  />
-  <link href="https://radixtalk.com/stylesheets/poll_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="poll"  />
-  <link href="https://radixtalk.com/stylesheets/discourse-voting_desktop_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="discourse-voting_desktop"  />
-  <link href="https://radixtalk.com/stylesheets/poll_desktop_d932183582b8b647be3ef222fe5af8f3a150136b.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="poll_desktop"  />
-
-  <link href="https://radixtalk.com/stylesheets/desktop_theme_1_9a2d2d666d7d7c2df1111a85e8451fea3ca2dfc2.css?__ws=radixtalk.com" media="all" rel="stylesheet" data-target="desktop_theme" data-theme-id="1" data-theme-name="default"/>
-
-    <script defer="" data-domain="radixtalk.com" src="https://plausible.io/js/plausible.hash.js"></script>
-
-    
-        <link rel="alternate nofollow" type="application/rss+xml" title="RSS feed of &#39;DRAFT: A Validators Guide to Disaster Recovery&#39;" href="315.rss" />
-    <meta property="og:site_name" content="RadixTalk" />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:image" content="https://radixtalk.com/uploads/default/original/1X/9e3624f2a5d4052091ba93563043c233df535486.png" />
-<meta property="og:image" content="https://radixtalk.com/uploads/default/original/1X/9e3624f2a5d4052091ba93563043c233df535486.png" />
-<meta property="og:url" content="https://radixtalk.com/t/draft-a-validators-guide-to-disaster-recovery/315" />
-<meta name="twitter:url" content="https://radixtalk.com/t/draft-a-validators-guide-to-disaster-recovery/315" />
-<meta property="og:title" content="DRAFT: A Validators Guide to Disaster Recovery" />
-<meta name="twitter:title" content="DRAFT: A Validators Guide to Disaster Recovery" />
-<meta property="og:description" content="Overview A major incident is when your validator node becomes unavailable on the Radix Public Network and you are unable to fail over to a backup node in a timely manner.  You should strongly consider unregistering your node as a validator if the outage occurs for longer than 2 or 3 epochs because your outage will affect the performance of the entire Radix Public Network - especially if your node has a large delegated stake.   1 Preparation An effective disaster recovery strategy requires some ..." />
-<meta name="twitter:description" content="Overview A major incident is when your validator node becomes unavailable on the Radix Public Network and you are unable to fail over to a backup node in a timely manner.  You should strongly consider unregistering your node as a validator if the outage occurs for longer than 2 or 3 epochs because your outage will affect the performance of the entire Radix Public Network - especially if your node has a large delegated stake.   1 Preparation An effective disaster recovery strategy requires some ..." />
-<meta name="twitter:label1" value="Reading time" />
-<meta name="twitter:data1" value="3 mins 🕑" />
-<meta name="twitter:label2" value="Likes" />
-<meta name="twitter:data2" value="13 ❤" />
-<meta property="article:published_time" content="2022-02-05T10:30:05+00:00" />
-<meta property="og:ignore_canonical" content="true" />
+  <link
+    href="https://radixtalk.com/stylesheets/desktop_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="desktop" />
 
 
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"QAPage","name":"DRAFT: A Validators Guide to Disaster Recovery","mainEntity":{"@type":"Question","name":"DRAFT: A Validators Guide to Disaster Recovery","text":"<a name=\"overview-1\" class=\"anchor\" href="https://radixtalk.com/t/draft-a-validators-guide-to-disaster-recovery/\&quot;#overview-1\""><\/a>Overview\n\nA major incident is when your validator node becomes unavailable on the Radix Public Network and you are unable to fail over to a backup node in a timely manner.\n\nYou should strongly consider unregistering your node as a validator if the outage occurs for longer than 2 or 3 epochs because &hellip;","upvoteCount":7,"answerCount":0,"dateCreated":"2022-02-02T09:31:57.367Z","author":{"@type":"Person","name":"Stuart | RadixPool"}}}</script>
-  </head>
-  <body class="crawler">
-    
-    <header>
-  <a href="https://radixtalk.com/">
-    <h1>RadixTalk</h1>
-  </a>
-</header>
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-akismet_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-akismet" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-automation_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-automation" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-cakeday_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-cakeday" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-canned-replies_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-canned-replies" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-checklist_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-checklist" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-data-explorer_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-data-explorer" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-details_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-details" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-docs_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-docs" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-follow_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-follow" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-fontawesome-pro_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-fontawesome-pro" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-footnote_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-footnote" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-local-dates_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-local-dates" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-presence_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-presence" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-rss-polling_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-rss-polling" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-saved-searches_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-saved-searches" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-solved_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-solved" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-tooltips_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-tooltips" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-user-notes_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-user-notes" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-voting_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-voting" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-whos-online_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-whos-online" />
+  <link
+    href="https://radixtalk.com/stylesheets/lazy-yt_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="lazy-yt" />
+  <link
+    href="https://radixtalk.com/stylesheets/poll_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="poll" />
+  <link
+    href="https://radixtalk.com/stylesheets/discourse-voting_desktop_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="discourse-voting_desktop" />
+  <link
+    href="https://radixtalk.com/stylesheets/poll_desktop_d932183582b8b647be3ef222fe5af8f3a150136b.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="poll_desktop" />
 
-    <div id="main-outlet" class="wrap" role="main">
-        <div id="topic-title">
-    <h1>
-      <a href="315.html">DRAFT: A Validators Guide to Disaster Recovery</a>
-    </h1>
+  <link
+    href="https://radixtalk.com/stylesheets/desktop_theme_1_9a2d2d666d7d7c2df1111a85e8451fea3ca2dfc2.css%3F__ws=radixtalk.com.css"
+    media="all" rel="stylesheet" data-target="desktop_theme" data-theme-id="1" data-theme-name="default" />
+
+  <script defer="" data-domain="radixtalk.com" src="https://plausible.io/js/plausible.hash.js"></script>
+
+
+  <link rel="alternate nofollow" type="application/rss+xml"
+    title="RSS feed of &#39;DRAFT: A Validators Guide to Disaster Recovery&#39;" href="315.rss" />
+  <meta property="og:site_name" content="RadixTalk" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:image"
+    content="https://radixtalk.com/uploads/default/original/1X/9e3624f2a5d4052091ba93563043c233df535486.png" />
+  <meta property="og:image"
+    content="https://radixtalk.com/uploads/default/original/1X/9e3624f2a5d4052091ba93563043c233df535486.png" />
+  <meta property="og:url" content="https://radixtalk.com/t/draft-a-validators-guide-to-disaster-recovery/315" />
+  <meta name="twitter:url" content="https://radixtalk.com/t/draft-a-validators-guide-to-disaster-recovery/315" />
+  <meta property="og:title" content="DRAFT: A Validators Guide to Disaster Recovery" />
+  <meta name="twitter:title" content="DRAFT: A Validators Guide to Disaster Recovery" />
+  <meta property="og:description"
+    content="Overview A major incident is when your validator node becomes unavailable on the Radix Public Network and you are unable to fail over to a backup node in a timely manner.  You should strongly consider unregistering your node as a validator if the outage occurs for longer than 2 or 3 epochs because your outage will affect the performance of the entire Radix Public Network - especially if your node has a large delegated stake.   1 Preparation An effective disaster recovery strategy requires some ..." />
+  <meta name="twitter:description"
+    content="Overview A major incident is when your validator node becomes unavailable on the Radix Public Network and you are unable to fail over to a backup node in a timely manner.  You should strongly consider unregistering your node as a validator if the outage occurs for longer than 2 or 3 epochs because your outage will affect the performance of the entire Radix Public Network - especially if your node has a large delegated stake.   1 Preparation An effective disaster recovery strategy requires some ..." />
+  <meta name="twitter:label1" value="Reading time" />
+  <meta name="twitter:data1" value="3 mins 🕑" />
+  <meta name="twitter:label2" value="Likes" />
+  <meta name="twitter:data2" value="13 ❤" />
+  <meta property="article:published_time" content="2022-02-05T10:30:05+00:00" />
+  <meta property="og:ignore_canonical" content="true" />
+
+
+  <script
+    type="application/ld+json">{"@context":"http://schema.org","@type":"QAPage","name":"DRAFT: A Validators Guide to Disaster Recovery","mainEntity":{"@type":"Question","name":"DRAFT: A Validators Guide to Disaster Recovery","text":"<a name=\"overview-1\" class=\"anchor\" href="https://radixtalk.com/t/draft-a-validators-guide-to-disaster-recovery/\&quot;#overview-1\""><\/a>Overview\n\nA major incident is when your validator node becomes unavailable on the Radix Public Network and you are unable to fail over to a backup node in a timely manner.\n\nYou should strongly consider unregistering your node as a validator if the outage occurs for longer than 2 or 3 epochs because &hellip;","upvoteCount":7,"answerCount":0,"dateCreated":"2022-02-02T09:31:57.367Z","author":{"@type":"Person","name":"Stuart | RadixPool"}}}</script>
+</head>
+
+<body class="crawler">
+
+  <header>
+    <a href="https://radixtalk.com/">
+      <h1>RadixTalk</h1>
+    </a>
+  </header>
+
+  <div id="main-outlet" class="wrap" role="main">
+    <div id="topic-title">
+      <h1>
+        <a href="315.html">DRAFT: A Validators Guide to Disaster Recovery</a>
+      </h1>
 
       <div class="topic-category" itemscope itemtype="http://schema.org/BreadcrumbList">
-          <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-            <a href="https://radixtalk.com/c/validators/16" class="badge-wrapper bullet" itemprop="item">
-              <span class='badge-category-bg' style='background-color: #0088CC'></span>
-              <span class='badge-category clear-badge'>
-                <span class='category-name' itemprop='name'>Validators</span>
-              </span>
-            </a>
-            <meta itemprop="position" content="1" />
-          </span>
+        <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a href="https://radixtalk.com/c/validators/16" class="badge-wrapper bullet" itemprop="item">
+            <span class='badge-category-bg' style='background-color: #0088CC'></span>
+            <span class='badge-category clear-badge'>
+              <span class='category-name' itemprop='name'>Validators</span>
+            </span>
+          </a>
+          <meta itemprop="position" content="1" />
+        </span>
       </div>
 
       <div class="topic-category">
         <div class='discourse-tags list-tags'>
-            <a href='../../tag/howto.html' class='discourse-tag' rel="tag">howto</a>, 
-            <a href='../../tag/draft.html' class='discourse-tag' rel="tag">draft</a>, 
-            <a href='../../tag/validators.html' class='discourse-tag' rel="tag">validators</a>
+          <a href='../../tag/howto.html' class='discourse-tag' rel="tag">howto</a>,
+          <a href='../../tag/draft.html' class='discourse-tag' rel="tag">draft</a>,
+          <a href='../../tag/validators.html' class='discourse-tag' rel="tag">validators</a>
         </div>
       </div>
-  </div>
-
-  
+    </div>
 
 
-      <div id='post_1' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
-        <div class='crawler-post-meta'>
-          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
-            <meta itemprop='name' content='RadixTalk'>
-              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
-                <meta itemprop='url' content='https://radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
-              </div>
+
+
+    <div id='post_1' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+      <div class='crawler-post-meta'>
+        <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+          <meta itemprop='name' content='RadixTalk'>
+          <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+            <meta itemprop='url'
+              content='https://radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
           </div>
-          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <a itemprop="url" href='../../u/Stuart.html'><span itemprop='name'>Stuart</span></a>
-            (Stuart | RadixPool)
-          </span>
-
-          <link itemprop="mainEntityOfPage" href="315.html">
-
-
-          <span class="crawler-post-infos">
-              <time itemprop='datePublished' datetime='2022-02-02T09:31:57Z' class='post-time'>
-                2 February 2022 09:31
-              </time>
-              <meta itemprop='dateModified' content='2022-02-05T10:28:27Z'>
-          <span itemprop='position'>#1</span>
-          </span>
         </div>
-        <div class='post' itemprop='articleBody'>
-          <h1>
-<a name="overview-1" class="anchor" href="315.html#overview-1"></a>Overview</h1>
-<p>A major incident is when your validator node becomes unavailable on the Radix Public Network and you are unable to fail over to a backup node in a timely manner.</p>
-<p>You should <strong>strongly</strong> consider unregistering your node as a validator if the outage occurs for longer than 2 or 3 epochs because your outage will affect the performance of the entire Radix Public Network - especially if your node has a large delegated stake.</p>
-<h1>
-<a name="h-1-preparation-2" class="anchor" href="315.html#h-1-preparation-2"></a>1 Preparation</h1>
-<p>An effective disaster recovery strategy requires some preparation in advance. A few steps now will save you a lot of pain later when you are under pressure dealing with a major incident.</p>
-<h3>
-<a name="h-11-keep-multiple-copies-of-your-node-keystore-file-3" class="anchor" href="315.html#h-11-keep-multiple-copies-of-your-node-keystore-file-3"></a>1.1 Keep multiple copies of your Node Keystore File</h3>
-<p>Take a copy of your validator’s <code>node-keystore.ks</code> and save at least 2 copies. One to your local computer, and another copy on a removable USB thumb drive. Even better, keep a 3rd copy on a USB thumb drive and keep it at another location. Dropbox/Google Drive are other other strategies for keeping multiple copies - but it might be worth encrypting the file using GPG or similar as an additional security measure.</p>
-<h3>
-<a name="h-12-keep-multiple-copies-of-your-keystore-file-password-4" class="anchor" href="315.html#h-12-keep-multiple-copies-of-your-keystore-file-password-4"></a>1.2 Keep multiple copies of your Keystore File Password</h3>
-<p>Keep a local copy of the node-keystore.ks password. The file is useless without the corresponding password. Save the password in your password manager or in an encrypted archive file with the keystore file.</p>
-<h3>
-<a name="h-13-install-python-3-5" class="anchor" href="315.html#h-13-install-python-3-5"></a>1.3 Install Python 3</h3>
-<p>Install Python 3 on your local computer if not already installed and ensure that it works.</p>
-<h3>
-<a name="h-14-save-a-copy-of-the-python-validator-unregister-script-6" class="anchor" href="315.html#h-14-save-a-copy-of-the-python-validator-unregister-script-6"></a>1.4 Save a copy of the Python Validator Unregister script</h3>
-<p>Save a copy of the Validator Unregister Python script that allows you to unregister you validator node when you don’t have access to the node or it isn’t fully synced.</p>
-<p><strong>Script available here:</strong></p><aside class="onebox allowlistedgeneric" data-onebox-src="https://github.com/radixpool/validator-tools">
-  <header class="source">
-      <img src="https://github.githubassets.com/favicons/favicon.svg" class="site-icon" width="32" height="32">
+        <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a itemprop="url" href='../../u/Stuart.html'><span itemprop='name'>Stuart</span></a>
+          (Stuart | RadixPool)
+        </span>
 
-      <a href="https://github.com/radixpool/validator-tools" target="_blank" rel="noopener">GitHub</a>
-  </header>
-
-  <article class="onebox-body">
-    <div class="aspect-image" style="--aspect-ratio:690/345;"><img src="https://opengraph.githubassets.com/4c40246bcec82215667cd2601caa3d2138c2fcbbe22ce9e0c90ecfe1f9a11a5c/radixpool/validator-tools" class="thumbnail" width="690" height="345"></div>
-
-<h3><a href="https://github.com/radixpool/validator-tools" target="_blank" rel="noopener">GitHub - radixpool/validator-tools</a></h3>
-
-  <p>Contribute to radixpool/validator-tools development by creating an account on GitHub.</p>
+        <link itemprop="mainEntityOfPage" href="315.html">
 
 
-  </article>
+        <span class="crawler-post-infos">
+          <time itemprop='datePublished' datetime='2022-02-02T09:31:57Z' class='post-time'>
+            2 February 2022 09:31
+          </time>
+          <meta itemprop='dateModified' content='2022-02-05T10:28:27Z'>
+          <span itemprop='position'>#1</span>
+        </span>
+      </div>
+      <div class='post' itemprop='articleBody'>
+        <h1>
+          <a name="overview-1" class="anchor" href="315.html#overview-1"></a>Overview
+        </h1>
+        <p>A major incident is when your validator node becomes unavailable on the Radix Public Network and you are
+          unable to fail over to a backup node in a timely manner.</p>
+        <p>You should <strong>strongly</strong> consider unregistering your node as a validator if the outage occurs for
+          longer than 2 or 3 epochs because your outage will affect the performance of the entire Radix Public Network -
+          especially if your node has a large delegated stake.</p>
+        <h1>
+          <a name="h-1-preparation-2" class="anchor" href="315.html#h-1-preparation-2"></a>1 Preparation
+        </h1>
+        <p>An effective disaster recovery strategy requires some preparation in advance. A few steps now will save you a
+          lot of pain later when you are under pressure dealing with a major incident.</p>
+        <h3>
+          <a name="h-11-keep-multiple-copies-of-your-node-keystore-file-3" class="anchor"
+            href="315.html#h-11-keep-multiple-copies-of-your-node-keystore-file-3"></a>1.1 Keep multiple copies of your
+          Node Keystore File
+        </h3>
+        <p>Take a copy of your validator’s <code>node-keystore.ks</code> and save at least 2 copies. One to your local
+          computer, and another copy on a removable USB thumb drive. Even better, keep a 3rd copy on a USB thumb drive
+          and keep it at another location. Dropbox/Google Drive are other other strategies for keeping multiple copies -
+          but it might be worth encrypting the file using GPG or similar as an additional security measure.</p>
+        <h3>
+          <a name="h-12-keep-multiple-copies-of-your-keystore-file-password-4" class="anchor"
+            href="315.html#h-12-keep-multiple-copies-of-your-keystore-file-password-4"></a>1.2 Keep multiple copies of
+          your Keystore File Password
+        </h3>
+        <p>Keep a local copy of the node-keystore.ks password. The file is useless without the corresponding password.
+          Save the password in your password manager or in an encrypted archive file with the keystore file.</p>
+        <h3>
+          <a name="h-13-install-python-3-5" class="anchor" href="315.html#h-13-install-python-3-5"></a>1.3 Install
+          Python 3
+        </h3>
+        <p>Install Python 3 on your local computer if not already installed and ensure that it works.</p>
+        <h3>
+          <a name="h-14-save-a-copy-of-the-python-validator-unregister-script-6" class="anchor"
+            href="315.html#h-14-save-a-copy-of-the-python-validator-unregister-script-6"></a>1.4 Save a copy of the
+          Python Validator Unregister script
+        </h3>
+        <p>Save a copy of the Validator Unregister Python script that allows you to unregister you validator node when
+          you don’t have access to the node or it isn’t fully synced.</p>
+        <p><strong>Script available here:</strong></p>
+        <aside class="onebox allowlistedgeneric" data-onebox-src="https://github.com/radixpool/validator-tools">
+          <header class="source">
+            <img src="https://github.githubassets.com/favicons/favicon.svg" class="site-icon" width="32" height="32">
 
-  <div class="onebox-metadata">
-    
-    
-  </div>
+            <a href="https://github.com/radixpool/validator-tools" target="_blank" rel="noopener">GitHub</a>
+          </header>
 
-  <div style="clear: both"></div>
-</aside>
+          <article class="onebox-body">
+            <div class="aspect-image" style="--aspect-ratio:690/345;"><img
+                src="https://opengraph.githubassets.com/4c40246bcec82215667cd2601caa3d2138c2fcbbe22ce9e0c90ecfe1f9a11a5c/radixpool/validator-tools"
+                class="thumbnail" width="690" height="345"></div>
 
-<pre><code class="lang-nohighlight">Usage: unregister.py [OPTIONS]
+            <h3><a href="https://github.com/radixpool/validator-tools" target="_blank" rel="noopener">GitHub -
+                radixpool/validator-tools</a></h3>
+
+            <p>Contribute to radixpool/validator-tools development by creating an account on GitHub.</p>
+
+
+          </article>
+
+          <div class="onebox-metadata">
+
+
+          </div>
+
+          <div style="clear: both"></div>
+        </aside>
+
+        <pre><code class="lang-nohighlight">Usage: unregister.py [OPTIONS]
 
   Unregisters a Validator node using a Keystore file and password
 
@@ -195,404 +289,479 @@ Options:
   --yes                           Confirm the action without prompting.
   -h, --help                      Show this message and exit.
 </code></pre>
-<p><em>Note: Script is still under active development (will break up into functions, honest!) and currently uses the old Archive API calls. New Gateway API is missing the ability to unregister/register validator nodes. Issue raised with Dev team.</em></p>
-<h3>
-<a name="h-15-install-python-dependencies-7" class="anchor" href="315.html#h-15-install-python-dependencies-7"></a>1.5 Install Python Dependencies</h3>
-<p>Fetch the requirements.txt file and install the python dependencies using the following command:</p>
-<pre><code class="lang-bash">pip install -r requirements.txt
+        <p><em>Note: Script is still under active development (will break up into functions, honest!) and currently uses
+            the old Archive API calls. New Gateway API is missing the ability to unregister/register validator nodes.
+            Issue raised with Dev team.</em></p>
+        <h3>
+          <a name="h-15-install-python-dependencies-7" class="anchor"
+            href="315.html#h-15-install-python-dependencies-7"></a>1.5 Install Python Dependencies
+        </h3>
+        <p>Fetch the requirements.txt file and install the python dependencies using the following command:</p>
+        <pre><code class="lang-bash">pip install -r requirements.txt
 </code></pre>
-<h3>
-<a name="h-16-test-the-validator-unregister-script-8" class="anchor" href="315.html#h-16-test-the-validator-unregister-script-8"></a>1.6 Test the Validator Unregister script</h3>
-<p>Do a “dry-run” of the validator unregister script to ensure that Python, script dependencies and the script itself are all working correctly. The <code>--dry-run</code> or <code>-d</code> option will perform all steps in the script except make any changes to the Radix ledger.</p>
-<p>For example: dry-run on Mainnet using node-keystore.ks file in current directory and showing all request and response JSON messages</p>
-<pre><code class="lang-bash">python unregister.py --dry-run --verbose
+        <h3>
+          <a name="h-16-test-the-validator-unregister-script-8" class="anchor"
+            href="315.html#h-16-test-the-validator-unregister-script-8"></a>1.6 Test the Validator Unregister script
+        </h3>
+        <p>Do a “dry-run” of the validator unregister script to ensure that Python, script dependencies and the script
+          itself are all working correctly. The <code>--dry-run</code> or <code>-d</code> option will perform all steps
+          in the script except make any changes to the Radix ledger.</p>
+        <p>For example: dry-run on Mainnet using node-keystore.ks file in current directory and showing all request and
+          response JSON messages</p>
+        <pre><code class="lang-bash">python unregister.py --dry-run --verbose
 </code></pre>
-<h3>
-<a name="h-17-keep-at-least-12-xrd-into-your-validator-node-wallet-9" class="anchor" href="315.html#h-17-keep-at-least-12-xrd-into-your-validator-node-wallet-9"></a>1.7 Keep at least 12 XRD into your Validator Node Wallet</h3>
-<p>Keep a balance of at least 12 XRD in your Validator Node wallet so that you can unregister the node (~5 XRD) and re-register it later (~5 XRD).</p>
-<h3>
-<a name="h-18-bookmark-service-providers-statusmaintenance-pages-10" class="anchor" href="315.html#h-18-bookmark-service-providers-statusmaintenance-pages-10"></a>1.8 Bookmark Service Providers Status/Maintenance Pages</h3>
-<p>Find and bookmark your service provider’s status page and maintenance page. Also bookmark any social media accounts run by your service provider as these will often be updated before any status page updates (Amazon is notorious for not updating their status pages in a timely manner to reflect major incidents).</p>
-<p>This will help you to quickly assess whether an incident is local to you or a more general issue.</p>
-<h1>
-<a name="h-2-when-disaster-strikes-11" class="anchor" href="315.html#h-2-when-disaster-strikes-11"></a>2 When Disaster Strikes</h1>
-<p>[TODO]</p>
-<h3>
-<a name="h-21-assess-incident-severity-12" class="anchor" href="315.html#h-21-assess-incident-severity-12"></a>2.1 Assess Incident Severity</h3>
-<p>Make a quick assessment of the severity of the incident by considering the following:</p>
-<ul>
-<li>How long has you validator node already been unavailable?</li>
-<li>Is the cause of the issue known?</li>
-<li>Does the incident just affect you or is it more general?</li>
-</ul>
-<p>Sources of this information may come from:</p>
-<ul>
-<li>Service providers Status Page</li>
-<li>Service providers Planned Maintenance Page</li>
-<li>Service providers social media account (or searching for “<em><strong>ProviderName</strong></em> down”)</li>
-</ul>
-<p>Your node will probably already fallen below the 98% uptime threshold to receive rewards for the current epoch - so give yourself a short, fixed period of time to assess the severity of the issue. Try to keep this assessment time limit within the current epoch if possible or for up to one full epoch at the very most.</p>
-<h3>
-<a name="h-22-notify-the-community-13" class="anchor" href="315.html#h-22-notify-the-community-13"></a>2.2 Notify the Community</h3>
-<p>As soon as you are able, notify the community on Discord and Telegram that you are aware of a problem and that you are taking action to resolve the issue.</p>
-<p>An example message could be:</p>
-<blockquote>
-<p><em><strong>ValidatorName</strong></em> is currently down. We are investigating the problem and will provide further updates of the actions we are taking to resolve the issue.</p>
-</blockquote>
-<p>This very simple, but important step notifies the community that you are aware of the issue and that you are taking measures to resolve it.</p>
-<h3>
-<a name="h-23-choose-a-recovery-strategy-14" class="anchor" href="315.html#h-23-choose-a-recovery-strategy-14"></a>2.3 Choose a Recovery Strategy</h3>
-<p>There are broadly 3 different recovery strategies:</p>
-<p><strong>2.3.1 Do Nothing</strong><br>
-In the case of a temporary, localised and known issue then the appropriate strategy may be to do nothing and wait. Examples may include planned maintenance/upgrades by the service provider, an application or operating system issue that can be resolved on the server.</p>
-<p>The expectation is that the issue will resolve itself (wait for router to reboot) or can be easily fixed through operator action (reboot, restart service, clear disk space, etc.)</p>
-<ul>
-<li>Set a fixed time limit on how long you are prepared to wait before taking further action - ideally before the end of the epoch.</li>
-<li>Continue to make preparations for further recovery strategies while you wait in case the issue does not resolve itself.</li>
-</ul>
-<p><strong>2.3.2 Fail over to Backup Node</strong><br>
-[DRAFT] Do this if you have a synced backup node in another location and can easily do so.</p>
-<p><strong>2.3.3 Unregister your Node</strong><br>
-[DRAFT] Do this if you are not able to fail over to a synced backup node. Takes the immediate pressure off, stops disruption of the Radix Public Network, stops your downtime continuously spiralling down. Apply one of the other Recovery Strategies.</p>
-<h3>
-<a name="h-24-update-the-community-15" class="anchor" href="315.html#h-24-update-the-community-15"></a>2.4 Update the Community</h3>
-<p>Provide an update to the community to let them know whether:</p>
-<p>a) The issue has been resolved</p>
-<p>or</p>
-<p>b) Recovery is in progress and, if possible, an estimated time to resolution (eg. Radix node database is syncing from scratch and will take about 12 hours to complete)</p>
-<h1>
-<a name="h-3-post-incident-analysis-16" class="anchor" href="315.html#h-3-post-incident-analysis-16"></a>3 Post Incident Analysis</h1>
-<p>A Post Incident Analysis (also known as a Post-Mortem) is a valuable exercise to learn from an incident and ideally share your findings with other Node Runners so that we may all benefit from findings.</p>
-<h3>
-<a name="h-31-internal-investigation-17" class="anchor" href="315.html#h-31-internal-investigation-17"></a>3.1 Internal Investigation</h3>
-<p>After the incident is resolved and is still fresh in your mind, take a moment to make notes about what happened and how you resolved it.</p>
-<p>Consider:</p>
-<ul>
-<li>What worked well? (eg. Monitoring system promptly generated alerts about the issue <img src="../../images/emoji/twitter/slight_smile.png%3Fv=12" title=":slight_smile:" class="emoji" alt=":slight_smile:" loading="lazy" width="20" height="20">)</li>
-<li>What didn’t work well? (eg. Phone was set to silent so missed the alerts <img src="../../images/emoji/twitter/upside_down_face.png%3Fv=12" title=":upside_down_face:" class="emoji" alt=":upside_down_face:" loading="lazy" width="20" height="20">)</li>
-<li>Is there anything I can do to prevent the issue from occurring again? (eg. Monitor additional metrics, create alerts for low disk space, automate some process, pay more attention to planned maintenance notifications)</li>
-<li>Are their opportunities to automate some of the recovery steps using tested scripts that reduce operator error when under stress?</li>
-<li>[TODO]</li>
-</ul>
-<h3>
-<a name="h-32-share-your-findings-18" class="anchor" href="315.html#h-32-share-your-findings-18"></a>3.2 Share your Findings</h3>
-<p>[DRAFT] The node runner community benefits hugely from sharing our expertise and experiences with others.</p>
-        </div>
-
-        <meta itemprop='headline' content='DRAFT: A Validators Guide to Disaster Recovery'>
-          <meta itemprop='keywords' content='howto, draft, validators'>
-
-        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
-           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
-           <meta itemprop="userInteractionCount" content="7" />
-           <span class='post-likes'>7 Likes</span>
-         </div>
-
-         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
-            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
-            <meta itemprop="userInteractionCount" content="0" />
-          </div>
-
-      </div>
-      <div id='post_2' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
-        <div class='crawler-post-meta'>
-          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
-            <meta itemprop='name' content='RadixTalk'>
-              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
-                <meta itemprop='url' content='https://radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
-              </div>
-          </div>
-          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <a itemprop="url" href='../../u/RadUp.io.html'><span itemprop='name'>RadUp.io</span></a>
-            (Ed &amp; James)
-          </span>
-
-          <link itemprop="mainEntityOfPage" href="315.html">
-
-
-          <span class="crawler-post-infos">
-              <time itemprop='datePublished' datetime='2022-02-02T16:56:48Z' class='post-time'>
-                2 February 2022 16:56
-              </time>
-              <meta itemprop='dateModified' content='2022-02-02T16:56:48Z'>
-          <span itemprop='position'>#2</span>
-          </span>
-        </div>
-        <div class='post' itemprop='articleBody'>
-          <p>This is awesome - thank you <a class="mention" href="https://radixtalk.com/u/stuart">@Stuart</a>. I know this is a work in progress, but I could see value in step 6 potentially including instructions for using the script to unregister a Stokenet node for testing purposes. Just a thought.</p>
-        </div>
-
-        <meta itemprop='headline' content='DRAFT: A Validators Guide to Disaster Recovery'>
-
-        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
-           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
-           <meta itemprop="userInteractionCount" content="0" />
-           <span class='post-likes'></span>
-         </div>
-
-         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
-            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
-            <meta itemprop="userInteractionCount" content="1" />
-          </div>
-
-      </div>
-      <div id='post_3' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
-        <div class='crawler-post-meta'>
-          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
-            <meta itemprop='name' content='RadixTalk'>
-              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
-                <meta itemprop='url' content='https://radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
-              </div>
-          </div>
-          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <a itemprop="url" href='../../u/Stuart.html'><span itemprop='name'>Stuart</span></a>
-            (Stuart | RadixPool)
-          </span>
-
-          <link itemprop="mainEntityOfPage" href="315.html">
-
-
-          <span class="crawler-post-infos">
-              <time itemprop='datePublished' datetime='2022-02-02T17:02:36Z' class='post-time'>
-                2 February 2022 17:02
-              </time>
-              <meta itemprop='dateModified' content='2022-02-02T22:59:47Z'>
-          <span itemprop='position'>#3</span>
-          </span>
-        </div>
-        <div class='post' itemprop='articleBody'>
-          <p><s>Can definitely do that. My idea was to have a dry run option that does everything except submitting the final transaction that makes the change on the ledger. It ensures you have the right python dependencies installed, that your keystore file and password work, and that you have network connectivity to build a transaction. Will get to work on it soon™…</s><br>
-Done! Ability to choose mainnet or stokenet, and to do a dry-run which doesn’t submit the final request to apply the change.</p>
-        </div>
-
-        <meta itemprop='headline' content='DRAFT: A Validators Guide to Disaster Recovery'>
-
-        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
-           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
-           <meta itemprop="userInteractionCount" content="3" />
-           <span class='post-likes'>3 Likes</span>
-         </div>
-
-         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
-            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
-            <meta itemprop="userInteractionCount" content="0" />
-          </div>
-
-      </div>
-      <div id='post_4' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
-        <div class='crawler-post-meta'>
-          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
-            <meta itemprop='name' content='RadixTalk'>
-              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
-                <meta itemprop='url' content='https://radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
-              </div>
-          </div>
-          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <a itemprop="url" href='../../u/Stuart.html'><span itemprop='name'>Stuart</span></a>
-            (Stuart | RadixPool)
-          </span>
-
-          <link itemprop="mainEntityOfPage" href="315.html">
-
-
-          <span class="crawler-post-infos">
-              <time itemprop='datePublished' datetime='2022-02-05T10:27:48Z' class='post-time'>
-                5 February 2022 10:27
-              </time>
-              <meta itemprop='dateModified' content='2022-02-05T10:27:48Z'>
-          <span itemprop='position'>#4</span>
-          </span>
-        </div>
-        <div class='post' itemprop='articleBody'>
-          <p>The unregister.py script does not currently work on Stokenet.</p>
-<p>The old Archive API has been removed from Stokenet and the new Gateway API doesn’t currently support Register/Unregister of validators. The dev team have put this on the development backlog and the script will be updated to handle the new Gateway API as soon as this is released.</p>
-        </div>
-
-        <meta itemprop='headline' content='DRAFT: A Validators Guide to Disaster Recovery'>
-
-        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
-           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
-           <meta itemprop="userInteractionCount" content="3" />
-           <span class='post-likes'>3 Likes</span>
-         </div>
-
-         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
-            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
-            <meta itemprop="userInteractionCount" content="2" />
-          </div>
-
-      </div>
-      <div id='post_5' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
-        <div class='crawler-post-meta'>
-          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
-            <meta itemprop='name' content='RadixTalk'>
-              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
-                <meta itemprop='url' content='https://radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
-              </div>
-          </div>
-          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <a itemprop="url" href='../../u/RadUp.io.html'><span itemprop='name'>RadUp.io</span></a>
-            (Ed &amp; James)
-          </span>
-
-          <link itemprop="mainEntityOfPage" href="315.html">
-
-
-          <span class="crawler-post-infos">
-              <time itemprop='datePublished' datetime='2022-02-05T12:55:45Z' class='post-time'>
-                5 February 2022 12:55
-              </time>
-              <meta itemprop='dateModified' content='2022-02-05T12:55:45Z'>
-          <span itemprop='position'>#5</span>
-          </span>
-        </div>
-        <div class='post' itemprop='articleBody'>
-          <p>Ran into this last night but figured that was the reason.</p>
-<p>This page is developing into one the most important pages that all node runners should familiarise themselves with. Thank you for everything you do for the community.</p>
-        </div>
-
-        <meta itemprop='headline' content='DRAFT: A Validators Guide to Disaster Recovery'>
-
-        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
-           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
-           <meta itemprop="userInteractionCount" content="0" />
-           <span class='post-likes'></span>
-         </div>
-
-         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
-            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
-            <meta itemprop="userInteractionCount" content="0" />
-          </div>
-
-      </div>
-      <div id='post_6' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
-        <div class='crawler-post-meta'>
-          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
-            <meta itemprop='name' content='RadixTalk'>
-              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
-                <meta itemprop='url' content='https://radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
-              </div>
-          </div>
-          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <a itemprop="url" href='../../u/Jazzer_9F.html'><span itemprop='name'>Jazzer_9F</span></a>
-            (Jazzer 9F)
-          </span>
-
-          <link itemprop="mainEntityOfPage" href="315.html">
-
-
-          <span class="crawler-post-infos">
-              <time itemprop='datePublished' datetime='2022-02-05T22:08:18Z' class='post-time'>
-                5 February 2022 22:08
-              </time>
-              <meta itemprop='dateModified' content='2022-02-05T22:08:18Z'>
-          <span itemprop='position'>#6</span>
-          </span>
-        </div>
-        <div class='post' itemprop='articleBody'>
-          <p>Did they confirm this will be added to the Gateway API <strong>before</strong> decommissioning the archive nodes on mainnet? Because that’s happening rather soon IIRC. It would be pretty bad if we can’t deregister non-running nodes for a couple of months…</p>
-        </div>
-
-        <meta itemprop='headline' content='DRAFT: A Validators Guide to Disaster Recovery'>
-
-        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
-           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
-           <meta itemprop="userInteractionCount" content="0" />
-           <span class='post-likes'></span>
-         </div>
-
-         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
-            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
-            <meta itemprop="userInteractionCount" content="0" />
-          </div>
-
-      </div>
-      <div id='post_7' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
-        <div class='crawler-post-meta'>
-          <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
-            <meta itemprop='name' content='RadixTalk'>
-              <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
-                <meta itemprop='url' content='https://radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
-              </div>
-          </div>
-          <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <a itemprop="url" href='../../u/Jazzer_9F.html'><span itemprop='name'>Jazzer_9F</span></a>
-            (Jazzer 9F)
-          </span>
-
-          <link itemprop="mainEntityOfPage" href="315.html">
-
-
-          <span class="crawler-post-infos">
-              <time itemprop='datePublished' datetime='2022-02-27T11:20:10Z' class='post-time'>
-                27 February 2022 11:20
-              </time>
-              <meta itemprop='dateModified' content='2022-02-27T11:20:10Z'>
-          <span itemprop='position'>#7</span>
-          </span>
-        </div>
-        <div class='post' itemprop='articleBody'>
-          <p>I’ve loaded the unregister.py script on my nodes and gone through how it works.<br>
-Are you planning a re-register option as well, or do we follow the regular process for that?</p>
-<p>Thanks &amp; Cheers!</p>
-        </div>
-
-        <meta itemprop='headline' content='DRAFT: A Validators Guide to Disaster Recovery'>
-
-        <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
-           <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
-           <meta itemprop="userInteractionCount" content="0" />
-           <span class='post-likes'></span>
-         </div>
-
-         <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
-            <meta itemprop="interactionType" content="http://schema.org/CommentAction"/>
-            <meta itemprop="userInteractionCount" content="0" />
-          </div>
-
+        <h3>
+          <a name="h-17-keep-at-least-12-xrd-into-your-validator-node-wallet-9" class="anchor"
+            href="315.html#h-17-keep-at-least-12-xrd-into-your-validator-node-wallet-9"></a>1.7 Keep at least 12 XRD
+          into your Validator Node Wallet
+        </h3>
+        <p>Keep a balance of at least 12 XRD in your Validator Node wallet so that you can unregister the node (~5 XRD)
+          and re-register it later (~5 XRD).</p>
+        <h3>
+          <a name="h-18-bookmark-service-providers-statusmaintenance-pages-10" class="anchor"
+            href="315.html#h-18-bookmark-service-providers-statusmaintenance-pages-10"></a>1.8 Bookmark Service
+          Providers Status/Maintenance Pages
+        </h3>
+        <p>Find and bookmark your service provider’s status page and maintenance page. Also bookmark any social media
+          accounts run by your service provider as these will often be updated before any status page updates (Amazon is
+          notorious for not updating their status pages in a timely manner to reflect major incidents).</p>
+        <p>This will help you to quickly assess whether an incident is local to you or a more general issue.</p>
+        <h1>
+          <a name="h-2-when-disaster-strikes-11" class="anchor" href="315.html#h-2-when-disaster-strikes-11"></a>2 When
+          Disaster Strikes
+        </h1>
+        <p>[TODO]</p>
+        <h3>
+          <a name="h-21-assess-incident-severity-12" class="anchor"
+            href="315.html#h-21-assess-incident-severity-12"></a>2.1 Assess Incident Severity
+        </h3>
+        <p>Make a quick assessment of the severity of the incident by considering the following:</p>
+        <ul>
+          <li>How long has you validator node already been unavailable?</li>
+          <li>Is the cause of the issue known?</li>
+          <li>Does the incident just affect you or is it more general?</li>
+        </ul>
+        <p>Sources of this information may come from:</p>
+        <ul>
+          <li>Service providers Status Page</li>
+          <li>Service providers Planned Maintenance Page</li>
+          <li>Service providers social media account (or searching for “<em><strong>ProviderName</strong></em> down”)
+          </li>
+        </ul>
+        <p>Your node will probably already fallen below the 98% uptime threshold to receive rewards for the current
+          epoch - so give yourself a short, fixed period of time to assess the severity of the issue. Try to keep this
+          assessment time limit within the current epoch if possible or for up to one full epoch at the very most.</p>
+        <h3>
+          <a name="h-22-notify-the-community-13" class="anchor" href="315.html#h-22-notify-the-community-13"></a>2.2
+          Notify the Community
+        </h3>
+        <p>As soon as you are able, notify the community on Discord and Telegram that you are aware of a problem and
+          that you are taking action to resolve the issue.</p>
+        <p>An example message could be:</p>
+        <blockquote>
+          <p><em><strong>ValidatorName</strong></em> is currently down. We are investigating the problem and will
+            provide further updates of the actions we are taking to resolve the issue.</p>
+        </blockquote>
+        <p>This very simple, but important step notifies the community that you are aware of the issue and that you are
+          taking measures to resolve it.</p>
+        <h3>
+          <a name="h-23-choose-a-recovery-strategy-14" class="anchor"
+            href="315.html#h-23-choose-a-recovery-strategy-14"></a>2.3 Choose a Recovery Strategy
+        </h3>
+        <p>There are broadly 3 different recovery strategies:</p>
+        <p><strong>2.3.1 Do Nothing</strong><br>
+          In the case of a temporary, localised and known issue then the appropriate strategy may be to do nothing and
+          wait. Examples may include planned maintenance/upgrades by the service provider, an application or operating
+          system issue that can be resolved on the server.</p>
+        <p>The expectation is that the issue will resolve itself (wait for router to reboot) or can be easily fixed
+          through operator action (reboot, restart service, clear disk space, etc.)</p>
+        <ul>
+          <li>Set a fixed time limit on how long you are prepared to wait before taking further action - ideally before
+            the end of the epoch.</li>
+          <li>Continue to make preparations for further recovery strategies while you wait in case the issue does not
+            resolve itself.</li>
+        </ul>
+        <p><strong>2.3.2 Fail over to Backup Node</strong><br>
+          [DRAFT] Do this if you have a synced backup node in another location and can easily do so.</p>
+        <p><strong>2.3.3 Unregister your Node</strong><br>
+          [DRAFT] Do this if you are not able to fail over to a synced backup node. Takes the immediate pressure off,
+          stops disruption of the Radix Public Network, stops your downtime continuously spiralling down. Apply one of
+          the other Recovery Strategies.</p>
+        <h3>
+          <a name="h-24-update-the-community-15" class="anchor" href="315.html#h-24-update-the-community-15"></a>2.4
+          Update the Community
+        </h3>
+        <p>Provide an update to the community to let them know whether:</p>
+        <p>a) The issue has been resolved</p>
+        <p>or</p>
+        <p>b) Recovery is in progress and, if possible, an estimated time to resolution (eg. Radix node database is
+          syncing from scratch and will take about 12 hours to complete)</p>
+        <h1>
+          <a name="h-3-post-incident-analysis-16" class="anchor" href="315.html#h-3-post-incident-analysis-16"></a>3
+          Post Incident Analysis
+        </h1>
+        <p>A Post Incident Analysis (also known as a Post-Mortem) is a valuable exercise to learn from an incident and
+          ideally share your findings with other Node Runners so that we may all benefit from findings.</p>
+        <h3>
+          <a name="h-31-internal-investigation-17" class="anchor" href="315.html#h-31-internal-investigation-17"></a>3.1
+          Internal Investigation
+        </h3>
+        <p>After the incident is resolved and is still fresh in your mind, take a moment to make notes about what
+          happened and how you resolved it.</p>
+        <p>Consider:</p>
+        <ul>
+          <li>What worked well? (eg. Monitoring system promptly generated alerts about the issue <img
+              src="../../images/emoji/twitter/slight_smile.png%3Fv=12" title=":slight_smile:" class="emoji"
+              alt=":slight_smile:" loading="lazy" width="20" height="20">)</li>
+          <li>What didn’t work well? (eg. Phone was set to silent so missed the alerts <img
+              src="../../images/emoji/twitter/upside_down_face.png%3Fv=12" title=":upside_down_face:" class="emoji"
+              alt=":upside_down_face:" loading="lazy" width="20" height="20">)</li>
+          <li>Is there anything I can do to prevent the issue from occurring again? (eg. Monitor additional metrics,
+            create alerts for low disk space, automate some process, pay more attention to planned maintenance
+            notifications)</li>
+          <li>Are their opportunities to automate some of the recovery steps using tested scripts that reduce operator
+            error when under stress?</li>
+          <li>[TODO]</li>
+        </ul>
+        <h3>
+          <a name="h-32-share-your-findings-18" class="anchor" href="315.html#h-32-share-your-findings-18"></a>3.2 Share
+          your Findings
+        </h3>
+        <p>[DRAFT] The node runner community benefits hugely from sharing our expertise and experiences with others.</p>
       </div>
 
+      <meta itemprop='headline' content='DRAFT: A Validators Guide to Disaster Recovery'>
+      <meta itemprop='keywords' content='howto, draft, validators'>
 
+      <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+        <meta itemprop="interactionType" content="http://schema.org/LikeAction" />
+        <meta itemprop="userInteractionCount" content="7" />
+        <span class='post-likes'>7 Likes</span>
+      </div>
 
-
-
+      <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+        <meta itemprop="interactionType" content="http://schema.org/CommentAction" />
+        <meta itemprop="userInteractionCount" content="0" />
+      </div>
 
     </div>
-    <footer class="container wrap">
-  <nav class='crawler-nav'>
-    <ul>
-      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
-        <span itemprop='name'>
-          <a href='https://radixtalk.com/' itemprop="url">Home </a>
+    <div id='post_2' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+      <div class='crawler-post-meta'>
+        <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+          <meta itemprop='name' content='RadixTalk'>
+          <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+            <meta itemprop='url'
+              content='https://radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+          </div>
+        </div>
+        <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a itemprop="url" href='../../u/RadUp.io.html'><span itemprop='name'>RadUp.io</span></a>
+          (Ed &amp; James)
         </span>
-      </li>
-      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
-        <span itemprop='name'>
-          <a href='https://radixtalk.com/categories' itemprop="url">Categories </a>
-        </span>
-      </li>
-      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
-        <span itemprop='name'>
-          <a href='https://radixtalk.com/guidelines' itemprop="url">FAQ/Guidelines </a>
-        </span>
-      </li>
-      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
-        <span itemprop='name'>
-          <a href='https://radixtalk.com/tos' itemprop="url">Terms of Service </a>
-        </span>
-      </li>
-      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
-        <span itemprop='name'>
-          <a href='https://radixtalk.com/privacy' itemprop="url">Privacy Policy </a>
-        </span>
-      </li>
-    </ul>
-  </nav>
-  <p class='powered-by-link'>Powered by <a href="https://www.discourse.org">Discourse</a>, best viewed with JavaScript enabled</p>
-</footer>
 
-    
-    
-  </body>
-  
+        <link itemprop="mainEntityOfPage" href="315.html">
+
+
+        <span class="crawler-post-infos">
+          <time itemprop='datePublished' datetime='2022-02-02T16:56:48Z' class='post-time'>
+            2 February 2022 16:56
+          </time>
+          <meta itemprop='dateModified' content='2022-02-02T16:56:48Z'>
+          <span itemprop='position'>#2</span>
+        </span>
+      </div>
+      <div class='post' itemprop='articleBody'>
+        <p>This is awesome - thank you <a class="mention" href="https://radixtalk.com/u/stuart">@Stuart</a>. I know this
+          is a work in progress, but I could see value in step 6 potentially including instructions for using the script
+          to unregister a Stokenet node for testing purposes. Just a thought.</p>
+      </div>
+
+      <meta itemprop='headline' content='DRAFT: A Validators Guide to Disaster Recovery'>
+
+      <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+        <meta itemprop="interactionType" content="http://schema.org/LikeAction" />
+        <meta itemprop="userInteractionCount" content="0" />
+        <span class='post-likes'></span>
+      </div>
+
+      <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+        <meta itemprop="interactionType" content="http://schema.org/CommentAction" />
+        <meta itemprop="userInteractionCount" content="1" />
+      </div>
+
+    </div>
+    <div id='post_3' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+      <div class='crawler-post-meta'>
+        <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+          <meta itemprop='name' content='RadixTalk'>
+          <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+            <meta itemprop='url'
+              content='https://radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+          </div>
+        </div>
+        <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a itemprop="url" href='../../u/Stuart.html'><span itemprop='name'>Stuart</span></a>
+          (Stuart | RadixPool)
+        </span>
+
+        <link itemprop="mainEntityOfPage" href="315.html">
+
+
+        <span class="crawler-post-infos">
+          <time itemprop='datePublished' datetime='2022-02-02T17:02:36Z' class='post-time'>
+            2 February 2022 17:02
+          </time>
+          <meta itemprop='dateModified' content='2022-02-02T22:59:47Z'>
+          <span itemprop='position'>#3</span>
+        </span>
+      </div>
+      <div class='post' itemprop='articleBody'>
+        <p><s>Can definitely do that. My idea was to have a dry run option that does everything except submitting the
+            final transaction that makes the change on the ledger. It ensures you have the right python dependencies
+            installed, that your keystore file and password work, and that you have network connectivity to build a
+            transaction. Will get to work on it soon™…</s><br>
+          Done! Ability to choose mainnet or stokenet, and to do a dry-run which doesn’t submit the final request to
+          apply the change.</p>
+      </div>
+
+      <meta itemprop='headline' content='DRAFT: A Validators Guide to Disaster Recovery'>
+
+      <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+        <meta itemprop="interactionType" content="http://schema.org/LikeAction" />
+        <meta itemprop="userInteractionCount" content="3" />
+        <span class='post-likes'>3 Likes</span>
+      </div>
+
+      <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+        <meta itemprop="interactionType" content="http://schema.org/CommentAction" />
+        <meta itemprop="userInteractionCount" content="0" />
+      </div>
+
+    </div>
+    <div id='post_4' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+      <div class='crawler-post-meta'>
+        <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+          <meta itemprop='name' content='RadixTalk'>
+          <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+            <meta itemprop='url'
+              content='https://radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+          </div>
+        </div>
+        <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a itemprop="url" href='../../u/Stuart.html'><span itemprop='name'>Stuart</span></a>
+          (Stuart | RadixPool)
+        </span>
+
+        <link itemprop="mainEntityOfPage" href="315.html">
+
+
+        <span class="crawler-post-infos">
+          <time itemprop='datePublished' datetime='2022-02-05T10:27:48Z' class='post-time'>
+            5 February 2022 10:27
+          </time>
+          <meta itemprop='dateModified' content='2022-02-05T10:27:48Z'>
+          <span itemprop='position'>#4</span>
+        </span>
+      </div>
+      <div class='post' itemprop='articleBody'>
+        <p>The unregister.py script does not currently work on Stokenet.</p>
+        <p>The old Archive API has been removed from Stokenet and the new Gateway API doesn’t currently support
+          Register/Unregister of validators. The dev team have put this on the development backlog and the script will
+          be updated to handle the new Gateway API as soon as this is released.</p>
+      </div>
+
+      <meta itemprop='headline' content='DRAFT: A Validators Guide to Disaster Recovery'>
+
+      <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+        <meta itemprop="interactionType" content="http://schema.org/LikeAction" />
+        <meta itemprop="userInteractionCount" content="3" />
+        <span class='post-likes'>3 Likes</span>
+      </div>
+
+      <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+        <meta itemprop="interactionType" content="http://schema.org/CommentAction" />
+        <meta itemprop="userInteractionCount" content="2" />
+      </div>
+
+    </div>
+    <div id='post_5' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+      <div class='crawler-post-meta'>
+        <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+          <meta itemprop='name' content='RadixTalk'>
+          <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+            <meta itemprop='url'
+              content='https://radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+          </div>
+        </div>
+        <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a itemprop="url" href='../../u/RadUp.io.html'><span itemprop='name'>RadUp.io</span></a>
+          (Ed &amp; James)
+        </span>
+
+        <link itemprop="mainEntityOfPage" href="315.html">
+
+
+        <span class="crawler-post-infos">
+          <time itemprop='datePublished' datetime='2022-02-05T12:55:45Z' class='post-time'>
+            5 February 2022 12:55
+          </time>
+          <meta itemprop='dateModified' content='2022-02-05T12:55:45Z'>
+          <span itemprop='position'>#5</span>
+        </span>
+      </div>
+      <div class='post' itemprop='articleBody'>
+        <p>Ran into this last night but figured that was the reason.</p>
+        <p>This page is developing into one the most important pages that all node runners should familiarise themselves
+          with. Thank you for everything you do for the community.</p>
+      </div>
+
+      <meta itemprop='headline' content='DRAFT: A Validators Guide to Disaster Recovery'>
+
+      <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+        <meta itemprop="interactionType" content="http://schema.org/LikeAction" />
+        <meta itemprop="userInteractionCount" content="0" />
+        <span class='post-likes'></span>
+      </div>
+
+      <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+        <meta itemprop="interactionType" content="http://schema.org/CommentAction" />
+        <meta itemprop="userInteractionCount" content="0" />
+      </div>
+
+    </div>
+    <div id='post_6' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+      <div class='crawler-post-meta'>
+        <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+          <meta itemprop='name' content='RadixTalk'>
+          <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+            <meta itemprop='url'
+              content='https://radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+          </div>
+        </div>
+        <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a itemprop="url" href='../../u/Jazzer_9F.html'><span itemprop='name'>Jazzer_9F</span></a>
+          (Jazzer 9F)
+        </span>
+
+        <link itemprop="mainEntityOfPage" href="315.html">
+
+
+        <span class="crawler-post-infos">
+          <time itemprop='datePublished' datetime='2022-02-05T22:08:18Z' class='post-time'>
+            5 February 2022 22:08
+          </time>
+          <meta itemprop='dateModified' content='2022-02-05T22:08:18Z'>
+          <span itemprop='position'>#6</span>
+        </span>
+      </div>
+      <div class='post' itemprop='articleBody'>
+        <p>Did they confirm this will be added to the Gateway API <strong>before</strong> decommissioning the archive
+          nodes on mainnet? Because that’s happening rather soon IIRC. It would be pretty bad if we can’t deregister
+          non-running nodes for a couple of months…</p>
+      </div>
+
+      <meta itemprop='headline' content='DRAFT: A Validators Guide to Disaster Recovery'>
+
+      <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+        <meta itemprop="interactionType" content="http://schema.org/LikeAction" />
+        <meta itemprop="userInteractionCount" content="0" />
+        <span class='post-likes'></span>
+      </div>
+
+      <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+        <meta itemprop="interactionType" content="http://schema.org/CommentAction" />
+        <meta itemprop="userInteractionCount" content="0" />
+      </div>
+
+    </div>
+    <div id='post_7' itemscope itemtype='http://schema.org/DiscussionForumPosting' class='topic-body crawler-post'>
+      <div class='crawler-post-meta'>
+        <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+          <meta itemprop='name' content='RadixTalk'>
+          <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+            <meta itemprop='url'
+              content='https://radixtalk.com/uploads/default/original/1X/3598b330b5e00d9dd634fac65559b5643adc7bee.png'>
+          </div>
+        </div>
+        <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a itemprop="url" href='../../u/Jazzer_9F.html'><span itemprop='name'>Jazzer_9F</span></a>
+          (Jazzer 9F)
+        </span>
+
+        <link itemprop="mainEntityOfPage" href="315.html">
+
+
+        <span class="crawler-post-infos">
+          <time itemprop='datePublished' datetime='2022-02-27T11:20:10Z' class='post-time'>
+            27 February 2022 11:20
+          </time>
+          <meta itemprop='dateModified' content='2022-02-27T11:20:10Z'>
+          <span itemprop='position'>#7</span>
+        </span>
+      </div>
+      <div class='post' itemprop='articleBody'>
+        <p>I’ve loaded the unregister.py script on my nodes and gone through how it works.<br>
+          Are you planning a re-register option as well, or do we follow the regular process for that?</p>
+        <p>Thanks &amp; Cheers!</p>
+      </div>
+
+      <meta itemprop='headline' content='DRAFT: A Validators Guide to Disaster Recovery'>
+
+      <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+        <meta itemprop="interactionType" content="http://schema.org/LikeAction" />
+        <meta itemprop="userInteractionCount" content="0" />
+        <span class='post-likes'></span>
+      </div>
+
+      <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+        <meta itemprop="interactionType" content="http://schema.org/CommentAction" />
+        <meta itemprop="userInteractionCount" content="0" />
+      </div>
+
+    </div>
+
+
+
+
+
+
+  </div>
+  <footer class="container wrap">
+    <nav class='crawler-nav'>
+      <ul>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='https://radixtalk.com/' itemprop="url">Home </a>
+          </span>
+        </li>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='https://radixtalk.com/categories' itemprop="url">Categories </a>
+          </span>
+        </li>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='https://radixtalk.com/guidelines' itemprop="url">FAQ/Guidelines </a>
+          </span>
+        </li>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='https://radixtalk.com/tos' itemprop="url">Terms of Service </a>
+          </span>
+        </li>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='https://radixtalk.com/privacy' itemprop="url">Privacy Policy </a>
+          </span>
+        </li>
+      </ul>
+    </nav>
+    <p class='powered-by-link'>Powered by <a href="https://www.discourse.org">Discourse</a>, best viewed with JavaScript
+      enabled</p>
+  </footer>
+
+
+
+</body>
+
 </html>
